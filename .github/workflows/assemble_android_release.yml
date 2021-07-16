@@ -30,13 +30,13 @@ env:
   # 版本号
   VERSION_CODE: 10
   # 密钥库文件
-  KEYSTORE_FILE: debug.keystore
+  KEYSTORE_FILE: release.keystore
   # 密钥库口令
-  KEYSTORE_PASSWORD: android
+  KEYSTORE_PASSWORD: ${{secrets.RELEASE_KEYSTORE_PASSWORD}}
   # 密钥库别名
-  KEYSTORE_KEY_ALIAS: androiddebugkey
+  KEYSTORE_KEY_ALIAS: android
   # 密钥库别名口令
-  KEYSTORE_KEY_PASSWORD: android
+  KEYSTORE_KEY_PASSWORD: ${{secrets.RELEASE_KEYSTORE_PASSWORD}}
 
 # 工作流作业
 jobs:
@@ -94,10 +94,10 @@ jobs:
             -Pversion_code=${{ env.VERSION_CODE }} \
             -Pversion_name=${{ env.VERSION_NAME }} \
             -Pabi_filters='${{ env.APP_ABI_FILTERS }}' \
-            -Pkeystore_file=${{ env.KEYSTORE_FILE }} \
-            -Pkeystore_password=${{ env.KEYSTORE_PASSWORD }} \
-            -Pkeystore_key_alias=${{ env.KEYSTORE_KEY_ALIAS }} \
-            -Pkeystore_key_password=${{ env.KEYSTORE_KEY_PASSWORD }}
+            -Pkeystore_file='${{ env.KEYSTORE_FILE }}' \
+            -Pkeystore_password='${{ env.KEYSTORE_PASSWORD }}' \
+            -Pkeystore_key_alias='${{ env.KEYSTORE_KEY_ALIAS }}' \
+            -Pkeystore_key_password='${{ env.KEYSTORE_KEY_PASSWORD }}'
       - name: Upload Android Products
         uses: actions/upload-artifact@v2
         with:
