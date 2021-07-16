@@ -16,7 +16,7 @@ env:
   # 应用的application_id
   APP_ID: ${{secrets.APP_ID}}
   # 应用名称
-  APP_NAME: Taro Playground
+  APP_NAME: Taro
   # 应用icon
   APP_ICON: ic_launcher
   # 应用圆角icon

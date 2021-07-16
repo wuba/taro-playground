@@ -15,9 +15,9 @@ on:
 env:
   # 应用的application_id
   APP_ID: ${{secrets.APP_ID}}
-  APP_NAME: Taro Playground
+  APP_NAME: Taro
   VERSION_NUMBER: 1.0.0
-  BUILD_NUMBER: 1.0.0.0
+  BUILD_NUMBER: 1.0.0.0 # unused
   BUILD_TYPE: release
   TEAM_ID: ${{secrets.TEAM_ID}}
   PROVISIONING_PROFILE_SPECIFIER: ${{secrets.RELEASE_PROVISIONING_PROFILE_SPECIFIER}}
@@ -32,6 +32,9 @@ jobs:
   assemble:
     runs-on: macos-latest
     steps:
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=timestamp::$(date +'%s')"
       - name: Checkout Project
         uses: actions/checkout@v2
       - name: Cache node_modules Folder
@@ -93,7 +96,7 @@ jobs:
           FL_UPDATE_PLIST_DISPLAY_NAME: ${{ env.APP_NAME }}
           FL_UPDATE_PLIST_PATH: taroDemo/Info.plist
           FL_VERSION_NUMBER_VERSION_NUMBER: ${{ env.VERSION_NUMBER }}
-          FL_BUILD_NUMBER_BUILD_NUMBER: ${{ env.BUILD_NUMBER }}
+          FL_BUILD_NUMBER_BUILD_NUMBER: ${{ env.VERSION_NUMBER }}.${{steps.date.outputs.timestamp}}
           FL_CODE_SIGN_IDENTITY: ${{ env.CODE_SIGN_IDENTITY }}
           FL_PROVISIONING_PROFILE_SPECIFIER: ${{ env.PROVISIONING_PROFILE_SPECIFIER }}
           FASTLANE_TEAM_ID: ${{ env.TEAM_ID }}

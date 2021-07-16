@@ -15,7 +15,7 @@ on:
 env:
   # 应用的application_id
   APP_ID: ${{secrets.APP_ID}}
-  APP_NAME: Taro Playground
+  APP_NAME: Taro
   VERSION_NUMBER: 1.0.0
   BUILD_TYPE: debug
   TEAM_ID: ${{secrets.TEAM_ID}}
