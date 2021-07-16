@@ -4,7 +4,7 @@ name: Assemble Android Release
 # 触发工作流程的事件
 on:
   push:
-    branches: [ master ]
+    branches: [ playground ]
     tags: [ v* ]
   pull_request:
     branches: [ master ]
@@ -14,9 +14,9 @@ on:
 # 工作流环境变量
 env:
   # 应用的application_id
-  APP_ID: com.taro.demo
+  APP_ID: ${{secrets.APP_ID}}
   # 应用名称
-  APP_NAME: Taro Demo
+  APP_NAME: Taro Playground
   # 应用icon
   APP_ICON: ic_launcher
   # 应用圆角icon

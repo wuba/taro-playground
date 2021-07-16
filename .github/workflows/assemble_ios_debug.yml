@@ -4,7 +4,7 @@ name: Assemble Ios Debug
 # 触发工作流程的事件
 on:
   push:
-    branches: [ master ]
+    branches: [ playground ]
     tags: [ v* ]
   pull_request:
     branches: [ master ]
@@ -14,12 +14,12 @@ on:
 # 工作流环境变量
 env:
   # 应用的application_id
-  APP_ID: com.taro.demo
-  APP_NAME: Taro Demo
+  APP_ID: ${{secrets.APP_ID}}
+  APP_NAME: Taro Playground
   VERSION_NUMBER: 1.0.0
   BUILD_TYPE: debug
-  TEAM_ID: XXXXXXXXXX
-  PROVISIONING_PROFILE_SPECIFIER: DEV_profile
+  TEAM_ID: ${{secrets.TEAM_ID}}
+  PROVISIONING_PROFILE_SPECIFIER: ${{secrets.DEBUG_PROVISIONING_PROFILE_SPECIFIER}}
   CODE_SIGN_IDENTITY: iPhone Developer
   SIGNING_CERTIFICATE_P12_DATA: ${{secrets.DEBUG_SIGNING_CERTIFICATE_P12_DATA}}
   SIGNING_CERTIFICATE_PASSWORD: ${{secrets.DEBUG_SIGNING_CERTIFICATE_PASSWORD}}
