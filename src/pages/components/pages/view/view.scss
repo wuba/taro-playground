@@ -1,0 +1,57 @@
+@import '../../styles/common.scss';
+
+.example {
+  margin-bottom: 60px;
+
+  &-body {
+    &__list {
+      display: flex;
+      flex-direction: row;
+      // align-items: center;
+      &-item{
+        flex: auto;
+        height: 300px;
+        // width: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    &__list--vertical {
+      height: 900px;
+      width: 200px;
+      flex-direction: column;
+      margin-left: auto;
+      // flex: 1;
+      flex: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.example-body__list-item{
+  flex: 1;
+}
+
+
+// .components-page {
+//   font-size: 32px;
+//   &__body {
+//     padding: 0 40px;
+//   }
+
+// }
+
+// .example {
+//   margin-bottom: 60px;
+//   &-header {
+//     text-align: center;
+//     font-size: 34px;
+//     color: #999;
+//     margin-bottom: 20px;
+//   }
+//   &-body {
+
+//   }
+// }

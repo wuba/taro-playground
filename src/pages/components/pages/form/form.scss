@@ -1,0 +1,37 @@
+.example-body {
+  &__radio-group {
+
+    &-item {
+      margin-right: 40px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      &-text {
+        color: #333333;
+        margin-left: 20px;
+      }
+    }
+  }
+  &__checkbox-group {
+    &-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-right: 40px;
+      &-text {
+        color: #333333;
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+.example-input-example-body {
+  background-color: white;
+  margin-left: -40px;
+  margin-right: -40px;
+  padding: 20px;
+}
+.form-switch{
+    margin: 0 auto;
+}

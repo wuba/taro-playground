@@ -1,0 +1,20 @@
+.example-body__scroll-view {
+  &--H {
+    height: 300px;
+  }
+
+  &-item {
+    width: 400px;
+    height: 300px;
+  }
+
+  &--V {
+    height: 400px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    ;
+  }
+
+}

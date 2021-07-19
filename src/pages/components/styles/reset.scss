@@ -1,0 +1,47 @@
+/**
+ * 统一多端基础样式
+ * 比较理想的是 View 标签统一为 display: flex; flex-direction: column
+ * 但是 H5 上内置组件样式可能会错乱，因此暂时不这样处理，有用到 flex 的地方都显式声明主轴方向即可
+ */
+
+// /* weapp */
+// page {
+//   height: 100%;
+// }
+
+// taro-view-core,
+// taro-text-core,
+// taro-scroll-view-core {
+//   box-sizing: border-box;
+// }
+
+// button {
+//   &:after {
+//     display: none;
+//   }
+// }
+
+// /* h5 */
+// /*postcss-pxtransform rn eject enable*/
+// div {
+//   box-sizing: border-box;
+// }
+
+// button {
+//   outline: none;
+// }
+
+.taro-text {
+  box-sizing: border-box;
+}
+
+.taro-tabbar__panel,
+.taro_router {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.taro_page {
+  flex: 1;
+}
+/*postcss-pxtransform rn eject disable*/

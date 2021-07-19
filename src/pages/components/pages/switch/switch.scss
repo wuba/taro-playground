@@ -1,0 +1,22 @@
+.switch-list {
+  position: relative;
+  padding: 0 15px;
+  background-color: #FFFFFF;
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+
+  &__text {
+    padding-left: 15px;
+  }
+}
+
+.page-section-title {
+  align-items: center;
+}
