@@ -1,5 +1,6 @@
-React Native Template for Taro
+Taro Playground App
 ====
+inited by [taro react native template](https://github.com/nervjs/taro-project-templates/tree/v3.1/react-native).
 
 ## requirement
 
