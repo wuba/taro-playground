@@ -2,7 +2,7 @@
  * @Author: iChengbo
  * @Date: 2021-07-19 14:37:08
  * @LastEditors: iChengbo
- * @LastEditTime: 2021-07-21 10:35:01
+ * @LastEditTime: 2021-07-21 15:05:22
  * @FilePath: /taro-react-native/src/app.config.ts
  */
 export default {
@@ -25,7 +25,6 @@ export default {
     'pages/components/pages/button/button',
     'pages/components/pages/text/text',
     'pages/components/pages/label/label',
-    'pages/components/pages/page-container/page-container',
     'pages/components/pages/picker/picker',
     'pages/components/pages/picker-view/picker-view',
     'pages/components/pages/rich-text/rich-text',
