@@ -1,0 +1,18 @@
+
+.page {
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 80px;
+}
+.page-header {
+    flex-direction: row;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    &-img {
+        height: 160px;
+        width: 160px;
+        border-radius: 80px;
+        margin-right: 10px;
+    }
+}
