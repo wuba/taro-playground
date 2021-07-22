@@ -2,7 +2,7 @@
  * @Author: iChengbo
  * @Date: 2021-07-19 14:37:08
  * @LastEditors: iChengbo
- * @LastEditTime: 2021-07-22 18:24:37
+ * @LastEditTime: 2021-07-23 15:53:32
  * @FilePath: /taro-react-native/src/app.config.ts
  */
 export default {
@@ -47,6 +47,7 @@ export default {
     'pages/apis/pages/surface/background/index',
     // api 相关 end
     'pages/about/index',
+    'pages/webview/index',
   ],
   window: {
     backgroundTextStyle: 'light',
