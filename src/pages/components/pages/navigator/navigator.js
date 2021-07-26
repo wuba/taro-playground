@@ -2,7 +2,7 @@
  * @Author: iChengbo
  * @Date: 2021-07-19 16:42:58
  * @LastEditors: iChengbo
- * @LastEditTime: 2021-07-19 17:01:00
+ * @LastEditTime: 2021-07-27 19:08:28
  * @FilePath: /taro-react-native/src/pages/components/pages/navigator/navigator.js
  */
 import Taro from '@tarojs/taro'
@@ -28,7 +28,7 @@ export default class PageSwitch extends React.Component {
               {
                 Taro.getEnv() != Taro.ENV_TYPE.WEB ? <View className='example-body__navigators'>
                   <Navigator
-                    url='/pages/component/pages/navigatePage/navigatePage'
+                    url='/pages/components/pages/navigatePage/navigatePage'
                     className='example-body__navigators-item'
                   >
                     <View className='example-body__navigator'>跳转到新页面</View>

@@ -1,7 +1,7 @@
-import "./virtual-list.scss";
 import React from "react";
 import { View, Text, VirtualList, Button } from "@tarojs/components";
 
+import "./virtual-list.scss";
 import Header from "../../components/head/head";
 
 function buildData(offset = 0) {
@@ -25,6 +25,7 @@ export default class PageView extends React.Component {
   };
 
   $ref = React.createRef();
+  timer
 
   onScroll = (data) => {
     console.log(data);
@@ -33,9 +34,12 @@ export default class PageView extends React.Component {
   componentDidMount() {
     console.log(this.$ref);
 
-    setTimeout(() => {
-      this.$ref.current.scrollTo({offset: 200});
+    this.timer = setTimeout(() => {
+      this?.$ref?.current.scrollTo({offset: 200});
     }, 3000);
+  }
+  componentWillUnmount() {
+    this.timer && clearTimeout(this.timer);
   }
 
 
@@ -52,7 +56,7 @@ export default class PageView extends React.Component {
           <Header title="VirtualList"></Header>
         </View>
         <VirtualList
-          height={300}
+          height={500}
           ref={this.$ref}
           width="100%"
           itemData={data}
@@ -60,8 +64,7 @@ export default class PageView extends React.Component {
           itemSize={100}
           // onScrollNative={this.onScrollNative}
           // onScroll={this.onScroll}
-          overscanCount={1}
-          overscanCount={1}
+          overscanCount={5}
           scrollWithAnimation
         >
           {Row}

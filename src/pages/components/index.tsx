@@ -63,12 +63,13 @@ export default class Index extends Component<never, any> {
             "textarea"
           ]
         },
-        {
-          id: "nav",
-          name: "导航",
-          open: false,
-          pages: ["navigator"]
-        },
+        // NOTE: RN 暂不支持 Navigator 组件
+        // {
+        //   id: "nav",
+        //   name: "导航",
+        //   open: false,
+        //   pages: ["navigator"]
+        // },
         {
           id: "media",
           name: "媒体组件",

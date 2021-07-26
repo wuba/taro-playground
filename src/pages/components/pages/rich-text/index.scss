@@ -1,6 +1,8 @@
+@import '../../../../styles/variables.scss';
+
 .rich-text {
   width: 400px;
   height: 400px;
-  background-color: red;
+  background-color: $color-brand;
   margin: 0 auto;
 }

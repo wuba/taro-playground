@@ -1,8 +1,8 @@
-import "./picker.scss";
-
 import Taro from "@tarojs/taro";
 import React from "react";
 import { View, Text, Picker } from "@tarojs/components";
+
+import "./picker.scss";
 
 import Header from "../../components/head/head";
 
@@ -65,7 +65,7 @@ export default class PagePicker extends React.Component {
         <Header title="Picker"></Header>
         <View className="page-body">
           <View className="page-section">
-            <View className="page-section-title">普通选择器</View>
+            <Text className="page-section-title">普通选择器</Text>
             <View>
               <Picker
                 mode="selector"
@@ -84,7 +84,7 @@ export default class PagePicker extends React.Component {
           </View>
           {Taro.getEnv() !== Taro.ENV_TYPE.ALIPAY ? (
             <View className="page-section">
-              <View className="page-section-title">多行选择器</View>
+              <Text className="page-section-title">多行选择器</Text>
               <View>
                 <Picker
                   mode="multiSelector"
@@ -103,13 +103,13 @@ export default class PagePicker extends React.Component {
             </View>
           ) : (
             <View className="page-section">
-              <View className="page-section-title">
+              <Text className="page-section-title">
                 支付宝小程序暂不支持多列选择器
-              </View>
+              </Text>
             </View>
           )}
           <View className="page-section">
-            <View className="page-section-title">时间选择器</View>
+            <Text className="page-section-title">时间选择器</Text>
             <View>
               <Picker
                 mode="time"
@@ -121,8 +121,8 @@ export default class PagePicker extends React.Component {
             </View>
           </View>
           <View className="page-section">
-            <View className="page-section-title">日期选择器</View>
-            <View>
+            <Text className="page-section-title">日期选择器</Text>
+            <View className="page-section-body">
               <Picker
                 mode="date"
                 onChange={this.handleDateChange}

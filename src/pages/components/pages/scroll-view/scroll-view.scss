@@ -1,20 +1,18 @@
 .example-body__scroll-view {
+  // background-color: red;
   &--H {
-    height: 300px;
+    height: 240px;
+    &-item {
+      width: 300px;
+      height: 300px;
+    }
   }
-
-  &-item {
-    width: 400px;
-    height: 300px;
-  }
-
   &--V {
-    height: 400px;
+    height: 500px;
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    ;
+    &-item {
+      height: 300px;
+    }
   }
-
 }

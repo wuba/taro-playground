@@ -1,26 +1,27 @@
 @import '../../../../styles/mixins.scss';
 
-.page__con__list {
-  position: relative;
+.page__con__wrap {
   display: flex;
   flex-direction: row;
   margin-bottom: 40px;
-  padding-bottom: 40px;
-  @include border(bottom, 2px, solid, #999);
+  padding: 40px;
   min-height: 120px;
-
+  background-color: #fff;
+  border-radius: 8px;
 }
 
 .icon_right {
   margin-left: 20px;
-  &_head {
+  padding-right: 40px;
+  &_title {
     color: #333;
     font-size: 32px;
     margin-bottom: 10px;
   }
 
-  &_tit {
+  &_desc {
     color: #999;
-    font-size: 26px;
+    font-size: 24px;
+    line-height: 32px;
   }
 }

@@ -1,3 +1,10 @@
+/*
+ * @Author: iChengbo
+ * @Date: 2021-07-19 16:42:58
+ * @LastEditors: iChengbo
+ * @LastEditTime: 2021-07-27 19:04:21
+ * @FilePath: /taro-react-native/src/pages/components/pages/label/label.js
+ */
 import React from 'react'
 
 // RadioGroup
@@ -35,9 +42,7 @@ export default class PageLabel extends React.Component {
         </View>
         <View className='components-page__body'>
           <View className='components-page__body-example example'>
-            <View className='example-header'>
-             表单组件在label内
-            </View>
+            <Text className='example-header'>表单组件在label内</Text>
             <View className='example-body'>
               <CheckboxGroup>
                 <Label className='example-body__label'>
@@ -46,28 +51,23 @@ export default class PageLabel extends React.Component {
                 <Label className='example-body__label'>
                   <Checkbox value='中国' checked>
                     中国
-                </Checkbox>
+                  </Checkbox>
                 </Label>
               </CheckboxGroup>
             </View>
           </View>
           <View className='components-page__body-example example'>
-            <View className='example-header'>
-              表单组件在Label外
-            </View>
+            <Text className='example-header'>表单组件在Label外</Text>
             <View className='example-body'>
               <RadioGroup className="example-body__radio-group">
-                <Radio value='GuangZhou' id='gz'>GuangZhou</Radio>
-                <Radio value='ShenZhen' id='sz'>ShenZhen</Radio>
+                <Label className='example-body__label' for='gz'>
+                  <Radio value='GuangZhou' id='gz'>GuangZhou</Radio>
+                </Label>
+                <Label className='example-body__label' for='sz'>
+                  <Radio value='ShenZhen' id='sz'>ShenZhen</Radio>
+                </Label>
               </RadioGroup>
             </View>
-
-            <Label className='example-body__label' for='gz'>
-              广州
-            </Label>
-            <Label className='example-body__label' for='sz'>
-              深圳
-            </Label>
           </View>
         </View>
       </View>

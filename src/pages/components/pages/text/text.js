@@ -1,17 +1,10 @@
-import './text.scss'
 import React from 'react'
 import { View, Text } from '@tarojs/components'
+import './text.scss'
 
 import Header from '../../components/head/head'
 
 export default class PageView extends React.Component {
-  constructor() {
-    super(...arguments)
-
-    this.state = {
-      contents: []
-    }
-  }
 
   render() {
     return (

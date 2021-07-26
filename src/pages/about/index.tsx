@@ -2,7 +2,7 @@
  * @Author: iChengbo
  * @Date: 2021-07-19 15:54:39
  * @LastEditors: iChengbo
- * @LastEditTime: 2021-07-23 17:11:58
+ * @LastEditTime: 2021-07-26 14:52:41
  * @FilePath: /taro-react-native/src/pages/about/index.tsx
  */
 import { Component, Fragment } from 'react'
@@ -12,23 +12,6 @@ import { View, Image, Text } from '@tarojs/components';
 import './index.scss';
 
 export default class Index extends Component<any, any> {
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      deviceInfo: {},
-    }
-  }
-
-  componentDidMount() {
-    Taro.getSystemInfo().then(res => {
-      this.setState({
-        deviceInfo: res,
-      })
-    }).catch(err => {
-      console.log('获取信息失败：', err);
-    });
-  }
-
   linksList = [
     {
       name: 'Taro 官方网站',
@@ -77,8 +60,6 @@ export default class Index extends Component<any, any> {
   ];
 
   render() {
-    const { deviceInfo } = this.state;
-    console.log(deviceInfo)
     return (
       <SafeAreaView className='page'>
         <View className='page'>

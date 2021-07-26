@@ -1,4 +1,3 @@
-import "./form.scss";
 import React from "react";
 
 import {
@@ -17,11 +16,13 @@ import {
   Switch,
   ScrollView
 } from "@tarojs/components";
+import "./form.scss";
 
 import Header from "../../components/head/head";
 
 export default class PageForm extends React.Component {
   state = {
+    enableSwitch: false,
     radioItem: [
       {
         key: "radio-1",
@@ -46,7 +47,8 @@ export default class PageForm extends React.Component {
         checked: false
       }
     ],
-    sliderValue: 50
+    sliderValue: 50,
+    selectDate: '2020-01-02',
   };
 
   onHandleChange = e => {
@@ -83,6 +85,14 @@ export default class PageForm extends React.Component {
     console.log('handleSliderChanging', e);
   };
 
+  handleDateChange = e => {
+    const val = e.detail.value;
+    const dateSel = Array.isArray(val) ? val.join("-") : val;
+    this.setState({
+      selectDate: dateSel
+    });
+  }
+
   formSubmit = e => {
     console.log(e);
   };
@@ -104,17 +114,18 @@ export default class PageForm extends React.Component {
         <Form onSubmit={this.formSubmit} onReset={this.formReset}>
           <View className="components-page__body">
             <View className="components-page__body-example example">
-              <View className="example-header">switch</View>
+              <Text className="example-header">switch</Text>
               <View className="example-body">
                 <Switch
                   onChange={this.onHandleChange}
                   name="switch"
                   className="form-switch"
+                  checked={this.state.enableSwitch}
                 ></Switch>
               </View>
             </View>
             <View className="components-page__body-example example">
-              <View className="example-header">radio</View>
+              <Text className="example-header">radio</Text>
               <View className="example-body">
                 <RadioGroup
                   className="example-body__radio-group"
@@ -139,7 +150,7 @@ export default class PageForm extends React.Component {
               </View>
             </View>
             <View className="components-page__body-example example">
-              <View className="example-header">checkbox</View>
+              <Text className="example-header">checkbox</Text>
               <View className="example-body">
                 <CheckboxGroup
                   className="example-body__checkbox-group"
@@ -162,7 +173,7 @@ export default class PageForm extends React.Component {
               </View>
             </View>
             <View className="components-page__body-example example">
-              <View className="example-header">slider</View>
+              <Text className="example-header">slider</Text>
               <View className="example-body">
                 <Slider
                   name="slider"
@@ -170,33 +181,36 @@ export default class PageForm extends React.Component {
                   showValue
                   onChange={this.handleSliderChange}
                   onChanging={this.handleSliderChanging}
-               />
+                />
               </View>
             </View>
             <View className="components-page__body-example example">
-              <View className="example-header">日期选择器</View>
+              <Text className="example-header">日期选择器</Text>
               <View className="example-body">
-                <Picker mode="date"
-                value={"2020-01-01"}
+                <Picker
+                  name="date"
+                  mode="date"
+                  value={this.state.selectDate}
+                  onChange={this.handleDateChange}
                 >
-                  <View>当前选择：2020-01-01</View>
+                  <Text>当前选择日期：{this.state.selectDate}</Text>
                 </Picker>
               </View>
             </View>
             <View className="components-page__body-example example example-input">
-              <View className="example-header">input</View>
+              <Text className="example-header">input</Text>
               <View className="example-input-example-body">
                 <Input
                   name="input"
                   type="text"
                   value={this.state.inputValue}
-                  placeholder={"这是一个输入框"}
+                  placeholder="这是一个输入框"
                   onInput={this.onHandleChange}
                 />
               </View>
             </View>
             <View className="components-page__body-example example">
-              <View className="example-body">
+              <View className="example-body" style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
                 <Button formType="submit" type="primary">
                   Submit
                 </Button>

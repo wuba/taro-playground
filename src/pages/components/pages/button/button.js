@@ -1,6 +1,7 @@
-import "./button.scss";
 import React from "react";
 import { View, Button, ScrollView } from "@tarojs/components";
+
+import "./button.scss";
 
 import Header from "../../components/head/head";
 
@@ -50,17 +51,17 @@ export default class PageButton extends React.Component {
   };
   render() {
     return (
-      <ScrollView className="components-page">
-        <View className="components-page__header">
-          <Header title="Button"></Header>
+      <ScrollView className='components-page'>
+        <View className='components-page__header'>
+          <Header title='Button'></Header>
         </View>
-        <View className="components-page__body">
-          <View className="components-page__body-example example">
-            <View className="example-body">
+        <View className='components-page__body'>
+          <View className='components-page__body-example example'>
+            <View className='example-body'>
               {this.state.btn.map((item, index) => {
                 return (
                   <Button
-                    className="btn"
+                    className='btn'
                     key={index}
                     size={item.size ? item.size : ""}
                     type={item.type ? item.type : ""}
@@ -71,26 +72,26 @@ export default class PageButton extends React.Component {
                   </Button>
                 );
               })}
-              <Button className="btn" plain type="primary" hoverStyle={{backgroundColor: 'red', color: 'red'}}>
+              <Button className='btn' plain type='primary' hoverStyle={{backgroundColor: 'red', color: 'red'}}>
                 按钮
               </Button>
-              <Button plain className="btn" type="primary" disabled>
+              <Button plain className='btn' type='primary' disabled>
                 不可点击的按钮
               </Button>
-              <Button plain className="btn">
+              <Button plain className='btn'>
                 镂空按钮
               </Button>
-              <Button plain className="btn" disabled>
+              <Button plain className='btn' disabled>
                 镂空按钮 Disabled
               </Button>
-              <View className="btn-center">
-                <Button size="mini" className="btn" type="primary">
+              <View className='btn-center'>
+                <Button size='mini' className='btn' type='primary'>
                   小号按钮
                 </Button>
-                <Button size="mini" className="btn">
+                <Button size='mini' className='btn'>
                   小号按钮
                 </Button>
-                <Button size="mini" className="btn" type="warn">
+                <Button size='mini' className='btn' type='warn'>
                   小号按钮
                 </Button>
               </View>

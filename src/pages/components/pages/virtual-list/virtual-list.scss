@@ -1,4 +1,15 @@
+@import '../../../../styles/variables.scss';
+
 .list-item {
   flex-direction: row;
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ListItemOdd {
+  background-color: $color-brand;
+}
+.ListItemEven {
+  background-color: $color-info;
 }

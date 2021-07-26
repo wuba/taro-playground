@@ -1,7 +1,14 @@
-import './progress.scss'
+/*
+ * @Author: iChengbo
+ * @Date: 2021-07-19 16:42:58
+ * @LastEditors: iChengbo
+ * @LastEditTime: 2021-07-26 17:53:36
+ * @FilePath: /taro-react-native/src/pages/components/pages/progress/progress.js
+ */
 import React from 'react'
-import { View, Progress, Button } from '@tarojs/components'
+import { View, Progress, Button, Text } from '@tarojs/components'
 
+import './progress.scss'
 import Header from '../../components/head/head'
 
 export default class PageView extends React.Component {
@@ -54,35 +61,43 @@ export default class PageView extends React.Component {
               <Progress percent={20} showInfo strokeWidth={2} ></Progress>
             </View>
             <View className='example-progress'>
-              <Progress percent={40} strokeWidth={2} active ></Progress>
+              <Progress percent={40} strokeWidth={4} active ></Progress>
             </View>
             <View className='example-progress'>
-              <Progress percent={60} strokeWidth={2} active ></Progress>
+              <Progress percent={60} strokeWidth={6} active ></Progress>
             </View>
             <View className='example-progress'>
               <Progress
                 percent={80}
-                strokeWidth={2}
+                strokeWidth={8}
                 active
-                activeColor='blue' ></Progress>
-            </View>
-          </View>
-          <View className='components-page__body-example example'>
-            <View className='example-progress'>
-              <Progress
-                showInfo
-                strokeWidth={2}
-                percent={progress}
-                activeColor='#3C7FE8' ></Progress>
-            </View>
-            <View>
-              <Button onClick={this.handleStart}>加载</Button>
-              <Button onClick={this.handleStop}>暂停</Button>
-              <Button onClick={this.handleReset}>重置</Button>
+                activeColor='#6190E8'
+                borderRadius={10}
+              />
             </View>
           </View>
         </View>
-
+        <View className='components-page__footer' style={{ marginTop: 40 }}>
+          <View className='example-progress'>
+            <Progress
+              showInfo
+              strokeWidth={10}
+              percent={progress}
+              activeColor='#6190E8'
+            />
+          </View>
+          <View className='example-controller'>
+            <Button className='example-controller-btn1' onClick={this.handleStart}>
+              <Text style={{ color: '#fff' }}>加载</Text>
+            </Button>
+            <Button className='example-controller-btn2' onClick={this.handleStop}>
+              <Text style={{ color: '#fff' }}>暂停</Text>
+            </Button>
+            <Button className='example-controller-btn3' onClick={this.handleReset}>
+              <Text style={{ color: '#fff' }}>重置</Text>
+            </Button>
+          </View>
+        </View>
       </View>
     )
   }

@@ -1,7 +1,6 @@
 import React from "react";
-import './picker-view.scss';
 import { PickerView, View, PickerViewColumn } from "@tarojs/components";
-
+import './picker-view.scss';
 
 export default class Picks extends React.Component {
   constructor () {
@@ -44,7 +43,7 @@ export default class Picks extends React.Component {
     return (
       <View>
         <View className="value">选中的值: {this.state.year}年{this.state.month}月{this.state.day}日</View>
-        <PickerView indicatorStyle="height: 50px;" style="width: 100%; height: 300px;" value={this.state.value} onChange={this.onChange}>
+        <PickerView value={this.state.value} onChange={this.onChange}>
           <PickerViewColumn>
             {this.state.years.map(item => {
               return (

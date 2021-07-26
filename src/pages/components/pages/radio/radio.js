@@ -1,12 +1,11 @@
-import "./radio.scss";
 import React from "react";
 import { View, Radio, Label, RadioGroup } from "@tarojs/components";
+import "./radio.scss";
 
 import Header from "../../components/head/head";
 
 export default class PageRadio extends React.Component {
   state = {
-    isChecked: false,
     selectValue: "中国",
     list: [
       {
@@ -62,11 +61,11 @@ export default class PageRadio extends React.Component {
         <View className="components-page__body">
           <View className="components-page__body-example example">
             <View className="example-header">默认样式</View>
-            <View className="example-body">
+            <View className="example-body" style={{ flexDirection: 'row' }}>
               <Radio value="选中" checked>
                 选中
               </Radio>
-              <Radio style="margin-left: 30px" value="未选中">
+              <Radio value="未选中">
                 未选中
               </Radio>
             </View>

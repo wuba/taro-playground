@@ -1,6 +1,6 @@
-import "./switch.scss";
 import React from "react";
 import { View, Text, Switch } from "@tarojs/components";
+import "./switch.scss";
 
 import Header from "../../components/head/head";
 
@@ -22,7 +22,7 @@ export default class PageSwitch extends React.Component {
         <Header title="Switch"></Header>
         <View className="page-body">
           <View className="page-section">
-            <View className="page-section-title">静态展示</View>
+            <Text className="page-section-title">静态展示</Text>
             <View className="switch-list">
               <View className="switch-list__item">
                 <View className="switch-list__text">关闭</View>
@@ -43,7 +43,7 @@ export default class PageSwitch extends React.Component {
             </View>
           </View>
           <View className="page-section">
-            <View className="page-section-title">数据绑定</View>
+            <Text className="page-section-title">数据绑定</Text>
             <View className="switch-list">
               <View className="switch-list__item">
                 <View className="switch-list__text">

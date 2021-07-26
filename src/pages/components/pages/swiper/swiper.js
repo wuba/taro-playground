@@ -1,4 +1,3 @@
-import "./swiper.scss";
 import React from "react";
 
 import {
@@ -11,6 +10,7 @@ import {
   ScrollView
 } from "@tarojs/components";
 
+import "./swiper.scss";
 import Header from "../../components/head/head";
 
 export default class PageView extends React.Component {
@@ -110,7 +110,7 @@ export default class PageView extends React.Component {
                 circular={isCircular}
                 autoplay={isAutoplay}
                 indicatorDots={hasIndicatorDots}
-                preMargin="20"
+                preMargin="200"
               >
                 <SwiperItem>
                   <View className="demo-text-1">
@@ -191,16 +191,15 @@ export default class PageView extends React.Component {
             </View>
             <View className="example-body">
               <Swiper
-                className="swiper-list"
+                className="swiper-list test-h"
                 slideMult="10"
-                className="test-h"
                 indicatorColor="#999"
                 indicatorActiveColor="#333"
                 vertical
                 circular={verticalIsCircular}
                 indicatorDots={verticalHasIndicatorDots}
                 autoplay={verticalIsAutoplay}
-                preMargin="20"
+                preMargin="80"
                 style={{
                   backgroundColor: '#fff'
                 }}
