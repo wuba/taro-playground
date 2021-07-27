@@ -16,26 +16,20 @@ env:
   APP_ID: ${{secrets.APP_ID}}
   # 应用名称
   APP_NAME: Taro
-  # 应用icon
-  APP_ICON: ic_launcher
-  # 应用圆角icon
-  APP_ROUND_ICON: ic_launcher_round
-  # 应用支持的CPU架构
-  APP_ABI_FILTERS: armeabi-v7a, arm64-v8a
   # 打包类型
   BUILD_TYPE: debug
   # 版本名称
-  VERSION_NAME: 1.0.0
+  ANDROID_VERSION_NAME: 1.0.0
   # 版本号
-  VERSION_CODE: 10
+  ANDROID_VERSION_CODE: 10
   # 密钥库文件
-  KEYSTORE_FILE: debug.keystore
+  ANDROID_KEYSTORE_FILE: debug.keystore
   # 密钥库口令
-  KEYSTORE_PASSWORD: ${{secrets.DEBUG_KEYSTORE_PASSWORD}}
+  ANDROID_KEYSTORE_PASSWORD: ${{secrets.DEBUG_KEYSTORE_PASSWORD}}
   # 密钥库别名
-  KEYSTORE_KEY_ALIAS: android
+  ANDROID_KEYSTORE_KEY_ALIAS: android
   # 密钥库别名口令
-  KEYSTORE_KEY_PASSWORD: ${{secrets.DEBUG_KEYSTORE_PASSWORD}}
+  ANDROID_KEYSTORE_KEY_PASSWORD: ${{secrets.DEBUG_KEYSTORE_PASSWORD}}
 
 # 工作流作业
 jobs:
@@ -85,13 +79,12 @@ jobs:
             -Papp_name='${{ env.APP_NAME }}' \
             -Papp_icon=${{env.APP_ICON}} \
             -Papp_round_icon=${{env.APP_ROUND_ICON}} \
-            -Pversion_code=${{ env.VERSION_CODE }} \
-            -Pversion_name=${{ env.VERSION_NAME }} \
-            -Pabi_filters='${{ env.APP_ABI_FILTERS }}' \
-            -Pkeystore_file='${{ env.KEYSTORE_FILE }}' \
-            -Pkeystore_password='${{ env.KEYSTORE_PASSWORD }}' \
-            -Pkeystore_key_alias='${{ env.KEYSTORE_KEY_ALIAS }}' \
-            -Pkeystore_key_password='${{ env.KEYSTORE_KEY_PASSWORD }}'
+            -Pversion_code=${{ env.ANDROID_VERSION_CODE }} \
+            -Pversion_name=${{ env.ANDROID_VERSION_NAME }} \
+            -Pkeystore_file='${{ env.ANDROID_KEYSTORE_FILE }}' \
+            -Pkeystore_password='${{ env.ANDROID_KEYSTORE_PASSWORD }}' \
+            -Pkeystore_key_alias='${{ env.ANDROID_KEYSTORE_KEY_ALIAS }}' \
+            -Pkeystore_key_password='${{ env.ANDROID_KEYSTORE_KEY_PASSWORD }}'
       - name: Upload Android Products
         uses: actions/upload-artifact@v2
         with:

@@ -15,14 +15,14 @@ env:
   # 应用的application_id
   APP_ID: ${{secrets.APP_ID}}
   APP_NAME: Taro
-  VERSION_NUMBER: 1.0.0
   BUILD_TYPE: debug
-  TEAM_ID: ${{secrets.TEAM_ID}}
-  PROVISIONING_PROFILE_SPECIFIER: ${{secrets.DEBUG_PROVISIONING_PROFILE_SPECIFIER}}
-  CODE_SIGN_IDENTITY: iPhone Developer
-  SIGNING_CERTIFICATE_P12_DATA: ${{secrets.DEBUG_SIGNING_CERTIFICATE_P12_DATA}}
-  SIGNING_CERTIFICATE_PASSWORD: ${{secrets.DEBUG_SIGNING_CERTIFICATE_PASSWORD}}
-  PROVISIONING_PROFILE_DATA: ${{secrets.DEBUG_PROVISIONING_PROFILE_DATA}}
+  IOS_VERSION_NUMBER: 1.0.0
+  IOS_TEAM_ID: ${{secrets.TEAM_ID}}
+  IOS_PROVISIONING_PROFILE_SPECIFIER: ${{secrets.DEBUG_PROVISIONING_PROFILE_SPECIFIER}}
+  IOS_CODE_SIGN_IDENTITY: iPhone Developer
+  IOS_SIGNING_CERTIFICATE_P12_DATA: ${{secrets.DEBUG_SIGNING_CERTIFICATE_P12_DATA}}
+  IOS_SIGNING_CERTIFICATE_PASSWORD: ${{secrets.DEBUG_SIGNING_CERTIFICATE_PASSWORD}}
+  IOS_PROVISIONING_PROFILE_DATA: ${{secrets.DEBUG_PROVISIONING_PROFILE_DATA}}
 
 jobs:
   assemble:
@@ -69,13 +69,13 @@ jobs:
           echo "exit 0;">react-native-xcode.sh
       - name: Import signing certificate
         env:
-          SIGNING_CERTIFICATE_P12_DATA: ${{ env.SIGNING_CERTIFICATE_P12_DATA }}
-          SIGNING_CERTIFICATE_PASSWORD: ${{ env.SIGNING_CERTIFICATE_PASSWORD }}
+          SIGNING_CERTIFICATE_P12_DATA: ${{ env.IOS_SIGNING_CERTIFICATE_P12_DATA }}
+          SIGNING_CERTIFICATE_PASSWORD: ${{ env.IOS_SIGNING_CERTIFICATE_PASSWORD }}
         run: |
           exec .github/scripts/import-certificate.sh
       - name: Import provisioning profile
         env:
-          PROVISIONING_PROFILE_DATA: ${{ env.PROVISIONING_PROFILE_DATA }}
+          PROVISIONING_PROFILE_DATA: ${{ env.IOS_PROVISIONING_PROFILE_DATA }}
         run: |
           exec .github/scripts/import-profile.sh
       - name: Build app
@@ -83,11 +83,10 @@ jobs:
           FL_APP_IDENTIFIER: ${{ env.APP_ID }}
           FL_UPDATE_PLIST_DISPLAY_NAME: ${{ env.APP_NAME }}
           FL_UPDATE_PLIST_PATH: taroDemo/Info.plist
-          FL_VERSION_NUMBER_VERSION_NUMBER: ${{ env.VERSION_NUMBER }}
-          FL_BUILD_NUMBER_BUILD_NUMBER: ${{ env.BUILD_NUMBER }}
-          FL_CODE_SIGN_IDENTITY: ${{ env.CODE_SIGN_IDENTITY }}
-          FL_PROVISIONING_PROFILE_SPECIFIER: ${{ env.PROVISIONING_PROFILE_SPECIFIER }}
-          FASTLANE_TEAM_ID: ${{ env.TEAM_ID }}
+          FL_VERSION_NUMBER_VERSION_NUMBER: ${{ env.IOS_VERSION_NUMBER }}
+          FL_CODE_SIGN_IDENTITY: ${{ env.IOS_CODE_SIGN_IDENTITY }}
+          FL_PROVISIONING_PROFILE_SPECIFIER: ${{ env.IOS_PROVISIONING_PROFILE_SPECIFIER }}
+          FASTLANE_TEAM_ID: ${{ env.IOS_TEAM_ID }}
         run: |
           cd ios
           bundle update
