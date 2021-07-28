@@ -1,3 +1,10 @@
+/*
+ * @Author: iChengbo
+ * @Date: 2021-07-19 16:42:58
+ * @LastEditors: iChengbo
+ * @LastEditTime: 2021-08-05 15:14:25
+ * @FilePath: /taro-react-native/src/pages/components/pages/switch/switch.js
+ */
 import React from "react";
 import { View, Text, Switch } from "@tarojs/components";
 import "./switch.scss";
@@ -31,6 +38,10 @@ export default class PageSwitch extends React.Component {
               <View className="switch-list__item">
                 <View className="switch-list__text">开启中</View>
                 <Switch checked></Switch>
+              </View>
+              <View className="switch-list__item">
+                <View className="switch-list__text">disabled</View>
+                <Switch checked disabled></Switch>
               </View>
               <View className="switch-list__item">
                 <View className="switch-list__text">更换颜色</View>

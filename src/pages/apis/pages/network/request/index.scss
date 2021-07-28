@@ -1,0 +1,15 @@
+@import '../../../../../styles/variables.scss';
+
+.api-page {
+  padding: 32px;
+  &-btns {
+    &-btn1 {
+      background-color: $color-success;
+      color: #fff;
+    }
+    &-btn2 {
+      margin-top: 20px;
+      background-color: $color-error;
+    }
+  }
+}

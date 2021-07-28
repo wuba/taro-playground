@@ -2,3 +2,16 @@
   text-align: center;
   align-items: center;
 }
+
+.imgContainer {
+  flex-direction: row;
+  align-items: center;
+  border-width: 1px;
+  border-color: #000;
+  background-color: #fff;
+  &-left {
+      height: 200px;
+      width: 400px;
+      background-color: #999;
+  }
+}

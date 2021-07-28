@@ -2,8 +2,8 @@
  * @Author: iChengbo
  * @Date: 2021-07-20 14:31:22
  * @LastEditors: iChengbo
- * @LastEditTime: 2021-07-20 16:36:53
- * @FilePath: /taro-react-native/src/pages/apis/pages/background/index.tsx
+ * @LastEditTime: 2021-07-29 14:20:47
+ * @FilePath: /taro-react-native/src/pages/apis/pages/surface/background/index.tsx
  */
 import { Component } from 'react'
 import Taro from '@tarojs/taro'
@@ -15,7 +15,7 @@ export default class Index extends Component<any, any> {
   render() {
 
     return (
-      <View>
+      <View className='api-page'>
         <Button
           className='btn'
           type='primary'
@@ -23,12 +23,12 @@ export default class Index extends Component<any, any> {
             Taro.setBackgroundTextStyle({
               textStyle: 'dark',
             })
-            .then(() => {
-              console.log('成功')
-            })
-            .catch(err => {
-              console.log(err)
-            })
+              .then(() => {
+                console.log('成功')
+              })
+              .catch(err => {
+                console.log(err)
+              })
           }}
         >
           setBackgroundTextStyle

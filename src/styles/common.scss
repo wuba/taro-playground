@@ -1,4 +1,25 @@
 @import './variables.scss';
+.api-page {
+    padding: 40px;
+    &-btn {
+        &-success {
+            background-color: $color-success;
+            margin: 10px 0;
+        }
+        &-error {
+            background-color: $color-error;
+            margin: 10px 0;
+        }
+        &-warning {
+            background-color: $color-warning;
+            margin: 10px 0;
+        }
+        &-info {
+            background-color: $color-info;
+            margin: 10px 0;
+        }
+    }
+}
 
 .components-page {
     font-size: 32px;

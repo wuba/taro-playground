@@ -2,8 +2,8 @@
  * @Author: iChengbo
  * @Date: 2021-07-20 14:06:40
  * @LastEditors: iChengbo
- * @LastEditTime: 2021-07-20 14:29:09
- * @FilePath: /taro-react-native/src/pages/apis/pages/navigationBar/index.tsx
+ * @LastEditTime: 2021-07-29 14:19:50
+ * @FilePath: /taro-react-native/src/pages/apis/pages/surface/navigationBar/index.tsx
  */
 import { Component } from 'react'
 import Taro from '@tarojs/taro'
@@ -21,7 +21,7 @@ export default class Index extends Component<any, any> {
   render() {
     const { count } = this.state;
     return (
-      <View className='view-content'>
+      <View className='api-page'>
         <View className='view-item'>
           <Button
             type='primary'

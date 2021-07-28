@@ -1,3 +1,10 @@
+/*
+ * @Author: iChengbo
+ * @Date: 2021-07-21 10:36:30
+ * @LastEditors: iChengbo
+ * @LastEditTime: 2021-07-29 14:19:08
+ * @FilePath: /taro-react-native/src/pages/apis/pages/surface/interactive/index.tsx
+ */
 import { Component } from 'react'
 import Taro from '@tarojs/taro'
 import { View, Button } from '@tarojs/components'
@@ -7,7 +14,7 @@ export default class Index extends Component {
 
   render() {
     return (
-      <View className='view-content'>
+      <View className='api-page'>
         <View className='view-item'>
           <Button
             className='btn'

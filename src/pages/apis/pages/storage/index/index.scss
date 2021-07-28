@@ -1,0 +1,21 @@
+
+.api-page-inputs {
+    margin-bottom: 40px;
+}
+.input-wrap {
+    flex-direction: row;
+    align-items: center;
+    &-input {
+        height: 64px;
+        flex: 1;
+    }
+}
+.api-page-content {
+    margin-top: 40px;
+}
+
+.common-border {
+    padding: 24px;
+    border: 10px solid rgb(207, 207, 207);
+    background-color: #ffffff;
+}

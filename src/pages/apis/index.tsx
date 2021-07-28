@@ -2,7 +2,7 @@
  * @Author: iChengbo
  * @Date: 2021-07-19 15:54:35
  * @LastEditors: iChengbo
- * @LastEditTime: 2021-07-21 10:32:51
+ * @LastEditTime: 2021-08-04 17:37:36
  * @FilePath: /taro-react-native/src/pages/apis/index.tsx
  */
 import Taro from "@tarojs/taro";
@@ -10,23 +10,24 @@ import { Component } from 'react'
 import { View, Text, Image } from '@tarojs/components'
 import logo from "../asset/component/logo.png";
 import surfacePng from "../asset/component/view.png";
-import contentPng from "../asset/component/content.png";
-import formPng from "../asset/component/form.png";
-import navPng from "../asset/component/nav.png";
+import basicPng from "../asset/component/content.png";
+import storagePng from "../asset/component/form.png";
+import networkPng from "../asset/component/nav.png";
 import mediaPng from "../asset/component/media.png";
-import mapPng from "../asset/component/map.png";
+import locationPng from "../asset/component/map.png";
 import canvasPng from "../asset/component/canvas.png";
 
 import "./index.scss";
 
 const PNGS = {
   surfacePng,
-  contentPng,
-  formPng,
-  navPng,
+  basicPng,
+  storagePng,
+  networkPng,
   mediaPng,
-  mapPng,
-  canvasPng
+  locationPng,
+  canvasPng,
+  devicePng: canvasPng
 };
 export default class Index extends Component<never, any> {
   constructor(props: never) {
@@ -70,33 +71,103 @@ export default class Index extends Component<never, any> {
             }, {
               id: "background",
               name: "背景"
+            }, {
+              id: "refresh",
+              name: "下拉刷新",
+            }, {
+              id: "scroll",
+              name: "滚动",
+            }, {
+              id: "window",
+              name: "窗口"
+            }, {
+              id: "keyboard",
+              name: "键盘"
             }
           ]
         },
         {
-          id: "",
+          id: "network",
           name: "网络",
           open: false,
-          pages: []
+          pages: [
+            {
+              id: "request",
+              name: "发起请求"
+            }
+          ]
         },
         {
-          id: "",
+          id: "storage",
           name: "数据缓存",
           open: false,
-          pages: []
+          pages: [
+            {
+              id: "index",
+              name: "Storage"
+            }
+          ]
         },
         {
           id: "media",
           name: "媒体",
           open: false,
-          pages: []
+          pages: [
+            {
+              id: "image",
+              name: "图片"
+            }, {
+              id: "video",
+              name: "视频"
+            }, {
+              id: "camera",
+              name: "相机",
+            }
+          ]
         },
         {
-          id: "map",
+          id: "location",
           name: "位置",
           open: false,
-          pages: []
+          pages: [
+            {
+              id: "index",
+              name: "Location"
+            }
+          ]
         },
+        {
+          id: "device",
+          name: "设备",
+          open: false,
+          pages: [
+            {
+              id: "network",
+              name: "网络"
+            }, {
+              id: "screen",
+              name: "屏幕",
+            }, {
+              id: "phone",
+              name: "电话",
+            }, {
+              id: "accelerometer",
+              name: "加速计",
+            }, {
+              id: "deviceMotion",
+              name: "设备方向",
+            }, {
+              id: "gyroscope",
+              name: "陀螺仪",
+            }, {
+              id: "scanCode",
+              name: "扫码",
+            }, {
+              id: "vibrate",
+              name: "震动",
+            }
+          ]
+        }
       ]
     }
   }
@@ -116,7 +187,6 @@ export default class Index extends Component<never, any> {
   };
 
   goToComponent = (page: { url: string }) => {
-    console.log(99, page)
     Taro.navigateTo({
       url: page.url
     });

@@ -61,7 +61,7 @@ export default class PageRadio extends React.Component {
         <View className="components-page__body">
           <View className="components-page__body-example example">
             <View className="example-header">默认样式</View>
-            <View className="example-body" style={{ flexDirection: 'row' }}>
+            <View className="example-body" style={{ flexDirection: 'row', backgroundColor: '#fff', padding: 10 }}>
               <Radio value="选中" checked>
                 选中
               </Radio>

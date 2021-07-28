@@ -1,0 +1,26 @@
+@import '../../../../../styles/variables.scss';
+
+.common-border {
+    padding: 24px;
+    border: 10px solid rgb(207, 207, 207);
+    background-color: #ffffff;
+}
+.control {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    &-btn {
+        height: 80px;
+        width: 80px;
+        background-color: $color-success;
+        justify-content: center;
+        align-items: center;
+        &-txt {
+            font-size: 60px;
+            color: #ffffff;
+        }
+    }
+    &-value {
+        font-size: 36px;
+    }
+}

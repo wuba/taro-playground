@@ -1,5 +1,6 @@
+@import '../../../../../styles/variables.scss';
+
 .btn {
-    margin-top: 40px;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-bottom: 40px;
+    background-color: $color-success;
 }

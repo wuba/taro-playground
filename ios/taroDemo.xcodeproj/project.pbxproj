@@ -12,6 +12,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		279FD249E48EB6A611FA9632 /* libPods-taroDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D080531B78B77308EB3DA755 /* libPods-taroDemo.a */; };
 		5D0F7CD526AABADB007E163E /* RNDevManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0F7CD426AABADB007E163E /* RNDevManager.m */; };
+		690830B226B153A1008653C7 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 690830B126B153A1008653C7 /* main.jsbundle */; };
 		6933825B269D57C400D7AE77 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 6933825A269D57C400D7AE77 /* assets */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -29,6 +30,7 @@
 		5D0F7CD326AABADB007E163E /* RNDevManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNDevManager.h; sourceTree = "<group>"; };
 		5D0F7CD426AABADB007E163E /* RNDevManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNDevManager.m; sourceTree = "<group>"; };
 		618E49A71BB7628ECF5C445C /* Pods-taroDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-taroDemo.debug.xcconfig"; path = "Target Support Files/Pods-taroDemo/Pods-taroDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		690830B126B153A1008653C7 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		6933825A269D57C400D7AE77 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = taroDemo/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D080531B78B77308EB3DA755 /* libPods-taroDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-taroDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +75,7 @@
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
+				690830B126B153A1008653C7 /* main.jsbundle */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				5D0F7CD326AABADB007E163E /* RNDevManager.h */,
 				5D0F7CD426AABADB007E163E /* RNDevManager.m */,
@@ -191,6 +194,7 @@
 				6933825B269D57C400D7AE77 /* assets in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				690830B226B153A1008653C7 /* main.jsbundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,7 +203,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
@@ -207,7 +211,7 @@
 			name = "Bundle React Native code and images";
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\nexport SKIP_BUNDLING=1\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
@@ -252,7 +256,7 @@
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -264,7 +268,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
 			showEnvVarsInLog = 0;
@@ -295,7 +299,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 3.2.6.6;
-				DEVELOPMENT_TEAM = RNPBCAGY6B;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = taroDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -308,9 +312,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.playground.taro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taro.demo;
 				PRODUCT_NAME = taroDemo;
-				PROVISIONING_PROFILE_SPECIFIER = tarPlaygroud_DEV_Profile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";

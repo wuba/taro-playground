@@ -98,3 +98,16 @@ jobs:
           path: |
             ${{ github.workspace }}/ios/taroDemo.ipa
             ${{ github.workspace }}/ios/taroDemo.app.dSYM.zip
+      - name: Rename release assets
+        run: |
+          mv ios/taroDemo.ipa ios/app-${{ env.BUILD_TYPE }}.ipa
+          mv ios/taroDemo.app.dSYM.zip ios/app-${{ env.BUILD_TYPE }}.app.dSYM.zip
+      - name: Upload release assets
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: |
+            ios/app-${{ env.BUILD_TYPE }}.ipa
+            ios/app-${{ env.BUILD_TYPE }}.app.dSYM.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

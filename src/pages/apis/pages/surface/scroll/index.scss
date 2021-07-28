@@ -1,0 +1,29 @@
+@import '../../../../../styles/variables.scss';
+
+.view-list {
+    &-item {
+        justify-content: center;
+        align-items: center;
+        height: 800px;
+        &-text {
+            color: #fff;
+            font-size: $font-size-base;
+        }
+        &-btn {
+            margin-top: 30px;
+        }
+    }
+}
+
+.item1 {
+    background-color: $color-info;
+}
+.item2 {
+    background-color: $color-success;
+}
+.item3 {
+    background-color: $color-error;
+}
+.item4 {
+    background-color: $color-warning;
+}

@@ -2,8 +2,8 @@
  * @Author: iChengbo
  * @Date: 2021-07-20 16:37:49
  * @LastEditors: iChengbo
- * @LastEditTime: 2021-07-21 10:25:19
- * @FilePath: /taro-react-native/src/pages/apis/pages/system/index.tsx
+ * @LastEditTime: 2021-07-29 14:17:34
+ * @FilePath: /taro-react-native/src/pages/apis/pages/basic/system/index.tsx
  */
 import { Component } from 'react'
 import Taro from '@tarojs/taro'
@@ -23,9 +23,9 @@ export default class Index extends Component<any, any> {
     const { info } = this.state;
 
     return (
-      <View>
+      <View className='api-page'>
         <Button
-          className='btn'
+          className='api-page-btn'
           type='primary'
           onClick={() => {
             Taro.getSystemInfo({
@@ -40,7 +40,7 @@ export default class Index extends Component<any, any> {
           getSystemInfo
         </Button>
         <Button
-          className='btn'
+          className='api-page-btn'
           type='primary'
           onClick={() => {
             const res = Taro.getSystemInfoSync()
@@ -53,7 +53,7 @@ export default class Index extends Component<any, any> {
           getSystemInfoSync
         </Button>
         <Button
-          className='btn'
+          className='api-page-btn'
           type='primary'
           onClick={() => {
             this.setState({

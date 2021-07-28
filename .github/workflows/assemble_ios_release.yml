@@ -117,3 +117,16 @@ jobs:
         run: |
           cd ios
           xcrun altool --upload-app -t ios -f "taroDemo.ipa" -u "$APP_STORE_CONNECT_USERNAME" -p "$APP_STORE_CONNECT_PASSWORD"
+      - name: Rename release assets
+        run: |
+          mv ios/taroDemo.ipa ios/app-${{ env.BUILD_TYPE }}.ipa
+          mv ios/taroDemo.app.dSYM.zip ios/app-${{ env.BUILD_TYPE }}.app.dSYM.zip
+      - name: Upload release assets
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: |
+            ios/app-${{ env.BUILD_TYPE }}.ipa
+            ios/app-${{ env.BUILD_TYPE }}.app.dSYM.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

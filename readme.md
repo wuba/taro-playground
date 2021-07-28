@@ -142,3 +142,9 @@ For the security of your app, please regenerate the .keystore file and store the
 
 1. [app signing](https://developer.android.com/studio/publish/app-signing)
 2. [encrypted-secrets](https://docs.github.com/en/actions/reference/encrypted-secrets)
+
+## attention
+
+## license
+
+Taro Playground is available under the Apache License V2.
