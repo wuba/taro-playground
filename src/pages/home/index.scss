@@ -1,8 +1,9 @@
 @import '../../styles/variables.scss';
 
 .index {
-    padding-top: 300px;
     flex: 1;
+    padding-top: 120px;
+    padding-bottom: 200px;
 }
 
 .header {
@@ -32,5 +33,57 @@
         font-size: $font-size-base;
         color: $color-text-paragraph;
         line-height: 40px;
+    }
+}
+
+.load {
+    padding: 32px;
+    &-header {
+        flex-direction: row;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        background-color: #ffffff;
+        &-input {
+            flex: 1;
+            margin-right: 50px;
+            font-size: $font-size-xl;
+        }
+        &-icon {
+            height: 40px;
+            width: 40px;
+            /*  #ifdef rn */
+            tint-color: $color-brand;
+            /*  #endif  */
+        }
+    }
+    &-btn {
+        margin: 40px 0;
+        background-color: $color-brand;
+    }
+}
+
+
+.bundle {
+    background-color: #ffffff;
+    &-control {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 32px;
+    }
+    
+    &-item {
+        padding: 28px 32px;
+        background-color: #ffffff;
+        border-bottom
+        &-text {
+            font-size: 28px;
+            color: $color-text-paragraph;
+        }
+        &-sep {
+            height: 1px;
+            width: 100%;
+            background-color: $color-grey-4;
+        }
     }
 }

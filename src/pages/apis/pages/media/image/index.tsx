@@ -2,7 +2,7 @@
  * @Author: iChengbo
  * @Date: 2021-07-29 16:44:12
  * @LastEditors: iChengbo
- * @LastEditTime: 2021-07-29 17:57:22
+ * @LastEditTime: 2021-08-12 18:22:31
  * @FilePath: /taro-react-native/src/pages/apis/pages/media/image/index.tsx
  */
 import { useState } from 'react';
@@ -104,6 +104,26 @@ const PageView = () => {
           })
         }}
       >Taro.chooseImage</Button>
+      <Button
+        type="primary"
+        className="api-page-btn-success"
+        onClick={() => {
+          Taro.downloadFile({
+            url: 'https://pic1.58cdn.com.cn/nowater/fangfe/n_v2beae27152fcd4d118b60d5284e29d9c9.png',
+            success: res => {
+              console.log(res);
+              if (res.statusCode == 200) {
+                Taro.showToast({ title: '下载完成（临时文件）', icon: 'none' });
+                setSource(res.tempFilePath);
+              }
+            },
+            fail: err => {
+              console.log('下载失败：', err);
+              Taro.showToast({ title: '下载失败', icon: 'none' });
+            }
+          });
+        }}
+      >Taro.downloadFile</Button>
     </View>
   )
 }
