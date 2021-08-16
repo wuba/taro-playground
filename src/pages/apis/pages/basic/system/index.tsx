@@ -8,6 +8,7 @@
 import { Component } from 'react'
 import Taro from '@tarojs/taro'
 import { View, Button } from '@tarojs/components'
+import JSONTree from '../../../../components/jsontree'
 import './index.scss'
 
 export default class Index extends Component<any, any> {
@@ -63,14 +64,7 @@ export default class Index extends Component<any, any> {
         >
           clear
         </Button>
-        <View style={{padding: 20}}>
-          {Object.keys(info).map(key => {
-            const value = info[key];
-            return (
-              <View key={key}>{`${key}: ${value}`}</View>
-            )
-          })}
-        </View>
+        <JSONTree data={info} />
       </View>
     )
   }

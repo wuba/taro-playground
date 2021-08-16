@@ -66,6 +66,7 @@ export default {
     'pages/apis/pages/device/vibrate/index',
     // api 相关 end
     'pages/about/index',
+    'pages/about/dep',
     'pages/webview/index',
   ],
   window: {

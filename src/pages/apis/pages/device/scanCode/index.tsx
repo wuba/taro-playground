@@ -7,14 +7,13 @@
  */
 import { useState } from "react";
 import Taro from "@tarojs/taro-rn";
-import { Button, View, Text } from "@tarojs/components";
+import { Button, View } from "@tarojs/components";
+import JSONTree from '../../../../components/jsontree';
 
 import "./index.scss";
 
 const Index = () => {
   const [info, setInfo] = useState({});
-
-  const infoKeys = Object.keys(info);
 
   return (
     <View className="api-page">
@@ -38,17 +37,7 @@ const Index = () => {
         >
           Taro.scanCode
         </Button>
-        {infoKeys.length > 0 && (
-          <View className='common-border'>
-            {infoKeys.map(key => {
-              return (
-                <View key={key}>
-                  <Text>{key}: {info[key]}</Text>
-                </View>
-              )
-            })}
-          </View>
-        )}
+        <JSONTree data={info} />
       </View>
     </View>
   )

@@ -7,17 +7,23 @@
  */
 import Taro from "@tarojs/taro-rn";
 import { Button, View } from "@tarojs/components";
+import { useState } from "react";
+import JSONTree from '../../../../components/jsontree';
 
 import "./index.scss";
 
 const Index = () => {
+  const [deviceMotion1, setDeviceMotion1] = useState({});
+  const [deviceMotion2, setDeviceMotion2] = useState({});
 
-  const _handleCallback1 = (...res) => {
+  const _handleCallback1 = (res) => {
     console.log("回调函数 C1", res);
+    setDeviceMotion1(res);
   }
 
-  const _handleCallback2 = (...res) => {
+  const _handleCallback2 = (res) => {
     console.log("回调函数 C2", res);
+    setDeviceMotion2(res);
   }
 
   return (
@@ -32,6 +38,7 @@ const Index = () => {
         >
           Taro.onDeviceMotionChange(C1)
         </Button>
+        <JSONTree data={deviceMotion1} />
         <Button
           type="primary"
           className="api-page-btn-success"
@@ -41,6 +48,7 @@ const Index = () => {
         >
           Taro.onDeviceMotionChange(C2)
         </Button>
+        <JSONTree data={deviceMotion2} />
         <Button
           type="primary"
           className="api-page-btn-warning"

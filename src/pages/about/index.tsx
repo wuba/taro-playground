@@ -8,6 +8,8 @@
 import { Component, Fragment } from 'react'
 import Taro from '@tarojs/taro';
 import { View, Image, Text } from '@tarojs/components';
+import { version as taroVersion } from '@tarojs/taro/package.json';
+import { version as rnVersion } from 'react-native/package.json';
 import './index.scss';
 
 export default class Index extends Component<any, any> {
@@ -97,9 +99,14 @@ export default class Index extends Component<any, any> {
             )
           })}
         </View>
-        {/* <View className='page-footer'>
-          <Text className='page-footer-text'>Copyright(c) XXXXXXXXXXXXXXXXXXXXXX</Text>
-        </View> */}
+        <View className='page-footer' onClick={() => {
+          Taro.navigateTo({
+            url: '/pages/about/dep'
+          })
+        }}
+        >
+          <Text className='page-footer-text'>Taro: {taroVersion} React Native: {rnVersion}</Text>
+        </View>
       </View>
     )
   }

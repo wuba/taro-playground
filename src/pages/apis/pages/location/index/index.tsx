@@ -6,18 +6,25 @@
  * @FilePath: /taro-react-native/src/pages/apis/pages/location/index/index.tsx
  */
 import Taro from '@tarojs/taro';
-import { View, Button, Text } from '@tarojs/components';
+import { useState } from "react";
+import { View, Button } from '@tarojs/components';
+import JSONTree from '../../../../components/jsontree';
 
 import './index.scss'
 
 const PageView = () => {
+  const [location, setLocation] = useState({});
+  const [location1, setLocation1] = useState({});
+  const [location2, setLocation2] = useState({});
 
   const _handleCallback1 = (res) => {
     console.log("回调函数 C1", res);
+    setLocation1(res)
   }
 
   const _handleCallback2 = (res) => {
     console.log("回调函数 C2", res);
+    setLocation2(res)
   }
 
   return (
@@ -29,11 +36,12 @@ const PageView = () => {
           onClick={() => {
             Taro.getLocation({
               success: res => {
-                console.log(999, res)
+                setLocation(res)
               }
             })
           }}
         >Taro.getLocation</Button>
+        <JSONTree data={location} />
         <Button
           type="primary"
           className="api-page-btn-success"
@@ -41,6 +49,7 @@ const PageView = () => {
             Taro.onLocationChange(_handleCallback1)
           }}
         >Taro.onLocationChange(C1)</Button>
+        <JSONTree data={location1} />
         <Button
           type="primary"
           className="api-page-btn-success"
@@ -48,6 +57,7 @@ const PageView = () => {
             Taro.onLocationChange(_handleCallback2)
           }}
         >Taro.onLocationChange(C2)</Button>
+        <JSONTree data={location2} />
         <Button
           type="primary"
           className="api-page-btn-warning"
