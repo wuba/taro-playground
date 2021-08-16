@@ -6,24 +6,30 @@
  * @FilePath: /taro-react-native/src/pages/apis/pages/network/request/index.tsx
  */
 import Taro from '@tarojs/taro';
-import { View, Text, Button } from '@tarojs/components';
+import { View, Button } from '@tarojs/components';
+import { useState } from "react";
+import JSONTree from '../../../../components/jsontree';
 
 import './index.scss'
 
 const PageView = () => {
+  const [data, setData] = useState({});
+
   const _onRequest = () => {
     Taro.request({
-      url: '',
+      url: 'https://gitee.com/o2team/Taro/raw/next/package.json',
       data: {},
       header: {
         'content-type': 'application/json',
       },
-      // success: res => {
-      //   console.log(res);
-      // },
-      // fail: err => {
-      //   console.log(err)
-      // }
+      success: res => {
+        console.log(res);
+        setData(res);
+      },
+      fail: err => {
+        console.log(err);
+        setData(err);
+      }
     })
   }
 
@@ -36,6 +42,7 @@ const PageView = () => {
           className="api-page-btns-btn1"
         >Taro.request</Button>
       </View>
+      <JSONTree data={data} />
     </View>
   )
 }

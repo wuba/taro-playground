@@ -1,6 +1,7 @@
 Taro Playground App
 ====
-inited by [taro react native template](https://github.com/nervjs/taro-project-templates/tree/v3.1/react-native).
+
+The Taro Playground App is a cross-platform application developed using Taro, to help developers develop and debug Taro applications. It is initialized using [taro react native template](https://github.com/nervjs/taro-project-templates/tree/v3.1/react-native).
 
 ## requirement
 
@@ -144,6 +145,19 @@ For the security of your app, please regenerate the .keystore file and store the
 2. [encrypted-secrets](https://docs.github.com/en/actions/reference/encrypted-secrets)
 
 ## attention
+
+The source code is customized for the Taro palyground application and is for reference only. If you want to use it directly, please make the following changes.
+
+0. Customize your app id, app name, app launcher, etc.
+1. Remove the attention block in ios/Podfile.
+
+## Contributing
+
+We sincerely hope that developers can provide valuable comments and suggestions, and developers can provide feedback on suggestions and problems by submitting PR or Issue.
+
+If you have other questions, you can join the communication group for help.
+
+![](https://pic8.58cdn.com.cn/nowater/fangfe/n_v282625210493c4a3fac202d6cf372458e.png)
 
 ## license
 

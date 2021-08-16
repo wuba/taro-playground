@@ -2,12 +2,12 @@
  * @Author: iChengbo
  * @Date: 2021-08-02 15:44:28
  * @LastEditors: iChengbo
- * @LastEditTime: 2021-08-03 11:20:13
+ * @LastEditTime: 2021-08-17 11:33:26
  * @FilePath: /taro-react-native/src/pages/apis/pages/device/deviceMotion/index.tsx
  */
 import Taro from "@tarojs/taro-rn";
 import { Button, View } from "@tarojs/components";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import JSONTree from '../../../../components/jsontree';
 
 import "./index.scss";
@@ -16,15 +16,15 @@ const Index = () => {
   const [deviceMotion1, setDeviceMotion1] = useState({});
   const [deviceMotion2, setDeviceMotion2] = useState({});
 
-  const _handleCallback1 = (res) => {
+  const _handleCallback1 = useCallback((res) => {
     console.log("回调函数 C1", res);
     setDeviceMotion1(res);
-  }
+  }, []);
 
-  const _handleCallback2 = (res) => {
+  const _handleCallback2 = useCallback((res) => {
     console.log("回调函数 C2", res);
     setDeviceMotion2(res);
-  }
+  }, []);
 
   return (
     <View className="api-page">

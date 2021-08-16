@@ -8,7 +8,7 @@
 import { Component, Fragment } from 'react';
 import Taro from '@tarojs/taro';
 import { NativeModules } from 'react-native';
-import { View, Text, Image, Input, Button } from '@tarojs/components'
+import { View, Text, Image } from '@tarojs/components'
 import './index.scss'
 
 const DevManager = NativeModules.RNDevManager;
@@ -18,7 +18,6 @@ export default class Index extends Component<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
-      inputValue: 'localhost:8081',
       list: [],
     };
   }
@@ -88,19 +87,6 @@ export default class Index extends Component<any, any> {
       })
   }
 
-  _onInputChange = e => {
-    const value = e.detail.value;
-    this.setState({
-      inputValue: value
-    });
-  }
-
-  _onPressLoad = e => {
-    const { inputValue } = this.state;
-    this._loadBundleByUrl(inputValue);
-    this._saveUrlToStorage(inputValue);
-  }
-
   _clearBundles = async () => {
     try {
       const res = await Taro.showModal({ title: '确定清空吗？', content: '清空后历史数据将不再保存', confirmColor: '#6190E8' });
@@ -118,7 +104,7 @@ export default class Index extends Component<any, any> {
   }
 
   render() {
-    const { list = [], inputValue } = this.state;
+    const { list = [] } = this.state;
     return (
       <View className='index'>
         <View className='info'>
@@ -130,25 +116,12 @@ export default class Index extends Component<any, any> {
         </View>
         <View className='load'>
           <View className='load-header'>
-            <Input
-              name='input'
-              type='text'
-              placeholder='请输入IP:8081'
-              value={inputValue}
-              onInput={this._onInputChange}
-              className='load-header-input'
-            ></Input>
             <Image
               src={require('../../assets/common/icon_scan.png')}
               className='load-header-icon'
               onClick={this._onPressScan}
             />
           </View>
-          <Button
-            type='primary'
-            className='load-btn'
-            onClick={this._onPressLoad}
-          >加载</Button>
         </View>
         {list.length > 0 && (
           <View className='bundle'>

@@ -1,3 +1,10 @@
+/*
+ * @Author: iChengbo
+ * @Date: 2021-08-25 10:05:40
+ * @LastEditors: iChengbo
+ * @LastEditTime: 2021-08-25 10:58:11
+ * @FilePath: /taro-react-native/src/pages/components/pages/input/input.js
+ */
 import { View, Input, Text, ScrollView } from "@tarojs/components";
 import React from "react";
 
@@ -37,7 +44,6 @@ export default class PageInput extends React.Component {
                 placeholder="最大输入长度为10"
                 maxlength={10}
                 onFocus={(val)=>{console.log('聚焦', val);}}
-                // onInput={(value)=>{console.log(value); return `${value.target.value}@58.com`;}}
                 onBlur={(val)=>{console.log('失焦', val);}}
               />
             </View>

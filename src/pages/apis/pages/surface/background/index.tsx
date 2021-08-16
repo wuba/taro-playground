@@ -2,7 +2,7 @@
  * @Author: iChengbo
  * @Date: 2021-07-20 14:31:22
  * @LastEditors: iChengbo
- * @LastEditTime: 2021-07-29 14:20:47
+ * @LastEditTime: 2021-08-25 11:36:21
  * @FilePath: /taro-react-native/src/pages/apis/pages/surface/background/index.tsx
  */
 import { Component } from 'react'
@@ -21,29 +21,42 @@ export default class Index extends Component<any, any> {
           type='primary'
           onClick={() => {
             Taro.setBackgroundTextStyle({
-              textStyle: 'dark',
+              textStyle: 'dark', // 下拉时，loading 文本的样式（仅iOS）
             })
               .then(() => {
-                console.log('成功')
+                Taro.startPullDownRefresh();
+                const timer = setTimeout(() => {
+                  Taro.stopPullDownRefresh();
+                  timer && clearTimeout(timer);
+                }, 2000);
               })
               .catch(err => {
-                console.log(err)
+                console.log(err);
+                Taro.showToast({ title: '出错了', icon: 'none' });
               })
           }}
         >
-          setBackgroundTextStyle
+          setBackgroundTextStyle【iOS】
         </Button>
         <Button
           className='btn'
           type='primary'
           onClick={() => {
+            const randomColor = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
             Taro.setBackgroundColor({
-              backgroundColorTop: '#000000', // 顶部窗口的背景色
-              backgroundColorBottom: '#000000', // 底部窗口的背景色
-            })
+              backgroundColor: randomColor, // 下拉时，loading 的样式（仅Android）
+            }).then(() => {
+              Taro.startPullDownRefresh();
+              const timer = setTimeout(() => {
+                Taro.stopPullDownRefresh();
+                timer && clearTimeout(timer);
+              }, 2000);
+            }).catch(() => {
+              Taro.showToast({ title: '出错了', icon: 'none' });
+            });
           }}
         >
-          setBackgroundColor
+          setBackgroundColor【Android】
         </Button>
       </View>
     )

@@ -68,6 +68,14 @@ export default class Index extends Component<any, any> {
         })
       },
     },
+    {
+      name: '隐私政策',
+      onPress: () => {
+        Taro.navigateTo({
+          url: '/pages/webview/index?title=隐私政策&right=下载&link=https://wos2.58cdn.com.cn/DeFazYxWvDti/frsupload/399b791d35f4e9a1d89f3ccef27dfa73_index.html.pdf'
+        })
+      },
+    },
   ];
 
   render() {

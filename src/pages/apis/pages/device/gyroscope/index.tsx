@@ -2,12 +2,12 @@
  * @Author: iChengbo
  * @Date: 2021-08-02 15:44:28
  * @LastEditors: iChengbo
- * @LastEditTime: 2021-08-03 11:05:48
+ * @LastEditTime: 2021-08-17 11:33:57
  * @FilePath: /taro-react-native/src/pages/apis/pages/device/gyroscope/index.tsx
  */
 import Taro from "@tarojs/taro-rn";
 import { Button, View } from "@tarojs/components";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import JSONTree from '../../../../components/jsontree';
 
 import "./index.scss";
@@ -16,15 +16,15 @@ const Index = () => {
   const [gyroscope1, setGyroscope1] = useState({});
   const [gyroscope2, setGyroscope2] = useState({});
 
-  const _handleCallback1 = (res) => {
+  const _handleCallback1 = useCallback((res) => {
     console.log("回调函数 C1", res);
     setGyroscope1(res);
-  }
+  }, []);
 
-  const _handleCallback2 = (res) => {
+  const _handleCallback2 = useCallback((res) => {
     console.log("回调函数 C2", res);
     setGyroscope2(res);
-  }
+  }, []);
 
   return (
     <View className="api-page">

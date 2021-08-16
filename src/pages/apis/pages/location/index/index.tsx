@@ -2,11 +2,11 @@
  * @Author: iChengbo
  * @Date: 2021-08-03 18:55:14
  * @LastEditors: iChengbo
- * @LastEditTime: 2021-08-04 17:14:29
+ * @LastEditTime: 2021-08-17 11:35:32
  * @FilePath: /taro-react-native/src/pages/apis/pages/location/index/index.tsx
  */
 import Taro from '@tarojs/taro';
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { View, Button } from '@tarojs/components';
 import JSONTree from '../../../../components/jsontree';
 
@@ -17,15 +17,15 @@ const PageView = () => {
   const [location1, setLocation1] = useState({});
   const [location2, setLocation2] = useState({});
 
-  const _handleCallback1 = (res) => {
+  const _handleCallback1 = useCallback((res) => {
     console.log("回调函数 C1", res);
     setLocation1(res)
-  }
+  }, []);
 
-  const _handleCallback2 = (res) => {
+  const _handleCallback2 = useCallback((res) => {
     console.log("回调函数 C2", res);
     setLocation2(res)
-  }
+  }, []);
 
   return (
     <View className="api-page">

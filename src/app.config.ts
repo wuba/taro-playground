@@ -95,7 +95,7 @@ export default {
         iconPath: './assets/tabbar/api.png',
         selectedIconPath: './assets/tabbar/api_selected.png',
         pagePath: 'pages/apis/index',
-        text: 'API',
+        text: '接口',
       },
       {
         iconPath: './assets/tabbar/person.png',

@@ -2,10 +2,10 @@
  * @Author: iChengbo
  * @Date: 2021-08-03 17:17:28
  * @LastEditors: iChengbo
- * @LastEditTime: 2021-08-03 17:59:01
+ * @LastEditTime: 2021-08-17 11:35:58
  * @FilePath: /taro-react-native/src/pages/apis/pages/surface/keyboard/index.tsx
  */
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import Taro from '@tarojs/taro';
 import { View, Button, Text, Input } from '@tarojs/components';
 
@@ -14,13 +14,13 @@ import './index.scss'
 const PageView = () => {
   const [value, setValue] = useState('');
 
-  const _handleCallback1 = (res) => {
+  const _handleCallback1 = useCallback((res) => {
     console.log("回调函数 C1", res);
-  }
+  }, []);
 
-  const _handleCallback2 = (res) => {
+  const _handleCallback2 = useCallback((res) => {
     console.log("回调函数 C2", res);
-  }
+  }, []);
 
   return (
     <View className="api-page">

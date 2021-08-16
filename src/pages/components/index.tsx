@@ -122,7 +122,7 @@ export default class Index extends Component<never, any> {
           <Image className='index-logo' src={logo} />
           <View className='index-desc'>
             <Text className='index-desc_text'>
-              以下将展示Taro官方组件能力，组件样式仅供参考，开发者可根据自身需求自定义组件样式。
+              以下将展示 Taro 官方组件能力，组件样式仅供参考，开发者可根据自身需求自定义组件样式。
             </Text>
           </View>
         </View>

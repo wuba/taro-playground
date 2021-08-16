@@ -2,23 +2,29 @@
  * @Author: iChengbo
  * @Date: 2021-08-02 15:44:28
  * @LastEditors: iChengbo
- * @LastEditTime: 2021-08-03 15:40:10
+ * @LastEditTime: 2021-08-17 11:34:23
  * @FilePath: /taro-react-native/src/pages/apis/pages/device/network/index.tsx
  */
 import Taro from "@tarojs/taro-rn";
 import { Button, View } from "@tarojs/components";
+import { useCallback, useState } from "react";
+import JSONTree from '../../../../components/jsontree';
 
 import "./index.scss";
 
 const Index = () => {
+  const [networkStatus1, setNetworkStatus1] = useState({});
+  const [networkStatus2, setNetworkStatus2] = useState({});
 
-  const _handleCallback1 = (...res) => {
+  const _handleCallback1 = useCallback((res) => {
     console.log("回调函数 C1", res);
-  }
+    setNetworkStatus1(res);
+  }, []);
 
-  const _handleCallback2 = (...res) => {
+  const _handleCallback2 = useCallback((res) => {
     console.log("回调函数 C2", res);
-  }
+    setNetworkStatus2(res)
+  }, []);
 
   return (
     <View className="api-page">
@@ -32,6 +38,7 @@ const Index = () => {
         >
           Taro.onNetworkStatusChange(C1)
         </Button>
+        <JSONTree data={networkStatus1} />
         <Button
           type="primary"
           className="api-page-btn-success"
@@ -41,6 +48,7 @@ const Index = () => {
         >
           Taro.onNetworkStatusChange(C2)
         </Button>
+        <JSONTree data={networkStatus2} />
         <Button
           type="primary"
           className="api-page-btn-warning"

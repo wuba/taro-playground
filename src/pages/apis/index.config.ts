@@ -1,3 +1,3 @@
 export default {
-  navigationBarTitleText: 'API 库'
+  navigationBarTitleText: '接口'
 }
