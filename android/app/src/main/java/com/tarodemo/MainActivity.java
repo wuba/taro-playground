@@ -1,6 +1,8 @@
 package com.tarodemo;
 import android.os.Bundle; // here
 import com.facebook.react.ReactActivity;
+import com.tarodemo.devmanager.TaroDevManager;
+
 import org.devio.rn.splashscreen.SplashScreen; // here
 
 public class MainActivity extends ReactActivity {
@@ -9,6 +11,13 @@ public class MainActivity extends ReactActivity {
   protected void onCreate(Bundle savedInstanceState) {
     SplashScreen.show(this);
     super.onCreate(savedInstanceState);
+  }
+
+  @Override
+  public void finish() {
+    // clear ReactNativeHost on Activity finish
+    TaroDevManager.clearReactNativeHost();
+    super.finish();
   }
 
   /**

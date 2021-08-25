@@ -1,4 +1,5 @@
 apply plugin: "com.android.application"
+apply plugin: "kotlin-android"
 apply from: '../../node_modules/react-native-unimodules/gradle.groovy'
 
 import com.android.build.OutputFile
@@ -140,6 +141,10 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
     defaultConfig {
         applicationId app_id
         minSdkVersion rootProject.ext.minSdkVersion
@@ -182,7 +187,7 @@ android {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
             manifestPlaceholders = [
-                    usesCleartextTraffic: "false",
+                    usesCleartextTraffic: "true",
                     appIcon             : "@mipmap/${app_icon.isEmpty() ? 'ic_launcher' : app_icon}",
                     appRoundIcon        : "@mipmap/${app_round_icon.isEmpty() ? 'ic_launcher_round' : app_round_icon}"
             ]
