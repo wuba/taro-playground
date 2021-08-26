@@ -18,7 +18,7 @@ export default class Index extends Component<any, any> {
       name: '项目源码',
       onPress: () => {
         Taro.navigateTo({
-          url: '/pages/webview/index?title=项目源码&link=https://github.com/wuba/taro-react-native/tree/playground'
+          url: '/pages/webview/index?title=项目源码&link=https://github.com/wuba/taro-playground'
         })
       },
     },
@@ -26,16 +26,10 @@ export default class Index extends Component<any, any> {
       name: 'Taro 官方网站',
       onPress: () => {
         Taro.navigateTo({
-          url: '/pages/webview/index?title=Taro 官方网站',
+          url: '/pages/webview/index?title=Taro 官方网站&link=https://docs.taro.zone/docs/README',
         })
       }
     },
-    // {
-    //   name: 'Apache 软件基金会',
-    //   onPress: () => {
-    //     Taro.showToast({ title: '敬请期待', icon: 'none' });
-    //   }
-    // },
     {
       name: '官方交流群',
       onPress: () => {

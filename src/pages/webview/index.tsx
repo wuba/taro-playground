@@ -46,7 +46,7 @@ export default class Index extends Component<any, any> {
     }
 
     render() {
-        const link = this?.props?.route.params?.link || 'https://docs.taro.zone/docs/README';
+        const link = this?.props?.route.params?.link;
         if (!link) {
             return null
         }
