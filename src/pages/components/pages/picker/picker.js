@@ -2,9 +2,8 @@ import Taro from "@tarojs/taro";
 import React from "react";
 import { View, Text, Picker } from "@tarojs/components";
 
-import "./picker.scss";
-
 import Header from "@/components/head/head";
+import "./picker.scss";
 
 export default class PagePicker extends React.Component {
   state = {
@@ -26,9 +25,6 @@ export default class PagePicker extends React.Component {
   };
 
   handleMulitChange = e => {
-    const values = e.detail.value.map((item, index) => {
-      return this.state.multiSelector[index][item];
-    });
     this.setState({
       mulitSelectorValues: e.detail.value
     });

@@ -27,7 +27,7 @@ export default class PageLabel extends React.Component {
     checked: false
   }
 
-  handleChange = e => {
+  handleChange = () => {
     const { checked } = this.state
     this.setState({
       checked: !checked

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { View, MovableView, MovableArea, Switch, Button } from "@tarojs/components";
+import Header from "@/components/head/head";
 
 import "./movable-view.scss";
-import Header from "@/components/head/head";
 
 const PageView = () => {
   const [config, setConfig] = useState({

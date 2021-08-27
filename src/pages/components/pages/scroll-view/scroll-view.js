@@ -1,16 +1,14 @@
 import React from "react";
 import Taro from '@tarojs/taro-rn';
 import { View, ScrollView, Text } from "@tarojs/components";
-
+import Header from "@/components/head/head";
 import "./scroll-view.scss";
 
-import Header from "@/components/head/head";
-
 export default class PageView extends React.Component {
-  initNum = 3;
   state = {
     list: [1,2,3]
   }
+  initNum = 3;
   render() {
     return (
       <ScrollView className='components-page'>

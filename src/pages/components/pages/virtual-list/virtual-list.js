@@ -1,8 +1,8 @@
 import React from "react";
-import { View, Text, VirtualList, Button } from "@tarojs/components";
+import { View, VirtualList } from "@tarojs/components";
 
-import "./virtual-list.scss";
 import Header from "@/components/head/head";
+import "./virtual-list.scss";
 
 function buildData(offset = 0) {
   return Array(100)
@@ -23,14 +23,6 @@ export default class PageView extends React.Component {
   state = {
     data: buildData(0)
   };
-
-  $ref = React.createRef();
-  timer
-
-  onScroll = (data) => {
-    console.log(data);
-  }
-
   componentDidMount() {
     console.log(this.$ref);
 
@@ -41,8 +33,11 @@ export default class PageView extends React.Component {
   componentWillUnmount() {
     this.timer && clearTimeout(this.timer);
   }
-
-
+  timer
+  $ref = React.createRef();
+  onScroll = (data) => {
+    console.log(data);
+  }
   onScrollNative = (e) => {
     console.log(e);
   }

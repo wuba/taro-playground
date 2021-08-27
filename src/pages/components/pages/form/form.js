@@ -16,9 +16,8 @@ import {
   Switch,
   ScrollView
 } from "@tarojs/components";
-import "./form.scss";
-
 import Header from "@/components/head/head";
+import "./form.scss";
 
 export default class PageForm extends React.Component {
   state = {

@@ -22,7 +22,8 @@ export default class PageView extends React.Component {
                 muted
                 initialTime='30'
                 className='example-body__audio'
-                id='audio' ></Audio>
+                id='audio'
+              ></Audio>
             </View>
           </View>
         </View>

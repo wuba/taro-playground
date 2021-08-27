@@ -30,7 +30,7 @@ const PageView = () => {
         onClick={() => {
           Taro.saveImageToPhotosAlbum({
             filePath: source,
-            success: res => {
+            success: () => {
               Taro.showToast({ title: '保存成功' })
             },
             fail: err => {

@@ -1,9 +1,9 @@
 import React from "react";
 import Taro from "@tarojs/taro-rn";
 import { Camera, Button, View, Image, Video } from "@tarojs/components";
+import Header from "@/components/head/head";
 
 import "./camera.scss";
-import Header from "@/components/head/head";
 
 export default class PageView extends React.Component {
   constructor(props) {

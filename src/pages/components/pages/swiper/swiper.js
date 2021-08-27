@@ -7,11 +7,9 @@ import {
   SwiperItem,
   Switch,
   Slider,
-  ScrollView
 } from "@tarojs/components";
-
-import "./swiper.scss";
 import Header from "@/components/head/head";
+import "./swiper.scss";
 
 export default class PageView extends React.Component {
   constructor() {

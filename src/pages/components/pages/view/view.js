@@ -7,10 +7,8 @@
  */
 import React from "react";
 import { View, Text, ScrollView } from "@tarojs/components";
-
-import "./view.scss";
-
 import Header from "@/components/head/head";
+import "./view.scss";
 
 export default class PageView extends React.Component {
   render() {

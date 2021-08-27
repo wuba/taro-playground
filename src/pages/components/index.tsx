@@ -1,5 +1,5 @@
 import Taro from "@tarojs/taro-rn";
-import React, { Component } from "react";
+import { Component } from "react";
 import { View, Image, Text, ScrollView } from "@tarojs/components";
 import logo from "../asset/component/logo.png";
 import viewPng from "../asset/component/view.png";

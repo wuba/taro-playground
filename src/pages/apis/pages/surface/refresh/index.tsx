@@ -19,8 +19,6 @@ export default class PageView extends Component<any, any> {
       list: [1, 2, 3, 4, 5],
     }
   }
-  timer;
-
   componentDidMount() {
     console.log('componentDidMount')
   }
@@ -29,6 +27,7 @@ export default class PageView extends Component<any, any> {
     this.setState = () => { }
     clearTimeout?.(this.timer)
   }
+  timer;
 
   // NOTE：startPullDownRefresh 并不会触发该生命周期，手势下拉时方可触发
   onPullDownRefresh() {

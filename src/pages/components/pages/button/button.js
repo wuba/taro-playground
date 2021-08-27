@@ -1,9 +1,9 @@
 import React from "react";
 import { View, Button, ScrollView } from "@tarojs/components";
 
-import "./button.scss";
-
 import Header from "@/components/head/head";
+
+import "./button.scss";
 
 export default class PageButton extends React.Component {
   state = {

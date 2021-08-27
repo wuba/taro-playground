@@ -7,9 +7,8 @@
  */
 import React from "react";
 import { View, Text, Switch } from "@tarojs/components";
-import "./switch.scss";
-
 import Header from "@/components/head/head";
+import "./switch.scss";
 
 export default class PageSwitch extends React.Component {
   state = {

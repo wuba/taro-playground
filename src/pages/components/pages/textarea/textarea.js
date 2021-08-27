@@ -1,9 +1,7 @@
-import "./textarea.scss";
-
 import React from "react";
 import { View, Textarea, Button } from "@tarojs/components";
-
 import Header from "@/components/head/head";
+import "./textarea.scss";
 
 export default class PageTextarea extends React.Component {
   state = {
