@@ -7,12 +7,12 @@
  */
 import React from 'react'
 import { View, Text, Image } from '@tarojs/components'
+import Header from '@/components/head/head'
 
 import './image.scss'
 
 import nervLogo from './nerv_logo.png'
 
-import Header from '../../components/head/head'
 
 export default class PageView extends React.Component {
   render() {

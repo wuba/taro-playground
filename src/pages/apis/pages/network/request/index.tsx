@@ -8,7 +8,7 @@
 import Taro from '@tarojs/taro';
 import { View, Button } from '@tarojs/components';
 import { useState } from "react";
-import JSONTree from '../../../../components/jsontree';
+import JSONTree from '@/components/jsontree';
 
 import './index.scss'
 

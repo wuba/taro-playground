@@ -18,7 +18,7 @@ import {
   RadioGroup
 } from '@tarojs/components'
 
-import Header from '../../components/head/head'
+import Header from '@/components/head/head'
 
 import './label.scss'
 

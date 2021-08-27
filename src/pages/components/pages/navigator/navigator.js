@@ -10,8 +10,9 @@ import React from 'react'
 
 import { View, Navigator, Text } from '@tarojs/components'
 
+import Header from '@/components/head/head'
+
 import './navigator.scss'
-import Header from '../../head/head'
 
 export default class PageSwitch extends React.Component {
   state = {}

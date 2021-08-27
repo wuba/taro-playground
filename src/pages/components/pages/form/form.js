@@ -18,7 +18,7 @@ import {
 } from "@tarojs/components";
 import "./form.scss";
 
-import Header from "../../components/head/head";
+import Header from "@/components/head/head";
 
 export default class PageForm extends React.Component {
   state = {

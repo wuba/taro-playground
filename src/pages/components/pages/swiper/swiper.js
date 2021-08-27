@@ -11,7 +11,7 @@ import {
 } from "@tarojs/components";
 
 import "./swiper.scss";
-import Header from "../../components/head/head";
+import Header from "@/components/head/head";
 
 export default class PageView extends React.Component {
   constructor() {

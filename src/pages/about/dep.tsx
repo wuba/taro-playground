@@ -1,8 +1,8 @@
 import { Component } from 'react'
 import { View } from '@tarojs/components';
+import Header from '@/components/head/head'
+import JSONTree from '@/components/jsontree'
 import { dependencies, devDependencies } from '../../../package.json';
-import Header from '../components/head/head'
-import JSONTree from '../components/jsontree'
 
 import './dep.scss';
 

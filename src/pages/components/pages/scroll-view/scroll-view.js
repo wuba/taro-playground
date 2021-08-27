@@ -4,7 +4,7 @@ import { View, ScrollView, Text } from "@tarojs/components";
 
 import "./scroll-view.scss";
 
-import Header from "../../components/head/head";
+import Header from "@/components/head/head";
 
 export default class PageView extends React.Component {
   initNum = 3;

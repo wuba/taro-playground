@@ -2,7 +2,7 @@ import React from "react";
 import { View, Radio, Label, RadioGroup } from "@tarojs/components";
 import "./radio.scss";
 
-import Header from "../../components/head/head";
+import Header from "@/components/head/head";
 
 export default class PageRadio extends React.Component {
   state = {

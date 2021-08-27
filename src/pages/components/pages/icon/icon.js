@@ -3,7 +3,7 @@ import { View, Icon, Text, ScrollView } from "@tarojs/components";
 
 import './icon.scss';
 
-import Header from "../../components/head/head";
+import Header from "@/components/head/head";
 
 export default class PageView extends React.Component {
   render() {

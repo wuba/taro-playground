@@ -1,8 +1,7 @@
 import React from 'react'
 import { View, Text } from '@tarojs/components'
+import Header from '@/components/head/head'
 import './text.scss'
-
-import Header from '../../components/head/head'
 
 export default class PageView extends React.Component {
 

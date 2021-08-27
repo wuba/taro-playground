@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, VirtualList, Button } from "@tarojs/components";
 
 import "./virtual-list.scss";
-import Header from "../../components/head/head";
+import Header from "@/components/head/head";
 
 function buildData(offset = 0) {
   return Array(100)

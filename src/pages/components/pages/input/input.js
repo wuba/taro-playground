@@ -8,7 +8,7 @@
 import { View, Input, Text, ScrollView } from "@tarojs/components";
 import React from "react";
 
-import Header from "../../components/head/head";
+import Header from "@/components/head/head";
 
 import "./input.scss";
 

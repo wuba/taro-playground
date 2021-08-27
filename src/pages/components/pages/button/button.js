@@ -3,7 +3,7 @@ import { View, Button, ScrollView } from "@tarojs/components";
 
 import "./button.scss";
 
-import Header from "../../components/head/head";
+import Header from "@/components/head/head";
 
 export default class PageButton extends React.Component {
   state = {

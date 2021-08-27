@@ -1,8 +1,7 @@
 import React from 'react'
 import { View, BaseEventOrig, Checkbox, Label, CheckboxGroup } from '@tarojs/components'
-
+import Header from '@/components/head/head'
 import './checkbox.scss'
-import Header from '../../head/head'
 
 export default class PageCheckbox extends React.Component {
   state = {

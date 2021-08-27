@@ -1,3 +1,5 @@
+const path = require('path')
+
 const config = {
   projectName: 'taro-demo',
   date: '2021-7-16',
@@ -74,6 +76,9 @@ const config = {
       androidSourcemapOutput: './android/app/src/main/assets/index.android.map',
       // androidSourcemapSourcesRoot: '',
     },
+  },
+  alias: {
+    '@/components': path.resolve(__dirname, '..', 'src/pages/components'),
   }
 }
 
