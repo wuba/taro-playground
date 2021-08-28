@@ -8,12 +8,12 @@
 import { useState } from 'react';
 import Taro from '@tarojs/taro';
 import { View, Image, Button } from '@tarojs/components';
-
+import { hadlePermissionsDeny } from '@/utils/index'
 import './index.scss';
 
 const PageView = () => {
 
-  const initSource: string = 'https://camo.githubusercontent.com/3e1b76e514b895760055987f164ce6c95935a3aa/687474703a2f2f73746f726167652e333630627579696d672e636f6d2f6d74642f686f6d652f6c6f676f2d3278313531333833373932363730372e706e67';
+  const initSource: string = 'https://pic1.58cdn.com.cn/nowater/fangfe/n_v2ad8b65de09ae4d968ff0a22b87caaad5.png';
   const initPaths: string[] = [];
 
   const [source, setSource] = useState(initSource);
@@ -27,17 +27,27 @@ const PageView = () => {
       <Button
         type="primary"
         className="api-page-btn-success"
-        onClick={() => {
-          Taro.saveImageToPhotosAlbum({
-            filePath: source,
-            success: () => {
+        onClick={async () => {
+          const res = await Taro.getSetting({})
+          if (!res.authSetting['scope.writePhotosAlbum']) {
+            Taro.authorize({
+              scope: 'scope.writePhotosAlbum',
+              fail: (err) => {
+                if (err.errMsg === 'authorize:denied/undetermined' || err.errMsg === 'authorize:fail') {
+                  hadlePermissionsDeny({ perssionText: '照片' })
+                }
+              }
+            })
+          } else {
+            Taro.saveImageToPhotosAlbum({
+              filePath: source,
+            }).then(() => {
               Taro.showToast({ title: '保存成功' })
-            },
-            fail: err => {
+            }).catch(err => {
               console.log('失败：', err);
               Taro.showToast({ title: '保存失败', icon: 'none' })
-            }
-          });
+            });
+          }
         }}
       >Taro.saveImageToPhotosAlbum</Button>
       <Button
@@ -69,7 +79,6 @@ const PageView = () => {
         type="primary"
         className="api-page-btn-success"
         onClick={() => {
-          console.log(123, tempFilePaths)
           if (tempFilePaths.length === 0) {
             Taro.showToast({ title: '请先点击 chooseImage 选择图片', icon: 'none' })
           } else {

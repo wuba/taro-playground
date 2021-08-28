@@ -64,6 +64,7 @@ export default {
     'pages/apis/pages/device/gyroscope/index',
     'pages/apis/pages/device/scanCode/index',
     'pages/apis/pages/device/vibrate/index',
+    'pages/apis/pages/open-api/settings/index',
     // api 相关 end
     'pages/about/index',
     'pages/about/dep',

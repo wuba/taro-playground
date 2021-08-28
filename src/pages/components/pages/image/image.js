@@ -11,7 +11,7 @@ import Header from '@/components/head/head'
 
 import './image.scss'
 
-import nervLogo from './nerv_logo.png'
+import nervLogo from './tarologo.png'
 
 
 export default class PageView extends React.Component {

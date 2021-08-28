@@ -47,19 +47,19 @@
 		</dict>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Allow $(PRODUCT_NAME) to use your camera</string>
+	<string>Taro Playground 使用您的相机，用于展示相机组件的拍照、录像和扫描二维码功能。</string>
 	<key>NSContactsUsageDescription</key>
-	<string>Allow $(PRODUCT_NAME) to access your contacts</string>
+	<string>Taro Playground 使用您的通讯录，用于展示通讯录 API。</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Allow $(PRODUCT_NAME) to use your location</string>
+	<string>Taro Playground 使用您的地理位置信息，用于展示获取位置信息 API。</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Taro Playground 使用您的地理位置信息，用于展示获取位置信息 API。</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Allow $(PRODUCT_NAME) to access your microphone</string>
-	<key>NSMotionUsageDescription</key>
-	<string>Allow $(PRODUCT_NAME) to access your device's accelerometer</string>
+	<string>Taro Playground 使用您的麦克风，用于展示相机组件的录像功能。</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Give $(PRODUCT_NAME) permission to save photos</string>
+	<string>Taro Playground 使用您的照片，用于展示照片相关 API。</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Give $(PRODUCT_NAME) permission to access your photos</string>
+	<string>Taro Playground 使用您的照片，用于展示照片相关 API。</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>

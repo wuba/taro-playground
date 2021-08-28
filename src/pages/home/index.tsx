@@ -8,8 +8,9 @@
 import { Component, Fragment } from 'react';
 import Taro from '@tarojs/taro';
 import { NativeModules } from 'react-native';
-import { View, Text, Image } from '@tarojs/components'
-import './index.scss'
+import { View, Text, Image } from '@tarojs/components';
+import { hadlePermissionsDeny } from '@/utils/index';
+import './index.scss';
 
 const DevManager = NativeModules.RNDevManager;
 
@@ -77,13 +78,28 @@ export default class Index extends Component<any, any> {
           this._loadBundleByUrl(ipAddr);
           this._saveUrlToStorage(ipAddr);
         } else {
-          Taro.openUrl({
-            url
-          });
+          Taro.showModal({
+            title: '扫描结果',
+            content: `${url}`,
+            confirmColor: '#6190E8',
+            confirmText: '前往',
+            success: function (showModalRes) {
+              if (showModalRes.confirm) {
+                Taro.openUrl({
+                  url
+                }).catch(console.log)
+              }
+            }
+          })
         }
       })
       .catch(err => {
         console.log('扫码失败：', err);
+        if (err.errMsg === 'Permissions denied!' || err.errMsg === 'scanCode fail') {
+          // TODO: use errCode
+          const perssionText = err.errMsg === 'Permissions denied!' ? '相机' : '照片';
+          hadlePermissionsDeny({ perssionText });
+        }
       })
   }
 

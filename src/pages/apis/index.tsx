@@ -16,6 +16,7 @@ import networkPng from "../asset/component/nav.png";
 import mediaPng from "../asset/component/media.png";
 import locationPng from "../asset/component/map.png";
 import canvasPng from "../asset/component/canvas.png";
+import openPng from "../asset/component/open.png";
 
 import "./index.scss";
 
@@ -27,7 +28,8 @@ const PNGS = {
   mediaPng,
   locationPng,
   canvasPng,
-  devicePng: canvasPng
+  devicePng: canvasPng,
+  "open-apiPng": openPng,
 };
 export default class Index extends Component<never, any> {
   constructor(props: never) {
@@ -133,6 +135,17 @@ export default class Index extends Component<never, any> {
             {
               id: "index",
               name: "Location"
+            }
+          ]
+        },
+        {
+          id: "open-api",
+          name: "开放接口",
+          open: false,
+          pages: [
+            {
+              id: "settings",
+              name: "设置"
             }
           ]
         },

@@ -6,7 +6,7 @@
  * @FilePath: /taro-react-native/src/pages/apis/pages/device/screen/index.tsx
  */
 import { useEffect, useState } from "react";
-import Taro from "@tarojs/taro-rn";
+import Taro from "@tarojs/taro";
 import { Button, View, Text } from "@tarojs/components";
 
 import "./index.scss";

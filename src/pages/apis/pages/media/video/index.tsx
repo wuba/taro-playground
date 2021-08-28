@@ -5,11 +5,12 @@
  * @LastEditTime: 2021-08-02 15:02:30
  * @FilePath: /taro-react-native/src/pages/apis/pages/media/video/index.tsx
  */
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import Taro from '@tarojs/taro';
 import { View, Video, Button } from '@tarojs/components';
+import { hadlePermissionsDeny } from '@/utils/index'
 
-const path = "https://wos2.58cdn.com.cn/DeFazYxWvDti/frsupload/bed49a933db6b5deedd8b868ec9c8bca.mp4";
+const path = "https://wos2.58cdn.com.cn/DeFazYxWvDti/frsupload/6820cfd5e0346eac050e7c3f0df78f65.mp4";
 
 const PageView = () => {
   const videoContext = useRef({});
@@ -23,12 +24,13 @@ const PageView = () => {
       sourceType: ['album', 'camera'],
       maxDuration: 60,
       camera: 'back',
-      success: res => {
-        console.log(res.tempFilePath);
-        setFilePage(res.tempFilePath);
-      },
-      fail: err => {
-        console.log(err);
+    }).then(res => {
+      setFilePage(res.tempFilePath);
+    }).catch(err => {
+      if (err.errMsg === 'Permissions denied!') {
+        hadlePermissionsDeny({
+          perssionText: '相机或照片'
+        })
       }
     })
   }
@@ -55,7 +57,6 @@ const PageView = () => {
         src={filePath}
         controls
         autoplay
-        poster="https://misc.aotu.io/booxood/mobile-video/cover_900x500.jpg"
         initialTime={0}
         loop={false}
         muted={false}

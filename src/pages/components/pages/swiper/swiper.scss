@@ -6,26 +6,13 @@
   position: relative;
   padding: 0 15px;
   font-size: 30px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 
   &__item {
     position: relative;
     display: flex;
     flex-direction: row;
     padding: 10px 0;
-
-    &:not(:first-child) {
-      &::before {
-        content: "";
-        position: absolute;
-        left: 15px;
-        right: -15px;
-        top: 0;
-        height: 1px;
-        border-top: 1px solid #e5e5e5;
-        color: #e5e5e5;
-      }
-    }
   }
 
   &__text {
@@ -50,8 +37,6 @@
       text-align: center;
       margin-bottom: 15px;
     }
-
-    &-body {}
   }
 }
 
@@ -59,7 +44,7 @@
   &-1,
   &-2,
   &-3 {
-    height: 150PX;
+    height: 150px;
     width: 100%;
     // display: flex;
     flex-direction: row;

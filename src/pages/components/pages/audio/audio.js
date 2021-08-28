@@ -15,7 +15,7 @@ export default class PageView extends React.Component {
           <View className='components-page__body-example example'>
             <View className='example-body'>
               <Audio
-                src='http://storage.jd.com/cjj-pub-images/horse.ogv'
+                src=''
                 controls
                 autoplay={false}
                 loop={false}

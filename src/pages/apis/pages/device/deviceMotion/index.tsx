@@ -5,7 +5,7 @@
  * @LastEditTime: 2021-08-17 11:33:26
  * @FilePath: /taro-react-native/src/pages/apis/pages/device/deviceMotion/index.tsx
  */
-import Taro from "@tarojs/taro-rn";
+import Taro from "@tarojs/taro";
 import { Button, View } from "@tarojs/components";
 import { useCallback, useState } from "react";
 import JSONTree from '@/components/jsontree';

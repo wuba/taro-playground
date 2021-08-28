@@ -1,109 +1,113 @@
-@import './variables.scss';
+@import "./variables.scss";
+
 .api-page {
-    padding: 40px;
-    &-btn {
-        &-success {
-            background-color: $color-success;
-            margin: 10px 0;
-        }
-        &-error {
-            background-color: $color-error;
-            margin: 10px 0;
-        }
-        &-warning {
-            background-color: $color-warning;
-            margin: 10px 0;
-        }
-        &-info {
-            background-color: $color-info;
-            margin: 10px 0;
-        }
+  padding: 40px;
+
+  &-btn {
+    &-success {
+      background-color: $color-success;
+      margin: 10px 0;
     }
+
+    &-error {
+      background-color: $color-error;
+      margin: 10px 0;
+    }
+
+    &-warning {
+      background-color: $color-warning;
+      margin: 10px 0;
+    }
+
+    &-info {
+      background-color: $color-info;
+      margin: 10px 0;
+    }
+  }
 }
 
 .components-page {
-    font-size: 32px;
-    padding-bottom: 80px;
-    &__body {
-        padding: 0 40px;
-    }
+  font-size: 32px;
+  padding-bottom: 80px;
+
+  &__body {
+    padding: 0 40px;
+  }
 }
 
 .example {
-    margin-bottom: 60px;
-    &-header {
-      text-align: center;
-      font-size: 34px;
-      color: #999;
-      margin-bottom: 20px;
-    }
-    &-body {
-  
-    }
+  margin-bottom: 60px;
+
+  &-header {
+    text-align: center;
+    font-size: 34px;
+    color: #999;
+    margin-bottom: 20px;
+  }
 }
 
 .page-section {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 60px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 60px;
 }
 
 .page-section_center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .page-section:last-child {
-margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .page-section-gap {
-    // @include eject(box-sizing, border-box);
-    padding: 0 30px;
+  // @include eject(box-sizing, border-box);
+  padding: 0 30px;
 }
 
 .page-section-spacing {
-    // @include eject(box-sizing, border-box);
-    padding: 0 80px;
+  // @include eject(box-sizing, border-box);
+  padding: 0 80px;
 }
 
 .page-section-spacing-reset {
-    padding: 0 30px;
+  padding: 0 30px;
 }
 
 .page-section-title {
-    font-size: 28px;
-    color: #999999;
-    margin-bottom: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
-    align-items: center;
+  font-size: 28px;
+  color: #999999;
+  margin-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  align-items: center;
 }
-  
+
 .demo-text-1 {
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    background-color: $color-brand;
-    color: #ffffff;
-    font-size: 36px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-brand;
+  color: #ffffff;
+  font-size: 36px;
 }
 
 .demo-text-2 {
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    background-color: $color-brand-light;
-    color: #ffffff;
-    font-size: 36px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-brand-light;
+  color: #ffffff;
+  font-size: 36px;
 }
 
 .demo-text-3 {
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    background-color: $color-brand-dark;
-    color: #353535;
-    font-size: 36px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-brand-dark;
+  color: #353535;
+  font-size: 36px;
 }

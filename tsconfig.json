@@ -23,7 +23,8 @@
       "global.d.ts"
     ],
     "paths": {
-      "@/components/*": ["./src/pages/components/*"]
+      "@/components/*": ["./src/pages/components/*"],
+      "@/utils/*": ["./src/pages/utils/*"]
     }
   },
   "exclude": [

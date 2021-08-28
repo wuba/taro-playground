@@ -6,7 +6,7 @@
  * @FilePath: /taro-react-native/src/pages/apis/pages/media/camera/index.tsx
  */
 import React from "react";
-import Taro from "@tarojs/taro-rn";
+import Taro from "@tarojs/taro";
 import { Camera, Button, View, Image, Video } from "@tarojs/components";
 
 import "./index.scss";

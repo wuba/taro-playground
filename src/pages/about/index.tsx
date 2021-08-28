@@ -23,7 +23,7 @@ export default class Index extends Component<any, any> {
       },
     },
     {
-      name: 'Taro 官方网站',
+      name: '官方网站',
       onPress: () => {
         Taro.navigateTo({
           url: '/pages/webview/index?title=Taro 官方网站&link=https://docs.taro.zone/docs/README',

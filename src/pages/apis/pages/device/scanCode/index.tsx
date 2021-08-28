@@ -6,10 +6,10 @@
  * @FilePath: /taro-react-native/src/pages/apis/pages/device/scanCode/index.tsx
  */
 import { useState } from "react";
-import Taro from "@tarojs/taro-rn";
+import Taro from "@tarojs/taro";
 import { Button, View } from "@tarojs/components";
 import JSONTree from '@/components/jsontree';
-
+import { hadlePermissionsDeny } from '@/utils/index'
 import "./index.scss";
 
 const Index = () => {
@@ -30,7 +30,11 @@ const Index = () => {
               },
               fail: err => {
                 console.log(err);
-                Taro.showToast({ title: '扫码失败', icon: 'none' });
+                if (err.errMsg === 'Permissions denied!' || err.errMsg === 'scanCode fail') {
+                  // TODO: use errCode
+                  const perssionText = err.errMsg === 'Permissions denied!' ? '相机' : '照片';
+                  hadlePermissionsDeny({ perssionText });
+                }
               }
             });
           }}

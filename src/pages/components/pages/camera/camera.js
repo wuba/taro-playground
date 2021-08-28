@@ -1,6 +1,7 @@
 import React from "react";
-import Taro from "@tarojs/taro-rn";
+import Taro from "@tarojs/taro";
 import { Camera, Button, View, Image, Video } from "@tarojs/components";
+import { hadlePermissionsDeny } from '@/utils/index'
 import Header from "@/components/head/head";
 
 import "./camera.scss";
@@ -13,6 +14,22 @@ export default class PageView extends React.Component {
       imageSrc: "",
       videoUrl: ""
     };
+  }
+  componentDidMount() {
+    Taro.getSetting({
+      success: function (res) {
+        if (!res.authSetting['scope.camera']) {
+          Taro.authorize({
+            scope: 'scope.camera',
+            fail: (err) => {
+              if (err.errMsg === 'authorize:denied/undetermined' || err.errMsg === 'authorize:fail') {
+                hadlePermissionsDeny({ perssionText: '相机' })
+              }
+            }
+          })
+        }
+      }
+    })
   }
   ref = React.createRef();
   cameraContext;
@@ -43,7 +60,18 @@ export default class PageView extends React.Component {
     });
   };
 
-  startRecord = () => {
+  startRecord = async () => {
+    const res = await Taro.getSetting({})
+    if (!res.authSetting['scope.record']) {
+      Taro.authorize({
+        scope: 'scope.record',
+        fail: (err) => {
+          if (err.errMsg === 'authorize:denied/undetermined' || err.errMsg === 'authorize:fail') {
+            hadlePermissionsDeny({ perssionText: '麦克风' })
+          }
+        }
+      })
+    }
     Taro.showToast({
       title: "开始录像",
       icon: "none"

@@ -6,9 +6,10 @@
  * @FilePath: /taro-react-native/src/pages/apis/pages/location/index/index.tsx
  */
 import Taro from '@tarojs/taro';
-import { useCallback, useState } from "react";
+import { useCallback, useState, useEffect } from "react";
 import { View, Button } from '@tarojs/components';
 import JSONTree from '@/components/jsontree';
+import { hadlePermissionsDeny } from '@/utils/index';
 
 import './index.scss'
 
@@ -16,6 +17,23 @@ const PageView = () => {
   const [location, setLocation] = useState({});
   const [location1, setLocation1] = useState({});
   const [location2, setLocation2] = useState({});
+
+  useEffect(() => {
+    Taro.getSetting({
+      success: function (res) {
+        if (!res.authSetting['scope.userLocation']) {
+          Taro.authorize({
+            scope: 'scope.userLocation',
+            fail: (err) => {
+              if (err.errMsg === 'authorize:denied/undetermined' || err.errMsg === 'authorize:fail') {
+                hadlePermissionsDeny({ perssionText: '位置' })
+              }
+            }
+          })
+        }
+      }
+    })
+  }, [])
 
   const _handleCallback1 = useCallback((res) => {
     console.log("回调函数 C1", res);
@@ -37,6 +55,11 @@ const PageView = () => {
             Taro.getLocation({
               success: res => {
                 setLocation(res)
+              },
+            }).catch(err => {
+              if (err.errMsg === 'Permissions denied!') {
+                // TODO: use errCode
+                hadlePermissionsDeny({ perssionText: '位置' })
               }
             })
           }}

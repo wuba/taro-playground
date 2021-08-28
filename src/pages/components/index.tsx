@@ -1,4 +1,4 @@
-import Taro from "@tarojs/taro-rn";
+import Taro from "@tarojs/taro";
 import { Component } from "react";
 import { View, Image, Text, ScrollView } from "@tarojs/components";
 import logo from "../asset/component/logo.png";

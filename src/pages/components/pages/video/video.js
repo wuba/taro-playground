@@ -1,5 +1,5 @@
 import React from "react";
-import Taro from "@tarojs/taro-rn";
+import Taro from "@tarojs/taro";
 import { View, Video, Button } from "@tarojs/components";
 import Header from "@/components/head/head";
 import "./video.scss";
@@ -27,10 +27,9 @@ export default class PageView extends React.Component {
               <Video
                 id="video"
                 onLoadedMetaData={this.onLoadedMetaData}
-                src="https://wos2.58cdn.com.cn/DeFazYxWvDti/frsupload/bed49a933db6b5deedd8b868ec9c8bca.mp4"
+                src="https://wos2.58cdn.com.cn/DeFazYxWvDti/frsupload/6820cfd5e0346eac050e7c3f0df78f65.mp4"
                 controls
                 autoplay
-                poster="https://misc.aotu.io/booxood/mobile-video/cover_900x500.jpg"
                 initialTime={0}
                 loop={false}
                 muted={false}

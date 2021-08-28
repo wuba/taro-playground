@@ -1,83 +1,81 @@
-@import '../../styles/variables.scss';
+@import "../../styles/variables.scss";
 
 .index {
-    flex: 1;
-    padding-top: 200px;
-    padding-bottom: 200px;
+  flex: 1;
+  padding-top: 200px;
+  padding-bottom: 200px;
 }
 
 .header {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 80;
-    background-color: $color-brand;
-    &-title {
-        color: #ffffff;
-        font-size: $font-size-xl;
-    }
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 80;
+  background-color: $color-brand;
+  &-title {
+    color: #ffffff;
+    font-size: $font-size-xl;
+  }
 }
 
 .info {
-    flex-direction: column;
-    align-items: center;
-    padding-left: 36px;
-    padding-right: 36px;
-    &-img {
-        height: 200px;
-        width: 200px;
-        border-radius: 100px;
-        margin-bottom: $spacing-v-xl;
-    }
-    &-text {
-        font-size: $font-size-base;
-        color: $color-text-paragraph;
-        line-height: 40px;
-    }
+  flex-direction: column;
+  align-items: center;
+  padding-left: 36px;
+  padding-right: 36px;
+  &-img {
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    margin-bottom: $spacing-v-xl;
+  }
+  &-text {
+    font-size: $font-size-base;
+    color: $color-text-paragraph;
+    line-height: 40px;
+  }
 }
 
 .load {
-    padding: 32px;
-    &-header {
-        flex-direction: column;
-        align-items: flex-end;
-        padding-left: 20px;
-        padding-right: 20px;
-        &-icon {
-            height: 60px;
-            width: 60px;
-            /*  #ifdef rn */
-            tint-color: $color-brand;
-            /*  #endif  */
-        }
+  padding: 32px;
+  &-header {
+    flex-direction: column;
+    align-items: flex-end;
+    padding-left: 20px;
+    padding-right: 20px;
+    &-icon {
+      height: 60px;
+      width: 60px;
+      /*  #ifdef rn */
+      tint-color: $color-brand;
+      /*  #endif  */
     }
-    &-btn {
-        margin: 40px 0;
-        background-color: $color-brand;
-    }
+  }
+  &-btn {
+    margin: 40px 0;
+    background-color: $color-brand;
+  }
 }
 
-
 .bundle {
-    background-color: #ffffff;
-    &-control {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 32px;
-    }
+  background-color: #ffffff;
+  &-control {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 32px;
+  }
 
-    &-item {
-        padding: 28px 32px;
-        background-color: #ffffff;
-        border-bottom
-        &-text {
-            font-size: 28px;
-            color: $color-text-paragraph;
-        }
-        &-sep {
-            height: 1px;
-            width: 100%;
-            background-color: $color-grey-4;
-        }
+  &-item {
+    padding: 28px 32px;
+    background-color: #ffffff;
+    &-text {
+      font-size: 28px;
+      color: $color-text-paragraph;
     }
+    &-sep {
+      height: 1px;
+      width: 100%;
+      background-color: $color-grey-4;
+    }
+  }
 }

@@ -1,24 +1,24 @@
-@import '../../../../../styles/variables.scss';
+@import "../../../../../styles/variables.scss";
 
 .list {
-    padding: 10px 0;
+  padding: 10px 0;
 }
 .list-item {
-    height: 80px;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-    background-color: #fff;
+  height: 80px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  background-color: #fff;
 }
 
 .list-control {
-    &-btn1 {
-        margin-bottom: 20px;
-        background-color: $color-success;
-    }
-    &-btn2 {
-        margin-bottom: 20px;
-        background-color: $color-error;
-    }
+  &-btn1 {
+    margin-bottom: 20px;
+    background-color: $color-success;
+  }
+  &-btn2 {
+    margin-bottom: 20px;
+    background-color: $color-error;
+  }
 }
