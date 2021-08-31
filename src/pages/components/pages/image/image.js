@@ -8,11 +8,8 @@
 import React from 'react'
 import { View, Text, Image } from '@tarojs/components'
 import Header from '@/components/head/head'
-
+import nervLogo from '@/assets/common/taro_logo.png'
 import './image.scss'
-
-import nervLogo from './tarologo.png'
-
 
 export default class PageView extends React.Component {
   render() {

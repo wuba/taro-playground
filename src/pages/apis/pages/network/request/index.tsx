@@ -17,7 +17,7 @@ const PageView = () => {
 
   const _onRequest = () => {
     Taro.request({
-      url: 'https://gitee.com/o2team/Taro/raw/next/package.json',
+      url: 'https://raw.githubusercontent.com/NervJS/taro/next/package.json',
       data: {},
       header: {
         'content-type': 'application/json',

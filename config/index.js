@@ -80,6 +80,7 @@ const config = {
   alias: {
     '@/components': path.resolve(__dirname, '..', 'src/pages/components'),
     '@/utils': path.resolve(__dirname, '..', 'src/pages/utils'),
+    '@/assets': path.resolve(__dirname, '..', 'src/assets'),
   }
 }
 

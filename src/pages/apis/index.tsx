@@ -8,15 +8,15 @@
 import Taro from "@tarojs/taro";
 import { Component } from 'react'
 import { View, Text, Image } from '@tarojs/components'
-import logo from "../asset/component/logo.png";
-import surfacePng from "../asset/component/view.png";
-import basicPng from "../asset/component/content.png";
-import storagePng from "../asset/component/form.png";
-import networkPng from "../asset/component/nav.png";
-import mediaPng from "../asset/component/media.png";
-import locationPng from "../asset/component/map.png";
-import canvasPng from "../asset/component/canvas.png";
-import openPng from "../asset/component/open.png";
+import surfacePng from "@/assets/iconpark/press.png";
+import basicPng from "@/assets/iconpark/iphone.png";
+import storagePng from "@/assets/iconpark/cloud-storage.png";
+import networkPng from "@/assets/iconpark/loading.png";
+import mediaPng from "@/assets/iconpark/play-two.png";
+import locationPng from "@/assets/iconpark/local.png";
+import canvasPng from "@/assets/iconpark/painted-screen.png";
+import openPng from "@/assets/iconpark/api.png";
+import devicePng from "@/assets/iconpark/devices.png";
 
 import "./index.scss";
 
@@ -28,7 +28,7 @@ const PNGS = {
   mediaPng,
   locationPng,
   canvasPng,
-  devicePng: canvasPng,
+  devicePng,
   "open-apiPng": openPng,
 };
 export default class Index extends Component<never, any> {
@@ -210,7 +210,6 @@ export default class Index extends Component<never, any> {
     return (
       <View className='index'>
         <View className='index-hd'>
-          <Image className='index-logo' src={logo} />
           <View className='index-desc'>
             <Text className='index-desc_text'>
               以下将展示 Taro 官方接口能力。

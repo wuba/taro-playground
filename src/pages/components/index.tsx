@@ -1,14 +1,10 @@
 import Taro from "@tarojs/taro";
 import { Component } from "react";
 import { View, Image, Text, ScrollView } from "@tarojs/components";
-import logo from "../asset/component/logo.png";
-import viewPng from "../asset/component/view.png";
-import contentPng from "../asset/component/content.png";
-import formPng from "../asset/component/form.png";
-import navPng from "../asset/component/nav.png";
-import mediaPng from "../asset/component/media.png";
-import mapPng from "../asset/component/map.png";
-import canvasPng from "../asset/component/canvas.png";
+import viewPng from "@/assets/iconpark/waterfalls-h.png";
+import contentPng from "@/assets/iconpark/add-text-two.png";
+import formPng from "@/assets/iconpark/list-view.png";
+import mediaPng from "@/assets/iconpark/play-two.png";
 
 import "./index.scss";
 
@@ -16,10 +12,7 @@ const PNGS = {
   viewPng,
   contentPng,
   formPng,
-  navPng,
   mediaPng,
-  mapPng,
-  canvasPng
 };
 
 export default class Index extends Component<never, any> {
@@ -119,7 +112,6 @@ export default class Index extends Component<never, any> {
     return (
       <ScrollView className='index' enableBackToTop style={{ paddingBottom: 80 }}>
         <View className='index-hd'>
-          <Image className='index-logo' src={logo} />
           <View className='index-desc'>
             <Text className='index-desc_text'>
               以下将展示 Taro 官方组件能力，组件样式仅供参考，开发者可根据自身需求自定义组件样式。

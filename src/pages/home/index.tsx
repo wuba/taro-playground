@@ -10,6 +10,8 @@ import Taro from '@tarojs/taro';
 import { NativeModules } from 'react-native';
 import { View, Text, Image } from '@tarojs/components';
 import { hadlePermissionsDeny } from '@/utils/index';
+import logoPng from "@/assets/common/taro_logo.png";
+import scanPng from "@/assets/iconpark/scan-code.png";
 import './index.scss';
 
 const DevManager = NativeModules.RNDevManager;
@@ -125,7 +127,7 @@ export default class Index extends Component<any, any> {
       <View className='index'>
         <View className='info'>
           <Image
-            src={require('../asset/common/taro_logo.png')}
+            src={logoPng}
             className='info-img'
           />
           <Text className='info-text'>Taro 是一个开放式跨端跨框架解决方案，支持使用 React/Vue/Nerv 等框架来开发 微信 / 京东 / 百度 / 支付宝 / 字节跳动 / QQ 小程序 / H5 / RN 等应用。</Text>
@@ -133,7 +135,7 @@ export default class Index extends Component<any, any> {
         <View className='load'>
           <View className='load-header'>
             <Image
-              src={require('../../assets/common/icon_scan.png')}
+              src={scanPng}
               className='load-header-icon'
               onClick={this._onPressScan}
             />

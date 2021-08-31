@@ -10,6 +10,8 @@ import Taro from '@tarojs/taro';
 import { View, Image, Text } from '@tarojs/components';
 import { version as taroVersion } from '@tarojs/taro/package.json';
 import { version as rnVersion } from 'react-native/package.json';
+import logoPng from "@/assets/common/taro_logo.png";
+import rightPng from "@/assets/iconpark/right.png";
 import './index.scss';
 
 export default class Index extends Component<any, any> {
@@ -77,7 +79,7 @@ export default class Index extends Component<any, any> {
       <View className='page'>
         <View className='page-header'>
           <Image
-            src={require('../asset/common/taro_logo.png')}
+            src={logoPng}
             className='page-header-img'
           />
           <View className='page-header-desc'>
@@ -91,9 +93,8 @@ export default class Index extends Component<any, any> {
                 <View className='page-links-item' onClick={item.onPress}>
                   <Text className='page-links-item-text'>{item.name}</Text>
                   <Image
-                    src={require('../../assets/common/icon_downarrow.png')}
+                    src={rightPng}
                     className='page-links-item-arrow'
-                    style={{ transform: [{ rotate: '-90deg' }] }}
                   ></Image>
                 </View>
                 {index != this.linksList.length - 1 && <View className='page-links-sep' />}

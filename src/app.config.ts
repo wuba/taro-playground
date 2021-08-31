@@ -81,26 +81,26 @@ export default {
     selectedColor: '#6190E8', // 主题色
     list: [
       {
-        iconPath: './assets/tabbar/project.png',
-        selectedIconPath: './assets/tabbar/project_selected.png',
+        iconPath: './assets/iconpark/system.png',
+        selectedIconPath: './assets/iconpark/system_selected.png',
         pagePath: 'pages/home/index',
         text: '项目',
       },
       {
-        iconPath: './assets/tabbar/component.png',
-        selectedIconPath: './assets/tabbar/component_selected.png',
+        iconPath: './assets/iconpark/components.png',
+        selectedIconPath: './assets/iconpark/components_selected.png',
         pagePath: 'pages/components/index',
         text: '组件',
       },
       {
-        iconPath: './assets/tabbar/api.png',
-        selectedIconPath: './assets/tabbar/api_selected.png',
+        iconPath: './assets/iconpark/ring.png',
+        selectedIconPath: './assets/iconpark/ring_selected.png',
         pagePath: 'pages/apis/index',
         text: '接口',
       },
       {
-        iconPath: './assets/tabbar/person.png',
-        selectedIconPath: './assets/tabbar/person_selected.png',
+        iconPath: './assets/iconpark/user.png',
+        selectedIconPath: './assets/iconpark/user_selected.png',
         pagePath: 'pages/about/index',
         text: '关于',
       },
