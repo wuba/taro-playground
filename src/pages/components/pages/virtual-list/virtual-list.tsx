@@ -1,4 +1,5 @@
 import React from "react";
+// @ts-ignore
 import { View, VirtualList } from "@tarojs/components";
 
 import Header from "@/components/head/head";
@@ -10,14 +11,13 @@ function buildData(offset = 0) {
     .map((_, i) => i + offset);
 }
 
-const Row = React.memo(({index, style, data}) => {
+const Row = ({ index, style, data }) => {
   return (
     <View className={`list-item ${index % 2 ? "ListItemOdd" : "ListItemEven"}`} style={style}>
-      Row {index} : {data[index]}
+      Row {index}: {data[index]}
     </View>
   );
-});
-
+};
 
 export default class PageView extends React.Component {
   state = {
@@ -27,7 +27,8 @@ export default class PageView extends React.Component {
     console.log(this.$ref);
 
     this.timer = setTimeout(() => {
-      this?.$ref?.current.scrollTo({offset: 200});
+      // @ts-ignore
+      this?.$ref?.current.scrollTo({ offset: 200 });
     }, 3000);
   }
   componentWillUnmount() {

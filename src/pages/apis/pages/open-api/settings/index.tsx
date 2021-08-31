@@ -13,14 +13,14 @@ export default () => {
       <View className="api-page__body">
         <Button
           onClick={()=>{
-            openSetting({})
+            openSetting()
           }}
         >Taro.openSetting</Button>
         <Button
           type="primary"
           className="api-page-btn-success"
           onClick={() => {
-            getSetting({}).then(setSetting)
+            getSetting().then(setSetting)
           }}
         >Taro.getSetting</Button>
         <JSONTree data={setting} />

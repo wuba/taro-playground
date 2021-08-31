@@ -9,11 +9,26 @@ import {
   Slider,
 } from "@tarojs/components";
 import Header from "@/components/head/head";
+
 import "./swiper.scss";
 
-export default class PageView extends React.Component {
-  constructor() {
-    super(...arguments);
+interface IProps {}
+
+interface IState {
+  current: number,
+  duration: number,
+  interval: number,
+  isCircular: boolean,
+  verticalIsCircular: boolean,
+  isAutoplay: boolean,
+  verticalIsAutoplay: boolean,
+  hasIndicatorDots: boolean,
+  verticalHasIndicatorDots: boolean
+}
+
+export default class PageView extends React.Component<IProps, IState> {
+  constructor(props) {
+    super(props);
     this.state = {
       current: 1,
       duration: 500,
@@ -99,6 +114,7 @@ export default class PageView extends React.Component {
             <View className="example-body">
               <Swiper
                 className="swiper-list"
+                // @ts-ignore
                 slideMult="10"
                 indicatorColor="#999"
                 indicatorActiveColor="#333"
@@ -190,6 +206,7 @@ export default class PageView extends React.Component {
             <View className="example-body">
               <Swiper
                 className="swiper-list test-h"
+                // @ts-ignore
                 slideMult="10"
                 indicatorColor="#999"
                 indicatorActiveColor="#333"

@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { View, MovableView, MovableArea, Switch, Button } from "@tarojs/components";
+
+import { MovableViewProps } from "@tarojs/components/types/MovableView";
+
 import Header from "@/components/head/head";
 
 import "./movable-view.scss";
 
 const PageView = () => {
-  const [config, setConfig] = useState({
+  const [config, setConfig] = useState<MovableViewProps>({
     disabled: false,
     direction: 'all',
   });

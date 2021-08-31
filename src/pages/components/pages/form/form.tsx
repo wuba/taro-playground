@@ -19,10 +19,31 @@ import {
 import Header from "@/components/head/head";
 import "./form.scss";
 
-export default class PageForm extends React.Component {
+type RadioItemType = {
+  key: string,
+  value: string,
+  checked: boolean,
+}
+
+type CheckItemsType = {
+  key: string,
+  value: string,
+  checked: boolean,
+}
+
+interface IState {
+  enableSwitch: boolean,
+  radioItems: RadioItemType[],
+  checkItems: CheckItemsType[],
+  sliderValue: string | number,
+  inputValue: string,
+  selectDate: string,
+}
+
+export default class PageForm extends React.Component<any, IState> {
   state = {
     enableSwitch: false,
-    radioItem: [
+    radioItems: [
       {
         key: "radio-1",
         value: "选项一",
@@ -34,7 +55,7 @@ export default class PageForm extends React.Component {
         checked: false
       }
     ],
-    checkItem: [
+    checkItems: [
       {
         key: "checkbox—1",
         value: "选项一",
@@ -48,10 +69,10 @@ export default class PageForm extends React.Component {
     ],
     sliderValue: 50,
     selectDate: '2020-01-02',
+    inputValue: '',
   };
 
   onHandleChange = e => {
-    console.log(e);
     const value = e.detail.value;
     this.setState({
       inputValue: value
@@ -64,12 +85,12 @@ export default class PageForm extends React.Component {
 
   onCheckChange = e => {
     const { value } = e.detail;
-    const { checkItem } = this.state;
-    checkItem.forEach(item => {
+    const { checkItems } = this.state;
+    checkItems.forEach(item => {
       item.checked = value.includes(item.key);
     });
     this.setState({
-      checkItem
+      checkItems
     });
   };
 
@@ -105,10 +126,11 @@ export default class PageForm extends React.Component {
   };
 
   render() {
+    const { enableSwitch, radioItems = [], checkItems = [], sliderValue, selectDate, inputValue } = this.state;
     return (
       <ScrollView className="components-page">
         <View className="components-page__header">
-          <Header title="Form"></Header>
+          <Header title="Form" />
         </View>
         <Form onSubmit={this.formSubmit} onReset={this.formReset}>
           <View className="components-page__body">
@@ -119,7 +141,7 @@ export default class PageForm extends React.Component {
                   onChange={this.onHandleChange}
                   name="switch"
                   className="form-switch"
-                  checked={this.state.enableSwitch}
+                  checked={enableSwitch}
                 ></Switch>
               </View>
             </View>
@@ -131,7 +153,7 @@ export default class PageForm extends React.Component {
                   onChange={this.onRadioChange}
                   name="radio"
                 >
-                  {this.state.radioItem.map(item => {
+                  {radioItems.map((item: RadioItemType) => {
                     return (
                       <Label
                         className="example-body__radio-group-item"
@@ -156,7 +178,7 @@ export default class PageForm extends React.Component {
                   onChange={this.onCheckChange}
                   name="checkbox"
                 >
-                  {this.state.checkItem.map(item => {
+                  {checkItems.map((item: CheckItemsType) => {
                     return (
                       <Label
                         className="example-body__checkbox-group-item"
@@ -176,7 +198,7 @@ export default class PageForm extends React.Component {
               <View className="example-body">
                 <Slider
                   name="slider"
-                  value={this.state.sliderValue}
+                  value={sliderValue}
                   showValue
                   onChange={this.handleSliderChange}
                   onChanging={this.handleSliderChanging}
@@ -189,10 +211,10 @@ export default class PageForm extends React.Component {
                 <Picker
                   name="date"
                   mode="date"
-                  value={this.state.selectDate}
+                  value={selectDate}
                   onChange={this.handleDateChange}
                 >
-                  <Text>当前选择日期：{this.state.selectDate}</Text>
+                  <Text>当前选择日期：{selectDate}</Text>
                 </Picker>
               </View>
             </View>
@@ -202,7 +224,7 @@ export default class PageForm extends React.Component {
                 <Input
                   name="input"
                   type="text"
-                  value={this.state.inputValue}
+                  value={inputValue}
                   placeholder="这是一个输入框"
                   onInput={this.onHandleChange}
                 />

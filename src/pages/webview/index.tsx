@@ -32,7 +32,7 @@ export default class Index extends Component<any, any> {
     }
 
     openUrl() {
-        const url = this?.props?.route.params?.link;
+        const url = this?.props?.route.params?.open || this?.props?.route.params?.link;
         url && Taro.openUrl({
           url
         });

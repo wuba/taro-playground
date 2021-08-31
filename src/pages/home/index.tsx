@@ -1,10 +1,3 @@
-/*
- * @Author: iChengbo
- * @Date: 2021-07-19 14:37:08
- * @LastEditors: iChengbo
- * @LastEditTime: 2021-08-12 17:49:04
- * @FilePath: /taro-react-native/src/pages/home/index.tsx
- */
 import { Component, Fragment } from 'react';
 import Taro from '@tarojs/taro';
 import { NativeModules } from 'react-native';
@@ -42,7 +35,21 @@ export default class Index extends Component<any, any> {
 
   _loadBundleByUrl = (url: string, path = 'index') => {
     try {
-      DevManager.loadBundleByBundleUrl(url, path);
+      Taro.request({
+        url: `http:${url}/status`,
+        dataType: 'text',
+      }).then(res => {
+        console.log('request success: ', res);
+        if (res?.data?.status === 200) {
+          DevManager.loadBundleByBundleUrl(url, path);
+        }
+      }).catch((err) => {
+        console.log('request error: ', err)
+        Taro.showToast({
+          title: 'packager Not Available',
+          icon: 'none'
+        })
+      })
     } catch (error) {
       console.log("加载 bundle 错误：", error);
       Taro.showToast({ title: '哎呀, 加载失败了 -_-!', icon: 'none' });
@@ -145,7 +152,7 @@ export default class Index extends Component<any, any> {
           <View className='bundle'>
             <View className='bundle-control'>
               <Text>最近打开</Text>
-              <Text onPress={this._clearBundles}>清空</Text>
+              <Text onClick={this._clearBundles}>清空</Text>
             </View>
             <Divider />
             {list.map((item, index) => {

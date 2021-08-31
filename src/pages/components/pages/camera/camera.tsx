@@ -6,7 +6,15 @@ import Header from "@/components/head/head";
 
 import "./camera.scss";
 
-export default class PageView extends React.Component {
+interface IProps {}
+
+interface IState {
+  devicePosition: 'front' | 'back',
+  imageSrc: string,
+  videoUrl: string,
+}
+
+export default class PageView extends React.Component<IProps, IState> {
   constructor(props) {
     super(props);
     this.state = {

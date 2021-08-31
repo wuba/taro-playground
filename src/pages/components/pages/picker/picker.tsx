@@ -15,7 +15,8 @@ export default class PagePicker extends React.Component {
     multiSelector: [
       ["饭", "粥", "粉"],
       ["猪肉", "牛肉"]
-    ]
+    ],
+    regionSel: ['北京市', '北京市', '西城区'],
   };
 
   handleChange = e => {
@@ -47,6 +48,12 @@ export default class PagePicker extends React.Component {
     this.setState({ dateSel });
   };
 
+  handleRegionChange = e => {
+    this.setState({
+      regionSel: e.detail.value
+    })
+  }
+
   render() {
     const {
       selector,
@@ -54,7 +61,8 @@ export default class PagePicker extends React.Component {
       selectorValue,
       mulitSelectorValues,
       timeSel,
-      dateSel
+      dateSel,
+      regionSel,
     } = this.state;
     return (
       <View className="container">
@@ -86,6 +94,7 @@ export default class PagePicker extends React.Component {
                   mode="multiSelector"
                   range={multiSelector}
                   onChange={this.handleMulitChange}
+                  // @ts-ignore
                   onColumnchange={this.handleColumnchange}
                 >
                   <View className="picker">
@@ -125,6 +134,20 @@ export default class PagePicker extends React.Component {
                 value={dateSel}
               >
                 <View className="picker">当前选择：{dateSel}</View>
+              </Picker>
+            </View>
+          </View>
+          <View className="page-section">
+            <Text className="page-section-title">地区选择器</Text>
+            <View className="page-section-body">
+              <Picker
+                mode='region'
+                value={regionSel}
+                onChange={this.handleRegionChange}
+              >
+                <View className='picker'>
+                  当前选择：{regionSel?.join('-')}
+                </View>
               </Picker>
             </View>
           </View>

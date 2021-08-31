@@ -33,7 +33,7 @@ export default class PageView extends Component<any, any> {
   _startPullDownRefresh = () => {
     Taro.startPullDownRefresh();
     this.timer = setTimeout(() => {
-      const baseNum: number = parseInt((Math.random() * 50).toString());
+      const baseNum: number = ~~(Math.random() * 50);
       this.setState({
         list: [baseNum, baseNum + 1, baseNum + 2, baseNum + 3, baseNum + 4]
       }, () => {

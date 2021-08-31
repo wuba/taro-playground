@@ -6,6 +6,8 @@ import "./index.scss";
 
 /**
  * 媒体-相机
+ * TODO:前置摄像头拍摄及录像正常，后置不可以。【Android OPPO Reno6】
+ * 
  */
 export default class PageView extends React.Component<any, any> {
   constructor(props) {
@@ -82,9 +84,11 @@ export default class PageView extends React.Component<any, any> {
             ref={this.ref}
             onStop={this.handleStop}
             onError={this.handleError}
-            devicePosition={this.state.devicePosition}
+            devicePosition={devicePosition}
             onInitDone={() => {
-              this.cameraContext = Taro.createCameraContext();
+              if (!this.cameraContext) {
+                this.cameraContext = Taro.createCameraContext();
+              }
             }}
           />
           <Button

@@ -1,8 +1,9 @@
-// import './audio.scss'
 import React from 'react'
 import { View, Audio } from '@tarojs/components'
 
 import Header from '@/components/head/head'
+
+import './audio.scss'
 
 export default class PageView extends React.Component {
   render() {
@@ -17,6 +18,7 @@ export default class PageView extends React.Component {
               <Audio
                 src=''
                 controls
+                // @ts-ignore
                 autoplay={false}
                 loop={false}
                 muted

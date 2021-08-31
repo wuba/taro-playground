@@ -33,6 +33,7 @@ export default class PageView extends React.Component {
                 initialTime={0}
                 loop={false}
                 muted={false}
+                // @ts-ignore
                 onLoad={() => {
                   this.videoContext = Taro.createVideoContext("video");
                 }}
