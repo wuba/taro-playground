@@ -1,16 +1,13 @@
-/*
- * @Author: iChengbo
- * @Date: 2021-07-28 15:23:50
- * @LastEditors: iChengbo
- * @LastEditTime: 2021-07-28 15:49:43
- * @FilePath: /taro-react-native/src/pages/apis/pages/surface/scroll/index.tsx
- */
 import Taro from '@tarojs/taro';
 import { View, Text, Button } from '@tarojs/components';
 
 import './index.scss'
 
-const PageView = () => {
+/**
+ * 界面-滚动
+ * @returns 
+ */
+const Index = () => {
   const _pageScrollTo = (top) => () => {
     Taro.pageScrollTo({
       scrollTop: Number(Taro.pxTransform(top * 2)),
@@ -52,4 +49,4 @@ const PageView = () => {
   )
 }
 
-export default PageView;
+export default Index;

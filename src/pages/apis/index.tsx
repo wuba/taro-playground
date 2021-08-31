@@ -1,10 +1,3 @@
-/*
- * @Author: iChengbo
- * @Date: 2021-07-19 15:54:35
- * @LastEditors: iChengbo
- * @LastEditTime: 2021-08-04 17:37:36
- * @FilePath: /taro-react-native/src/pages/apis/index.tsx
- */
 import Taro from "@tarojs/taro";
 import { Component } from 'react'
 import { View, Text, Image } from '@tarojs/components'

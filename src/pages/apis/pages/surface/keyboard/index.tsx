@@ -1,17 +1,14 @@
-/*
- * @Author: iChengbo
- * @Date: 2021-08-03 17:17:28
- * @LastEditors: iChengbo
- * @LastEditTime: 2021-08-17 11:35:58
- * @FilePath: /taro-react-native/src/pages/apis/pages/surface/keyboard/index.tsx
- */
 import { useCallback, useState } from 'react';
 import Taro from '@tarojs/taro';
 import { View, Button, Text, Input } from '@tarojs/components';
 
 import './index.scss'
 
-const PageView = () => {
+/**
+ * 界面-键盘
+ * @returns 
+ */
+const Index = () => {
   const [value, setValue] = useState('');
 
   const _handleCallback1 = useCallback((res) => {
@@ -86,4 +83,4 @@ const PageView = () => {
   )
 }
 
-export default PageView;
+export default Index;

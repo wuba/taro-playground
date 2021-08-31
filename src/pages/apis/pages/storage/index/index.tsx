@@ -1,17 +1,14 @@
-/*
- * @Author: iChengbo
- * @Date: 2021-07-29 10:29:00
- * @LastEditors: iChengbo
- * @LastEditTime: 2021-07-29 16:14:30
- * @FilePath: /taro-react-native/src/pages/apis/pages/storage/index/index.tsx
- */
 import { useState } from 'react';
 import Taro from '@tarojs/taro';
 import { View, Text, Button, Input } from '@tarojs/components';
 
 import './index.scss'
 
-const PageView = () => {
+/**
+ * 数据缓存
+ * @returns 
+ */
+const Index = () => {
 
   const [key, setKey] = useState('关键字');
   const [allKey, setAllKey] = useState([]);
@@ -111,4 +108,4 @@ const PageView = () => {
   )
 }
 
-export default PageView;
+export default Index;

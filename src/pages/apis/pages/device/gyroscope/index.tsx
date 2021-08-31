@@ -1,10 +1,3 @@
-/*
- * @Author: iChengbo
- * @Date: 2021-08-02 15:44:28
- * @LastEditors: iChengbo
- * @LastEditTime: 2021-08-17 11:33:57
- * @FilePath: /taro-react-native/src/pages/apis/pages/device/gyroscope/index.tsx
- */
 import Taro from "@tarojs/taro";
 import { Button, View } from "@tarojs/components";
 import { useCallback, useState } from "react";
@@ -12,6 +5,10 @@ import JSONTree from '@/components/jsontree';
 
 import "./index.scss";
 
+/**
+ * 设备-陀螺仪
+ * @returns 
+ */
 const Index = () => {
   const [gyroscope1, setGyroscope1] = useState({});
   const [gyroscope2, setGyroscope2] = useState({});

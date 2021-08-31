@@ -1,17 +1,14 @@
-/*
- * @Author: iChengbo
- * @Date: 2021-07-29 16:44:12
- * @LastEditors: iChengbo
- * @LastEditTime: 2021-08-12 18:22:31
- * @FilePath: /taro-react-native/src/pages/apis/pages/media/image/index.tsx
- */
 import { useState } from 'react';
 import Taro from '@tarojs/taro';
 import { View, Image, Button } from '@tarojs/components';
 import { hadlePermissionsDeny } from '@/utils/index'
 import './index.scss';
 
-const PageView = () => {
+/**
+ * 媒体-图片
+ * @returns 
+ */
+const Index = () => {
 
   const initSource: string = 'https://pic1.58cdn.com.cn/nowater/fangfe/n_v2ad8b65de09ae4d968ff0a22b87caaad5.png';
   const initPaths: string[] = [];
@@ -137,4 +134,4 @@ const PageView = () => {
   )
 }
 
-export default PageView;
+export default Index;

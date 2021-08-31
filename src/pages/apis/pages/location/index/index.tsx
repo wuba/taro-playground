@@ -1,10 +1,3 @@
-/*
- * @Author: iChengbo
- * @Date: 2021-08-03 18:55:14
- * @LastEditors: iChengbo
- * @LastEditTime: 2021-08-17 11:35:32
- * @FilePath: /taro-react-native/src/pages/apis/pages/location/index/index.tsx
- */
 import Taro from '@tarojs/taro';
 import { useCallback, useState, useEffect } from "react";
 import { View, Button } from '@tarojs/components';
@@ -13,7 +6,11 @@ import { hadlePermissionsDeny } from '@/utils/index';
 
 import './index.scss'
 
-const PageView = () => {
+/**
+ * 设备-位置
+ * @returns 
+ */
+const Index = () => {
   const [location, setLocation] = useState({});
   const [location1, setLocation1] = useState({});
   const [location2, setLocation2] = useState({});
@@ -99,7 +96,8 @@ const PageView = () => {
           type="primary"
           className="api-page-btn-warning"
           onClick={() => {
-            Taro.offLocationChange()
+            //@ts-ignore
+            Taro.offLocationChange();
           }}
         >Taro.offLocationChange()</Button>
         <Button
@@ -114,7 +112,7 @@ const PageView = () => {
           className="api-page-btn-error"
           onClick={() => {
             Taro.stopLocationUpdate({
-              success: Taro.showToast({ title: 'stop 成功', icon: 'none' })
+              success: () => Taro.showToast({ title: 'stop 成功', icon: 'none' })
             })
           }}
         >Taro.stopLocationUpdate()</Button>
@@ -123,4 +121,4 @@ const PageView = () => {
   )
 }
 
-export default PageView;
+export default Index;

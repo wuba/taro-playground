@@ -1,10 +1,3 @@
-/*
- * @Author: iChengbo
- * @Date: 2021-07-28 16:22:44
- * @LastEditors: iChengbo
- * @LastEditTime: 2021-07-28 17:26:13
- * @FilePath: /taro-react-native/src/pages/apis/pages/network/request/index.tsx
- */
 import Taro from '@tarojs/taro';
 import { View, Button } from '@tarojs/components';
 import { useState } from "react";
@@ -12,7 +5,11 @@ import JSONTree from '@/components/jsontree';
 
 import './index.scss'
 
-const PageView = () => {
+/**
+ * 网络-发起请求
+ * @returns 
+ */
+const Index = () => {
   const [data, setData] = useState({});
 
   const _onRequest = () => {
@@ -47,4 +44,4 @@ const PageView = () => {
   )
 }
 
-export default PageView;
+export default Index;

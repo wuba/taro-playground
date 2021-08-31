@@ -1,10 +1,3 @@
-/*
- * @Author: iChengbo
- * @Date: 2021-08-02 15:44:28
- * @LastEditors: iChengbo
- * @LastEditTime: 2021-08-17 11:33:26
- * @FilePath: /taro-react-native/src/pages/apis/pages/device/deviceMotion/index.tsx
- */
 import Taro from "@tarojs/taro";
 import { Button, View } from "@tarojs/components";
 import { useCallback, useState } from "react";
@@ -12,6 +5,10 @@ import JSONTree from '@/components/jsontree';
 
 import "./index.scss";
 
+/**
+ * 媒体-设备方向
+ * @returns 
+ */
 const Index = () => {
   const [deviceMotion1, setDeviceMotion1] = useState({});
   const [deviceMotion2, setDeviceMotion2] = useState({});

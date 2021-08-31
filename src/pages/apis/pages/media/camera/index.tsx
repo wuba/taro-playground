@@ -1,16 +1,12 @@
-/*
- * @Author: iChengbo
- * @Date: 2021-08-02 15:07:21
- * @LastEditors: iChengbo
- * @LastEditTime: 2021-08-02 15:24:51
- * @FilePath: /taro-react-native/src/pages/apis/pages/media/camera/index.tsx
- */
 import React from "react";
 import Taro from "@tarojs/taro";
 import { Camera, Button, View, Image, Video } from "@tarojs/components";
 
 import "./index.scss";
 
+/**
+ * 媒体-相机
+ */
 export default class PageView extends React.Component<any, any> {
   constructor(props) {
     super(props);

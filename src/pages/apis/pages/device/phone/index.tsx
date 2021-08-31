@@ -1,16 +1,13 @@
-/*
- * @Author: iChengbo
- * @Date: 2021-08-02 15:44:28
- * @LastEditors: iChengbo
- * @LastEditTime: 2021-08-02 16:47:27
- * @FilePath: /taro-react-native/src/pages/apis/pages/device/phone/index.tsx
- */
 import { useState } from "react";
 import Taro from "@tarojs/taro";
 import { Button, View, Text, Input } from "@tarojs/components";
 
 import "./index.scss";
 
+/**
+ * 设备-电话
+ * @returns 
+ */
 const Index = () => {
 
   const [phone, setPhone] = useState('');

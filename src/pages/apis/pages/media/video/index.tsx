@@ -1,10 +1,3 @@
-/*
- * @Author: iChengbo
- * @Date: 2021-08-02 14:24:25
- * @LastEditors: iChengbo
- * @LastEditTime: 2021-08-02 15:02:30
- * @FilePath: /taro-react-native/src/pages/apis/pages/media/video/index.tsx
- */
 import { useRef, useState } from 'react';
 import Taro from '@tarojs/taro';
 import { View, Video, Button } from '@tarojs/components';
@@ -12,8 +5,12 @@ import { hadlePermissionsDeny } from '@/utils/index'
 
 const path = "https://wos2.58cdn.com.cn/DeFazYxWvDti/frsupload/6820cfd5e0346eac050e7c3f0df78f65.mp4";
 
-const PageView = () => {
-  const videoContext = useRef({});
+/**
+ * 媒体-视频
+ * @returns 
+ */
+const Index = () => {
+  const videoContext = useRef<any>({});
 
   const [filePath, setFilePage] = useState(path);
 
@@ -24,7 +21,7 @@ const PageView = () => {
       sourceType: ['album', 'camera'],
       maxDuration: 60,
       camera: 'back',
-    }).then(res => {
+    }).then((res: any) => {
       setFilePage(res.tempFilePath);
     }).catch(err => {
       if (err.errMsg === 'Permissions denied!') {
@@ -36,7 +33,7 @@ const PageView = () => {
   }
 
   const _requestFullScreen = () => {
-    videoContext.current.requestFullScreen();
+    videoContext.current.requestFullScreen({});
   }
 
   const _play = () => {
@@ -60,6 +57,7 @@ const PageView = () => {
         initialTime={0}
         loop={false}
         muted={false}
+        // @ts-ignore
         onLoad={() => {
           videoContext.current = Taro.createVideoContext("video");
         }}
@@ -95,4 +93,4 @@ const PageView = () => {
   )
 }
 
-export default PageView;
+export default Index;

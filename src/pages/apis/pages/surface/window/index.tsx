@@ -1,16 +1,13 @@
-/*
- * @Author: iChengbo
- * @Date: 2021-07-28 16:00:04
- * @LastEditors: iChengbo
- * @LastEditTime: 2021-07-28 16:16:01
- * @FilePath: /taro-react-native/src/pages/apis/pages/surface/window/index.tsx
- */
 import Taro from '@tarojs/taro';
 import { View, Button } from '@tarojs/components';
 
 import './index.scss'
 
-const PageView = () => {
+/**
+ * 界面-窗口
+ * @returns 
+ */
+const Index = () => {
 
   const windowResizeHandler = () => {
     Taro.showToast({ title: '执行回调', icon: 'none' })
@@ -42,4 +39,4 @@ const PageView = () => {
   )
 }
 
-export default PageView;
+export default Index;

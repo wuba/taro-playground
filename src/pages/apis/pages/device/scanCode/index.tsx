@@ -1,10 +1,3 @@
-/*
- * @Author: iChengbo
- * @Date: 2021-08-02 15:44:28
- * @LastEditors: iChengbo
- * @LastEditTime: 2021-08-02 16:35:39
- * @FilePath: /taro-react-native/src/pages/apis/pages/device/scanCode/index.tsx
- */
 import { useState } from "react";
 import Taro from "@tarojs/taro";
 import { Button, View } from "@tarojs/components";
@@ -12,6 +5,10 @@ import JSONTree from '@/components/jsontree';
 import { hadlePermissionsDeny } from '@/utils/index'
 import "./index.scss";
 
+/**
+ * 设备-扫码
+ * @returns 
+ */
 const Index = () => {
   const [info, setInfo] = useState({});
 

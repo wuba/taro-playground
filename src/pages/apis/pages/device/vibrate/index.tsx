@@ -1,15 +1,12 @@
-/*
- * @Author: iChengbo
- * @Date: 2021-08-02 15:44:28
- * @LastEditors: iChengbo
- * @LastEditTime: 2021-08-02 16:22:52
- * @FilePath: /taro-react-native/src/pages/apis/pages/device/vibrate/index.tsx
- */
 import Taro from "@tarojs/taro";
 import { Button, View } from "@tarojs/components";
 
 import "./index.scss";
 
+/**
+ * 设备-震动
+ * @returns 
+ */
 const Index = () => {
   return (
     <View className="api-page">

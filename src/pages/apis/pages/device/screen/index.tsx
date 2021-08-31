@@ -1,16 +1,13 @@
-/*
- * @Author: iChengbo
- * @Date: 2021-08-02 15:44:28
- * @LastEditors: iChengbo
- * @LastEditTime: 2021-08-03 15:35:14
- * @FilePath: /taro-react-native/src/pages/apis/pages/device/screen/index.tsx
- */
 import { useEffect, useState } from "react";
 import Taro from "@tarojs/taro";
 import { Button, View, Text } from "@tarojs/components";
 
 import "./index.scss";
 
+/**
+ * 设备-屏幕
+ * @returns 
+ */
 const Index = () => {
 
   const [value, setValue] = useState(0.5);

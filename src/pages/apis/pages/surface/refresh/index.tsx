@@ -1,16 +1,12 @@
-/*
- * @Author: iChengbo
- * @Date: 2021-07-28 11:56:08
- * @LastEditors: iChengbo
- * @LastEditTime: 2021-07-28 15:21:06
- * @FilePath: /taro-react-native/src/pages/apis/pages/surface/refresh/index.tsx
- */
-import React, { Component } from 'react';
+import { Component } from 'react';
 import Taro from '@tarojs/taro';
 import { View, Text, Button } from '@tarojs/components';
 
 import './index.scss';
 
+/**
+ * 界面-下拉刷新
+ */
 export default class PageView extends Component<any, any> {
 
   constructor(props) {

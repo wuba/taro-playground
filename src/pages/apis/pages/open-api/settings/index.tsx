@@ -3,8 +3,10 @@ import { useState } from 'react';
 import { getSetting, openSetting } from '@tarojs/taro';
 import JSONTree from '@/components/jsontree';
 
-
-export default() => {
+/**
+ * 开放接口-设置
+ */
+export default () => {
   const [setting, setSetting] = useState({});
   return (
     <View className="api-page">

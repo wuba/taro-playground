@@ -1,10 +1,3 @@
-/*
- * @Author: iChengbo
- * @Date: 2021-08-02 15:44:28
- * @LastEditors: iChengbo
- * @LastEditTime: 2021-08-17 11:34:23
- * @FilePath: /taro-react-native/src/pages/apis/pages/device/network/index.tsx
- */
 import Taro from "@tarojs/taro";
 import { Button, View } from "@tarojs/components";
 import { useCallback, useState } from "react";
@@ -12,6 +5,10 @@ import JSONTree from '@/components/jsontree';
 
 import "./index.scss";
 
+/**
+ * 设备-网络
+ * @returns 
+ */
 const Index = () => {
   const [networkStatus1, setNetworkStatus1] = useState({});
   const [networkStatus2, setNetworkStatus2] = useState({});

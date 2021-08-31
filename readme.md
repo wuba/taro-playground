@@ -161,4 +161,6 @@ If you have other questions, you can join the communication group for help.
 
 ## license
 
-Taro Playground is available under the Apache License V2.
+Taro Playground source code is available under the Apache License V2.
+
+Taro and its graphic trademarks are owned by Beijing Jingdong Century Trading Co., Ltd. and licensed to the Taro Playground project.
