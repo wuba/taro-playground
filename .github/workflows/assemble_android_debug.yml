@@ -21,7 +21,7 @@ env:
   # 版本名称
   ANDROID_VERSION_NAME: 1.1.0
   # 版本号
-  ANDROID_VERSION_CODE: 10
+  ANDROID_VERSION_CODE: 11000
   # 密钥库文件
   ANDROID_KEYSTORE_FILE: debug.keystore
   # 密钥库口令
