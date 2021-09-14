@@ -19,7 +19,7 @@ env:
   # 打包类型
   BUILD_TYPE: release
   # 版本名称
-  ANDROID_VERSION_NAME: 1.0.0
+  ANDROID_VERSION_NAME: 1.1.0
   # 版本号
   ANDROID_VERSION_CODE: 10
   # 密钥库文件
