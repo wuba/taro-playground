@@ -1,6 +1,9 @@
 #!/bin/bash
 
-read -p "输入版本号（eg: 1.0.0）:" version
+current_version=`grep "\"version\"" package.json`
+echo "当前版本号为: ${current_version#*:}"
+
+read -p "请输入新版本号（eg: 1.0.0）:" version
 
 # 一.替换 package.json 版本号
 oldLine=`grep "\"version\"" package.json`
