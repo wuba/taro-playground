@@ -20,3 +20,19 @@
 .example-body {
   flex: 1;
 }
+
+.switch-list__item {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 0;
+  background-color: #fff;
+}
+
+.switch-list__text {
+  padding-left: 15px;
+}

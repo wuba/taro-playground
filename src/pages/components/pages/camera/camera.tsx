@@ -1,11 +1,11 @@
 import React from "react";
 import Taro from "@tarojs/taro";
-import { Camera, Button, View, Image, Video, Text } from "@tarojs/components";
-import { hadlePermissionsDeny } from '@/utils/index'
+import { Camera, Button, View, Image, Video, Switch } from "@tarojs/components";
+import { throttle, hadlePermissionsDeny } from '@/utils/index'
 import Header from "@/components/head/head";
+import { CameraProps } from "@tarojs/components/types/Camera";
 
 import "./camera.scss";
-import { CameraProps } from "@tarojs/components/types/Camera";
 
 interface IProps { }
 
@@ -107,6 +107,14 @@ export default class PageView extends React.Component<IProps, IState> {
       }
     });
   };
+  changeMode = () => {
+    this.setState({
+      mode: this.state.mode === 'normal' ? 'scanCode' : 'normal'
+    })
+  }
+  onScanCode = throttle((e) => {
+    Taro.showToast({ title: `扫码成功${e.detail.result}`, icon: 'none', duration: 4000 })
+  }, 5000)
 
   render() {
     const { imageSrc, devicePosition, videoUrl, mode } = this.state;
@@ -129,10 +137,11 @@ export default class PageView extends React.Component<IProps, IState> {
                 onInitDone={() => {
                   this.cameraContext = Taro.createCameraContext();
                 }}
-                onScanCode={(e) => {
-                  console.log(this.ref)
-                  Taro.showToast({ title: `扫码成功${e.detail.result}`, })
-                }} />
+                onScanCode={this.onScanCode} />
+            </View>
+            <View className="switch-list__item">
+              <View className="switch-list__text">扫码模式</View>
+              <Switch checked={mode === 'scanCode'} onChange={this.changeMode}></Switch>
             </View>
             <Button className="btn" type="primary" onClick={this.toggleDevice}>
               开启{devicePosition == "back" ? "前置" : "后置"}镜头
@@ -146,13 +155,6 @@ export default class PageView extends React.Component<IProps, IState> {
             <Button className="btn" type="primary" onClick={this.stopRecord}>
               停止录像
             </Button>
-            <Button className="btn" type="primary" onClick={() => {
-
-              this.setState({
-                mode: this.state.mode === 'normal' ? 'scanCode' : 'normal'
-              })
-            }} >切换成{mode === 'normal' ? '扫码模式' : '正常模式'}</Button>
-
             {imageSrc && <Image className="preview" src={imageSrc} />}
             {videoUrl && <Video className="preview" src={videoUrl} autoplay />}
           </View>
