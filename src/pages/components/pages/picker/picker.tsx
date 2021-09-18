@@ -1,4 +1,3 @@
-import Taro from "@tarojs/taro";
 import React from "react";
 import { View, Text, Picker } from "@tarojs/components";
 
@@ -98,61 +97,46 @@ export default class PagePicker extends React.Component {
               </Picker>
             </View>
           </View>
-          {Taro.getEnv() !== Taro.ENV_TYPE.ALIPAY ? (
-            <View className="page-section">
-              <Text className="page-section-title">多行选择器</Text>
-              <View>
-                <Picker
-                  mode="multiSelector"
-                  range={multiSelector}
-                  value={mulitSelectorValues}
-                  onChange={this.handleMulitChange}
-                  // @ts-ignore
-                  onColumnchange={this.handleColumnchange}
-                >
-                  <View className="picker">
-                    当前选择：
-                    {`${this.state.multiSelector[0][mulitSelectorValues[0]]}, ${this.state.multiSelector[1][mulitSelectorValues[1]]
-                      }`}
-                  </View>
-                </Picker>
-              </View>
+          <View className="page-section">
+            <Text className="page-section-title">多行选择器</Text>
+            <View>
+              <Picker
+                mode="multiSelector"
+                range={multiSelector}
+                value={mulitSelectorValues}
+                onChange={this.handleMulitChange}
+                // @ts-ignore
+                onColumnchange={this.handleColumnchange}
+              >
+                <View className="picker">
+                  当前选择：
+                  {`${this.state.multiSelector[0][mulitSelectorValues[0]]}, ${this.state.multiSelector[1][mulitSelectorValues[1]]
+                    }`}
+                </View>
+              </Picker>
             </View>
-          ) : (
-            <View className="page-section">
-              <Text className="page-section-title">
-                支付宝小程序暂不支持多列选择器
-              </Text>
+          </View>
+
+          <View className="page-section">
+            <Text className="page-section-title">使用object[]的多行选择器</Text>
+            <View>
+              <Picker
+                mode="multiSelector"
+                range={multiSelector2}
+                value={mulitSelectorValues2}
+                rangeKey={'category'}
+                onChange={this.handleMulitChange2}
+                // @ts-ignore
+                onColumnchange={this.handleColumnchange}
+              >
+                <View className="picker">
+                  当前选择：
+                  {`${this.state.multiSelector2[0][mulitSelectorValues2[0]].category}, ${this.state.multiSelector2[1][mulitSelectorValues2[1]].category
+                    }`}
+                </View>
+              </Picker>
             </View>
-          )}
-          {Taro.getEnv() !== Taro.ENV_TYPE.ALIPAY ? (
-            <View className="page-section">
-              <Text className="page-section-title">使用object[]的多行选择器</Text>
-              <View>
-                <Picker
-                  mode="multiSelector"
-                  range={multiSelector2}
-                  value={mulitSelectorValues2}
-                  rangeKey={'category'}
-                  onChange={this.handleMulitChange2}
-                  // @ts-ignore
-                  onColumnchange={this.handleColumnchange}
-                >
-                  <View className="picker">
-                    当前选择：
-                    {`${this.state.multiSelector2[0][mulitSelectorValues2[0]].category}, ${this.state.multiSelector2[1][mulitSelectorValues2[1]].category
-                      }`}
-                  </View>
-                </Picker>
-              </View>
-            </View>
-          ) : (
-            <View className="page-section">
-              <Text className="page-section-title">
-                支付宝小程序暂不支持多列选择器
-              </Text>
-            </View>
-          )}
+          </View>
           <View className="page-section">
             <Text className="page-section-title">时间选择器</Text>
             <View>
@@ -183,7 +167,7 @@ export default class PagePicker extends React.Component {
               <Picker
                 mode='region'
                 value={regionSel}
-                onChange={(e)=>this.handleRegionChange(e)}
+                onChange={this.handleRegionChange}
               >
                 <View className='picker'>
                   当前选择：{regionSel?.join('-')}
