@@ -10,11 +10,16 @@ export default class PagePicker extends React.Component {
     timeSel: "12:01",
     dateSel: "2018-04-22",
     selectorValue: 1,
-    mulitSelectorValues: [0, 0],
+    mulitSelectorValues: [1, 1],
+    mulitSelectorValues2: [1, 1],
     selector: ["美国", "中国", "巴西", "日本"],
     multiSelector: [
       ["饭", "粥", "粉"],
       ["猪肉", "牛肉"]
+    ],
+    multiSelector2: [
+      [{ category: '炒' }, { category: '烧' }, { category: '煮' }],
+      [{ category: '鱼肉' }, { category: '羊肉' }, { category: '鸡肉' }]
     ],
     regionSel: ['北京市', '北京市', '西城区'],
   };
@@ -28,6 +33,11 @@ export default class PagePicker extends React.Component {
   handleMulitChange = e => {
     this.setState({
       mulitSelectorValues: e.detail.value
+    });
+  };
+  handleMulitChange2 = e => {
+    this.setState({
+      mulitSelectorValues2: e.detail.value
     });
   };
 
@@ -58,8 +68,10 @@ export default class PagePicker extends React.Component {
     const {
       selector,
       multiSelector,
+      multiSelector2,
       selectorValue,
       mulitSelectorValues,
+      mulitSelectorValues2,
       timeSel,
       dateSel,
       regionSel,
@@ -93,15 +105,43 @@ export default class PagePicker extends React.Component {
                 <Picker
                   mode="multiSelector"
                   range={multiSelector}
+                  value={mulitSelectorValues}
                   onChange={this.handleMulitChange}
                   // @ts-ignore
                   onColumnchange={this.handleColumnchange}
                 >
                   <View className="picker">
                     当前选择：
-                    {`${this.state.multiSelector[0][mulitSelectorValues[0]]}, ${
-                      this.state.multiSelector[1][mulitSelectorValues[1]]
-                    }`}
+                    {`${this.state.multiSelector[0][mulitSelectorValues[0]]}, ${this.state.multiSelector[1][mulitSelectorValues[1]]
+                      }`}
+                  </View>
+                </Picker>
+              </View>
+            </View>
+          ) : (
+            <View className="page-section">
+              <Text className="page-section-title">
+                支付宝小程序暂不支持多列选择器
+              </Text>
+            </View>
+          )}
+          {Taro.getEnv() !== Taro.ENV_TYPE.ALIPAY ? (
+            <View className="page-section">
+              <Text className="page-section-title">使用object[]的多行选择器</Text>
+              <View>
+                <Picker
+                  mode="multiSelector"
+                  range={multiSelector2}
+                  value={mulitSelectorValues2}
+                  rangeKey={'category'}
+                  onChange={this.handleMulitChange2}
+                  // @ts-ignore
+                  onColumnchange={this.handleColumnchange}
+                >
+                  <View className="picker">
+                    当前选择：
+                    {`${this.state.multiSelector2[0][mulitSelectorValues2[0]].category}, ${this.state.multiSelector2[1][mulitSelectorValues2[1]].category
+                      }`}
                   </View>
                 </Picker>
               </View>
@@ -143,7 +183,7 @@ export default class PagePicker extends React.Component {
               <Picker
                 mode='region'
                 value={regionSel}
-                onChange={this.handleRegionChange}
+                onChange={(e)=>this.handleRegionChange(e)}
               >
                 <View className='picker'>
                   当前选择：{regionSel?.join('-')}
