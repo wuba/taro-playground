@@ -10,7 +10,7 @@ import './index.scss';
  */
 const Index = () => {
 
-  const initSource: string = 'https://pic1.58cdn.com.cn/nowater/fangfe/n_v2ad8b65de09ae4d968ff0a22b87caaad5.png';
+  const initSource: string = 'https://pic5.58cdn.com.cn/nowater/fangfe/n_v25a185c1657984016926f26af591912c4.jpg';
   const initPaths: string[] = [];
 
   const [source, setSource] = useState(initSource);
@@ -115,7 +115,7 @@ const Index = () => {
         className="api-page-btn-success"
         onClick={() => {
           Taro.downloadFile({
-            url: 'https://pic1.58cdn.com.cn/nowater/fangfe/n_v2beae27152fcd4d118b60d5284e29d9c9.png',
+            url: 'https://pic1.58cdn.com.cn/nowater/fangfe/n_v2e36a29a2a50d45fcaa02de3b2bf59919.png',
             success: res => {
               console.log(res);
               if (res.statusCode == 200) {

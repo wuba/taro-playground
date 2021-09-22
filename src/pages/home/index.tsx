@@ -3,7 +3,7 @@ import Taro from '@tarojs/taro';
 import { NativeModules } from 'react-native';
 import { View, Text, Image } from '@tarojs/components';
 import { hadlePermissionsDeny } from '@/utils/index';
-import logoPng from "@/assets/common/taro_logo.png";
+import logoPng from "@/assets/common/taro_logo.jpg";
 import scanPng from "@/assets/iconpark/scan-code.png";
 import './index.scss';
 

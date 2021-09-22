@@ -10,7 +10,7 @@ import Taro from '@tarojs/taro';
 import { View, Image, Text } from '@tarojs/components';
 import { version as taroVersion } from '@tarojs/taro/package.json';
 import { version as rnVersion } from 'react-native/package.json';
-import logoPng from "@/assets/common/taro_logo.png";
+import logoPng from "@/assets/common/taro_logo.jpg";
 import rightPng from "@/assets/iconpark/right.png";
 import './index.scss';
 
