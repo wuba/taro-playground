@@ -1,6 +1,6 @@
 import { View, Text, Image } from '@tarojs/components'
 import Header from '@/components/head/head'
-import nervLogo from '@/assets/common/taro_logo.png'
+import nervLogo from '@/assets/common/taro_logo.jpg'
 
 import './image.scss'
 
