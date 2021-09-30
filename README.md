@@ -3,11 +3,18 @@ Taro Playground App
 
 The Taro Playground App is a cross-platform application developed using Taro, to help developers develop and debug Taro applications. It is initialized using [taro react native template](https://github.com/nervjs/taro-project-templates/tree/v3.1/react-native).
 
-## requirement
+## App Download
+
+| Android | iOS |
+| - | - |
+| ![](https://pic3.58cdn.com.cn/nowater/fangfe/n_v295dd481b6b2f446592350e3187716d03.png) | ![](https://pic1.58cdn.com.cn/nowater/fangfe/n_v224532e5560314106b6ab32b0a1534a9d.png) |
+| https://github.com/wuba/taro-playground/releases | https://apps.apple.com/cn/app/taro-playground/id1576830673 |
+
+## Requirement
 
 0. taro: `@tarojs/cli@^3.2.0`
 1. framework: 'react'
-## quick start
+## Quick start
 
 ### install react native library
 > install peerDependencies of `@tarojs/taro-rn` `@tarojs/components-rn` and `@tarojs/router-rn`, it will also run `post-install`. please modify and run `upgradePeerdeps` script when you change taro version.
@@ -40,7 +47,7 @@ The Taro Playground App is a cross-platform application developed using Taro, to
 0. [development process of taro react native](https://taro-docs.jd.com/taro/docs/react-native)
 1. [github](https://github.com/NervJS/taro)
 
-## release
+## Release
 
 ### build ios bundle
 
@@ -58,7 +65,7 @@ see [publishing-to-app-store](https://reactnative.cn/docs/publishing-to-app-stor
 
 see [signed-apk-android](https://reactnative.cn/docs/signed-apk-android) for details.
 
-## github workflows
+## Github workflows
 > use github actions to build your apps. this template include basic github action config.
 
 see [.github/workflows](.github/workflows) for details.
@@ -111,7 +118,7 @@ encryption password of your Personal Information Exchange (.p12)
 
 This secret should be set to an application-specific password for your Apple ID account. Follow [these instructions](https://support.apple.com/en-us/HT204397) to create an application-specific password.
 
-#### Read more
+#### read more
 
 1. [deploy an ios app to testflight or the app store using github actions](https://betterprogramming.pub/deploy-an-ios-app-to-testflight-or-the-app-store-using-github-actions-c4d7082b1430)
 2. [encrypted-secrets](https://docs.github.com/en/actions/reference/encrypted-secrets)
@@ -139,12 +146,12 @@ env:
 ```
 
 For the security of your app, please regenerate the .keystore file and store the password in your github encrypted secrets.
-#### Read more
+#### read more
 
 1. [app signing](https://developer.android.com/studio/publish/app-signing)
 2. [encrypted-secrets](https://docs.github.com/en/actions/reference/encrypted-secrets)
 
-## attention
+## Attention
 
 The source code is customized for the Taro palyground application and is for reference only. If you want to use it directly, please make the following changes.
 
@@ -159,7 +166,7 @@ If you have other questions, you can join the communication group for help.
 
 ![](https://pic8.58cdn.com.cn/nowater/fangfe/n_v282625210493c4a3fac202d6cf372458e.png)
 
-## license
+## License
 
 Taro Playground source code is available under the Apache License V2.
 
