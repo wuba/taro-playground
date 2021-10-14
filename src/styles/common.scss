@@ -35,6 +35,15 @@
   }
 }
 
+.global-page {
+  font-size: 32px;
+  padding-bottom: 80px;
+
+  &__body {
+    padding: 0 40px;
+  }
+}
+
 .example {
   margin-bottom: 60px;
 

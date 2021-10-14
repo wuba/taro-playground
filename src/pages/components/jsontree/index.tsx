@@ -1,4 +1,4 @@
-import JSONTree from 'react-native-json-tree'
+import JSONTree, { JSONTreeProps } from 'react-native-json-tree'
 import { View } from '@tarojs/components'
 
 const theme = {
@@ -22,6 +22,6 @@ const theme = {
   base0F: '#cc6633'
 };
 
-export default (props) => {
-  return (Object.keys(props.data).length > 0 ? <JSONTree {...props} theme={theme} hideRoot /> : <View></View>)
+export default (props:JSONTreeProps) => {
+  return ((props.data && Object.keys(props.data).length > 0) ? <JSONTree {...props} theme={theme} hideRoot /> : <View></View>)
 }
