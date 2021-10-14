@@ -8,6 +8,11 @@
 export default {
   pages: [
     'pages/home/index',
+    // 全局相关 start
+    'pages/global/index',
+    'pages/global/pages/hooks/page',
+    'pages/global/pages/lifecycle/page',
+    // 全局相关 end
     // 组件相关 start
     'pages/components/index',
     'pages/components/pages/view/view',
@@ -85,6 +90,12 @@ export default {
         selectedIconPath: './assets/iconpark/system_selected.png',
         pagePath: 'pages/home/index',
         text: '项目',
+      },
+      {
+        iconPath: './assets/iconpark/cycle.png',
+        selectedIconPath: './assets/iconpark/cycle_selected.png',
+        pagePath: 'pages/global/index',
+        text: '全局',
       },
       {
         iconPath: './assets/iconpark/components.png',
