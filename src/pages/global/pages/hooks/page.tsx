@@ -1,6 +1,6 @@
-import { View } from "@tarojs/components";
+import { View, Button } from "@tarojs/components";
 import { useState } from 'react';
-import { useRouter, useDidShow, useDidHide } from "@tarojs/taro";
+import { useRouter, useDidShow, useDidHide, navigateTo } from "@tarojs/taro";
 import JSONTree from "@/components/jsontree";
 import Header from "@/components/head/head";
 import Log, { LogType } from "@/components/log";
@@ -29,6 +29,12 @@ export default function Page() {
     setDidHideLog([...didHideLog, log]);
   });
 
+  function handleJump() {
+    navigateTo({
+      url: '/pages/global/pages/hooks/page'
+    })
+  }
+
   return (
     <View className="global-page">
       <View className="global-page__header">
@@ -49,6 +55,7 @@ export default function Page() {
           <View className="example-header">{`useDidHide (${didHideLog.length})`}</View>
           <Log logs={didHideLog} />
         </View>
+        <Button onClick={handleJump}>跳转</Button>
       </View>
     </View>
   );
