@@ -1,0 +1,511 @@
+# 工作流名称
+name: Build And Publish
+
+# 触发工作流程的事件
+on:
+  push:
+    tags: [ b* ]
+  pull_request:
+    branches: [ master ]
+
+# 工作流作业
+jobs:
+  AndroidDebug:
+    runs-on: ubuntu-latest
+    env:
+      # 应用的application_id
+      APP_ID: ${{secrets.APP_ID}}
+      # 应用名称
+      APP_NAME: Taro
+      # 打包类型
+      BUILD_TYPE: debug
+      # 版本名称
+      ANDROID_VERSION_NAME: 1.1.1
+      # 版本号
+      ANDROID_VERSION_CODE: 11100
+      # 密钥库文件
+      ANDROID_KEYSTORE_FILE: debug.keystore
+      # 密钥库口令
+      ANDROID_KEYSTORE_PASSWORD: ${{secrets.DEBUG_KEYSTORE_PASSWORD}}
+      # 密钥库别名
+      ANDROID_KEYSTORE_KEY_ALIAS: android
+      # 密钥库别名口令
+      ANDROID_KEYSTORE_KEY_PASSWORD: ${{secrets.DEBUG_KEYSTORE_PASSWORD}}
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v2
+      - name: Cache node_modules Folder
+        uses: actions/cache@v2
+        with:
+          path: ${{ github.workspace }}/node_modules
+          key: ${{ runner.os }}-node_modules
+          restore-keys: ${{ runner.os }}-node_modules
+      - name: Get Yarn Cache Directory Path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Cache Yarn
+        uses: actions/cache@v2
+        env:
+          cache-name: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Install Dependencies
+        run: |
+          yarn
+      - name: Build Taro React Native Bundle
+        run: |
+          yarn build:rn --platform android
+      - name: Cache Gradle
+        uses: actions/cache@v2
+        env:
+          cache-name: gradle-cache
+        with:
+          path: ~/.gradle
+          key: ${{ runner.os }}-gradle
+          restore-keys: |
+            ${{ runner.os }}-gradle
+      - name: Assemble Android ${{ env.BUILD_TYPE }}
+        run: |
+          cd ./android && \
+          ./gradlew assemble${{ env.BUILD_TYPE }} \
+            -Papp_id=${{ env.APP_ID }} \
+            -Papp_name='${{ env.APP_NAME }}' \
+            -Papp_icon=${{env.APP_ICON}} \
+            -Papp_round_icon=${{env.APP_ROUND_ICON}} \
+            -Pversion_code=${{ env.ANDROID_VERSION_CODE }} \
+            -Pversion_name=${{ env.ANDROID_VERSION_NAME }} \
+            -Pkeystore_file='${{ env.ANDROID_KEYSTORE_FILE }}' \
+            -Pkeystore_password='${{ env.ANDROID_KEYSTORE_PASSWORD }}' \
+            -Pkeystore_key_alias='${{ env.ANDROID_KEYSTORE_KEY_ALIAS }}' \
+            -Pkeystore_key_password='${{ env.ANDROID_KEYSTORE_KEY_PASSWORD }}'
+      # - name: Upload Android Products
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: app-${{ env.BUILD_TYPE }}
+      #     path: ${{ github.workspace }}/android/app/build/outputs/apk/${{ env.BUILD_TYPE }}/app-${{ env.BUILD_TYPE }}.apk
+      # - name: Upload release assets
+      #   uses: softprops/action-gh-release@v1
+      #   if: startsWith(github.ref, 'refs/tags/')
+      #   with:
+      #     files: |
+      #       android/app/build/outputs/apk/${{ env.BUILD_TYPE }}/app-${{ env.BUILD_TYPE }}.apk
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Copy Artifacts
+        run: |
+          mkdir artifact
+          cp ${{ github.workspace }}/android/app/build/outputs/apk/${{ env.BUILD_TYPE }}/app-${{ env.BUILD_TYPE }}.apk ${{ github.workspace }}/artifact
+
+      - name: Upload Android Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifact
+          path: ${{ github.workspace }}/artifact
+
+
+  AndroidRelease:
+    runs-on: ubuntu-latest
+    env:
+      # 应用的application_id
+      APP_ID: ${{secrets.APP_ID}}
+      # 应用名称
+      APP_NAME: Taro
+      # 打包类型
+      BUILD_TYPE: release
+      # 版本名称
+      ANDROID_VERSION_NAME: 1.1.1
+      # 版本号
+      ANDROID_VERSION_CODE: 11100
+      # 密钥库文件
+      ANDROID_KEYSTORE_FILE: release.keystore
+      # 密钥库口令
+      ANDROID_KEYSTORE_PASSWORD: ${{secrets.RELEASE_KEYSTORE_PASSWORD}}
+      # 密钥库别名
+      ANDROID_KEYSTORE_KEY_ALIAS: android
+      # 密钥库别名口令
+      ANDROID_KEYSTORE_KEY_PASSWORD: ${{secrets.RELEASE_KEYSTORE_PASSWORD}}
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v2
+      - name: Cache node_modules Folder
+        uses: actions/cache@v2
+        with:
+          path: ${{ github.workspace }}/node_modules
+          key: ${{ runner.os }}-node_modules
+          restore-keys: ${{ runner.os }}-node_modules
+      - name: Get Yarn Cache Directory Path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Cache Yarn
+        uses: actions/cache@v2
+        env:
+          cache-name: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Install Dependencies
+        run: |
+          yarn
+      - name: Build Taro React Native Bundle
+        run: |
+          yarn build:rn --platform android
+      - name: Cache Gradle
+        uses: actions/cache@v2
+        env:
+          cache-name: gradle-cache
+        with:
+          path: ~/.gradle
+          key: ${{ runner.os }}-gradle
+          restore-keys: |
+            ${{ runner.os }}-gradle
+      - name: Assemble Android ${{ env.BUILD_TYPE }}
+        run: |
+          cd ./android && \
+          ./gradlew assemble${{ env.BUILD_TYPE }} \
+            -Papp_id=${{ env.APP_ID }} \
+            -Papp_name='${{ env.APP_NAME }}' \
+            -Papp_icon=${{env.APP_ICON}} \
+            -Papp_round_icon=${{env.APP_ROUND_ICON}} \
+            -Pversion_code=${{ env.ANDROID_VERSION_CODE }} \
+            -Pversion_name=${{ env.ANDROID_VERSION_NAME }} \
+            -Pkeystore_file='${{ env.ANDROID_KEYSTORE_FILE }}' \
+            -Pkeystore_password='${{ env.ANDROID_KEYSTORE_PASSWORD }}' \
+            -Pkeystore_key_alias='${{ env.ANDROID_KEYSTORE_KEY_ALIAS }}' \
+            -Pkeystore_key_password='${{ env.ANDROID_KEYSTORE_KEY_PASSWORD }}'
+      # - name: Upload Android Products
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: app-${{ env.BUILD_TYPE }}
+      #     path: ${{ github.workspace }}/android/app/build/outputs/apk/${{ env.BUILD_TYPE }}/app-${{ env.BUILD_TYPE }}.apk
+      # - name: Upload release assets
+      #   uses: softprops/action-gh-release@v1
+      #   if: startsWith(github.ref, 'refs/tags/')
+      #   with:
+      #     files: |
+      #       android/app/build/outputs/apk/${{ env.BUILD_TYPE }}/app-${{ env.BUILD_TYPE }}.apk
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Copy Artifacts
+        run: |
+          mkdir artifact
+          cp ${{ github.workspace }}/android/app/build/outputs/apk/${{ env.BUILD_TYPE }}/app-${{ env.BUILD_TYPE }}.apk ${{ github.workspace }}/artifact
+
+      - name: Upload Android Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifact
+          path: ${{ github.workspace }}/artifact
+
+
+  iOSDebug:
+    runs-on: macos-latest
+    env:
+      # 应用的application_id
+      APP_ID: ${{secrets.APP_ID}}
+      APP_NAME: Taro
+      BUILD_TYPE: debug
+      IOS_VERSION_NUMBER: 1.1.1
+      IOS_TEAM_ID: ${{secrets.TEAM_ID}}
+      IOS_PROVISIONING_PROFILE_SPECIFIER: ${{secrets.DEBUG_PROVISIONING_PROFILE_SPECIFIER}}
+      IOS_CODE_SIGN_IDENTITY: iPhone Developer
+      IOS_SIGNING_CERTIFICATE_P12_DATA: ${{secrets.DEBUG_SIGNING_CERTIFICATE_P12_DATA}}
+      IOS_SIGNING_CERTIFICATE_PASSWORD: ${{secrets.DEBUG_SIGNING_CERTIFICATE_PASSWORD}}
+      IOS_PROVISIONING_PROFILE_DATA: ${{secrets.DEBUG_PROVISIONING_PROFILE_DATA}}
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v2
+      - name: Cache node_modules Folder
+        uses: actions/cache@v2
+        with:
+          path: ${{ github.workspace }}/node_modules
+          key: ${{ runner.os }}-node_modules
+          restore-keys: ${{ runner.os }}-node_modules
+      - name: Get Yarn Cache Directory Path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Cache Yarn
+        uses: actions/cache@v2
+        env:
+          cache-name: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Cache Pods
+        uses: actions/cache@v2
+        with:
+          path: ios/Pods
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
+      - name: Install Dependencies
+        run: |
+          yarn
+      - name: Build Taro React Native Bundle
+        run: |
+          yarn build:rn --platform ios
+      - name: Install pods
+        run: cd ios && pod install
+      - name: Change react-native-xcode.sh
+        run: |
+          cd node_modules/react-native/scripts
+          echo "exit 0;">react-native-xcode.sh
+      - name: Import signing certificate
+        env:
+          SIGNING_CERTIFICATE_P12_DATA: ${{ env.IOS_SIGNING_CERTIFICATE_P12_DATA }}
+          SIGNING_CERTIFICATE_PASSWORD: ${{ env.IOS_SIGNING_CERTIFICATE_PASSWORD }}
+        run: |
+          exec .github/scripts/import-certificate.sh
+      - name: Import provisioning profile
+        env:
+          PROVISIONING_PROFILE_DATA: ${{ env.IOS_PROVISIONING_PROFILE_DATA }}
+        run: |
+          exec .github/scripts/import-profile.sh
+      - name: Build app
+        env:
+          FL_APP_IDENTIFIER: ${{ env.APP_ID }}
+          FL_UPDATE_PLIST_DISPLAY_NAME: ${{ env.APP_NAME }}
+          FL_UPDATE_PLIST_PATH: taroDemo/Info.plist
+          FL_VERSION_NUMBER_VERSION_NUMBER: ${{ env.IOS_VERSION_NUMBER }}
+          FL_CODE_SIGN_IDENTITY: ${{ env.IOS_CODE_SIGN_IDENTITY }}
+          FL_PROVISIONING_PROFILE_SPECIFIER: ${{ env.IOS_PROVISIONING_PROFILE_SPECIFIER }}
+          FASTLANE_TEAM_ID: ${{ env.IOS_TEAM_ID }}
+        run: |
+          cd ios
+          bundle update
+          bundle exec fastlane build_dev
+      - name: Upload Ios Products
+        uses: actions/upload-artifact@v2
+        with:
+          name: app-${{ env.BUILD_TYPE }}
+          path: |
+            ${{ github.workspace }}/ios/taroDemo.ipa
+            ${{ github.workspace }}/ios/taroDemo.app.dSYM.zip
+      # - name: Rename release assets
+      #   run: |
+      #     mv ios/taroDemo.ipa ios/app-${{ env.BUILD_TYPE }}.ipa
+      #     mv ios/taroDemo.app.dSYM.zip ios/app-${{ env.BUILD_TYPE }}.app.dSYM.zip
+      # - name: Upload release assets
+      #   uses: softprops/action-gh-release@v1
+      #   if: startsWith(github.ref, 'refs/tags/')
+      #   with:
+      #     files: |
+      #       ios/app-${{ env.BUILD_TYPE }}.ipa
+      #       ios/app-${{ env.BUILD_TYPE }}.app.dSYM.zip
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Copy Artifacts
+        run: |
+          mkdir artifact
+          mv ios/taroDemo.ipa ${{ github.workspace }}/artifact/app-${{ env.BUILD_TYPE }}.ipa
+          mv ios/taroDemo.app.dSYM.zip ${{ github.workspace }}/artifact/app-${{ env.BUILD_TYPE }}.app.dSYM.zip
+
+      - name: Upload iOS Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifact
+          path: ${{ github.workspace }}/artifact
+
+
+  iOSRelease:
+    runs-on: macos-latest
+    env:
+      # 应用的application_id
+      APP_ID: ${{secrets.APP_ID}}
+      APP_NAME: Taro
+      BUILD_TYPE: release
+      IOS_VERSION_NUMBER: 1.1.1
+      IOS_BUILD_NUMBER: 1.1.1.1
+      IOS_TEAM_ID: ${{secrets.TEAM_ID}}
+      IOS_PROVISIONING_PROFILE_SPECIFIER: ${{secrets.RELEASE_PROVISIONING_PROFILE_SPECIFIER}}
+      IOS_CODE_SIGN_IDENTITY: iPhone Distribution
+      IOS_SIGNING_CERTIFICATE_P12_DATA: ${{secrets.RELEASE_SIGNING_CERTIFICATE_P12_DATA}}
+      IOS_SIGNING_CERTIFICATE_PASSWORD: ${{secrets.RELEASE_SIGNING_CERTIFICATE_PASSWORD}}
+      IOS_PROVISIONING_PROFILE_DATA: ${{secrets.RELEASE_PROVISIONING_PROFILE_DATA}}
+      IOS_APP_STORE_CONNECT_USERNAME: ${{secrets.APP_STORE_CONNECT_USERNAME}}
+      IOS_APP_STORE_CONNECT_PASSWORD: ${{secrets.APP_STORE_CONNECT_PASSWORD}}
+    steps:
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=timestamp::$(date +'%s')"
+      - name: Checkout Project
+        uses: actions/checkout@v2
+      - name: Cache node_modules Folder
+        uses: actions/cache@v2
+        with:
+          path: ${{ github.workspace }}/node_modules
+          key: ${{ runner.os }}-node_modules
+          restore-keys: ${{ runner.os }}-node_modules
+      - name: Get Yarn Cache Directory Path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Cache Yarn
+        uses: actions/cache@v2
+        env:
+          cache-name: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Cache Pods
+        uses: actions/cache@v2
+        with:
+          path: ios/Pods
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
+      - name: Install Dependencies
+        run: |
+          yarn
+      - name: Build Taro React Native Bundle
+        run: |
+          yarn build:rn --platform ios
+      - name: Upload Taro React Native Bundle
+        uses: actions/upload-artifact@v2
+        with:
+          name: taro-ios-bundle
+          path: ${{ github.workspace }}/ios/main.jsbundle
+      - name: Install pods
+        run: cd ios && pod install
+      - name: Change react-native-xcode.sh
+        run: |
+          cd node_modules/react-native/scripts
+          echo "exit 0;">react-native-xcode.sh
+      - name: Import signing certificate
+        env:
+          SIGNING_CERTIFICATE_P12_DATA: ${{ env.IOS_SIGNING_CERTIFICATE_P12_DATA }}
+          SIGNING_CERTIFICATE_PASSWORD: ${{ env.IOS_SIGNING_CERTIFICATE_PASSWORD }}
+        run: |
+          exec .github/scripts/import-certificate.sh
+      - name: Import provisioning profile
+        env:
+          PROVISIONING_PROFILE_DATA: ${{ env.IOS_PROVISIONING_PROFILE_DATA }}
+        run: |
+          exec .github/scripts/import-profile.sh
+      - name: Build app
+        env:
+          FL_APP_IDENTIFIER: ${{ env.APP_ID }}
+          FL_UPDATE_PLIST_DISPLAY_NAME: ${{ env.APP_NAME }}
+          FL_UPDATE_PLIST_PATH: taroDemo/Info.plist
+          FL_VERSION_NUMBER_VERSION_NUMBER: ${{ env.IOS_VERSION_NUMBER }}
+          FL_BUILD_NUMBER_BUILD_NUMBER: ${{ env.IOS_VERSION_NUMBER }}.${{steps.date.outputs.timestamp}}
+          FL_CODE_SIGN_IDENTITY: ${{ env.IOS_CODE_SIGN_IDENTITY }}
+          FL_PROVISIONING_PROFILE_SPECIFIER: ${{ env.IOS_PROVISIONING_PROFILE_SPECIFIER }}
+          FASTLANE_TEAM_ID: ${{ env.IOS_TEAM_ID }}
+        run: |
+          cd ios
+          bundle update
+          bundle exec fastlane build_release
+      - name: Upload Ios Products
+        uses: actions/upload-artifact@v2
+        with:
+          name: app-${{ env.BUILD_TYPE }}
+          path: |
+            ${{ github.workspace }}/ios/taroDemo.ipa
+            ${{ github.workspace }}/ios/taroDemo.app.dSYM.zip
+      - name: Upload app to App Store Connect
+        env:
+          APP_STORE_CONNECT_USERNAME: ${{ env.IOS_APP_STORE_CONNECT_USERNAME }}
+          APP_STORE_CONNECT_PASSWORD: ${{ env.IOS_APP_STORE_CONNECT_PASSWORD }}
+        run: |
+          cd ios
+          xcrun altool --upload-app -t ios -f "taroDemo.ipa" -u "$APP_STORE_CONNECT_USERNAME" -p "$APP_STORE_CONNECT_PASSWORD"
+      # - name: Rename release assets
+      #   run: |
+      #     mv ios/taroDemo.ipa ios/app-${{ env.BUILD_TYPE }}.ipa
+      #     mv ios/taroDemo.app.dSYM.zip ios/app-${{ env.BUILD_TYPE }}.app.dSYM.zip
+      # - name: Upload release assets
+      #   uses: softprops/action-gh-release@v1
+      #   if: startsWith(github.ref, 'refs/tags/')
+      #   with:
+      #     files: |
+      #       ios/app-${{ env.BUILD_TYPE }}.ipa
+      #       ios/app-${{ env.BUILD_TYPE }}.app.dSYM.zip
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Copy Artifacts
+        run: |
+          mkdir artifact
+          mv ios/taroDemo.ipa ${{ github.workspace }}/artifact/app-${{ env.BUILD_TYPE }}.ipa
+          mv ios/taroDemo.app.dSYM.zip ${{ github.workspace }}/artifact/app-${{ env.BUILD_TYPE }}.app.dSYM.zip
+
+      - name: Upload iOS Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifact
+          path: ${{ github.workspace }}/artifact
+
+
+  Publish:
+    needs: [AndroidDebug, AndroidRelease, iOSDebug, iOSRelease]
+    runs-on: ubuntu-latest
+    env:
+      CDN_LINK: https://cdn.jsdelivr.net/gh/wuba/taro-playground
+    steps:
+      - uses: actions/checkout@v2
+      - name: Download all artifacts
+        uses: actions/download-artifact@v2
+
+      - name: Display structure of downloaded files
+        run: |
+          find . -maxdepth 2
+
+      - name: Config git
+        run: git config --global user.email "name@gmail.com" && git config --global user.name "name"
+
+      - name: Set output
+        id: vars
+        run: echo ::set-output name=tag::${GITHUB_REF/refs\/tags\//}
+
+      - name: Genarate QrCode
+        uses: iChengbo/generate-qrcode@v0.3.0
+        id: AndroidDebugQrCode
+        with:
+          text: ${{ env.CDN_LINK }}@${{ steps.vars.outputs.tag }}/artifact/app-debug.apk
+      - name: Genarate QrCode
+        uses: iChengbo/generate-qrcode@v0.3.0
+        id: AndroidReleaseQrCode
+        with:
+          text: ${{ env.CDN_LINK }}@${{ steps.vars.outputs.tag }}/artifact/app-release.apk
+      - name: Genarate QrCode
+        uses: iChengbo/generate-qrcode@v0.3.0
+        id: iOSDebugQrCode
+        with:
+          text: ${{ env.CDN_LINK }}@${{ steps.vars.outputs.tag }}/artifact/app-debug.ipa
+      - name: Genarate QrCode
+        uses: iChengbo/generate-qrcode@v0.3.0
+        id: iOSDebugQrCode
+        with:
+          text: ${{ env.CDN_LINK }}@${{ steps.vars.outputs.tag }}/artifact/app-release.ipa
+
+      - name: Reset Tag
+        run: |
+          echo ${{ steps.vars.outputs.tag }}
+          git tag -d ${{ steps.vars.outputs.tag }}
+          git push origin :refs/tags/${{ steps.vars.outputs.tag }}
+          git add .
+          git commit -m "update by github actions"
+          git tag ${{ steps.vars.outputs.tag }}
+          git push origin ${{ steps.vars.outputs.tag }}
+
+      - name: Upload release assets
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: |
+            artifact/app-debug.apk,
+            artifact/app-release.apk,
+            artifact/app-debug.ipa,
+            artifact/app-release.ipa
+          body: |
+            |  AndroidDebug  |  AndroidRelease  |  iOSDebug  |  iOSRelease  |
+            | :--: | :--: | :--: | :--: |
+            | ![AndroidDebug](${{ env.CDN_LINK }}@${{ steps.vars.outputs.tag }}/${{ steps.AndroidDebugQrCode.outputs.QR_CODE_PNG_NAME }}) | ![AndroidRelease](${{ env.CDN_LINK }}@${{ steps.vars.outputs.tag }}/${{ steps.AndroidReleaseQrCode.outputs.QR_CODE_PNG_NAME }}) | ![iOSDebug](${{ env.CDN_LINK }}@${{ steps.vars.outputs.tag }}/${{ steps.iOSDebugQrCode.outputs.QR_CODE_PNG_NAME }}) | ![iOSRelease](${{ env.CDN_LINK }}@${{ steps.vars.outputs.tag }}/${{ steps.iOSReleaseQrCode.outputs.QR_CODE_PNG_NAME }}) |
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ steps.vars.outputs.tag }}
