@@ -53,7 +53,7 @@ export default class Index extends Component<any, any> {
       name: '版本变更',
       onPress: () => {
         Taro.navigateTo({
-          url: '/pages/webview/index?title=版本变更&link=https://github.com/NervJS/taro/releases'
+          url: '/pages/webview/index?title=版本变更&link=https://github.com/wuba/taro-playground/releases'
         })
       },
     },
