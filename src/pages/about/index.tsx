@@ -14,6 +14,7 @@ import logoPng from "@/assets/common/taro_logo.jpg";
 import rightPng from "@/assets/iconpark/right.png";
 import './index.scss';
 
+const playgroundVersion = Taro.getSystemInfoSync().version
 export default class Index extends Component<any, any> {
   linksList = [
     {
@@ -108,7 +109,7 @@ export default class Index extends Component<any, any> {
           })
         }}
         >
-          <Text className='page-footer-text'>Taro: {taroVersion} React Native: {rnVersion}</Text>
+          <Text className='page-footer-text'>Taro: {taroVersion}, React Native: {rnVersion}, Taro Playground: {playgroundVersion}</Text>
         </View>
       </View>
     )
