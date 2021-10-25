@@ -32,7 +32,8 @@
     "start": "npm run dev:rn",
     "update-version": "sh ./bin/update_version.sh",
     "podInstall": "pod-install",
-    "upgradePeerdeps": "install-peerdeps @tarojs/taro-rn@3.3.10 -o -Y && install-peerdeps @tarojs/components-rn@3.3.10 -o -Y && install-peerdeps @tarojs/router-rn@3.3.10 -o -Y && pod-install"
+    "upgradePeerdeps": "install-peerdeps @tarojs/taro-rn@3.3.10 -o -Y && install-peerdeps @tarojs/components-rn@3.3.10 -o -Y && install-peerdeps @tarojs/router-rn@3.3.10 -o -Y && pod-install",
+    "prepare": "husky install"
   },
   "browserslist": [
     "last 3 versions",
@@ -83,6 +84,8 @@
   "devDependencies": {
     "@babel/core": "^7.8.0",
     "@babel/runtime": "^7.7.7",
+    "@commitlint/cli": "^13.2.1",
+    "@commitlint/config-conventional": "^13.2.0",
     "@tarojs/cli": "3.3.10",
     "@tarojs/mini-runner": "3.3.10",
     "@tarojs/rn-runner": "3.3.10",
@@ -97,6 +100,7 @@
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-react": "^7.8.2",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^7.0.0",
     "install-peerdeps": "^3.0.3",
     "pod-install": "^0.1.23",
     "stylelint": "9.3.0",
