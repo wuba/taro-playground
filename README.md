@@ -10,10 +10,15 @@ The Taro Playground App is a cross-platform application developed using Taro, to
 | ![](https://pic3.58cdn.com.cn/nowater/fangfe/n_v295dd481b6b2f446592350e3187716d03.png) | ![](https://pic1.58cdn.com.cn/nowater/fangfe/n_v224532e5560314106b6ab32b0a1534a9d.png) |
 | https://github.com/wuba/taro-playground/releases | https://apps.apple.com/cn/app/taro-playground/id1576830673 |
 
-## Requirement
+## Supportted versions
 
 0. taro: `@tarojs/cli@^3.2.0`
 1. framework: 'react'
+
+| Taro version | React Native version | branch |
+| - | - | - |
+| >= 3.2.0, <= 3.3.9 | 0.64 | [releases/rn-0.64+taro-3.3.9](https://github.com/wuba/taro-playground/tree/releases/rn-0.64+taro-3.3.9) |
+| >= 3.3.10 | 0.66 | [main](https://github.com/wuba/taro-playground/tree/main) |
 ## Quick start
 
 ### install react native library
