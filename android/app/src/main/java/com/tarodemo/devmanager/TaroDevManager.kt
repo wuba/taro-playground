@@ -10,6 +10,7 @@ import java.io.File
 object TaroDevManager {
 
     private const val JS_BUNDLE_FILE_NAME = "ReactNativeDevBundle.js"
+    private const val JS_BUNDLE_WITH_TAG_BRIDGE_FILE_NAME = "BridgeReactNativeDevBundle.js"
 
     private val application = MainApplication.getInstance()
     private val packagerConnectionSettings = PackagerConnectionSettings(application)
@@ -35,9 +36,16 @@ object TaroDevManager {
 
     fun reset() {
         // remove downloaded js bundle file
-        File(application.filesDir, JS_BUNDLE_FILE_NAME).delete()
+        removeDownloadedJsBundleFile()
         // apply empty debug server
         setDebugHttpHost("")
+    }
+
+    private fun removeDownloadedJsBundleFile() {
+        File(application.filesDir, JS_BUNDLE_FILE_NAME).delete()
+        // bundle file has it`s unique tag
+        // see https://github.com/facebook/react-native/blob/652cb541a50f9f8e5e9aeafb95898f7381e16614/ReactAndroid/src/main/java/com/facebook/react/devsupport/DevSupportManagerBase.java#L197
+        File(application.filesDir, JS_BUNDLE_WITH_TAG_BRIDGE_FILE_NAME).delete()
     }
 
     @JvmStatic
