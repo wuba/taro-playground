@@ -39,6 +39,17 @@ export default class Index extends Component<never, any> {
               name: '页面生命周期',
             }
           ]
+        },
+        {
+          id: "router",
+          name: "路由",
+          open: false,
+          pages: [
+            {
+              id: 'index',
+              name: '页面跳转',
+            }
+          ]
         }
       ]
     };

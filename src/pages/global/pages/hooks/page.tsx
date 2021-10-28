@@ -1,6 +1,6 @@
 import { View, Button } from "@tarojs/components";
 import { useState } from 'react';
-import { useRouter, useDidShow, useDidHide, navigateTo } from "@tarojs/taro";
+import { useRouter, useDidShow, useDidHide, useReachBottom, usePageScroll, navigateTo } from "@tarojs/taro";
 import JSONTree from "@/components/jsontree";
 import Header from "@/components/head/head";
 import Log, { LogType } from "@/components/log";
@@ -8,15 +8,15 @@ import Log, { LogType } from "@/components/log";
 import "./page.scss";
 
 export default function Page() {
-  const router = useRouter();
-  const formatRouter: Record<string, unknown> = { ...router };
+  const router = useRouter()
+  const formatRouter: Record<string, unknown> = { ...router }
 
   const [ didShowLog, setDidShowLog ] = useState<LogType[]>([])
   useDidShow(() => {
     const log = {
       time: new Date().toLocaleTimeString(),
       text: 'useDidShow called.',
-    };
+    }
     setDidShowLog([...didShowLog, log]);
   });
 
@@ -25,13 +25,31 @@ export default function Page() {
     const log = {
       time: new Date().toLocaleTimeString(),
       text: 'useDidHide called.',
-    };
+    }
     setDidHideLog([...didHideLog, log]);
   });
 
+  const [ reachBottomLog, setReachBottomLog ]  = useState<LogType[]>([])
+  useReachBottom(() => {
+    const log = {
+      time: new Date().toLocaleTimeString(),
+      text: 'useReachBottom called.',
+    }
+    setReachBottomLog([...reachBottomLog, log]);
+  })
+
+  const [ pageScrollLog, setPageScrollLog ]  = useState<LogType[]>([])
+  usePageScroll((e) => {
+    const log = {
+      time: new Date().toLocaleTimeString(),
+      text: `usePageScroll scrollTop:${e.scrollTop.toFixed(0)}.`,
+    }
+    setPageScrollLog([...pageScrollLog.slice(-9), log]);
+  })
+
   function handleJump() {
     navigateTo({
-      url: '/pages/global/pages/hooks/page'
+      url: '/pages/global/pages/lifecycle/page',
     })
   }
 
@@ -54,6 +72,14 @@ export default function Page() {
         <View className="global-page__body-example example">
           <View className="example-header">{`useDidHide (${didHideLog.length})`}</View>
           <Log logs={didHideLog} />
+        </View>
+        <View className="global-page__body-example example">
+          <View className="example-header">{`useReachBottom (${reachBottomLog.length})`}</View>
+          <Log logs={reachBottomLog} />
+        </View>
+        <View className="global-page__body-example example">
+          <View className="example-header">{`usePageScroll (${pageScrollLog.length})`}</View>
+          <Log logs={pageScrollLog} />
         </View>
         <Button onClick={handleJump}>跳转</Button>
       </View>
