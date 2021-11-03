@@ -47,6 +47,10 @@ The Taro Playground App is a cross-platform application developed using Taro, to
 
 `yarn start`
 
+### reset cache and start bundler
+
+`yarn dev:rn --reset-cache`
+
 ### more infomations
 
 0. [development process of taro react native](https://taro-docs.jd.com/taro/docs/react-native)
