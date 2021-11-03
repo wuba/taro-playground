@@ -7322,11 +7322,6 @@ expo-image-picker@~10.2.3:
     expo-modules-core "~0.2.0"
     uuid "7.0.2"
 
-expo-keep-awake@^9.2.0:
-  version "9.3.0"
-  resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-9.3.0.tgz#5f6353b8f93b8ba33758d1c06c42116b414f4c8f"
-  integrity sha512-Ps10gOtnZDZqx0APexTEEvlOL4FEWoO8CCNJuxMKAF7hzxLjf0T3Q1swKPXqvbxcFtlqsO60Tyn+X+KL7u1z4Q==
-
 expo-keep-awake@~9.2.0:
   version "9.2.0"
   resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-9.2.0.tgz#9cbdcc8264c943ef29a58326236cd34267e98f43"
