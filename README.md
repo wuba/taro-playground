@@ -49,7 +49,7 @@ The Taro Playground App is a cross-platform application developed using Taro, to
 
 ### reset cache and start bundler
 
-`yarn dev:rn --reset-cache`
+`yarn start --reset-cache`
 
 ### more infomations
 
