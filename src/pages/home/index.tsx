@@ -10,11 +10,16 @@ import './index.scss';
 const DevManager = NativeModules.RNDevManager;
 
 const BUNDLES_KEY = "bundleList";
+const REMOTE_BUNDLES_KEY = "remoteBundleList";
+
+const regTaroServer = /^taro:\/\/([0-9.]+):([0-9]+)$/;
+const regRemoteJs = /\.js$/;
 export default class Index extends Component<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
-      list: [],
+      localList: [],
+      remoteList: [],
     };
   }
 
@@ -25,7 +30,19 @@ export default class Index extends Component<any, any> {
       console.log('获取 bundle 列表', res);
       if (res.data.length > 0) {
         this.setState({
-          list: res.data,
+          localList: res.data,
+        })
+      }
+    }).catch(err => {
+      console.log('获取 bundle 列表失败：', err);
+    });
+    Taro.getStorage({
+      key: REMOTE_BUNDLES_KEY,
+    }).then(res => {
+      console.log('获取 bundle 列表', res);
+      if (res.data.length > 0) {
+        this.setState({
+          remoteList: res.data,
         })
       }
     }).catch(err => {
@@ -33,7 +50,7 @@ export default class Index extends Component<any, any> {
     });
   }
 
-  _loadBundleByUrl = (url: string, path = 'index') => {
+  _loadBundleFromLocalServer = (url: string, path = 'index') => {
     try {
       Taro.request({
         url: `http:${url}/status`,
@@ -56,8 +73,13 @@ export default class Index extends Component<any, any> {
     }
   }
 
-  _saveUrlToStorage = (url) => {
-    const { list = [] } = this.state;
+  _loadBundelFromRemoteUrl = (url: string) => {
+    DevManager.load(url);
+  }
+
+  _saveUrlToStorage = (url, key) => {
+    const { localList = [], remoteList } = this.state;
+    const list = (key === BUNDLES_KEY) ? localList : remoteList;
     const idx = list.indexOf(url);
     let _list: string[] = [];
     if (idx === -1) {
@@ -68,10 +90,10 @@ export default class Index extends Component<any, any> {
       _list.unshift(url);
     }
     this.setState({
-      list: _list,
+      [(key === BUNDLES_KEY) ? 'localList' : 'remoteList']: _list,
     });
     Taro.setStorage({
-      key: BUNDLES_KEY,
+      key,
       data: _list,
     });
   }
@@ -81,11 +103,13 @@ export default class Index extends Component<any, any> {
       .then(res => {
         console.log('扫码成功：', res);
         const url = res.result;
-        const reg = /^taro:\/\/([0-9.]+):([0-9]+)$/;
-        if (reg.test(url)) {
+        if (regTaroServer.test(url)) {
           const ipAddr = url.substr(7);
-          this._loadBundleByUrl(ipAddr);
-          this._saveUrlToStorage(ipAddr);
+          this._loadBundleFromLocalServer(ipAddr);
+          this._saveUrlToStorage(ipAddr, BUNDLES_KEY);
+        } else if (regRemoteJs.test(url)) {
+          this._loadBundelFromRemoteUrl(url);
+          this._saveUrlToStorage(url, REMOTE_BUNDLES_KEY);
         } else {
           Taro.showModal({
             title: '扫描结果',
@@ -112,13 +136,13 @@ export default class Index extends Component<any, any> {
       })
   }
 
-  _clearBundles = async () => {
+  _clearBundles = async (key) => {
     try {
       const res = await Taro.showModal({ title: '确定清空吗？', content: '清空后历史数据将不再保存', confirmColor: '#6190E8' });
       if (res.confirm) {
-        await Taro.removeStorage({ key: BUNDLES_KEY });
+        await Taro.removeStorage({ key });
         this.setState({
-          list: [],
+          [(key === BUNDLES_KEY) ? 'localList' : 'remoteList']: [],
         });
         Taro.showToast({ title: '已清空', icon: 'success' });
       }
@@ -129,7 +153,7 @@ export default class Index extends Component<any, any> {
   }
 
   render() {
-    const { list = [] } = this.state;
+    const { localList = [], remoteList = [] } = this.state;
     return (
       <View className='index'>
         <View className='info'>
@@ -148,25 +172,55 @@ export default class Index extends Component<any, any> {
             />
           </View>
         </View>
-        {list.length > 0 && (
+        {localList.length > 0 && (
           <View className='bundle'>
             <View className='bundle-control'>
-              <Text>最近打开</Text>
-              <Text onClick={this._clearBundles}>清空</Text>
+              <Text>Metro Server</Text>
+              <Text onClick={() => {
+                this._clearBundles(BUNDLES_KEY)
+                }}
+              >Clear</Text>
             </View>
             <Divider />
-            {list.map((item, index) => {
+            {localList.map((item, index) => {
               return (
                 <Fragment key={item}>
                   <View
                     className='bundle-item'
                     onClick={() => {
-                      this._loadBundleByUrl(item);
+                      this._loadBundleFromLocalServer(item);
                     }}
                   >
                     <Text className='bundle-item-text'>{item}</Text>
                   </View>
-                  {index != list.length - 1 && <Divider />}
+                  {index != localList.length - 1 && <Divider />}
+                </Fragment>
+              )
+            })}
+          </View>
+        )}
+        {remoteList.length > 0 && (
+          <View className='bundle'>
+            <View className='bundle-control'>
+              <Text>Remote Bundle</Text>
+              <Text onClick={() => {
+                this._clearBundles(REMOTE_BUNDLES_KEY)
+                }}
+              >Clear</Text>
+            </View>
+            <Divider />
+            {remoteList.map((item, index) => {
+              return (
+                <Fragment key={item}>
+                  <View
+                    className='bundle-item'
+                    onClick={() => {
+                      this._loadBundelFromRemoteUrl(item);
+                    }}
+                  >
+                    <Text className='bundle-item-text'>{item}</Text>
+                  </View>
+                  {index != remoteList.length - 1 && <Divider />}
                 </Fragment>
               )
             })}
