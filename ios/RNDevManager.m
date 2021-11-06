@@ -50,4 +50,21 @@ RCT_EXPORT_METHOD(loadDefaultBundle)
   RCTTriggerReloadCommandListeners(@"Dev menu - reset to default");
 }
 
+RCT_EXPORT_METHOD(load:(NSURL*) url) {
+  if ([NSThread isMainThread]) {
+    [self loadBundle:url];
+  } else {
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        [self loadBundle:url];
+    });
+  }
+  return;
+}
+
+- (void)loadBundle:(NSURL *)url
+{
+  [_bridge setValue:url forKey:@"bundleURL"];
+  [_bridge reload];
+}
+
 @end
