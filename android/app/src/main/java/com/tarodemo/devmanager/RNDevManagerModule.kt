@@ -14,4 +14,9 @@ class RNDevManagerModule : BaseJavaModule() {
         }
         TaroDevManager.loadBundleByBundleUrl(host, jsMainModulePath)
     }
+
+    @ReactMethod
+    fun load(url: String?) {
+        url?.let { TaroDevManager.loadBundle(it) }
+    }
 }
