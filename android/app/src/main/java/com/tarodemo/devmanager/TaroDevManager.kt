@@ -26,6 +26,10 @@ object TaroDevManager {
         reloadJS()
     }
 
+    fun loadBundle(url: String) {
+        devSupportManager.reloadJSFromServer(url)
+    }
+
     fun setDebugHttpHost(host: String) {
         packagerConnectionSettings.debugServerHost = host
     }
