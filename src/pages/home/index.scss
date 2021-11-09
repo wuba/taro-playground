@@ -67,7 +67,7 @@
   }
 
   &-item {
-    padding: 24px 32px;
+    padding: 20px 32px;
     background-color: #ffffff;
     display: flex;
     flex-direction: row;
@@ -81,12 +81,14 @@
       background-color: $color-grey-4;
     }
     &-img {
-      height: 90px;
-      width: 90px;
+      height: 80px;
+      width: 80px;
+      border-radius: 10px;
       margin-right: 20px;
     }
     &-content {
       flex: 1;
+      justify-content: center;
     }
     &-title {
       font-size: 28px;
