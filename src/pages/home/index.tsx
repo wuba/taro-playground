@@ -7,6 +7,7 @@ import { hadlePermissionsDeny } from "@/utils/index";
 import logoPng from "@/assets/common/taro_logo.jpg";
 import scanPng from "@/assets/iconpark/scan-code.png";
 import appStorePng from "@/assets/iconpark/app-store.png";
+import serverPng from "@/assets/iconpark/server.png";
 import "./index.scss";
 
 const DevManager = NativeModules.RNDevManager;
@@ -233,7 +234,13 @@ export default class Index extends Component<any, any> {
                       this._loadBundleFromLocalServer(item);
                     }}
                   >
-                    <Text className="bundle-item-text">{item}</Text>
+                    <Image
+                      className="bundle-item-img"
+                      src={serverPng}
+                    />
+                    <View className="bundle-item-content">
+                      <Text className="bundle-item-title">{item}</Text>
+                    </View>
                   </View>
                   {index != localList.length - 1 && <Divider />}
                 </Fragment>
