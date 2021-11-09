@@ -67,8 +67,10 @@
   }
 
   &-item {
-    padding: 28px 32px;
+    padding: 24px 32px;
     background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
     &-text {
       font-size: 28px;
       color: $color-text-paragraph;
@@ -78,5 +80,28 @@
       width: 100%;
       background-color: $color-grey-4;
     }
+    &-img {
+      height: 90px;
+      width: 90px;
+      margin-right: 20px;
+    }
+    &-content {
+      flex: 1;
+    }
+    &-title {
+      font-size: 28px;
+      margin-bottom: 4px;
+      color: $color-text-paragraph;
+    }
+    &-des {
+      font-size: 20px;
+      color: $color-text-paragraph;
+    }
   }
+}
+
+.statement {
+  color: $color-grey-2;
+  padding: 0px 32px;
+  font-size: 22px;
 }
