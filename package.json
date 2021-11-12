@@ -76,6 +76,7 @@
     "react-native-safe-area-context": "^3.1.8",
     "react-native-screens": "^2.11.0",
     "react-native-splash-screen": "^3.2.0",
+    "react-native-svg": "^12.1.1",
     "react-native-syan-image-picker": "0.4.10",
     "react-native-unimodules": "^0.14.9",
     "react-native-webview": "^11.6.4"
