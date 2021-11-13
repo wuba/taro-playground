@@ -124,7 +124,7 @@ export default class PagePicker extends React.Component {
                 mode="multiSelector"
                 range={multiSelector2}
                 value={mulitSelectorValues2}
-                rangeKey={'category'}
+                rangeKey="category"
                 onChange={this.handleMulitChange2}
                 // @ts-ignore
                 onColumnchange={this.handleColumnchange}

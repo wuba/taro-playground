@@ -137,7 +137,8 @@ export default class PageView extends React.Component<IProps, IState> {
                 onInitDone={() => {
                   this.cameraContext = Taro.createCameraContext();
                 }}
-                onScanCode={this.onScanCode} />
+                onScanCode={this.onScanCode}
+              />
             </View>
             <View className="switch-list__item">
               <View className="switch-list__text">扫码模式</View>
