@@ -9,7 +9,7 @@ import com.facebook.react.uimanager.ViewManager
 class DevManagerPackage : ReactPackage {
 
     override fun createNativeModules(reactContext: ReactApplicationContext) =
-        mutableListOf(RNDevManagerModule())
+        mutableListOf(RNDevManagerModule(), SourceCodeModule(reactContext))
 
     override fun createViewManagers(reactContext: ReactApplicationContext) =
         mutableListOf<ViewManager<View, ReactShadowNode<*>>>()

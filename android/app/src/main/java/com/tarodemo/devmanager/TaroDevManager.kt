@@ -20,14 +20,29 @@ object TaroDevManager {
     val reactInstanceManager: ReactInstanceManager get() = reactNativeHost.reactInstanceManager
     val devSupportManager: DevSupportManager get() = reactInstanceManager.devSupportManager
 
+    var sourceCodeScriptUrl = ""
+        private set
+
     fun loadBundleByBundleUrl(host: String, jsMainModulePath: String) {
+        sourceCodeScriptUrl = ""
         setDebugHttpHost(host)
         setJsMainModuleName(jsMainModulePath)
         reloadJS()
     }
 
     fun loadBundle(url: String) {
-        devSupportManager.reloadJSFromServer(url)
+        devSupportManager.reloadJSFromServer(url) {
+            sourceCodeScriptUrl = url.substring(0, url.indexOf("/", 8) + 1)
+            runOnUiThread {
+                runCatching {
+                    ReactInstanceManager::class.java.getDeclaredMethod(
+                            "onJSBundleLoadedFromServer"
+                    ).apply {
+                        isAccessible = true
+                    }.invoke(reactInstanceManager)
+                }
+            }
+        }
     }
 
     fun setDebugHttpHost(host: String) {
