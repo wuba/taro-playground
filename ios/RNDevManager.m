@@ -50,6 +50,14 @@ RCT_EXPORT_METHOD(loadDefaultBundle)
   RCTTriggerReloadCommandListeners(@"Dev menu - reset to default");
 }
 
+/**
+ * This code was copied from "react-native-bundle-loader"
+ * <https://github.com/jusbrasil/react-native-bundle-loader/blob/master/ios/BundleLoader.m>.
+ * The use of the source code of this file is also subject to the terms
+ * and consitions of the license of "react-native-bundle-loader" (MIT, see
+ * </licenses/LICENSE-react-native-bundle-loader>).
+ */
+
 RCT_EXPORT_METHOD(load:(NSURL*) url) {
   if ([NSThread isMainThread]) {
     [self loadBundle:url];
@@ -66,5 +74,9 @@ RCT_EXPORT_METHOD(load:(NSURL*) url) {
   [_bridge setValue:url forKey:@"bundleURL"];
   [_bridge reload];
 }
+
+/**
+ * license statement end
+ */
 
 @end
