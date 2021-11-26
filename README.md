@@ -164,8 +164,9 @@ For the security of your app, please regenerate the .keystore file and store the
 
 The source code is customized for the Taro palyground application and is for reference only. If you want to use it directly, please make the following changes.
 
-0. Customize your app id, app name, app launcher, etc.
-1. Remove the attention block in ios/Podfile.
+0. Use your own signature file.
+1. Customize your app id, app name, app launcher, etc.
+2. Remove the attention block in ios/Podfile.
 
 ## Contributing
 
