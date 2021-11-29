@@ -196,7 +196,7 @@ export default class Index extends Component<any, any> {
         <View className="info">
           <Image src={logoPng} className="info-img" />
           {neverLoaded && (
-            <Text className="info-text">
+            <Text className="info-text" style={{"color": "#3f536e", "fontFamily": "Outfit-Regular", "fontSize": 30, "fontWeight": "normal", "lineHeight": 30}}>
               Taro 是一个开放式跨端跨框架解决方案，支持使用 React/Vue/Nerv
               等框架来开发 微信 / 京东 / 百度 / 支付宝 / 字节跳动 / QQ 小程序 /
               H5 / RN 等应用。
