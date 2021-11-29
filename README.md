@@ -54,7 +54,8 @@ The Taro Playground App is a cross-platform application developed using Taro, to
 ### more infomations
 
 0. [development process of taro react native](https://taro-docs.jd.com/taro/docs/react-native)
-1. [github](https://github.com/NervJS/taro)
+1. [github address of the taro project](https://github.com/NervJS/taro)
+2. [related articles of taro playground](https://docs.taro.zone/blog/2021-10-14-Taro-React-Native-update)
 
 ## Release
 
