@@ -33,6 +33,7 @@
     font-size: $font-size-base;
     color: $color-text-paragraph;
     line-height: 40px;
+    font-family: 'Outfit-Regular'; // 兼容 Android 与 iOS，不设置 font weight
   }
 }
 
