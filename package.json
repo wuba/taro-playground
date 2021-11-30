@@ -30,6 +30,7 @@
     "android": "react-native run-android --no-packager",
     "ios": "react-native run-ios --no-packager",
     "start": "npm run dev:rn --",
+    "link": "react-native link",
     "update-version": "sh ./bin/update_version.sh",
     "podInstall": "pod-install",
     "upgradePeerdeps": "install-peerdeps @tarojs/taro-rn@3.3.15 -o -Y && install-peerdeps @tarojs/components-rn@3.3.15 -o -Y && install-peerdeps @tarojs/router-rn@3.3.15 -o -Y && pod-install"
