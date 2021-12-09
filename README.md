@@ -31,7 +31,7 @@ The Taro Playground App is a cross-platform application developed using Taro, to
 ### pod install
 > run this script when you add new react native library or update react native library version.
 > 
-> see [pod-install](https://www.npmjs.com/package/pod-install) for more infomation.
+> see [pod-install](https://www.npmjs.com/package/pod-install) for more information.
 
 `yarn podInstall`
 
@@ -51,7 +51,7 @@ The Taro Playground App is a cross-platform application developed using Taro, to
 
 `yarn start --reset-cache`
 
-### more infomations
+### more information
 
 0. [development process of taro react native](https://taro-docs.jd.com/taro/docs/react-native)
 1. [github address of the taro project](https://github.com/NervJS/taro)
@@ -82,7 +82,7 @@ see [.github/workflows](.github/workflows) for details.
 
 ### events
 
-we assemble debug and release product for both android and ios when you push or pull request on master branch by default. desin your own pipeline by modify [.github/workflows](.github/workflows) files.
+we assemble debug and release product for both android and ios when you push or pull request on master branch by default. design your own pipeline by modify [.github/workflows](.github/workflows) files.
 
 see [events-that-trigger-workflows](https://docs.github.com/en/actions/reference/events-that-trigger-workflows) 
 ### ios
@@ -163,7 +163,7 @@ For the security of your app, please regenerate the .keystore file and store the
 
 ## Attention
 
-The source code is customized for the Taro palyground application and is for reference only. If you want to use it directly, please make the following changes.
+The source code is customized for the Taro playground application and is for reference only. If you want to use it directly, please make the following changes.
 
 0. Use your own signature file.
 1. Customize your app id, app name, app launcher, etc.
