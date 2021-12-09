@@ -24,7 +24,7 @@ The Taro Playground App is a cross-platform application developed using Taro, to
 ### install react native library
 > install peerDependencies of `@tarojs/taro-rn` `@tarojs/components-rn` and `@tarojs/router-rn`, it will also run `post-install`. please modify and run `upgradePeerdeps` script when you change taro version.
 > 
-> **run this script after project inited.**
+> **run this script after the project is initialized.**
 
 `yarn upgradePeerdeps`
 
