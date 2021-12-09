@@ -1,6 +1,6 @@
 import { Component, Fragment } from "react";
 import Taro from "@tarojs/taro";
-import { NativeModules } from "react-native";
+import { NativeModules, Linking } from "react-native";
 import queryString from "query-string";
 import { View, Text, Image } from "@tarojs/components";
 import { hadlePermissionsDeny } from "@/utils/index";
@@ -58,6 +58,12 @@ export default class Index extends Component<any, any> {
       .catch(err => {
         console.log("获取 bundle 列表失败：", err);
       });
+    Linking.getInitialURL().then(this._handleUrl);
+    Linking.addEventListener('url', this._handleUrl);
+  }
+
+  componentWillUnmount() {
+    Linking.removeEventListener('url', this._handleUrl);
   }
 
   _loadBundleFromLocalServer = (url: string, path = "index") => {

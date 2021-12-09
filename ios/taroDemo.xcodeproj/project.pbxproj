@@ -30,9 +30,9 @@
 /* Begin PBXFileReference section */
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* taroDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = taroDemoTests.m; sourceTree = "<group>"; };
-		02709E1B454648399BD1F78D /* Outfit-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-Thin.ttf"; path = "../assets/fonts/Outfit-Thin.ttf"; sourceTree = "<group>"; };
-		04A00084F3C24B9FB073692C /* Outfit-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-Regular.ttf"; path = "../assets/fonts/Outfit-Regular.ttf"; sourceTree = "<group>"; };
-		059E6D440D8947B7A4672DD1 /* Outfit-VariableFont_wght.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-VariableFont_wght.ttf"; path = "../assets/fonts/Outfit-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		02709E1B454648399BD1F78D /* Outfit-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-Thin.ttf"; path = "../assets/fonts/Outfit-Thin.ttf"; sourceTree = "<group>"; };
+		04A00084F3C24B9FB073692C /* Outfit-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-Regular.ttf"; path = "../assets/fonts/Outfit-Regular.ttf"; sourceTree = "<group>"; };
+		059E6D440D8947B7A4672DD1 /* Outfit-VariableFont_wght.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-VariableFont_wght.ttf"; path = "../assets/fonts/Outfit-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* taroDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taroDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = taroDemo/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = taroDemo/AppDelegate.m; sourceTree = "<group>"; };
@@ -40,21 +40,21 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = taroDemo/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = taroDemo/main.m; sourceTree = "<group>"; };
 		1815FF863A828443D734E8E6 /* Pods-taroDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-taroDemo.release.xcconfig"; path = "Target Support Files/Pods-taroDemo/Pods-taroDemo.release.xcconfig"; sourceTree = "<group>"; };
-		4D613F6F17C84F7DB5B3B7AA /* Outfit-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-Light.ttf"; path = "../assets/fonts/Outfit-Light.ttf"; sourceTree = "<group>"; };
-		525CA6AEF05A4737966BED93 /* Outfit-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-ExtraLight.ttf"; path = "../assets/fonts/Outfit-ExtraLight.ttf"; sourceTree = "<group>"; };
-		545D2B48BD574EB580E94CB8 /* Outfit-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-Bold.ttf"; path = "../assets/fonts/Outfit-Bold.ttf"; sourceTree = "<group>"; };
+		4D613F6F17C84F7DB5B3B7AA /* Outfit-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-Light.ttf"; path = "../assets/fonts/Outfit-Light.ttf"; sourceTree = "<group>"; };
+		525CA6AEF05A4737966BED93 /* Outfit-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-ExtraLight.ttf"; path = "../assets/fonts/Outfit-ExtraLight.ttf"; sourceTree = "<group>"; };
+		545D2B48BD574EB580E94CB8 /* Outfit-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-Bold.ttf"; path = "../assets/fonts/Outfit-Bold.ttf"; sourceTree = "<group>"; };
 		5D0F7CD326AABADB007E163E /* RNDevManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNDevManager.h; sourceTree = "<group>"; };
 		5D0F7CD426AABADB007E163E /* RNDevManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNDevManager.m; sourceTree = "<group>"; };
 		618E49A71BB7628ECF5C445C /* Pods-taroDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-taroDemo.debug.xcconfig"; path = "Target Support Files/Pods-taroDemo/Pods-taroDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		690830B126B153A1008653C7 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		6933825A269D57C400D7AE77 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = taroDemo/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9809C06ABC9845FDB81026C4 /* Outfit-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-SemiBold.ttf"; path = "../assets/fonts/Outfit-SemiBold.ttf"; sourceTree = "<group>"; };
-		982900EBEF784BC09404752C /* Outfit-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-ExtraBold.ttf"; path = "../assets/fonts/Outfit-ExtraBold.ttf"; sourceTree = "<group>"; };
-		BC1F320A045540C59BBAA88A /* Outfit-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-Black.ttf"; path = "../assets/fonts/Outfit-Black.ttf"; sourceTree = "<group>"; };
+		9809C06ABC9845FDB81026C4 /* Outfit-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-SemiBold.ttf"; path = "../assets/fonts/Outfit-SemiBold.ttf"; sourceTree = "<group>"; };
+		982900EBEF784BC09404752C /* Outfit-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-ExtraBold.ttf"; path = "../assets/fonts/Outfit-ExtraBold.ttf"; sourceTree = "<group>"; };
+		BC1F320A045540C59BBAA88A /* Outfit-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-Black.ttf"; path = "../assets/fonts/Outfit-Black.ttf"; sourceTree = "<group>"; };
 		D080531B78B77308EB3DA755 /* libPods-taroDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-taroDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F0889267E5A34E488CB67BCB /* Outfit-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-Medium.ttf"; path = "../assets/fonts/Outfit-Medium.ttf"; sourceTree = "<group>"; };
+		F0889267E5A34E488CB67BCB /* Outfit-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-Medium.ttf"; path = "../assets/fonts/Outfit-Medium.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +167,6 @@
 				059E6D440D8947B7A4672DD1 /* Outfit-VariableFont_wght.ttf */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

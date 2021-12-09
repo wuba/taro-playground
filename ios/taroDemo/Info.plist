@@ -23,6 +23,10 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>taro</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>taro</string>
@@ -60,18 +64,6 @@
 	<string>Taro Playground 使用您的照片，用于展示照片相关 API。</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Taro Playground 使用您的照片，用于展示照片相关 API。</string>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
-	<key>UIRequiredDeviceCapabilities</key>
-	<array>
-		<string>armv7</string>
-	</array>
-	<key>UISupportedInterfaceOrientations</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-	</array>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Outfit-Black.ttf</string>
@@ -85,5 +77,17 @@
 		<string>Outfit-Thin.ttf</string>
 		<string>Outfit-VariableFont_wght.ttf</string>
 	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>
