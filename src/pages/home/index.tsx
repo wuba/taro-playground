@@ -116,7 +116,9 @@ export default class Index extends Component<any, any> {
     });
   };
 
-  _handleUrl = url => {
+  _handleUrl = u => {
+    const url:string = typeof u === 'string' ? u : (u?.url);
+    if(!url) return;
     if (regTaroServer.test(url)) {
       const ipAddr = url.substr(7);
       this._saveUrlToStorage(ipAddr, BUNDLES_KEY);
