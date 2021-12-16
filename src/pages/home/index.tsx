@@ -149,7 +149,7 @@ export default class Index extends Component<any, any> {
         } else {
           Taro.showModal({
             title: "扫描结果",
-            content: `${url}`,
+            content: `${url}\n\n该内容不是由Taro Playground提供，无法确保内容的安全性，如果要继续访问，请注意保护好个人信息。`,
             confirmColor: "#6190E8",
             confirmText: "前往",
             success: function(showModalRes) {
