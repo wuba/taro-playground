@@ -30,6 +30,10 @@ PODS:
     - UMCore
   - EXKeepAwake (9.2.0):
     - UMCore
+  - EXLocation (12.1.3):
+    - ExpoModulesCore
+    - UMCore
+    - UMTaskManagerInterface
   - EXPermissions (12.1.1):
     - ExpoModulesCore
     - UMCore
@@ -387,6 +391,7 @@ DEPENDENCIES:
   - EXImageLoader (from `../node_modules/expo-image-loader/ios`)
   - EXImagePicker (from `../node_modules/expo-image-picker/ios`)
   - EXKeepAwake (from `../node_modules/expo-keep-awake/ios`)
+  - EXLocation (from `../node_modules/expo-location/ios`)
   - EXPermissions (from `../node_modules/expo-permissions/ios`)
   - ExpoModulesCore (from `../node_modules/expo-modules-core/ios`)
   - EXSensors (from `../node_modules/expo-sensors/ios`)
@@ -474,6 +479,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/expo-image-picker/ios"
   EXKeepAwake:
     :path: "../node_modules/expo-keep-awake/ios"
+  EXLocation:
+    :path: "../node_modules/expo-location/ios"
   EXPermissions:
     :path: "../node_modules/expo-permissions/ios"
   ExpoModulesCore:
@@ -597,6 +604,7 @@ SPEC CHECKSUMS:
   EXImageLoader: d3531a3fe530b22925c19977cb53bb43e3821fe6
   EXImagePicker: 414a3663910fd6604248e84c9c77a0501ae0d18b
   EXKeepAwake: f4105ef469be7b283f66ce2d7234bb71ac80cd26
+  EXLocation: 6fbf8c499f752459c8906f0e3241d99748e02db8
   EXPermissions: 916efb5b817cb0a40160c0cd2f369af3c23a78be
   ExpoModulesCore: 2734852616127a6c1fc23012197890a6f3763dc7
   EXSensors: 45614e17a2a8596fc797b17c1a7cf64ba3482163
