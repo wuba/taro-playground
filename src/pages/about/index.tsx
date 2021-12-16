@@ -18,54 +18,6 @@ const playgroundVersion = Taro.getSystemInfoSync().version
 export default class Index extends Component<any, any> {
   linksList = [
     {
-      name: '项目源码',
-      onPress: () => {
-        Taro.navigateTo({
-          url: '/pages/webview/index?title=项目源码&link=https://github.com/wuba/taro-playground'
-        })
-      },
-    },
-    {
-      name: '官方网站',
-      onPress: () => {
-        Taro.navigateTo({
-          url: '/pages/webview/index?title=Taro 官方网站&link=https://docs.taro.zone/docs/README',
-        })
-      }
-    },
-    {
-      name: '官方交流群',
-      onPress: () => {
-        Taro.navigateTo({
-          url: '/pages/webview/index?title=官方交流群&link=https://github.com/NervJS/taro/issues/198',
-        })
-      }
-    },
-    {
-      name: '参与贡献',
-      onPress: () => {
-        Taro.navigateTo({
-          url: '/pages/webview/index?title=参与贡献&link=https://docs.taro.zone/docs/join-in',
-        })
-      }
-    },
-    {
-      name: '版本变更',
-      onPress: () => {
-        Taro.navigateTo({
-          url: '/pages/webview/index?title=版本变更&link=https://github.com/wuba/taro-playground/releases'
-        })
-      },
-    },
-    {
-      name: '常见问题',
-      onPress: () => {
-        Taro.navigateTo({
-          url: '/pages/webview/index?title=常见问题&link=https://github.com/NervJS/taro/issues'
-        })
-      },
-    },
-    {
       name: '隐私政策',
       onPress: () => {
         Taro.navigateTo({

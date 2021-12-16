@@ -1,5 +1,5 @@
 import Taro from '@tarojs/taro';
-import { View, Button } from '@tarojs/components';
+import { View, Button, Input } from '@tarojs/components';
 import { useState } from "react";
 import JSONTree from '@/components/jsontree';
 
@@ -12,27 +12,41 @@ import './index.scss'
 const Index = () => {
   const [data, setData] = useState({});
 
+  const [value, setValue] = useState('');
+
+  const onInput = e => {
+    setValue(e.detail.value);
+  }
+
   const _onRequest = () => {
-    Taro.request({
-      url: 'https://raw.githubusercontent.com/NervJS/taro/next/package.json',
-      data: {},
-      header: {
-        'content-type': 'application/json',
-      },
-      success: res => {
-        console.log(res);
-        setData(res);
-      },
-      fail: err => {
-        console.log(err);
-        setData(err);
-      }
-    })
+    if(value) {
+      setData({})
+      Taro.request({
+        url: value,
+        data: {},
+        header: {
+          'content-type': 'application/json',
+        },
+        success: res => {
+          console.log(res);
+          setData(res);
+        },
+        fail: err => {
+          console.log(err);
+          setData(err);
+        }
+      })
+    }
   }
 
   return (
     <View className="api-page">
       <View className="api-page-btns">
+        <Input
+          className="url-input"
+          onInput={onInput}
+          placeholder="输入请求的 url"
+        ></Input>
         <Button
           type="primary"
           onClick={_onRequest}
