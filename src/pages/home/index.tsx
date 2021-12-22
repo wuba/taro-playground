@@ -2,7 +2,7 @@ import { Component, Fragment } from "react";
 import Taro from "@tarojs/taro";
 import { NativeModules, Linking } from "react-native";
 import queryString from "query-string";
-import { View, Text, Image } from "@tarojs/components";
+import { View, Text, Image, Input } from "@tarojs/components";
 import { hadlePermissionsDeny } from "@/utils/index";
 import logoPng from "@/assets/common/taro_logo.jpg";
 import scanPng from "@/assets/iconpark/scan-code.png";
@@ -16,6 +16,8 @@ const BUNDLES_KEY = "bundleList";
 const REMOTE_BUNDLES_KEY = "remoteBundleList";
 
 const regTaroSchema = /^taro:\/\//;
+const regMetroServer = /^([0-9.]+):([0-9]+)$/;
+const regMetroServerIp = /^([0-9.]+)$/;
 const regTaroServer = /^taro:\/\/([0-9.]+):([0-9]+)$/;
 const regRemoteRelease = /^taro:\/\/releases/;
 const regRemoteJs = /\.js$/;
@@ -139,6 +141,23 @@ export default class Index extends Component<any, any> {
     }
   };
 
+  _onInputConfirm = ({ detail: { value } }) => {
+    const url = value;
+    if (regMetroServer.test(url)) {
+      this._loadBundleFromLocalServer(url);
+    } else if(regMetroServerIp.test(url)){
+      this._loadBundleFromLocalServer(`${url}:8081`);
+    } else if (regTaroSchema.test(url) || regRemoteJs.test(url)) {
+      this._handleUrl(url);
+    } else {
+      Linking.canOpenURL(url).then(res => {
+        return Taro.openUrl({
+          url
+        })
+      }).catch(console.log);
+    }
+  }
+
   _onPressScan = () => {
     Taro.scanCode({})
       .then(res => {
@@ -213,6 +232,7 @@ export default class Index extends Component<any, any> {
         </View>
         <View className="load">
           <View className="load-header">
+            <Input className="load-header-input" onConfirm={this._onInputConfirm} />
             <Image
               src={scanPng}
               className="load-header-icon"
