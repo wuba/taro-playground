@@ -40,10 +40,12 @@
 .load {
   padding: 32px;
   &-header {
-    flex-direction: column;
-    align-items: flex-end;
+    flex-direction: row;
     padding-left: 20px;
     padding-right: 20px;
+    &-input {
+      flex: 1;
+    }
     &-icon {
       height: 60px;
       width: 60px;
