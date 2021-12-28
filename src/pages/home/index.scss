@@ -38,13 +38,14 @@
 }
 
 .load {
-  padding: 32px;
+  padding: 36px;
   &-header {
     flex-direction: row;
-    padding-left: 20px;
-    padding-right: 20px;
     &-input {
       flex: 1;
+      border-bottom-color: #dedede;
+      border-bottom-width: 1px;
+      margin-right: 10px;
     }
     &-icon {
       height: 60px;
