@@ -14,7 +14,7 @@ import logoPng from "@/assets/common/taro_logo.jpg";
 import rightPng from "@/assets/iconpark/right.png";
 import './index.scss';
 
-const playgroundVersion = Taro.getSystemInfoSync().version
+const { version: playgroundVersion, platform } = Taro.getSystemInfoSync()
 export default class Index extends Component<any, any> {
   linksList = [
     {
@@ -23,6 +23,21 @@ export default class Index extends Component<any, any> {
         Taro.navigateTo({
           url: '/pages/webview/index?title=隐私政策&right=下载&link=https://api.fang.anjuke.com/wlk/message?id=2049&open=https://wos2.58cdn.com.cn/DeFazYxWvDti/frsupload/df70db603b651daa09a31b72f2b1b1f9.pdf'
         })
+      },
+    },
+    {
+      name: '版本更新',
+      onPress: () => {
+        if (platform === 'ios') {
+          // @ts-ignore
+          Taro.openUrl({
+            url: 'https://apps.apple.com/cn/app/taro-playground/id1576830673'
+          });
+        } else {
+          Taro.navigateTo({
+            url: '/pages/webview/index?title=版本变更&link=https://github.com/wuba/taro-playground/releases'
+          })
+        }
       },
     },
   ];
