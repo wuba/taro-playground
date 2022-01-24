@@ -5,7 +5,7 @@
  * @LastEditTime: 2021-08-03 18:57:38
  * @FilePath: /taro-react-native/src/app.config.ts
  */
-export default {
+export default defineAppConfig({
   pages: [
     'pages/home/index',
     // 全局相关 start
@@ -85,6 +85,8 @@ export default {
   tabBar: {
     color: '#333333',
     selectedColor: '#6190E8', // 主题色
+    // @ts-ignore
+    borderStyle: 'rgb(206,206,206)',
     list: [
       {
         iconPath: './assets/iconpark/system.png',
@@ -118,4 +120,4 @@ export default {
       },
     ]
   },
-}
+})

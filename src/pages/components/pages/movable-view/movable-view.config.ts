@@ -1,4 +1,4 @@
-export default {
+export default definePageConfig({
   navigationBarTitleText: 'MovableView组件',
   disableScroll: true
-}
+})

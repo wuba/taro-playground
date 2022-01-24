@@ -5,6 +5,6 @@
  * @LastEditTime: 2021-07-28 18:29:49
  * @FilePath: /taro-react-native/src/pages/about/index.config.ts
  */
-export default {
+export default definePageConfig({
   navigationBarTitleText: '关于',
-}
+})

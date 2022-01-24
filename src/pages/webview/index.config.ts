@@ -5,7 +5,7 @@
  * @LastEditTime: 2021-07-28 18:40:35
  * @FilePath: /taro-react-native/src/pages/webview/index.config.ts
  */
-export default {
+export default definePageConfig({
     navigationBarTitleText: '加载中...',
     disableScroll: true,
-}
+})

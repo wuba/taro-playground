@@ -1,3 +1,3 @@
-export default {
+export default definePageConfig({
   navigationBarTitleText: 'Form组件'
-}
+})
