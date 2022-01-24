@@ -41,8 +41,6 @@ export default defineAppConfig({
     // 'pages/components/pages/canvas/canvas',
     // 'pages/components/pages/map/map',
     // 'pages/components/pages/navigator/navigator',
-    'pages/components/pages/redirectPage/redirectPage',
-    'pages/components/pages/navigatePage/navigatePage',
     'pages/components/pages/virtual-list/virtual-list',
     'pages/components/pages/movable-view/movable-view',
     // 组件相关 end
