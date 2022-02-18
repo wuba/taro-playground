@@ -32,6 +32,7 @@ export default {
     'pages/components/pages/button/button',
     'pages/components/pages/text/text',
     'pages/components/pages/label/label',
+    'pages/components/pages/page-container/page-container',
     'pages/components/pages/picker/picker',
     'pages/components/pages/picker-view/picker-view',
     'pages/components/pages/rich-text/rich-text',
@@ -41,8 +42,6 @@ export default {
     // 'pages/components/pages/canvas/canvas',
     // 'pages/components/pages/map/map',
     // 'pages/components/pages/navigator/navigator',
-    'pages/components/pages/redirectPage/redirectPage',
-    'pages/components/pages/navigatePage/navigatePage',
     'pages/components/pages/virtual-list/virtual-list',
     'pages/components/pages/movable-view/movable-view',
     // 组件相关 end

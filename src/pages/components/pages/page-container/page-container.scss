@@ -1,0 +1,15 @@
+.btn-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.btn {
+  margin-top: 30px;
+}
+
+.container {
+  padding: 80px 40px;
+  background-color: rgba(0,0,0, .9);
+}
