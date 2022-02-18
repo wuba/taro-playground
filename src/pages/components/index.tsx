@@ -29,7 +29,8 @@ export default class Index extends Component<never, any> {
             "scroll-view",
             "swiper",
             "virtual-list",
-            "movable-view"
+            "movable-view",
+            "page-container"
           ]
         },
         {
