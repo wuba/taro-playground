@@ -7,7 +7,7 @@ import './app.scss'
 class App extends Component {
 
   componentDidMount () {
-    SplashScreen.hide();
+    SplashScreen && SplashScreen.hide();
   }
 
   componentDidShow () {}
