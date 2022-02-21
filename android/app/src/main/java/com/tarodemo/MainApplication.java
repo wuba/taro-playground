@@ -1,5 +1,9 @@
 package com.tarodemo;
 
+import android.content.res.Configuration;
+import expo.modules.ApplicationLifecycleDispatcher;
+import expo.modules.ReactNativeHostWrapper;
+
 import android.app.Application;
 import android.content.Context;
 
@@ -17,7 +21,7 @@ public class MainApplication extends Application implements ReactApplication {
 
   @Override
   public ReactNativeHost getReactNativeHost() {
-    return TaroDevManager.getReactNativeHost();
+    return new ReactNativeHostWrapper(this, TaroDevManager.getReactNativeHost());
   }
 
   @Override
@@ -31,6 +35,7 @@ public class MainApplication extends Application implements ReactApplication {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
     //initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
+    ApplicationLifecycleDispatcher.onApplicationCreate(this);
   }
 
   public static MainApplication getInstance(){
@@ -66,5 +71,11 @@ public class MainApplication extends Application implements ReactApplication {
         e.printStackTrace();
       }
     }
+  }
+
+  @Override
+  public void onConfigurationChanged(Configuration newConfig) {
+    super.onConfigurationChanged(newConfig);
+    ApplicationLifecycleDispatcher.onConfigurationChanged(this, newConfig);
   }
 }

@@ -24,6 +24,7 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		90F7D8A6240140148A98A3C2 /* Outfit-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 525CA6AEF05A4737966BED93 /* Outfit-ExtraLight.ttf */; };
 		999F35E09E6049B393A3A876 /* Outfit-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D613F6F17C84F7DB5B3B7AA /* Outfit-Light.ttf */; };
+		C6405D949EF1CB082DB997BA /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D421FCEA5A1985B20C102 /* ExpoModulesProvider.swift */; };
 		DF66199622DD4716987CD3CA /* Outfit-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 059E6D440D8947B7A4672DD1 /* Outfit-VariableFont_wght.ttf */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = taroDemo/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9809C06ABC9845FDB81026C4 /* Outfit-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-SemiBold.ttf"; path = "../assets/fonts/Outfit-SemiBold.ttf"; sourceTree = "<group>"; };
 		982900EBEF784BC09404752C /* Outfit-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-ExtraBold.ttf"; path = "../assets/fonts/Outfit-ExtraBold.ttf"; sourceTree = "<group>"; };
+		A08D421FCEA5A1985B20C102 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-taroDemo/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		BC1F320A045540C59BBAA88A /* Outfit-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-Black.ttf"; path = "../assets/fonts/Outfit-Black.ttf"; sourceTree = "<group>"; };
 		D080531B78B77308EB3DA755 /* libPods-taroDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-taroDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -112,6 +114,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		30B1399A10C00F3094F00811 /* ExpoModulesProviders */ = {
+			isa = PBXGroup;
+			children = (
+				31992FA6EAE52ABC9AD8984D /* taroDemo */,
+			);
+			name = ExpoModulesProviders;
+			sourceTree = "<group>";
+		};
+		31992FA6EAE52ABC9AD8984D /* taroDemo */ = {
+			isa = PBXGroup;
+			children = (
+				A08D421FCEA5A1985B20C102 /* ExpoModulesProvider.swift */,
+			);
+			name = taroDemo;
+			sourceTree = "<group>";
+		};
 		4CD84E388EE340B862C8FB72 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +156,7 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				4CD84E388EE340B862C8FB72 /* Pods */,
 				FE8444EC6B9E48A481889EC4 /* Resources */,
+				30B1399A10C00F3094F00811 /* ExpoModulesProviders */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -331,6 +350,7 @@
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				5D0F7CD526AABADB007E163E /* RNDevManager.m in Sources */,
+				C6405D949EF1CB082DB997BA /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,7 +467,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -505,7 +525,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
