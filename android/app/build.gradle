@@ -1,6 +1,5 @@
 apply plugin: "com.android.application"
 apply plugin: "kotlin-android"
-apply from: '../../node_modules/react-native-unimodules/gradle.groovy'
 
 import com.android.build.OutputFile
 /**
@@ -77,8 +76,6 @@ import com.android.build.OutputFile
  *   extraPackagerArgs: []
  * ]
  */
-
-addUnimodulesDependencies()
 
 project.ext.react = [
     enableHermes: false,  // clean and rebuild if changing
