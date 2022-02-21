@@ -1,5 +1,12 @@
 <resources>
-    <!-- <string name="app_name">taroDemo</string> -->
-  <string name="logo_desc">Taro</string>
-  <string name="logo_power">Powered by Taro</string>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:editTextBackground">@drawable/rn_edit_text_material</item>
+    </style>
+
+    <string name="logo_desc">Taro</string>
+    <string name="logo_power">Powered by Taro</string>
+
 </resources>
