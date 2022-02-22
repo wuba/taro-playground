@@ -118,8 +118,8 @@ const TabBarApis = () => {
           onClick={() => Taro.setTabBarItem({
             index: 3,
             text: '接口' + count1,
-            iconPath: 'https://pic6.58cdn.com.cn/nowater/frs/n_v23c17eacbba1f4260afb440896c35b925.png',
-            selectedIconPath: 'https://pic8.58cdn.com.cn/nowater/frs/n_v27bea0ff8b83d4625afcc66292108b1c6.png',
+            iconPath: 'https://pic2.58cdn.com.cn/nowater/frs/n_v2177d0d75bccb451690a05b095f65c9b9.png',
+            selectedIconPath: 'https://pic4.58cdn.com.cn/nowater/frs/n_v2fe166220239544f19c736d76357a991a.png',
             success: () => {
               setCount1(c => c + 1);
               console.log('成功');
