@@ -10,6 +10,7 @@ import locationPng from "@/assets/iconpark/local.png";
 import canvasPng from "@/assets/iconpark/painted-screen.png";
 import openPng from "@/assets/iconpark/api.png";
 import devicePng from "@/assets/iconpark/devices.png";
+import TabBarApis from "@/components/tabBarApis/tabBarApis";
 
 import "./index.scss";
 
@@ -267,6 +268,7 @@ export default class Index extends Component<never, any> {
             })}
           </View>
         </View>
+        <TabBarApis></TabBarApis>
       </View>
     )
   }
