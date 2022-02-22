@@ -1,7 +1,7 @@
 import Taro from '@tarojs/taro'
 import { useState } from 'react'
 import { View, Button, Text } from '@tarojs/components'
-import './index.scss'
+import './tabBarApis.scss'
 
 /**
  * 界面-菜单栏

@@ -10,7 +10,7 @@ import locationPng from "@/assets/iconpark/local.png";
 import canvasPng from "@/assets/iconpark/painted-screen.png";
 import openPng from "@/assets/iconpark/api.png";
 import devicePng from "@/assets/iconpark/devices.png";
-import TabBarApis from "./pages/surface/tabBar";
+import TabBarApis from "@/components/tabBarApis/tabBarApis";
 
 import "./index.scss";
 
