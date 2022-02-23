@@ -53,6 +53,7 @@ export default {
     'pages/apis/pages/surface/background/index',
     'pages/apis/pages/surface/refresh/index',
     'pages/apis/pages/surface/scroll/index',
+    'pages/apis/pages/surface/tabBar/index',
     'pages/apis/pages/surface/window/index',
     'pages/apis/pages/surface/keyboard/index',
     'pages/apis/pages/network/request/index',

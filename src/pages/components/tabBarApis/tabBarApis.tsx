@@ -19,7 +19,6 @@ const TabBarApis = () => {
       </View>
       <View className='view-item'>
         <Button
-          type='primary'
           className='btn'
           onClick={() => Taro.hideTabBar({
             animation: true,
@@ -36,7 +35,6 @@ const TabBarApis = () => {
         >hideTabBar</Button>
 
         <Button
-          type='primary'
           className='btn'
           onClick={() => Taro.showTabBar({
             animation: true,
@@ -53,7 +51,6 @@ const TabBarApis = () => {
         >showTabBar</Button>
 
         <Button
-          type='primary'
           className='btn'
           onClick={() => Taro.showTabBarRedDot({
             index: 3,
@@ -70,7 +67,6 @@ const TabBarApis = () => {
         >showTabBarRedDot</Button>
 
         <Button
-          type='primary'
           className='btn'
           onClick={() => Taro.hideTabBarRedDot({
             index: 3,
@@ -87,7 +83,6 @@ const TabBarApis = () => {
         >hideTabBarRedDot</Button>
 
         <Button
-          type='primary'
           className='btn'
           onClick={() => {
             const randomColor = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
@@ -113,7 +108,6 @@ const TabBarApis = () => {
         >setTabBarStyle</Button>
 
         <Button
-          type='primary'
           className='btn'
           onClick={() => Taro.setTabBarItem({
             index: 3,
@@ -131,7 +125,6 @@ const TabBarApis = () => {
         >setTabBarItem</Button>
 
         <Button
-          type='primary'
           className='btn'
           onClick={() => Taro.setTabBarBadge({
             index: 3,
@@ -147,7 +140,6 @@ const TabBarApis = () => {
         >setTabBarBadge</Button>
 
         <Button
-          type='primary'
           className='btn'
           onClick={() => Taro.removeTabBarBadge({
             index: 3,

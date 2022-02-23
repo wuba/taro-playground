@@ -11,6 +11,7 @@ import canvasPng from "@/assets/iconpark/painted-screen.png";
 import openPng from "@/assets/iconpark/api.png";
 import devicePng from "@/assets/iconpark/devices.png";
 import TabBarApis from "@/components/tabBarApis/tabBarApis";
+import NavigationBarApis from '@/components/navigationBarApis/navigationBarApis'
 
 import "./index.scss";
 
@@ -64,6 +65,9 @@ export default class Index extends Component<never, any> {
             }, {
               id: "navigationBar",
               name: "导航",
+            }, {
+              id: "tabBar",
+              name: "TabBar",
             }, {
               id: "background",
               name: "背景"
@@ -268,7 +272,8 @@ export default class Index extends Component<never, any> {
             })}
           </View>
         </View>
-        <TabBarApis></TabBarApis>
+        <TabBarApis />
+        <NavigationBarApis />
       </View>
     )
   }
