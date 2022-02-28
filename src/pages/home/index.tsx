@@ -3,6 +3,7 @@ import Taro from "@tarojs/taro";
 import { NativeModules, Linking } from "react-native";
 import queryString from "query-string";
 import { version as taroVersion } from '@tarojs/taro/package.json';
+import { version as rnVersion } from 'react-native/package.json';
 import { View, Text, Image, Input } from "@tarojs/components";
 import { hadlePermissionsDeny } from "@/utils/index";
 import logoPng from "@/assets/common/taro_logo.jpg";
@@ -317,6 +318,7 @@ export default class Index extends Component<any, any> {
           </View>
         )}
         <Text className="statement">Supportted Taro Versions：3.3.10 ~ {taroVersion}</Text>
+        <Text className="statement">React Native Version：{rnVersion}</Text>
       </View>
     );
   }
