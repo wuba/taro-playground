@@ -67,7 +67,7 @@
     "expo-sensors": "~10.2.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-native": "^0.66.4",
+    "react-native": "^0.67.3",
     "react-native-device-info": "~8.4.8",
     "react-native-gesture-handler": "~1.10.3",
     "react-native-image-resizer": "~1.4.5",
