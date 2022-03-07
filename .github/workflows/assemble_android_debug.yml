@@ -19,9 +19,9 @@ env:
   # 打包类型
   BUILD_TYPE: debug
   # 版本名称
-  ANDROID_VERSION_NAME: 1.4.0
+  ANDROID_VERSION_NAME: 1.4.1
   # 版本号
-  ANDROID_VERSION_CODE: 14000
+  ANDROID_VERSION_CODE: 14100
   # 密钥库文件
   ANDROID_KEYSTORE_FILE: debug.keystore
   # 密钥库口令
@@ -94,6 +94,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
+          prerelease: ${{ contains(github.ref, 'beta') }}
           files: |
             android/app/build/outputs/apk/${{ env.BUILD_TYPE }}/app-${{ env.BUILD_TYPE }}.apk
         env:
