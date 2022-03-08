@@ -19,9 +19,9 @@ env:
   # 打包类型
   BUILD_TYPE: release
   # 版本名称
-  ANDROID_VERSION_NAME: 1.4.1
+  ANDROID_VERSION_NAME: 1.4.2
   # 版本号
-  ANDROID_VERSION_CODE: 14100
+  ANDROID_VERSION_CODE: 14200
   # 密钥库文件
   ANDROID_KEYSTORE_FILE: release.keystore
   # 密钥库口令
