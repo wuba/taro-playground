@@ -152,7 +152,8 @@ export default class Index extends Component<any, any> {
     } else if (regTaroSchema.test(url) || regRemoteJs.test(url)) {
       this._handleUrl(url);
     } else {
-      Linking.canOpenURL(url).then(res => {
+      Linking.canOpenURL(url).then(() => {
+        // @ts-ignore
         return Taro.openUrl({
           url
         })
@@ -175,6 +176,7 @@ export default class Index extends Component<any, any> {
             confirmText: "前往",
             success: function(showModalRes) {
               if (showModalRes.confirm) {
+                // @ts-ignore
                 Taro.openUrl({
                   url
                 }).catch(console.log);
@@ -234,7 +236,10 @@ export default class Index extends Component<any, any> {
         </View>
         <View className="load">
           <View className="load-header">
-            <Input className="load-header-input" onConfirm={this._onInputConfirm} />
+            <Input className="load-header-input"
+              placeholder="Enter server host here."
+              onConfirm={this._onInputConfirm}
+            />
             <Image
               src={scanPng}
               className="load-header-icon"
