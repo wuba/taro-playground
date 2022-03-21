@@ -17,6 +17,7 @@ import {
   ScrollView
 } from "@tarojs/components";
 import Header from "@/components/head/head";
+import JSONTree from '@/components/jsontree'
 import "./form.scss";
 
 type RadioItemType = {
@@ -38,6 +39,7 @@ interface IState {
   sliderValue: string | number,
   inputValue: string,
   selectDate: string,
+  formData: any,
 }
 
 export default class PageForm extends React.Component<any, IState> {
@@ -70,6 +72,7 @@ export default class PageForm extends React.Component<any, IState> {
     sliderValue: 50,
     selectDate: '2020-01-02',
     inputValue: '',
+    formData: {}
   };
 
   onHandleChange = e => {
@@ -115,18 +118,22 @@ export default class PageForm extends React.Component<any, IState> {
 
   formSubmit = e => {
     console.log(e);
+    this.setState({
+      formData: {...e.detail.value}
+    })
   };
 
   formReset = e => {
     console.log(e);
     this.setState({
       sliderValue: 50,
-      inputValue: ''
+      inputValue: '',
+      formData: {}
     })
   };
 
   render() {
-    const { enableSwitch, radioItems = [], checkItems = [], sliderValue, selectDate, inputValue } = this.state;
+    const { enableSwitch, radioItems = [], checkItems = [], sliderValue, selectDate, inputValue, formData } = this.state;
     return (
       <ScrollView className="components-page">
         <View className="components-page__header">
@@ -239,6 +246,7 @@ export default class PageForm extends React.Component<any, IState> {
                   Reset
                 </Button>
               </View>
+              <JSONTree data={formData} />
             </View>
           </View>
         </Form>
