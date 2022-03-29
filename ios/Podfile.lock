@@ -388,7 +388,7 @@ PODS:
   - RNSyanImagePicker (0.5.3):
     - React
     - TZImagePickerController
-  - TZImagePickerController (3.6.6)
+  - TZImagePickerController (3.7.3)
   - UMAppLoader (2.2.0)
   - UMCore (7.1.2)
   - UMPermissionsInterface (5.3.0):
@@ -682,7 +682,7 @@ SPEC CHECKSUMS:
   RNScreens: 2559f98b0835103cbef3b26ba77fa61d4bb37ae7
   RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f
   RNSyanImagePicker: 5c650d33f16f7cd59c47d9269f6c4856b30d7616
-  TZImagePickerController: edf61b8e87f26e3e445aa50eb66254bd7f4859db
+  TZImagePickerController: d8c57e56fe6990a961d03134121a091c31015aa5
   UMAppLoader: 21af63390e55c82e037fb9752d93114a80ecf16e
   UMCore: ce3a4faa010239063b8343895b29a6d97b01069d
   UMPermissionsInterface: 4f21b0c2aaf953cf041109ff44231b2a69e22836
