@@ -82,6 +82,13 @@ export default class PageForm extends React.Component<any, IState> {
     });
   };
 
+  onHandleSwitchChange = e => {
+    const value = e.detail.value;
+    this.setState({
+      enableSwitch: value
+    })
+  }
+
   onRadioChange = e => {
     console.log(e);
   };
@@ -145,7 +152,7 @@ export default class PageForm extends React.Component<any, IState> {
               <Text className="example-header">switch</Text>
               <View className="example-body">
                 <Switch
-                  onChange={this.onHandleChange}
+                  onChange={this.onHandleSwitchChange}
                   name="switch"
                   className="form-switch"
                   checked={enableSwitch}
