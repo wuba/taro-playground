@@ -10,7 +10,7 @@ trigger:
 
 #修改虚拟机镜像为 macOS
 pool:
-  vmImage: macOS-latest
+  vmImage: ubuntu-latest
 
 steps:
 - task: NodeTool@0
