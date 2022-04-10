@@ -20,7 +20,6 @@ steps:
 
 #自己加的 tarojs
 - script: |
-    npm install -g @tarojs/cli@3.4.4
     npm install
-    npm run build:h5
+    npm run build
   displayName: 'npm install and build'
