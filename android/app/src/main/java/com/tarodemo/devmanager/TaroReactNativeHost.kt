@@ -1,9 +1,10 @@
 package com.tarodemo.devmanager
 
 import android.app.Application
-import com.facebook.react.*
-import com.tarodemo.BuildConfig
-import com.tarodemo.generated.BasePackageList
+import com.facebook.react.PackageList
+import com.facebook.react.ReactInstanceManager
+import com.facebook.react.ReactNativeHost
+import com.facebook.react.ReactPackage
 
 class TaroReactNativeHost(application: Application) : ReactNativeHost(application) {
 
