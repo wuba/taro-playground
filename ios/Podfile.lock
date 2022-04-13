@@ -380,7 +380,7 @@ PODS:
     - React-RCTText
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNScreens (3.12.0):
+  - RNScreens (3.13.1):
     - React-Core
     - React-RCTImage
   - RNSVG (12.1.1):
@@ -391,8 +391,6 @@ PODS:
   - TZImagePickerController (3.7.3)
   - UMAppLoader (2.2.0)
   - UMCore (7.1.2)
-  - UMPermissionsInterface (5.3.0):
-    - UMCore
   - UMReactNativeAdapter (6.3.9):
     - ExpoModulesCore
     - React-Core
@@ -472,7 +470,6 @@ DEPENDENCIES:
   - RNSyanImagePicker (from `../node_modules/react-native-syan-image-picker`)
   - UMAppLoader (from `../node_modules/unimodules-app-loader/ios`)
   - "UMCore (from `../node_modules/@unimodules/core/ios`)"
-  - UMPermissionsInterface (from `../node_modules/unimodules-permissions-interface/ios`)
   - "UMReactNativeAdapter (from `../node_modules/@unimodules/react-native-adapter/ios`)"
   - UMTaskManagerInterface (from `../node_modules/unimodules-task-manager-interface/ios`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
@@ -610,8 +607,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/unimodules-app-loader/ios"
   UMCore:
     :path: "../node_modules/@unimodules/core/ios"
-  UMPermissionsInterface:
-    :path: "../node_modules/unimodules-permissions-interface/ios"
   UMReactNativeAdapter:
     :path: "../node_modules/@unimodules/react-native-adapter/ios"
   UMTaskManagerInterface:
@@ -679,13 +674,12 @@ SPEC CHECKSUMS:
   RNDeviceInfo: 0400a6d0c94186d1120c3cbd97b23abc022187a9
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
   RNReanimated: 32c91e28f5780937b8efc07ddde1bab8d373fe0b
-  RNScreens: 2559f98b0835103cbef3b26ba77fa61d4bb37ae7
+  RNScreens: 40a2cb40a02a609938137a1e0acfbf8fc9eebf19
   RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f
   RNSyanImagePicker: 5c650d33f16f7cd59c47d9269f6c4856b30d7616
   TZImagePickerController: d8c57e56fe6990a961d03134121a091c31015aa5
   UMAppLoader: 21af63390e55c82e037fb9752d93114a80ecf16e
   UMCore: ce3a4faa010239063b8343895b29a6d97b01069d
-  UMPermissionsInterface: 4f21b0c2aaf953cf041109ff44231b2a69e22836
   UMReactNativeAdapter: d03cefd0e4e4179ab8c490408589f1c8a6c8b785
   UMTaskManagerInterface: 2be431101b73604e64fbfffcf759336f9d8fccbb
   Yoga: 90dcd029e45d8a7c1ff059e8b3c6612ff409061a
@@ -693,4 +687,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 3d1d4ecc0a816f4123a1374637688659d2c5777f
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3
