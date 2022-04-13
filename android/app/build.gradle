@@ -275,8 +275,8 @@ android.applicationVariants.all {
 				processManifestTask.doLast {
 					def processResources = output.getProcessResourcesProvider().get()
 					def manifestPath = processResources.manifestFile
-					 def manifestFile = file(manifestPath)
-					def parser = new XmlParser()
+					def manifestFile = file(manifestPath)
+					def parser = new groovy.xml.XmlParser()
 					def rootNode = parser.parse(manifestFile)
 					extraPermissionsForDebug.each {
 						rootNode.appendNode("uses-permission", ["android:name": "android.permission.$it"])
