@@ -1,6 +1,8 @@
 import React from "react";
 // @ts-ignore
-import { View, VirtualList } from "@tarojs/components";
+import { View } from "@tarojs/components";
+// @ts-ignore
+import VirtualList from "@/platform/virtualList";
 
 import Header from "@/components/head/head";
 import "./virtual-list.scss";
@@ -24,18 +26,9 @@ export default class PageView extends React.Component {
     data: buildData(0)
   };
   componentDidMount() {
-    console.log(this.$ref);
-
-    this.timer = setTimeout(() => {
-      // @ts-ignore
-      this?.$ref?.current.scrollTo({ offset: 200 });
-    }, 3000);
   }
   componentWillUnmount() {
-    this.timer && clearTimeout(this.timer);
   }
-  timer
-  $ref = React.createRef();
   onScroll = (data) => {
     console.log(data);
   }
@@ -53,7 +46,6 @@ export default class PageView extends React.Component {
         </View>
         <VirtualList
           height={500}
-          ref={this.$ref}
           width="100%"
           itemData={data}
           itemCount={dataLen}

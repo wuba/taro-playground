@@ -1,5 +1,6 @@
 import Taro from '@tarojs/taro'
 import { View, Button } from '@tarojs/components'
+import { randomColor } from '@/utils/index'
 import './index.scss'
 
 /**
@@ -35,9 +36,8 @@ const Index = () => {
         className='btn'
         type='primary'
         onClick={() => {
-          const randomColor = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
           Taro.setBackgroundColor({
-            backgroundColor: randomColor, // 下拉时，loading 的样式（仅Android）
+            backgroundColor: randomColor(), // 下拉时，loading 的样式（仅Android）
           }).then(() => {
             Taro.startPullDownRefresh();
             const timer = setTimeout(() => {

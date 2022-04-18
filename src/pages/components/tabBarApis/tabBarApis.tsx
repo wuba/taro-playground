@@ -1,5 +1,6 @@
 import Taro from '@tarojs/taro'
 import { useState } from 'react'
+import { randomColor } from '@/utils/index'
 import { View, Button, Text } from '@tarojs/components'
 import './tabBarApis.scss'
 
@@ -85,14 +86,11 @@ const TabBarApis = () => {
         <Button
           className='btn'
           onClick={() => {
-            const randomColor = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
-            const randomSelectedColor = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
-            const randomBackgroundColor = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
             const randomStyle = `${Math.random() > 0.5 ? 'white' : 'black'}`
             Taro.setTabBarStyle({
-              color: randomColor,
-              selectedColor: randomSelectedColor,
-              backgroundColor: randomBackgroundColor,
+              color: randomColor(),
+              selectedColor: randomColor(),
+              backgroundColor: randomColor(),
               borderStyle: randomStyle,
               success: () => {
                 console.log('成功');

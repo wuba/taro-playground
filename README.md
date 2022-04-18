@@ -162,6 +162,22 @@ For the security of your app, please regenerate the .keystore file and store the
 1. [app signing](https://developer.android.com/studio/publish/app-signing)
 2. [encrypted-secrets](https://docs.github.com/en/actions/reference/encrypted-secrets)
 
+## Web & Mini Program support
+
+This project supports web and mini program, but it has not been fully tested.
+
+### start web server
+
+```shell
+yarn dev:h5
+```
+
+### start mini program
+
+```shell
+yarn dev:weapp
+```
+
 ## Attention
 
 The source code is customized for the Taro playground application and is for reference only. If you want to use it directly, please make the following changes.

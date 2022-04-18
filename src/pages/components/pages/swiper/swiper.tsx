@@ -128,17 +128,17 @@ export default class PageView extends React.Component<IProps, IState> {
               >
                 <SwiperItem>
                   <View className="demo-text-1">
-                    <Text className="demo-text-1-text">A</Text>
+                    <View className="demo-text-1-text">A</View>
                   </View>
                 </SwiperItem>
                 <SwiperItem>
                   <View className="demo-text-2">
-                    <Text className="demo-text-2-text">B</Text>
+                    <View className="demo-text-2-text">B</View>
                   </View>
                 </SwiperItem>
                 <SwiperItem>
                   <View className="demo-text-3">
-                    <Text className="demo-text-3-text">C</Text>
+                    <View className="demo-text-3-text">C</View>
                   </View>
                 </SwiperItem>
               </Swiper>
@@ -200,9 +200,7 @@ export default class PageView extends React.Component<IProps, IState> {
             </View>
           </View>
           <View className="components-page__body-example example">
-            <View className="example-header">
-              <Text>Swiper 纵向滑动</Text>
-            </View>
+            <View className="example-header">Swiper 纵向滑动</View>
             <View className="example-body">
               <Swiper
                 className="swiper-list test-h"

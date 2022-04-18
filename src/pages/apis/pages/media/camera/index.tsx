@@ -18,6 +18,9 @@ export default class PageView extends React.Component<any, any> {
       videoUrl: ""
     };
   }
+  componentDidMount(){
+    this.cameraContext = Taro.createCameraContext();
+  }
   ref = React.createRef();
   cameraContext;
 
@@ -86,9 +89,7 @@ export default class PageView extends React.Component<any, any> {
             onError={this.handleError}
             devicePosition={devicePosition}
             onInitDone={() => {
-              if (!this.cameraContext) {
-                this.cameraContext = Taro.createCameraContext();
-              }
+              this.cameraContext = Taro.createCameraContext();
             }}
           />
           <Button

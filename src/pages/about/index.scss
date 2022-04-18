@@ -7,6 +7,7 @@
   background-color: #fff;
   padding: 30px 40px;
   border-radius: 10px;
+  text-align: center;
   &-img {
     height: 180px;
     width: 180px;
@@ -15,9 +16,8 @@
     align-self: center;
   }
   &-desc {
-    &-text {
-      font-size: $font-size-sm;
-    }
+    text-align: left;
+    font-size: $font-size-sm;
   }
 }
 
@@ -28,6 +28,7 @@
   &-item {
     padding: 0 40px;
     height: 100px;
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;

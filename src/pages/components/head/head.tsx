@@ -11,7 +11,7 @@ const Head = (props: HeadProps) => {
 
   return (
     <View className='page-head'>
-      <Text className='page-head-title'>{title}</Text>
+      <View className='page-head-title'>{title}</View>
       <View className='page-head-line' />
       {!!desc && (<Text className='page-head-desc'>{desc}</Text>)}
     </View>

@@ -1,0 +1,16 @@
+@import "../../styles/variables.scss";
+
+.webview {
+  &-url {
+    text-align: center;
+    margin: 0px 0 30px;
+    padding: 200px 30px;
+    background-color: white;
+    color: $color-brand;
+    font-size: 32px;
+  }
+  &-tip {
+    text-align: center;
+    color: $color-grey-2;
+  }
+}

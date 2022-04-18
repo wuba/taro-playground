@@ -10,9 +10,9 @@ export default () => {
       </View>
       <View className='components-page__body'>
         <View className='components-page__body-example example'>
-          <Text className='example-header'>
+          <View className='example-header'>
             flex-direction: row 横向布局
-          </Text>
+          </View>
           <View className='example-body'>
             <View className='example-body__list'>
               <View className='example-body__list-item demo-text-1'>
@@ -28,9 +28,9 @@ export default () => {
           </View>
         </View>
         <View className='components-page__body-example example'>
-          <Text className='example-header'>
+          <View className='example-header'>
             flex-direction: column 纵向布局
-          </Text>
+          </View>
           <View className='example-body'>
             <View className='example-body__list example-body__list--vertical'>
               <View className='example-body__list-item demo-text-1'>

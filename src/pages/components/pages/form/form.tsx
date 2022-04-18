@@ -149,7 +149,7 @@ export default class PageForm extends React.Component<any, IState> {
         <Form onSubmit={this.formSubmit} onReset={this.formReset}>
           <View className="components-page__body">
             <View className="components-page__body-example example">
-              <Text className="example-header">switch</Text>
+              <View className="example-header">switch</View>
               <View className="example-body">
                 <Switch
                   onChange={this.onHandleSwitchChange}
@@ -160,7 +160,7 @@ export default class PageForm extends React.Component<any, IState> {
               </View>
             </View>
             <View className="components-page__body-example example">
-              <Text className="example-header">radio</Text>
+              <View className="example-header">radio</View>
               <View className="example-body">
                 <RadioGroup
                   className="example-body__radio-group"
@@ -185,7 +185,7 @@ export default class PageForm extends React.Component<any, IState> {
               </View>
             </View>
             <View className="components-page__body-example example">
-              <Text className="example-header">checkbox</Text>
+              <View className="example-header">checkbox</View>
               <View className="example-body">
                 <CheckboxGroup
                   className="example-body__checkbox-group"
@@ -208,7 +208,7 @@ export default class PageForm extends React.Component<any, IState> {
               </View>
             </View>
             <View className="components-page__body-example example">
-              <Text className="example-header">slider</Text>
+              <View className="example-header">slider</View>
               <View className="example-body">
                 <Slider
                   name="slider"
@@ -220,7 +220,7 @@ export default class PageForm extends React.Component<any, IState> {
               </View>
             </View>
             <View className="components-page__body-example example">
-              <Text className="example-header">日期选择器</Text>
+              <View className="example-header">日期选择器</View>
               <View className="example-body">
                 <Picker
                   name="date"
@@ -233,7 +233,7 @@ export default class PageForm extends React.Component<any, IState> {
               </View>
             </View>
             <View className="components-page__body-example example example-input">
-              <Text className="example-header">input</Text>
+              <View className="example-header">input</View>
               <View className="example-input-example-body">
                 <Input
                   name="input"
@@ -245,11 +245,11 @@ export default class PageForm extends React.Component<any, IState> {
               </View>
             </View>
             <View className="components-page__body-example example">
-              <View className="example-body" style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
-                <Button formType="submit" type="primary">
+              <View className="example-body" style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around' }}>
+                <Button size="mini" formType="submit" type="primary">
                   Submit
                 </Button>
-                <Button formType="reset" type="default">
+                <Button size="mini" formType="reset" type="default">
                   Reset
                 </Button>
               </View>

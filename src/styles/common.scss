@@ -45,13 +45,13 @@
 }
 
 .example {
-  margin-bottom: 60px;
+  padding-bottom: 60px;
 
   &-header {
     text-align: center;
     font-size: 34px;
     color: #999;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
   }
 }
 
@@ -95,7 +95,6 @@
 }
 
 .demo-text-1 {
-  position: relative;
   align-items: center;
   justify-content: center;
   background-color: $color-brand;
@@ -104,7 +103,6 @@
 }
 
 .demo-text-2 {
-  position: relative;
   align-items: center;
   justify-content: center;
   background-color: $color-brand-light;
@@ -113,7 +111,6 @@
 }
 
 .demo-text-3 {
-  position: relative;
   align-items: center;
   justify-content: center;
   background-color: $color-brand-dark;

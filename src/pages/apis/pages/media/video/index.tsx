@@ -3,6 +3,8 @@ import Taro from '@tarojs/taro';
 import { View, Video, Button } from '@tarojs/components';
 import { hadlePermissionsDeny } from '@/utils/index'
 
+import "./index.scss";
+
 const path = "https://wos2.58cdn.com.cn/DeFazYxWvDti/frsupload/6820cfd5e0346eac050e7c3f0df78f65.mp4";
 
 /**
@@ -50,6 +52,7 @@ const Index = () => {
     <View className='api-page'>
       <Video
         id="video"
+        className='preview'
         onLoadedMetaData={_onLoadedMetaData}
         src={filePath}
         controls

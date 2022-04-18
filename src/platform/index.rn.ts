@@ -1,0 +1,1 @@
+export { Linking, NativeModules } from 'react-native'

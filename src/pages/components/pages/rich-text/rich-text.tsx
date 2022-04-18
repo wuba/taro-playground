@@ -1,4 +1,4 @@
-import { RichText, View } from "@tarojs/components-rn";
+import { RichText, View } from "@tarojs/components";
 import Header from "../../head/head";
 
 import "./rich-text.scss";
