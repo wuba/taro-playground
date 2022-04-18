@@ -1,18 +1,16 @@
 import { Component, Fragment } from "react";
 import Taro from "@tarojs/taro";
-import { NativeModules, Linking } from "react-native";
+import { NativeModules, Linking } from "@/platform/index";
 import queryString from "query-string";
 import { version as taroVersion } from '@tarojs/taro/package.json';
 import { version as rnVersion } from 'react-native/package.json';
 import { View, Text, Image, Input } from "@tarojs/components";
-import { hadlePermissionsDeny } from "@/utils/index";
+import { hadlePermissionsDeny, isRN } from "@/utils/index";
 import logoPng from "@/assets/common/taro_logo.jpg";
 import scanPng from "@/assets/iconpark/scan-code.png";
 import appStorePng from "@/assets/iconpark/app-store.png";
 import serverPng from "@/assets/iconpark/data-server.png";
 import "./index.scss";
-
-const DevManager = NativeModules.RNDevManager;
 
 const BUNDLES_KEY = "bundleList";
 const REMOTE_BUNDLES_KEY = "remoteBundleList";
@@ -34,7 +32,7 @@ export default class Index extends Component<any, any> {
   }
 
   componentDidMount() {
-    Taro.getStorage({
+    isRN && Taro.getStorage({
       key: BUNDLES_KEY
     })
       .then(res => {
@@ -48,7 +46,8 @@ export default class Index extends Component<any, any> {
       .catch(err => {
         console.log("获取 bundle 列表失败：", err);
       });
-    Taro.getStorage({
+
+    isRN && Taro.getStorage({
       key: REMOTE_BUNDLES_KEY
     })
       .then(res => {
@@ -62,12 +61,12 @@ export default class Index extends Component<any, any> {
       .catch(err => {
         console.log("获取 bundle 列表失败：", err);
       });
-    Linking.getInitialURL().then(this._handleUrl);
-    Linking.addEventListener('url', this._handleUrl);
+    Linking?.getInitialURL().then(this._handleUrl);
+    Linking?.addEventListener('url', this._handleUrl);
   }
 
   componentWillUnmount() {
-    Linking.removeEventListener('url', this._handleUrl);
+    Linking?.removeEventListener('url', this._handleUrl);
   }
 
   _loadBundleFromLocalServer = (url: string, path = "index") => {
@@ -79,7 +78,7 @@ export default class Index extends Component<any, any> {
         .then(res => {
           console.log("request success: ", res);
           if (res?.data?.status === 200) {
-            DevManager.loadBundleByBundleUrl(url, path);
+            NativeModules.RNDevManager.loadBundleByBundleUrl(url, path);
           }
         })
         .catch(err => {
@@ -96,7 +95,7 @@ export default class Index extends Component<any, any> {
   };
 
   _loadBundelFromRemoteUrl = (url: string) => {
-    DevManager.load(url);
+    NativeModules.RNDevManager.load(url);
   };
 
   _saveUrlToStorage = (url, key) => {
@@ -227,14 +226,14 @@ export default class Index extends Component<any, any> {
         <View className="info">
           <Image src={logoPng} className="info-img" />
           {neverLoaded && (
-            <Text className="info-text">
+            <View className="info-text">
               Taro 是一个开放式跨端跨框架解决方案，支持使用 React/Vue/Nerv
               等框架来开发 微信 / 京东 / 百度 / 支付宝 / 字节跳动 / QQ 小程序 /
               H5 / RN 等应用。
-            </Text>
+            </View>
           )}
         </View>
-        <View className="load">
+        { isRN && <View className="load">
           <View className="load-header">
             <Input className="load-header-input"
               placeholder="Enter server host here."
@@ -246,7 +245,7 @@ export default class Index extends Component<any, any> {
               onClick={this._onPressScan}
             />
           </View>
-        </View>
+        </View>}
         {localList.length > 0 && (
           <View className="bundle">
             <View className="bundle-control">
@@ -322,8 +321,8 @@ export default class Index extends Component<any, any> {
             })}
           </View>
         )}
-        <Text className="statement">Supportted Taro Versions：3.3.10 ~ {taroVersion}</Text>
-        <Text className="statement">React Native Version：{rnVersion}</Text>
+        {isRN && <Text className="statement">Supportted Taro Versions：3.3.10 ~ {taroVersion}</Text>}
+        {isRN &&<Text className="statement">React Native Version：{rnVersion}</Text>}
       </View>
     );
   }

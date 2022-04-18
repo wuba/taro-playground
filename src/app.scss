@@ -1,3 +1,14 @@
 @import "./styles/mixins.scss";
 @import "./styles/common.scss";
 @import "./styles/variables.scss";
+
+// h5
+.taro_page {
+  background-color: #efefef !important;
+}
+
+// 小程序
+
+page {
+  background-color: #efefef;
+}

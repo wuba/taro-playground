@@ -41,12 +41,13 @@ export default class PageView extends React.Component<IProps, IState> {
         }
       }
     })
+    this.cameraContext = Taro.createCameraContext()
   }
   ref = React.createRef();
   cameraContext;
 
   handleError() {
-    alert("您的浏览器不允许使用摄像头");
+    alert("无法使用摄像头");
   }
 
   handleStop() {

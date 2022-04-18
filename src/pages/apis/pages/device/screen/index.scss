@@ -6,12 +6,14 @@
   background-color: #ffffff;
 }
 .control {
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   &-btn {
     height: 80px;
     width: 80px;
+    display: flex;
     background-color: $color-success;
     justify-content: center;
     align-items: center;

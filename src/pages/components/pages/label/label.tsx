@@ -1,6 +1,5 @@
 import {
   View,
-  Text,
   CheckboxGroup,
   Checkbox,
   Label,
@@ -20,7 +19,7 @@ const PageLabel = () => {
       </View>
       <View className='components-page__body'>
         <View className='components-page__body-example example'>
-          <Text className='example-header'>表单组件在label内</Text>
+          <View className='example-header'>表单组件在label内</View>
           <View className='example-body'>
             <CheckboxGroup>
               <Label className='example-body__label'>
@@ -35,7 +34,7 @@ const PageLabel = () => {
           </View>
         </View>
         <View className='components-page__body-example example'>
-          <Text className='example-header'>表单组件在Label外</Text>
+          <View className='example-header'>表单组件在Label外</View>
           <View className='example-body'>
             <RadioGroup className="example-body__radio-group">
               <Label className='example-body__label' for='gz'>

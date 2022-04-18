@@ -1,6 +1,6 @@
 import React from "react";
-import Taro from '@tarojs/taro-rn';
-import { View, ScrollView, Text } from "@tarojs/components";
+import Taro from '@tarojs/taro';
+import { View, ScrollView } from "@tarojs/components";
 import Header from "@/components/head/head";
 import "./scroll-view.scss";
 
@@ -17,7 +17,7 @@ export default class PageView extends React.Component {
         </View>
         <View className='components-page__body'>
           <View className='components-page__body-example example scroll-view'>
-            <Text className='example-header'>Horizontal 横向滚动</Text>
+            <View className='example-header'>Horizontal 横向滚动</View>
             <View className='example-body'>
               <ScrollView
                 scrollX
@@ -41,7 +41,7 @@ export default class PageView extends React.Component {
           </View>
 
           <View className='components-page__body-example example scroll-view'>
-            <Text className='example-header'>Vertical 纵向滚动</Text>
+            <View className='example-header'>Vertical 纵向滚动</View>
             <View className='example-body'>
               <ScrollView
                 scrollY
@@ -60,7 +60,7 @@ export default class PageView extends React.Component {
                     duration: 1000
                   });
                   const {list} = this.state;
-                  list.push(this.initNum++);
+                  list.push(++this.initNum);
                   this.setState({
                     list
                   });

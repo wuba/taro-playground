@@ -24,7 +24,7 @@ const Index = () => {
       <View className="api-page__body">
         <View className='common-border'>
           <View className='input-wrap'>
-            <Text className='input-wrap-text'>输入框   : </Text>
+            <Text className='input-wrap-text'>输入框: </Text>
             <Input
               className='input-wrap-input'
               type='text'
