@@ -75,7 +75,7 @@
     "react-native-pager-view": "~5.4.9",
     "react-native-reanimated": "~2.4.1",
     "react-native-safe-area-context": "~3.4.1",
-    "react-native-screens": "^3.12.0",
+    "react-native-screens": "2.18.1",
     "react-native-splash-screen": "^3.2.0",
     "react-native-svg": "~12.1.1",
     "react-native-syan-image-picker": "0.5.3",
@@ -103,5 +103,8 @@
     "pod-install": "^0.1.23",
     "stylelint": "9.3.0",
     "typescript": "^4.1.0"
+  },
+  "resolutions": {
+    "react-native-screens": "2.18.1"
   }
 }
