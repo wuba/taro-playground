@@ -87,6 +87,7 @@
     "@babel/runtime": "^7.7.7",
     "@tarojs/cli": "3.4.6",
     "@tarojs/mini-runner": "3.4.6",
+    "@tarojs/plugin-mini-ci": "3.4.6",
     "@tarojs/rn-runner": "3.4.6",
     "@tarojs/webpack-runner": "3.4.6",
     "@types/react": "^17.0.2",
