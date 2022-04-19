@@ -16,6 +16,8 @@ The Taro Playground App is a cross-platform application developed using Taro, to
 
 ## Mini Program
 
+![](https://pic3.58cdn.com.cn/nowater/frs/n_v23ec2613515c6458aaa44f01d459cea8b.jpg)
+
 ## Supportted versions
 
 0. taro: `@tarojs/cli@^3.2.0`
