@@ -3,7 +3,7 @@ const { version } = require('../package.json')
 
 const CIPluginOpt = {
   weapp: {
-    appid: "微信小程序appid",
+    appid: process.env.WEAPP_ID,
     privateKeyPath: "key/private.appid.key"
   },
   tt: {
