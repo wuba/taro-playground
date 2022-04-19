@@ -32,7 +32,7 @@ const linkPrivacy = {
 const linkUpdate = {
   name: '版本更新',
   onPress: () => {
-    if (platform === 'ios') {
+    if (isRN && platform === 'ios') {
       // @ts-ignore
       Taro.openUrl({
         url: 'https://apps.apple.com/cn/app/taro-playground/id1576830673'
@@ -41,7 +41,7 @@ const linkUpdate = {
       loadPage({
         url: 'https://github.com/wuba/taro-playground/releases',
         title: '版本变更',
-        certified: isRN
+        certified: false
       })
     }
   },
@@ -73,7 +73,7 @@ const linkWeb = {
   name: 'H5 Demo',
   onPress: () => {
     loadPage({
-      url: 'https://docs.taro.zone',
+      url: 'https://wuba.github.io/taro-playground/',
       title: 'H5 Demo',
       certified: !isRN
     })
