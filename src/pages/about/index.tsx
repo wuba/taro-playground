@@ -75,7 +75,7 @@ const linkWeb = {
     loadPage({
       url: 'https://wuba.github.io/taro-playground/',
       title: 'H5 Demo',
-      certified: !isRN
+      certified: false
     })
   }
 }
