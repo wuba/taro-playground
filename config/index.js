@@ -3,7 +3,7 @@ const { version } = require('../package.json')
 
 const CIPluginOpt = {
   weapp: {
-    appid: process.env.WEAPP_ID,
+    appid: process.env.WEAPP_ID || '',
     privateKeyPath: "key/private.appid.key"
   },
   tt: {
@@ -22,6 +22,10 @@ const CIPluginOpt = {
   desc: "修复已知问题"
 }
 
+const plugins = process.env.TARO_ENV === 'weapp' ? [
+  [ "@tarojs/plugin-mini-ci", CIPluginOpt ]
+] : []
+
 const config = {
   projectName: 'taro-demo',
   date: '2021-7-16',
@@ -33,9 +37,7 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
-  plugins: [
-    [ "@tarojs/plugin-mini-ci", CIPluginOpt ]
-  ],
+  plugins,
   defineConstants: {
   },
   copy: {
