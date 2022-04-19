@@ -4,7 +4,7 @@ name: Assemble Web Release
 # 触发工作流程的事件
 on:
   push:
-    tags: [ v* ]
+    tags: [ v*, h* ]
   pull_request:
     branches: [ master ]
 
