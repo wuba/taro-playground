@@ -27,30 +27,42 @@ The Taro Playground App is a cross-platform application developed using Taro, to
 > 
 > **run this script after the project is initialized.**
 
-`yarn upgradePeerdeps`
+```
+yarn upgradePeerdeps
+```
 
 ### pod install
 > run this script when you add new react native library or update react native library version.
 > 
 > see [pod-install](https://www.npmjs.com/package/pod-install) for more information.
 
-`yarn podInstall`
+```
+yarn podInstall
+```
 
 ### start ios app
 
-`yarn ios`
+```
+yarn ios
+```
 
 ### start android app
 
-`yarn android`
+```
+yarn android
+```
 
 ### start bundler
 
-`yarn start`
+```
+yarn start
+```
 
 ### reset cache and start bundler
 
-`yarn start --reset-cache`
+```
+yarn start --reset-cache
+```
 
 ### more information
 
@@ -62,11 +74,15 @@ The Taro Playground App is a cross-platform application developed using Taro, to
 
 ### build ios bundle
 
-`yarn build:rn --platform ios`
+```
+yarn build:rn --platform ios
+```
 
 ### build Android bundle
 
-`yarn build:rn --platform android`
+```
+yarn build:rn --platform android
+```
 
 ### release ios APP
 
@@ -115,7 +131,9 @@ values like ${{secrets.xxxxx}} are manually generated and store in your github e
 
 ##### SIGNING_CERTIFICATE_P12_DATA
 
-`cat Certificates.p12 | base64 | pbcopy`
+```
+cat Certificates.p12 | base64 | pbcopy
+```
 
 ##### SIGNING_CERTIFICATE_PASSWORD
 
@@ -123,7 +141,9 @@ encryption password of your Personal Information Exchange (.p12)
 
 ##### PROVISIONING_PROFILE_DATA
 
-`cat profile.mobileprovision | base64 | pbcopy`
+```
+cat profile.mobileprovision | base64 | pbcopy
+```
 
 ##### APP_STORE_CONNECT_PASSWORD
 
@@ -200,7 +220,9 @@ values like ${{secrets.xxxxx}} are manually generated and store in your github e
 
 ##### WEAPP_KEY
 
-`cat private.$WEAPP_ID.key | base64 | pbcopy`
+```
+cat private.$WEAPP_ID.key | base64 | pbcopy
+```
 
 ## Attention
 
