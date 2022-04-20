@@ -10,6 +10,13 @@ on:
 
   workflow_dispatch:
 
+# 工作流环境变量
+env:
+  # 小程序的appid
+  WEAPP_ID: ${{ secrets.WEAPP_ID }}
+  # 小程序的秘钥
+  WEAPP_KEY: ${{ secrets.WEAPP_KEY }}
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -39,9 +46,9 @@ jobs:
       - name: Import Weapp Key
         run: echo "$WEAPP_KEY" | base64 --decode > key/private.appid.key
         env:
-          WEAPP_KEY: ${{ secrets.WEAPP_KEY }}
+          WEAPP_KEY: ${{ env.WEAPP_KEY }}
       - name: Build Taro Playground Weapp
         run: |
           yarn build:weapp -- --upload
         env:
-          WEAPP_ID: ${{ secrets.WEAPP_ID }}
+          WEAPP_ID: ${{ env.WEAPP_ID }}

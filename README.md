@@ -3,20 +3,12 @@ Taro Playground App
 
 The Taro Playground App is a cross-platform application developed using Taro, to help developers develop and debug Taro applications. It is initialized using [taro react native template](https://github.com/nervjs/taro-project-templates/tree/v3.1/react-native).
 
-## App Download
+## Preview
 
-| Android | iOS |
-| - | - |
-| ![](https://pic3.58cdn.com.cn/nowater/fangfe/n_v295dd481b6b2f446592350e3187716d03.png) | ![](https://pic1.58cdn.com.cn/nowater/fangfe/n_v224532e5560314106b6ab32b0a1534a9d.png) |
-| https://github.com/wuba/taro-playground/releases | https://apps.apple.com/cn/app/taro-playground/id1576830673 |
-
-## Website Online
-
-[https://wuba.github.io/taro-playground/](https://wuba.github.io/taro-playground/)
-
-## Mini Program
-
-![](https://pic3.58cdn.com.cn/nowater/frs/n_v23ec2613515c6458aaa44f01d459cea8b.jpg)
+| Android | iOS | Web | Mini Program |
+| - | - | - | - |
+| ![](https://pic3.58cdn.com.cn/nowater/fangfe/n_v295dd481b6b2f446592350e3187716d03.png) | ![](https://pic1.58cdn.com.cn/nowater/fangfe/n_v224532e5560314106b6ab32b0a1534a9d.png) | ![](https://pic5.58cdn.com.cn/nowater/frs/n_v2d585527f52e640679cdd37123a418fe3.png) | ![](https://pic3.58cdn.com.cn/nowater/frs/n_v23ec2613515c6458aaa44f01d459cea8b.jpg) |
+| https://github.com/wuba/taro-playground/releases | https://apps.apple.com/cn/app/taro-playground/id1576830673 | https://wuba.github.io/taro-playground/ | https://github.com/wuba/taro-playground |
 
 ## Supportted versions
 
@@ -180,11 +172,35 @@ This project supports web and mini program, but it has not been fully tested.
 yarn dev:h5
 ```
 
-### start mini program
+### Github workflows of Web
+
+see [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) for more details.
+
+### start wechat mini program
 
 ```shell
 yarn dev:weapp
 ```
+
+### Github workflows of Wechat Mini Program
+
+#### configuration
+
+We use [@tarojs/plugin-mini-ci](https://github.com/NervJS/taro/tree/next/packages/taro-plugin-mini-ci) to deploy mini programs. Modify the following configuration items for package and publish your wechat mini program.
+
+> [.github/workflows/assemble_weapp_release.yml](.github/workflows/assemble_weapp_release.yml)
+
+```yml
+env:
+  WEAPP_ID: ${{ secrets.WEAPP_ID }} # wechat mini program id
+  WEAPP_KEY: ${{ secrets.WEAPP_KEY }} # wechat mini program key
+```
+
+values like ${{secrets.xxxxx}} are manually generated and store in your github encrypted secrets.
+
+##### WEAPP_KEY
+
+`cat private.$WEAPP_ID.key | base64 | pbcopy`
 
 ## Attention
 
