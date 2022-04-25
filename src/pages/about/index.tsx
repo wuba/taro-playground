@@ -110,13 +110,15 @@ export default class Index extends Component<any, any> {
             )
           })}
         </View>
-        {isRN && <View className='page-footer' onClick={() => {
+        {isRN ? <View className='page-footer' onClick={() => {
           Taro.navigateTo({
             url: '/pages/about/dep'
           })
         }}
         >
           <Text className='page-footer-text'>Taro: {taroVersion}, React Native: {rnVersion}, Taro Playground: {playgroundVersion}</Text>
+        </View> : <View className='page-footer'>
+          <Text className='page-footer-text'>Taro: {taroVersion}</Text>
         </View>}
       </View>
     )
