@@ -13,6 +13,7 @@ export default {
     'pages/global/pages/hooks/page',
     'pages/global/pages/lifecycle/page',
     'pages/global/pages/router/index',
+    'pages/global/pages/styles/size',
     // 全局相关 end
     // 组件相关 start
     'pages/components/index',
