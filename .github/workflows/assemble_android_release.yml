@@ -4,7 +4,7 @@ name: Assemble Android Release
 # 触发工作流程的事件
 on:
   push:
-    tags: [ v*, r* ]
+    tags: [ v*, r*, a* ]
   pull_request:
     branches: [ master ]
 
