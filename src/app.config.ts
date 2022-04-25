@@ -118,4 +118,9 @@ export default {
       },
     ]
   },
+  rn: {
+    stackProps: {
+      detachInactiveScreens: false
+    }
+  }
 }
