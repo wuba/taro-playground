@@ -11,7 +11,7 @@ const Index = () => {
     <View className='api-page'>
       <View className='view-item'>
         <Button
-          className='btn'
+          className='api-page-btn'
           type='primary'
           onClick={() => Taro.showToast({
             title: '成功',
@@ -21,7 +21,7 @@ const Index = () => {
         >showToast</Button>
 
         <Button
-          className='btn'
+          className='api-page-btn'
           type='primary'
           onClick={() => Taro.showModal({
             title: '提示',
@@ -43,7 +43,7 @@ const Index = () => {
         >showModal</Button>
 
         <Button
-          className='btn'
+          className='api-page-btn'
           type='primary'
           onClick={() => Taro.showLoading({
             title: '加载中',
@@ -51,7 +51,7 @@ const Index = () => {
         >showLoading</Button>
 
         <Button
-          className='btn'
+          className='api-page-btn'
           type='primary'
           onClick={() => Taro.hideLoading()}
         >
@@ -59,7 +59,7 @@ const Index = () => {
         </Button>
 
         <Button
-          className='btn'
+          className='api-page-btn'
           type='primary'
           onClick={() => Taro.showActionSheet({
             itemList: ['A', 'B', 'C'],
