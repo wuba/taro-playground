@@ -14,6 +14,7 @@ export default {
     'pages/global/pages/lifecycle/page',
     'pages/global/pages/router/index',
     'pages/global/pages/styles/size',
+    'pages/global/pages/styles/platform',
     // 全局相关 end
     // 组件相关 start
     'pages/components/index',
