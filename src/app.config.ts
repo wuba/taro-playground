@@ -119,10 +119,5 @@ export default {
         text: '关于',
       },
     ]
-  },
-  rn: {
-    stackProps: {
-      detachInactiveScreens: false
-    }
   }
 }

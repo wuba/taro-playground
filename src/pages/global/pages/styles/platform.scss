@@ -1,5 +1,6 @@
 .ifdef-bgc {
   color: white;
+  font-size: 30px;
   background-color: black;
   /*  #ifdef  h5  */
   background-color: red;
@@ -13,6 +14,7 @@
 }
 .ifndef-bgc {
   color: white;
+  font-size: 30px;
   background-color: black;
   /*  #ifndef  weapp rn  */
   background-color: red;
@@ -24,7 +26,10 @@
   background-color: blue;
   /*  #endif  */
 }
-/*  #ifdef  h5  */
+.ifdef-color, .ifndef-color {
+  font-size: 30px;
+}
+  /*  #ifdef  h5  */
 .ifdef-color {
   color: red;
 }
