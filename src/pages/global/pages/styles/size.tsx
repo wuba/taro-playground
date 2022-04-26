@@ -12,6 +12,13 @@ export default function Size() {
     <View className="global-page__body">
       <View className="global-page__body-example example">
         <View className='example-body'>
+          <View>font-size: inherit</View>
+        </View>
+      </View>
+    </View>
+    <View className="global-page__body">
+      <View className="global-page__body-example example">
+        <View className='example-body'>
           <View className="fs30px">font-size: 30px</View>
           <View className="fs60px">font-size: 60px</View>
         </View>
