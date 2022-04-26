@@ -61,6 +61,10 @@ export default class Index extends Component<never, any> {
             {
               id: 'size',
               name: '尺寸'
+            },
+            {
+              id: 'platform',
+              name: '跨平台'
             }
           ]
         }
