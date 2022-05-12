@@ -4,14 +4,18 @@
 }
 
 .imgContainer {
+  display: flex;
   flex-direction: row;
+  text-align: center;
   align-items: center;
-  border-width: 1px;
-  border-color: #000;
+  border: #000 solid 1px;
   background-color: #fff;
   &-left {
     height: 200px;
     width: 400px;
     background-color: #999;
+  }
+  .taro-img__widthfix{
+    height: auto;
   }
 }

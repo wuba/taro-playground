@@ -1,0 +1,62 @@
+.ifdef-bgc {
+  color: white;
+  font-size: 30px;
+  background-color: black;
+  /*  #ifdef  h5  */
+  background-color: red;
+  /*  #endif  */
+  /*  #ifdef  weapp  */
+  background-color: green;
+  /*  #endif  */
+  /*  #ifdef  rn  */
+  background-color: blue;
+  /*  #endif  */
+}
+.ifndef-bgc {
+  color: white;
+  font-size: 30px;
+  background-color: black;
+  /*  #ifndef  weapp rn  */
+  background-color: red;
+  /*  #endif  */
+  /*  #ifndef  h5 rn  */
+  background-color: green;
+  /*  #endif  */
+  /*  #ifndef  h5 weapp  */
+  background-color: blue;
+  /*  #endif  */
+}
+.ifdef-color, .ifndef-color {
+  font-size: 30px;
+}
+  /*  #ifdef  h5  */
+.ifdef-color {
+  color: red;
+}
+/*  #endif  */
+/*  #ifdef  weapp  */
+.ifdef-color {
+  color: green;
+}
+/*  #endif  */
+/*  #ifdef  rn  */
+.ifdef-color {
+  color: blue;
+}
+/*  #endif  */
+
+/*  #ifndef  weapp rn  */
+.ifndef-color {
+  color: red;
+}
+/*  #endif  */
+/*  #ifndef  h5 rn  */
+.ifndef-color {
+  color: green;
+}
+/*  #endif  */
+/*  #ifndef  h5 weapp  */
+.ifndef-color {
+  color: blue;
+}
+/*  #endif  */

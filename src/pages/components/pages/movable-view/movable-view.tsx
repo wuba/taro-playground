@@ -39,8 +39,8 @@ const PageView = () => {
         <Header title="MovableView"></Header>
       </View>
       <MovableArea className="movable-area">
-        <MovableView className="movable-view" {...config}>
-          {String(config.disabled)}
+        <MovableView {...config}>
+          <View className="movable-view">{String(config.disabled)}</View>
         </MovableView>
       </MovableArea>
 

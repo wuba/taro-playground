@@ -4,6 +4,7 @@ import { View, Image, Text, ScrollView } from "@tarojs/components";
 import hooksPng from "@/assets/iconpark/aiming.png";
 import routerPng from "@/assets/iconpark/navigation.png";
 import lifecyclePng from "@/assets/iconpark/cycle-arrow.png";
+import stylesPng from "@/assets/iconpark/font-size.png";
 
 import "./index.scss";
 
@@ -11,6 +12,7 @@ const PNGS = {
   hooksPng,
   routerPng,
   lifecyclePng,
+  stylesPng
 };
 
 export default class Index extends Component<never, any> {
@@ -48,6 +50,21 @@ export default class Index extends Component<never, any> {
             {
               id: 'index',
               name: '页面跳转',
+            }
+          ]
+        },
+        {
+          id: "styles",
+          name: "样式",
+          open: false,
+          pages: [
+            {
+              id: 'size',
+              name: '尺寸'
+            },
+            {
+              id: 'platform',
+              name: '跨平台'
             }
           ]
         }

@@ -2,9 +2,15 @@
 
 .example-progress {
   font-size: 32px;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
+
+/*  #ifndef  %rn%  */
+.example-controller taro-button-core {
+  margin-top: unset;
+}
+/*  #endif  */
 
 .example-controller {
   display: flex;
@@ -19,19 +25,5 @@
   }
   &-btn3 {
     background-color: $color-error;
-  }
-}
-
-.components-page {
-  &__body {
-    margin: 40px;
-    background-color: #fff;
-    border-radius: 8px;
-  }
-  &__footer {
-    margin: 40px;
-    background-color: #fff;
-    border-radius: 8px;
-    padding-bottom: 40px;
   }
 }

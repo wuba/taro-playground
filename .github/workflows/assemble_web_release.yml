@@ -1,0 +1,46 @@
+# 工作流名称
+name: Assemble Web Release
+
+# 触发工作流程的事件
+on:
+  push:
+    tags: [ v*, h* ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Cache node_modules Folder
+        uses: actions/cache@v2
+        with:
+          path: ${{ github.workspace }}/node_modules
+          key: ${{ runner.os }}-node_modules
+          restore-keys: ${{ runner.os }}-node_modules
+      - name: Get Yarn Cache Directory Path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Cache Yarn
+        uses: actions/cache@v2
+        env:
+          cache-name: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Install Dependencies
+        run: |
+          yarn
+      - name: Build Taro Playground Web
+        run: |
+          yarn build:h5
+      - name: Deploy github pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

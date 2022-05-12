@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Taro from '@tarojs/taro'
 import { View, Button, Text } from '@tarojs/components'
+import { randomColor } from '@/utils/index'
 import './navigationBarApis.scss'
 
 /**
@@ -58,9 +59,9 @@ const Index = () => {
         <Button
           className='btn'
           onClick={() => {
-            const randomColor = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
+            const backgroundColor = randomColor()
             Taro.setNavigationBarColor({
-              backgroundColor: randomColor,
+              backgroundColor,
               frontColor: '#ffffff',
               success: () => {
                 console.log('成功');

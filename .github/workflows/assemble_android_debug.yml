@@ -4,7 +4,7 @@ name: Assemble Android Debug
 # 触发工作流程的事件
 on:
   push:
-    tags: [ v* ]
+    tags: [ v*, r*, a* ]
   pull_request:
     branches: [ master ]
 
@@ -19,9 +19,9 @@ env:
   # 打包类型
   BUILD_TYPE: debug
   # 版本名称
-  ANDROID_VERSION_NAME: 1.4.3
+  ANDROID_VERSION_NAME: 1.4.7
   # 版本号
-  ANDROID_VERSION_CODE: 14300
+  ANDROID_VERSION_CODE: 14700
   # 密钥库文件
   ANDROID_KEYSTORE_FILE: debug.keystore
   # 密钥库口令

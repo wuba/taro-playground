@@ -1,4 +1,30 @@
 const path = require('path')
+const { version } = require('../package.json')
+
+const CIPluginOpt = {
+  weapp: {
+    appid: process.env.WEAPP_ID || '微信小程序appid',
+    privateKeyPath: "key/private.appid.key"
+  },
+  tt: {
+    email: "字节小程序邮箱",
+    password: "字节小程序密码"
+  },
+  alipay: {
+    appId: "支付宝小程序appId",
+    toolId: "工具id",
+    privateKeyPath: "key/pkcs8-private-pem"
+  },
+  swan: {
+    token: "鉴权需要的token令牌"
+  },
+  version,
+  desc: "修复已知问题"
+}
+
+const plugins = process.env.TARO_ENV === 'weapp' ? [
+  [ "@tarojs/plugin-mini-ci", CIPluginOpt ]
+] : []
 
 const config = {
   projectName: 'taro-demo',
@@ -11,7 +37,7 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
-  plugins: [],
+  plugins,
   defineConstants: {
   },
   copy: {
@@ -45,7 +71,7 @@ const config = {
     }
   },
   h5: {
-    publicPath: '/',
+    publicPath: '/taro-playground/',
     staticDirectory: 'static',
     postcss: {
       autoprefixer: {
@@ -81,6 +107,7 @@ const config = {
     '@/components': path.resolve(__dirname, '..', 'src/pages/components'),
     '@/utils': path.resolve(__dirname, '..', 'src/pages/utils'),
     '@/assets': path.resolve(__dirname, '..', 'src/assets'),
+    '@/platform': path.resolve(__dirname, '..', 'src/platform'),
   }
 }
 

@@ -1,4 +1,28 @@
-import Taro from '@tarojs/taro'
+import Taro, { ENV_TYPE, getEnv } from '@tarojs/taro'
+
+export const isWeb = getEnv() === ENV_TYPE.WEB
+
+export const isRN = getEnv() === ENV_TYPE.RN
+
+export const notMini = isWeb || isRN
+
+interface pageType {
+  url: string
+  title: string
+  right?: string
+  open?: string
+  certified?: boolean
+}
+
+export function loadPage({ url, title, right, open, certified = true }: pageType): void {
+  if(isWeb) {
+    window.location.href = url
+  } else {
+    Taro.navigateTo({
+      url: `/pages/webview/index?certified=${certified}&title=${title}&link=${encodeURIComponent(url)}${ right ? `&right=${right}` :''}${ open ? `&open=${encodeURIComponent(open)}` :''}`
+    })
+  }
+}
 
 export function hadlePermissionsDeny({ perssionText }: { perssionText: string }): void {
   Taro.showModal({
@@ -59,4 +83,8 @@ export function throttle(func, wait) {
       previous = now;
     }
   }
+}
+
+export function randomColor() {
+  return `#${Math.floor(Math.random()*16777215).toString(16)}`
 }

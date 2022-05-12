@@ -23,6 +23,7 @@
   align-items: center;
   padding-left: 36px;
   padding-right: 36px;
+  text-align: center;
   &-img {
     height: 200px;
     width: 200px;
@@ -30,6 +31,7 @@
     margin-bottom: $spacing-v-xl;
   }
   &-text {
+    text-align: left;
     font-size: $font-size-base;
     color: $color-text-paragraph;
     line-height: 40px;

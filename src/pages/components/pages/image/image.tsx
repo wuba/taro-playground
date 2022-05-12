@@ -4,7 +4,7 @@ import nervLogo from '@/assets/common/taro_logo.jpg'
 
 import './image.scss'
 
-export default () => {
+export default function ImageView () {
   return (
     <View className='components-page'>
       <View className='components-page__header'>
