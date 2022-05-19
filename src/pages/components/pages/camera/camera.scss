@@ -12,7 +12,9 @@
 }
 
 .preview {
+  /*  #ifndef  rn  */
   display: block;
+  /*  #endif  */
   width: 80%;
   margin: 0 auto;
   margin-top: 30px;
