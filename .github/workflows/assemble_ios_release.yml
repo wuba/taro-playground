@@ -15,17 +15,17 @@ env:
   # 应用的application_id
   APP_ID: ${{secrets.APP_ID}}
   APP_NAME: Taro
+  VERSION_NUMBER: 1.5.0
+  BUILD_NUMBER: 1.5.0.1
   BUILD_TYPE: release
-  IOS_VERSION_NUMBER: 1.5.0
-  IOS_BUILD_NUMBER: 1.5.0.1
-  IOS_TEAM_ID: ${{secrets.TEAM_ID}}
-  IOS_PROVISIONING_PROFILE_SPECIFIER: ${{secrets.RELEASE_PROVISIONING_PROFILE_SPECIFIER}}
-  IOS_CODE_SIGN_IDENTITY: iPhone Distribution
-  IOS_SIGNING_CERTIFICATE_P12_DATA: ${{secrets.RELEASE_SIGNING_CERTIFICATE_P12_DATA}}
-  IOS_SIGNING_CERTIFICATE_PASSWORD: ${{secrets.RELEASE_SIGNING_CERTIFICATE_PASSWORD}}
-  IOS_PROVISIONING_PROFILE_DATA: ${{secrets.RELEASE_PROVISIONING_PROFILE_DATA}}
-  IOS_APP_STORE_CONNECT_USERNAME: ${{secrets.APP_STORE_CONNECT_USERNAME}}
-  IOS_APP_STORE_CONNECT_PASSWORD: ${{secrets.APP_STORE_CONNECT_PASSWORD}}
+  TEAM_ID: ${{secrets.TEAM_ID}}
+  PROVISIONING_PROFILE_SPECIFIER: ${{secrets.RELEASE_PROVISIONING_PROFILE_SPECIFIER}}
+  CODE_SIGN_IDENTITY: iPhone Distribution
+  SIGNING_CERTIFICATE_P12_DATA: ${{secrets.RELEASE_SIGNING_CERTIFICATE_P12_DATA}}
+  SIGNING_CERTIFICATE_PASSWORD: ${{secrets.RELEASE_SIGNING_CERTIFICATE_PASSWORD}}
+  PROVISIONING_PROFILE_DATA: ${{secrets.RELEASE_PROVISIONING_PROFILE_DATA}}
+  APP_STORE_CONNECT_USERNAME: ${{secrets.APP_STORE_CONNECT_USERNAME}}
+  APP_STORE_CONNECT_PASSWORD: ${{secrets.APP_STORE_CONNECT_PASSWORD}}
 
 jobs:
   assemble:
@@ -74,31 +74,28 @@ jobs:
           path: ${{ github.workspace }}/ios/main.jsbundle
       - name: Install pods
         run: cd ios && pod update --no-repo-update
-      - name: Change react-native-xcode.sh
-        run: |
-          cd node_modules/react-native/scripts
-          echo "exit 0;">react-native-xcode.sh
       - name: Import signing certificate
         env:
-          SIGNING_CERTIFICATE_P12_DATA: ${{ env.IOS_SIGNING_CERTIFICATE_P12_DATA }}
-          SIGNING_CERTIFICATE_PASSWORD: ${{ env.IOS_SIGNING_CERTIFICATE_PASSWORD }}
+          SIGNING_CERTIFICATE_P12_DATA: ${{ env.SIGNING_CERTIFICATE_P12_DATA }}
+          SIGNING_CERTIFICATE_PASSWORD: ${{ env.SIGNING_CERTIFICATE_PASSWORD }}
         run: |
           exec .github/scripts/import-certificate.sh
       - name: Import provisioning profile
         env:
-          PROVISIONING_PROFILE_DATA: ${{ env.IOS_PROVISIONING_PROFILE_DATA }}
+          PROVISIONING_PROFILE_DATA: ${{ env.PROVISIONING_PROFILE_DATA }}
         run: |
           exec .github/scripts/import-profile.sh
       - name: Build app
         env:
+          SKIP_BUNDLING: 1
           FL_APP_IDENTIFIER: ${{ env.APP_ID }}
           FL_UPDATE_PLIST_DISPLAY_NAME: ${{ env.APP_NAME }}
           FL_UPDATE_PLIST_PATH: taroDemo/Info.plist
-          FL_VERSION_NUMBER_VERSION_NUMBER: ${{ env.IOS_VERSION_NUMBER }}
-          FL_BUILD_NUMBER_BUILD_NUMBER: ${{ env.IOS_VERSION_NUMBER }}.${{steps.date.outputs.timestamp}}
-          FL_CODE_SIGN_IDENTITY: ${{ env.IOS_CODE_SIGN_IDENTITY }}
-          FL_PROVISIONING_PROFILE_SPECIFIER: ${{ env.IOS_PROVISIONING_PROFILE_SPECIFIER }}
-          FASTLANE_TEAM_ID: ${{ env.IOS_TEAM_ID }}
+          FL_VERSION_NUMBER_VERSION_NUMBER: ${{ env.VERSION_NUMBER }}
+          FL_BUILD_NUMBER_BUILD_NUMBER: ${{ env.BUILD_NUMBER }}.${{steps.date.outputs.timestamp}}
+          FL_CODE_SIGN_IDENTITY: ${{ env.CODE_SIGN_IDENTITY }}
+          FL_PROVISIONING_PROFILE_SPECIFIER: ${{ env.PROVISIONING_PROFILE_SPECIFIER }}
+          FASTLANE_TEAM_ID: ${{ env.TEAM_ID }}
         run: |
           cd ios
           bundle update
@@ -112,8 +109,8 @@ jobs:
             ${{ github.workspace }}/ios/taroDemo.app.dSYM.zip
       - name: Upload app to App Store Connect
         env:
-          APP_STORE_CONNECT_USERNAME: ${{ env.IOS_APP_STORE_CONNECT_USERNAME }}
-          APP_STORE_CONNECT_PASSWORD: ${{ env.IOS_APP_STORE_CONNECT_PASSWORD }}
+          APP_STORE_CONNECT_USERNAME: ${{ env.APP_STORE_CONNECT_USERNAME }}
+          APP_STORE_CONNECT_PASSWORD: ${{ env.APP_STORE_CONNECT_PASSWORD }}
         run: |
           cd ios
           xcrun altool --upload-app -t ios -f "taroDemo.ipa" -u "$APP_STORE_CONNECT_USERNAME" -p "$APP_STORE_CONNECT_PASSWORD"
