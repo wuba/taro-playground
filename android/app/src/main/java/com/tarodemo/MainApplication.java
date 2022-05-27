@@ -18,6 +18,8 @@ import java.util.List;
 
 public class MainApplication extends Application implements ReactApplication {
 
+  private static MainApplication instance = null;
+
   private final ReactNativeHost mReactNativeHost =
       new ReactNativeHostWrapper(this, new ReactNativeHost(this) {
         @Override
@@ -60,6 +62,10 @@ public class MainApplication extends Application implements ReactApplication {
     SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
     ApplicationLifecycleDispatcher.onApplicationCreate(this);
+  }
+
+  public static MainApplication getInstance(){
+    return instance;
   }
 
   /**
