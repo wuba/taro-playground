@@ -98,8 +98,9 @@
     "@pmmmwh/react-refresh-webpack-plugin": "0.5.5",
     "@tarojs/cli": "3.5.0-beta.0",
     "@tarojs/plugin-mini-ci": "3.5.0-beta.0",
+    "@tarojs/mini-runner": "3.5.0-beta.0",
     "@tarojs/rn-runner": "3.5.0-beta.0",
-    "@tarojs/webpack5-runner": "3.5.0-beta.0",
+    "@tarojs/webpack-runner": "3.5.0-beta.0",
     "@types/react": "^17.0.2",
     "@types/react-native": "^0.67.0",
     "@types/webpack-env": "^1.13.6",
@@ -116,7 +117,7 @@
     "react-refresh": "0.11.0",
     "stylelint": "9.3.0",
     "typescript": "^4.1.0",
-    "webpack": "5.69.0"
+    "webpack": "4.46.0"
   },
   "resolutions": {
     "@babel/traverse": "7.17.9",
