@@ -29,7 +29,7 @@ platform :android do
       task: "assemble",
       build_type: ENV['BUILD_TYPE'],
       properties: {
-        "android.injected.application.id" => ENV['APP_ID'],
+        "app_id" => ENV['APP_ID'],
         "android.injected.version.code" => ENV['VERSION_CODE'].to_i,
         "android.injected.version.name" => ENV['VERSION_NAME'],
         "android.injected.signing.store.file" => ENV['KEYSTORE_FILE'],
