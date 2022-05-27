@@ -115,16 +115,16 @@ Modify the following configuration items for package and publish your app.
 env:
   APP_ID: com.taro.demo # Application Product Bundle Identifier
   APP_NAME: Taro Demo # The Display Name of your app
-  IOS_VERSION_NUMBER: 1.0.0 # Application version number
-  IOS_BUILD_NUMBER: 1.0.0.0 # Application build number, used by release only.
-  IOS_TEAM_ID: XXXXXXXXXX # Team ID, is used when upgrading project
-  IOS_PROVISIONING_PROFILE_SPECIFIER: Product_profile # Provisioning profile name to use for code signing
-  IOS_CODE_SIGN_IDENTITY: iPhone Distribution # Code signing identity type (iPhone Developer, iPhone Distribution)
-  IOS_SIGNING_CERTIFICATE_P12_DATA: ${{secrets.RELEASE_SIGNING_CERTIFICATE_P12_DATA}}
-  IOS_SIGNING_CERTIFICATE_PASSWORD: ${{secrets.RELEASE_SIGNING_CERTIFICATE_PASSWORD}}
-  IOS_PROVISIONING_PROFILE_DATA: ${{secrets.RELEASE_PROVISIONING_PROFILE_DATA}}
-  IOS_APP_STORE_CONNECT_USERNAME: ${{secrets.APP_STORE_CONNECT_USERNAME}} # This secret should be set to the Apple ID of your developer account, used by release only.
-  IOS_APP_STORE_CONNECT_PASSWORD: ${{secrets.APP_STORE_CONNECT_PASSWORD}} # used by release only.
+  VERSION_NUMBER: 1.0.0 # Application version number
+  BUILD_NUMBER: 1.0.0.0 # Application build number, used by release only.
+  TEAM_ID: XXXXXXXXXX # Team ID, is used when upgrading project
+  PROVISIONING_PROFILE_SPECIFIER: Product_profile # Provisioning profile name to use for code signing
+  CODE_SIGN_IDENTITY: iPhone Distribution # Code signing identity type (iPhone Developer, iPhone Distribution)
+  SIGNING_CERTIFICATE_P12_DATA: ${{secrets.RELEASE_SIGNING_CERTIFICATE_P12_DATA}}
+  SIGNING_CERTIFICATE_PASSWORD: ${{secrets.RELEASE_SIGNING_CERTIFICATE_PASSWORD}}
+  PROVISIONING_PROFILE_DATA: ${{secrets.RELEASE_PROVISIONING_PROFILE_DATA}}
+  APP_STORE_CONNECT_USERNAME: ${{secrets.APP_STORE_CONNECT_USERNAME}} # This secret should be set to the Apple ID of your developer account, used by release only.
+  APP_STORE_CONNECT_PASSWORD: ${{secrets.APP_STORE_CONNECT_PASSWORD}} # used by release only.
 ```
 
 values like ${{secrets.xxxxx}} are manually generated and store in your github encrypted secrets.
@@ -168,12 +168,12 @@ Modify the following configuration items for package and publish your app.
 env:
   APP_ID: com.taro.demo  # Application Product Bundle Identifier
   APP_NAME: Taro Demo  # The Display Name of your app
-  ANDROID_VERSION_NAME: 1.0.0 # version name
-  ANDROID_VERSION_CODE: 10 # version code
-  ANDROID_KEYSTORE_FILE: debug.keystore # key store file
-  ANDROID_KEYSTORE_PASSWORD: android # key store password
-  ANDROID_KEYSTORE_KEY_ALIAS: androiddebugkey # key store key alias
-  ANDROID_KEYSTORE_KEY_PASSWORD: android # key store key password
+  VERSION_NAME: 1.0.0 # version name
+  VERSION_CODE: 10 # version code
+  KEYSTORE_FILE: debug.keystore # key store file
+  KEYSTORE_PASSWORD: android # key store password
+  KEYSTORE_KEY_ALIAS: androiddebugkey # key store key alias
+  KEYSTORE_KEY_PASSWORD: android # key store key password
 ```
 
 For the security of your app, please regenerate the .keystore file and store the password in your github encrypted secrets.

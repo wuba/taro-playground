@@ -1,5 +1,5 @@
 <resources>
-    <!-- <string name="app_name">taroDemo</string> -->
-  <string name="logo_desc">Taro</string>
-  <string name="logo_power">Powered by Taro</string>
+    <string name="app_name">taroDemo</string>
+    <string name="logo_desc">Taro</string>
+    <string name="logo_power">Powered by Taro</string>
 </resources>
