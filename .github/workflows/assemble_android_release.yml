@@ -19,9 +19,9 @@ env:
   # 打包类型
   BUILD_TYPE: release
   # 版本名称
-  ANDROID_VERSION_NAME: 1.4.7
+  ANDROID_VERSION_NAME: 1.4.8
   # 版本号
-  ANDROID_VERSION_CODE: 14700
+  ANDROID_VERSION_CODE: 14800
   # 密钥库文件
   ANDROID_KEYSTORE_FILE: release.keystore
   # 密钥库口令
