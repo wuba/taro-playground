@@ -90,8 +90,8 @@ export default class Index extends Component<any, any> {
         .catch(err => {
           console.log("request error: ", err);
           Taro.showModal({
-            title: "请求失败",
-            content: JSON.stringify(err),
+            title: "加载失败",
+            content: err.message || JSON.stringify(err),
             showCancel: false,
           });
         });
