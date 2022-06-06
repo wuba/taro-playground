@@ -79,18 +79,29 @@ export default class Index extends Component<any, any> {
           console.log("request success: ", res);
           if (res?.data?.status === 200) {
             NativeModules.RNDevManager.loadBundleByBundleUrl(url, path);
+          } else {
+            Taro.showModal({
+              title: "返回内容有误",
+              content: JSON.stringify(res?.data),
+              showCancel: false,
+            });
           }
         })
         .catch(err => {
           console.log("request error: ", err);
-          Taro.showToast({
-            title: "packager Not Available",
-            icon: "none"
+          Taro.showModal({
+            title: "请求失败",
+            content: JSON.stringify(err),
+            showCancel: false,
           });
         });
-    } catch (error) {
-      console.log("加载 bundle 错误：", error);
-      Taro.showToast({ title: "哎呀, 加载失败了 -_-!", icon: "none" });
+    } catch (err) {
+      console.log("加载 bundle 错误：", err);
+      Taro.showModal({
+        title: "加载失败",
+        content: err.message,
+        showCancel: false,
+      });
     }
   };
 
