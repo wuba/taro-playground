@@ -111,6 +111,17 @@
     eslint-visitor-keys "^2.1.0"
     semver "^6.3.0"
 
+"@babel/generator@7.0.0-beta.44":
+  version "7.0.0-beta.44"
+  resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.0.0-beta.44.tgz#c7e67b9b5284afcf69b309b50d7d37f3e5033d42"
+  integrity sha512-5xVb7hlhjGcdkKpMXgicAVgx8syK5VJz193k0i/0sLP6DzE6lRrU1K3B/rFefgdo9LPGMAOOOAWW4jycj07ShQ==
+  dependencies:
+    "@babel/types" "7.0.0-beta.44"
+    jsesc "^2.5.1"
+    lodash "^4.2.0"
+    source-map "^0.5.0"
+    trim-right "^1.0.1"
+
 "@babel/generator@7.17.10":
   version "7.17.10"
   resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.17.10.tgz#c281fa35b0c349bbe9d02916f4ae08fc85ed7189"
@@ -120,7 +131,7 @@
     "@jridgewell/gen-mapping" "^0.1.0"
     jsesc "^2.5.1"
 
-"@babel/generator@^7.12.1", "@babel/generator@^7.14.0", "@babel/generator@^7.17.9", "@babel/generator@^7.18.2":
+"@babel/generator@^7.12.1", "@babel/generator@^7.14.0", "@babel/generator@^7.17.10", "@babel/generator@^7.17.9", "@babel/generator@^7.18.2":
   version "7.18.2"
   resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.18.2.tgz#33873d6f89b21efe2da63fe554460f3df1c5880d"
   integrity sha512-W1lG5vUwFvfMd8HVXqdfbuG7RuaSrTCCD8cl8fP8wOivdbtbIg2Db3IWUcgvfxKbbn6ZBGYRW/Zk1MIwK49mgw==
@@ -201,6 +212,15 @@
   dependencies:
     "@babel/types" "^7.16.7"
 
+"@babel/helper-function-name@7.0.0-beta.44":
+  version "7.0.0-beta.44"
+  resolved "https://registry.yarnpkg.com/@babel/helper-function-name/-/helper-function-name-7.0.0-beta.44.tgz#e18552aaae2231100a6e485e03854bc3532d44dd"
+  integrity sha512-MHRG2qZMKMFaBavX0LWpfZ2e+hLloT++N7rfM3DYOMUOGCD8cVjqZpwiL8a0bOX3IYcQev1ruciT0gdFFRTxzg==
+  dependencies:
+    "@babel/helper-get-function-arity" "7.0.0-beta.44"
+    "@babel/template" "7.0.0-beta.44"
+    "@babel/types" "7.0.0-beta.44"
+
 "@babel/helper-function-name@^7.16.7", "@babel/helper-function-name@^7.17.9":
   version "7.17.9"
   resolved "https://registry.yarnpkg.com/@babel/helper-function-name/-/helper-function-name-7.17.9.tgz#136fcd54bc1da82fcb47565cf16fd8e444b1ff12"
@@ -208,6 +228,13 @@
   dependencies:
     "@babel/template" "^7.16.7"
     "@babel/types" "^7.17.0"
+
+"@babel/helper-get-function-arity@7.0.0-beta.44":
+  version "7.0.0-beta.44"
+  resolved "https://registry.yarnpkg.com/@babel/helper-get-function-arity/-/helper-get-function-arity-7.0.0-beta.44.tgz#d03ca6dd2b9f7b0b1e6b32c56c72836140db3a15"
+  integrity sha512-w0YjWVwrM2HwP6/H3sEgrSQdkCaxppqFeJtAnB23pRiJB5E/O9Yp7JAAeWBl+gGEgmBFinnTyOv2RN7rcSmMiw==
+  dependencies:
+    "@babel/types" "7.0.0-beta.44"
 
 "@babel/helper-hoist-variables@^7.16.7":
   version "7.16.7"
@@ -297,6 +324,13 @@
   dependencies:
     "@babel/types" "^7.16.0"
 
+"@babel/helper-split-export-declaration@7.0.0-beta.44":
+  version "7.0.0-beta.44"
+  resolved "https://registry.yarnpkg.com/@babel/helper-split-export-declaration/-/helper-split-export-declaration-7.0.0-beta.44.tgz#c0b351735e0fbcb3822c8ad8db4e583b05ebd9dc"
+  integrity sha512-aQ7QowtkgKKzPGf0j6u77kBMdUFVBKNHw2p/3HX/POt5/oz8ec5cs0GwlgM8Hz7ui5EwJnzyfRmkNF1Nx1N7aA==
+  dependencies:
+    "@babel/types" "7.0.0-beta.44"
+
 "@babel/helper-split-export-declaration@^7.16.7":
   version "7.16.7"
   resolved "https://registry.yarnpkg.com/@babel/helper-split-export-declaration/-/helper-split-export-declaration-7.16.7.tgz#0b648c0c42da9d3920d85ad585f2778620b8726b"
@@ -369,6 +403,11 @@
   version "7.18.3"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.18.3.tgz#39e99c7b0c4c56cef4d1eed8de9f506411c2ebc2"
   integrity sha512-rL50YcEuHbbauAFAysNsJA4/f89fGTOBRNs9P81sniKnKAr4xULe5AecolcsKbi88xu0ByWYDj/S1AJ3FSFuSQ==
+
+"@babel/parser@^7.17.10":
+  version "7.18.4"
+  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.18.4.tgz#6774231779dd700e0af29f6ad8d479582d7ce5ef"
+  integrity sha512-FDge0dFazETFcxGw/EXzOkN8uJp0PC7Qbm+Pe9T+av2zlBpOgunFHkQPPn+eRuClU73JF+98D531UgayY89tow==
 
 "@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression@^7.17.12":
   version "7.17.12"
@@ -1363,6 +1402,16 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/template@7.0.0-beta.44":
+  version "7.0.0-beta.44"
+  resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.0.0-beta.44.tgz#f8832f4fdcee5d59bf515e595fc5106c529b394f"
+  integrity sha512-w750Sloq0UNifLx1rUqwfbnC6uSUk0mfwwgGRfdLiaUzfAOiH0tHJE6ILQIUi3KYkjiCDTskoIsnfqZvWLBDng==
+  dependencies:
+    "@babel/code-frame" "7.0.0-beta.44"
+    "@babel/types" "7.0.0-beta.44"
+    babylon "7.0.0-beta.44"
+    lodash "^4.2.0"
+
 "@babel/template@7.16.7", "@babel/template@^7.0.0", "@babel/template@^7.10.4", "@babel/template@^7.14.5", "@babel/template@^7.16.7":
   version "7.16.7"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.16.7.tgz#8d126c8701fde4d66b264b3eba3d96f07666d155"
@@ -1372,7 +1421,39 @@
     "@babel/parser" "^7.16.7"
     "@babel/types" "^7.16.7"
 
-"@babel/traverse@7.0.0-beta.44", "@babel/traverse@7.17.10", "@babel/traverse@7.17.9", "@babel/traverse@^7.12.1", "@babel/traverse@^7.13.0", "@babel/traverse@^7.14.0", "@babel/traverse@^7.14.5", "@babel/traverse@^7.16.8", "@babel/traverse@^7.18.0", "@babel/traverse@^7.18.2", "@babel/traverse@^7.2.3":
+"@babel/traverse@7.0.0-beta.44":
+  version "7.0.0-beta.44"
+  resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.0.0-beta.44.tgz#a970a2c45477ad18017e2e465a0606feee0d2966"
+  integrity sha512-UHuDz8ukQkJCDASKHf+oDt3FVUzFd+QYfuBIsiNu/4+/ix6pP/C+uQZJ6K1oEfbCMv/IKWbgDEh7fcsnIE5AtA==
+  dependencies:
+    "@babel/code-frame" "7.0.0-beta.44"
+    "@babel/generator" "7.0.0-beta.44"
+    "@babel/helper-function-name" "7.0.0-beta.44"
+    "@babel/helper-split-export-declaration" "7.0.0-beta.44"
+    "@babel/types" "7.0.0-beta.44"
+    babylon "7.0.0-beta.44"
+    debug "^3.1.0"
+    globals "^11.1.0"
+    invariant "^2.2.0"
+    lodash "^4.2.0"
+
+"@babel/traverse@7.17.10":
+  version "7.17.10"
+  resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.17.10.tgz#1ee1a5ac39f4eac844e6cf855b35520e5eb6f8b5"
+  integrity sha512-VmbrTHQteIdUUQNTb+zE12SHS/xQVIShmBPhlNP12hD5poF2pbITW1Z4172d03HegaQWhLffdkRJYtAzp0AGcw==
+  dependencies:
+    "@babel/code-frame" "^7.16.7"
+    "@babel/generator" "^7.17.10"
+    "@babel/helper-environment-visitor" "^7.16.7"
+    "@babel/helper-function-name" "^7.17.9"
+    "@babel/helper-hoist-variables" "^7.16.7"
+    "@babel/helper-split-export-declaration" "^7.16.7"
+    "@babel/parser" "^7.17.10"
+    "@babel/types" "^7.17.10"
+    debug "^4.1.0"
+    globals "^11.1.0"
+
+"@babel/traverse@^7.12.1", "@babel/traverse@^7.13.0", "@babel/traverse@^7.14.0", "@babel/traverse@^7.14.5", "@babel/traverse@^7.16.8", "@babel/traverse@^7.2.3":
   version "7.17.9"
   resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.17.9.tgz#1f9b207435d9ae4a8ed6998b2b82300d83c37a0d"
   integrity sha512-PQO8sDIJ8SIwipTPiR71kJQCKQYB5NGImbOviK8K+kg5xkNSYXLBupuX9QhatFowrsvo9Hj8WgArg3W7ijNAQw==
@@ -1385,6 +1466,22 @@
     "@babel/helper-split-export-declaration" "^7.16.7"
     "@babel/parser" "^7.17.9"
     "@babel/types" "^7.17.0"
+    debug "^4.1.0"
+    globals "^11.1.0"
+
+"@babel/traverse@^7.18.0", "@babel/traverse@^7.18.2":
+  version "7.18.2"
+  resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.18.2.tgz#b77a52604b5cc836a9e1e08dca01cba67a12d2e8"
+  integrity sha512-9eNwoeovJ6KH9zcCNnENY7DMFwTU9JdGCFtqNLfUAqtUHRCOsTOqWoffosP8vKmNYeSBUv3yVJXjfd8ucwOjUA==
+  dependencies:
+    "@babel/code-frame" "^7.16.7"
+    "@babel/generator" "^7.18.2"
+    "@babel/helper-environment-visitor" "^7.18.2"
+    "@babel/helper-function-name" "^7.17.9"
+    "@babel/helper-hoist-variables" "^7.16.7"
+    "@babel/helper-split-export-declaration" "^7.16.7"
+    "@babel/parser" "^7.18.0"
+    "@babel/types" "^7.18.2"
     debug "^4.1.0"
     globals "^11.1.0"
 
@@ -2835,28 +2932,27 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@tarojs/api@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/api/-/api-3.5.0-beta.0.tgz#e856df2de67b5640d9c67055b676bd3561e207f7"
-  integrity sha512-80Ru7wa4e6lm6Pjss178hFCgJUBgTFstaEgWpoQhXqS2jOxggnXvOKYX1Y3UtQuTj6SJxEokpbjQNHnKL1es+A==
+"@tarojs/api@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/api/-/api-3.5.0-beta.2.tgz#91392ac6ccdd4b4eee15103e2c6161847a5decff"
+  integrity sha512-ZkKlVVY2smCFDdJf6Gaaz1D8pfqK0kWMh38F2UkrxaMnHjcyX2HflfQqC83DDOVr4jcQGhdjsTC63mThpIFf1A==
   dependencies:
     "@babel/runtime" "^7.14.5"
-    "@tarojs/runtime" "3.5.0-beta.0"
+    "@tarojs/runtime" "3.5.0-beta.2"
 
-"@tarojs/cli@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/cli/-/cli-3.5.0-beta.0.tgz#de5b1212778f755cb95307bd81c2dee28c5c8c92"
-  integrity sha512-fm6ZtJRnRs8FYzX8PSVCKMkkufU5E6HzAgau+NB3J4FfjqPYGNg1kvzqe2mRMR3m7wva5kQFEHPZk71DvvQZ9g==
+"@tarojs/cli@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/cli/-/cli-3.5.0-beta.2.tgz#748edc01a1fbfc3dfe42d7d7fa0d689916fcaf19"
+  integrity sha512-qD2MWj/HB7SXq21NbdeIDqjlHVlwsam2NOS9U5jEqxyo6bPfn6dnOPzBgK1FpQFhYPj/f3ZRhN4MStKi6/S6Aw==
   dependencies:
     "@babel/template" "^7.14.5"
     "@babel/traverse" "^7.14.5"
     "@babel/types" "^7.14.5"
-    "@tarojs/helper" "3.5.0-beta.0"
-    "@tarojs/service" "3.5.0-beta.0"
-    "@tarojs/shared" "3.5.0-beta.0"
-    "@tarojs/taroize" "3.5.0-beta.0"
+    "@tarojs/helper" "3.5.0-beta.2"
+    "@tarojs/service" "3.5.0-beta.2"
+    "@tarojs/shared" "3.5.0-beta.2"
+    "@tarojs/taroize" "3.5.0-beta.2"
     "@tarojs/transformer-wx" "^2.0.4"
-    "@types/request" "^2.48.1"
     adm-zip "^0.4.13"
     babylon "^6.18.0"
     better-babel-generator "6.26.1"
@@ -2887,10 +2983,10 @@
     xml2js "^0.4.19"
     xxhashjs "^0.2.2"
 
-"@tarojs/components-rn@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/components-rn/-/components-rn-3.5.0-beta.0.tgz#363d537ba55d8122f0fa530d69e912f88bd64b46"
-  integrity sha512-KhXcGmWhYtXfh53HAKg87cTrj3Kxsqy9L7X2l5MhcosMueXLfumLabhIi5DlGLwbsOEdJXFn9B7XUVX9loiCpA==
+"@tarojs/components-rn@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/components-rn/-/components-rn-3.5.0-beta.2.tgz#d120d682ca35f1657ff051a46cb52dd0b030c2e0"
+  integrity sha512-NRebvmdAbj1sCmQmNMNk6OMEWK4AogBKZj/YNI50Wurq1g9tUkt3jMCINfeZ4cE2vnpUWXl+IxJ5wJupJvm+2A==
   dependencies:
     "@ant-design/react-native" "^4.2.0"
     "@react-native-community/slider" "~4.1.12"
@@ -2904,14 +3000,14 @@
     react-native-svg "~12.1.1"
     react-native-webview "~11.14.3"
 
-"@tarojs/components@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/components/-/components-3.5.0-beta.0.tgz#b1933f065698e92d1f2c3780b536f14af65c350a"
-  integrity sha512-+ORaj0zEmCTh2+2CWIO5jVNJLnRdi056ld1MhvWQ0yiL+6LGXyX/dH4azCjk4u1db08dxZn+8jO/ehnWehzeAA==
+"@tarojs/components@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/components/-/components-3.5.0-beta.2.tgz#752ce99cf7618292a00abb596cc08f51dc4afa9d"
+  integrity sha512-THBYMBF/MkEpSXhp07Nlf3MecpCqeu12O2HQ4SFv0ioEMwUiIv8cQVrYsm5RuiowslVHwPS9tmtQPfxqGqA5TA==
   dependencies:
     "@stencil/core" "~2.13.0"
     "@stencil/sass" "1.5.2"
-    "@tarojs/taro" "3.5.0-beta.0"
+    "@tarojs/taro" "3.5.0-beta.2"
     better-scroll "^1.14.1"
     classnames "^2.2.5"
     hls.js "^1.1.5"
@@ -2921,10 +3017,10 @@
     swiper "6.8.0"
     weui "^1.1.2"
 
-"@tarojs/helper@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/helper/-/helper-3.5.0-beta.0.tgz#f43433328a9e490830b0bc25da14347c9df2e7d3"
-  integrity sha512-LtiONHmgLLB8n8TrIzW3mPthDiRP3brDKn4TlJRrCuEhvZ1JQkjenhjjMqLx+NJ03R2nWOmSqtZXbtidW29WIQ==
+"@tarojs/helper@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/helper/-/helper-3.5.0-beta.2.tgz#a41d41a10fdc25e436e2956e3df72b3eb069b6e7"
+  integrity sha512-VDtnW7LwnerG8gH/sBquhdeKJghqShqSJY4m0uoXO1juTT+61gViQgoQSXZ5uMmLOxAFIK3ExZLcjAI1bzXYIQ==
   dependencies:
     "@babel/core" "^7.14.5"
     "@babel/plugin-proposal-decorators" "^7.14.5"
@@ -2936,7 +3032,7 @@
     "@babel/runtime" "^7.14.5"
     "@swc/core" "^1.2.147"
     "@swc/register" "^0.1.10"
-    "@tarojs/taro" "3.5.0-beta.0"
+    "@tarojs/taro" "3.5.0-beta.2"
     chalk "3.0.0"
     chokidar "^3.3.1"
     cross-spawn "^7.0.3"
@@ -2947,28 +3043,28 @@
     resolve "^1.6.0"
     yauzl "2.10.0"
 
-"@tarojs/mini-runner@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/mini-runner/-/mini-runner-3.5.0-beta.0.tgz#d8d7c69c0efe0b9c560f72b47180c48134da63e5"
-  integrity sha512-oeCQYGyWsAfRt7ALX44ISv/ZJUYV66Sh8amLZiMjCf6OJ9yv4hMh/zSfNWRd4QdW5KWZTRfF5wvIegdNFQO1lQ==
+"@tarojs/mini-runner@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/mini-runner/-/mini-runner-3.5.0-beta.2.tgz#a4d0bd8e6823b8a563a4183d1da978beae32d793"
+  integrity sha512-qzcdd7e+wGXEE9Zk4YZNQsYC0oLw+S13fNmeHuiLN0A0qk5DQDihk0E7ynzdlKyJLt8THXWWHDyycRPq/0bh4g==
   dependencies:
     "@babel/core" "^7.14.5"
-    "@tarojs/components" "3.5.0-beta.0"
-    "@tarojs/helper" "3.5.0-beta.0"
-    "@tarojs/plugin-platform-alipay" "3.5.0-beta.0"
-    "@tarojs/plugin-platform-jd" "3.5.0-beta.0"
-    "@tarojs/plugin-platform-qq" "3.5.0-beta.0"
-    "@tarojs/plugin-platform-swan" "3.5.0-beta.0"
-    "@tarojs/plugin-platform-tt" "3.5.0-beta.0"
-    "@tarojs/plugin-platform-weapp" "3.5.0-beta.0"
-    "@tarojs/react" "3.5.0-beta.0"
-    "@tarojs/runner-utils" "3.5.0-beta.0"
-    "@tarojs/runtime" "3.5.0-beta.0"
-    "@tarojs/shared" "3.5.0-beta.0"
-    "@tarojs/taro" "3.5.0-beta.0"
-    "@tarojs/taro-loader" "3.5.0-beta.0"
+    "@tarojs/components" "3.5.0-beta.2"
+    "@tarojs/helper" "3.5.0-beta.2"
+    "@tarojs/plugin-platform-alipay" "3.5.0-beta.2"
+    "@tarojs/plugin-platform-jd" "3.5.0-beta.2"
+    "@tarojs/plugin-platform-qq" "3.5.0-beta.2"
+    "@tarojs/plugin-platform-swan" "3.5.0-beta.2"
+    "@tarojs/plugin-platform-tt" "3.5.0-beta.2"
+    "@tarojs/plugin-platform-weapp" "3.5.0-beta.2"
+    "@tarojs/react" "3.5.0-beta.2"
+    "@tarojs/runner-utils" "3.5.0-beta.2"
+    "@tarojs/runtime" "3.5.0-beta.2"
+    "@tarojs/shared" "3.5.0-beta.2"
+    "@tarojs/taro" "3.5.0-beta.2"
+    "@tarojs/taro-loader" "3.5.0-beta.2"
     babel-loader "8.2.1"
-    babel-preset-taro "3.5.0-beta.0"
+    babel-preset-taro "3.5.0-beta.2"
     copy-webpack-plugin "5.1.2"
     css-loader "3.4.2"
     csso-webpack-plugin "2.0.0-beta.1"
@@ -2987,10 +3083,10 @@
     mkdirp "^1.0.4"
     ora "4.0.3"
     postcss "8.3.5"
-    postcss-html-transform "3.5.0-beta.0"
+    postcss-html-transform "3.5.0-beta.2"
     postcss-import "12.0.1"
     postcss-loader "4.3.0"
-    postcss-pxtransform "3.5.0-beta.0"
+    postcss-pxtransform "3.5.0-beta.2"
     postcss-url "8.0.0"
     regenerator-runtime "0.11"
     resolve "^1.6.0"
@@ -3008,100 +3104,100 @@
     webpack-chain "4.9.0"
     webpack-format-messages "^2.0.5"
 
-"@tarojs/plugin-framework-react@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/plugin-framework-react/-/plugin-framework-react-3.5.0-beta.0.tgz#a70025e6e8caf0c406897daa20f4bb8115c87bc6"
-  integrity sha512-K1u2XEvXqVOOI4jGkTEYBqeA81/Iju8bO9aoh5iokqfuZ8qPCKaTca5yOj7BK7+i0AahCh9o4DeQN+Ljg1bihQ==
+"@tarojs/plugin-framework-react@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/plugin-framework-react/-/plugin-framework-react-3.5.0-beta.2.tgz#624d4633ab470c07ed40ce6ec3831d77183c3bc1"
+  integrity sha512-sbhRd1q0eHRZT1BmYslQ7cLlCw2ea5XQ2pHINf0nx786YXNjGcoLW7g1ZSQSsm1MLvhDQ4K4xs0IU2L2EjiJ1A==
   dependencies:
-    "@tarojs/runtime" "3.5.0-beta.0"
-    "@tarojs/shared" "3.5.0-beta.0"
+    "@tarojs/runtime" "3.5.0-beta.2"
+    "@tarojs/shared" "3.5.0-beta.2"
     acorn "^8.0.4"
     acorn-walk "^8.0.0"
 
-"@tarojs/plugin-mini-ci@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/plugin-mini-ci/-/plugin-mini-ci-3.5.0-beta.0.tgz#3c52d0416c323b4e3a2f73e7bedb04c9891d7cf3"
-  integrity sha512-58pVJoB1Q8mMFMmqWvi8vlvfgQsVyp2s7n2a1yHzFTjpU9HdtluH/HbAF22SLQZKcZxhQ5TcpTq3RmA1v0rqyg==
+"@tarojs/plugin-mini-ci@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/plugin-mini-ci/-/plugin-mini-ci-3.5.0-beta.2.tgz#2765ad0714cc76255e43ef2804f449a241b57945"
+  integrity sha512-+PGxbM5rbu28QWVNGfSsgnFCh02K/qfyEndw2vui/FsJj5KMmUYP0sTlF6YqO9W+QelaAMHQvMSlPq02Tq37mA==
   dependencies:
     minimist "^1.2.5"
     miniprogram-ci "^1.6.1"
     qrcode-terminal "^0.12.0"
     shelljs "^0.8.4"
 
-"@tarojs/plugin-platform-alipay@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/plugin-platform-alipay/-/plugin-platform-alipay-3.5.0-beta.0.tgz#54e4b4406080342c0f8d4f247e54fdf98ce5c9ba"
-  integrity sha512-ykb6cPnw7kEBtRaJ1ZAA+mzfJhAs5G7/4+rnhh6bFdHjTK+7ALNMORk815qAZ/px+70bRH+ocisF0J4U4r2Ghw==
+"@tarojs/plugin-platform-alipay@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/plugin-platform-alipay/-/plugin-platform-alipay-3.5.0-beta.2.tgz#86894fb8ae43388062a462e7ebe24cfe83030c3d"
+  integrity sha512-RYvrO8YksW5ekE0yv4N8v7Ovas/3ihZ72oI2ZifD/V8ldy5gi9iXBfsU5ZrvSuN4+mAQr3h/rULEWVe125OB2w==
   dependencies:
-    "@tarojs/components" "3.5.0-beta.0"
-    "@tarojs/service" "3.5.0-beta.0"
-    "@tarojs/shared" "3.5.0-beta.0"
+    "@tarojs/components" "3.5.0-beta.2"
+    "@tarojs/service" "3.5.0-beta.2"
+    "@tarojs/shared" "3.5.0-beta.2"
 
-"@tarojs/plugin-platform-jd@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/plugin-platform-jd/-/plugin-platform-jd-3.5.0-beta.0.tgz#32e23cdcd321984406e5573e5977c8eec4b219cd"
-  integrity sha512-oT3a746Ew5ZCDarMJHbwv+Atii568R1/LBPrmTSWu4MY5Wtp+32aRxb2KAg2zjtmQ/KuQvQt8XNd4+cPq91oXA==
+"@tarojs/plugin-platform-jd@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/plugin-platform-jd/-/plugin-platform-jd-3.5.0-beta.2.tgz#c59ac8ce9f4928c0f5db45d4665d2a5b4e90692d"
+  integrity sha512-Kr18yvlJwTVNH+C2AamQpTL6i3KGSrQL6EZOy+0oCDDsjJ3x1y52FjcwA2g3E0mjDfs4rBDXLWDC8R9bfbL3Jg==
   dependencies:
-    "@tarojs/service" "3.5.0-beta.0"
-    "@tarojs/shared" "3.5.0-beta.0"
+    "@tarojs/service" "3.5.0-beta.2"
+    "@tarojs/shared" "3.5.0-beta.2"
 
-"@tarojs/plugin-platform-qq@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/plugin-platform-qq/-/plugin-platform-qq-3.5.0-beta.0.tgz#f7392a9b450a7929614d4c3bc50f2ab95e3f4d78"
-  integrity sha512-DIPzM8uVYtVoBkigFf2XQc04z2QqyH//1OeqJneg9tAN0PFN0hbgWFrpk4TrnRWLCqyhh6OOkejgvAPfYkrFDQ==
+"@tarojs/plugin-platform-qq@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/plugin-platform-qq/-/plugin-platform-qq-3.5.0-beta.2.tgz#6ee666aad50d5d7294ccb3334012f712192edfab"
+  integrity sha512-0g0mDSYP0w4OPrcwgunU7Hc/AfdTbZt4fXLHRW4rUSu53BnJo9ptcbB+f1Vn2iPYfgSyJQYIUkpItgVwPrQQgA==
   dependencies:
-    "@tarojs/plugin-platform-weapp" "3.5.0-beta.0"
-    "@tarojs/service" "3.5.0-beta.0"
-    "@tarojs/shared" "3.5.0-beta.0"
+    "@tarojs/plugin-platform-weapp" "3.5.0-beta.2"
+    "@tarojs/service" "3.5.0-beta.2"
+    "@tarojs/shared" "3.5.0-beta.2"
 
-"@tarojs/plugin-platform-swan@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/plugin-platform-swan/-/plugin-platform-swan-3.5.0-beta.0.tgz#c542305bc34bb6b4dad2954b4f804d752697a2eb"
-  integrity sha512-VK9f7Pajd63vPq+dsDepMqkyZqdUnl+u+mIKHNO62tkldMn3RzeQLhZ0J/c+GGN4q4tu/hMJCskEn/Dc/Z6aCQ==
+"@tarojs/plugin-platform-swan@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/plugin-platform-swan/-/plugin-platform-swan-3.5.0-beta.2.tgz#035ed8aa4202ac1d98de141ce113f430cb231fa7"
+  integrity sha512-ZhGlHYkAzmjSfOpjMZU870pVhWY0a7jQPewBqwlaUeU9w8T4rBHyWEPGTXHVxE4e+bTNNILwxs83Sc0nN7tsBg==
   dependencies:
-    "@tarojs/components" "3.5.0-beta.0"
-    "@tarojs/service" "3.5.0-beta.0"
-    "@tarojs/shared" "3.5.0-beta.0"
+    "@tarojs/components" "3.5.0-beta.2"
+    "@tarojs/service" "3.5.0-beta.2"
+    "@tarojs/shared" "3.5.0-beta.2"
 
-"@tarojs/plugin-platform-tt@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/plugin-platform-tt/-/plugin-platform-tt-3.5.0-beta.0.tgz#2bf077bdb36d7d9168d2b1239c37420fe76d23ef"
-  integrity sha512-8eYZfqbpvXAXE30/j7RsFEB/4RPmlhPlYzJMR+n2qoNFTRrGbuFHLcunEoD/+mqSerC//Plc7kMLmW/rMjtuMg==
+"@tarojs/plugin-platform-tt@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/plugin-platform-tt/-/plugin-platform-tt-3.5.0-beta.2.tgz#816f165329c67f9bd566694615aaf0e443928abb"
+  integrity sha512-hQYHWG9MFKuPVheADBobWwwN6lP11Kw7JXU+pcTiNf5mFcT8mTpsQIIwhtxdXeWutjOFwjusDT4fN7hFq6MAOA==
   dependencies:
-    "@tarojs/components" "3.5.0-beta.0"
-    "@tarojs/service" "3.5.0-beta.0"
-    "@tarojs/shared" "3.5.0-beta.0"
+    "@tarojs/components" "3.5.0-beta.2"
+    "@tarojs/service" "3.5.0-beta.2"
+    "@tarojs/shared" "3.5.0-beta.2"
 
-"@tarojs/plugin-platform-weapp@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/plugin-platform-weapp/-/plugin-platform-weapp-3.5.0-beta.0.tgz#dd0ed88262a547e7797c82754d2b656e1f15dbbe"
-  integrity sha512-9r99UpAtGXnHUk8izDeNpLNNr/mgP9JW4auCJrDl89hAIJywm0ITYn2g9jSvgncX0eo55hnbkpTbO8bG7cvZSA==
+"@tarojs/plugin-platform-weapp@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/plugin-platform-weapp/-/plugin-platform-weapp-3.5.0-beta.2.tgz#a2df4ffa0d964f6e74fd1577d29a6571e1b759d5"
+  integrity sha512-wyIn509HGoBc/5x3Wcn5nvUalrwMuoB87B7NGyomO9lwHl9vJOsoS2anHsxANtVOSCrcX5F/yh0UX5uoCYz/kw==
   dependencies:
-    "@tarojs/components" "3.5.0-beta.0"
-    "@tarojs/service" "3.5.0-beta.0"
-    "@tarojs/shared" "3.5.0-beta.0"
+    "@tarojs/components" "3.5.0-beta.2"
+    "@tarojs/service" "3.5.0-beta.2"
+    "@tarojs/shared" "3.5.0-beta.2"
 
-"@tarojs/react@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/react/-/react-3.5.0-beta.0.tgz#63c7ba741c6c9ac2eeda269fc77ef70da295e6f8"
-  integrity sha512-6h4mTrzDlNUa4uYx8LDtOvMvPh1wWc7XbhjtZ07EZRp06Y2rna6SsmNVDyqk6IWa5+t7P1vqQjm/LCRYCjjcmA==
+"@tarojs/react@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/react/-/react-3.5.0-beta.2.tgz#b5c88ef38995f3210b1cbc8225e41c0879877250"
+  integrity sha512-p/g+A/snfprnyiJgHc+XP1NXrv34vC4c8h4pFWJb6fznJK6of7nmWOB82PBXV9a5jy34q/0OsMfxo6kM36GiPQ==
   dependencies:
-    "@tarojs/runtime" "3.5.0-beta.0"
-    "@tarojs/shared" "3.5.0-beta.0"
+    "@tarojs/runtime" "3.5.0-beta.2"
+    "@tarojs/shared" "3.5.0-beta.2"
     react-reconciler "0.27.0"
     scheduler "^0.20.1"
 
-"@tarojs/rn-runner@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/rn-runner/-/rn-runner-3.5.0-beta.0.tgz#076f82a93da43286e8b1ddd6a6390ba2b5605f96"
-  integrity sha512-PBjFdFKZ/1hllQ23vjMN4D6d2yqGO5Vgv09Q+Mnkrq1hR1QfubPoSDGmnlecaS90Eb7e1mZTmlqrq41O5Ymj1Q==
+"@tarojs/rn-runner@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/rn-runner/-/rn-runner-3.5.0-beta.2.tgz#4bbe03a2ed8aa7f6b6b692b8306d964730a39063"
+  integrity sha512-sU7/pI0Sie9UIJ0eR8kDycV95Qmk8YAM7wrZ3xJj0in71b3QChJqYdWF+fH/dOuXj4ISqgDOEVzb1K/NPMBpig==
   dependencies:
     "@react-native-community/cli-plugin-metro" "^6.0.0"
     "@react-native-community/cli-server-api" "^6.0.0"
-    "@tarojs/helper" "3.5.0-beta.0"
-    "@tarojs/rn-style-transformer" "3.5.0-beta.0"
-    "@tarojs/rn-supporter" "3.5.0-beta.0"
-    "@tarojs/rn-transformer" "3.5.0-beta.0"
+    "@tarojs/helper" "3.5.0-beta.2"
+    "@tarojs/rn-style-transformer" "3.5.0-beta.2"
+    "@tarojs/rn-supporter" "3.5.0-beta.2"
+    "@tarojs/rn-transformer" "3.5.0-beta.2"
     fs-extra "^8.0.1"
     lodash "^4.17.21"
     metro "^0.66.2"
@@ -3113,52 +3209,52 @@
     mime-types "^2.1.27"
     qrcode-terminal "^0.12.0"
 
-"@tarojs/rn-style-transformer@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/rn-style-transformer/-/rn-style-transformer-3.5.0-beta.0.tgz#4798d87367fe4b6f17931161b7185f5967db69ad"
-  integrity sha512-Qh87f6YqsvQ9o9FI7LQbPTmkoLJL6EClVRcbemg5xG0ONDFo0aqOD18EUHEJJCdT+HCQdJP6YG1Y9i1i3ZNJwA==
+"@tarojs/rn-style-transformer@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/rn-style-transformer/-/rn-style-transformer-3.5.0-beta.2.tgz#1d026b1156215cb16348128a3ec6c2c5040c8226"
+  integrity sha512-17tvuik7BvGppv8SA+TjYNFeXIskCdgFGrILr0T6ZHtbRrsblcamWUJxwSX2DitoEF0Y/1yvHnPjCZX7h4A0Wg==
   dependencies:
-    "@tarojs/helper" "3.5.0-beta.0"
+    "@tarojs/helper" "3.5.0-beta.2"
     fbjs "^2.0.0"
     less "^3.12.2"
     postcss "^7.0.35"
     postcss-import "^12.0.1"
-    postcss-pxtransform "3.5.0-beta.0"
+    postcss-pxtransform "3.5.0-beta.2"
     postcss-reporter "^6.0.1"
     prop-types "^15.7.2"
     sass "1.50.0"
     stylelint "^13.8.0"
-    stylelint-config-taro-rn "3.5.0-beta.0"
-    stylelint-taro-rn "3.5.0-beta.0"
+    stylelint-config-taro-rn "3.5.0-beta.2"
+    stylelint-taro-rn "3.5.0-beta.2"
     stylus "^0.55.0"
-    taro-css-to-react-native "3.5.0-beta.0"
+    taro-css-to-react-native "3.5.0-beta.2"
 
-"@tarojs/rn-supporter@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/rn-supporter/-/rn-supporter-3.5.0-beta.0.tgz#aa98866260c10354c04fe3d62f6cf800cfd4d661"
-  integrity sha512-Jcu6SkKVFmp/nf5sEz6tEODcmiB0kpBjauYvnVFBLkDcJOA9rT6DI4//D7Z7aLtKVmUFWI7e4BPtLhUxYtvb1w==
+"@tarojs/rn-supporter@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/rn-supporter/-/rn-supporter-3.5.0-beta.2.tgz#55b0f5bc1805edcf2454a7ef3d23f9a39e06e66b"
+  integrity sha512-2N9fv/mem0wRUIWBhWwJBfhaTQmu8nlWJcjg6FdXLuIlC76jKNw1nDaEFJCYoqobxK+aK00R85i7ZK2wakY1aw==
   dependencies:
-    "@tarojs/helper" "3.5.0-beta.0"
-    "@tarojs/rn-style-transformer" "3.5.0-beta.0"
+    "@tarojs/helper" "3.5.0-beta.2"
+    "@tarojs/rn-style-transformer" "3.5.0-beta.2"
     lodash "^4.17.21"
     metro "^0.66.2"
     metro-react-native-babel-transformer "^0.66.2"
     metro-resolver "^0.66.2"
     react-native-svg-transformer "^0.14.3"
 
-"@tarojs/rn-transformer@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/rn-transformer/-/rn-transformer-3.5.0-beta.0.tgz#e0231c682c7c7a709f59b90991e622993ffcc9f8"
-  integrity sha512-4O3Uc+kUaKu3NflVwze4/8WqMHM+wVXPxb5lhWlPFcnz0OklIGj/mwTsjy0wZ9XwZWzf8JFcG8+xRrYQRpqzaA==
+"@tarojs/rn-transformer@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/rn-transformer/-/rn-transformer-3.5.0-beta.2.tgz#390f1cdaeee57ce8e3bfe633140897cc02dec5a3"
+  integrity sha512-GZjyp7alhFUn+HF3fvhjAh8xLT3M+nZlgZHXDItpuueUlnM0Pts1are5GzEh2gCdw90rUWB4JTr0zh/D05WAWw==
   dependencies:
     lodash "^4.17.21"
     mkdirp "^1.0.4"
     normalize-path "^3.0.0"
 
-"@tarojs/router-rn@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/router-rn/-/router-rn-3.5.0-beta.0.tgz#c7715abe884fbd0c67c0c2ccec49036071281fe0"
-  integrity sha512-uI8VH5g4vLUan7wl5gQ1DsLyzk2fLHqiVqoOZH0yMJ8KdP/NCQfeaoCg2MWbC6lRAIzrjgq93mcYXsNZu4q8fg==
+"@tarojs/router-rn@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/router-rn/-/router-rn-3.5.0-beta.2.tgz#afb27a81e7a77cfd653afd5107d32deb13e31afe"
+  integrity sha512-FkNqmi+FzHf+Bn5SbscRhht/m90CtUyfHDhSf/fwFMZ22Knvv4rgbcwQzpnKWmHy9KbtF77rA4G9+ewfmWs3Aw==
   dependencies:
     "@react-native-community/bob" "^0.16.2"
     "@react-native-masked-view/masked-view" "~0.2.6"
@@ -3171,52 +3267,50 @@
     react-native-safe-area-context "~3.4.1"
     react-native-screens "^3.12.0"
 
-"@tarojs/router@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/router/-/router-3.5.0-beta.0.tgz#c222989d7acc193de6602cffc8c47bb3e0a293d9"
-  integrity sha512-d3lHUgM92EMwvwV+wz706Y/pPmNn8i/+YP/uWnusCwMfDaKz8pJdsAqLzEgWIpwhsEFHGRZASlAUnq5oQOMJ0g==
+"@tarojs/router@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/router/-/router-3.5.0-beta.2.tgz#0566da3a66d5a1dc25f3b4bd3073a380c394479e"
+  integrity sha512-IKpFCWJIqasVtLldSTVeUKCZOgWyVz0h/cPHs1ugHF4cDep7a7PXIqzBsc9hmj7aOiCd6CIjQ1KlrfNXVC9/Xg==
   dependencies:
-    "@tarojs/runtime" "3.5.0-beta.0"
-    "@tarojs/taro" "3.5.0-beta.0"
+    "@tarojs/runtime" "3.5.0-beta.2"
+    "@tarojs/taro" "3.5.0-beta.2"
     history "^5.1.0"
     query-string "^7.1.1"
     universal-router "^8.3.0"
 
-"@tarojs/runner-utils@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/runner-utils/-/runner-utils-3.5.0-beta.0.tgz#114833946d554a1827e934bf147133a8790646b5"
-  integrity sha512-3VOPp/P8MVpLcbP6cUJ6Te4mxGTWnT78K1Z2+Z4FhzGX5aU7uIW8+IvNFoF3dPMy2+oFzhq2JuUJ3vx+0Yee9w==
+"@tarojs/runner-utils@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/runner-utils/-/runner-utils-3.5.0-beta.2.tgz#129791b30340c1f04a4b3b549e9d8dba238cb651"
+  integrity sha512-wG3QLZdApxkVv4/TqnubQM/lB3+LygcEeg+t29C/uq8beYbsHv5e+cJZz6bqbTwQ9/G4/diyxbpvbGJRXa658A==
   dependencies:
-    "@tarojs/helper" "3.5.0-beta.0"
+    "@tarojs/helper" "3.5.0-beta.2"
     scss-bundle "^3.0.2"
 
-"@tarojs/runtime-rn@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/runtime-rn/-/runtime-rn-3.5.0-beta.0.tgz#ffe4cc208cf94a4d5bbd4482816b4f26b67d2113"
-  integrity sha512-p0XZtaBTsSDSpo/v84eB5IqsbJlzhIWzV8nIvKcKChx1k6aTSsOJqHz0c9qD+063w7mT92yfNMnm5sg16pt46g==
+"@tarojs/runtime-rn@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/runtime-rn/-/runtime-rn-3.5.0-beta.2.tgz#b105ebc27b32e38d8ff27916fd343290a6d87a4f"
+  integrity sha512-KZxaoUwslfBjZdyScmoidaVPqzxem2xRp4L1VToiQqhbJJ9+FJ1r6Rs9pXMPXz/ofPJo1jiDh9NdM1F5rFgYew==
   dependencies:
-    "@tarojs/components-rn" "3.5.0-beta.0"
-    "@tarojs/router-rn" "3.5.0-beta.0"
+    "@tarojs/components-rn" "3.5.0-beta.2"
+    "@tarojs/router-rn" "3.5.0-beta.2"
     react-native-root-siblings "^4.1.1"
 
-"@tarojs/runtime@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/runtime/-/runtime-3.5.0-beta.0.tgz#3932e42a2f470c4ee32dddd9844e3c187e9c810d"
-  integrity sha512-aUUKOUItKVWSEwFcZFUWVTm9GoaGlGWJOIfesS9advyyERy4AKRDQ1Yb65oi78gO6GVoknyIBrUAkrMal5YwJw==
+"@tarojs/runtime@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/runtime/-/runtime-3.5.0-beta.2.tgz#bdceca269e0848bc9d7345de2163699df35d484f"
+  integrity sha512-SBNUXoBhLC+yWde2PLdVx3R/XmkU3j6vbxOkdPhSue8nIbm4p484BRq0+ZySPzU4oGe4hD3Ji/SLc/R8jx2Uzw==
   dependencies:
-    "@tarojs/shared" "3.5.0-beta.0"
-    inversify "5.1.1"
+    "@tarojs/shared" "3.5.0-beta.2"
     lodash-es "4.17.21"
-    reflect-metadata "^0.1.13"
 
-"@tarojs/service@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/service/-/service-3.5.0-beta.0.tgz#6942a789382b9efc3670a5ca6fa39cb851c2b7f4"
-  integrity sha512-QBDRSmH/qBY57FzVylNb1NqbfkASWM9SyVb5g+xk0iHBRpg4+stA3jOqp09Z1fo125WKJhCwlBigABRFCdVlhA==
+"@tarojs/service@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/service/-/service-3.5.0-beta.2.tgz#7f1764b562fc7b7fad2d69a3d1e3e07b0ad8cb4a"
+  integrity sha512-tBqbdxvliM8dm9CnfKcEPtIoiKtiO5nGarHcDbdFRDnCG9P4lNP+MO1uzUGAcDdMGJQv7LW8JmHjLpE4nvPUHw==
   dependencies:
-    "@tarojs/helper" "3.5.0-beta.0"
-    "@tarojs/shared" "3.5.0-beta.0"
-    "@tarojs/taro" "3.5.0-beta.0"
+    "@tarojs/helper" "3.5.0-beta.2"
+    "@tarojs/shared" "3.5.0-beta.2"
+    "@tarojs/taro" "3.5.0-beta.2"
     fs-extra "^8.1.0"
     joi "^17.6.0"
     lodash "^4.17.21"
@@ -3224,45 +3318,45 @@
     tapable "^1.1.3"
     webpack-merge "^4.2.2"
 
-"@tarojs/shared@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/shared/-/shared-3.5.0-beta.0.tgz#234e02fbf9fe8fc77453fb58a60a5ace2664e1c4"
-  integrity sha512-+qWtKe+r3TRyWRwW2HujahQlZeZGHCad3daEc/LioJAxCRfsgO1xuGeiQrA+dIYyWSrHSaHwYXa6Ay4HmCvJKg==
+"@tarojs/shared@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/shared/-/shared-3.5.0-beta.2.tgz#c165fa57f7b6c4ab4357743cfc15d6d85feee2f8"
+  integrity sha512-W/BPCCmOQnsS+lIAQbtD9Z29t/Rhj/2jCWwF+V9AYvOKOKr4FRYMNfTKnBseNmZcjUjru2wXcmxT2cqB0h2Unw==
 
-"@tarojs/taro-h5@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/taro-h5/-/taro-h5-3.5.0-beta.0.tgz#73f0a2ce70f3a17d5214db4538d354a8d22922ba"
-  integrity sha512-8NiQp+8bpBdF5iwfCEMe9p9JrbTgDIEJ4OinZfEVxuJVilz/ZzP4/c6Bj9bpqifgSawkdo7zFQEj4e1qSTZUZw==
+"@tarojs/taro-h5@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/taro-h5/-/taro-h5-3.5.0-beta.2.tgz#96941a79dcd674d6bb6626b2dcb4329a19cff9d4"
+  integrity sha512-XOQ5Gm0KliPh05c+QKC8EbGdW7HVmVmHF2nrFuYLPt8a5JFIYe6WqCPz154aC27FsurneKyYfRaeGr+HzvB8gw==
   dependencies:
-    "@tarojs/api" "3.5.0-beta.0"
-    "@tarojs/router" "3.5.0-beta.0"
-    "@tarojs/runtime" "3.5.0-beta.0"
+    "@tarojs/api" "3.5.0-beta.2"
+    "@tarojs/router" "3.5.0-beta.2"
+    "@tarojs/runtime" "3.5.0-beta.2"
     base64-js "^1.3.0"
     jsonp-retry "^1.0.3"
     mobile-detect "^1.4.2"
     query-string "^7.1.1"
     whatwg-fetch "^3.4.0"
 
-"@tarojs/taro-loader@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/taro-loader/-/taro-loader-3.5.0-beta.0.tgz#5752a8b9d721ed9af30a33b97644e85c58acd31b"
-  integrity sha512-O8aF8VQQ/aeZTkCBCuI6uVzWz0zX3v+rmV76h3sWeGL9O6mCisCz3TPkJdy0EwaEylHQG6f5Bd6bFQIrP8xqJQ==
+"@tarojs/taro-loader@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/taro-loader/-/taro-loader-3.5.0-beta.2.tgz#b5aa218a0ae2a068900a173695e70ca1aedcc3cd"
+  integrity sha512-7dhjlT5vFv3jkxS9EB1O2WbcaZN02g1h3gC2qNzPfl0goF/p86/tOHZR7nU8v7nf0pEmKCiWgp/ZGDzohDjnmA==
   dependencies:
-    "@tarojs/helper" "3.5.0-beta.0"
-    "@tarojs/taro" "3.5.0-beta.0"
+    "@tarojs/helper" "3.5.0-beta.2"
+    "@tarojs/taro" "3.5.0-beta.2"
     loader-utils "^1.2.3"
 
-"@tarojs/taro-rn@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/taro-rn/-/taro-rn-3.5.0-beta.0.tgz#25ddd47d72785c55b33c4394324d6073daf3a1e3"
-  integrity sha512-t9LDDJlYXbVp8hRizfv/lP+3yLsLJ8OqzHAGPzDJoNbmMHWIk8/uS6uTO98tmDqQEcpGByFc7CmODwHfYTIyrw==
+"@tarojs/taro-rn@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/taro-rn/-/taro-rn-3.5.0-beta.2.tgz#d9822da17e9baf13eb2ef22326f9203c849cf140"
+  integrity sha512-muN+B5ODNOixJgWLSxkIvlvjqxs4HJhAyFV1mZKLy8rrcQpEw6s8XGisZRhaIXt58y/5Teb4g3tvLKcv/smhyg==
   dependencies:
     "@react-native-async-storage/async-storage" "~1.15.11"
     "@react-native-community/cameraroll" "~4.1.2"
     "@react-native-community/clipboard" "~1.5.1"
     "@react-native-community/geolocation" "~2.0.2"
     "@react-native-community/netinfo" "~7.1.2"
-    "@tarojs/runtime-rn" "3.5.0-beta.0"
+    "@tarojs/runtime-rn" "3.5.0-beta.2"
     babel-preset-expo "~9.0.2"
     base64-js "^1.3.0"
     expo-av "~11.2.3"
@@ -3285,18 +3379,18 @@
     react-native-stylekit "^1.0.0"
     react-native-syan-image-picker "0.5.3"
 
-"@tarojs/taro@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/taro/-/taro-3.5.0-beta.0.tgz#9bad0b66fa8fb28c5ccc109098a9dcd81f38ce3b"
-  integrity sha512-yHI7QhnrvA2iyTKHDJkJwzLnIxikq24Ii0UPrA3z1yo0ftvdeaPXQLR98ibW6rLX0BXoc0F9AuP7hLFpBdNkrg==
+"@tarojs/taro@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/taro/-/taro-3.5.0-beta.2.tgz#8af6a8957f4847b02ca007180073f5c40fc4b641"
+  integrity sha512-NeR5rBlGvz01GJEV4GxtqBMDc0wxsNO8asx5/DnoxONlpGCPXQhML8YqkV+0fqvRQhE/a3juhHEbupnzuUgnSA==
   dependencies:
-    "@tarojs/api" "3.5.0-beta.0"
-    "@tarojs/runtime" "3.5.0-beta.0"
+    "@tarojs/api" "3.5.0-beta.2"
+    "@tarojs/runtime" "3.5.0-beta.2"
 
-"@tarojs/taroize@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/taroize/-/taroize-3.5.0-beta.0.tgz#9b698839aadd4c386b44003f5a7a67fa7572061e"
-  integrity sha512-wj6XTq9mDbk2S//eU/HaL8DO+HFYSuZSggCcFaG+0H5jzCz2O2Wbst0G+vrnAQ6WM5wXRJUeC9TRXNUHzgQCng==
+"@tarojs/taroize@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/taroize/-/taroize-3.5.0-beta.2.tgz#01a1389fa1f9ad38023e1c0124c291bfb5d352c6"
+  integrity sha512-Y1XeBtGy465QNrz6SgMCTnc20VG97ycxpGZ6SVmRtqHgZHEUQGPENElSujOaFMqDiltuFzxSLbdIgfCXj5YfUw==
   dependencies:
     "@babel/code-frame" "^7.14.5"
     babel-core "^6.26.3"
@@ -3341,15 +3435,15 @@
     prettier "^1.14.2"
     typescript "^3.2.2"
 
-"@tarojs/webpack-runner@3.5.0-beta.0":
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@tarojs/webpack-runner/-/webpack-runner-3.5.0-beta.0.tgz#fa7eb75bf3817efc18ee07a9a3252d83658c9a8b"
-  integrity sha512-M1GrWcBYWXRvTTlYy6E54FiPYStfBjMwEwqXrQdEynl8UMnN/VELlflKPiHv9IkTBILmLcle0Lj6o5+A2MHr2w==
+"@tarojs/webpack-runner@3.5.0-beta.2":
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@tarojs/webpack-runner/-/webpack-runner-3.5.0-beta.2.tgz#ae565b0d30faf5c54d270fc87246b7daf6dce25c"
+  integrity sha512-6erBeRpka9YE6wfj0eCt6laLcEnrF0YZyDLKgplNhPtGeKmAEltVCaair2xTzHKUQ7Mcx6d72EbyyArMdYXeCQ==
   dependencies:
-    "@tarojs/helper" "3.5.0-beta.0"
-    "@tarojs/runner-utils" "3.5.0-beta.0"
-    "@tarojs/taro" "3.5.0-beta.0"
-    "@tarojs/taro-loader" "3.5.0-beta.0"
+    "@tarojs/helper" "3.5.0-beta.2"
+    "@tarojs/runner-utils" "3.5.0-beta.2"
+    "@tarojs/taro" "3.5.0-beta.2"
+    "@tarojs/taro-loader" "3.5.0-beta.2"
     autoprefixer "^9.7.4"
     babel-loader "8.2.1"
     copy-webpack-plugin "5.1.2"
@@ -3366,9 +3460,10 @@
     open "7.0.2"
     ora "4.0.3"
     postcss "8.3.5"
+    postcss-import "12.0.1"
     postcss-loader "4.3.0"
-    postcss-plugin-constparse "3.5.0-beta.0"
-    postcss-pxtransform "3.5.0-beta.0"
+    postcss-plugin-constparse "3.5.0-beta.2"
+    postcss-pxtransform "3.5.0-beta.2"
     resolve "^1.6.0"
     resolve-url-loader "3.1.3"
     sass "1.50.0"
@@ -3402,11 +3497,6 @@
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@types/base16/-/base16-1.0.2.tgz#eb3a07db52309bfefb9ba010dfdb3c0784971f65"
   integrity sha512-oYO/U4VD1DavwrKuCSQWdLG+5K22SLPem2OQaHmFcQuwHoVeGC+JGVRji2MUqZUAIQZHEonOeVfAX09hYiLsdg==
-
-"@types/caseless@*":
-  version "0.12.2"
-  resolved "https://registry.yarnpkg.com/@types/caseless/-/caseless-0.12.2.tgz#f65d3d6389e01eeb458bd54dc8f52b95a9463bc8"
-  integrity sha512-6ckxMjBBD8URvjB6J3NcnuAn5Pkl7t3TizAg+xdlzzQGSPSmBcXf8KoIH0ua/i+tio+ZRUHEXp0HEmvaR4kt0w==
 
 "@types/debug@^4.1.5":
   version "4.1.7"
@@ -3561,16 +3651,6 @@
     "@types/scheduler" "*"
     csstype "^3.0.2"
 
-"@types/request@^2.48.1":
-  version "2.48.8"
-  resolved "https://registry.yarnpkg.com/@types/request/-/request-2.48.8.tgz#0b90fde3b655ab50976cb8c5ac00faca22f5a82c"
-  integrity sha512-whjk1EDJPcAR2kYHRbFl/lKeeKYTi05A15K9bnLInCVroNDCtXce57xKdI0/rQaA3K+6q0eFyUBPmqfSndUZdQ==
-  dependencies:
-    "@types/caseless" "*"
-    "@types/node" "*"
-    "@types/tough-cookie" "*"
-    form-data "^2.5.0"
-
 "@types/sass@^1.16.0":
   version "1.43.1"
   resolved "https://registry.yarnpkg.com/@types/sass/-/sass-1.43.1.tgz#86bb0168e9e881d7dade6eba16c9ed6d25dc2f68"
@@ -3597,11 +3677,6 @@
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/@types/tapable/-/tapable-1.0.8.tgz#b94a4391c85666c7b73299fd3ad79d4faa435310"
   integrity sha512-ipixuVrh2OdNmauvtT51o3d8z12p6LtFW9in7U79der/kwejjdNchQC5UMn5u/KxNoM7VHHOs/l8KS8uHxhODQ==
-
-"@types/tough-cookie@*":
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/@types/tough-cookie/-/tough-cookie-4.0.2.tgz#6286b4c7228d58ab7866d19716f3696e03a09397"
-  integrity sha512-Q5vtl1W5ue16D+nIaW8JWebSSraJVlK+EthKn7e7UcD4KWsaSJ8BqGPXNaPghgtcn/fhvrN17Tv8ksUsQpiplw==
 
 "@types/uglify-js@*":
   version "3.13.2"
@@ -4862,10 +4937,10 @@ babel-plugin-jsx-attributes-array-to-object@0.3.0:
   resolved "https://registry.yarnpkg.com/babel-plugin-jsx-attributes-array-to-object/-/babel-plugin-jsx-attributes-array-to-object-0.3.0.tgz#ac7b551a2407750ac899460fe5e38b1dceaebed1"
   integrity sha512-XvbCsBFo/y4n2DzRtICQ60Kb3FWPIK359YsUkDPjC4UBCF/FMENKYzxarEhAD1GnrAuui5wOUvli89yqF1IzdA==
 
-babel-plugin-minify-dead-code-elimination@0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/babel-plugin-minify-dead-code-elimination/-/babel-plugin-minify-dead-code-elimination-0.5.1.tgz#1a0c68e44be30de4976ca69ffc535e08be13683f"
-  integrity sha512-x8OJOZIrRmQBcSqxBcLbMIK8uPmTvNWPXH2bh5MDCW1latEqYiRMuUkPImKcfpo59pTUB2FT7HfcgtG8ZlR5Qg==
+babel-plugin-minify-dead-code-elimination@0.5.1, babel-plugin-minify-dead-code-elimination@0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/babel-plugin-minify-dead-code-elimination/-/babel-plugin-minify-dead-code-elimination-0.5.2.tgz#f386ceec77a80cc4e76022a04c21b7d68e0aa5eb"
+  integrity sha512-krq9Lwi0QIzyAlcNBXTL4usqUvevB4BzktdEsb8srcXC1AaYqRJiAQw6vdKdJSaXbz6snBvziGr6ch/aoRCfpA==
   dependencies:
     babel-helper-evaluate-path "^0.5.0"
     babel-helper-mark-eval-scopes "^0.4.3"
@@ -5301,13 +5376,13 @@ babel-plugin-transform-object-rest-spread@^6.22.0:
     babel-plugin-syntax-object-rest-spread "^6.8.0"
     babel-runtime "^6.26.0"
 
-babel-plugin-transform-react-jsx-to-rn-stylesheet@3.5.0-beta.0:
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-transform-react-jsx-to-rn-stylesheet/-/babel-plugin-transform-react-jsx-to-rn-stylesheet-3.5.0-beta.0.tgz#0386fc4374fc31e5ab3d50d24e534325bc5c9522"
-  integrity sha512-hJucOIhUvBXXbziY86AQ/9g0ML7Ub8hEAJYd3XeR6+o5kg7ehDkoFIbsTEr9uaneQpwWzFSEqQVH0KD70aHHkA==
+babel-plugin-transform-react-jsx-to-rn-stylesheet@3.5.0-beta.2:
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-react-jsx-to-rn-stylesheet/-/babel-plugin-transform-react-jsx-to-rn-stylesheet-3.5.0-beta.2.tgz#f5e736d8226c7cc6d3cfe6f86e27774fb8d963cc"
+  integrity sha512-JaxYs+fljt1HW6N3jLG2C3G9D3rJ5CUB/ZE+sI8VK0NOPCRLPlT75B24Px6yglHmPcqkD35XiprH5NY6jC6Ghw==
   dependencies:
     camelize "^1.0.0"
-    taro-css-to-react-native "3.5.0-beta.0"
+    taro-css-to-react-native "3.5.0-beta.2"
 
 babel-plugin-transform-regenerator@^6.24.1:
   version "6.26.0"
@@ -5324,10 +5399,10 @@ babel-plugin-transform-strict-mode@^6.24.1:
     babel-runtime "^6.22.0"
     babel-types "^6.24.1"
 
-babel-plugin-transform-taroapi@3.5.0-beta.0:
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-transform-taroapi/-/babel-plugin-transform-taroapi-3.5.0-beta.0.tgz#1ae3c9304794fdc479280e75ecb0a80a28418d28"
-  integrity sha512-SmYMnSVa0rD3gMUpnbr6bMIdGCdEajQ6478Wz4PGx+xTFr5AznDXFA48UuUsstaFgDn4xEqqOQjNDiOCT44JjA==
+babel-plugin-transform-taroapi@3.5.0-beta.2:
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-taroapi/-/babel-plugin-transform-taroapi-3.5.0-beta.2.tgz#b740fc0b564b6ec8d9e8f7aa386740c7f526f35b"
+  integrity sha512-wqgvvq3KrHSFj0yGFi8Nny93faIXr3yxJI/DQcbndVpJ/Y1KKDeOFnqDlvtp69xH1GIJsw0hkww3eeFVa8clsw==
 
 babel-preset-es2015@6.24.1:
   version "6.24.1"
@@ -5455,10 +5530,10 @@ babel-preset-stage-3@^6.24.1:
     babel-plugin-transform-exponentiation-operator "^6.24.1"
     babel-plugin-transform-object-rest-spread "^6.22.0"
 
-babel-preset-taro@3.5.0-beta.0:
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/babel-preset-taro/-/babel-preset-taro-3.5.0-beta.0.tgz#12ce0e5029f54730412068b8c06ae477fd0b0ede"
-  integrity sha512-L6WfpqCLXNxbAug6js42WoqscAxpoS7AfF9x6SCq4Uk3369LEj9lyO7Eg9MramUNGtKhBQtsnc58ohFKlmU6Vg==
+babel-preset-taro@3.5.0-beta.2:
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/babel-preset-taro/-/babel-preset-taro-3.5.0-beta.2.tgz#d2d68e6dc102b5dcd70a58245678ae7de218a890"
+  integrity sha512-iTK4NCLXasESapgVKReLfF5vtEfqxkg7dtXdQj1quB4UNtyw4sU1yaYa3ii+Oiehf1ExhaeWf8nzLs8YPBbixg==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.14.5"
     "@babel/plugin-proposal-decorators" "^7.14.5"
@@ -5469,15 +5544,15 @@ babel-preset-taro@3.5.0-beta.0:
     "@babel/preset-typescript" "^7.14.5"
     "@babel/runtime" "^7.14.5"
     "@babel/runtime-corejs3" "^7.14.5"
-    "@tarojs/helper" "3.5.0-beta.0"
-    "@tarojs/taro-h5" "3.5.0-beta.0"
+    "@tarojs/helper" "3.5.0-beta.2"
+    "@tarojs/taro-h5" "3.5.0-beta.2"
     babel-plugin-dynamic-import-node "2.3.3"
     babel-plugin-global-define "1.0.3"
     babel-plugin-jsx-attributes-array-to-object "0.3.0"
     babel-plugin-minify-dead-code-elimination "0.5.1"
     babel-plugin-transform-imports-api "1.0.0"
-    babel-plugin-transform-react-jsx-to-rn-stylesheet "3.5.0-beta.0"
-    babel-plugin-transform-taroapi "3.5.0-beta.0"
+    babel-plugin-transform-react-jsx-to-rn-stylesheet "3.5.0-beta.2"
+    babel-plugin-transform-taroapi "3.5.0-beta.2"
     core-js "^3.6.5"
     metro-react-native-babel-preset "^0.66.2"
 
@@ -8304,10 +8379,10 @@ escodegen@^2.0.0:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-taro@3.5.0-beta.0:
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-taro/-/eslint-config-taro-3.5.0-beta.0.tgz#a3ee9eb57dae32878fc3a5433c1df566320d2480"
-  integrity sha512-lo5CFP18yjaweD4KITgkGnncghHVQo74VUjXQe9/c9FUXen/d4l7JUyikY35oxiiiCHRZt9z3/LcivXSrnEdOg==
+eslint-config-taro@3.5.0-beta.2:
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/eslint-config-taro/-/eslint-config-taro-3.5.0-beta.2.tgz#4b7c3f6f96549d071500939d75d52f5e55a5387c"
+  integrity sha512-v8pUwNp0ZmEiPqLuprslZqgBMj/uJ0mjtipNx+rxDrQ8XVyJb3unnCUAwbpMnLP6s3/a3KZUlDxR/HgP20twvQ==
   dependencies:
     "@babel/eslint-parser" "^7.17.0"
     "@typescript-eslint/parser" "^5.20.0"
@@ -9510,15 +9585,6 @@ forever-agent@~0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/forever-agent/-/forever-agent-0.6.1.tgz#fbc71f0c41adeb37f96c577ad1ed42d8fdacca91"
   integrity sha1-+8cfDEGt6zf5bFd60e1C2P2sypE=
-
-form-data@^2.5.0:
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/form-data/-/form-data-2.5.1.tgz#f2cbec57b5e59e23716e128fe44d4e5dd23895f4"
-  integrity sha512-m21N3WOmEEURgk6B9GLOE4RuWOFf28Lhh9qGYeNlGq4VDXUlJy2th2slBNU8Gp8EzloYZOibZJ7t5ecIrFSjVA==
-  dependencies:
-    asynckit "^0.4.0"
-    combined-stream "^1.0.6"
-    mime-types "^2.1.12"
 
 form-data@^3.0.0, form-data@^3.0.1:
   version "3.0.1"
@@ -10876,17 +10942,12 @@ into-stream@^3.1.0:
     from2 "^2.1.1"
     p-is-promise "^1.1.0"
 
-invariant@*, invariant@2.2.4, invariant@^2.2.2, invariant@^2.2.4:
+invariant@*, invariant@2.2.4, invariant@^2.2.0, invariant@^2.2.2, invariant@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
   integrity sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==
   dependencies:
     loose-envify "^1.0.0"
-
-inversify@5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/inversify/-/inversify-5.1.1.tgz#6fbd668c591337404e005a1946bfe0d802c08730"
-  integrity sha512-j8grHGDzv1v+8T1sAQ+3boTCntFPfvxLCkNcxB1J8qA0lUN+fAlSyYd+RXKvaPRL4AGyPxViutBEJHNXOyUdFQ==
 
 ip-regex@^2.1.0:
   version "2.1.0"
@@ -15092,10 +15153,10 @@ postcss-discard-overridden@^5.1.0:
   resolved "https://registry.yarnpkg.com/postcss-discard-overridden/-/postcss-discard-overridden-5.1.0.tgz#7e8c5b53325747e9d90131bb88635282fb4a276e"
   integrity sha512-21nOL7RqWR1kasIVdKs8HNqQJhFxLsyRfAnUDm4Fe4t4mCWL9OJiHvlHPjcd8zc5Myu89b/7wZDnOSjFgeWRtw==
 
-postcss-html-transform@3.5.0-beta.0:
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/postcss-html-transform/-/postcss-html-transform-3.5.0-beta.0.tgz#9d9a8bae2a3bf9c0b218b409b6ea360384533b85"
-  integrity sha512-b3eR/1/weTb3x7h6ey74Vzxv++Ve8JmMkgXO1BhdBHkHgRoTETUnS9gMvIouOIY6ZTV9u/mio///2tWU/CV9DA==
+postcss-html-transform@3.5.0-beta.2:
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/postcss-html-transform/-/postcss-html-transform-3.5.0-beta.2.tgz#8fab557133630914eda07d58f343e47e7e040ac1"
+  integrity sha512-nL8H+i0sxIQhuunoRE/RjBRMK4MLPmdOtdnhPGEs782qLGOybp42mNKxObKhaJPqKbgH80V5tOUhWTE3eMMqZQ==
   dependencies:
     postcss "^6.0.22"
 
@@ -15315,17 +15376,17 @@ postcss-ordered-values@^5.1.1:
     cssnano-utils "^3.1.0"
     postcss-value-parser "^4.2.0"
 
-postcss-plugin-constparse@3.5.0-beta.0:
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/postcss-plugin-constparse/-/postcss-plugin-constparse-3.5.0-beta.0.tgz#f12b33d6d7bc9f051712b87211b7071720cadd20"
-  integrity sha512-Rs1lLEATcqCRPKUYAOozqEsPlpMfI1rJMAWwoIQ0WoM01IGgtC3bMbSBX9xcjPWALmBJRjWxvSTjh6jhlUPmJw==
+postcss-plugin-constparse@3.5.0-beta.2:
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/postcss-plugin-constparse/-/postcss-plugin-constparse-3.5.0-beta.2.tgz#2f6a4ce8a14cde22c4d5d5d7145750e377ca29b9"
+  integrity sha512-/XRm0gpGuVMhhDX78kyFSEnMcFPFJr8RFf5q5wX2pWcx7PdaJc8PbU45mOKikfv7hLj1tADKLizhq7+6bdGzPA==
   dependencies:
     postcss "^6.0.22"
 
-postcss-pxtransform@3.5.0-beta.0:
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/postcss-pxtransform/-/postcss-pxtransform-3.5.0-beta.0.tgz#018a66eb4d3dc2ca77b457ddbea57f720a588b0c"
-  integrity sha512-xvG66zaC7Lc00sWVp/gf6knr6KnYA/tDyIMSNhpXRd56mu05Log4qhKBJsrCUWF62LJeb92XrnjANqSgpNJlpA==
+postcss-pxtransform@3.5.0-beta.2:
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/postcss-pxtransform/-/postcss-pxtransform-3.5.0-beta.2.tgz#002bd6d16cc2bca303adeaac866fba19763f4f06"
+  integrity sha512-0tDCX6LznQfe9sKxVA9MYwzJPmVqeAF33c4k0gZ2fWSTQb+ak0EEHhNDpcLmpTUXcFqNJWgiqrtMQPaJm0A4jQ==
   dependencies:
     postcss "^6.0.22"
 
@@ -16362,11 +16423,6 @@ redent@^3.0.0:
   dependencies:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
-
-reflect-metadata@^0.1.13:
-  version "0.1.13"
-  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
-  integrity sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==
 
 regenerate-unicode-properties@^10.0.1:
   version "10.0.1"
@@ -17991,15 +18047,15 @@ stylehacks@^5.1.0:
     browserslist "^4.16.6"
     postcss-selector-parser "^6.0.4"
 
-stylelint-config-taro-rn@3.5.0-beta.0:
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/stylelint-config-taro-rn/-/stylelint-config-taro-rn-3.5.0-beta.0.tgz#54c423915064bbca76a1f82ed45f31c0d28b5f88"
-  integrity sha512-iowcGfseAS5vOiSccaYCIG89+5pIvxWVyqfH1G0Em0V3MI8yhq1ynGqiF5iAJwokQKVGCVIZo7vm50680405YQ==
+stylelint-config-taro-rn@3.5.0-beta.2:
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/stylelint-config-taro-rn/-/stylelint-config-taro-rn-3.5.0-beta.2.tgz#93a1b69906bc39817d5bcda72ba5570446f52cd5"
+  integrity sha512-T/26F0nRpI+OI5lJmioBz6KohKIYPRh34TseJJFWiV8zihSFxhXynNFJIWCfGyPlaRwLumZtcPxyiyJAMsWe9Q==
 
-stylelint-taro-rn@3.5.0-beta.0:
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/stylelint-taro-rn/-/stylelint-taro-rn-3.5.0-beta.0.tgz#9c549a1bed2b7ee727fedca4b7c48677199ae6d3"
-  integrity sha512-B0UQA3nrESLC4k3ybTp6/WUBbsxldTEmm6yqXfTzXlX48bOo5OA0EJktQxyAcMc6+v9uEY9pV7Z9M4GPYU477Q==
+stylelint-taro-rn@3.5.0-beta.2:
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/stylelint-taro-rn/-/stylelint-taro-rn-3.5.0-beta.2.tgz#19a3417f1aa095e844c92fe1bbd4a855e383d61f"
+  integrity sha512-9XyGynm6exbxUNTQKFXnFw4sexVa/HOpOMUKycJTpmMqhqnYExryRe7bUkP8iZuzTTjyaHMakpf1UJtVvi6zIA==
   dependencies:
     react-native-known-styling-properties "^1.0.4"
 
@@ -18346,10 +18402,10 @@ tar@^6.0.2, tar@^6.0.5:
     mkdirp "^1.0.3"
     yallist "^4.0.0"
 
-taro-css-to-react-native@3.5.0-beta.0:
-  version "3.5.0-beta.0"
-  resolved "https://registry.yarnpkg.com/taro-css-to-react-native/-/taro-css-to-react-native-3.5.0-beta.0.tgz#51dc1a21b3168bd254005af4dd4b65aeaae323d8"
-  integrity sha512-fFMYg8smqNZS8nZ+uLcZxw46JRqwod/pAVxWqz20VgcmUx3NxvOoN6U1oIVKxoJP/nn9rzvjD+ykevcXPeGrig==
+taro-css-to-react-native@3.5.0-beta.2:
+  version "3.5.0-beta.2"
+  resolved "https://registry.yarnpkg.com/taro-css-to-react-native/-/taro-css-to-react-native-3.5.0-beta.2.tgz#a0b423707e8806b3575bce8373d792c4ea154edd"
+  integrity sha512-vO9b6QnCpRwSIVrlpufvl53r1R3d+CTXUjjhBxPqwOlcA/cXDM2soQ+sm545EvbX9f6AE9TVpUxs3DYkcIerDA==
   dependencies:
     camelize "^1.0.0"
     css "^2.2.4"
@@ -19485,8 +19541,10 @@ watchpack@^1.7.4:
   resolved "https://registry.yarnpkg.com/watchpack/-/watchpack-1.7.5.tgz#1267e6c55e0b9b5be44c2023aed5437a2c26c453"
   integrity sha512-9P3MWk6SrKjHsGkLT2KHXdQ/9SNkyoJbabxnKOoJepsvJjJG8uYTR3yTPxPQvNDI3w4Nz1xnE0TLHK4RIVe/MQ==
   dependencies:
+    chokidar "^3.4.1"
     graceful-fs "^4.1.2"
     neo-async "^2.5.0"
+    watchpack-chokidar2 "^2.0.1"
   optionalDependencies:
     chokidar "^3.4.1"
     watchpack-chokidar2 "^2.0.1"
