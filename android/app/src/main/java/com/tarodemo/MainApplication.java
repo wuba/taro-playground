@@ -1,49 +1,47 @@
 package com.tarodemo;
-import android.content.res.Configuration;
-import expo.modules.ApplicationLifecycleDispatcher;
-import expo.modules.ReactNativeHostWrapper;
 
 import android.app.Application;
 import android.content.Context;
-import com.facebook.react.PackageList;
+import android.content.res.Configuration;
+
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
-import com.facebook.react.ReactPackage;
 import com.facebook.react.config.ReactFeatureFlags;
 import com.facebook.soloader.SoLoader;
+import com.swmansion.rnscreens.BuildConfig;
+import com.tarodemo.devmanager.TaroDevManager;
+import com.tarodemo.devmanager.TaroReactNativeHost;
 import com.tarodemo.newarchitecture.MainApplicationReactNativeHost;
+
 import java.lang.reflect.InvocationTargetException;
-import java.util.List;
+
+import expo.modules.ApplicationLifecycleDispatcher;
+import expo.modules.ReactNativeHostWrapper;
 
 public class MainApplication extends Application implements ReactApplication {
 
   private static MainApplication instance = null;
 
+  private final TaroReactNativeHost mTaroReactNativeHost =
+    new TaroReactNativeHost(this);
+
   private final ReactNativeHost mReactNativeHost =
-      new ReactNativeHostWrapper(this, new ReactNativeHost(this) {
-        @Override
-        public boolean getUseDeveloperSupport() {
-          return BuildConfig.DEBUG;
-        }
+    new ReactNativeHostWrapper(this, mTaroReactNativeHost);
 
-        @Override
-        protected List<ReactPackage> getPackages() {
-          @SuppressWarnings("UnnecessaryLocalVariable")
-          List<ReactPackage> packages = new PackageList(this).getPackages();
-          // Packages that cannot be autolinked yet can be added manually here, for example:
-          // packages.add(new MyReactNativePackage());
-          return packages;
-        }
-
-        @Override
-        protected String getJSMainModuleName() {
-          return "index";
-        }
-      });
+  private final TaroReactNativeHost mNewArchitectureTaroNativeHost =
+    new MainApplicationReactNativeHost(this);
 
   private final ReactNativeHost mNewArchitectureNativeHost =
-      new ReactNativeHostWrapper(this, new MainApplicationReactNativeHost(this));
+    new ReactNativeHostWrapper(this, mNewArchitectureTaroNativeHost);
+
+  public TaroReactNativeHost getTaroReactNativeHost() {
+    if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
+      return mNewArchitectureTaroNativeHost;
+    } else {
+      return mTaroReactNativeHost;
+    }
+  }
 
   @Override
   public ReactNativeHost getReactNativeHost() {
@@ -57,6 +55,8 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public void onCreate() {
     super.onCreate();
+    instance = this;
+    TaroDevManager.init();
     // If you opted-in for the New Architecture, we enable the TurboModule system
     ReactFeatureFlags.useTurboModules = BuildConfig.IS_NEW_ARCHITECTURE_ENABLED;
     SoLoader.init(this, /* native exopackage */ false);
@@ -64,7 +64,7 @@ public class MainApplication extends Application implements ReactApplication {
     ApplicationLifecycleDispatcher.onApplicationCreate(this);
   }
 
-  public static MainApplication getInstance(){
+  public static MainApplication getInstance() {
     return instance;
   }
 

@@ -4,6 +4,7 @@ import expo.modules.ReactActivityDelegateWrapper;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
+import com.tarodemo.devmanager.TaroDevManager;
 
 import android.os.Bundle;
 import org.devio.rn.splashscreen.SplashScreen;
@@ -14,6 +15,13 @@ public class MainActivity extends ReactActivity {
   protected void onCreate(Bundle savedInstanceState) {
     SplashScreen.show(this);
     super.onCreate(null);
+  }
+
+  @Override
+  public void finish() {
+    // clear ReactNativeHost on Activity finish
+    TaroDevManager.clearReactNativeHost();
+    super.finish();
   }
 
   /**
