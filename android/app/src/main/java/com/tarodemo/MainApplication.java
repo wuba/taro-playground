@@ -9,7 +9,7 @@ import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.config.ReactFeatureFlags;
 import com.facebook.soloader.SoLoader;
-import com.swmansion.rnscreens.BuildConfig;
+import com.tarodemo.BuildConfig;
 import com.tarodemo.devmanager.TaroDevManager;
 import com.tarodemo.devmanager.TaroReactNativeHost;
 import com.tarodemo.newarchitecture.MainApplicationReactNativeHost;
