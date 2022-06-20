@@ -94,7 +94,7 @@
     "react-native-svg": "~12.1.1",
     "react-native-syan-image-picker": "0.5.3",
     "react-native-webview": "~11.14.3",
-    "taro-lottie": "0.0.2"
+    "taro-lottie": "^0.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
