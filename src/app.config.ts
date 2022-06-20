@@ -5,6 +5,46 @@
  * @LastEditTime: 2021-08-03 18:57:38
  * @FilePath: /taro-react-native/src/app.config.ts
  */
+
+const tabs = [
+  {
+    iconPath: './assets/iconpark/system.png',
+    selectedIconPath: './assets/iconpark/system_selected.png',
+    pagePath: 'pages/home/index',
+    text: '项目',
+  },
+  {
+    iconPath: './assets/iconpark/cycle.png',
+    selectedIconPath: './assets/iconpark/cycle_selected.png',
+    pagePath: 'pages/global/index',
+    text: '全局',
+  },
+  {
+    iconPath: './assets/iconpark/components.png',
+    selectedIconPath: './assets/iconpark/components_selected.png',
+    pagePath: 'pages/components/index',
+    text: '组件',
+  },
+  {
+    iconPath: './assets/iconpark/ring.png',
+    selectedIconPath: './assets/iconpark/ring_selected.png',
+    pagePath: 'pages/apis/index',
+    text: '接口',
+  },
+  {
+    iconPath: './assets/iconpark/painted-eggshell.png',
+    selectedIconPath: './assets/iconpark/painted-eggshell_selected.png',
+    pagePath: 'pages/explore/index',
+    text: '探索',
+  },
+  {
+    iconPath: './assets/iconpark/user.png',
+    selectedIconPath: './assets/iconpark/user_selected.png',
+    pagePath: 'pages/about/index',
+    text: '关于',
+  },
+]
+
 export default {
   pages: [
     'pages/home/index',
@@ -76,7 +116,12 @@ export default {
     // api 相关 end
     'pages/about/index',
     'pages/about/dep',
+    'pages/about/mini',
+    'pages/about/rn',
     'pages/webview/index',
+    // 探索
+    'pages/explore/index',
+    'pages/explore/lottie/index',
   ],
   window: {
     backgroundTextStyle: 'light',
@@ -87,37 +132,6 @@ export default {
   tabBar: {
     color: '#333333',
     selectedColor: '#6190E8', // 主题色
-    list: [
-      {
-        iconPath: './assets/iconpark/system.png',
-        selectedIconPath: './assets/iconpark/system_selected.png',
-        pagePath: 'pages/home/index',
-        text: '项目',
-      },
-      {
-        iconPath: './assets/iconpark/cycle.png',
-        selectedIconPath: './assets/iconpark/cycle_selected.png',
-        pagePath: 'pages/global/index',
-        text: '全局',
-      },
-      {
-        iconPath: './assets/iconpark/components.png',
-        selectedIconPath: './assets/iconpark/components_selected.png',
-        pagePath: 'pages/components/index',
-        text: '组件',
-      },
-      {
-        iconPath: './assets/iconpark/ring.png',
-        selectedIconPath: './assets/iconpark/ring_selected.png',
-        pagePath: 'pages/apis/index',
-        text: '接口',
-      },
-      {
-        iconPath: './assets/iconpark/user.png',
-        selectedIconPath: './assets/iconpark/user_selected.png',
-        pagePath: 'pages/about/index',
-        text: '关于',
-      },
-    ]
+    list: process.env.TARO_ENV === 'rn' ? tabs : tabs.splice(1)
   }
 }

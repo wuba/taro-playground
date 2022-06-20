@@ -41,7 +41,7 @@ const linkUpdate = {
       loadPage({
         url: 'https://github.com/wuba/taro-playground/releases',
         title: '版本变更',
-        certified: false
+        certified: isRN
       })
     }
   },
@@ -53,7 +53,7 @@ const linkSource = {
     loadPage({
       url: 'https://github.com/wuba/taro-playground',
       title: '项目源码',
-      certified: false
+      certified: isRN
     })
   }
 }
@@ -64,23 +64,41 @@ const linkSite = {
     loadPage({
       url: 'https://docs.taro.zone',
       title: '官方网站',
-      certified: false
+      certified: isRN
     })
   }
 }
 
 const linkWeb = {
-  name: 'H5 Demo',
+  name: 'Web 版本',
   onPress: () => {
     loadPage({
       url: 'https://wuba.github.io/taro-playground/',
-      title: 'H5 Demo',
-      certified: false
+      title: 'Web 版本',
+      certified: isRN
     })
   }
 }
 
-const linksList = isRN ? [linkSource, linkSite, linkWeb, linkPrivacy, linkUpdate] : isWeb ? [linkSource, linkSite, linkWeb, linkUpdate] : [linkSource, linkSite, linkWeb, linkUpdate]
+const linkMini = {
+  name: '小程序版本',
+  onPress: () => {
+    Taro.navigateTo({
+      url: '/pages/about/mini'
+    })
+  }
+}
+
+const linkRn = {
+  name: 'React Native 版本',
+  onPress: () => {
+    Taro.navigateTo({
+      url: '/pages/about/rn'
+    })
+  }
+}
+
+const linksList = isRN ? [linkSource, linkSite, linkRn, linkWeb, linkMini, linkPrivacy, linkUpdate] : isWeb ? [linkSource, linkSite, linkRn, linkMini, linkUpdate] : [linkSource, linkSite, linkRn, linkWeb, linkUpdate]
 export default class Index extends Component<any, any> {
   render() {
     return (
