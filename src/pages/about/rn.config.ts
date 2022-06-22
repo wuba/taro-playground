@@ -1,3 +1,3 @@
 export default {
-  navigationBarTitleText: 'RN版本',
+  navigationBarTitleText: 'React Native',
 }

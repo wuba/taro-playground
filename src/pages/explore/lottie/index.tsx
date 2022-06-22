@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import { View } from '@tarojs/components'
+import Insignia from '@/components/insignia/insignia'
 import './index.scss'
 import LottieView, { LottieViewType } from 'taro-lottie'
 import lottieData1 from './animation1.json'
@@ -26,6 +27,7 @@ export default class Lottie extends Component {
   render () {
     return (
       <View className='lottie'>
+        <Insignia github='https://github.com/zhiqingchen/taro-lottie' title='Taro Lottie' />
         <LottieView
           ref={ animation => {
             this.animation1 = animation;

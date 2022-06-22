@@ -1,3 +1,3 @@
 export default {
-  navigationBarTitleText: '小程序版本',
+  navigationBarTitleText: '小程序',
 }

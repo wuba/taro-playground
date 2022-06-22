@@ -1,0 +1,1 @@
+export const hairlineWidth = '0.5px'

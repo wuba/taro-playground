@@ -1,7 +1,10 @@
-import { Image } from '@tarojs/components'
+import { Image, View } from '@tarojs/components'
+import { useRouter } from '@tarojs/taro'
 
 import './mini.scss'
 
 export default function Mini () {
-  return <Image className='mini-image' src="https://pic3.58cdn.com.cn/nowater/frs/n_v23ec2613515c6458aaa44f01d459cea8b.jpg"/>
+  const { params={} } = useRouter()
+  const { src } = params
+  return src ? <View className='mini-container'><Image className='mini-image' src={decodeURIComponent(src)} /></View> : null
 }
