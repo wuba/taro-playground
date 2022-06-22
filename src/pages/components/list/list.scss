@@ -8,7 +8,7 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 15px 30px;
-    line-height: 1;
+    line-height: 24px;
     &-text {
       color: $color-text-paragraph;
       font-size: 24px;
@@ -40,6 +40,7 @@
       justify-content: center;
     }
     &-title {
+      line-height: 84px;
       margin: auto 0;
       font-size: 30px;
       color: $color-text-paragraph;

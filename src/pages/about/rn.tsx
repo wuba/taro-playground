@@ -13,6 +13,6 @@ export default function RNView() {
     {android && <View className="rn-text">Android</View>}
     {android && <Image className="rn-image" src={decodeURIComponent(android)} />}
     {ios && <View className="rn-text">iOS</View>}
-    {ios && <Image className="rn-image" src={decodeURIComponent(ios)}/>}
+    {ios && <Image className="rn-image" src={decodeURIComponent(ios)} />}
   </View>
 }

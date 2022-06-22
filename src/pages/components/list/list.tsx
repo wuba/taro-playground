@@ -34,7 +34,7 @@ export default function List({ data, title, desc, handleClick, handleItemClick, 
     <View className="list-header">
       <Text className="list-header-text">{title}</Text>
       <Text
-         className="list-header-text"
+        className="list-header-text"
         onClick={handleClick}
       >{desc}
       </Text>
