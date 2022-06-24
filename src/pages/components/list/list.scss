@@ -21,6 +21,9 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    &-hover {
+      background-color: #fafafa;
+    }
     &-img {
       height: 40px;
       width: 40px;

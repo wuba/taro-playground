@@ -56,7 +56,11 @@ export default function List({ data, title, desc, handleClick, handleItemClick, 
             />}
             <View className="list-item-body" style={{ borderBottomWidth: index != length - 1 ? hairlineWidth : 0 }}>
               <View className="list-item-content">
-                <Text className="list-item-title">{title}</Text>
+                <Text
+                  className="list-item-title"
+                  //@ts-ignore
+                  ellipsizeMode="tail"
+                  numberOfLines={1} >{title}</Text>
               </View>
               {showInfo && <Image
                 src={infoPng}
