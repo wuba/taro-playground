@@ -2645,6 +2645,14 @@
     component-type "^1.2.1"
     join-component "^1.1.0"
 
+"@shopify/react-native-skia@^0.1.133":
+  version "0.1.133"
+  resolved "http://ires.58corp.com/repository/58npm/@shopify/react-native-skia/-/react-native-skia-0.1.133.tgz#9ed8e2fabdabdbd49ecb9ba2bf403a81bfec906d"
+  integrity sha512-H6s89wEkIWCQHfe3F8qjoEDsVErmkldWlsvLmg+YI60VcllEB8E00s8SUb+h4H//1oSvG/8T+YHLnJJ3qdc3sQ==
+  dependencies:
+    canvaskit-wasm "^0.34.0"
+    react-reconciler "^0.26.2"
+
 "@sideway/address@^4.1.3":
   version "4.1.4"
   resolved "https://registry.yarnpkg.com/@sideway/address/-/address-4.1.4.tgz#03dccebc6ea47fdc226f7d3d1ad512955d4783f0"
@@ -6286,6 +6294,11 @@ caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000844, caniuse-lite@^1.0.30000864, can
   version "1.0.30001344"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001344.tgz#8a1e7fdc4db9c2ec79a05e9fd68eb93a761888bb"
   integrity sha512-0ZFjnlCaXNOAYcV7i+TtdKBp0L/3XEU2MF/x6Du1lrh+SRX4IfzIVL4HNJg5pB2PmFb8rszIGyOvsZnqqRoc2g==
+
+canvaskit-wasm@^0.34.0:
+  version "0.34.1"
+  resolved "http://ires.58corp.com/repository/58npm/canvaskit-wasm/-/canvaskit-wasm-0.34.1.tgz#dc8a4c0378e92d9541be8b9dd1c4abe69354cf4d"
+  integrity sha512-8qdrp0RO8wRUGTpn2JyfbBxsc5auSSTcHu4p2aazbmL7n15PzSpuZR5TKIg8xuVqqezclzLY2x/HEDSAuxmIxQ==
 
 capture-stack-trace@^1.0.0:
   version "1.0.1"
@@ -15891,6 +15904,15 @@ react-reconciler@0.27.0:
     loose-envify "^1.1.0"
     scheduler "^0.21.0"
 
+react-reconciler@^0.26.2:
+  version "0.26.2"
+  resolved "http://ires.58corp.com/repository/58npm/react-reconciler/-/react-reconciler-0.26.2.tgz#bbad0e2d1309423f76cf3c3309ac6c96e05e9d91"
+  integrity sha512-nK6kgY28HwrMNwDnMui3dvm3rCFjZrcGiuwLc5COUipBK5hWHLOxMJhSnSomirqWwjPBJKV1QcbkI0VJr7Gl1Q==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    scheduler "^0.20.2"
+
 react-refresh@0.11.0:
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.11.0.tgz#77198b944733f0f1f1a90e791de4541f9f074046"
@@ -19238,10 +19260,8 @@ watchpack@^1.7.4:
   resolved "https://registry.yarnpkg.com/watchpack/-/watchpack-1.7.5.tgz#1267e6c55e0b9b5be44c2023aed5437a2c26c453"
   integrity sha512-9P3MWk6SrKjHsGkLT2KHXdQ/9SNkyoJbabxnKOoJepsvJjJG8uYTR3yTPxPQvNDI3w4Nz1xnE0TLHK4RIVe/MQ==
   dependencies:
-    chokidar "^3.4.1"
     graceful-fs "^4.1.2"
     neo-async "^2.5.0"
-    watchpack-chokidar2 "^2.0.1"
   optionalDependencies:
     chokidar "^3.4.1"
     watchpack-chokidar2 "^2.0.1"
