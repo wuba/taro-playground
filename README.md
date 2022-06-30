@@ -234,6 +234,11 @@ The source code is customized for the Taro playground application and is for ref
 1. Customize your app id, app name, app launcher, etc.
 2. Remove the attention block in ios/Podfile.
 
+## For React Native repo debugging
+
+0. Change appName to `taroDemo`, which used in `AppRegistry.registerComponent(appName, () => App);`.
+1. Generate a QR code with content `taro://${ip}:${port}` or shaking the phone and change bundle Location.
+
 ## Contributing
 
 We sincerely hope that developers can provide valuable comments and suggestions, and developers can provide feedback on suggestions and problems by submitting PR or Issue.
