@@ -25,6 +25,11 @@ PODS:
     - ExpoModulesCore
   - EXFont (10.1.0):
     - ExpoModulesCore
+  - EXGL (11.3.0):
+    - EXGL_CPP
+    - ExpoModulesCore
+  - EXGL_CPP (11.3.0):
+    - React-jsi
   - EXImageLoader (3.2.0):
     - ExpoModulesCore
     - React-Core
@@ -539,6 +544,8 @@ DEPENDENCIES:
   - EXErrorRecovery (from `../node_modules/expo-error-recovery/ios`)
   - EXFileSystem (from `../node_modules/expo-file-system/ios`)
   - EXFont (from `../node_modules/expo-font/ios`)
+  - EXGL (from `../node_modules/expo-gl/ios`)
+  - EXGL_CPP (from `../node_modules/expo-gl-cpp/cpp`)
   - EXImageLoader (from `../node_modules/expo-image-loader/ios`)
   - EXLocation (from `../node_modules/expo-location/ios`)
   - Expo (from `../node_modules/expo/ios`)
@@ -666,6 +673,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/expo-file-system/ios"
   EXFont:
     :path: "../node_modules/expo-font/ios"
+  EXGL:
+    :path: "../node_modules/expo-gl/ios"
+  EXGL_CPP:
+    :path: "../node_modules/expo-gl-cpp/cpp"
   EXImageLoader:
     :path: "../node_modules/expo-image-loader/ios"
   EXLocation:
@@ -798,6 +809,8 @@ SPEC CHECKSUMS:
   EXErrorRecovery: 3ce46e5d42e53c0371ff048a7f0cbc959968ef4a
   EXFileSystem: 2aa2d9289f84bca9532b9ccbd81504fa31eb1ded
   EXFont: 04235cc22e6fef86028feb67db452978dc6f240f
+  EXGL: 074974d1476362dbe5c396df5353d44bb429ac7d
+  EXGL_CPP: a28286ff4b6a8f36db881a9c88746bf736543b45
   EXImageLoader: b88e053d760f85a82405b1db2de4abf11978fc9f
   EXLocation: 013b5d07cca26c2d15d998766322e70b7a228b57
   Expo: 64d52669fa3b9342919b5b44b2b4f15f19b0cf76

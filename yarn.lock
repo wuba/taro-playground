@@ -9198,6 +9198,19 @@ expo-font@~10.1.0:
   dependencies:
     fontfaceobserver "^2.1.0"
 
+expo-gl-cpp@~11.3.0:
+  version "11.3.0"
+  resolved "https://registry.yarnpkg.com/expo-gl-cpp/-/expo-gl-cpp-11.3.0.tgz#6bd02908b24ef4a4c02b493575afa6fd0ccb31db"
+  integrity sha512-njL/slKqF/9WV6ykxUd9O6t9Qdz19M4NWfXT4ZvihrJVDM5rTOuZ3z7WP7C9TNq3GOQEso8dPhp5AVlXNw/6Ug==
+
+expo-gl@~11.3.0:
+  version "11.3.0"
+  resolved "https://registry.yarnpkg.com/expo-gl/-/expo-gl-11.3.0.tgz#301116285421a9dd3df84955730934aafa0a27d4"
+  integrity sha512-zQN7pxqxb1cvTcN1AIqKj9XZisjz8lkCZ09YLRvPVIl4SEDtXL/WHW2nrBayhpTVjte9Iv6hwuhG3EVkPLhOAA==
+  dependencies:
+    expo-gl-cpp "~11.3.0"
+    invariant "^2.2.4"
+
 expo-image-loader@~3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/expo-image-loader/-/expo-image-loader-3.2.0.tgz#d98b021660edef7243f7c5ec011b8d0545626d41"
