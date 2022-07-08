@@ -62,18 +62,23 @@ export default function List({ data, title, desc, handleClick, handleItemClick, 
                   ellipsizeMode="tail"
                   numberOfLines={1} >{title}</Text>
               </View>
-              {showInfo && <Image
-                src={infoPng}
+              {showInfo && <View
                 onClick={(e) => {
                   e.stopPropagation?.()
                   handleInfoClick?.(data, index)
                 }}
-                className='list-item-arrow'
-              ></Image>}
-              {showRightArrow && <Image
+                className='list-item-info'
+              ><Image
+                src={infoPng}
+                className='list-item-icon'
+              ></Image></View>
+              }
+              {showRightArrow && <View
+                className='list-item-box'
+              ><Image
                 src={rightPng}
-                className='list-item-arrow'
-              ></Image>}
+                className='list-item-icon'
+              ></Image></View>}
             </View>
           </View>
         </Fragment>

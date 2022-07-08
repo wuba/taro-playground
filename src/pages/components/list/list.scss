@@ -48,10 +48,16 @@
       font-size: 30px;
       color: $color-text-paragraph;
     }
-    &-arrow {
+    &-box {
+      padding: 18px 0;
+    }
+    &-info {
+      padding: 18px 15px;
+    }
+    &-icon {
+      margin: auto;
       height: 40px;
       width: 40px;
-      margin: auto 0 auto 10px;
     }
   }
 }
