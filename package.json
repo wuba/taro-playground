@@ -68,6 +68,7 @@
     "@tarojs/taro": "3.5.0-beta.3",
     "@tarojs/taro-h5": "3.5.0-beta.3",
     "@tarojs/taro-rn": "3.5.0-beta.3",
+    "canvaskit-wasm": "^0.35.0",
     "expo": "~45.0.2",
     "expo-av": "~11.2.3",
     "expo-barcode-scanner": "~11.3.0",
