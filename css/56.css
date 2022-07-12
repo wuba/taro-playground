@@ -1,1 +1,1 @@
-@charset "UTF-8";.webview-url{text-align:center;margin:0 0 .75rem;padding:5rem .75rem;background-color:#fff;color:#6190e8;font-size:.8rem}.webview-tip{text-align:center;color:#999}
+.rn-container{display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.rn-image{width:12.5rem;height:12.5rem;margin:0 auto}.rn-text{text-align:center;font-size:1rem;margin:.75rem auto}
