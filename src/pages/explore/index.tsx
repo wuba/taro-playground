@@ -51,7 +51,7 @@ const uiList = [{
 
 const playList = [{
   data: {
-    page: '/pages/explore/lottie/index',
+    page: '/pages/explore/animate/lottie/index',
   },
   title: 'Lottie',
   showRightArrow: true,

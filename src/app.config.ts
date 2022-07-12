@@ -120,12 +120,19 @@ const pages = [
   'pages/webview/index',
   // 探索
   'pages/explore/index',
-  'pages/explore/lottie/index',
 ]
+
+const subpackages = [{
+  root: 'pages/explore/animate',
+  pages: [
+    "lottie/index",
+  ]
+}]
 
 export default {
   // entryPagePath: 'pages/home/index',
   pages: process.env.TARO_ENV === 'rn' ? pages : pages.splice(1),
+  subpackages,
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',

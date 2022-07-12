@@ -127,6 +127,7 @@
     "webpack": "4.46.0"
   },
   "resolutions": {
-    "@types/react": "17.0.45"
+    "@types/react": "17.0.45",
+    "webpack-sources": "1.4.3"
   }
 }
