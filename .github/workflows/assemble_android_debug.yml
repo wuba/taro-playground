@@ -19,9 +19,9 @@ env:
   # 打包类型
   BUILD_TYPE: debug
   # 版本名称
-  VERSION_NAME: 1.6.0
+  VERSION_NAME: 1.6.1
   # 版本号
-  VERSION_CODE: 16000
+  VERSION_CODE: 16100
   # 密钥库文件
   KEYSTORE_FILE: debug.keystore
   # 密钥库口令
