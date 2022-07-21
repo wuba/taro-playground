@@ -8,8 +8,8 @@
 import { Component } from 'react'
 import Taro from '@tarojs/taro';
 import { View, Image, Text } from '@tarojs/components';
-import { version as taroVersion } from '@tarojs/taro/package.json';
-import { version as rnVersion } from 'react-native/package.json';
+import taroVersion from '@tarojs/taro/package.json';
+import rnVersion from 'react-native/package.json';
 import { isWeb, isRN, loadWeb, loadMini, loadRn } from "@/utils/index";
 import List from '@/components/list/list';
 import logoPng from "@/assets/common/taro_logo.jpg";
@@ -129,9 +129,9 @@ export default class Index extends Component<any, any> {
           })
         }}
         >
-          <Text className='page-footer-text'>Taro: {taroVersion}, React Native: {rnVersion}, Taro Playground: {playgroundVersion}</Text>
+          <Text className='page-footer-text'>Taro: {taroVersion.version}, React Native: {rnVersion.version}, Taro Playground: {playgroundVersion}</Text>
         </View> : <View className='page-footer'>
-          <Text className='page-footer-text'>Taro: {taroVersion}</Text>
+          <Text className='page-footer-text'>Taro: {taroVersion.version}</Text>
         </View>}
       </View>
     )
