@@ -47,7 +47,7 @@ const config = {
     }
   },
   framework: 'react',
-  compiler: 'webpack4',
+  compiler: 'webpack5',
   mini: {
     postcss: {
       pxtransform: {
@@ -72,7 +72,7 @@ const config = {
     }
   },
   h5: {
-    publicPath: '/taro-playground/',
+    publicPath: '/',
     staticDirectory: 'static',
     postcss: {
       autoprefixer: {
