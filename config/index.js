@@ -72,7 +72,7 @@ const config = {
     }
   },
   h5: {
-    publicPath: '/',
+    publicPath: '/taro-playground/',
     staticDirectory: 'static',
     postcss: {
       autoprefixer: {
