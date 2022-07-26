@@ -19,8 +19,6 @@ PODS:
     - ExpoModulesCore
   - EXConstants (13.1.1):
     - ExpoModulesCore
-  - EXErrorRecovery (3.1.0):
-    - ExpoModulesCore
   - EXFileSystem (14.0.0):
     - ExpoModulesCore
   - EXFont (10.1.0):
@@ -476,13 +474,13 @@ PODS:
     - React-Core
   - RNCClipboard (1.5.1):
     - React-Core
-  - RNCMaskedView (0.2.6):
+  - RNCMaskedView (0.2.7):
     - React-Core
   - RNCPicker (2.2.1):
     - React-Core
   - RNDeviceInfo (8.4.9):
     - React-Core
-  - RNFlashList (1.1.0):
+  - RNFlashList (1.2.0):
     - React-Core
   - RNGestureHandler (1.10.3):
     - React-Core
@@ -543,7 +541,6 @@ DEPENDENCIES:
   - EXBrightness (from `../node_modules/expo-brightness/ios`)
   - EXCamera (from `../node_modules/expo-camera/ios`)
   - EXConstants (from `../node_modules/expo-constants/ios`)
-  - EXErrorRecovery (from `../node_modules/expo-error-recovery/ios`)
   - EXFileSystem (from `../node_modules/expo-file-system/ios`)
   - EXFont (from `../node_modules/expo-font/ios`)
   - EXGL (from `../node_modules/expo-gl/ios`)
@@ -670,8 +667,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/expo-camera/ios"
   EXConstants:
     :path: "../node_modules/expo-constants/ios"
-  EXErrorRecovery:
-    :path: "../node_modules/expo-error-recovery/ios"
   EXFileSystem:
     :path: "../node_modules/expo-file-system/ios"
   EXFont:
@@ -811,7 +806,6 @@ SPEC CHECKSUMS:
   EXBrightness: 2a5e81b350838cad814730c10ab845c7afc45a11
   EXCamera: 2cbc8206cb520562c1527fe565aa9f00df8e5e8f
   EXConstants: fdbe52259365b6a6faaa5e99a3b82cfa6bc2eb61
-  EXErrorRecovery: 3ce46e5d42e53c0371ff048a7f0cbc959968ef4a
   EXFileSystem: 2aa2d9289f84bca9532b9ccbd81504fa31eb1ded
   EXFont: 04235cc22e6fef86028feb67db452978dc6f240f
   EXGL: 074974d1476362dbe5c396df5353d44bb429ac7d
@@ -877,10 +871,10 @@ SPEC CHECKSUMS:
   ReactCommon: 095366164a276d91ea704ce53cb03825c487a3f2
   RNCAsyncStorage: 6bd5a7ba3dde1c3facba418aa273f449bdc5437a
   RNCClipboard: 41d8d918092ae8e676f18adada19104fa3e68495
-  RNCMaskedView: c298b644a10c0c142055b3ae24d83879ecb13ccd
+  RNCMaskedView: cb9670ea9239998340eaab21df13fa12a1f9de15
   RNCPicker: cb57c823d5ce8d2d0b5dfb45ad97b737260dc59e
   RNDeviceInfo: 4944cf8787b9c5bffaf301fda68cc1a2ec003341
-  RNFlashList: 031c182b95ead44fd0715f6029a744cd5e10d51f
+  RNFlashList: adcc3a39aa72012852681bc439ccb4108c8c4448
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
   RNReanimated: 5c8c17e26787fd8984cd5accdc70fef2ca70aafd
   RNScreens: 4a1af06327774490d97342c00aee0c2bafb497b7
