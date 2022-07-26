@@ -23,7 +23,8 @@ const CIPluginOpt = {
 }
 
 const plugins = process.env.TARO_ENV === 'weapp' ? [
-  [ "@tarojs/plugin-mini-ci", CIPluginOpt ]
+  [ "@tarojs/plugin-mini-ci", CIPluginOpt ],
+  [ "@tarojs/plugin-html"]
 ] : []
 
 const config = {

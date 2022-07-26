@@ -1,11 +1,7 @@
-import { View, Text } from '@tarojs/components'
-import { isWeb } from '@/utils/index'
-
-function JSONTree(props) {
-  const text = isWeb ? JSON.stringify(props.data, undefined, 2) : JSON.stringify(props.data, undefined, 2).replace(/[ ]/g, '&nbsp;')
-  return <Text decode>{text}</Text>
-}
+import ReactJson from 'react-json-view'
+import { View } from '@tarojs/components'
+// import { isWeb } from '@/utils/index'
 
 export default (props) => {
-  return ((props.data && Object.keys(props.data).length > 0) ? <JSONTree data={props.data} /> : <View></View>)
+  return ((props.data && Object.keys(props.data).length > 0) ? <ReactJson src={props.data} enableClipboard={false} displayObjectSize={false} quotesOnKeys={false} indentWidth={2} displayDataTypes={false} name={null} /> : <View></View>)
 }
