@@ -38,7 +38,7 @@ const caseList = [{
 const uiList = [{
   data: {
     bundle: `${JSDELIVR}/NervJS/taro-ui@v3.1.0-beta.2-rn/packages/taro-ui-demo-rn/release/${platform}/main.js`,
-    repository: `${GITHUB}/wuba/Taro-Mortgage-Calculator`,
+    repository: `${GITHUB}/NervJS/taro-ui`,
     title: 'Taro UI Demo',
     web: 'https://taro-ui.jd.com/h5/index.html',
     mp: 'https://pic8.58cdn.com.cn/nowater/frs/n_v2c397331051c8499cba39f430d364ccb7.jpeg'

@@ -99,7 +99,8 @@ const linkRn = {
   }
 }
 
-const linksList = isRN ? [linkSource, linkSite, linkRn, linkWeb, linkMini, linkPrivacy, linkUpdate] : isWeb ? [linkSource, linkSite, linkRn, linkMini, linkUpdate] : [linkSource, linkSite, linkRn, linkWeb, linkUpdate]
+const versionList = isRN ? [linkRn, linkWeb, linkMini, linkUpdate] : isWeb ? [linkRn, linkMini, linkUpdate] : [linkRn, linkWeb, linkUpdate]
+const linksList = isRN ? [linkSource, linkSite, linkPrivacy] : [linkSource, linkSite]
 export default class Index extends Component<any, any> {
   render() {
     return (
@@ -114,6 +115,18 @@ export default class Index extends Component<any, any> {
           </View>
         </View>
         <List
+          title='版本信息'
+          data={versionList.map(item => {
+            return {
+              title: item.name,
+            }
+          })}
+          handleItemClick={ (_data, index) => {
+            versionList[index].onPress()
+          }}
+        />
+        <List
+          title='相关链接'
           data={linksList.map(item => {
             return {
               title: item.name,
