@@ -12,3 +12,14 @@
 page {
   background-color: #efefef;
 }
+
+.h5-span {
+  display: inline-block;
+  word-break: break-all;
+}
+
+// 小程序 & h5
+
+.icon-container {
+  display: none !important;
+}

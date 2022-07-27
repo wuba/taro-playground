@@ -6,5 +6,8 @@ module.exports = {
       framework: 'react',
       ts: true
     }]
+  ],
+  plugins: [
+    'react-native-reanimated/plugin',
   ]
 }

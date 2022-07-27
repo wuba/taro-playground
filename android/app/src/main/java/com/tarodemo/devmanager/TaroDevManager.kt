@@ -1,8 +1,9 @@
 package com.tarodemo.devmanager
 
 import com.facebook.react.ReactInstanceManager
+import com.facebook.react.bridge.ReactMarker
+import com.facebook.react.bridge.ReactMarkerConstants
 import com.facebook.react.bridge.UiThreadUtil
-import com.facebook.react.devsupport.interfaces.DevSupportManager
 import com.facebook.react.packagerconnection.PackagerConnectionSettings
 import com.tarodemo.MainApplication
 import java.io.File
@@ -12,16 +13,28 @@ object TaroDevManager {
     private const val JS_BUNDLE_FILE_NAME = "ReactNativeDevBundle.js"
     private const val JS_BUNDLE_WITH_TAG_BRIDGE_FILE_NAME = "BridgeReactNativeDevBundle.js"
 
+    init {
+        ReactMarker.addListener { name, _, _ ->
+            // reset debug server host and downloaded bundle file before create ReactInstanceManager
+            if (name == ReactMarkerConstants.GET_REACT_INSTANCE_MANAGER_START) {
+                reset()
+            }
+        }
+    }
+
     private val application = MainApplication.getInstance()
     private val packagerConnectionSettings = PackagerConnectionSettings(application)
 
-    @JvmStatic
-    val reactNativeHost: TaroReactNativeHost = TaroReactNativeHost(application)
-    val reactInstanceManager: ReactInstanceManager get() = reactNativeHost.reactInstanceManager
-    val devSupportManager: DevSupportManager get() = reactInstanceManager.devSupportManager
+    private val reactNativeHost = application.reactNativeHost
+    private val reactInstanceManager get() = reactNativeHost.reactInstanceManager
+    private val devSupportManager get() = reactInstanceManager.devSupportManager
 
     var sourceCodeScriptUrl = ""
         private set
+
+    @JvmStatic
+    fun init() {
+    }
 
     fun loadBundleByBundleUrl(host: String, jsMainModulePath: String) {
         sourceCodeScriptUrl = ""
@@ -36,7 +49,7 @@ object TaroDevManager {
             runOnUiThread {
                 runCatching {
                     ReactInstanceManager::class.java.getDeclaredMethod(
-                            "onJSBundleLoadedFromServer"
+                        "onJSBundleLoadedFromServer"
                     ).apply {
                         isAccessible = true
                     }.invoke(reactInstanceManager)
@@ -45,15 +58,15 @@ object TaroDevManager {
         }
     }
 
-    fun setDebugHttpHost(host: String) {
+    private fun setDebugHttpHost(host: String) {
         packagerConnectionSettings.debugServerHost = host
     }
 
-    fun setJsMainModuleName(jsMainModulePath: String) {
-        reactNativeHost.jsMainModulePath = jsMainModulePath
+    private fun setJsMainModuleName(jsMainModulePath: String) {
+        application.taroReactNativeHost.jsMainModulePath = jsMainModulePath
     }
 
-    fun reset() {
+    private fun reset() {
         // remove downloaded js bundle file
         removeDownloadedJsBundleFile()
         // apply empty debug server
@@ -72,7 +85,7 @@ object TaroDevManager {
         runOnUiThread { reactNativeHost.clear() }
     }
 
-    fun reloadJS() {
+    private fun reloadJS() {
         runOnUiThread { devSupportManager.handleReloadJS() }
     }
 

@@ -1,11 +1,12 @@
 @import "../../styles/variables.scss";
 
 .page {
-  padding: 40px 32px 100px;
+  padding: 40px 0 100px 0;
 }
 .page-header {
   background-color: #fff;
   padding: 30px 40px;
+  margin: 0 30px;
   border-radius: 10px;
   text-align: center;
   &-img {
@@ -21,34 +22,8 @@
   }
 }
 
-.page-links {
-  margin-top: 40px;
-  background-color: #fff;
-  border-radius: 10px;
-  &-item {
-    padding: 0 40px;
-    height: 100px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    &-text {
-      font-size: $font-size-base;
-    }
-    &-arrow {
-      height: 36px;
-      width: 36px;
-    }
-  }
-  &-sep {
-    height: 1px;
-    width: 100%;
-    background-color: $color-grey-4;
-  }
-}
-
 .page-footer {
-  margin-top: 40px;
+  margin-top: 20px;
   align-items: center;
   text-align: center;
   &-text {

@@ -1,0 +1,20 @@
+.insignia {
+  &-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 30px;
+    border-bottom: #eaeaea solid 2px;
+  }
+  &-img {
+    margin: 30px 10px;
+    width: 60px;
+    height: 60px;
+  }
+  &-sep {
+    margin: 35px 10px;
+    height: 50px;
+    width: 2px;
+    background-color: #ccc;
+  }
+}

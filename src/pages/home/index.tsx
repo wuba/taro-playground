@@ -1,4 +1,4 @@
-import { Component, Fragment } from "react";
+import { Component } from "react";
 import Taro from "@tarojs/taro";
 import { NativeModules, Linking } from "@/platform/index";
 import queryString from "query-string";
@@ -6,6 +6,7 @@ import { version as taroVersion } from '@tarojs/taro/package.json';
 import { version as rnVersion } from 'react-native/package.json';
 import { View, Text, Image, Input } from "@tarojs/components";
 import { hadlePermissionsDeny, isRN } from "@/utils/index";
+import List from "@/components/list/list";
 import logoPng from "@/assets/common/taro_logo.jpg";
 import scanPng from "@/assets/iconpark/scan-code.png";
 import appStorePng from "@/assets/iconpark/app-store.png";
@@ -79,18 +80,29 @@ export default class Index extends Component<any, any> {
           console.log("request success: ", res);
           if (res?.data?.status === 200) {
             NativeModules.RNDevManager.loadBundleByBundleUrl(url, path);
+          } else {
+            Taro.showModal({
+              title: "返回内容有误",
+              content: JSON.stringify(res?.data),
+              showCancel: false,
+            });
           }
         })
         .catch(err => {
           console.log("request error: ", err);
-          Taro.showToast({
-            title: "packager Not Available",
-            icon: "none"
+          Taro.showModal({
+            title: "加载失败",
+            content: err.message || JSON.stringify(err),
+            showCancel: false,
           });
         });
-    } catch (error) {
-      console.log("加载 bundle 错误：", error);
-      Taro.showToast({ title: "哎呀, 加载失败了 -_-!", icon: "none" });
+    } catch (err) {
+      console.log("加载 bundle 错误：", err);
+      Taro.showModal({
+        title: "加载失败",
+        content: err.message,
+        showCancel: false,
+      });
     }
   };
 
@@ -246,88 +258,45 @@ export default class Index extends Component<any, any> {
             />
           </View>
         </View>}
-        {localList.length > 0 && (
-          <View className="bundle">
-            <View className="bundle-control">
-              <Text>Metro Server</Text>
-              <Text
-                onClick={() => {
-                  this._clearBundles(BUNDLES_KEY);
-                }}
-              >
-                Clear
-              </Text>
-            </View>
-            <Divider />
-            {localList.map((item, index) => {
-              return (
-                <Fragment key={index}>
-                  <View
-                    className="bundle-item"
-                    onClick={() => {
-                      this._loadBundleFromLocalServer(item);
-                    }}
-                  >
-                    <Image
-                      className="bundle-item-img-small"
-                      src={serverPng}
-                    />
-                    <View className="bundle-item-content">
-                      <Text className="bundle-item-title">{item}</Text>
-                    </View>
-                  </View>
-                  {index != localList.length - 1 && <Divider />}
-                </Fragment>
-              );
-            })}
-          </View>
-        )}
-        {remoteList.length > 0 && (
-          <View className="bundle">
-            <View className="bundle-control">
-              <Text>Remote Bundle</Text>
-              <Text
-                onClick={() => {
-                  this._clearBundles(REMOTE_BUNDLES_KEY);
-                }}
-              >
-                Clear
-              </Text>
-            </View>
-            <Divider />
-            {remoteList.map((item, index) => {
-              const defaultName = 'Untitled Bundle'
-              const { name=defaultName, url, logo=appStorePng } = regRemoteRelease.test(item) ? queryString.parseUrl(item).query : { url: item };
-              return (
-                <Fragment key={index}>
-                  <View
-                    className="bundle-item"
-                    onClick={() => {
-                      this._loadBundelFromRemoteUrl(url);
-                    }}
-                  >
-                    <Image
-                      className="bundle-item-img"
-                      src={logo || appStorePng}
-                    />
-                    <View className="bundle-item-content">
-                      <Text className="bundle-item-title">{name || defaultName}</Text>
-                      <Text className="bundle-item-des">{url}</Text>
-                    </View>
-                  </View>
-                  {index != remoteList.length - 1 && <Divider />}
-                </Fragment>
-              );
-            })}
-          </View>
-        )}
-        {isRN && <Text className="statement">Supportted Taro Versions：3.3.10 ~ {taroVersion}</Text>}
-        {isRN &&<Text className="statement">React Native Version：{rnVersion}</Text>}
+        <List
+          data={localList.map(item => ({
+            image: serverPng,
+            title: item,
+            data: item
+          }))}
+          title="Metro Server"
+          desc="Clear"
+          handleClick={() => {
+            this._clearBundles(BUNDLES_KEY);
+          }}
+          handleItemClick={data => {
+            this._loadBundleFromLocalServer(data);
+          }}
+        />
+        <List
+          data={remoteList.map(item => {
+              const { name=null, url, logo=appStorePng } = regRemoteRelease.test(item) ? queryString.parseUrl(item).query : { url: item };
+              return {
+                image: logo || appStorePng,
+                title: name || url,
+                data: url,
+              }
+            })
+          }
+          title="Remote Server"
+          desc="Clear"
+          handleClick={() => {
+            this._clearBundles(REMOTE_BUNDLES_KEY);
+          }}
+          handleItemClick={(data) => {
+            this._loadBundelFromRemoteUrl(data);
+          }}
+        />
+        {isRN && <View className="statement">
+          <Text className="statement-text">Supportted Taro Versions：3.5.0 ~ {taroVersion}</Text>
+          <Text className="statement-text">React Native Version：{rnVersion}</Text>
+        </View>}
       </View>
     );
   }
 }
-
-const Divider = () => {
-  return <View style={{ height: 1, backgroundColor: "#E5E5E5" }} />;
-};

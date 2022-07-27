@@ -15,18 +15,18 @@ env:
   # 应用的application_id
   APP_ID: ${{secrets.APP_ID}}
   APP_NAME: Taro
+  VERSION_NUMBER: 1.6.1
   BUILD_TYPE: debug
-  IOS_VERSION_NUMBER: 1.4.10
-  IOS_TEAM_ID: ${{secrets.TEAM_ID}}
-  IOS_PROVISIONING_PROFILE_SPECIFIER: ${{secrets.DEBUG_PROVISIONING_PROFILE_SPECIFIER}}
-  IOS_CODE_SIGN_IDENTITY: Apple Development
-  IOS_SIGNING_CERTIFICATE_P12_DATA: ${{secrets.DEBUG_SIGNING_CERTIFICATE_P12_DATA}}
-  IOS_SIGNING_CERTIFICATE_PASSWORD: ${{secrets.DEBUG_SIGNING_CERTIFICATE_PASSWORD}}
-  IOS_PROVISIONING_PROFILE_DATA: ${{secrets.DEBUG_PROVISIONING_PROFILE_DATA}}
+  TEAM_ID: ${{secrets.TEAM_ID}}
+  PROVISIONING_PROFILE_SPECIFIER: ${{secrets.DEBUG_PROVISIONING_PROFILE_SPECIFIER}}
+  CODE_SIGN_IDENTITY: Apple Development
+  SIGNING_CERTIFICATE_P12_DATA: ${{secrets.DEBUG_SIGNING_CERTIFICATE_P12_DATA}}
+  SIGNING_CERTIFICATE_PASSWORD: ${{secrets.DEBUG_SIGNING_CERTIFICATE_PASSWORD}}
+  PROVISIONING_PROFILE_DATA: ${{secrets.DEBUG_PROVISIONING_PROFILE_DATA}}
 
 jobs:
   assemble:
-    runs-on: macos-11
+    runs-on: macos-12
     steps:
       - name: Checkout Project
         uses: actions/checkout@v2
@@ -63,30 +63,28 @@ jobs:
           yarn build:rn --platform ios
       - name: Install pods
         run: cd ios && pod update --no-repo-update
-      - name: Change react-native-xcode.sh
-        run: |
-          cd node_modules/react-native/scripts
-          echo "exit 0;">react-native-xcode.sh
       - name: Import signing certificate
         env:
-          SIGNING_CERTIFICATE_P12_DATA: ${{ env.IOS_SIGNING_CERTIFICATE_P12_DATA }}
-          SIGNING_CERTIFICATE_PASSWORD: ${{ env.IOS_SIGNING_CERTIFICATE_PASSWORD }}
+          SIGNING_CERTIFICATE_P12_DATA: ${{ env.SIGNING_CERTIFICATE_P12_DATA }}
+          SIGNING_CERTIFICATE_PASSWORD: ${{ env.SIGNING_CERTIFICATE_PASSWORD }}
         run: |
           exec .github/scripts/import-certificate.sh
       - name: Import provisioning profile
         env:
-          PROVISIONING_PROFILE_DATA: ${{ env.IOS_PROVISIONING_PROFILE_DATA }}
+          PROVISIONING_PROFILE_DATA: ${{ env.PROVISIONING_PROFILE_DATA }}
         run: |
           exec .github/scripts/import-profile.sh
       - name: Build app
         env:
+          SKIP_BUNDLING: 1
           FL_APP_IDENTIFIER: ${{ env.APP_ID }}
           FL_UPDATE_PLIST_DISPLAY_NAME: ${{ env.APP_NAME }}
           FL_UPDATE_PLIST_PATH: taroDemo/Info.plist
-          FL_VERSION_NUMBER_VERSION_NUMBER: ${{ env.IOS_VERSION_NUMBER }}
-          FL_CODE_SIGN_IDENTITY: ${{ env.IOS_CODE_SIGN_IDENTITY }}
-          FL_PROVISIONING_PROFILE_SPECIFIER: ${{ env.IOS_PROVISIONING_PROFILE_SPECIFIER }}
-          FASTLANE_TEAM_ID: ${{ env.IOS_TEAM_ID }}
+          FL_VERSION_NUMBER_VERSION_NUMBER: ${{ env.VERSION_NUMBER }}
+          FL_BUILD_NUMBER_BUILD_NUMBER: ${{ env.BUILD_NUMBER }}
+          FL_CODE_SIGN_IDENTITY: ${{ env.CODE_SIGN_IDENTITY }}
+          FL_PROVISIONING_PROFILE_SPECIFIER: ${{ env.PROVISIONING_PROFILE_SPECIFIER }}
+          FASTLANE_TEAM_ID: ${{ env.TEAM_ID }}
         run: |
           cd ios
           bundle update

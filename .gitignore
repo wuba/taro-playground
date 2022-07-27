@@ -1,9 +1,5 @@
 dist/
-.temp/
-node_modules/
 key/
-
-# react native
 
 # OSX
 #
@@ -65,7 +61,11 @@ buck-out/
 # Bundle artifact
 *.jsbundle
 
-# CocoaPods
+# Ruby / CocoaPods
 /ios/Pods/
+/vendor/bundle/
 
 /android/app/src/main/java/com/tarodemo/generated
+
+## taro-react-native-release
+!release/**

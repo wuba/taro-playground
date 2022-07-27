@@ -19,17 +19,17 @@ env:
   # 打包类型
   BUILD_TYPE: release
   # 版本名称
-  ANDROID_VERSION_NAME: 1.4.10
+  VERSION_NAME: 1.6.1
   # 版本号
-  ANDROID_VERSION_CODE: 141000
+  VERSION_CODE: 16100
   # 密钥库文件
-  ANDROID_KEYSTORE_FILE: release.keystore
+  KEYSTORE_FILE: release.keystore
   # 密钥库口令
-  ANDROID_KEYSTORE_PASSWORD: ${{secrets.RELEASE_KEYSTORE_PASSWORD}}
+  KEYSTORE_PASSWORD: ${{secrets.RELEASE_KEYSTORE_PASSWORD}}
   # 密钥库别名
-  ANDROID_KEYSTORE_KEY_ALIAS: android
+  KEYSTORE_KEY_ALIAS: android
   # 密钥库别名口令
-  ANDROID_KEYSTORE_KEY_PASSWORD: ${{secrets.RELEASE_KEYSTORE_PASSWORD}}
+  KEYSTORE_KEY_PASSWORD: ${{secrets.RELEASE_KEYSTORE_PASSWORD}}
 
 # 工作流作业
 jobs:
@@ -78,16 +78,12 @@ jobs:
             ${{ runner.os }}-gradle
       - name: Assemble Android ${{ env.BUILD_TYPE }}
         run: |
-          cd ./android && \
-          ./gradlew assemble${{ env.BUILD_TYPE }} \
-            -Papp_id=${{ env.APP_ID }} \
-            -Papp_name='${{ env.APP_NAME }}' \
-            -Pversion_code=${{ env.ANDROID_VERSION_CODE }} \
-            -Pversion_name=${{ env.ANDROID_VERSION_NAME }} \
-            -Pkeystore_file='${{ env.ANDROID_KEYSTORE_FILE }}' \
-            -Pkeystore_password='${{ env.ANDROID_KEYSTORE_PASSWORD }}' \
-            -Pkeystore_key_alias='${{ env.ANDROID_KEYSTORE_KEY_ALIAS }}' \
-            -Pkeystore_key_password='${{ env.ANDROID_KEYSTORE_KEY_PASSWORD }}'
+          sudo apt install -y ruby-bundler
+          cd android
+          bundle update
+          bundle exec fastlane assemble
+        env:
+          KEYSTORE_FILE: ${{ github.workspace }}/android/app/${{ env.KEYSTORE_FILE }}
       - name: Upload Android Products
         uses: actions/upload-artifact@v2
         with:

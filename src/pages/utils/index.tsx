@@ -14,7 +14,7 @@ interface pageType {
   certified?: boolean
 }
 
-export function loadPage({ url, title, right, open, certified = true }: pageType): void {
+export function loadWeb({ url, title, right, open, certified = true }: pageType): void {
   if(isWeb) {
     window.location.href = url
   } else {
@@ -22,6 +22,18 @@ export function loadPage({ url, title, right, open, certified = true }: pageType
       url: `/pages/webview/index?certified=${certified}&title=${title}&link=${encodeURIComponent(url)}${ right ? `&right=${right}` :''}${ open ? `&open=${encodeURIComponent(open)}` :''}`
     })
   }
+}
+
+export function loadMini({ url }) {
+  Taro.navigateTo({
+    url: '/pages/about/mini?src=' + encodeURIComponent(url),
+  })
+}
+
+export function loadRn({ android, ios }) {
+  Taro.navigateTo({
+    url: '/pages/about/rn?android=' + encodeURIComponent(android) + '&ios=' + encodeURIComponent(ios),
+  })
 }
 
 export function hadlePermissionsDeny({ perssionText }: { perssionText: string }): void {

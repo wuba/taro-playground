@@ -5,14 +5,14 @@
  * @LastEditTime: 2021-08-04 14:57:41
  * @FilePath: /taro-react-native/src/pages/about/index.tsx
  */
-import { Component, Fragment } from 'react'
+import { Component } from 'react'
 import Taro from '@tarojs/taro';
 import { View, Image, Text } from '@tarojs/components';
-import { version as taroVersion } from '@tarojs/taro/package.json';
-import { version as rnVersion } from 'react-native/package.json';
-import { isWeb, isRN, loadPage } from "@/utils/index";
+import taroVersion from '@tarojs/taro/package.json';
+import rnVersion from 'react-native/package.json';
+import { isWeb, isRN, loadWeb, loadMini, loadRn } from "@/utils/index";
+import List from '@/components/list/list';
 import logoPng from "@/assets/common/taro_logo.jpg";
-import rightPng from "@/assets/iconpark/right.png";
 import './index.scss';
 
 const { version: playgroundVersion, platform } = Taro.getSystemInfoSync()
@@ -20,7 +20,7 @@ const { version: playgroundVersion, platform } = Taro.getSystemInfoSync()
 const linkPrivacy = {
   name: '隐私政策',
   onPress: () => {
-    loadPage({
+    loadWeb({
       url: 'https://api.fang.anjuke.com/wlk/message?id=2049',
       title: '隐私政策',
       right: '下载',
@@ -38,10 +38,10 @@ const linkUpdate = {
         url: 'https://apps.apple.com/cn/app/taro-playground/id1576830673'
       });
     } else {
-      loadPage({
+      loadWeb({
         url: 'https://github.com/wuba/taro-playground/releases',
         title: '版本变更',
-        certified: false
+        certified: isRN
       })
     }
   },
@@ -50,10 +50,10 @@ const linkUpdate = {
 const linkSource = {
   name: '项目源码',
   onPress: () => {
-    loadPage({
+    loadWeb({
       url: 'https://github.com/wuba/taro-playground',
       title: '项目源码',
-      certified: false
+      certified: isRN
     })
   }
 }
@@ -61,26 +61,46 @@ const linkSource = {
 const linkSite = {
   name: '官方网站',
   onPress: () => {
-    loadPage({
+    loadWeb({
       url: 'https://docs.taro.zone',
       title: '官方网站',
-      certified: false
+      certified: isRN
     })
   }
 }
 
 const linkWeb = {
-  name: 'H5 Demo',
+  name: 'Web 版本',
   onPress: () => {
-    loadPage({
+    loadWeb({
       url: 'https://wuba.github.io/taro-playground/',
-      title: 'H5 Demo',
-      certified: false
+      title: 'Web 版本',
+      certified: isRN
     })
   }
 }
 
-const linksList = isRN ? [linkSource, linkSite, linkWeb, linkPrivacy, linkUpdate] : isWeb ? [linkSource, linkSite, linkWeb, linkUpdate] : [linkSource, linkSite, linkWeb, linkUpdate]
+const linkMini = {
+  name: '小程序版本',
+  onPress: () => {
+    loadMini({
+      url: 'https://pic3.58cdn.com.cn/nowater/frs/n_v23ec2613515c6458aaa44f01d459cea8b.jpg'
+    })
+  }
+}
+
+const linkRn = {
+  name: 'React Native 版本',
+  onPress: () => {
+    loadRn({
+      android: 'https://pic3.58cdn.com.cn/nowater/fangfe/n_v295dd481b6b2f446592350e3187716d03.png',
+      ios:'https://pic1.58cdn.com.cn/nowater/fangfe/n_v224532e5560314106b6ab32b0a1534a9d.png',
+    })
+  }
+}
+
+const versionList = isRN ? [linkRn, linkWeb, linkMini, linkUpdate] : isWeb ? [linkRn, linkMini, linkUpdate] : [linkRn, linkWeb, linkUpdate]
+const linksList = isRN ? [linkSource, linkSite, linkPrivacy] : [linkSource, linkSite]
 export default class Index extends Component<any, any> {
   render() {
     return (
@@ -94,31 +114,37 @@ export default class Index extends Component<any, any> {
             Taro 是一个开放式跨端跨框架解决方案，支持使用 React/Vue/Nerv 等框架来开发 微信 / 京东 / 百度 / 支付宝 / 字节跳动 / QQ 小程序 / H5 / RN 等应用。
           </View>
         </View>
-        <View className='page-links'>
-          {linksList.map((item, index) => {
-            return (
-              <Fragment key={index}>
-                <View className='page-links-item' onClick={item.onPress}>
-                  <View className='page-links-item-text'>{item.name}</View>
-                  <Image
-                    src={rightPng}
-                    className='page-links-item-arrow'
-                  ></Image>
-                </View>
-                {index != linksList.length - 1 && <View className='page-links-sep' />}
-              </Fragment>
-            )
+        <List
+          title='版本信息'
+          data={versionList.map(item => {
+            return {
+              title: item.name,
+            }
           })}
-        </View>
+          handleItemClick={ (_data, index) => {
+            versionList[index].onPress()
+          }}
+        />
+        <List
+          title='相关链接'
+          data={linksList.map(item => {
+            return {
+              title: item.name,
+            }
+          })}
+          handleItemClick={ (_data, index) => {
+            linksList[index].onPress()
+          }}
+        />
         {isRN ? <View className='page-footer' onClick={() => {
           Taro.navigateTo({
             url: '/pages/about/dep'
           })
         }}
         >
-          <Text className='page-footer-text'>Taro: {taroVersion}, React Native: {rnVersion}, Taro Playground: {playgroundVersion}</Text>
+          <Text className='page-footer-text'>Taro: {taroVersion.version}, React Native: {rnVersion.version}, Taro Playground: {playgroundVersion}</Text>
         </View> : <View className='page-footer'>
-          <Text className='page-footer-text'>Taro: {taroVersion}</Text>
+          <Text className='page-footer-text'>Taro: {taroVersion.version}</Text>
         </View>}
       </View>
     )

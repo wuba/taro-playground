@@ -1,0 +1,16 @@
+.rn {
+  &-container {
+    display: flex;
+    flex-direction: column;
+  }
+  &-image{
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+  }
+  &-text {
+    text-align: center;
+    font-size: 40px;
+    margin: 30px auto;
+  }
+}

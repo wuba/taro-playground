@@ -30,8 +30,7 @@ RCT_EXPORT_METHOD(loadBundleByBundleUrl:(NSString *)bundleUrl bundleRoot:(NSStri
   [RCTBundleURLProvider sharedSettings].jsLocation = bundleUrl;
   if (_bridge) {
     NSURL *bundleURL = [[RCTBundleURLProvider sharedSettings]
-                        jsBundleURLForBundleRoot:bundleRoot
-                        fallbackResource:nil];
+                        jsBundleURLForBundleRoot:bundleRoot];
     _bridge.bundleURL = bundleURL;
     RCTTriggerReloadCommandListeners(@"Dev menu - apply changes");
   }
@@ -45,8 +44,7 @@ RCT_EXPORT_METHOD(loadDefaultBundle)
 - (void)setDefaultJSBundle
 {
   [[RCTBundleURLProvider sharedSettings] resetToDefaults];
-  self->_bridge.bundleURL = [[RCTBundleURLProvider sharedSettings] jsBundleURLForFallbackResource:nil
-                                                                                fallbackExtension:nil];
+  self->_bridge.bundleURL = [[RCTBundleURLProvider sharedSettings] jsBundleURLForFallbackExtension:nil];
   RCTTriggerReloadCommandListeners(@"Dev menu - reset to default");
 }
 
