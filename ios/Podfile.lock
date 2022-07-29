@@ -4,7 +4,7 @@ PODS:
   - DoubleConversion (1.1.6)
   - EXApplication (4.2.2):
     - ExpoModulesCore
-  - EXAV (12.0.2):
+  - EXAV (11.2.3):
     - ExpoModulesCore
     - React-runtimeexecutor
     - ReactCommon
@@ -485,7 +485,7 @@ PODS:
     - React-Core
   - RNFlashList (1.2.0):
     - React-Core
-  - RNGestureHandler (2.5.0):
+  - RNGestureHandler (1.10.3):
     - React-Core
   - RNReanimated (2.9.1):
     - DoubleConversion
@@ -799,7 +799,7 @@ SPEC CHECKSUMS:
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   DoubleConversion: 831926d9b8bf8166fd87886c4abab286c2422662
   EXApplication: e418d737a036e788510f2c4ad6c10a7d54d18586
-  EXAV: 16950e56466cb1f2224bae7b6d73b661c40e04ff
+  EXAV: 88f61c5af8415715b7ee51f084c1020235b85c56
   EXBarCodeScanner: 8e13bad5d197b4b9a58d16af41f8690875a5f736
   EXBrightness: b6550cfe265e2131a0ddc7ebe97697813199850d
   EXCamera: 9f8303a52b2027e007174c2068c2ac76ff41d974
@@ -873,7 +873,7 @@ SPEC CHECKSUMS:
   RNCPicker: 0250e95ad170569a96f5b0555cdd5e65b9084dca
   RNDeviceInfo: 0a7c1d2532aa7691f9b9925a27e43af006db4dae
   RNFlashList: adcc3a39aa72012852681bc439ccb4108c8c4448
-  RNGestureHandler: bad495418bcbd3ab47017a38d93d290ebd406f50
+  RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
   RNReanimated: 5c8c17e26787fd8984cd5accdc70fef2ca70aafd
   RNScreens: 4a1af06327774490d97342c00aee0c2bafb497b7
   RNSVG: f3b60aeeaa81960e2e0536c3a9eef50b667ef3a9
