@@ -1,6 +1,6 @@
 import { View, Button } from "@tarojs/components";
 import { useState } from 'react';
-import { useRouter, useDidShow, useDidHide, useReachBottom, usePageScroll, navigateTo } from "@tarojs/taro";
+import { useRouter, useReady, useDidShow, useDidHide, useReachBottom, usePageScroll, navigateTo } from "@tarojs/taro";
 import JSONTree from "@/components/jsontree";
 import Header from "@/components/head/head";
 import Log, { LogType } from "@/components/log";
@@ -18,6 +18,15 @@ export default function Page() {
       text: 'useDidShow called.',
     }
     setDidShowLog([...didShowLog, log]);
+  });
+
+  const [ readyLog, setReadyLog ] = useState<LogType[]>([])
+  useReady(() => {
+    const log = {
+      time: new Date().toLocaleTimeString(),
+      text: 'useReady called.',
+    }
+    setReadyLog([...readyLog, log]);
   });
 
   const [ didHideLog, setDidHideLog ] = useState<LogType[]>([])
@@ -64,6 +73,10 @@ export default function Page() {
           <View className="example-body">
             <JSONTree data={formatRouter} />
           </View>
+        </View>
+        <View className="global-page__body-example example">
+          <View className="example-header">{`useReady (${readyLog.length})`}</View>
+          <Log logs={readyLog} />
         </View>
         <View className="global-page__body-example example">
           <View className="example-header">{`useDidShow (${didShowLog.length})`}</View>
