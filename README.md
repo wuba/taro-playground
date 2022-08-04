@@ -10,6 +10,10 @@ The Taro Playground App is a cross-platform application developed using Taro, to
 | ![](https://pic3.58cdn.com.cn/nowater/fangfe/n_v295dd481b6b2f446592350e3187716d03.png) | ![](https://pic1.58cdn.com.cn/nowater/fangfe/n_v224532e5560314106b6ab32b0a1534a9d.png) | ![](https://pic5.58cdn.com.cn/nowater/frs/n_v2d585527f52e640679cdd37123a418fe3.png) | ![](https://pic3.58cdn.com.cn/nowater/frs/n_v23ec2613515c6458aaa44f01d459cea8b.jpg) |
 | https://github.com/wuba/taro-playground/releases | https://apps.apple.com/cn/app/taro-playground/id1576830673 | https://wuba.github.io/taro-playground/ | https://github.com/wuba/taro-playground |
 
+### iOS testflight link
+
+https://testflight.apple.com/join/RDFCp2yy
+
 ## Supported versions
 
 0. taro: `@tarojs/cli@^3.2.0`
