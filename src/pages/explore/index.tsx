@@ -55,6 +55,12 @@ const playList = [{
   },
   title: 'Lottie',
   showRightArrow: true,
+}, {
+  data: {
+    page: '/pages/explore/others/linear-gradient/index',
+  },
+  title: 'Linear Gradient',
+  showRightArrow: true,
 }]
 
 function loadDemo ({ web, title, bundle, mp }) {
