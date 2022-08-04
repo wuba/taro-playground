@@ -125,7 +125,12 @@ const pages = [
 const subpackages = [{
   root: 'pages/explore/animate',
   pages: [
-    "lottie/index",
+    'lottie/index',
+  ],
+}, {
+  root: 'pages/explore/others',
+  pages: [
+    'linear-gradient/index',
   ]
 }]
 

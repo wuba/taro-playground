@@ -1,0 +1,28 @@
+.linear-gradient{
+  &-1 {
+    height: 200px;
+    text-align: center;
+  }
+  &-text {
+    text-align: center;
+    color: white;
+    line-height: 200px;
+    font-size: 36px;
+  }
+  &-slider{
+    margin-top: 20px;
+  }
+}
+.btn-center {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/*  #ifdef h5 */
+.btn-center .btn {
+  margin-top: 0;
+}
+/* #endif */
