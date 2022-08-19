@@ -6,7 +6,7 @@ import './page-container.scss'
 
 export default function PageView() {
   const [show, setShow] = useState(false)
-  const [position, setPosition] = useState<keyof PageContainerProps.position>('bottom')
+  const [position, setPosition] = useState<keyof PageContainerProps.Position>('bottom')
   return <>
     <View className='components-page__header'>
       <Header title='Page Container'></Header>
@@ -23,10 +23,10 @@ export default function PageView() {
       }}
       >bottom</Button>
       <Button className='btn' type='primary' onClick={()=>{
-        setPosition('left')
+        setPosition('center')
         setShow(true)
       }}
-      >left</Button>
+      >center</Button>
       <Button className='btn' type='primary' onClick={()=>{
         setPosition('right')
         setShow(true)
