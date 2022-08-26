@@ -46,6 +46,9 @@ const tabs = [
 ]
 
 const pages = [
+  'pages/explore/charts/echarts',
+  'pages/explore/charts/zrender',
+  'pages/explore/canvas/skia',
   'pages/home/index',
   // 全局相关 start
   'pages/global/index',
