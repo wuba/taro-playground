@@ -55,8 +55,8 @@ function SkiaComponent(props: SkiaProps, ref?: any) {
       svg={svgString}
       x={0}
       y={0}
-      width={290}
-      height={500}
+      width={width}
+      height={height}
     />
   </Canvas> : null
 }
