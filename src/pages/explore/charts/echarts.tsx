@@ -22,6 +22,8 @@ import {
 } from 'echarts/components';
 import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { SVGRenderer } from 'echarts/renderers';
+import { useEffect, useRef, useState } from 'react';
+import SvgComponent from './svg';
 
 // 通过 ComposeOption 来组合出一个只有必须组件和图表的 Option 类型
 type ECOption = echarts.ComposeOption<
@@ -44,7 +46,7 @@ echarts.use([
   LineChart,
   LabelLayout,
   UniversalTransition,
-  SVGRenderer
+  SVGRenderer,
 ]);
 
 const option: ECOption = {
@@ -59,14 +61,85 @@ const option: ECOption = {
     }
   ]
 };
-import { useEffect } from 'react';
 
-import SvgComponent from './svg'
-
-import { useRef } from 'react';
+function wrapTouch(event) {
+  for (let i = 0; i < event.touches.length; ++i) {
+    const touch = event.touches[i];
+    touch.offsetX = touch.x;
+    touch.offsetY = touch.y;
+  }
+  return event;
+}
 
 export default function EchartsPage() {
   const svgRef = useRef<any>(null);
+  const [curChart, setCurChart]: any = useState(null)
+
+  const touchStart = (e) => {
+    console.log('touchStart')
+    e = e.nativeEvent
+    if (curChart && e.touches.length > 0) {
+      var touch = e.touches[0];
+      var handler = curChart.getZr().handler;
+      handler.dispatch('mousedown', {
+        zrX: touch.locationX,
+        zrY: touch.locationY,
+        preventDefault: () => {},
+        stopImmediatePropagation: () => {},
+        stopPropagation: () => {}
+      });
+      handler.dispatch('mousemove', {
+        zrX: touch.locationX,
+        zrY: touch.locationY,
+        preventDefault: () => {},
+        stopImmediatePropagation: () => {},
+        stopPropagation: () => {}
+      });
+      handler.processGesture(wrapTouch(e), 'start');
+    }
+  }
+
+  const touchMove = (e) => {
+    console.log('touchMove')
+    e = e.nativeEvent
+    if (curChart && e.touches.length > 0) {
+      var touch = e.touches[0];
+      var handler = curChart.getZr().handler;
+      handler.dispatch('mousemove', {
+        zrX: touch.locationX,
+        zrY: touch.locationY,
+        preventDefault: () => {},
+        stopImmediatePropagation: () => {},
+        stopPropagation: () => {}
+      });
+      handler.processGesture(wrapTouch(e), 'change');
+    }
+  }
+
+  const touchEnd = (e) => {
+    console.log('touchEnd')
+    e = e.nativeEvent
+    if (curChart) {
+      const touch = e.changedTouches ? e.changedTouches[0] : {};
+      var handler = curChart.getZr().handler;
+      handler.dispatch('mouseup', {
+        zrX: touch.locationX,
+        zrY: touch.locationY,
+        preventDefault: () => {},
+        stopImmediatePropagation: () => {},
+        stopPropagation: () => {}
+      });
+      handler.dispatch('click', {
+        zrX: touch.locationX,
+        zrY: touch.locationY,
+        preventDefault: () => {},
+        stopImmediatePropagation: () => {},
+        stopPropagation: () => {}
+      });
+      handler.processGesture(wrapTouch(e), 'end');
+    }
+  }
+
   useEffect(() => {
     let chart;
     if(svgRef.current) {
@@ -77,10 +150,11 @@ export default function EchartsPage() {
         height: 400,
       });
       chart.setOption(option);
+      setCurChart(chart)
       return () => chart?.dispose()
     }
   }, []);
   return <>
-    <SvgComponent ref={svgRef}></SvgComponent>
+    <SvgComponent ref={svgRef} touchStart={touchStart} touchMove={touchMove} touchEnd={touchEnd}></SvgComponent>
   </>
 }

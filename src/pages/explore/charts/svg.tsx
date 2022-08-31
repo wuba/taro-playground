@@ -74,12 +74,16 @@ export interface SVGVNode {
 
 interface SVGVNodeProps {
   node?: SVGVNode,
+  touchStart?: any,
+  touchMove?: any,
+  touchEnd?: any,
 }
 
 function SvgEle(props: SVGVNodeProps) {
   const { node } = props
   if(!node) return null
   const Tag = tagMap[node.tag]
+  if (!Tag) return null;
   const attrs = Object.entries(node.attrs).reduce((carry, [key, value]) => {
     carry[toCamelCase(key)] = value
     return carry
@@ -87,11 +91,11 @@ function SvgEle(props: SVGVNodeProps) {
   if(node.tag === 'text') {
     return <Tag {...attrs} key={node.key}>{node.text}</Tag>
   }
-  return <Tag {...attrs} key={node.key}>{node.children && node.children.map(child => SvgEle({ node: child }))}</Tag>
+  return  <Tag {...attrs} onTouchStart={props.touchStart} onTouchEnd={props.touchEnd} onTouchMove={props.touchMove} key={node.key}>{node.children && node.children.map(child => SvgEle({ node: child }))}</Tag>
 }
 
 function SvgComponent(props: SVGVNodeProps, ref?: any) {
-  const { node } = props
+  const { node, touchStart, touchMove, touchEnd, } = props
   const [svgNode, setSvgNode] = useState<SVGVNode | undefined>(node)
   useImperativeHandle(ref, () => ({
     elm: {
@@ -111,8 +115,8 @@ function SvgComponent(props: SVGVNodeProps, ref?: any) {
     viewprot: {},
     focus: () => {
       console.log('focus')
-    }
+    },
   }));
-  return svgNode ? <SvgEle node={svgNode} /> : null
+  return svgNode ? <SvgEle node={svgNode} touchStart={touchStart} touchMove={touchMove} touchEnd={touchEnd} /> : null
 }
 export default forwardRef(SvgComponent)
