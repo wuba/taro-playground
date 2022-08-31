@@ -154,6 +154,19 @@ export default function EchartsPage() {
       return () => chart?.dispose()
     }
   }, []);
+  useEffect(() => {
+    let chart;
+    if(skiaRef.current) {
+      // @ts-ignore
+      chart = echarts.init(skiaRef.current, 'light', {
+        renderer: 'svg',
+        width: 400,
+        height: 400,
+      });
+      chart.setOption(option);
+      return () => chart?.dispose()
+    }
+  }, []);
   return <>
     <SvgComponent ref={svgRef} touchStart={touchStart} touchMove={touchMove} touchEnd={touchEnd}></SvgComponent>
   </>
