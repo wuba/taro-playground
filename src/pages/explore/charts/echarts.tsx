@@ -153,6 +153,7 @@ export default function EchartsPage() {
       setCurChart(chart)
       return () => chart?.dispose()
     }
+    return () => chart?.dispose()
   }, []);
   useEffect(() => {
     let chart;
@@ -164,8 +165,8 @@ export default function EchartsPage() {
         height: 400,
       });
       chart.setOption(option);
-      return () => chart?.dispose()
     }
+    return () => chart?.dispose()
   }, []);
   return <>
     <SvgComponent ref={svgRef} touchStart={touchStart} touchMove={touchMove} touchEnd={touchEnd}></SvgComponent>
