@@ -5,8 +5,6 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 platform :ios, '12.4'
 install! 'cocoapods', :deterministic_uuids => false
 
-production = ENV["PRODUCTION"] == "1"
-
 target 'taroDemo' do
   use_expo_modules!
   post_integrate do |installer|
@@ -23,10 +21,15 @@ target 'taroDemo' do
 
   use_react_native!(
     :path => config[:reactNativePath],
-    # to enable hermes on iOS, change `false` to `true` and then install pods
-    :production => production,
-    :hermes_enabled => flags[:hermes_enabled],
+    # Hermes is now enabled by default. Disable by setting this flag to false.
+    # Upcoming versions of React Native may rely on get_default_flags(), but
+    # we make it explicit here to aid in the React Native upgrade process.
+    :hermes_enabled => true,
     :fabric_enabled => flags[:fabric_enabled],
+    # Enables Flipper.
+    #
+    # Note that if you have use_frameworks! enabled, Flipper will not work and
+    # you should disable the next line.
     :flipper_configuration => FlipperConfiguration.enabled,
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
@@ -43,7 +46,12 @@ target 'taroDemo' do
     find_and_replace("../node_modules/react-native/React/Base/RCTDefines.h","#define RCT_DEV 0", "#define RCT_DEV 1")
     find_and_replace("../node_modules/react-native/React/Base/RCTKeyCommands.m", "#if RCT_DEV", "#if DEBUG")
     # !!! end
-    react_native_post_install(installer)
+    react_native_post_install(
+      installer,
+      # Set `mac_catalyst_enabled` to `true` in order to apply patches
+      # necessary for Mac Catalyst builds
+      :mac_catalyst_enabled => false
+    )
     __apply_Xcode_12_5_M1_post_install_workaround(installer)
   end
 end
