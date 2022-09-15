@@ -16,6 +16,8 @@ import logoPng from "@/assets/common/taro_logo.jpg";
 import './index.scss';
 
 const { version: playgroundVersion, platform } = Taro.getSystemInfoSync()
+// @ts-ignore
+const isHermes = !!global.HermesInternal;
 
 const linkPrivacy = {
   name: '隐私政策',
@@ -143,6 +145,7 @@ export default class Index extends Component<any, any> {
         }}
         >
           <Text className='page-footer-text'>Taro: {taroVersion.version}, React Native: {rnVersion.version}, Taro Playground: {playgroundVersion}</Text>
+          {isHermes && <Text className='page-footer-text'>Engine: Hermes</Text>}
         </View> : <View className='page-footer'>
           <Text className='page-footer-text'>Taro: {taroVersion.version}</Text>
         </View>}
