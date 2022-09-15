@@ -512,7 +512,7 @@ PODS:
     - React-Core
   - RNGestureHandler (2.5.0):
     - React-Core
-  - RNReanimated (2.9.1):
+  - RNReanimated (2.10.0):
     - DoubleConversion
     - FBLazyVector
     - FBReactNativeSpec
@@ -870,7 +870,7 @@ SPEC CHECKSUMS:
   Flipper-RSocket: d9d9ade67cbecf6ac10730304bf5607266dd2541
   FlipperKit: cbdee19bdd4e7f05472a66ce290f1b729ba3cb86
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
-  glog: 3d02b25ca00c2d456734d0bcff864cbc62f6ae1a
+  glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
   hermes-engine: 8e84f1284180801c1a1b241f443ba64f931ff561
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   lottie-ios: 016449b5d8be0c3dcbcfa0a9988469999cd04c5d
@@ -920,7 +920,7 @@ SPEC CHECKSUMS:
   RNDeviceInfo: 0a7c1d2532aa7691f9b9925a27e43af006db4dae
   RNFlashList: 5318fc0772902ffa55170b35caa95ad5a69da3ef
   RNGestureHandler: bad495418bcbd3ab47017a38d93d290ebd406f50
-  RNReanimated: 24508aef58348323f891abd6616debf39173f1b9
+  RNReanimated: 60e291d42c77752a0f6d6f358387bdf225a87c6e
   RNScreens: 4a1af06327774490d97342c00aee0c2bafb497b7
   RNSVG: f3b60aeeaa81960e2e0536c3a9eef50b667ef3a9
   RNSyanImagePicker: 5c650d33f16f7cd59c47d9269f6c4856b30d7616
@@ -932,4 +932,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 05bd06c004d8b6cf574a9bb5c8656859fafd6ee0
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3
