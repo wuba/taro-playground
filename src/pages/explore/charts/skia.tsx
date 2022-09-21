@@ -15,6 +15,7 @@ import {
 } from "@shopify/react-native-skia"
 
 import { setPlatformAPI, DEFAULT_FONT, DEFAULT_FONT_SIZE, platformApi } from 'zrender/lib/core/platform'
+
 const originMeasureText = platformApi.measureText
 
 const resolveAsset = (source) => {

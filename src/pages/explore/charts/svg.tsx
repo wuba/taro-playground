@@ -61,6 +61,15 @@ function toCamelCase(str){
     return $1.toUpperCase();
   });
 }
+
+function wrapTouch(event) {
+  for (let i = 0; i < event.touches.length; ++i) {
+    const touch = event.touches[i];
+    touch.offsetX = touch.x;
+    touch.offsetY = touch.y;
+  }
+  return event;
+}
 export interface SVGVNode {
   tag: string,
   attrs: SVGVNodeAttrs,
@@ -74,12 +83,16 @@ export interface SVGVNode {
 
 interface SVGVNodeProps {
   node?: SVGVNode,
+  chart?: any,
+}
+interface SVGVEleProps {
+  node?: SVGVNode,
   touchStart?: any,
   touchMove?: any,
   touchEnd?: any,
 }
 
-function SvgEle(props: SVGVNodeProps) {
+function SvgEle(props: SVGVEleProps, root: Boolean = true) {
   const { node } = props
   if(!node) return null
   const Tag = tagMap[node.tag]
@@ -91,12 +104,80 @@ function SvgEle(props: SVGVNodeProps) {
   if(node.tag === 'text') {
     return <Tag {...attrs} key={node.key}>{node.text}</Tag>
   }
-  return  <Tag {...attrs} onTouchStart={props.touchStart} onTouchEnd={props.touchEnd} onTouchMove={props.touchMove} key={node.key}>{node.children && node.children.map(child => SvgEle({ node: child }))}</Tag>
+  return root
+    ? <Tag {...attrs} onTouchStart={props.touchStart} onTouchEnd={props.touchEnd} onTouchMove={props.touchMove} key={node.key}>{node.children && node.children.map(child => SvgEle({ node: child }, false))}</Tag>
+    : <Tag {...attrs} key={node.key}>{node.children && node.children.map(child => SvgEle({ node: child }, true))}</Tag>
 }
 
 function SvgComponent(props: SVGVNodeProps, ref?: any) {
-  const { node, touchStart, touchMove, touchEnd, } = props
+  const { node, chart } = props
   const [svgNode, setSvgNode] = useState<SVGVNode | undefined>(node)
+
+  const touchStart = (e) => {
+    console.log('touchStart')
+    e = e.nativeEvent
+    if (chart && e.touches.length > 0) {
+      var touch = e.touches[0];
+      var handler = chart.getZr().handler;
+      handler.dispatch('mousedown', {
+        zrX: touch.locationX,
+        zrY: touch.locationY,
+        preventDefault: () => {},
+        stopImmediatePropagation: () => {},
+        stopPropagation: () => {}
+      });
+      handler.dispatch('mousemove', {
+        zrX: touch.locationX,
+        zrY: touch.locationY,
+        preventDefault: () => {},
+        stopImmediatePropagation: () => {},
+        stopPropagation: () => {}
+      });
+      handler.processGesture(wrapTouch(e), 'start');
+    }
+  }
+
+  const touchMove = (e) => {
+    console.log('touchMove')
+    e = e.nativeEvent
+    if (chart && e.touches.length > 0) {
+      var touch = e.touches[0];
+      var handler = chart.getZr().handler;
+      handler.dispatch('mousemove', {
+        zrX: touch.locationX,
+        zrY: touch.locationY,
+        preventDefault: () => {},
+        stopImmediatePropagation: () => {},
+        stopPropagation: () => {}
+      });
+      handler.processGesture(wrapTouch(e), 'change');
+    }
+  }
+
+  const touchEnd = (e) => {
+    console.log('touchEnd')
+    e = e.nativeEvent
+    if (chart) {
+      const touch = e.changedTouches ? e.changedTouches[0] : {};
+      var handler = chart.getZr().handler;
+      handler.dispatch('mouseup', {
+        zrX: touch.locationX,
+        zrY: touch.locationY,
+        preventDefault: () => {},
+        stopImmediatePropagation: () => {},
+        stopPropagation: () => {}
+      });
+      handler.dispatch('click', {
+        zrX: touch.locationX,
+        zrY: touch.locationY,
+        preventDefault: () => {},
+        stopImmediatePropagation: () => {},
+        stopPropagation: () => {}
+      });
+      handler.processGesture(wrapTouch(e), 'end');
+    }
+  }
+
   useImperativeHandle(ref, () => ({
     elm: {
       setAttribute: (name, value) => {
