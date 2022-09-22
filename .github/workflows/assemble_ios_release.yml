@@ -15,8 +15,8 @@ env:
   # 应用的application_id
   APP_ID: ${{secrets.APP_ID}}
   APP_NAME: Taro
-  VERSION_NUMBER: 1.6.4
-  BUILD_NUMBER: 1.6.4.1
+  VERSION_NUMBER: 1.7.0
+  BUILD_NUMBER: 1.7.0.1
   BUILD_TYPE: release
   TEAM_ID: ${{secrets.TEAM_ID}}
   PROVISIONING_PROFILE_SPECIFIER: ${{secrets.RELEASE_PROVISIONING_PROFILE_SPECIFIER}}
@@ -33,7 +33,7 @@ jobs:
     steps:
       - name: Get current date
         id: date
-        run: echo "::set-output name=timestamp::$(date +'%y%m%d%H%M')"
+        run: echo "::set-output name=timestamp::$(TZ=Asia/Shanghai date +'%y%m%d%H%M')"
       - name: Checkout Project
         uses: actions/checkout@v2
       - name: Cache node_modules Folder

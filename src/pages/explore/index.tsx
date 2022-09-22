@@ -11,7 +11,7 @@ const GITHUB_RAW = 'https://raw.githubusercontent.com'
 
 const caseList = [{
   data: {
-    bundle: `${JSDELIVR}/wuba/Taro-Mortgage-Calculator@1.0.2/release/${platform}/main.js`,
+    bundle: `${JSDELIVR}/wuba/Taro-Mortgage-Calculator@v2.0.0-beta.2/release/${platform}/main.js`,
     repository: `${GITHUB}/wuba/Taro-Mortgage-Calculator`,
     web: 'https://wuba.github.io/Taro-Mortgage-Calculator',
     mp: `${GITHUB_RAW}/wuba/Taro-Mortgage-Calculator/master/mini-qrcode.jpg`,
@@ -23,7 +23,7 @@ const caseList = [{
   showRightArrow: true,
 }, {
   data: {
-    bundle: `${JSDELIVR}/rick-and-morty-wiki/rick-and-morty-wiki@v1.0.0/release/${platform}/main.js`,
+    bundle: `${JSDELIVR}/zhiqingchen/rick-and-morty-wiki@v2.0.0-beta.1/release/${platform}/main.js`,
     repository: `${GITHUB}/rick-and-morty-wiki/rick-and-morty-wiki`,
     web: 'https://rnwiki.cavano.vip',
     mp: 'https://rickandmortywiki.oss-cn-beijing.aliyuncs.com/weapp/2d_code.jpg',
@@ -37,7 +37,7 @@ const caseList = [{
 
 const uiList = [{
   data: {
-    bundle: `${JSDELIVR}/NervJS/taro-ui@v3.1.0-beta.2-rn/packages/taro-ui-demo-rn/release/${platform}/main.js`,
+    bundle: `${JSDELIVR}/NervJS/taro-ui@v3.2.0-beta.0-rn/packages/taro-ui-demo-rn/release/${platform}/main.js`,
     repository: `${GITHUB}/NervJS/taro-ui`,
     title: 'Taro UI Demo',
     web: 'https://taro-ui.jd.com/h5/index.html',
