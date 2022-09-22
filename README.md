@@ -24,7 +24,8 @@ https://testflight.apple.com/join/RDFCp2yy
 | 1.1.2 | >= 3.2.0, < 3.3.10 | 0.64 | [releases/rn-0.64+taro-3.3.9](https://github.com/wuba/taro-playground/tree/releases/rn-0.64+taro-3.3.9) |
 | 1.2.0 ~ 1.3.9 | >= 3.3.10, < 3.4.2 | 0.66 | [releases/rn-0.66+taro-3.4.2](https://github.com/wuba/taro-playground/tree/releases/rn-0.66+taro-3.4.2) |
 | 1.4.0 ~ 1.4.8 | >= 3.4.2, < 3.5.0 | 0.67 | [releases/rn-0.67+taro-3.4.10](https://github.com/wuba/taro-playground/tree/releases/rn-0.67+taro-3.4.10) |
-| 1.6.0 ~ | >= 3.5.0 | 0.68 | [main](https://github.com/wuba/taro-playground/tree/main) |
+| 1.6.0 ~ 1.6.5 | >= 3.5.0, < 3.5.6 | 0.68 | [releases/rn-0.68+taro-3.5.5](https://github.com/wuba/taro-playground/tree/releases/rn-0.68+taro-3.5.5) |
+| 1.7.0 ~ | >=3.5.6 | 0.69 | [main](https://github.com/wuba/taro-playground/tree/main) |
 
 ## Quick start
 
