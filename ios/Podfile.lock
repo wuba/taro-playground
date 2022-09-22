@@ -487,7 +487,7 @@ PODS:
     - React-Core
   - RNFlashList (1.2.0):
     - React-Core
-  - RNGestureHandler (1.10.3):
+  - RNGestureHandler (2.5.0):
     - React-Core
   - RNReanimated (2.9.1):
     - DoubleConversion
@@ -525,7 +525,11 @@ PODS:
     - React
     - TZImagePickerController
   - SocketRocket (0.6.0)
-  - TZImagePickerController (3.8.1)
+  - TZImagePickerController (3.8.3):
+    - TZImagePickerController/Basic (= 3.8.3)
+    - TZImagePickerController/Location (= 3.8.3)
+  - TZImagePickerController/Basic (3.8.3)
+  - TZImagePickerController/Location (3.8.3)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
@@ -803,7 +807,7 @@ SPEC CHECKSUMS:
   boost: a7c83b31436843459a1961bfd74b96033dc77234
   BVLinearGradient: 34a999fda29036898a09c6a6b728b0b4189e1a44
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
-  DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
+  DoubleConversion: 831926d9b8bf8166fd87886c4abab286c2422662
   EXApplication: e418d737a036e788510f2c4ad6c10a7d54d18586
   EXAV: 88f61c5af8415715b7ee51f084c1020235b85c56
   EXBarCodeScanner: 8e13bad5d197b4b9a58d16af41f8690875a5f736
@@ -833,12 +837,12 @@ SPEC CHECKSUMS:
   Flipper-RSocket: d9d9ade67cbecf6ac10730304bf5607266dd2541
   FlipperKit: cbdee19bdd4e7f05472a66ce290f1b729ba3cb86
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
-  glog: 3d02b25ca00c2d456734d0bcff864cbc62f6ae1a
+  glog: 476ee3e89abb49e07f822b48323c51c57124b572
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
   lottie-react-native: a501112fa980529ccb80b9f3ee117a7f98c6af3a
   OpenSSL-Universal: ebc357f1e6bc71fa463ccb2fe676756aff50e88c
-  RCT-Folly: b9d9fe1fc70114b751c076104e52f3b1b5e5a95a
+  RCT-Folly: 4d8508a426467c48885f1151029bc15fa5d7b3b8
   RCTRequired: 3e917ea5377751094f38145fdece525aa90545a0
   RCTTypeSafety: c43c072a4bd60feb49a9570b0517892b4305c45e
   React: 176dd882de001854ced260fad41bb68a31aa4bd0
@@ -879,13 +883,13 @@ SPEC CHECKSUMS:
   RNCPicker: a99807a74d9cd65c394f6e2a6c843a377b355b4d
   RNDeviceInfo: 0a7c1d2532aa7691f9b9925a27e43af006db4dae
   RNFlashList: adcc3a39aa72012852681bc439ccb4108c8c4448
-  RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
+  RNGestureHandler: bad495418bcbd3ab47017a38d93d290ebd406f50
   RNReanimated: 5c8c17e26787fd8984cd5accdc70fef2ca70aafd
   RNScreens: 4a1af06327774490d97342c00aee0c2bafb497b7
   RNSVG: f3b60aeeaa81960e2e0536c3a9eef50b667ef3a9
   RNSyanImagePicker: 5c650d33f16f7cd59c47d9269f6c4856b30d7616
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
-  TZImagePickerController: 943511626019431372cf908f24c114521e484f0e
+  TZImagePickerController: e9909edbadf7381140efc5b5c9f5bdbfd630f7d4
   Yoga: 99652481fcd320aefa4a7ef90095b95acd181952
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
