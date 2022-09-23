@@ -20,8 +20,6 @@
 		57C2C315C27D41D8BE6619DE /* Outfit-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 11F0C5B452BA45ADA8EC6611 /* Outfit-Medium.ttf */; };
 		692A7857C83444428E3B98DC /* Outfit-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B10D79FE8D68460E821FF9EF /* Outfit-ExtraLight.ttf */; };
 		698DFA562840E30A0062591D /* RNDevManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 698DFA552840E30A0062591D /* RNDevManager.m */; };
-		698FBA34283FAE9700980B6E /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 698FBA32283FAE9700980B6E /* assets */; };
-		698FBA35283FAE9700980B6E /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 698FBA33283FAE9700980B6E /* main.jsbundle */; };
 		7699B88040F8A987B510C191 /* libPods-taroDemo-taroDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-taroDemo-taroDemoTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8C4AA5AC5743488E9EDBB2DB /* Outfit-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78938175DBBA4D3AAF17A871 /* Outfit-Black.ttf */; };
@@ -321,10 +319,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				698FBA34283FAE9700980B6E /* assets in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				698FBA35283FAE9700980B6E /* main.jsbundle in Resources */,
 				8C4AA5AC5743488E9EDBB2DB /* Outfit-Black.ttf in Resources */,
 				A6F8A009D6E94E829CB0DC50 /* Outfit-Bold.ttf in Resources */,
 				1649CAA040364EBAA3702B26 /* Outfit-ExtraBold.ttf in Resources */,
