@@ -33,6 +33,9 @@ class CustomSVGPainter extends SVGPainter {
       // @ts-ignore
       if (this._svgDom.patchString) {
         // @ts-ignore
+        // 调整 skia 不支持的属性
+        // 1. dominant-baseline="central" 不支持
+        // 2. strokeWidth 兼容
         this._svgDom.patchString(this._oldVNode, vNodeToString(vnode));
       }
       // @ts-ignore

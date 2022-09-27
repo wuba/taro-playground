@@ -46,9 +46,6 @@ const tabs = [
 ]
 
 const pages = [
-  'pages/explore/charts/echarts',
-  'pages/explore/charts/zrender',
-  'pages/explore/canvas/skia',
   'pages/home/index',
   // 全局相关 start
   'pages/global/index',
@@ -136,6 +133,15 @@ const subpackages = [{
     'linear-gradient/index',
   ]
 }]
+
+if(process.env.TARO_ENV === 'rn') {
+  subpackages.push({
+    root: 'pages/explore/charts',
+    pages: [
+      'echarts',
+    ]
+  })
+}
 
 export default {
   // entryPagePath: 'pages/home/index',

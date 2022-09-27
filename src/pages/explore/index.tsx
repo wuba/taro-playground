@@ -61,6 +61,12 @@ const playList = [{
   },
   title: 'Linear Gradient',
   showRightArrow: true,
+}, {
+  data: {
+    page: '/pages/explore/charts/echarts',
+  },
+  title: 'Echarts',
+  showRightArrow: true,
 }]
 
 function loadDemo ({ web, title, bundle, mp }) {
