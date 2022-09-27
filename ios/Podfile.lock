@@ -37,7 +37,7 @@ PODS:
     - ExpoModulesCore
   - Expo (46.0.13):
     - ExpoModulesCore
-  - ExpoImagePicker (13.1.1):
+  - ExpoImagePicker (13.3.1):
     - ExpoModulesCore
   - ExpoKeepAwake (10.2.0):
     - ExpoModulesCore
@@ -829,7 +829,7 @@ SPEC CHECKSUMS:
   EXImageLoader: b88e053d760f85a82405b1db2de4abf11978fc9f
   EXLocation: b8cba3cb354bee6abb181c1dd245abe5aef22955
   Expo: 39582e41ae9e0aa9ed016d3918da87ee61e87525
-  ExpoImagePicker: d9d6b4f29db437fc7796f13cee5f133f5b4b5f7c
+  ExpoImagePicker: ca4207f2952a78e6dac2d7852d7e170dd2eaf1d0
   ExpoKeepAwake: 0e8f18142e71bbf2c7f6aa66ebed249ba1420320
   ExpoModulesCore: 5a973701f4400d70254bc836305228731c829010
   EXSensors: a34fb0d416eae3ecaaab43ec64dca0854227d3bf
