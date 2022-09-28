@@ -18,12 +18,18 @@ import {
   DatasetComponent,
   DatasetComponentOption,
   // 内置数据转换器组件 (filter, sort)
-  TransformComponent
+  TransformComponent,
+  LegendComponent
 } from 'echarts/components';
 import { LabelLayout, UniversalTransition } from 'echarts/features';
-import { SVGRenderer } from 'echarts/renderers';
 import { useEffect, useRef, useState } from 'react';
-import SvgComponent from './svg';
+import { PixelRatio } from 'react-native';
+// import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
+import { CanvasRenderer } from './CanvasRenderer';
+import { SVGRenderer } from './SVGRenderer'
+import SvgComponent from './svg'
+import SkiaComponent from './skia'
+import CanvasComponent from './canvas'
 
 // 通过 ComposeOption 来组合出一个只有必须组件和图表的 Option 类型
 type ECOption = echarts.ComposeOption<
@@ -47,23 +53,30 @@ echarts.use([
   LabelLayout,
   UniversalTransition,
   SVGRenderer,
+  LegendComponent,
+  CanvasRenderer,
 ]);
 
 const option: ECOption = {
   xAxis: {
+    type: 'category',
     data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
   },
-  yAxis: {},
+  yAxis: {
+    type: 'value'
+  },
   series: [
     {
-      type: 'bar',
-      data: [23, 24, 18, 25, 27, 28, 5]
+      data: [150, 230, 224, 218, 135, 147, 260],
+      type: 'line'
     }
   ]
 };
 
 export default function EchartsPage() {
   const svgRef = useRef<any>(null);
+  const skiaRef = useRef<any>(null);
+  const canvasRef = useRef<any>(null);
   const [curChart, setCurChart]: any = useState(null)
 
   useEffect(() => {
@@ -79,8 +92,8 @@ export default function EchartsPage() {
       setCurChart(chart)
       return () => chart?.dispose()
     }
-    return () => chart?.dispose()
   }, []);
+
   useEffect(() => {
     let chart;
     if(skiaRef.current) {
@@ -91,10 +104,28 @@ export default function EchartsPage() {
         height: 400,
       });
       chart.setOption(option);
+      return () => chart?.dispose()
     }
-    return () => chart?.dispose()
   }, []);
+
   return <>
-    <SvgComponent ref={svgRef} touchStart={touchStart} touchMove={touchMove} touchEnd={touchEnd}></SvgComponent>
+    <CanvasComponent
+      ref={canvasRef}
+      onInit={()=>{
+        let chart;
+        if(canvasRef.current) {
+          // @ts-ignore
+          chart = echarts.init(canvasRef.current, 'light', {
+            renderer: 'canvas',
+            width: 400,
+            height: 400,
+            devicePixelRatio: PixelRatio.get(),
+          });
+          chart.setOption(option);
+        }
+      }} width={400} height={400}
+    />
+    <SvgComponent ref={svgRef} chart={curChart}></SvgComponent>
+    <SkiaComponent ref={skiaRef} />
   </>
 }
