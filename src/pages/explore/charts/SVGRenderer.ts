@@ -1,16 +1,19 @@
 import SVGPainter from "zrender/lib/svg/Painter";
+
 import { vNodeToString } from "zrender/lib/svg/core";
 import { updateAttrs } from 'zrender/lib/svg/patch';
 
 const isRn = navigator?.product === "ReactNative";
 
 class CustomSVGPainter extends SVGPainter {
-  constructor(root: HTMLElement, storage, opts) {
+  constructor(root: HTMLElement, storage, opts, id) {
     if(isRn) {
       // @ts-ignore
       super(null, storage, opts);
       // @ts-ignore
       this._svgDom = this._oldVNode.elm = root.elm;
+      // @ts-ignore
+      this._svgDom.setZrenderId?.(id);
       // @ts-ignore
       updateAttrs(null, this._oldVNode);
       this.root = root

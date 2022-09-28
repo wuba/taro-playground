@@ -27,6 +27,7 @@ import {
   useImperativeHandle,
   forwardRef,
 } from 'react'
+import { getInstance } from "zrender/lib/zrender";
 
 const tagMap = {
   svg: Svg,
@@ -110,15 +111,16 @@ function SvgEle(props: SVGVEleProps, root: Boolean = true) {
 }
 
 function SvgComponent(props: SVGVNodeProps, ref?: any) {
-  const { node, chart } = props
+  const { node } = props
   const [svgNode, setSvgNode] = useState<SVGVNode | undefined>(node)
+  const [ zrenderId, setZrenderId ] = useState<any>(null)
 
   const touchStart = (e) => {
     console.log('touchStart')
     e = e.nativeEvent
-    if (chart && e.touches.length > 0) {
+    if (zrenderId && e.touches.length > 0) {
       var touch = e.touches[0];
-      var handler = chart.getZr().handler;
+      var handler = getInstance(zrenderId).handler;
       handler.dispatch('mousedown', {
         zrX: touch.locationX,
         zrY: touch.locationY,
@@ -140,9 +142,9 @@ function SvgComponent(props: SVGVNodeProps, ref?: any) {
   const touchMove = (e) => {
     console.log('touchMove')
     e = e.nativeEvent
-    if (chart && e.touches.length > 0) {
+    if (zrenderId && e.touches.length > 0) {
       var touch = e.touches[0];
-      var handler = chart.getZr().handler;
+      var handler = getInstance(zrenderId).handler;
       handler.dispatch('mousemove', {
         zrX: touch.locationX,
         zrY: touch.locationY,
@@ -157,9 +159,9 @@ function SvgComponent(props: SVGVNodeProps, ref?: any) {
   const touchEnd = (e) => {
     console.log('touchEnd')
     e = e.nativeEvent
-    if (chart) {
+    if (zrenderId) {
       const touch = e.changedTouches ? e.changedTouches[0] : {};
-      var handler = chart.getZr().handler;
+      var handler = getInstance(zrenderId).handler;
       handler.dispatch('mouseup', {
         zrX: touch.locationX,
         zrY: touch.locationY,
@@ -191,6 +193,9 @@ function SvgComponent(props: SVGVNodeProps, ref?: any) {
       },
       patch: (_oldVnode: SVGVNode, vnode: SVGVNode) => {
         setSvgNode(vnode)
+      },
+      setZrenderId: (id) => {
+        setZrenderId(id)
       }
     }
   }));

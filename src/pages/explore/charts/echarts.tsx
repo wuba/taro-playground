@@ -77,7 +77,6 @@ export default function EchartsPage() {
   const svgRef = useRef<any>(null);
   const skiaRef = useRef<any>(null);
   const canvasRef = useRef<any>(null);
-  const [curChart, setCurChart]: any = useState(null)
 
   useEffect(() => {
     let chart;
@@ -89,7 +88,6 @@ export default function EchartsPage() {
         height: 400,
       });
       chart.setOption(option);
-      setCurChart(chart)
     }
     return () => chart?.dispose()
   }, []);
@@ -125,7 +123,7 @@ export default function EchartsPage() {
 
   return <>
     <CanvasComponent ref={canvasRef} onInit={onInit} width={400} height={400} />
-    <SvgComponent ref={svgRef} chart={curChart}></SvgComponent>
+    <SvgComponent ref={svgRef}></SvgComponent>
     <SkiaComponent ref={skiaRef} />
   </>
 }
