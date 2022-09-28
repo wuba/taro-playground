@@ -22,7 +22,7 @@ import {
   LegendComponent
 } from 'echarts/components';
 import { LabelLayout, UniversalTransition } from 'echarts/features';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { PixelRatio } from 'react-native';
 // import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
 import { CanvasRenderer } from './CanvasRenderer';
@@ -90,8 +90,8 @@ export default function EchartsPage() {
       });
       chart.setOption(option);
       setCurChart(chart)
-      return () => chart?.dispose()
     }
+    return () => chart?.dispose()
   }, []);
 
   useEffect(() => {
@@ -104,27 +104,27 @@ export default function EchartsPage() {
         height: 400,
       });
       chart.setOption(option);
-      return () => chart?.dispose()
     }
+    return () => chart?.dispose()
   }, []);
 
+  // 避免重复渲染
+  const onInit = useCallback(()=>{
+    let chart;
+    if(canvasRef.current) {
+      // @ts-ignore
+      chart = echarts.init(canvasRef.current, 'light', {
+        renderer: 'canvas',
+        width: 400,
+        height: 400,
+        devicePixelRatio: PixelRatio.get(),
+      });
+      chart.setOption(option);
+    }
+  }, [])
+
   return <>
-    <CanvasComponent
-      ref={canvasRef}
-      onInit={()=>{
-        let chart;
-        if(canvasRef.current) {
-          // @ts-ignore
-          chart = echarts.init(canvasRef.current, 'light', {
-            renderer: 'canvas',
-            width: 400,
-            height: 400,
-            devicePixelRatio: PixelRatio.get(),
-          });
-          chart.setOption(option);
-        }
-      }} width={400} height={400}
-    />
+    <CanvasComponent ref={canvasRef} onInit={onInit} width={400} height={400} />
     <SvgComponent ref={svgRef} chart={curChart}></SvgComponent>
     <SkiaComponent ref={skiaRef} />
   </>

@@ -8,7 +8,6 @@ export default function ZrenderPage() {
   const viewRef = useRef<View>(null);
   const [svgNode, setSvgNode] = useState<SVGVNode | null>(null)
   useEffect(() => {
-    console.log('useEffect1')
     // @ts-ignore
     const zr = init(viewRef.current, {
       renderer: 'svg',

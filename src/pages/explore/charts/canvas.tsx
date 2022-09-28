@@ -1,6 +1,6 @@
 import { GLView } from "expo-gl"
 import Expo2DContext from "expo-2d-context"
-import { forwardRef, useImperativeHandle, useState } from "react"
+import { forwardRef, useImperativeHandle, useState, memo } from "react"
 
 interface CanvasProps {
   width?: number
@@ -43,4 +43,6 @@ function CanvasComponent(props: CanvasProps, ref?: any) {
     }} />
   </>
 }
-export default forwardRef(CanvasComponent)
+export default memo(forwardRef(CanvasComponent), (prevProps, nextProps) => {
+  return prevProps.onInit === nextProps.onInit
+})

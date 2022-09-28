@@ -192,11 +192,7 @@ function SvgComponent(props: SVGVNodeProps, ref?: any) {
       patch: (_oldVnode: SVGVNode, vnode: SVGVNode) => {
         setSvgNode(vnode)
       }
-    },
-    viewprot: {},
-    focus: () => {
-      console.log('focus')
-    },
+    }
   }));
   return svgNode ? <SvgEle node={svgNode} touchStart={touchStart} touchMove={touchMove} touchEnd={touchEnd} /> : null
 }
