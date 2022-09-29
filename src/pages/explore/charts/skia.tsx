@@ -2,6 +2,7 @@ import {
   useState,
   useImperativeHandle,
   forwardRef,
+  useEffect,
 } from 'react'
 
 import { Image } from "react-native";
@@ -12,7 +13,11 @@ import {
   Skia,
   SkSVG,
   SkTypeface,
+  useTouchHandler,
+  useValue,
 } from "@shopify/react-native-skia"
+
+import { getInstance } from "zrender/lib/zrender";
 
 import { setPlatformAPI, DEFAULT_FONT, DEFAULT_FONT_SIZE, platformApi } from 'zrender/lib/core/platform'
 
@@ -66,6 +71,13 @@ function SkiaComponent(props: SkiaProps, ref?: any) {
   const [svgString, setSvgString] = useState<SkSVG | undefined>(getSkSvg(svg))
   const [width, setWidth] = useState<number>(props.width ?? 0)
   const [height, setHeight] = useState<number>(props.height ?? 0)
+  const [ zrenderId, setZrenderId ] = useState<any>(null)
+  const zrenderIdValue = useValue(0)
+
+  useEffect(() => {
+    zrenderIdValue.current = zrenderId;
+  }, [zrenderId]);
+
   useImperativeHandle(ref, () => ({
     elm: {
       setAttribute: (name, value) => {
@@ -83,13 +95,72 @@ function SkiaComponent(props: SkiaProps, ref?: any) {
         console.log(name)
       },
       patchString: (_oldVnode: string, vnode: string) => {
-        const svgString = getSkSvg(vnode)
-        setSvgString(svgString)
+        const _svgString = getSkSvg(vnode)
+        setSvgString(_svgString)
+      },
+      setZrenderId: (id) => {
+        setZrenderId(id)
       }
     },
     viewprot: {}
   }))
-  return svgString ? <Canvas style={{ width, height }}>
+
+  const touchHandler = useTouchHandler({
+    onStart: ({ x, y }) => {
+      if (zrenderIdValue.current) {
+        var handler = getInstance(zrenderIdValue.current).handler;
+        handler.dispatch('mousedown', {
+          zrX: x,
+          zrY: y,
+          preventDefault: () => {},
+          stopImmediatePropagation: () => {},
+          stopPropagation: () => {}
+        });
+        handler.dispatch('mousemove', {
+          zrX: x,
+          zrY: y,
+          preventDefault: () => {},
+          stopImmediatePropagation: () => {},
+          stopPropagation: () => {}
+        });
+      }
+    },
+    onActive: ({ x, y }) => {
+      console.log('touchMove')
+      if (zrenderIdValue.current) {
+        var handler = getInstance(zrenderIdValue.current).handler;
+        handler.dispatch('mousemove', {
+          zrX: x,
+          zrY: y,
+          preventDefault: () => {},
+          stopImmediatePropagation: () => {},
+          stopPropagation: () => {}
+        });
+      }
+    },
+    onEnd: ({ x, y }) => {
+      console.log('touchEnd')
+      if (zrenderIdValue.current) {
+        var handler = getInstance(zrenderIdValue.current).handler;
+        handler.dispatch('mouseup', {
+          zrX: x,
+          zrY: y,
+          preventDefault: () => {},
+          stopImmediatePropagation: () => {},
+          stopPropagation: () => {}
+        });
+        handler.dispatch('click', {
+          zrX: x,
+          zrY: y,
+          preventDefault: () => {},
+          stopImmediatePropagation: () => {},
+          stopPropagation: () => {}
+        });
+      }
+    },
+  });
+
+  return svgString ? <Canvas style={{ width, height }} pointerEvents="auto" onTouch={touchHandler}>
     <ImageSVG
       svg={svgString}
       x={0}
