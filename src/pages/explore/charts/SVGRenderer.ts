@@ -1,6 +1,6 @@
 import SVGPainter from "zrender/lib/svg/Painter";
 
-import { vNodeToString } from "zrender/lib/svg/core";
+import { vNodeToString } from "./SVGCore";
 import { updateAttrs } from 'zrender/lib/svg/patch';
 
 const isRn = navigator?.product === "ReactNative";
@@ -32,13 +32,9 @@ class CustomSVGPainter extends SVGPainter {
       if (this._svgDom.patch) {
         // @ts-ignore
         this._svgDom.patch(this._oldVNode, vnode);
-      }
-      // @ts-ignore
-      if (this._svgDom.patchString) {
         // @ts-ignore
-        // 调整 skia 不支持的属性
-        // 1. dominant-baseline="central" 不支持
-        // 2. strokeWidth 兼容
+      } else if (this._svgDom.patchString) {
+        // @ts-ignore
         this._svgDom.patchString(this._oldVNode, vNodeToString(vnode));
       }
       // @ts-ignore

@@ -27,6 +27,9 @@ import {
   useImperativeHandle,
   forwardRef,
 } from 'react'
+
+import { Platform } from 'react-native';
+
 import { getInstance } from "zrender/lib/zrender";
 
 const tagMap = {
@@ -98,12 +101,19 @@ function SvgEle(props: SVGVEleProps, root: Boolean = true) {
   if(!node) return null
   const Tag = tagMap[node.tag]
   if (!Tag) return null;
-  const attrs = Object.entries(node.attrs).reduce((carry, [key, value]) => {
+  const attrs:any = Object.entries(node.attrs).reduce((carry, [key, value]) => {
     carry[toCamelCase(key)] = value
     return carry
   }, {})
   if(node.tag === 'text') {
+    if(!attrs.alignmentBaseline && attrs.dominantBaseline) {
+      attrs.alignmentBaseline = 'middle'
+    }
     return <Tag {...attrs} key={node.key}>{node.text}</Tag>
+  }
+  // fix: https://github.com/react-native-svg/react-native-svg/issues/983
+  if(attrs.clipPath && !attrs.clipRule && Platform.OS === 'android') {
+    attrs.clipRule = 'nonzero'
   }
   return root
     ? <Tag {...attrs} onTouchStart={props.touchStart} onTouchEnd={props.touchEnd} onTouchMove={props.touchMove} key={node.key}>{node.children && node.children.map(child => SvgEle({ node: child }, false))}</Tag>
