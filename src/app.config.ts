@@ -11,39 +11,39 @@ const tabs = [
     iconPath: './assets/iconpark/system.png',
     selectedIconPath: './assets/iconpark/system_selected.png',
     pagePath: 'pages/home/index',
-    text: '项目',
+    text: '项目'
   },
   {
     iconPath: './assets/iconpark/cycle.png',
     selectedIconPath: './assets/iconpark/cycle_selected.png',
     pagePath: 'pages/global/index',
-    text: '全局',
+    text: '全局'
   },
   {
     iconPath: './assets/iconpark/components.png',
     selectedIconPath: './assets/iconpark/components_selected.png',
     pagePath: 'pages/components/index',
-    text: '组件',
+    text: '组件'
   },
   {
     iconPath: './assets/iconpark/ring.png',
     selectedIconPath: './assets/iconpark/ring_selected.png',
     pagePath: 'pages/apis/index',
-    text: '接口',
+    text: '接口'
   },
   {
     iconPath: './assets/iconpark/painted-eggshell.png',
     selectedIconPath: './assets/iconpark/painted-eggshell_selected.png',
     pagePath: 'pages/explore/index',
-    text: '探索',
+    text: '探索'
   },
   {
     iconPath: './assets/iconpark/user.png',
     selectedIconPath: './assets/iconpark/user_selected.png',
     pagePath: 'pages/about/index',
-    text: '关于',
-  },
-]
+    text: '关于'
+  }
+];
 
 const pages = [
   'pages/home/index',
@@ -119,28 +119,39 @@ const pages = [
   'pages/about/rn',
   'pages/webview/index',
   // 探索
-  'pages/explore/index',
-]
+  'pages/explore/index'
+];
 
-const subpackages = [{
-  root: 'pages/explore/animate',
-  pages: [
-    'lottie/index',
-  ],
-}, {
-  root: 'pages/explore/others',
-  pages: [
-    'linear-gradient/index',
-  ]
-}]
+const subpackages = [
+  {
+    root: 'pages/explore/animate',
+    pages: ['lottie/index']
+  },
+  {
+    root: 'pages/explore/others',
+    pages: ['linear-gradient/index']
+  }
+];
 
-if(process.env.TARO_ENV === 'rn') {
+if (process.env.TARO_ENV === 'rn') {
   subpackages.push({
     root: 'pages/explore/charts',
+    // pages: ['echarts']
     pages: [
-      'echarts',
+      'entry',
+      'pages/barPolarRealEstate',
+      'pages/bubbleGradient',
+      'pages/pieNest',
+      'pages/scatterLarge',
+      'pages/lineMarkline',
+      'pages/effectScatterBmap',
+      'pages/barNegative',
+      'pages/areaPieces',
+      'pages/lineSections',
+      'pages/Bar1',
+      'pages/scatterSingleAxis'
     ]
-  })
+  });
 }
 
 export default {
@@ -159,6 +170,6 @@ export default {
     list: process.env.TARO_ENV === 'rn' ? tabs : tabs.splice(1)
   },
   rn: {
-    useNativeStack: true, // 使用 @react-navigation/native-stack
+    useNativeStack: true // 使用 @react-navigation/native-stack
   }
-}
+};
