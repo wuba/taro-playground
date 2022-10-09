@@ -126,8 +126,11 @@ echarts.use([
  *
  */
 
-const E_HEIGHT = 400;
-const E_WIDTH = 400;
+import beef from './beef';
+echarts.registerMap('Beef_cuts_France', { svg: beef });
+
+const E_HEIGHT = 600;
+const E_WIDTH = 600;
 const blockStyle: any = {
   marginBottom: 20
 };

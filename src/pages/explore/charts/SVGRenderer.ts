@@ -5,6 +5,9 @@ import { updateAttrs } from 'zrender/lib/svg/patch';
 
 const isRn = navigator?.product === "ReactNative";
 
+import { DOMParser } from 'xmldom'
+
+globalThis.DOMParser = DOMParser;
 class CustomSVGPainter extends SVGPainter {
   constructor(root: HTMLElement, storage, opts, id) {
     if(isRn) {

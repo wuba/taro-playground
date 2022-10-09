@@ -149,7 +149,8 @@ if (process.env.TARO_ENV === 'rn') {
       'pages/areaPieces',
       'pages/lineSections',
       'pages/Bar1',
-      'pages/scatterSingleAxis'
+      'pages/scatterSingleAxis',
+      'pages/geoBeefCuts'
     ]
   });
 }

@@ -106,6 +106,7 @@
     "react-native-syan-image-picker": "0.5.3",
     "react-native-webview": "~11.23.0",
     "taro-lottie": "^1.0.0",
+    "xmldom": "^0.6.0",
     "zrender": "^5.3.2"
   },
   "devDependencies": {
