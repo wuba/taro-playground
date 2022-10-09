@@ -3,12 +3,14 @@ import {
   BarChart,
   // 系列类型的定义后缀都为 SeriesOption
   BarSeriesOption,
+  CandlestickChart,
   EffectScatterChart,
   HeatmapChart,
   LineChart,
   LineSeriesOption,
   MapChart,
   PieChart,
+  RadarChart,
   ScatterChart
 } from 'echarts/charts';
 import {
@@ -68,6 +70,8 @@ echarts.use([
   VisualMapComponent,
   TimelineComponent,
   BrushComponent,
+  RadarChart,
+  CandlestickChart,
   BarChart,
   LineChart,
   HeatmapChart,

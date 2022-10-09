@@ -19,6 +19,8 @@
     width: 60vw;
     background-color: white;
     &__text {
+      display: flex;
+      flex-direction: row;
       width: 100%;
       padding: 24px;
       font-size: 32px;
