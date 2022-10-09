@@ -150,6 +150,7 @@ if (process.env.TARO_ENV === 'rn') {
       'pages/lineSections',
       'pages/Bar1',
       'pages/scatterSingleAxis',
+      'pages/geoBeefCuts',
       'pages/candlestick/candlestickSimple',
       'pages/radar/radar'
     ]

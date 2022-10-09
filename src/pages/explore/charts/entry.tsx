@@ -109,6 +109,15 @@ const routes = [
         state: true
       }
     ]
+  },
+  {
+    title: '地理坐标/地图',
+    routes: [
+      {
+        title: '庖丁解牛',
+        url: `${prefix}geoBeefCuts`
+      }
+    ]
   }
 ];
 
