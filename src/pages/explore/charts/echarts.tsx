@@ -31,7 +31,8 @@ import {
   GraphicComponent,
   PolarComponent,
   TimelineComponent,
-  BrushComponent
+  BrushComponent,
+  MarkLineComponent,
 } from 'echarts/components';
 import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { useCallback, useEffect, useRef } from 'react';
@@ -79,6 +80,7 @@ echarts.use([
   UniversalTransition,
   SVGRenderer,
   LegendComponent,
+  MarkLineComponent,
   CanvasRenderer
 ]);
 
@@ -129,8 +131,8 @@ echarts.use([
 import beef from './beef';
 echarts.registerMap('Beef_cuts_France', { svg: beef });
 
-const E_HEIGHT = 600;
-const E_WIDTH = 600;
+const E_HEIGHT = 400;
+const E_WIDTH = 400;
 const blockStyle: any = {
   marginBottom: 20
 };
@@ -138,7 +140,6 @@ const blockStyle: any = {
 export default function EchartsPage({ option }) {
   const svgRef = useRef<any>(null);
   const skiaRef = useRef<any>(null);
-  const canvasRef = useRef<any>(null);
 
   useEffect(() => {
     let chart;
@@ -168,31 +169,8 @@ export default function EchartsPage({ option }) {
     return () => chart?.dispose();
   }, []);
 
-  // 避免重复渲染
-  const onInit = useCallback(() => {
-    let chart;
-    if (canvasRef.current) {
-      // @ts-ignore
-      chart = echarts.init(canvasRef.current, 'light', {
-        renderer: 'canvas',
-        width: E_WIDTH,
-        height: E_HEIGHT,
-        devicePixelRatio: PixelRatio.get()
-      });
-      chart.setOption(option);
-    }
-  }, []);
-
   return (
     <View>
-      <View style={blockStyle}>
-        <CanvasComponent
-          ref={canvasRef}
-          onInit={onInit}
-          width={E_WIDTH}
-          height={E_HEIGHT}
-        />
-      </View>
       <View style={blockStyle}>
         <SvgComponent ref={svgRef}></SvgComponent>
       </View>
