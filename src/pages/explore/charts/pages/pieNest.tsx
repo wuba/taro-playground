@@ -11,7 +11,6 @@ export default function barPolarRealEstate() {
   const option = {
     tooltip: {
       trigger: 'item',
-      formatter: '{a} <br/>{b}: {c} ({d}%)'
     },
     legend: {
       data: [
