@@ -110,7 +110,7 @@ export default function barPolarRealEstate() {
   return (
     <View>
       <View className="header">
-        这个case的柱状背景没有出来；另外，ios上canvas会crash
+        fixed: 这个case的柱状背景没有出来；另外，ios上canvas会crash
       </View>
       <Chart option={option} />
     </View>

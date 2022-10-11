@@ -72,7 +72,7 @@ export default function barPolarRealEstate() {
   return (
     <View>
       <View className="header">
-        这个case
+        fixed: 这个case
         ios上svg不出来（严格来说，应该是动画效果出不来，页面滑动几下还是可以看到图表的；但是android上表现就挺好）；另外，canvas那个背景条没出来
       </View>
       <Chart option={option} />

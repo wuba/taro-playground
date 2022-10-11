@@ -100,7 +100,7 @@ export default function barPolarRealEstate() {
 
   return (
     <View>
-      <View className="header">这个case上的小水滴没出来</View>
+      <View className="header">fixed: 这个case上的小水滴没出来</View>
       <Chart option={option} />
     </View>
   );

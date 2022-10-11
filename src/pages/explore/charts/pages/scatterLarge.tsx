@@ -79,7 +79,7 @@ export default function barPolarRealEstate() {
 
   return (
     <View>
-      <View className="header">数据量大会很卡，交互困难</View>
+      <View className="header">数据量大会很卡，交互困难。这个实现原理上不支持。</View>
       <Chart option={option} />
     </View>
   );

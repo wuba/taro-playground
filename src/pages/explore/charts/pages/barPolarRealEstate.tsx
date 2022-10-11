@@ -48,19 +48,7 @@ export default function barPolarRealEstate() {
       data: cities
     },
     tooltip: {
-      show: true,
-      formatter: function(params) {
-        const id = params.dataIndex;
-        return (
-          cities[id] +
-          '<br>Lowest：' +
-          data[id][0] +
-          '<br>Highest：' +
-          data[id][1] +
-          '<br>Average：' +
-          data[id][2]
-        );
-      }
+      show: true
     },
     radiusAxis: {},
     polar: {},
@@ -115,7 +103,7 @@ export default function barPolarRealEstate() {
 
   return (
     <View>
-      <View className="header">点击skia渲染出来的图表会引发app crash</View>
+      <View className="header">中文无法正常显示，formatter不支持，点击skia渲染出来的图表会引发app crash</View>
       <Chart option={option} />
     </View>
   );

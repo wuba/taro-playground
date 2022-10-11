@@ -33,6 +33,9 @@ import {
   TimelineComponent,
   BrushComponent,
   MarkLineComponent,
+  MarkAreaComponent,
+  MarkPointComponent,
+  SingleAxisComponent,
 } from 'echarts/components';
 import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { useCallback, useEffect, useRef } from 'react';
@@ -81,6 +84,9 @@ echarts.use([
   SVGRenderer,
   LegendComponent,
   MarkLineComponent,
+  MarkPointComponent,
+  MarkAreaComponent,
+  SingleAxisComponent,
   CanvasRenderer
 ]);
 
