@@ -521,10 +521,10 @@ PODS:
     - React-RCTText
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNScreens (3.17.0):
+  - RNScreens (3.18.1):
     - React-Core
     - React-RCTImage
-  - RNSVG (12.4.4):
+  - RNSVG (13.2.0):
     - React-Core
   - RNSyanImagePicker (0.5.3):
     - React
@@ -845,7 +845,7 @@ SPEC CHECKSUMS:
   Flipper-RSocket: d9d9ade67cbecf6ac10730304bf5607266dd2541
   FlipperKit: cbdee19bdd4e7f05472a66ce290f1b729ba3cb86
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
-  glog: 3d02b25ca00c2d456734d0bcff864cbc62f6ae1a
+  glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   lottie-ios: 9ae750cdc7820fecbd3c2f0cfc493038208fcdc4
   lottie-react-native: b702fab740cdb952a8e2354713d3beda63ff97b0
@@ -894,8 +894,8 @@ SPEC CHECKSUMS:
   RNFlashList: 5116f2de2f543f01bfc30b22d5942d5af84b43df
   RNGestureHandler: bad495418bcbd3ab47017a38d93d290ebd406f50
   RNReanimated: 7faa787e8d4493fbc95fab2ad331fa7625828cfa
-  RNScreens: 0df01424e9e0ed7827200d6ed1087ddd06c493f9
-  RNSVG: ecd661f380a07ba690c9c5929c475a44f432d674
+  RNScreens: 1b7bb502dac62cc4cf01b94bea591c8da275132f
+  RNSVG: 07037623c36f12e41312730622d5f6b3656227ca
   RNSyanImagePicker: 5c650d33f16f7cd59c47d9269f6c4856b30d7616
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
   TZImagePickerController: e9909edbadf7381140efc5b5c9f5bdbfd630f7d4
@@ -905,4 +905,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 9d36e950cfde4f27d5db95a8d8232bac374cc3a4
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3
