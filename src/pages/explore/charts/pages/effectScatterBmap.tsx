@@ -599,7 +599,7 @@ export default function barPolarRealEstate() {
 
   return (
     <View>
-      <View className="header">这个case出不来，可能地图只能用于web页面？</View>
+      <View className="header">这个case出不来，可能地图只能用于web页面？无法支持。</View>
       <Chart option={option} />
     </View>
   );

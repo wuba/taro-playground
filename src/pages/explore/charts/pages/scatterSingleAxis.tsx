@@ -74,7 +74,7 @@ export default function barPolarRealEstate() {
 
   return (
     <View>
-      <View className="header">这个试用失败</View>
+      <View className="header">fixed: 这个试用失败</View>
       <Chart option={option} />
     </View>
   );

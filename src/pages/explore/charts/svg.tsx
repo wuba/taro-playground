@@ -109,6 +109,10 @@ function SvgEle(props: SVGVEleProps, root: Boolean = true) {
     if(!attrs.alignmentBaseline && attrs.dominantBaseline) {
       attrs.alignmentBaseline = 'middle'
     }
+    // fix: https://github.com/react-native-svg/react-native-svg/issues/1862
+    if(attrs.paintOrder === 'stroke') {
+      attrs.strokeWidth = 0
+    }
     return <Tag {...attrs} key={node.key}>{node.text}</Tag>
   }
   // fix: https://github.com/react-native-svg/react-native-svg/issues/983

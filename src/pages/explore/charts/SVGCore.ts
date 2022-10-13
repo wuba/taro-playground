@@ -2,70 +2,87 @@
 // under BSD-3-Clause license
 // add some patch for skia
 
-export type SVGVNodeAttrs = Record<string, string | number | undefined | boolean>
+export type SVGVNodeAttrs = Record<
+  string,
+  string | number | undefined | boolean
+>;
 export interface SVGVNode {
-    tag: string,
-    attrs: SVGVNodeAttrs,
-    children?: SVGVNode[],
-    text?: string
+  tag: string;
+  attrs: SVGVNodeAttrs;
+  children?: SVGVNode[];
+  text?: string;
 
-    // For patching
-    elm?: Node
-    key: string
-};
+  // For patching
+  elm?: Node;
+  key: string;
+}
 
 function createElementOpen(name: string, attrs?: SVGVNodeAttrs) {
-    const attrsStr: string[] = [];
-    if (attrs) {
-        // eslint-disable-next-line
-        for (let key in attrs) {
-            const val = attrs[key];
-            let part = key;
-            // Same with the logic in patch.
-            if (val === false) {
-                continue;
-            }
-            else if (val !== true && val != null) {
-                part += `="${val}"`;
-            }
-            attrsStr.push(part);
-        }
+  const attrsStr: string[] = [];
+  if (attrs) {
+    // eslint-disable-next-line
+    for (let key in attrs) {
+      const val = attrs[key];
+      let part = key;
+      // Same with the logic in patch.
+      if (val === false) {
+        continue;
+      } else if (val !== true && val != null) {
+        part += `="${val}"`;
+      }
+      attrsStr.push(part);
     }
-    return `<${name} ${attrsStr.join(' ')}>`;
+  }
+  return `<${name} ${attrsStr.join(" ")}>`;
 }
 
 function createElementClose(name: string) {
-    return `</${name}>`;
+  return `</${name}>`;
 }
 
-export function vNodeToString(el: SVGVNode, opts?: {
-    newline?: boolean
-}) {
-    opts = opts || {};
-    const S = opts.newline ? '\n' : '';
-    function convertElToString(el: SVGVNode): string {
-        const {children, tag, attrs} = el;
-        // fix: https://github.com/Shopify/react-native-skia/issues/888
-        if(attrs['stroke-width'] === 0) {
-          attrs['stroke-opacity'] = 0;
-        }
-        // fix: https://github.com/Shopify/react-native-skia/issues/884
-        if(tag === 'text' && attrs['dominant-baseline'] === 'central' && typeof attrs['style'] === 'string') {
-          const res = (/font-size:([0-9]*?)px/).exec(attrs['style']);
-          const fs = Number(res && res[1]);
-          const dy = (fs / 2) - 2;
-          if(attrs['y']) {
-            attrs['y'] = Number(attrs['y']) + dy;
-            attrs['dominant-baseline'] = 'auto';
-          } else if(attrs['transform']) {
-            attrs['transform'] = attrs['transform'] + ` translate(0, ${dy})`;
-            attrs['dominant-baseline'] = 'auto';
-          }
-        }
-        return createElementOpen(tag, attrs)
-            + (el.text || '')
-            + (children ? `${S}${children.map(child => convertElToString(child)).join(S)}${S}` : '')
-            + createElementClose(tag);
+export function vNodeToString(
+  el: SVGVNode,
+  opts?: {
+    newline?: boolean;
+  }
+) {
+  opts = opts || {};
+  const S = opts.newline ? "\n" : "";
+  function convertElToString(el: SVGVNode): string {
+    const { children, tag, attrs } = el;
+    // fix: https://github.com/Shopify/react-native-skia/issues/888
+    if (attrs["stroke-width"] === 0) {
+      attrs["stroke-opacity"] = 0;
     }
-    return convertElToString(el);
+    // fix: https://github.com/Shopify/react-native-skia/issues/884
+    if (
+      tag === "text" &&
+      attrs["dominant-baseline"] === "central" &&
+      typeof attrs["style"] === "string"
+    ) {
+      const res = /font-size:([0-9]*?)px/.exec(attrs["style"]);
+      const fs = Number(res && res[1]);
+      const dy = fs / 2 - 2;
+      if (attrs["y"]) {
+        attrs["y"] = Number(attrs["y"]) + dy;
+        attrs["dominant-baseline"] = "auto";
+      } else if (attrs["transform"]) {
+        attrs["transform"] = attrs["transform"] + ` translate(0, ${dy})`;
+        attrs["dominant-baseline"] = "auto";
+      }
+      // fix: https://github.com/react-native-svg/react-native-svg/issues/1862
+      if (attrs['paint-order'] === "stroke") {
+        attrs['stroke-width'] = 0;
+      }
+    }
+    return (
+      createElementOpen(tag, attrs) +
+      (el.text || "") +
+      (children
+        ? `${S}${children.map(child => convertElToString(child)).join(S)}${S}`
+        : "") +
+      createElementClose(tag)
+    );
+  }
+  return convertElToString(el);
 }
