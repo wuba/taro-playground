@@ -153,7 +153,13 @@ if (process.env.TARO_ENV === 'rn') {
       'pages/map/geoBeefCuts',
       'pages/candlestick/candlestickSimple',
       'pages/radar/radar',
-      'pages/boxplot/boxplotLightVelocity'
+      'pages/boxplot/boxplotLightVelocity',
+      'pages/heatmap/heatmapCartesian',
+      'pages/heatmap/heatmapLargePiecewise',
+      'pages/graph/graphForce2',
+      'pages/tree/treeBasic',
+      'pages/treemap/treemapDisk',
+      'pages/sunburst/sunburstSimple'
     ]
   });
 }

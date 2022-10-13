@@ -72,7 +72,7 @@ export default function barPolarRealEstate() {
 
   return (
     <View>
-      <View className="header">这个case上的牛渲染不正确</View>
+      <View className="header">这个case，svg上的字出不来（图放大点看）</View>
       <View className="body">
         <Chart option={option} />
       </View>

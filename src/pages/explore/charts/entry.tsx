@@ -98,7 +98,8 @@ const routes = [
     routes: [
       {
         title: '庖丁解牛',
-        url: `${prefix}map/geoBeefCuts`
+        url: `${prefix}map/geoBeefCuts`,
+        state: true
       }
     ]
   },
@@ -108,6 +109,55 @@ const routes = [
       {
         title: '基础盒须图',
         url: `${prefix}boxplot/boxplotLightVelocity`
+      }
+    ]
+  },
+  {
+    title: '热力图',
+    routes: [
+      {
+        title: '笛卡尔坐标系上的热力图',
+        url: `${prefix}heatmap/heatmapCartesian`
+      },
+      {
+        title: '热力图 - 颜色的离散映射',
+        url: `${prefix}heatmap/heatmapLargePiecewise`
+      }
+    ]
+  },
+  {
+    title: '关系图',
+    routes: [
+      {
+        title: '力引导布局',
+        url: `${prefix}graph/graphForce2`
+      }
+    ]
+  },
+  {
+    title: '树图',
+    routes: [
+      {
+        title: '从左到右树状图',
+        url: `${prefix}tree/treeBasic`
+      }
+    ]
+  },
+  {
+    title: '矩形树图',
+    routes: [
+      {
+        title: '磁盘占用',
+        url: `${prefix}treemap/treemapDisk`
+      }
+    ]
+  },
+  {
+    title: '旭日图',
+    routes: [
+      {
+        title: '基础旭日图',
+        url: `${prefix}sunburst/sunburstSimple`
       }
     ]
   }

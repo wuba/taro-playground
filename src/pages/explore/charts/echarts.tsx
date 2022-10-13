@@ -6,13 +6,17 @@ import {
   BoxplotChart,
   CandlestickChart,
   EffectScatterChart,
+  GraphChart,
   HeatmapChart,
   LineChart,
   LineSeriesOption,
   MapChart,
   PieChart,
   RadarChart,
-  ScatterChart
+  ScatterChart,
+  SunburstChart,
+  TreeChart,
+  TreemapChart
 } from 'echarts/charts';
 import {
   TitleComponent,
@@ -77,6 +81,10 @@ echarts.use([
   VisualMapComponent,
   TimelineComponent,
   BrushComponent,
+  SunburstChart,
+  TreeChart,
+  TreemapChart,
+  GraphChart,
   BoxplotChart,
   RadarChart,
   CandlestickChart,
