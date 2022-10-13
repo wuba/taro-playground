@@ -1,8 +1,7 @@
 import { View } from '@tarojs/components';
-import Chart from '../echarts';
-import './style.scss';
+import Chart from '../../echarts';
+import '../style.scss';
 /**
- * 这个case上的小虚线等没出来
  * https://echarts.apache.org/examples/zh/editor.html?c=line-markline
  */
 export default function barPolarRealEstate() {
@@ -54,7 +53,7 @@ export default function barPolarRealEstate() {
   const option = {
     animation: false,
     textStyle: {
-      fontSize: 14
+      fontSize: 8
     },
     xAxis: {
       data: ['A', 'B', 'C', 'D', 'E'],
@@ -91,8 +90,12 @@ export default function barPolarRealEstate() {
 
   return (
     <View>
-      <View className="header">fixed:这个case上的小虚线等没出来</View>
-      <Chart option={option} />
+      <View className="header">
+        这个case，svg设置字体大小没有效果（fontSize），skia设置有效，但是看不太清楚
+      </View>
+      <View className="body">
+        <Chart option={option} />
+      </View>
     </View>
   );
 }

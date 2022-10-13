@@ -1,7 +1,7 @@
 import { View } from '@tarojs/components';
-import * as echarts from 'echarts/core';
-import Chart from '../echarts';
-import './style.scss';
+// import * as echarts from 'echarts/core';
+import Chart from '../../echarts';
+import '../style.scss';
 /**
  * 这个case上的小水滴没出来
  * https://echarts.apache.org/examples/zh/editor.html?c=bar1
@@ -21,10 +21,10 @@ export default function barPolarRealEstate() {
     toolbox: {
       show: true,
       feature: {
-        dataView: { show: true, readOnly: false },
+        // dataView: { show: true, readOnly: false }, // 数据显示不可用
         magicType: { show: true, type: ['line', 'bar'] },
-        restore: { show: true },
-        saveAsImage: { show: true }
+        restore: { show: true }
+        // saveAsImage: { show: true } // 保存图片不可用
       }
     },
     calculable: true,
@@ -100,8 +100,10 @@ export default function barPolarRealEstate() {
 
   return (
     <View>
-      <View className="header">fixed: 这个case上的小水滴没出来</View>
-      <Chart option={option} />
+      <View className="header">某地区蒸发量和降水量</View>
+      <View className="body">
+        <Chart option={option} />
+      </View>
     </View>
   );
 }

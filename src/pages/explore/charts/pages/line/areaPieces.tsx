@@ -1,10 +1,9 @@
 import { View } from '@tarojs/components';
-import * as echarts from 'echarts/core';
-import Chart from '../echarts';
-import './style.scss';
+// import * as echarts from 'echarts/core';
+import Chart from '../../echarts';
+import '../style.scss';
 
 /**
- * 这个case ios上svg不出来（严格来说，应该是动画效果出不来，页面滑动几下还是可以看到图表的；但是android上表现就挺好）
  * https://echarts.apache.org/examples/zh/editor.html?c=area-pieces
  * https://echarts.apache.org/examples/zh/editor.html?c=data-transform-filter
  * https://echarts.apache.org/examples/zh/editor.html?c=confidence-band
@@ -71,11 +70,10 @@ export default function barPolarRealEstate() {
 
   return (
     <View>
-      <View className="header">
-        fixed: 这个case
-        ios上svg不出来（严格来说，应该是动画效果出不来，页面滑动几下还是可以看到图表的；但是android上表现就挺好）；另外，canvas那个背景条没出来
+      <View className="header">折线图区域高亮</View>
+      <View className="body">
+        <Chart option={option} />
       </View>
-      <Chart option={option} />
     </View>
   );
 }

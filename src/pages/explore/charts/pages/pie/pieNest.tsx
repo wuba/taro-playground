@@ -1,6 +1,6 @@
 import { View } from '@tarojs/components';
-import Chart from '../echarts';
-import './style.scss';
+import Chart from '../../echarts';
+import '../style.scss';
 
 /**
  * 这个case 安卓点击svg的图表时，会报错
@@ -10,7 +10,7 @@ import './style.scss';
 export default function barPolarRealEstate() {
   const option = {
     tooltip: {
-      trigger: 'item',
+      trigger: 'item'
     },
     legend: {
       data: [
@@ -101,7 +101,9 @@ export default function barPolarRealEstate() {
   return (
     <View>
       <View className="header">安卓点击svg的图表时，会报错</View>
-      <Chart option={option} />
+      <View className="body">
+        <Chart option={option} />
+      </View>
     </View>
   );
 }

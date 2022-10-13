@@ -1,13 +1,13 @@
 import { View } from '@tarojs/components';
-import Chart from '../echarts';
 import * as echarts from 'echarts/core';
-import './style.scss';
+import Chart from '../../echarts';
+import '../style.scss';
 /**
  * 这个case 数据量有点大，很卡几乎无法交互
  * https://echarts.apache.org/examples/zh/editor.html?c=scatter-large
  */
 export default function barPolarRealEstate() {
-  function genData(len, offset) {
+  function genData(len, offset = 0) {
     let arr = new Float32Array(len * 2);
     let off = 0;
     for (let i = 0; i < len; i++) {
@@ -79,8 +79,12 @@ export default function barPolarRealEstate() {
 
   return (
     <View>
-      <View className="header">数据量大会很卡，交互困难。这个实现原理上不支持。</View>
-      <Chart option={option} />
+      <View className="header">
+        数据量大会很卡，交互困难。这个实现原理上不支持。
+      </View>
+      <View className="body">
+        <Chart option={option} />
+      </View>
     </View>
   );
 }

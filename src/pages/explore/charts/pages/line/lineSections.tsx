@@ -1,7 +1,7 @@
 import { View } from '@tarojs/components';
-import * as echarts from 'echarts/core';
-import Chart from '../echarts';
-import './style.scss';
+// import * as echarts from 'echarts/core';
+import Chart from '../../echarts';
+import '../style.scss';
 
 /**
  * 这个case的柱状背景没有出来
@@ -109,10 +109,10 @@ export default function barPolarRealEstate() {
 
   return (
     <View>
-      <View className="header">
-        fixed: 这个case的柱状背景没有出来；另外，ios上canvas会crash
+      <View className="header">一天用电量分布</View>
+      <View className="body">
+        <Chart option={option} />
       </View>
-      <Chart option={option} />
     </View>
   );
 }

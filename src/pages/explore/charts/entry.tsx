@@ -10,17 +10,16 @@ const routes = [
     routes: [
       {
         title: '折线图的标记线',
-        url: `${prefix}lineMarkline`,
-        state: false // 表示是否异常 true-没问题 false-有问题
+        url: `${prefix}line/lineMarkline`,
+        state: true // 表示是否异常 true-有问题
       },
       {
         title: '折线图区域高亮',
-        url: `${prefix}areaPieces`,
-        state: false
+        url: `${prefix}line/areaPieces`
       },
       {
         title: '一天用电量分布',
-        url: `${prefix}lineSections`,
+        url: `${prefix}line/lineSections`,
         state: false
       }
     ]
@@ -30,18 +29,17 @@ const routes = [
     routes: [
       {
         title: '饼形柱状图',
-        url: `${prefix}barPolarRealEstate`,
+        url: `${prefix}bar/barPolarRealEstate`,
         state: false
       },
       {
         title: '交错正负轴标签',
-        url: `${prefix}barNegative`,
+        url: `${prefix}bar/barNegative`,
         state: false
       },
       {
         title: '某地区蒸发量和降水量',
-        url: `${prefix}Bar1`,
-        state: false
+        url: `${prefix}bar/Bar1`
       }
     ]
   },
@@ -50,22 +48,19 @@ const routes = [
     routes: [
       {
         title: '气泡图',
-        url: `${prefix}bubbleGradient`,
-        state: false
+        url: `${prefix}scatter/bubbleGradient`
       },
-      {
-        title: '大规模散点图',
-        url: `${prefix}scatterLarge`,
-        state: false
-      },
+      // {
+      //   title: '大规模散点图',
+      //   url: `${prefix}scatter/scatterLarge`,
+      // },
       {
         title: '全国主要城市空气质量',
-        url: `${prefix}effectScatterBmap`,
-        state: false
+        url: `${prefix}scatter/effectScatterBmap`
       },
       {
         title: '单轴散点图',
-        url: `${prefix}scatterSingleAxis`,
+        url: `${prefix}scatter/scatterSingleAxis`,
         state: false
       }
     ]
@@ -75,28 +70,17 @@ const routes = [
     routes: [
       {
         title: '嵌套环形图',
-        url: `${prefix}pieNest`,
-        state: false
+        url: `${prefix}pie/pieNest`,
+        state: true
       }
     ]
   },
-  // {
-  //   title: '地理坐标/地图',
-  //   routes: [
-  //     {
-  //       title: '庖丁解牛',
-  //       url: `${prefix}geoBeefCuts`,
-  //       state: true
-  //     }
-  //   ]
-  // },
   {
     title: 'K 线图',
     routes: [
       {
         title: '基础 K 线图',
-        url: `${prefix}candlestickSimple`,
-        state: true
+        url: `${prefix}candlestick/candlestickSimple`
       }
     ]
   },
@@ -105,8 +89,7 @@ const routes = [
     routes: [
       {
         title: '基础雷达图',
-        url: `${prefix}radar/radar`,
-        state: true
+        url: `${prefix}radar/radar`
       }
     ]
   },
@@ -115,7 +98,7 @@ const routes = [
     routes: [
       {
         title: '庖丁解牛',
-        url: `${prefix}geoBeefCuts`
+        url: `${prefix}map/geoBeefCuts`
       }
     ]
   },
@@ -154,7 +137,7 @@ export default function Entry() {
             <Text onClick={() => navigateTo({ url: item.url })}>
               {item.title}{' '}
             </Text>
-            {item?.state === false ? <Icon size="14" type="warn" /> : null}
+            {item?.state ? <Icon size="14" type="warn" /> : null}
           </View>
         ))}
       </View>

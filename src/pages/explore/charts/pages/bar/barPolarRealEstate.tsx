@@ -1,6 +1,6 @@
 import { View } from '@tarojs/components';
-import Chart from '../echarts';
-import './style.scss';
+import Chart from '../../echarts';
+import '../style.scss';
 /**
  * 这个case，skia渲染出来的，点击图表会引发app crash
  * https://echarts.apache.org/examples/zh/editor.html?c=bar-polar-real-estate
@@ -103,8 +103,12 @@ export default function barPolarRealEstate() {
 
   return (
     <View>
-      <View className="header">中文无法正常显示，formatter不支持，点击skia渲染出来的图表会引发app crash</View>
-      <Chart option={option} />
+      <View className="header">
+        中文无法正常显示，formatter不支持，点击skia渲染出来的图表会引发app crash
+      </View>
+      <View className="body">
+        <Chart option={option} />
+      </View>
     </View>
   );
 }

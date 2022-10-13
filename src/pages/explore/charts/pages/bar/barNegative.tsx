@@ -1,7 +1,7 @@
 import { View } from '@tarojs/components';
-import * as echarts from 'echarts/core';
-import Chart from '../echarts';
-import './style.scss';
+// import * as echarts from 'echarts/core';
+import Chart from '../../echarts';
+import '../style.scss';
 
 /**
  * 这个case字体颜色和rn上不同
@@ -82,8 +82,10 @@ export default function barPolarRealEstate() {
 
   return (
     <View>
-      <View className="header">这个case字体颜色和rn上不同</View>
-      <Chart option={option} />
+      <View className="header">这个case字体颜色和web的上不同</View>
+      <View className="body">
+        <Chart option={option} />
+      </View>
     </View>
   );
 }

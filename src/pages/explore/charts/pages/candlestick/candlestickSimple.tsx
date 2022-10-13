@@ -6,7 +6,7 @@ import '../style.scss';
 export default function barPolarRealEstate() {
   const option = {
     xAxis: {
-      data: ['2017-10-24', '2017-10-25', '2017-10-26', '2017-10-27']
+      data: ['10-24', '10-25', '10-26', '10-27']
     },
     yAxis: {},
     series: [
@@ -25,7 +25,9 @@ export default function barPolarRealEstate() {
   return (
     <View>
       <View className="header">good</View>
-      <Chart option={option} />
+      <View className="body">
+        <Chart option={option} />
+      </View>
     </View>
   );
 }

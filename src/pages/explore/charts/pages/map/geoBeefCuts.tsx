@@ -1,10 +1,8 @@
 import { View } from '@tarojs/components';
-import Chart from '../echarts';
-import './style.scss';
-
-import beef from '../beef'
-
-import SkiaComponent from '../skia'
+import Chart from '../../echarts';
+import beef from '../../beef';
+import SkiaComponent from '../../skia';
+import '../style.scss';
 /**
  * 这个case上的小虚线等没出来
  * https://echarts.apache.org/examples/zh/editor.html?c=line-markline
@@ -70,12 +68,14 @@ export default function barPolarRealEstate() {
         ]
       }
     ]
-  }
+  };
 
   return (
     <View>
       <View className="header">这个case上的牛渲染不正确</View>
-      <Chart option={option} />
+      <View className="body">
+        <Chart option={option} />
+      </View>
       <SkiaComponent svg={beef} width={600} height={600} />
     </View>
   );

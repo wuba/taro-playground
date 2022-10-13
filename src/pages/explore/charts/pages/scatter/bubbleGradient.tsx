@@ -1,7 +1,7 @@
 import { View } from '@tarojs/components';
 import * as echarts from 'echarts/core';
-import Chart from '../echarts';
-import './style.scss';
+import Chart from '../../echarts';
+import '../style.scss';
 
 export default function barPolarRealEstate() {
   const data = [
@@ -161,8 +161,12 @@ export default function barPolarRealEstate() {
   return (
     <View>
       <View className="header">气泡图，canvas背景无渐变。</View>
-      <View>todo: zrender issue: https://github.com/apache/echarts/issues/17735</View>
-      <Chart option={option} />
+      <View>
+        todo: zrender issue: https://github.com/apache/echarts/issues/17735
+      </View>
+      <View className="body">
+        <Chart option={option} />
+      </View>
     </View>
   );
 }

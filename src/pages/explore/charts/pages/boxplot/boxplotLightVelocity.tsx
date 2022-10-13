@@ -91,7 +91,9 @@ export default function boxplotLightVelocity() {
   return (
     <View>
       <View className="header">盒须图</View>
-      <Chart option={option} />
+      <View className="body">
+        <Chart option={option} />
+      </View>
     </View>
   );
 }

@@ -100,8 +100,8 @@ echarts.use([
 
 echarts.registerMap('Beef_cuts_France', { svg: beef });
 
-const E_HEIGHT = 400;
-const E_WIDTH = 400;
+const E_HEIGHT = 320;
+const E_WIDTH = 320;
 const blockStyle: any = {
   marginBottom: 20
 };

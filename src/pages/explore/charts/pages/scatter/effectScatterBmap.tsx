@@ -1,6 +1,6 @@
 import { View } from '@tarojs/components';
-import Chart from '../echarts';
-import './style.scss';
+import Chart from '../../echarts';
+import '../style.scss';
 
 /**
  * 这个case出不来，可能地图只能用于web页面？
@@ -599,8 +599,10 @@ export default function barPolarRealEstate() {
 
   return (
     <View>
-      <View className="header">这个case出不来，可能地图只能用于web页面？无法支持。</View>
-      <Chart option={option} />
+      <View className="header">地图暂时无法支持。</View>
+      <View className="body">
+        <Chart option={option} />
+      </View>
     </View>
   );
 }
