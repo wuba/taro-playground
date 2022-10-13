@@ -3,6 +3,7 @@ import {
   BarChart,
   // 系列类型的定义后缀都为 SeriesOption
   BarSeriesOption,
+  BoxplotChart,
   CandlestickChart,
   EffectScatterChart,
   HeatmapChart,
@@ -45,46 +46,6 @@ import SvgComponent from './svg';
 import SkiaComponent from './skia';
 import CanvasComponent from './canvas';
 import { View } from '@tarojs/components';
-
-// 通过 ComposeOption 来组合出一个只有必须组件和图表的 Option 类型
-type ECOption = echarts.ComposeOption<
-  | BarSeriesOption
-  | LineSeriesOption
-  | TitleComponentOption
-  | TooltipComponentOption
-  | GridComponentOption
-  | DatasetComponentOption
->;
-
-// 注册必须的组件
-echarts.use([
-  TitleComponent,
-  TooltipComponent,
-  GridComponent,
-  DatasetComponent,
-  TransformComponent,
-  DataZoomComponent,
-  ToolboxComponent,
-  GraphicComponent,
-  PolarComponent,
-  VisualMapComponent,
-  TimelineComponent,
-  BrushComponent,
-  RadarChart,
-  CandlestickChart,
-  BarChart,
-  LineChart,
-  HeatmapChart,
-  EffectScatterChart,
-  ScatterChart,
-  MapChart,
-  PieChart,
-  LabelLayout,
-  UniversalTransition,
-  SVGRenderer,
-  LegendComponent,
-  CanvasRenderer
-]);
 
 /**
  * 这个case，skia渲染出来的，点击图表会引发app crash
@@ -131,6 +92,48 @@ echarts.use([
  */
 
 import beef from './beef';
+
+// 通过 ComposeOption 来组合出一个只有必须组件和图表的 Option 类型
+type ECOption = echarts.ComposeOption<
+  | BarSeriesOption
+  | LineSeriesOption
+  | TitleComponentOption
+  | TooltipComponentOption
+  | GridComponentOption
+  | DatasetComponentOption
+>;
+
+// 注册必须的组件
+echarts.use([
+  TitleComponent,
+  TooltipComponent,
+  GridComponent,
+  DatasetComponent,
+  TransformComponent,
+  DataZoomComponent,
+  ToolboxComponent,
+  GraphicComponent,
+  PolarComponent,
+  VisualMapComponent,
+  TimelineComponent,
+  BrushComponent,
+  BoxplotChart,
+  RadarChart,
+  CandlestickChart,
+  BarChart,
+  LineChart,
+  HeatmapChart,
+  EffectScatterChart,
+  ScatterChart,
+  MapChart,
+  PieChart,
+  LabelLayout,
+  UniversalTransition,
+  SVGRenderer,
+  LegendComponent,
+  CanvasRenderer
+]);
+
 echarts.registerMap('Beef_cuts_France', { svg: beef });
 
 const E_HEIGHT = 600;

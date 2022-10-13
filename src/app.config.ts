@@ -152,7 +152,8 @@ if (process.env.TARO_ENV === 'rn') {
       'pages/scatterSingleAxis',
       'pages/geoBeefCuts',
       'pages/candlestick/candlestickSimple',
-      'pages/radar/radar'
+      'pages/radar/radar',
+      'pages/boxplot/boxplotLightVelocity'
     ]
   });
 }

@@ -118,6 +118,15 @@ const routes = [
         url: `${prefix}geoBeefCuts`
       }
     ]
+  },
+  {
+    title: '盒须图',
+    routes: [
+      {
+        title: '基础盒须图',
+        url: `${prefix}boxplot/boxplotLightVelocity`
+      }
+    ]
   }
 ];
 
