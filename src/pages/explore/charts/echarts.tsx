@@ -1,4 +1,5 @@
 import * as echarts from 'echarts/core';
+import RNEChartsPro from 'react-native-echarts-pro';
 import {
   BarChart,
   // 系列类型的定义后缀都为 SeriesOption
@@ -62,7 +63,7 @@ import { SVGRenderer } from './SVGRenderer';
 import SvgComponent from './svg';
 import SkiaComponent from './skia';
 import CanvasComponent from './canvas';
-import { View } from '@tarojs/components';
+import { Text, View } from '@tarojs/components';
 
 import beef from './beef';
 
@@ -173,6 +174,10 @@ export default function EchartsPage({ option }) {
       </View>
       <View style={blockStyle}>
         <SkiaComponent ref={skiaRef} />
+      </View>
+      <View style={blockStyle}>
+        <Text>对比下方 react-native-echarts-pro 的效果</Text>
+        <RNEChartsPro height={E_HEIGHT} option={option} />
       </View>
     </View>
   );
