@@ -1,5 +1,5 @@
-import { Icon, Text, View } from '@tarojs/components';
-import { navigateTo } from '@tarojs/taro';
+import { Icon, ScrollView, Text, View } from '@tarojs/components';
+import { navigateTo, getSystemInfo } from '@tarojs/taro';
 import { useState } from 'react';
 import './entry.scss';
 
@@ -121,7 +121,8 @@ const routes = [
       },
       {
         title: '热力图 - 颜色的离散映射',
-        url: `${prefix}heatmap/heatmapLargePiecewise`
+        url: `${prefix}heatmap/heatmapLargePiecewise`,
+        state: true
       }
     ]
   },
@@ -160,15 +161,132 @@ const routes = [
         url: `${prefix}sunburst/sunburstSimple`
       }
     ]
+  },
+  {
+    title: '平行坐标系',
+    routes: [
+      {
+        title: '基础平行坐标',
+        url: `${prefix}parallel/parallelSimple`,
+        state: true
+      }
+    ]
+  },
+  {
+    title: '桑基图',
+    routes: [
+      {
+        title: '基础桑基图',
+        url: `${prefix}sankey/sankeySimple`,
+        state: true
+      }
+    ]
+  },
+  {
+    title: '漏斗图',
+    routes: [
+      {
+        title: '漏斗图3',
+        url: `${prefix}funnel/funnelCustomize`
+      }
+    ]
+  },
+  {
+    title: '仪表盘',
+    routes: [
+      {
+        title: '带标签数字动画的基础仪',
+        url: `${prefix}gauge/gaugeSimple`
+      }
+    ]
+  },
+  {
+    title: '象形柱图',
+    routes: [
+      {
+        title: '人体含水量',
+        url: `${prefix}pictorialBar/pictorialBarBodyFill`
+      }
+    ]
+  },
+  {
+    title: '主题河流图',
+    routes: [
+      {
+        title: '主题河流图',
+        url: `${prefix}themeRiver/themeRiverBasic`
+      }
+    ]
+  },
+  {
+    title: '日历坐标系',
+    routes: [
+      {
+        title: '基础日历图',
+        url: `${prefix}calendar/calendarSimple`
+      }
+    ]
+  },
+  {
+    title: '自定义系列',
+    routes: [
+      {
+        title: '利润分布直方图',
+        url: `${prefix}custom/customProfit`
+      }
+    ]
+  },
+  {
+    title: '数据集',
+    routes: [
+      {
+        title: '柱状图排序',
+        url: `${prefix}dataset/dataTransformSortBar`
+      }
+    ]
+  },
+  {
+    title: '数据区域缩放',
+    routes: [
+      {
+        title: '使用自定系列给散点图',
+        url: `${prefix}dataZoom/customErrorScatter`
+      }
+    ]
+  },
+  {
+    title: '图形组件',
+    routes: [
+      {
+        title: '关键帧描边动画',
+        url: `${prefix}graphic/graphicStrokeAnimation`,
+        state: true
+      }
+    ]
+  },
+  {
+    title: '富文本',
+    routes: [
+      {
+        title: '天气统计（富文本）',
+        url: `${prefix}rich/barRichText`,
+        state: true
+      }
+    ]
   }
 ];
+let maxHeight;
+getSystemInfo({
+  success: res => {
+    maxHeight = res.safeArea?.height ? res.safeArea?.height - 48 : 600;
+  }
+});
 
 export default function Entry() {
   const [active, setActive] = useState(0);
-
   return (
     <View className="contain">
-      <View className="contain-left">
+      <ScrollView className="contain-left" style={{ height: maxHeight }}>
         {routes.map((item, i) => (
           <Text
             key={item.title}
@@ -180,8 +298,8 @@ export default function Entry() {
             {item.title}
           </Text>
         ))}
-      </View>
-      <View className="contain-right">
+      </ScrollView>
+      <ScrollView className="contain-right" style={`height:${maxHeight}`}>
         {routes[active].routes.map(item => (
           <View key={item.title} className="contain-right__text">
             <Text onClick={() => navigateTo({ url: item.url })}>
@@ -190,7 +308,7 @@ export default function Entry() {
             {item?.state ? <Icon size="14" type="warn" /> : null}
           </View>
         ))}
-      </View>
+      </ScrollView>
     </View>
   );
 }

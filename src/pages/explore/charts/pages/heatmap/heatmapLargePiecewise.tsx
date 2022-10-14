@@ -1,5 +1,6 @@
-import { View } from '@tarojs/components';
+import { Text, View } from '@tarojs/components';
 // import * as echarts from 'echarts/core';
+import RNEChartsPro from 'react-native-echarts-pro';
 import Chart from '../../echarts';
 import '../style.scss';
 /**
@@ -444,6 +445,10 @@ export default function barPolarRealEstate() {
     <View>
       <View className="header">
         这个热力图数据算少的，不过还是卡卡的，对于大数据量的处理还是待优化的
+      </View>
+      <View className="body">
+        <Text>下方这个是react-native-echarts-pro渲染的结果</Text>
+        <RNEChartsPro height={250} option={option} />
       </View>
       <View className="body">
         <Chart option={option} />

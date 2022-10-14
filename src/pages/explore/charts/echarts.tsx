@@ -5,16 +5,23 @@ import {
   BarSeriesOption,
   BoxplotChart,
   CandlestickChart,
+  CustomChart,
   EffectScatterChart,
+  FunnelChart,
+  GaugeChart,
   GraphChart,
   HeatmapChart,
   LineChart,
   LineSeriesOption,
   MapChart,
+  ParallelChart,
+  PictorialBarChart,
   PieChart,
   RadarChart,
+  SankeyChart,
   ScatterChart,
   SunburstChart,
+  ThemeRiverChart,
   TreeChart,
   TreemapChart
 } from 'echarts/charts';
@@ -42,7 +49,9 @@ import {
   MarkLineComponent,
   MarkAreaComponent,
   MarkPointComponent,
-  SingleAxisComponent
+  SingleAxisComponent,
+  ParallelComponent,
+  CalendarComponent
 } from 'echarts/components';
 import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { useCallback, useEffect, useRef } from 'react';
@@ -81,6 +90,17 @@ echarts.use([
   VisualMapComponent,
   TimelineComponent,
   BrushComponent,
+  ParallelComponent,
+  CalendarComponent,
+  DatasetComponent,
+  CustomChart,
+  DataZoomComponent,
+  ThemeRiverChart,
+  PictorialBarChart,
+  GaugeChart,
+  FunnelChart,
+  SankeyChart,
+  ParallelChart,
   SunburstChart,
   TreeChart,
   TreemapChart,

@@ -159,7 +159,19 @@ if (process.env.TARO_ENV === 'rn') {
       'pages/graph/graphForce2',
       'pages/tree/treeBasic',
       'pages/treemap/treemapDisk',
-      'pages/sunburst/sunburstSimple'
+      'pages/sunburst/sunburstSimple',
+      'pages/parallel/parallelSimple',
+      'pages/sankey/sankeySimple',
+      'pages/funnel/funnelCustomize',
+      'pages/gauge/gaugeSimple',
+      'pages/pictorialBar/pictorialBarBodyFill',
+      'pages/themeRiver/themeRiverBasic',
+      'pages/calendar/calendarSimple',
+      'pages/custom/customProfit',
+      'pages/dataset/dataTransformSortBar',
+      'pages/dataZoom/customErrorScatter',
+      'pages/graphic/graphicStrokeAnimation',
+      'pages/rich/barRichText'
     ]
   });
 }

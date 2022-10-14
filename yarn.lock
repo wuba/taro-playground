@@ -15303,6 +15303,11 @@ react-native-device-info@~10.0.2:
   resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-10.0.2.tgz#17cd96df277cca5a22fb80409527c181a08d4ed1"
   integrity sha512-6XY8EctYqNEX6EHDoHxz3yONOYxCHKrgEdStP7HZDYzFXb1JB5BFt7UbXDWrmihXUZDv06sBsjN26+Tp0EajXw==
 
+react-native-echarts-pro@^1.8.7:
+  version "1.8.7"
+  resolved "http://ires.58corp.com/repository/58npm/react-native-echarts-pro/-/react-native-echarts-pro-1.8.7.tgz#8c8447bdb86bdc0910947f15f7a0fecd5c564e3c"
+  integrity sha512-ySy3aN4/RIf1Hf+7+D69Z2PbCAOAu9igT+WOVEK17qc9CgHnMSmbQPMPhCGmBgi4H+XYA+/IYBiPmrb0Sy8BXA==
+
 react-native-gesture-handler@~2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-2.5.0.tgz#61385583570ed0a45a9ed142425e35f8fe8274fb"
