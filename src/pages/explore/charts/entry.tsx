@@ -72,6 +72,11 @@ const routes = [
         title: '嵌套环形图',
         url: `${prefix}pie/pieNest`,
         state: true
+      },
+      {
+        title: '日历饼图',
+        url: `${prefix}pie/calendarPie`,
+        state: true
       }
     ]
   },
