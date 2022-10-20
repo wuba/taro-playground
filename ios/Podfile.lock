@@ -348,32 +348,32 @@ PODS:
     - RCTTypeSafety
     - React-Core
     - ReactCommon/turbomodule/core
-  - react-native-skia (0.1.152):
+  - react-native-skia (0.1.155):
     - React
     - React-callinvoker
     - React-Core
-    - react-native-skia/Api (= 0.1.152)
-    - react-native-skia/Jsi (= 0.1.152)
-    - react-native-skia/RNSkia (= 0.1.152)
-    - react-native-skia/SkiaHeaders (= 0.1.152)
-    - react-native-skia/Utils (= 0.1.152)
-  - react-native-skia/Api (0.1.152):
+    - react-native-skia/Api (= 0.1.155)
+    - react-native-skia/Jsi (= 0.1.155)
+    - react-native-skia/RNSkia (= 0.1.155)
+    - react-native-skia/SkiaHeaders (= 0.1.155)
+    - react-native-skia/Utils (= 0.1.155)
+  - react-native-skia/Api (0.1.155):
     - React
     - React-callinvoker
     - React-Core
-  - react-native-skia/Jsi (0.1.152):
+  - react-native-skia/Jsi (0.1.155):
     - React
     - React-callinvoker
     - React-Core
-  - react-native-skia/RNSkia (0.1.152):
+  - react-native-skia/RNSkia (0.1.155):
     - React
     - React-callinvoker
     - React-Core
-  - react-native-skia/SkiaHeaders (0.1.152):
+  - react-native-skia/SkiaHeaders (0.1.155):
     - React
     - React-callinvoker
     - React-Core
-  - react-native-skia/Utils (0.1.152):
+  - react-native-skia/Utils (0.1.155):
     - React
     - React-callinvoker
     - React-Core
@@ -524,7 +524,7 @@ PODS:
   - RNScreens (3.17.0):
     - React-Core
     - React-RCTImage
-  - RNSVG (12.4.4):
+  - RNSVG (13.4.0):
     - React-Core
   - RNSyanImagePicker (0.5.3):
     - React
@@ -845,7 +845,7 @@ SPEC CHECKSUMS:
   Flipper-RSocket: d9d9ade67cbecf6ac10730304bf5607266dd2541
   FlipperKit: cbdee19bdd4e7f05472a66ce290f1b729ba3cb86
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
-  glog: 3d02b25ca00c2d456734d0bcff864cbc62f6ae1a
+  glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   lottie-ios: 9ae750cdc7820fecbd3c2f0cfc493038208fcdc4
   lottie-react-native: b702fab740cdb952a8e2354713d3beda63ff97b0
@@ -870,7 +870,7 @@ SPEC CHECKSUMS:
   react-native-netinfo: 687904c63baa828543bb6e94c265977e0ac70f14
   react-native-pager-view: da490aa1f902c9a5aeecf0909cc975ad0e92e53e
   react-native-safe-area-context: dfe5aa13bee37a0c7e8059d14f72ffc076d120e9
-  react-native-skia: 1afb1ede8750b9e3534545b18a9a5086e6705f9f
+  react-native-skia: 5a4253c77afcf0535b387d6025fc7c57af05cd3c
   react-native-slider: cecabb58ecffad671d2ad3ccc58c7f4d2d029e95
   react-native-splash-screen: 4312f786b13a81b5169ef346d76d33bc0c6dc457
   react-native-webview: d33e2db8925d090871ffeb232dfa50cb3a727581
@@ -895,7 +895,7 @@ SPEC CHECKSUMS:
   RNGestureHandler: bad495418bcbd3ab47017a38d93d290ebd406f50
   RNReanimated: 7faa787e8d4493fbc95fab2ad331fa7625828cfa
   RNScreens: 0df01424e9e0ed7827200d6ed1087ddd06c493f9
-  RNSVG: ecd661f380a07ba690c9c5929c475a44f432d674
+  RNSVG: 07dbd870b0dcdecc99b3a202fa37c8ca163caec2
   RNSyanImagePicker: 5c650d33f16f7cd59c47d9269f6c4856b30d7616
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
   TZImagePickerController: e9909edbadf7381140efc5b5c9f5bdbfd630f7d4
@@ -905,4 +905,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 9d36e950cfde4f27d5db95a8d8232bac374cc3a4
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

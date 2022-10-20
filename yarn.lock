@@ -2728,10 +2728,10 @@
     recyclerlistview "4.1.2"
     tslib "2.4.0"
 
-"@shopify/react-native-skia@0.1.152":
-  version "0.1.152"
-  resolved "https://registry.yarnpkg.com/@shopify/react-native-skia/-/react-native-skia-0.1.152.tgz#8137908cc8f533872d892d60b7d98ebe19a1572a"
-  integrity sha512-2Z6yCer2czjIuRPKIRwXZMrXCSPbAMaHA11dLdaxZ7D7kBRSgGFwIrk4vwjvDNqww7YACqSScKkMk52pMwkFrQ==
+"@shopify/react-native-skia@0.1.155":
+  version "0.1.155"
+  resolved "https://registry.yarnpkg.com/@shopify/react-native-skia/-/react-native-skia-0.1.155.tgz#44bc58a39939fd6f6bf83481f417fb8494b2e99e"
+  integrity sha512-tRJy1gXrRCjPgG4CLvyxEOSHDU5IHsBS7TGsdyP/6cz9gcb1QrTejUi1+dfixjMcsRof4wYpprlIvnfwjNLWpg==
   dependencies:
     canvaskit-wasm "0.36.1"
     react-reconciler "0.26.2"
@@ -15448,6 +15448,14 @@ react-native-svg@~12.4.3, react-native-svg@~13.2.0:
   version "13.2.0"
   resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-13.2.0.tgz#09aabb0c3daf188c6657b125f8349b91d9805408"
   integrity sha512-bDvMeFReA3F9pVp0EhACPrEerRcITzTu9N2m2lAPinhIMVvwzGzVXyFsXI8fCMSoeOIh+77hKvukoCedh06tLw==
+  dependencies:
+    css-select "^5.1.0"
+    css-tree "^1.1.3"
+
+react-native-svg@~13.4.0:
+  version "13.4.0"
+  resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-13.4.0.tgz#82399ba0956c454144618aa581e2d748dd3f010a"
+  integrity sha512-B3TwK+H0+JuRhYPzF21AgqMt4fjhCwDZ9QUtwNstT5XcslJBXC0FoTkdZo8IEb1Sv4suSqhZwlAY6lwOv3tHag==
   dependencies:
     css-select "^5.1.0"
     css-tree "^1.1.3"
