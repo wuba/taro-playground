@@ -21,6 +21,29 @@ const routes = [
         title: '一天用电量分布',
         url: `${prefix}line/lineSections`,
         state: false
+      },
+      {
+        title: '移动端上的dataZoom',
+        url: `${prefix}line/lineTooltipTouch`,
+        state: true
+      },
+      {
+        title: '联动和共享数据集',
+        url: `${prefix}dataset/DatasetLink`
+      },
+      {
+        title: '自定义图形组件(有点丑)',
+        url: `${prefix}graphic/lineGraphic`
+        // state: true
+      },
+      {
+        title: '可拖拽点(报错，可能写法有问题)',
+        url: `${prefix}graphic/LineDraggable`,
+        state: true
+      },
+      {
+        title: '大数据量面积图',
+        url: `${prefix}dataZoom/areaSimple`
       }
     ]
   },
@@ -74,8 +97,17 @@ const routes = [
         state: true
       },
       {
-        title: '日历饼图',
+        title: '日历饼图(报错，可能写法有问题)',
         url: `${prefix}pie/calendarPie`,
+        state: true
+      },
+      {
+        title: '联动和共享数据集',
+        url: `${prefix}dataset/DatasetLink`
+      },
+      {
+        title: '富文本标签',
+        url: `${prefix}rich/pieRichText`,
         state: true
       }
     ]
@@ -86,6 +118,18 @@ const routes = [
       {
         title: '基础 K 线图',
         url: `${prefix}candlestick/candlestickSimple`
+      },
+      {
+        title: 'OHLC 图（使用自定义系列)',
+        url: `${prefix}candlestick/customOhlc`
+      },
+      {
+        title: '上证指数',
+        url: `${prefix}candlestick/candlestickSh`
+      },
+      {
+        title: '触屏上的坐标轴指示器',
+        url: `${prefix}candlestick/candlestickTouch`
       }
     ]
   },
@@ -247,6 +291,10 @@ const routes = [
       {
         title: '柱状图排序',
         url: `${prefix}dataset/dataTransformSortBar`
+      },
+      {
+        title: '联动和共享数据集',
+        url: `${prefix}dataset/DatasetLink`
       }
     ]
   },
@@ -256,6 +304,11 @@ const routes = [
       {
         title: '使用自定系列给散点图',
         url: `${prefix}dataZoom/customErrorScatter`
+      },
+      {
+        title: '大数据量面积图',
+        url: `${prefix}dataZoom/areaSimple`
+        // state: true
       }
     ]
   },
@@ -266,6 +319,26 @@ const routes = [
         title: '关键帧描边动画',
         url: `${prefix}graphic/graphicStrokeAnimation`,
         state: true
+      },
+      {
+        title: '加载动画',
+        url: `${prefix}graphic/graphicLoading`
+        // state: true
+      },
+      {
+        title: 'Wave Animation',
+        url: `${prefix}graphic/GraphicWaveAnimation`
+        // state: true
+      },
+      {
+        title: '自定义图形组件(有点丑)',
+        url: `${prefix}graphic/lineGraphic`
+        // state: true
+      },
+      {
+        title: '可拖拽点(报错，可能写法有问题)',
+        url: `${prefix}graphic/LineDraggable`
+        // state: true
       }
     ]
   },
@@ -273,9 +346,17 @@ const routes = [
     title: '富文本',
     routes: [
       {
+        title: '富文本标签',
+        url: `${prefix}rich/pieRichText`
+      },
+      {
         title: '天气统计（富文本）',
         url: `${prefix}rich/barRichText`,
         state: true
+      },
+      {
+        title: '嵌套环形图',
+        url: `${prefix}pie/pieNest`
       }
     ]
   }

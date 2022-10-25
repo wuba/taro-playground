@@ -149,10 +149,14 @@ if (process.env.TARO_ENV === 'rn') {
       'pages/bar/barNegative',
       'pages/line/areaPieces',
       'pages/line/lineSections',
+      'pages/line/lineTooltipTouch',
       'pages/bar/Bar1',
       'pages/scatter/scatterSingleAxis',
       'pages/map/geoBeefCuts',
       'pages/candlestick/candlestickSimple',
+      'pages/candlestick/customOhlc',
+      'pages/candlestick/candlestickSh',
+      'pages/candlestick/candlestickTouch',
       'pages/radar/radar',
       'pages/boxplot/boxplotLightVelocity',
       'pages/heatmap/heatmapCartesian',
@@ -170,9 +174,16 @@ if (process.env.TARO_ENV === 'rn') {
       'pages/calendar/calendarSimple',
       'pages/custom/customProfit',
       'pages/dataset/dataTransformSortBar',
+      'pages/dataset/DatasetLink',
       'pages/dataZoom/customErrorScatter',
+      'pages/dataZoom/areaSimple',
       'pages/graphic/graphicStrokeAnimation',
-      'pages/rich/barRichText'
+      'pages/graphic/graphicLoading',
+      'pages/graphic/GraphicWaveAnimation',
+      'pages/graphic/lineGraphic',
+      'pages/graphic/LineDraggable',
+      'pages/rich/barRichText',
+      'pages/rich/pieRichText'
     ]
   });
 }

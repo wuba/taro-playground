@@ -3,7 +3,7 @@
   flex-direction: row;
   &-left{
     width: 40vw;
-    // height: 90vh;
+    max-height: 90vh;
     &__text {
       width: 100%;
       padding: 24px;
@@ -17,7 +17,7 @@
   }
   &-right{
     width: 60vw;
-    height: 90vh;
+    max-height: 90vh;
     background-color: white;
     &__text {
       display: flex;
@@ -25,7 +25,7 @@
       width: 100%;
       padding: 24px;
       font-size: 32px;
-      border: 1px solid lightgrey;
+      // border: 1px solid lightgrey;
     }
   }
 }
