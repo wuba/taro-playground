@@ -90,22 +90,32 @@ interface SVGVNodeProps {
   chart?: any,
 }
 interface SVGVEleProps {
-  node?: SVGVNode,
+  node: SVGVNode,
   touchStart?: any,
   touchMove?: any,
   touchEnd?: any,
 }
 
-function SvgEle(props: SVGVEleProps, root: Boolean = true) {
+const fontStyleReg = /([\w-]+):([\w-]+);/g;
+function SvgEle(props: SVGVEleProps) {
   const { node } = props
   if(!node) return null
-  const Tag = tagMap[node.tag]
+  const { tag, text, children } = node
+  const Tag = tagMap[tag]
   if (!Tag) return null;
   const attrs:any = Object.entries(node.attrs).reduce((carry, [key, value]) => {
     carry[toCamelCase(key)] = value
     return carry
   }, {})
-  if(node.tag === 'text') {
+  if(tag === 'text') {
+    if(attrs.style){
+      [...attrs.style.matchAll(fontStyleReg)].forEach(([_, key, value]) => {
+        // 修复 text 属性无效的问题
+        if(key !== 'font-family') {
+          attrs[toCamelCase(key)] = value
+        }
+      })
+    }
     if(!attrs.alignmentBaseline && attrs.dominantBaseline) {
       attrs.alignmentBaseline = 'middle'
     }
@@ -113,15 +123,38 @@ function SvgEle(props: SVGVEleProps, root: Boolean = true) {
     if(attrs.paintOrder === 'stroke') {
       attrs.strokeWidth = 0
     }
-    return <Tag {...attrs} key={node.key}>{node.text}</Tag>
+    return <Text {...attrs}>{text}</Text>
   }
   // fix: https://github.com/react-native-svg/react-native-svg/issues/983
   if(attrs.clipPath && !attrs.clipRule && Platform.OS === 'android') {
     attrs.clipRule = 'nonzero'
   }
-  return root
-    ? <Tag {...attrs} onTouchStart={props.touchStart} onTouchEnd={props.touchEnd} onTouchMove={props.touchMove} key={node.key}>{node.children && node.children.map(child => SvgEle({ node: child }, false))}</Tag>
-    : <Tag {...attrs} key={node.key}>{node.children && node.children.map(child => SvgEle({ node: child }, true))}</Tag>
+  if (tag === 'path') {
+    return <Path {...attrs} />
+  }
+  if (tag === 'linearGradient' || tag === 'radialGradient') {
+    // note: 强制刷新渐变
+    // https://github.com/software-mansion/react-native-svg/issues/1762
+    return <Tag {...attrs}>{children?.map(child => SvgEle({
+      node: child
+    }))}</Tag>
+  }
+  return <Tag key={node.key} {...attrs}>{children?.map(child => <SvgEle key={child.key} node={child} />)}</Tag>
+}
+
+function SvgRoot(props: SVGVEleProps) {
+  const { node, touchStart, touchEnd, touchMove } = props
+  const { attrs, children } = node
+  const { width, height, viewBox } = attrs
+  return <Svg
+    width={width as string}
+    height={height as string}
+    viewBox={viewBox as string}
+    onTouchStart={touchStart}
+    onTouchEnd={touchEnd}
+    onTouchMove={touchMove}>
+      {children?.map(child => <SvgEle key={child.key} node={child} />)}
+  </Svg>
 }
 
 function SvgComponent(props: SVGVNodeProps, ref?: any) {
@@ -213,6 +246,6 @@ function SvgComponent(props: SVGVNodeProps, ref?: any) {
       }
     }
   }));
-  return svgNode ? <SvgEle node={svgNode} touchStart={touchStart} touchMove={touchMove} touchEnd={touchEnd} /> : null
+  return svgNode ? <SvgRoot node={svgNode} touchStart={touchStart} touchMove={touchMove} touchEnd={touchEnd} /> : null
 }
 export default forwardRef(SvgComponent)
