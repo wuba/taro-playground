@@ -175,14 +175,14 @@ export default function LineDraggable() {
     },
     tooltip: {
       triggerOn: 'none',
-      formatter: function(params) {
-        return (
-          'X: ' +
-          params.data[0].toFixed(2) +
-          '<br>Y: ' +
-          params.data[1].toFixed(2)
-        );
-      }
+      // formatter: function(params) {
+      //   return (
+      //     'X: ' +
+      //     params.data[0].toFixed(2) +
+      //     '<br>Y: ' +
+      //     params.data[1].toFixed(2)
+      //   );
+      // }
     },
     grid: {
       top: '8%',
@@ -242,6 +242,7 @@ export default function LineDraggable() {
         width: E_WIDTH,
         height: E_HEIGHT
       });
+      chart.setOption(option);
       function updatePosition() {
         chart.setOption({
           graphic: data.map(function(item, dataIndex) {
@@ -316,6 +317,7 @@ export default function LineDraggable() {
         width: E_WIDTH,
         height: E_HEIGHT
       });
+      chart.setOption(option);
       function updatePosition() {
         chart.setOption({
           graphic: data.map(function(item, dataIndex) {
