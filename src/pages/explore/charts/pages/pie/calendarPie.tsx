@@ -205,6 +205,7 @@ export default function EchartsPage() {
         width: E_WIDTH,
         height: E_HEIGHT
       });
+      chart.setOption(option);
       setTimeout(function() {
         chart.setOption({
           series: getPieSeries(scatterData, chart)
@@ -229,6 +230,16 @@ export default function EchartsPage() {
         height: E_HEIGHT
       });
       chart.setOption(option);
+      setTimeout(function() {
+        chart.setOption({
+          series: getPieSeries(scatterData, chart)
+        });
+      }, 10);
+      setTimeout(function() {
+        chart.setOption({
+          series: getPieSeriesUpdate(scatterData, chart)
+        });
+      }, 500);
     }
     return () => chart?.dispose();
   }, []);
