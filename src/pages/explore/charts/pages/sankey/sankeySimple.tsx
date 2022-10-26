@@ -68,7 +68,7 @@ export default function sankeySimple() {
   };
   return (
     <View>
-      <View className="header">基础桑基图，ios svg没有初始的动画效果</View>
+      <View className="header">good</View>
       <View className="body">
         <Chart option={option} />
       </View>

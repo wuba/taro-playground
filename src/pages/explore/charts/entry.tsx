@@ -216,8 +216,7 @@ const routes = [
     routes: [
       {
         title: '基础平行坐标',
-        url: `${prefix}parallel/parallelSimple`,
-        state: true
+        url: `${prefix}parallel/parallelSimple`
       }
     ]
   },
@@ -226,8 +225,7 @@ const routes = [
     routes: [
       {
         title: '基础桑基图',
-        url: `${prefix}sankey/sankeySimple`,
-        state: true
+        url: `${prefix}sankey/sankeySimple`
       }
     ]
   },

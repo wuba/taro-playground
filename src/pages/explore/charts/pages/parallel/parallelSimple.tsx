@@ -31,7 +31,7 @@ export default function parallelSimple() {
   };
   return (
     <View>
-      <View className="header">基础平行坐标，ios svg没有初始的动画效果</View>
+      <View className="header">good</View>
       <View className="body">
         <Chart option={option} />
       </View>
