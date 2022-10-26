@@ -10,8 +10,7 @@ export default function funnelCustomize() {
       text: 'Funnel'
     },
     tooltip: {
-      trigger: 'item',
-      formatter: '{a} <br/>{b} : {c}%'
+      trigger: 'item'
     },
     toolbox: {
       feature: {
