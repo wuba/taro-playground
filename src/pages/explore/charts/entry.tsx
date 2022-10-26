@@ -361,18 +361,12 @@ const routes = [
     ]
   }
 ];
-let maxHeight;
-getSystemInfo({
-  success: res => {
-    maxHeight = res.safeArea?.height ? res.safeArea?.height - 48 : 600;
-  }
-});
 
 export default function Entry() {
   const [active, setActive] = useState(0);
   return (
     <View className="contain">
-      <ScrollView className="contain-left" style={{ height: maxHeight }}>
+      <ScrollView className="contain-left">
         {routes.map((item, i) => (
           <Text
             key={item.title}
@@ -385,10 +379,10 @@ export default function Entry() {
           </Text>
         ))}
       </ScrollView>
-      <ScrollView className="contain-right" style={`height:${maxHeight}`}>
+      <ScrollView className="contain-right">
         {routes[active].routes.map(item => (
-          <View key={item.title} className="contain-right__text">
-            <Text onClick={() => navigateTo({ url: item.url })}>
+          <View key={item.title} className="contain-right__text" onClick={() => navigateTo({ url: item.url })}>
+            <Text>
               {item.title}{' '}
             </Text>
             {item?.state ? <Icon size="14" type="warn" /> : null}

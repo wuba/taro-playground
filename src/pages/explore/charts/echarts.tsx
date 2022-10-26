@@ -56,7 +56,7 @@ import {
 } from 'echarts/components';
 import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { useCallback, useEffect, useRef } from 'react';
-import { PixelRatio } from 'react-native';
+import { Dimensions } from 'react-native';
 // import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
 import { CanvasRenderer } from './CanvasRenderer';
 import { SVGRenderer } from './SVGRenderer';
@@ -129,10 +129,10 @@ echarts.use([
 
 echarts.registerMap('Beef_cuts_France', { svg: beef });
 
-const E_HEIGHT = 320;
-const E_WIDTH = 320;
+const E_HEIGHT = 250;
+const E_WIDTH = Dimensions.get('screen').width;
 const blockStyle: any = {
-  marginBottom: 20
+  marginBottom: 0
 };
 
 export default function EchartsPage({ option }) {
@@ -170,14 +170,13 @@ export default function EchartsPage({ option }) {
   return (
     <View>
       <View style={blockStyle}>
+        <RNEChartsPro height={E_HEIGHT} option={option} />
+      </View>
+      <View style={blockStyle}>
         <SvgComponent ref={svgRef}></SvgComponent>
       </View>
       <View style={blockStyle}>
         <SkiaComponent ref={skiaRef} />
-      </View>
-      <View style={blockStyle}>
-        <Text>对比下方 react-native-echarts-pro 的效果</Text>
-        <RNEChartsPro height={E_HEIGHT} option={option} />
       </View>
     </View>
   );
