@@ -20,7 +20,7 @@ export default function pieRichText() {
     },
     tooltip: {
       trigger: 'item',
-      formatter: '{a} <br/>{b} : {c} ({d}%)'
+      // formatter: '{a} <br/>{b} : {c} ({d}%)'
     },
     legend: {
       bottom: 10,
