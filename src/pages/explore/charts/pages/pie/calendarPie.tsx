@@ -247,6 +247,9 @@ export default function EchartsPage() {
   return (
     <View>
       <View style={blockStyle}>
+        <Text>日历饼图，svg不显示饼图中的数字；skia不支持中文；</Text>
+      </View>
+      <View style={blockStyle}>
         <SvgComponent ref={svgRef}></SvgComponent>
       </View>
       <View style={blockStyle}>

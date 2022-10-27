@@ -271,7 +271,7 @@ export default function DatasetLink() {
   return (
     <View>
       <View className="header">
-        联动和共享数据集，官方的包反而有bug…咱们的还挺好的
+        联动和共享数据集，官方的包反而有bug…咱们的还挺好的（落到一个x坐标上，饼图应该相应调整）
       </View>
       <View className="body">
         <View style={blockStyle}>

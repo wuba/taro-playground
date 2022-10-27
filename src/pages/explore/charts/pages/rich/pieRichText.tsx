@@ -19,7 +19,7 @@ export default function pieRichText() {
       left: 'center'
     },
     tooltip: {
-      trigger: 'item',
+      trigger: 'item'
       // formatter: '{a} <br/>{b} : {c} ({d}%)'
     },
     legend: {
@@ -136,9 +136,7 @@ export default function pieRichText() {
   };
   return (
     <View>
-      <View className="header">
-        富文本标签，点击饼图区域，app崩溃（ios+android）；
-      </View>
+      <View className="header">富文本标签，里面的小图飞出去了</View>
       <View className="body">
         <Chart option={option} />
       </View>

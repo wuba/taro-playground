@@ -21,12 +21,6 @@ export default function barPolarRealEstate() {
         type: 'cross'
       }
     },
-    toolbox: {
-      show: true,
-      feature: {
-        saveAsImage: {}
-      }
-    },
     xAxis: {
       type: 'category',
       boundaryGap: false,

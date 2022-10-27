@@ -11,8 +11,7 @@ export default function lineGraphic() {
       data: ['Altitude (km) vs Temperature (°C)']
     },
     tooltip: {
-      trigger: 'axis',
-      formatter: 'Temperature : <br/>{b}km : {c}°C'
+      trigger: 'axis'
     },
     grid: {
       left: '3%',
@@ -101,7 +100,8 @@ export default function lineGraphic() {
             top: 'middle',
             style: {
               fill: '#333',
-              width: 220,
+              width: 200,
+              lineHeight: 14,
               overflow: 'break',
               text:
                 'xAxis represents temperature in °C, yAxis represents altitude in km, An image watermark in the upper right, This text block can be placed in any place',
@@ -124,8 +124,7 @@ export default function lineGraphic() {
   return (
     <View>
       <View className="header">
-        自定义图形组件，能出来，就是比较丑，为什么这么丑？ 安卓
-        react-native-echarts-pro的为啥没出来？
+        自定义图形组件，skia的文本展示区域width超出了边界，跟另外两个不太一样
       </View>
       <View className="body">
         <Chart option={option} />

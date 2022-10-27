@@ -1,7 +1,16 @@
 import { Icon, ScrollView, Text, View } from '@tarojs/components';
-import { navigateTo, getSystemInfo } from '@tarojs/taro';
+import { navigateTo } from '@tarojs/taro';
 import { useState } from 'react';
 import './entry.scss';
+
+/**
+ * option
+ *   tooltip
+ *     formatter不支持
+ *   toolbox
+ *     feature
+ *       saveAsImage不支持
+ */
 
 const prefix = 'pages/explore/charts/pages/';
 const routes = [
@@ -10,8 +19,8 @@ const routes = [
     routes: [
       {
         title: '折线图的标记线',
-        url: `${prefix}line/lineMarkline`,
-        state: true // 表示是否异常 true-有问题
+        url: `${prefix}line/lineMarkline`
+        // state: true // 表示是否异常 true-有问题
       },
       {
         title: '折线图区域高亮',
@@ -32,12 +41,12 @@ const routes = [
         url: `${prefix}dataset/DatasetLink`
       },
       {
-        title: '自定义图形组件(有点丑)',
-        url: `${prefix}graphic/lineGraphic`
-        // state: true
+        title: '自定义图形组件',
+        url: `${prefix}graphic/lineGraphic`,
+        state: true
       },
       {
-        title: '可拖拽点(报错，可能写法有问题)',
+        title: '可拖拽点',
         url: `${prefix}graphic/LineDraggable`,
         state: true
       },
@@ -97,7 +106,7 @@ const routes = [
         state: true
       },
       {
-        title: '日历饼图(报错，可能写法有问题)',
+        title: '日历饼图',
         url: `${prefix}pie/calendarPie`,
         state: true
       },
@@ -329,12 +338,12 @@ const routes = [
         // state: true
       },
       {
-        title: '自定义图形组件(有点丑)',
+        title: '自定义图形组件',
         url: `${prefix}graphic/lineGraphic`
         // state: true
       },
       {
-        title: '可拖拽点(报错，可能写法有问题)',
+        title: '可拖拽点',
         url: `${prefix}graphic/LineDraggable`
         // state: true
       }
@@ -379,10 +388,12 @@ export default function Entry() {
       </ScrollView>
       <ScrollView className="contain-right">
         {routes[active].routes.map(item => (
-          <View key={item.title} className="contain-right__text" onClick={() => navigateTo({ url: item.url })}>
-            <Text>
-              {item.title}{' '}
-            </Text>
+          <View
+            key={item.title}
+            className="contain-right__text"
+            onClick={() => navigateTo({ url: item.url })}
+          >
+            <Text>{item.title} </Text>
             {item?.state ? <Icon size="14" type="warn" /> : null}
           </View>
         ))}

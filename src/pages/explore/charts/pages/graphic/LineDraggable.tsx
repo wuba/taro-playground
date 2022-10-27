@@ -174,7 +174,7 @@ export default function LineDraggable() {
       left: 'center'
     },
     tooltip: {
-      triggerOn: 'none',
+      triggerOn: 'none'
       // formatter: function(params) {
       //   return (
       //     'X: ' +
@@ -385,7 +385,10 @@ export default function LineDraggable() {
 
   return (
     <View>
-      <View className="header">可拖拽点</View>
+      <View className="header">
+        可拖拽点，安卓
+        svg初始渲染时肉眼可见的闪动，渲染完成后，坐标轴可能还渲染不对；
+      </View>
       <View className="body">
         <View style={blockStyle}>
           <SvgComponent ref={svgRef}></SvgComponent>

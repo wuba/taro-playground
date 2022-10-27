@@ -90,9 +90,7 @@ export default function barPolarRealEstate() {
 
   return (
     <View>
-      <View className="header">
-        这个case，svg设置字体大小没有效果（fontSize），skia设置有效，但是看不太清楚
-      </View>
+      <View className="header">这个case</View>
       <View className="body">
         <Chart option={option} />
       </View>

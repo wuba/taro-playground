@@ -163,7 +163,7 @@ export default function lineTooltipTouch() {
         <Text>移动端上的 dataZoom</Text>
         <Text>
           iOS skia拖动底部不灵敏，要慢慢拖动才行；ios
-          skia区域选中卡顿明显，几乎无法使用；
+          skia区域选中卡顿明显(可能是冲突)；
         </Text>
         <Text>安卓上拖动都卡顿明显，echarts官方的也是卡顿；</Text>
         <Text>有warning</Text>
