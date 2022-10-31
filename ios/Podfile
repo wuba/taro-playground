@@ -2,7 +2,7 @@ require File.join(File.dirname(`node --print "require.resolve('expo/package.json
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-platform :ios, '12.4'
+platform :ios, '13.0'
 install! 'cocoapods', :deterministic_uuids => false
 
 target 'taroDemo' do
@@ -53,6 +53,15 @@ target 'taroDemo' do
       :mac_catalyst_enabled => false
     )
     __apply_Xcode_12_5_M1_post_install_workaround(installer)
+    # Add these lines for Xcode 14 builds
+    installer.generated_projects.each do |project|
+      project.targets.each do |target|
+          target.build_configurations.each do |config|
+              config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
+          end
+      end
+    end
+    # End of added lines
   end
 end
 
