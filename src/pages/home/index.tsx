@@ -24,12 +24,14 @@ const regRemoteRelease = /^taro:\/\/releases/;
 const regRemoteJs = /\.js$/;
 
 export default class Index extends Component<any, any> {
+  linkingListener: any
+
   constructor(props: any) {
     super(props);
     this.state = {
       localList: [],
       remoteList: []
-    };
+    }
   }
 
   componentDidMount() {
@@ -62,12 +64,14 @@ export default class Index extends Component<any, any> {
       .catch(err => {
         console.log("获取 bundle 列表失败：", err);
       });
-    Linking?.getInitialURL().then(this._handleUrl);
-    Linking?.addEventListener('url', this._handleUrl);
+    if (Linking) {
+      Linking.getInitialURL().then(this._handleUrl);
+      this.linkingListener = Linking.addEventListener('url', this._handleUrl);
+    }
   }
 
   componentWillUnmount() {
-    Linking?.removeEventListener('url', this._handleUrl);
+    this.linkingListener?.remove()
   }
 
   _loadBundleFromLocalServer = (url: string, path = "index") => {
