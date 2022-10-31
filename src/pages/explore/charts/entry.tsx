@@ -72,6 +72,10 @@ const routes = [
       {
         title: '某地区蒸发量和降水量',
         url: `${prefix}bar/Bar1`
+      },
+      {
+        title: '指定数据到坐标轴的映射',
+        url: `${prefix}dataset/datasetEncode0`
       }
     ]
   },
@@ -289,6 +293,16 @@ const routes = [
       {
         title: '利润分布直方图',
         url: `${prefix}custom/customProfit`
+      },
+      {
+        title: '自定义议会图与饼图过渡动画（卡顿）',
+        url: `${prefix}custom/PieParliamentTransition`,
+        state: true
+      },
+      {
+        title: '自定义仪表',
+        url: `${prefix}custom/CustomGauge`,
+        state: true
       }
     ]
   },
@@ -302,6 +316,14 @@ const routes = [
       {
         title: '联动和共享数据集',
         url: `${prefix}dataset/DatasetLink`
+      },
+      {
+        title: '指定数据到坐标轴的映射',
+        url: `${prefix}dataset/datasetEncode0`
+      },
+      {
+        title: '分割数据到数个饼图',
+        url: `${prefix}dataset/dataTransformMultiplePie`
       }
     ]
   },
