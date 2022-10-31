@@ -75,7 +75,8 @@ const routes = [
       },
       {
         title: '指定数据到坐标轴的映射',
-        url: `${prefix}dataset/datasetEncode0`
+        url: `${prefix}dataset/datasetEncode0`,
+        state: true
       }
     ]
   },

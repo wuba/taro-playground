@@ -51,7 +51,9 @@ export default function datasetEncode0() {
 
   return (
     <View>
-      <View className="header">指定数据到坐标轴的映射</View>
+      <View className="header">
+        指定数据到坐标轴的映射，安卓svg底部那条会消失
+      </View>
       <View className="body">
         <Chart option={option} />
       </View>
