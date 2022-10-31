@@ -66,6 +66,8 @@ jobs:
           yarn
       - name: Install pods
         run: cd ios && pod update --no-repo-update
+        env:
+          TEAM_ID: ${{ env.TEAM_ID }}
       - name: Import signing certificate
         env:
           SIGNING_CERTIFICATE_P12_DATA: ${{ env.SIGNING_CERTIFICATE_P12_DATA }}
