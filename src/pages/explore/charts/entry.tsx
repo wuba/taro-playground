@@ -195,6 +195,10 @@ const routes = [
       {
         title: '力引导布局',
         url: `${prefix}graph/graphForce2`
+      },
+      {
+        title: '日历关系图',
+        url: `${prefix}calendar/calendarGraph`
       }
     ]
   },
@@ -285,6 +289,10 @@ const routes = [
       {
         title: '基础日历图',
         url: `${prefix}calendar/calendarSimple`
+      },
+      {
+        title: '日历关系图',
+        url: `${prefix}calendar/calendarGraph`
       }
     ]
   },
@@ -304,6 +312,11 @@ const routes = [
         title: '自定义仪表',
         url: `${prefix}custom/CustomGauge`,
         state: true
+      },
+      {
+        title: '性能分析图',
+        url: `${prefix}custom/customProfile`
+        // state: true
       }
     ]
   },
