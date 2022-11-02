@@ -153,6 +153,22 @@ const routes = [
       {
         title: '基础雷达图',
         url: `${prefix}radar/radar`
+      },
+      {
+        title: 'AQI - 雷达图',
+        url: `${prefix}radar/radarAqi`
+      },
+      {
+        title: '浏览器占比变化',
+        url: `${prefix}radar/radar2`
+      },
+      {
+        title: '自定义雷达图',
+        url: `${prefix}radar/radarCustom`
+      },
+      {
+        title: '多雷达图',
+        url: `${prefix}radar/radarMultiple`
       }
     ]
   },
@@ -172,6 +188,14 @@ const routes = [
       {
         title: '基础盒须图',
         url: `${prefix}boxplot/boxplotLightVelocity`
+      },
+      {
+        title: '多系列盒须图',
+        url: `${prefix}boxplot/boxplotMulti`
+      },
+      {
+        title: '垂直方向盒须图',
+        url: `${prefix}boxplot/boxplotLightVelocity2`
       }
     ]
   },
