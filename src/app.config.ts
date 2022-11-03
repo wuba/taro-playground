@@ -168,6 +168,8 @@ if (process.env.TARO_ENV === 'rn') {
       'pages/heatmap/heatmapCartesian',
       'pages/heatmap/heatmapLargePiecewise',
       'pages/graph/graphForce2',
+      'pages/graph/GraphForceDynamic',
+      'pages/graph/graphSimple',
       'pages/tree/treeBasic',
       'pages/treemap/treemapDisk',
       'pages/sunburst/sunburstSimple',

@@ -217,12 +217,20 @@ const routes = [
     title: '关系图',
     routes: [
       {
+        title: 'Graph 简单示例',
+        url: `${prefix}graph/graphSimple`
+      },
+      {
         title: '力引导布局',
         url: `${prefix}graph/graphForce2`
       },
       {
         title: '日历关系图',
         url: `${prefix}calendar/calendarGraph`
+      },
+      {
+        title: '动态增加图节点',
+        url: `${prefix}graph/GraphForceDynamic`
       }
     ]
   },
