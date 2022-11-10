@@ -11,7 +11,7 @@ const CIPluginOpt = {
     password: "字节小程序密码"
   },
   alipay: {
-    appId: "支付宝小程序appId",
+    appid: "支付宝小程序appId",
     toolId: "工具id",
     privateKeyPath: "key/pkcs8-private-pem"
   },
@@ -104,6 +104,9 @@ const config = {
       androidSourcemapOutput: './android/app/src/main/assets/index.android.map',
       // androidSourcemapSourcesRoot: '',
     },
+    sass: {
+      additionalData: '@use "sass:math";'
+    }
   },
   alias: {
     '@/components': path.resolve(__dirname, '..', 'src/pages/components'),

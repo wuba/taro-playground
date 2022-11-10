@@ -43,3 +43,15 @@ ios_build_old=`grep " BUILD_NUMBER:" .github/workflows/assemble_ios_release.yml`
 ios_build_new="  BUILD_NUMBER: ${version}.1"
 
 sed -i "" "s/${ios_build_old}/${ios_build_new}/g" .github/workflows/assemble_ios_release.yml
+
+# fix: https://github.com/fastlane/fastlane/issues/20458
+# todo: remove this, and use the next code
+#        versionCode 1
+#        versionName "1.0"
+android_version_code_line=`grep "        versionCode " android/app/build.gradle`
+android_version_name_line=`grep "        versionName " android/app/build.gradle`
+android_new_version_code_line="        versionCode ${vcode}"
+android_new_version_name_line="        versionName \"${version}\""
+
+sed -i "" "s/${android_version_code_line}/${android_new_version_code_line}/g" android/app/build.gradle
+sed -i "" "s/${android_version_name_line}/${android_new_version_name_line}/g" android/app/build.gradle
