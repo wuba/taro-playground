@@ -25,7 +25,7 @@ PODS:
     - ExpoModulesCore
   - EXFileSystem (14.1.0):
     - ExpoModulesCore
-  - EXFont (10.2.0):
+  - EXFont (10.2.1):
     - ExpoModulesCore
   - EXGL (11.4.0):
     - EXGL_CPP
@@ -37,7 +37,7 @@ PODS:
     - React-Core
   - EXLocation (14.3.0):
     - ExpoModulesCore
-  - Expo (46.0.10):
+  - Expo (46.0.17):
     - ExpoModulesCore
   - ExpoImagePicker (13.1.1):
     - ExpoModulesCore
@@ -829,12 +829,12 @@ SPEC CHECKSUMS:
   EXConstants: 7c44785d41d8e959d527d23d29444277a4d1ee73
   EXErrorRecovery: 74d71ee59f6814315457b09d68e86aa95cc7d05d
   EXFileSystem: 927e0a8885aa9c49e50fc38eaba2c2389f2f1019
-  EXFont: a5d80bd9b3452b2d5abbce2487da89b0150e6487
+  EXFont: 06df627203afcb8a3b3152ec06eb2f11f46f0cff
   EXGL: af303c96595c2879a83d0cdc429ee12639f6d78c
   EXGL_CPP: 26d0d7639ec8fcf9133c2883926ca7a005625ee6
   EXImageLoader: b88e053d760f85a82405b1db2de4abf11978fc9f
   EXLocation: b8cba3cb354bee6abb181c1dd245abe5aef22955
-  Expo: fcdb32274e2ca9c7638d3b21b30fb665c6869219
+  Expo: 4de8a31146bb0480353b3ed1850e015c4862625f
   ExpoImagePicker: d9d6b4f29db437fc7796f13cee5f133f5b4b5f7c
   ExpoKeepAwake: 0e8f18142e71bbf2c7f6aa66ebed249ba1420320
   ExpoModulesCore: 5a973701f4400d70254bc836305228731c829010
@@ -909,6 +909,6 @@ SPEC CHECKSUMS:
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
-PODFILE CHECKSUM: 9d36e950cfde4f27d5db95a8d8232bac374cc3a4
+PODFILE CHECKSUM: 5336d8ce90d2c20f6387365ca376fde59d492250
 
 COCOAPODS: 1.11.3
