@@ -132,7 +132,7 @@ echarts.registerMap('Beef_cuts_France', { svg: beef });
 const E_HEIGHT = 250;
 const E_WIDTH = Dimensions.get('screen').width;
 const blockStyle: any = {
-  marginBottom: 0
+  marginBottom: 100
 };
 
 export default function EchartsPage({ option }) {
@@ -168,14 +168,14 @@ export default function EchartsPage({ option }) {
   }, []);
 
   return (
-    <View>
-      <View style={blockStyle}>
+    <View style={blockStyle}>
+      <View>
         <RNEChartsPro height={E_HEIGHT} option={option} />
       </View>
-      <View style={blockStyle}>
+      <View>
         <SvgComponent ref={svgRef}></SvgComponent>
       </View>
-      <View style={blockStyle}>
+      <View>
         <SkiaComponent ref={skiaRef} />
       </View>
     </View>

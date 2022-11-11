@@ -21,6 +21,8 @@ PODS:
     - ExpoModulesCore
   - EXConstants (13.2.4):
     - ExpoModulesCore
+  - EXErrorRecovery (3.2.0):
+    - ExpoModulesCore
   - EXFileSystem (14.1.0):
     - ExpoModulesCore
   - EXFont (10.2.1):
@@ -348,32 +350,32 @@ PODS:
     - RCTTypeSafety
     - React-Core
     - ReactCommon/turbomodule/core
-  - react-native-skia (0.1.155):
+  - react-native-skia (0.1.157):
     - React
     - React-callinvoker
     - React-Core
-    - react-native-skia/Api (= 0.1.155)
-    - react-native-skia/Jsi (= 0.1.155)
-    - react-native-skia/RNSkia (= 0.1.155)
-    - react-native-skia/SkiaHeaders (= 0.1.155)
-    - react-native-skia/Utils (= 0.1.155)
-  - react-native-skia/Api (0.1.155):
+    - react-native-skia/Api (= 0.1.157)
+    - react-native-skia/Jsi (= 0.1.157)
+    - react-native-skia/RNSkia (= 0.1.157)
+    - react-native-skia/SkiaHeaders (= 0.1.157)
+    - react-native-skia/Utils (= 0.1.157)
+  - react-native-skia/Api (0.1.157):
     - React
     - React-callinvoker
     - React-Core
-  - react-native-skia/Jsi (0.1.155):
+  - react-native-skia/Jsi (0.1.157):
     - React
     - React-callinvoker
     - React-Core
-  - react-native-skia/RNSkia (0.1.155):
+  - react-native-skia/RNSkia (0.1.157):
     - React
     - React-callinvoker
     - React-Core
-  - react-native-skia/SkiaHeaders (0.1.155):
+  - react-native-skia/SkiaHeaders (0.1.157):
     - React
     - React-callinvoker
     - React-Core
-  - react-native-skia/Utils (0.1.155):
+  - react-native-skia/Utils (0.1.157):
     - React
     - React-callinvoker
     - React-Core
@@ -524,7 +526,7 @@ PODS:
   - RNScreens (3.18.2):
     - React-Core
     - React-RCTImage
-  - RNSVG (13.4.0):
+  - RNSVG (13.5.0):
     - React-Core
   - RNSyanImagePicker (0.5.3):
     - React
@@ -554,6 +556,7 @@ DEPENDENCIES:
   - EXBrightness (from `../node_modules/expo-brightness/ios`)
   - EXCamera (from `../node_modules/expo-camera/ios`)
   - EXConstants (from `../node_modules/expo-constants/ios`)
+  - EXErrorRecovery (from `../node_modules/expo-error-recovery/ios`)
   - EXFileSystem (from `../node_modules/expo-file-system/ios`)
   - EXFont (from `../node_modules/expo-font/ios`)
   - EXGL (from `../node_modules/expo-gl/ios`)
@@ -682,6 +685,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/expo-camera/ios"
   EXConstants:
     :path: "../node_modules/expo-constants/ios"
+  EXErrorRecovery:
+    :path: "../node_modules/expo-error-recovery/ios"
   EXFileSystem:
     :path: "../node_modules/expo-file-system/ios"
   EXFont:
@@ -822,6 +827,7 @@ SPEC CHECKSUMS:
   EXBrightness: b6550cfe265e2131a0ddc7ebe97697813199850d
   EXCamera: 9f8303a52b2027e007174c2068c2ac76ff41d974
   EXConstants: 7c44785d41d8e959d527d23d29444277a4d1ee73
+  EXErrorRecovery: 74d71ee59f6814315457b09d68e86aa95cc7d05d
   EXFileSystem: 927e0a8885aa9c49e50fc38eaba2c2389f2f1019
   EXFont: 06df627203afcb8a3b3152ec06eb2f11f46f0cff
   EXGL: af303c96595c2879a83d0cdc429ee12639f6d78c
@@ -845,7 +851,7 @@ SPEC CHECKSUMS:
   Flipper-RSocket: d9d9ade67cbecf6ac10730304bf5607266dd2541
   FlipperKit: cbdee19bdd4e7f05472a66ce290f1b729ba3cb86
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
-  glog: 3d02b25ca00c2d456734d0bcff864cbc62f6ae1a
+  glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   lottie-ios: 69495122151a378fdc7d1bb4c5930347e37baf1f
   lottie-react-native: b702fab740cdb952a8e2354713d3beda63ff97b0
@@ -870,7 +876,7 @@ SPEC CHECKSUMS:
   react-native-netinfo: 85b2a435c4d3705c08b0c42ff2d6ef6b9622ea0a
   react-native-pager-view: da490aa1f902c9a5aeecf0909cc975ad0e92e53e
   react-native-safe-area-context: dfe5aa13bee37a0c7e8059d14f72ffc076d120e9
-  react-native-skia: 5a4253c77afcf0535b387d6025fc7c57af05cd3c
+  react-native-skia: 7f9a3bd36c4247005e87005d912dcf6db76a6289
   react-native-slider: cecabb58ecffad671d2ad3ccc58c7f4d2d029e95
   react-native-splash-screen: 4312f786b13a81b5169ef346d76d33bc0c6dc457
   react-native-webview: d33e2db8925d090871ffeb232dfa50cb3a727581
@@ -895,7 +901,7 @@ SPEC CHECKSUMS:
   RNGestureHandler: bad495418bcbd3ab47017a38d93d290ebd406f50
   RNReanimated: 497feb718ee382a1b6c3f87a1225b0c1ba6c68d6
   RNScreens: 34cc502acf1b916c582c60003dc3089fa01dc66d
-  RNSVG: 07dbd870b0dcdecc99b3a202fa37c8ca163caec2
+  RNSVG: 38ca962c970dbce1ca38991a5aebf26d163f9efb
   RNSyanImagePicker: 5c650d33f16f7cd59c47d9269f6c4856b30d7616
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
   TZImagePickerController: e9909edbadf7381140efc5b5c9f5bdbfd630f7d4
@@ -903,6 +909,6 @@ SPEC CHECKSUMS:
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
-PODFILE CHECKSUM: 9d36e950cfde4f27d5db95a8d8232bac374cc3a4
+PODFILE CHECKSUM: 5336d8ce90d2c20f6387365ca376fde59d492250
 
 COCOAPODS: 1.11.3
