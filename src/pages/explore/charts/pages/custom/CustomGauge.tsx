@@ -305,6 +305,7 @@ export default function CustomGauge() {
         width: E_WIDTH,
         height: E_HEIGHT
       });
+      chart.setOption(option);
       inter = setInterval(function() {
         var nextSource = [[1, Math.round(Math.random() * _valOnRadianMax)]];
         chart.setOption({
@@ -329,6 +330,7 @@ export default function CustomGauge() {
         width: E_WIDTH,
         height: E_HEIGHT
       });
+      chart.setOption(option);
       inter = setInterval(function() {
         var nextSource = [[1, Math.round(Math.random() * _valOnRadianMax)]];
         chart.setOption({
