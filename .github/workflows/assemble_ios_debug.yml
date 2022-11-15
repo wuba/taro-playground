@@ -58,6 +58,9 @@ jobs:
       - name: Install Dependencies
         run: |
           yarn
+      - name: Build Taro React Native Bundle
+        run: |
+          yarn build:rn --platform ios
       - name: Install pods
         run: cd ios && pod update --no-repo-update
       - name: Import signing certificate
