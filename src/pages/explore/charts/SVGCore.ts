@@ -41,7 +41,7 @@ function createElementClose(name: string) {
 }
 
 export function vNodeToString(
-  el: SVGVNode,
+  oel: SVGVNode,
   opts?: {
     newline?: boolean;
   }
@@ -54,25 +54,27 @@ export function vNodeToString(
     if (attrs["stroke-width"] === 0) {
       attrs["stroke-opacity"] = 0;
     }
-    // fix: https://github.com/Shopify/react-native-skia/issues/884
     if (
-      tag === "text" &&
-      attrs["dominant-baseline"] === "central" &&
-      typeof attrs["style"] === "string"
+      tag === "text"
     ) {
-      const res = /font(-size)?:([\w\s])*?([0-9]*?)px/.exec(attrs["style"]);
-      const fs = Number(res && res[3]);
-      // fix: skia不支持 font: 
-      if (!res?.[1]) {
-        attrs['style']+=';font-size:'+fs+'px';
-      }
-      const dy = fs / 2 - 2;
-      if (attrs["y"]) {
-        attrs["y"] = Number(attrs["y"]) + dy;
-        attrs["dominant-baseline"] = "auto";
-      } else if (attrs["transform"]) {
-        attrs["transform"] = attrs["transform"] + ` translate(0, ${dy})`;
-        attrs["dominant-baseline"] = "auto";
+      if(typeof attrs["style"] === "string") {
+        const res = /font(-size)?:([\w\s])*?([0-9]*?)px/.exec(attrs["style"]);
+        const fs = Number(res && res[3]);
+        // fix: skia不支持 font: 
+        if (!res?.[1]) {
+          attrs['style']+=';font-size:'+fs+'px';
+        }
+        // fix: https://github.com/Shopify/react-native-skia/issues/884
+        if(attrs["dominant-baseline"] === "central") {
+          const dy = fs / 2 - 2;
+          if (attrs["y"]) {
+            attrs["y"] = Number(attrs["y"]) + dy;
+            attrs["dominant-baseline"] = "auto";
+          } else if (attrs["transform"]) {
+            attrs["transform"] = attrs["transform"] + ` translate(0, ${dy})`;
+            attrs["dominant-baseline"] = "auto";
+          }
+        }
       }
       // fix: https://github.com/react-native-svg/react-native-svg/issues/1862
       if (attrs['paint-order'] === "stroke") {
@@ -88,5 +90,5 @@ export function vNodeToString(
       createElementClose(tag)
     );
   }
-  return convertElToString(el);
+  return convertElToString(oel);
 }
