@@ -28,12 +28,12 @@ import {
   forwardRef,
 } from 'react'
 
-import { Platform } from 'react-native';
+import { Platform, View } from 'react-native';
 
-import { getInstance } from "zrender/lib/zrender";
 import { setPlatformAPI, DEFAULT_FONT_FAMILY as zrenderFontFamily } from 'zrender/lib/core/platform'
 import { measureText } from '../../utils/platform'
 import { DEFAULT_FONT_FAMILY } from '../../utils/font'
+import { usePanResponder } from './events'
 
 setPlatformAPI({ measureText })
 
@@ -69,15 +69,6 @@ function toCamelCase(str){
   return str.replace(reg,function(_, $1){
     return $1.toUpperCase();
   });
-}
-
-function wrapTouch(event) {
-  for (let i = 0; i < event.touches.length; ++i) {
-    const touch = event.touches[i];
-    touch.offsetX = touch.x;
-    touch.offsetY = touch.y;
-  }
-  return event;
 }
 export interface SVGVNode {
   tag: string,
@@ -152,16 +143,14 @@ function SvgEle(props: SVGVEleProps) {
 }
 
 function SvgRoot(props: SVGVEleProps) {
-  const { node, touchStart, touchEnd, touchMove } = props
+  const { node } = props
   const { attrs, children } = node
   const { width, height, viewBox } = attrs
   return <Svg
     width={width as string}
     height={height as string}
     viewBox={viewBox as string}
-    onTouchStart={touchStart}
-    onTouchEnd={touchEnd}
-    onTouchMove={touchMove}>
+  >
       {children?.map(child => <SvgEle key={child.key} node={child} />)}
   </Svg>
 }
@@ -169,72 +158,7 @@ function SvgRoot(props: SVGVEleProps) {
 function SvgComponent(props: SVGVNodeProps, ref?: any) {
   const { node } = props
   const [svgNode, setSvgNode] = useState<SVGVNode | undefined>(node)
-  const [ zrenderId, setZrenderId ] = useState<any>(null)
-
-  const touchStart = (e) => {
-    console.log('touchStart')
-    e = e.nativeEvent
-    if (zrenderId && e.touches.length > 0) {
-      var touch = e.touches[0];
-      var handler = getInstance(zrenderId).handler;
-      handler.dispatch('mousedown', {
-        zrX: touch.locationX,
-        zrY: touch.locationY,
-        preventDefault: () => {},
-        stopImmediatePropagation: () => {},
-        stopPropagation: () => {}
-      });
-      handler.dispatch('mousemove', {
-        zrX: touch.locationX,
-        zrY: touch.locationY,
-        preventDefault: () => {},
-        stopImmediatePropagation: () => {},
-        stopPropagation: () => {}
-      });
-      handler.processGesture(wrapTouch(e), 'start');
-    }
-  }
-
-  const touchMove = (e) => {
-    console.log('touchMove')
-    e = e.nativeEvent
-    if (zrenderId && e.touches.length > 0) {
-      var touch = e.touches[0];
-      var handler = getInstance(zrenderId).handler;
-      handler.dispatch('mousemove', {
-        zrX: touch.locationX,
-        zrY: touch.locationY,
-        preventDefault: () => {},
-        stopImmediatePropagation: () => {},
-        stopPropagation: () => {}
-      });
-      handler.processGesture(wrapTouch(e), 'change');
-    }
-  }
-
-  const touchEnd = (e) => {
-    console.log('touchEnd')
-    e = e.nativeEvent
-    if (zrenderId) {
-      const touch = e.changedTouches ? e.changedTouches[0] : {};
-      var handler = getInstance(zrenderId).handler;
-      handler.dispatch('mouseup', {
-        zrX: touch.locationX,
-        zrY: touch.locationY,
-        preventDefault: () => {},
-        stopImmediatePropagation: () => {},
-        stopPropagation: () => {}
-      });
-      handler.dispatch('click', {
-        zrX: touch.locationX,
-        zrY: touch.locationY,
-        preventDefault: () => {},
-        stopImmediatePropagation: () => {},
-        stopPropagation: () => {}
-      });
-      handler.processGesture(wrapTouch(e), 'end');
-    }
-  }
+  const [panResponder, setZrenderId] = usePanResponder()
 
   useImperativeHandle(ref, () => ({
     elm: {
@@ -255,6 +179,9 @@ function SvgComponent(props: SVGVNodeProps, ref?: any) {
       }
     }
   }));
-  return svgNode ? <SvgRoot node={svgNode} touchStart={touchStart} touchMove={touchMove} touchEnd={touchEnd} /> : null
+  return svgNode ? (
+    <View {...panResponder.panHandlers}>
+      <SvgRoot node={svgNode} />
+    </View>) : null
 }
 export default forwardRef(SvgComponent)

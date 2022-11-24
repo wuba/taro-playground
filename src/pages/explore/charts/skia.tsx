@@ -2,7 +2,6 @@ import {
   useState,
   useImperativeHandle,
   forwardRef,
-  useEffect,
 } from 'react'
 
 import {
@@ -10,14 +9,16 @@ import {
   ImageSVG,
   Skia,
   SkSVG,
-  useTouchHandler,
-  useValue,
 } from "@shopify/react-native-skia"
 
-import { getInstance } from "zrender/lib/zrender"
+import {
+  View,
+} from 'react-native'
+
 import { setPlatformAPI, DEFAULT_FONT_FAMILY as zrenderFontFamily } from 'zrender/lib/core/platform'
 import { measureText } from '../../utils/platform'
 import { DEFAULT_FONT_FAMILY } from '../../utils/font'
+import { usePanResponder } from './events'
 
 setPlatformAPI({ measureText })
 
@@ -42,7 +43,7 @@ function SkiaComponent(props: SkiaProps, ref?: any) {
   const [svgString, setSvgString] = useState<SkSVG | undefined>(getSkSvg(svg))
   const [width, setWidth] = useState<number>(props.width ?? 0)
   const [height, setHeight] = useState<number>(props.height ?? 0)
-  const zrenderIdValue = useValue(0)
+  const [panResponder, setZrenderId] = usePanResponder()
 
   useImperativeHandle(ref, () => ({
     elm: {
@@ -65,74 +66,24 @@ function SkiaComponent(props: SkiaProps, ref?: any) {
         setSvgString(_svgString)
       },
       setZrenderId: (id) => {
-        zrenderIdValue.current = id;
+        setZrenderId(id)
       }
     },
     viewprot: {}
   }))
 
-  const touchHandler = useTouchHandler({
-    onStart: ({ x, y }) => {
-      if (zrenderIdValue.current) {
-        var handler = getInstance(zrenderIdValue.current).handler;
-        handler.dispatch('mousedown', {
-          zrX: x,
-          zrY: y,
-          preventDefault: () => {},
-          stopImmediatePropagation: () => {},
-          stopPropagation: () => {}
-        });
-        handler.dispatch('mousemove', {
-          zrX: x,
-          zrY: y,
-          preventDefault: () => {},
-          stopImmediatePropagation: () => {},
-          stopPropagation: () => {}
-        });
-      }
-    },
-    onActive: ({ x, y }) => {
-      console.log('touchMove')
-      if (zrenderIdValue.current) {
-        var handler = getInstance(zrenderIdValue.current).handler;
-        handler.dispatch('mousemove', {
-          zrX: x,
-          zrY: y,
-          preventDefault: () => {},
-          stopImmediatePropagation: () => {},
-          stopPropagation: () => {}
-        });
-      }
-    },
-    onEnd: ({ x, y }) => {
-      console.log('touchEnd')
-      if (zrenderIdValue.current) {
-        var handler = getInstance(zrenderIdValue.current).handler;
-        handler.dispatch('mouseup', {
-          zrX: x,
-          zrY: y,
-          preventDefault: () => {},
-          stopImmediatePropagation: () => {},
-          stopPropagation: () => {}
-        });
-        handler.dispatch('click', {
-          zrX: x,
-          zrY: y,
-          preventDefault: () => {},
-          stopImmediatePropagation: () => {},
-          stopPropagation: () => {}
-        });
-      }
-    },
-  });
-  return svgString ? <Canvas style={{ width, height }} pointerEvents="auto" onTouch={touchHandler}>
-    <ImageSVG
-      svg={svgString}
-      x={0}
-      y={0}
-      width={width}
-      height={height}
-    />
-  </Canvas> : null
+  return svgString ? (
+    <View {...panResponder.panHandlers} style={{ width, height }}>
+      <Canvas style={{ width, height }} pointerEvents="auto">
+        <ImageSVG
+          svg={svgString}
+          x={0}
+          y={0}
+          width={width}
+          height={height}
+        />
+      </Canvas>
+    </View>
+  ) : null
 }
 export default forwardRef(SkiaComponent)
