@@ -33,7 +33,7 @@ function getSkSvg(svg?: string): SkSVG | undefined {
   //   svg = svg.replace(new RegExp(zrenderFontFamily, 'g'), DEFAULT_FONT_FAMILY)
   //   console.log('svg', svg)
   // }
-  let initString = svg ? Skia.SVG.MakeFromString(svg) : undefined
+  const initString = svg ? Skia.SVG.MakeFromString(svg) : undefined
   return initString ?? undefined
 }
 
@@ -42,12 +42,7 @@ function SkiaComponent(props: SkiaProps, ref?: any) {
   const [svgString, setSvgString] = useState<SkSVG | undefined>(getSkSvg(svg))
   const [width, setWidth] = useState<number>(props.width ?? 0)
   const [height, setHeight] = useState<number>(props.height ?? 0)
-  const [ zrenderId, setZrenderId ] = useState<any>(null)
   const zrenderIdValue = useValue(0)
-
-  useEffect(() => {
-    zrenderIdValue.current = zrenderId;
-  }, [zrenderId]);
 
   useImperativeHandle(ref, () => ({
     elm: {
@@ -70,7 +65,7 @@ function SkiaComponent(props: SkiaProps, ref?: any) {
         setSvgString(_svgString)
       },
       setZrenderId: (id) => {
-        setZrenderId(id)
+        zrenderIdValue.current = id;
       }
     },
     viewprot: {}
