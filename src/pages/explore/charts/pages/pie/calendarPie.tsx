@@ -127,6 +127,9 @@ export default function EchartsPage() {
           formatter: '{c}',
           position: 'inside'
         },
+        LabelLayout: {
+          hideOverlap: true
+        },
         radius: pieRadius,
         data: [
           { name: '工作', value: Math.round(Math.random() * 24) },
@@ -153,7 +156,11 @@ export default function EchartsPage() {
   const scatterData = getVirtulData();
 
   const option = {
-    tooltip: {},
+    tooltip: {
+      textStyle: {
+        fontFamily: 'PingFang SC'
+      }
+    },
     legend: {
       data: ['Work', 'Entertainment', 'Sleep'],
       bottom: 20
@@ -189,7 +196,7 @@ export default function EchartsPage() {
             return echarts.format.formatTime('dd', params.value[0]);
           },
           offset: [-cellSize[0] / 2 + 10, -cellSize[1] / 2 + 10],
-          fontSize: 14
+          fontSize: 14,
         },
         data: scatterData
       }

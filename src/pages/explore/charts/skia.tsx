@@ -5,56 +5,22 @@ import {
   useEffect,
 } from 'react'
 
-import { Image } from "react-native";
-
 import {
   Canvas,
   ImageSVG,
   Skia,
   SkSVG,
-  SkTypeface,
   useTouchHandler,
   useValue,
 } from "@shopify/react-native-skia"
 
-import { getInstance } from "zrender/lib/zrender";
+import { getInstance } from "zrender/lib/zrender"
+import { setPlatformAPI, DEFAULT_FONT_FAMILY as zrenderFontFamily } from 'zrender/lib/core/platform'
+import { measureText } from '../../utils/platform'
+import { DEFAULT_FONT_FAMILY } from '../../utils/font'
 
-import { setPlatformAPI, DEFAULT_FONT, DEFAULT_FONT_SIZE, platformApi } from 'zrender/lib/core/platform'
+setPlatformAPI({ measureText })
 
-const originMeasureText = platformApi.measureText
-
-const resolveAsset = (source) => {
-  return typeof source === "number"
-    ? Image.resolveAssetSource(source).uri
-    : source.default;
-};
-
-const fonts = {}
-
-export const loadFont = async (source, key): Promise<SkTypeface | null> => {
-  const uri = typeof source === "string" ? source : resolveAsset(source);
-  const data = await Skia.Data.fromURI(uri)
-  const font = Skia.Typeface.MakeFreeTypeFaceFromData(data)
-  fonts[key] = font
-  return font
-}
-// fixme: measureText
-loadFont(require("./SansSerifFLF.otf"), 'sans-serif')
-
-setPlatformAPI({
-  measureText(text: string, font: string = DEFAULT_FONT) {
-    const res = /([0-9]*?)px/.exec(font)
-    const fontSize = Number(res?.[1]) || DEFAULT_FONT_SIZE
-    const f = fonts['sans-serif'] ? Skia.Font(fonts['sans-serif'], fontSize) : null
-    let width
-    if(f) {
-      width = f.getTextWidth(text)
-      return { width }
-    } else {
-      return originMeasureText(text, font)
-    }
-  }
-})
 interface SkiaProps {
   svg?: string
   width?: number
@@ -62,7 +28,12 @@ interface SkiaProps {
 }
 
 function getSkSvg(svg?: string): SkSVG | undefined {
-  const initString = svg ? Skia.SVG.MakeFromString(svg) : undefined
+  // TODO: 全局替换字体做法比较暴力，或者实用定义字体，可能某些场景字体设置失效，需要修复
+  // if (svg) {
+  //   svg = svg.replace(new RegExp(zrenderFontFamily, 'g'), DEFAULT_FONT_FAMILY)
+  //   console.log('svg', svg)
+  // }
+  let initString = svg ? Skia.SVG.MakeFromString(svg) : undefined
   return initString ?? undefined
 }
 
@@ -159,7 +130,6 @@ function SkiaComponent(props: SkiaProps, ref?: any) {
       }
     },
   });
-
   return svgString ? <Canvas style={{ width, height }} pointerEvents="auto" onTouch={touchHandler}>
     <ImageSVG
       svg={svgString}

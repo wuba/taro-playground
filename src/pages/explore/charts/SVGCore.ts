@@ -60,7 +60,7 @@ export function vNodeToString(
       if(typeof attrs["style"] === "string") {
         const res = /font(-size)?:([\w\s])*?([0-9]*?)px/.exec(attrs["style"]);
         const fs = Number(res && res[3]);
-        // fix: skia不支持 font: 
+        // fix: skia不支持 font:
         if (!res?.[1]) {
           attrs['style']+=';font-size:'+fs+'px';
         }

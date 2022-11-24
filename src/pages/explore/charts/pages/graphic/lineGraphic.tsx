@@ -8,10 +8,16 @@ https://echarts.apache.org/examples/zh/editor.html?c=line-graphic
 export default function lineGraphic() {
   const option = {
     legend: {
-      data: ['Altitude (km) vs Temperature (°C)']
+      data: ['Altitude (km) vs Temperature (°C)'],
     },
     tooltip: {
-      trigger: 'axis'
+      z: 200,
+      trigger: 'axis',
+      textStyle: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        fontFamily: 'PingFang SC' // skia 不生效，使用的是默认的 fontFamily
+      }
     },
     grid: {
       left: '3%',
@@ -62,9 +68,12 @@ export default function lineGraphic() {
             top: 'center',
             z: 100,
             style: {
+              textAlign: 'center',
               fill: '#fff',
               text: 'ECHARTS LINE CHART',
-              font: 'bold 26px sans-serif'
+              fontWeight: 'bold',
+              fontSize: '26px',
+              fontFamily: 'sans-serif'
             }
           }
         ]
@@ -102,10 +111,12 @@ export default function lineGraphic() {
               fill: '#333',
               width: 200,
               lineHeight: 14,
+              textAlign: 'center',
               overflow: 'break',
               text:
                 'xAxis represents temperature in °C, yAxis represents altitude in km, An image watermark in the upper right, This text block can be placed in any place',
-              font: '14px Microsoft YaHei'
+              fontSize: 14,
+              fontFamily: 'PingFang SC'
             }
           }
         ]
@@ -116,7 +127,13 @@ export default function lineGraphic() {
         name: '高度(km)与气温(°C)变化关系',
         type: 'line',
         smooth: true,
-        data: [15, -50, -56.5, -46.5, -22.1, -2.5, -27.7, -55.7, -76.5]
+        data: [15, -50, -56.5, -46.5, -22.1, -2.5, -27.7, -55.7, -76.5],
+        lineStyle: {
+          color: 'blue'
+        },
+        itemStyle: {
+          color: 'blue'
+        }
       }
     ]
   };
