@@ -15,8 +15,6 @@
 
 default_platform(:ios)
 
-xcode_select "/Applications/Xcode_13.4.1.app"
-
 platform :ios do
   desc "Description of what the lane does"
   lane :custom_lane do
