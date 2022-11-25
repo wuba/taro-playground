@@ -60,7 +60,6 @@ import { SVGRenderer } from '../../SVGRenderer';
 import SvgComponent from '../../svg';
 import SkiaComponent from '../../skia';
 import { Text, View } from '@tarojs/components';
-import { CanvasRenderer } from '../../CanvasRenderer';
 import '../style.scss';
 
 // 通过 ComposeOption 来组合出一个只有必须组件和图表的 Option 类型
@@ -120,7 +119,6 @@ echarts.use([
   MarkPointComponent,
   MarkAreaComponent,
   SingleAxisComponent,
-  CanvasRenderer
 ]);
 
 const E_HEIGHT = 320;

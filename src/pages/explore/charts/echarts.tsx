@@ -57,12 +57,9 @@ import {
 import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { useCallback, useEffect, useRef } from 'react';
 import { Dimensions } from 'react-native';
-// import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
-import { CanvasRenderer } from './CanvasRenderer';
 import { SVGRenderer } from './SVGRenderer';
 import SvgComponent from './svg';
 import SkiaComponent from './skia';
-import CanvasComponent from './canvas';
 import { Text, View } from '@tarojs/components';
 
 import beef from './beef';
@@ -124,7 +121,6 @@ echarts.use([
   MarkPointComponent,
   MarkAreaComponent,
   SingleAxisComponent,
-  CanvasRenderer
 ]);
 
 echarts.registerMap('Beef_cuts_France', { svg: beef });

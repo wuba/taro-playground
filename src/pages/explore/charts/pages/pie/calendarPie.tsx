@@ -36,8 +36,6 @@ import {
 } from 'echarts/components';
 import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { useEffect, useRef } from 'react';
-// import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
-import { CanvasRenderer } from '../../CanvasRenderer';
 import { SVGRenderer } from '../../SVGRenderer';
 import SvgComponent from '../../svg';
 import SkiaComponent from '../../skia';
@@ -81,7 +79,6 @@ echarts.use([
   MarkPointComponent,
   MarkAreaComponent,
   SingleAxisComponent,
-  CanvasRenderer
 ]);
 
 const E_HEIGHT = 320;
