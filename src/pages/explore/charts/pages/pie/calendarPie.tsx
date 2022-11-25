@@ -109,55 +109,27 @@ export default function EchartsPage() {
     }
     return data;
   }
-
-  function getPieSeries(
-    scatterData: DataItem[],
-    chart: echarts.ECharts
-  ): echarts.PieSeriesOption[] {
-    return scatterData.map(function(item, index) {
-      var center = chart.convertToPixel('calendar', item);
-      return {
-        id: index + 'pie',
-        type: 'pie',
-        center: center,
-        label: {
-          formatter: '{c}',
-          position: 'inside'
-        },
-        LabelLayout: {
-          hideOverlap: true
-        },
-        radius: pieRadius,
-        data: [
-          { name: '工作', value: Math.round(Math.random() * 24) },
-          { name: '娱乐', value: Math.round(Math.random() * 24) },
-          { name: '睡觉', value: Math.round(Math.random() * 24) }
-        ]
-      };
-    });
-  }
-
-  function getPieSeriesUpdate(
-    scatterData: DataItem[],
-    chart: echarts.ECharts
-  ): echarts.PieSeriesOption[] {
-    return scatterData.map(function(item, index) {
-      var center = chart.convertToPixel('calendar', item);
-      return {
-        id: index + 'pie',
-        center: center
-      };
-    });
-  }
-
   const scatterData = getVirtulData();
-
+  const pieSeries = scatterData.map(function (item, index) {
+    return {
+      type: 'pie',
+      id: 'pie-' + index,
+      center: item[0],
+      radius: pieRadius,
+      coordinateSystem: 'calendar',
+      label: {
+        formatter: '{c}',
+        position: 'inside'
+      },
+      data: [
+        { name: 'Work', value: Math.round(Math.random() * 24) },
+        { name: 'Entertainment', value: Math.round(Math.random() * 24) },
+        { name: 'Sleep', value: Math.round(Math.random() * 24) }
+      ]
+    };
+  });
   const option = {
-    tooltip: {
-      textStyle: {
-        fontFamily: 'PingFang SC'
-      }
-    },
+    tooltip: {},
     legend: {
       data: ['Work', 'Entertainment', 'Sleep'],
       bottom: 20
@@ -186,17 +158,18 @@ export default function EchartsPage() {
         id: 'label',
         type: 'scatter',
         coordinateSystem: 'calendar',
-        symbolSize: 1,
+        symbolSize: 0,
         label: {
           show: true,
-          formatter: function(params: any) {
-            return echarts.format.formatTime('dd', params.value[0]);
+          formatter: function (params) {
+            return echarts.time.format(params.value[0], '{dd}', false);
           },
           offset: [-cellSize[0] / 2 + 10, -cellSize[1] / 2 + 10],
-          fontSize: 14,
+          fontSize: 15
         },
         data: scatterData
-      }
+      },
+      ...pieSeries
     ]
   };
 
@@ -210,16 +183,6 @@ export default function EchartsPage() {
         height: E_HEIGHT
       });
       chart.setOption(option);
-      setTimeout(function() {
-        chart.setOption({
-          series: getPieSeries(scatterData, chart)
-        });
-      }, 10);
-      setTimeout(function() {
-        chart.setOption({
-          series: getPieSeriesUpdate(scatterData, chart)
-        });
-      }, 500);
     }
     return () => chart?.dispose();
   }, []);
@@ -234,16 +197,6 @@ export default function EchartsPage() {
         height: E_HEIGHT
       });
       chart.setOption(option);
-      setTimeout(function() {
-        chart.setOption({
-          series: getPieSeries(scatterData, chart)
-        });
-      }, 10);
-      setTimeout(function() {
-        chart.setOption({
-          series: getPieSeriesUpdate(scatterData, chart)
-        });
-      }, 500);
     }
     return () => chart?.dispose();
   }, []);
