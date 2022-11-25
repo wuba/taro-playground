@@ -26,6 +26,7 @@ import {
   useState,
   useImperativeHandle,
   forwardRef,
+  memo,
 } from 'react'
 
 import { Platform, View } from 'react-native';
@@ -158,7 +159,8 @@ function SvgRoot(props: SVGVEleProps) {
 function SvgComponent(props: SVGVNodeProps, ref?: any) {
   const { node } = props
   const [svgNode, setSvgNode] = useState<SVGVNode | undefined>(node)
-  const [panResponder, setZrenderId] = usePanResponder()
+  const [zrenderId, setZrenderId] = useState(0)
+  const [panResponder] = usePanResponder(zrenderId)
 
   useImperativeHandle(ref, () => ({
     elm: {
@@ -184,4 +186,4 @@ function SvgComponent(props: SVGVNodeProps, ref?: any) {
       <SvgRoot node={svgNode} />
     </View>) : null
 }
-export default forwardRef(SvgComponent)
+export default memo(forwardRef(SvgComponent))

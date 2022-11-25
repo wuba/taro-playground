@@ -2,6 +2,7 @@ import {
   useState,
   useImperativeHandle,
   forwardRef,
+  memo,
 } from 'react'
 
 import {
@@ -43,7 +44,8 @@ function SkiaComponent(props: SkiaProps, ref?: any) {
   const [svgString, setSvgString] = useState<SkSVG | undefined>(getSkSvg(svg))
   const [width, setWidth] = useState<number>(props.width ?? 0)
   const [height, setHeight] = useState<number>(props.height ?? 0)
-  const [panResponder, setZrenderId] = usePanResponder()
+  const [zrenderId, setZrenderId] = useState(0)
+  const [panResponder] = usePanResponder(zrenderId)
 
   useImperativeHandle(ref, () => ({
     elm: {
@@ -86,4 +88,4 @@ function SkiaComponent(props: SkiaProps, ref?: any) {
     </View>
   ) : null
 }
-export default forwardRef(SkiaComponent)
+export default memo(forwardRef(SkiaComponent))
