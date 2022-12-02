@@ -53,9 +53,7 @@ import {
 } from 'echarts/components';
 import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { useEffect, useRef } from 'react';
-import { SVGRenderer } from '../../SVGRenderer';
-import SvgComponent from '../../svg';
-import SkiaComponent from '../../skia';
+import { SVGRenderer, SkiaChart as SkiaComponent, SvgChart as SvgComponent } from 'wrn-echarts';
 import { View } from '@tarojs/components';
 import '../style.scss';
 

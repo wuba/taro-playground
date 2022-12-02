@@ -57,9 +57,7 @@ import {
 import { View } from '@tarojs/components';
 import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { useEffect, useRef } from 'react';
-import { SVGRenderer } from '../../SVGRenderer';
-import SvgComponent from '../../svg';
-import SkiaComponent from '../../skia';
+import { SVGRenderer, SkiaChart as SkiaComponent, SvgChart as SvgComponent } from 'wrn-echarts';
 import '../style.scss';
 
 // 通过 ComposeOption 来组合出一个只有必须组件和图表的 Option 类型

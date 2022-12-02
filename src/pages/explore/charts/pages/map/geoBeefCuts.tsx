@@ -1,7 +1,7 @@
 import { View } from '@tarojs/components';
+import { SkiaChart as SkiaComponent } from 'wrn-echarts';
 import Chart from '../../echarts';
 import beef from '../../beef';
-import SkiaComponent from '../../skia';
 import '../style.scss';
 /**
  * 这个case上的小虚线等没出来

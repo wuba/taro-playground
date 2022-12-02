@@ -57,9 +57,7 @@ import {
 import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { useCallback, useEffect, useRef } from 'react';
 import { Dimensions } from 'react-native';
-import { SVGRenderer } from './SVGRenderer';
-import SvgComponent from './svg';
-import SkiaComponent from './skia';
+import { SVGRenderer, SkiaChart as SkiaComponent, SvgChart as SvgComponent } from 'wrn-echarts';
 import { Text, View } from '@tarojs/components';
 
 import beef from './beef';
