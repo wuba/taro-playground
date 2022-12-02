@@ -52,7 +52,7 @@
     "@react-native-masked-view/masked-view": "~0.2.7",
     "@react-native-picker/picker": "~2.4.2",
     "@shopify/flash-list": "^1.1.0",
-    "@shopify/react-native-skia": "0.1.160",
+    "@shopify/react-native-skia": "0.1.163",
     "@tarojs/components": "3.5.6",
     "@tarojs/components-rn": "3.5.6",
     "@tarojs/helper": "3.5.6",
@@ -107,7 +107,7 @@
     "react-native-syan-image-picker": "0.5.3",
     "react-native-webview": "~11.23.0",
     "taro-lottie": "^1.0.0",
-    "wrn-echarts": "^0.1.1",
+    "wrn-echarts": "^0.1.2",
     "zrender": "^5.3.2"
   },
   "devDependencies": {

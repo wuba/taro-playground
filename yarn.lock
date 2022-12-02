@@ -2764,17 +2764,9 @@
     recyclerlistview "4.2.0"
     tslib "2.4.0"
 
-"@shopify/react-native-skia@0.1.160":
-  version "0.1.160"
-  resolved "https://registry.yarnpkg.com/@shopify/react-native-skia/-/react-native-skia-0.1.160.tgz#d42bf480404b88d8b8663ebeb2f6c40a67126c2c"
-  integrity sha512-b1OMoigNcHXE2Zu94n0V5SwxGz1gXW8L3ZC5vngO6GjKGX3O1f+zBTruVad/Je0608GsDbHFUzkOfvyTLSC6hw==
-  dependencies:
-    canvaskit-wasm "0.36.1"
-    react-reconciler "^0.27.0"
-
-"@shopify/react-native-skia@^0.1.163":
+"@shopify/react-native-skia@0.1.163":
   version "0.1.163"
-  resolved "https://mirrors.cloud.tencent.com/npm/@shopify%2freact-native-skia/-/react-native-skia-0.1.163.tgz#f04b796dc848e7028e60feab0b6ff9f1351998a8"
+  resolved "https://registry.yarnpkg.com/@shopify/react-native-skia/-/react-native-skia-0.1.163.tgz#f04b796dc848e7028e60feab0b6ff9f1351998a8"
   integrity sha512-sYyXy691j7InElGAGRwu1sDWpbEplDYcpRAqRu7LYSROWabz5C3RpRT37Jb8cBmN7L4lIuVodQTUvKjRJVhJwQ==
   dependencies:
     "@types/pixelmatch" "^5.2.4"
@@ -3791,14 +3783,14 @@
 
 "@types/pixelmatch@^5.2.4":
   version "5.2.4"
-  resolved "https://mirrors.cloud.tencent.com/npm/@types%2fpixelmatch/-/pixelmatch-5.2.4.tgz#ca145cc5ede1388c71c68edf2d1f5190e5ddd0f6"
+  resolved "https://registry.yarnpkg.com/@types/pixelmatch/-/pixelmatch-5.2.4.tgz#ca145cc5ede1388c71c68edf2d1f5190e5ddd0f6"
   integrity sha512-HDaSHIAv9kwpMN7zlmwfTv6gax0PiporJOipcrGsVNF3Ba+kryOZc0Pio5pn6NhisgWr7TaajlPEKTbTAypIBQ==
   dependencies:
     "@types/node" "*"
 
 "@types/pngjs@^6.0.1":
   version "6.0.1"
-  resolved "https://mirrors.cloud.tencent.com/npm/@types%2fpngjs/-/pngjs-6.0.1.tgz#c711ec3fbbf077fed274ecccaf85dd4673130072"
+  resolved "https://registry.yarnpkg.com/@types/pngjs/-/pngjs-6.0.1.tgz#c711ec3fbbf077fed274ecccaf85dd4673130072"
   integrity sha512-J39njbdW1U/6YyVXvC9+1iflZghP8jgRf2ndYghdJb5xL49LYDB+1EuAxfbuJ2IBbWIL3AjHPQhgaTxT3YaYeg==
   dependencies:
     "@types/node" "*"
@@ -14438,7 +14430,7 @@ pixelmatch@^4.0.2:
 
 pixelmatch@^5.3.0:
   version "5.3.0"
-  resolved "https://mirrors.cloud.tencent.com/npm/pixelmatch/-/pixelmatch-5.3.0.tgz#5e5321a7abedfb7962d60dbf345deda87cb9560a"
+  resolved "https://registry.yarnpkg.com/pixelmatch/-/pixelmatch-5.3.0.tgz#5e5321a7abedfb7962d60dbf345deda87cb9560a"
   integrity sha512-o8mkY4E/+LNUf6LzX96ht6k6CEDi65k9G2rjMtBe9Oo+VPKSvl+0GKHuH/AlG+GA5LPG/i5hrekkxUc3s2HU+Q==
   dependencies:
     pngjs "^6.0.0"
@@ -14491,7 +14483,7 @@ pngjs@^3.0.0, pngjs@^3.3.0, pngjs@^3.3.3:
 
 pngjs@^6.0.0:
   version "6.0.0"
-  resolved "https://mirrors.cloud.tencent.com/npm/pngjs/-/pngjs-6.0.0.tgz#ca9e5d2aa48db0228a52c419c3308e87720da821"
+  resolved "https://registry.yarnpkg.com/pngjs/-/pngjs-6.0.0.tgz#ca9e5d2aa48db0228a52c419c3308e87720da821"
   integrity sha512-TRzzuFRRmEoSW/p1KVAmiOgPco2Irlah+bGFCeNfJXxxYGwSw7YwAOAcd7X28K/m5bjBWKsC29KyoMfHbypayg==
 
 pod-install@^0.1.23:
@@ -15523,7 +15515,7 @@ react-native-svg-transformer@^0.14.3:
     path-dirname "^1.0.2"
     semver "^5.6.0"
 
-react-native-svg@^13.6.0, react-native-svg@~12.4.3, react-native-svg@~13.6.0:
+react-native-svg@~12.4.3, react-native-svg@~13.6.0:
   version "13.6.0"
   resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-13.6.0.tgz#46e95a44aabbd778db7c46d8a1047da376b28058"
   integrity sha512-1wjHCMJ8siyZbDZ0MX5wM+Jr7YOkb6GADn4/Z+/u1UwJX8WfjarypxDF3UO1ugMHa+7qor39oY+URMcrgPpiww==
@@ -19055,14 +19047,12 @@ write@^0.2.1:
   dependencies:
     mkdirp "^0.5.1"
 
-wrn-echarts@^0.1.1:
-  version "0.1.1"
-  resolved "https://mirrors.cloud.tencent.com/npm/wrn-echarts/-/wrn-echarts-0.1.1.tgz#b48cf2cf76ede143c9aa9cd195c101041f98c2c2"
-  integrity sha512-mB/lIXFkRAvM+rgVgd6V/VLwKf4iAc6mxLOPay4pqz681wm8Yy1sTAMTijcH8JrZzujCpoCdj2k/O+53JeHQHg==
+wrn-echarts@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/wrn-echarts/-/wrn-echarts-0.1.2.tgz#8d5dc6313038899b8712135facd85f840fd6ccbc"
+  integrity sha512-f70oPT+w5n6u/EiVpiuzwi/yhhXE8f1wnz8vm/mr6NbTmR77AkDRXHoaHdVTn0ny3RAWEqKYwuraZs7LZqiHrg==
   dependencies:
-    "@shopify/react-native-skia" "^0.1.163"
     "@xmldom/xmldom" "^0.8.6"
-    react-native-svg "^13.6.0"
 
 ws@^6.1.4:
   version "6.2.2"
