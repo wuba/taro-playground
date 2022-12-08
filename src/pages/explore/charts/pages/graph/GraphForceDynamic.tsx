@@ -1,5 +1,4 @@
 import * as echarts from 'echarts/core';
-// import RNEChartsPro from 'react-native-echarts-pro';
 import {
   BarChart,
   // 系列类型的定义后缀都为 SeriesOption

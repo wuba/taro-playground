@@ -235,12 +235,57 @@ const routes = [
     ]
   },
   {
+    title: '路径图',
+    routes: [
+      // {
+      //   title: '杭州热门步行路线-百度地图',
+      //   url: `${prefix}lines/hangzhouLines`,
+      // },
+      // {
+      //   title: '北京公交路线-百度地图',
+      //   url: `${prefix}graph/graphForce2`
+      // },
+      // {
+      //   title: '北京公交路线-线特效',
+      //   url: `${prefix}calendar/calendarGraph`
+      // },
+      // {
+      //   title: '使用线图绘制近100万的纽约街道数据',
+      //   url: `${prefix}lines/millionNyStreets`
+      // }
+    ]
+  },
+  {
     title: '树图',
     routes: [
       {
         title: '从左到右树状图',
         url: `${prefix}tree/treeBasic`
-      }
+      },
+      {
+        title: '多棵树',
+        url: `${prefix}tree/multipleTrees`
+      },
+      {
+        title: '从下到上树状图',
+        url: `${prefix}tree/bottomTopTree`
+      },
+      {
+        title: '从右到左树状图',
+        url: `${prefix}tree/rightLeftTree`
+      },
+      {
+        title: '折线树图',
+        url: `${prefix}tree/polylineTree`
+      },
+      {
+        title: '径向树状图',
+        url: `${prefix}tree/radialTree`
+      },
+      {
+        title: '从上到下树状图',
+        url: `${prefix}tree/topBottomTree`
+      },
     ]
   },
   {

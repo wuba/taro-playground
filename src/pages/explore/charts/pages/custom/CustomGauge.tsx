@@ -1,5 +1,4 @@
 import * as echarts from 'echarts/core';
-import RNEChartsPro from 'react-native-echarts-pro';
 import {
   BarChart,
   // 系列类型的定义后缀都为 SeriesOption
@@ -352,10 +351,6 @@ export default function CustomGauge() {
         <View style={blockStyle}>
           <SkiaComponent ref={skiaRef} />
         </View>
-        {/* <View style={blockStyle}>
-          <Text>对比下方 react-native-echarts-pro 的效果</Text>
-          <RNEChartsPro height={E_HEIGHT} option={option} />
-        </View> */}
       </View>
     </View>
   );

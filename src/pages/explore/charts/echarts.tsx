@@ -1,5 +1,4 @@
 import * as echarts from 'echarts/core';
-import RNEChartsPro from 'react-native-echarts-pro';
 import {
   BarChart,
   // 系列类型的定义后缀都为 SeriesOption
@@ -13,7 +12,9 @@ import {
   GraphChart,
   HeatmapChart,
   LineChart,
+  LinesChart,
   LineSeriesOption,
+  LinesSeriesOption,
   MapChart,
   ParallelChart,
   PictorialBarChart,
@@ -52,7 +53,8 @@ import {
   MarkPointComponent,
   SingleAxisComponent,
   ParallelComponent,
-  CalendarComponent
+  CalendarComponent,
+  GeoComponent,
 } from 'echarts/components';
 import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { useCallback, useEffect, useRef } from 'react';
@@ -66,6 +68,7 @@ import beef from './beef';
 type ECOption = echarts.ComposeOption<
   | BarSeriesOption
   | LineSeriesOption
+  | LinesSeriesOption
   | TitleComponentOption
   | TooltipComponentOption
   | GridComponentOption
@@ -106,6 +109,7 @@ echarts.use([
   CandlestickChart,
   BarChart,
   LineChart,
+  LinesChart,
   HeatmapChart,
   EffectScatterChart,
   ScatterChart,
@@ -119,6 +123,7 @@ echarts.use([
   MarkPointComponent,
   MarkAreaComponent,
   SingleAxisComponent,
+  GeoComponent,
 ]);
 
 echarts.registerMap('Beef_cuts_France', { svg: beef });
@@ -163,9 +168,6 @@ export default function EchartsPage({ option }) {
 
   return (
     <View style={blockStyle}>
-      <View>
-        <RNEChartsPro height={E_HEIGHT} option={option} />
-      </View>
       <View>
         <SvgComponent ref={svgRef}></SvgComponent>
       </View>

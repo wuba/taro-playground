@@ -4,8 +4,9 @@ import { useEffect, useState } from 'react';
 import Chart from '../../echarts';
 import '../style.scss';
 
-export default function BarPolarRealEstate() {
+export default function rightLeftTree() {
   const [option, setOption] = useState<any>();
+  
   useEffect(() => {
     Taro.request({
       url: 'https://echarts.apache.org/examples/data/asset/data/flare.json',
@@ -28,21 +29,21 @@ export default function BarPolarRealEstate() {
               type: 'tree',
               data: [data],
               top: '1%',
-              left: '7%',
+              left: '15%',
               bottom: '1%',
-              right: '20%',
+              right: '7%',
               symbolSize: 7,
+              orient: 'RL',
               label: {
-                position: 'left',
+                position: 'right',
                 verticalAlign: 'middle',
-                align: 'right',
-                fontSize: 9
+                align: 'left'
               },
               leaves: {
                 label: {
-                  position: 'right',
+                  position: 'left',
                   verticalAlign: 'middle',
-                  align: 'left'
+                  align: 'right'
                 }
               },
               emphasis: {
@@ -53,24 +54,26 @@ export default function BarPolarRealEstate() {
               animationDurationUpdate: 750
             }
           ]
-        });
+        })
       },
       fail: err => {
         console.log(err);
         Taro.showToast({
+          icon: 'none',
           title: '数据请求失败'
         });
       }
     });
   }, []);
+
   return option ? (
     <View>
-      <View className="header">从左到右树状图</View>
+      <View className="header">从右到左树状图</View>
       <View className="body">
         <Chart option={option} />
       </View>
     </View>
   ) : (
-    <View>这是一个Loading图标</View>
+    <View>Loading...</View>
   );
 }
