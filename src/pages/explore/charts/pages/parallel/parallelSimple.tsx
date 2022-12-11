@@ -31,7 +31,7 @@ export default function parallelSimple() {
   };
   return (
     <View>
-      <View className="header">good</View>
+      <View className="header">基础平行坐标</View>
       <View className="body">
         <Chart option={option} />
       </View>

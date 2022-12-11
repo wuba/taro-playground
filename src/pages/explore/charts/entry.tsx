@@ -234,9 +234,9 @@ const routes = [
       }
     ]
   },
-  {
-    title: '路径图',
-    routes: [
+  // {
+    // title: '路径图',
+    // routes: [
       // {
       //   title: '杭州热门步行路线-百度地图',
       //   url: `${prefix}lines/hangzhouLines`,
@@ -253,8 +253,8 @@ const routes = [
       //   title: '使用线图绘制近100万的纽约街道数据',
       //   url: `${prefix}lines/millionNyStreets`
       // }
-    ]
-  },
+    // ]
+  // },
   {
     title: '树图',
     routes: [
@@ -292,9 +292,36 @@ const routes = [
     title: '矩形树图',
     routes: [
       {
+        title: '矩形树图和旭日图的动画过渡',
+        url: `${prefix}treemap/sunburstTransition`,
+        state: true,
+      },
+      {
         title: '磁盘占用',
         url: `${prefix}treemap/treemapDisk`
-      }
+      },
+      {
+        title: 'ECharts 配置项查询分布',
+        url: `${prefix}treemap/echartsOptionQuery`
+      },
+      {
+        title: 'How $3.7 Trillion is Spent',
+        url: `${prefix}treemap/howTrillionSpent`,
+        state: true,
+      },
+      {
+        title: '显示父层级标签',
+        url: `${prefix}treemap/showParentLabels`,
+      },
+      {
+        title: '基础矩形树图',
+        url: `${prefix}treemap/basicTreemap`,
+      },
+      {
+        title: '映射为渐变色',
+        url: `${prefix}treemap/gradientMapping`,
+        state: true,
+      },
     ]
   },
   {
@@ -303,7 +330,32 @@ const routes = [
       {
         title: '基础旭日图',
         url: `${prefix}sunburst/sunburstSimple`
-      }
+      },
+      {
+        title: '圆角旭日图',
+        url: `${prefix}sunburst/roundedCornerSunburst`
+      },
+      {
+        title: '旭日图标签旋转',
+        url: `${prefix}sunburst/sunburstLabelRotate`
+      },
+      {
+        title: 'Monochrome Sunburst',
+        url: `${prefix}sunburst/monochromeSunburst`
+      },
+      {
+        title: '旭日图使用视觉编码',
+        url: `${prefix}sunburst/sunburstVisualMap`
+      },
+      {
+        title: 'Drink Flavors',
+        url: `${prefix}sunburst/drinkFlavors`
+      },
+      {
+        title: '书籍分布',
+        url: `${prefix}sunburst/bookRecords`,
+        state: true,
+      },
     ]
   },
   {
@@ -312,7 +364,20 @@ const routes = [
       {
         title: '基础平行坐标',
         url: `${prefix}parallel/parallelSimple`
-      }
+      },
+      {
+        title: 'AQI 分布（平行坐标）',
+        url: `${prefix}parallel/parallelAqi`
+      },
+      {
+        title: '营养结构（平行坐标）',
+        url: `${prefix}parallel/parallelNutrients`,
+        state: true,
+      },
+      {
+        title: '散点矩阵和平行坐标',
+        url: `${prefix}parallel/scatterMatrix`
+      },
     ]
   },
   {
@@ -321,7 +386,34 @@ const routes = [
       {
         title: '基础桑基图',
         url: `${prefix}sankey/sankeySimple`
-      }
+      },
+      {
+        title: '垂直方向的桑基图',
+        url: `${prefix}sankey/sankeyOrientVertical`
+      },
+      {
+        title: '桑基图节点自定义样式',
+        url: `${prefix}sankey/specifyItemStyle`
+      },
+      {
+        title: '桑基图层级自定义样式',
+        url: `${prefix}sankey/levelsSetting`
+      },
+      {
+        title: '桑基图渐变色边',
+        url: `${prefix}sankey/gradientEdge`,
+        state: true,
+      },
+      {
+        title: '桑基图左对齐布局',
+        url: `${prefix}sankey/nodeAlignLeft`,
+        state: true,
+      },
+      {
+        title: '桑基图右对齐布局',
+        url: `${prefix}sankey/nodeAlignRight`,
+        state: true,
+      },
     ]
   },
   {
