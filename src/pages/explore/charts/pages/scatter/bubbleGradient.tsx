@@ -160,10 +160,7 @@ export default function barPolarRealEstate() {
 
   return (
     <View>
-      <View className="header">气泡图，canvas背景无渐变。</View>
-      <View>
-        todo: zrender issue: https://github.com/apache/echarts/issues/17735
-      </View>
+      <View className="header">气泡图</View>
       <View className="body">
         <Chart option={option} />
       </View>
