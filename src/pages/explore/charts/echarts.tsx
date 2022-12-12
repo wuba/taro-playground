@@ -1,8 +1,6 @@
 import * as echarts from 'echarts/core';
 import {
   BarChart,
-  // 系列类型的定义后缀都为 SeriesOption
-  BarSeriesOption,
   BoxplotChart,
   CandlestickChart,
   CustomChart,
@@ -13,8 +11,6 @@ import {
   HeatmapChart,
   LineChart,
   LinesChart,
-  LineSeriesOption,
-  LinesSeriesOption,
   MapChart,
   ParallelChart,
   PictorialBarChart,
@@ -29,16 +25,9 @@ import {
 } from 'echarts/charts';
 import {
   TitleComponent,
-  // 组件类型的定义后缀都为 ComponentOption
-  TitleComponentOption,
   TooltipComponent,
-  TooltipComponentOption,
   GridComponent,
-  GridComponentOption,
-  // 数据集组件
   DatasetComponent,
-  DatasetComponentOption,
-  // 内置数据转换器组件 (filter, sort)
   TransformComponent,
   LegendComponent,
   VisualMapComponent,
@@ -57,23 +46,13 @@ import {
   GeoComponent,
 } from 'echarts/components';
 import { LabelLayout, UniversalTransition } from 'echarts/features';
-import { useCallback, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Dimensions } from 'react-native';
 import { SVGRenderer, SkiaChart as SkiaComponent, SvgChart as SvgComponent } from 'wrn-echarts';
-import { Text, View } from '@tarojs/components';
+import { View } from '@tarojs/components';
 
 import beef from './beef';
-
-// 通过 ComposeOption 来组合出一个只有必须组件和图表的 Option 类型
-type ECOption = echarts.ComposeOption<
-  | BarSeriesOption
-  | LineSeriesOption
-  | LinesSeriesOption
-  | TitleComponentOption
-  | TooltipComponentOption
-  | GridComponentOption
-  | DatasetComponentOption
->;
+import './echarts.scss';
 
 // 注册必须的组件
 echarts.use([
@@ -128,16 +107,12 @@ echarts.use([
 
 echarts.registerMap('Beef_cuts_France', { svg: beef });
 
-const E_HEIGHT = 250;
+const E_HEIGHT = 320;
 const E_WIDTH = Dimensions.get('screen').width;
-const blockStyle: any = {
-  marginBottom: 100
-};
 
 export default function EchartsPage({ option }) {
   const svgRef = useRef<any>(null);
   const skiaRef = useRef<any>(null);
-
   useEffect(() => {
     let chart;
     if (svgRef.current) {
@@ -167,11 +142,13 @@ export default function EchartsPage({ option }) {
   }, []);
 
   return (
-    <View style={blockStyle}>
-      <View>
-        <SvgComponent ref={svgRef}></SvgComponent>
+    <View>
+      <View className='charts-container'>
+        <View className='charts-render'>React Native SVG</View>
+        <SvgComponent ref={svgRef} />
       </View>
-      <View>
+      <View className='charts-container'>
+        <View className='charts-render'>React Native Skia</View>
         <SkiaComponent ref={skiaRef} />
       </View>
     </View>
