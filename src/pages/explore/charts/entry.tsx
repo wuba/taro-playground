@@ -18,17 +18,64 @@ const routes = [
     title: '折线图',
     routes: [
       {
-        title: '折线图的标记线',
-        url: `${prefix}line/lineMarkline`
-        // state: true // 表示是否异常 true-有问题
+        title: '基础折线图',
+        url: `${prefix}line/lineSimple`
+      },
+      {
+        title: '基础平滑折线图',
+        url: `${prefix}line/lineSmooth`
+      },
+      {
+        title: '基础面积图',
+        url: `${prefix}line/areaBasic`
+      },
+      {
+        title: '折线图堆叠',
+        url: `${prefix}line/lineStack`
+      },
+      {
+        title: '堆叠面积图',
+        url: `${prefix}line/areaStack`
+      },
+      {
+        title: '渐变堆叠面积图',
+        url: `${prefix}line/areaStackGradient`
+      },
+      {
+        title: '未来一周气温变化',
+        url: `${prefix}line/lineMarker`
       },
       {
         title: '折线图区域高亮',
         url: `${prefix}line/areaPieces`
       },
       {
+        title: '数据过滤',
+        url: `${prefix}line/dataTransformFilter`
+      },
+      {
+        title: '折线图的渐变',
+        url: `${prefix}line/lineGradient`
+        // state: true
+      },
+      {
+        title: '折线图的标记线',
+        url: `${prefix}line/lineMarkline`
+        // state: true // 表示是否异常 true-有问题
+      },
+      {
         title: '一天用电量分布',
         url: `${prefix}line/lineSections`,
+        state: false
+      },
+      {
+        title: 'Confidence Band',
+        url: `${prefix}line/confidenceBand`,
+        state: false
+      },
+      {
+        title: '雨量Evaporation关系图',
+        url: `${prefix}line/gridMultiple`,
         state: false
       },
       {
@@ -235,25 +282,25 @@ const routes = [
     ]
   },
   // {
-    // title: '路径图',
-    // routes: [
-      // {
-      //   title: '杭州热门步行路线-百度地图',
-      //   url: `${prefix}lines/hangzhouLines`,
-      // },
-      // {
-      //   title: '北京公交路线-百度地图',
-      //   url: `${prefix}graph/graphForce2`
-      // },
-      // {
-      //   title: '北京公交路线-线特效',
-      //   url: `${prefix}calendar/calendarGraph`
-      // },
-      // {
-      //   title: '使用线图绘制近100万的纽约街道数据',
-      //   url: `${prefix}lines/millionNyStreets`
-      // }
-    // ]
+  // title: '路径图',
+  // routes: [
+  // {
+  //   title: '杭州热门步行路线-百度地图',
+  //   url: `${prefix}lines/hangzhouLines`,
+  // },
+  // {
+  //   title: '北京公交路线-百度地图',
+  //   url: `${prefix}graph/graphForce2`
+  // },
+  // {
+  //   title: '北京公交路线-线特效',
+  //   url: `${prefix}calendar/calendarGraph`
+  // },
+  // {
+  //   title: '使用线图绘制近100万的纽约街道数据',
+  //   url: `${prefix}lines/millionNyStreets`
+  // }
+  // ]
   // },
   {
     title: '树图',
@@ -285,7 +332,7 @@ const routes = [
       {
         title: '从上到下树状图',
         url: `${prefix}tree/topBottomTree`
-      },
+      }
     ]
   },
   {
@@ -294,7 +341,7 @@ const routes = [
       {
         title: '矩形树图和旭日图的动画过渡',
         url: `${prefix}treemap/sunburstTransition`,
-        state: true,
+        state: true
       },
       {
         title: '磁盘占用',
@@ -307,21 +354,21 @@ const routes = [
       {
         title: 'How $3.7 Trillion is Spent',
         url: `${prefix}treemap/howTrillionSpent`,
-        state: true,
+        state: true
       },
       {
         title: '显示父层级标签',
-        url: `${prefix}treemap/showParentLabels`,
+        url: `${prefix}treemap/showParentLabels`
       },
       {
         title: '基础矩形树图',
-        url: `${prefix}treemap/basicTreemap`,
+        url: `${prefix}treemap/basicTreemap`
       },
       {
         title: '映射为渐变色',
         url: `${prefix}treemap/gradientMapping`,
-        state: true,
-      },
+        state: true
+      }
     ]
   },
   {
@@ -354,8 +401,8 @@ const routes = [
       {
         title: '书籍分布',
         url: `${prefix}sunburst/bookRecords`,
-        state: true,
-      },
+        state: true
+      }
     ]
   },
   {
@@ -372,12 +419,12 @@ const routes = [
       {
         title: '营养结构（平行坐标）',
         url: `${prefix}parallel/parallelNutrients`,
-        state: true,
+        state: true
       },
       {
         title: '散点矩阵和平行坐标',
         url: `${prefix}parallel/scatterMatrix`
-      },
+      }
     ]
   },
   {
@@ -402,18 +449,18 @@ const routes = [
       {
         title: '桑基图渐变色边',
         url: `${prefix}sankey/gradientEdge`,
-        state: true,
+        state: true
       },
       {
         title: '桑基图左对齐布局',
         url: `${prefix}sankey/nodeAlignLeft`,
-        state: true,
+        state: true
       },
       {
         title: '桑基图右对齐布局',
         url: `${prefix}sankey/nodeAlignRight`,
-        state: true,
-      },
+        state: true
+      }
     ]
   },
   {

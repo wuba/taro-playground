@@ -90,7 +90,7 @@ export default function barPolarRealEstate() {
 
   return (
     <View>
-      <View className="header">这个case</View>
+      <View className="header">折线图的标记线</View>
       <View className="body">
         <Chart option={option} />
       </View>

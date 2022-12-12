@@ -5,12 +5,9 @@ import '../style.scss';
 
 /**
  * https://echarts.apache.org/examples/zh/editor.html?c=area-pieces
- * https://echarts.apache.org/examples/zh/editor.html?c=data-transform-filter
- * https://echarts.apache.org/examples/zh/editor.html?c=confidence-band
- * https://echarts.apache.org/examples/zh/editor.html?c=line-easing
  */
 
-export default function barPolarRealEstate() {
+export default function areaPieces() {
   const option = {
     xAxis: {
       type: 'category',
