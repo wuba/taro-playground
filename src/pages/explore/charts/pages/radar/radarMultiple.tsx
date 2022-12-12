@@ -132,11 +132,6 @@ export default function radarMultiple() {
     ]
   };
   return (
-    <View>
-      <View className="header">多雷达图</View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
+    <Chart option={option} />
   );
 }

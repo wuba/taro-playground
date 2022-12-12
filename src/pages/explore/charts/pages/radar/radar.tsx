@@ -41,11 +41,6 @@ export default function barPolarRealEstate() {
   };
 
   return (
-    <View>
-      <View className="header">雷达图</View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
+    <Chart option={option} />
   );
 }
