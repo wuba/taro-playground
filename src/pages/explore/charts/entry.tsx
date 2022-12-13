@@ -100,6 +100,59 @@ const routes = [
       {
         title: '大数据量面积图',
         url: `${prefix}dataZoom/areaSimple`
+      },
+      {
+        title: '北京 AQI 可视化',
+        url: `${prefix}line/lineAqi`
+      },
+      {
+        title: '多 X 轴',
+        url: `${prefix}line/multipleXAxis`
+      },
+      {
+        title: '雨量流量关系图',
+        url: `${prefix}line/areaRainfall`
+      },
+      {
+        title: '时间轴折线图',
+        url: `${prefix}line/areaTimeAxis`
+      },
+      {
+        title: '动态数据 + 时间坐标轴（代码待补充）',
+        url: `${prefix}line/dynamicData2`,
+        state: true
+      },
+      {
+        title: '函数绘图',
+        url: `${prefix}line/lineFunction`
+      },
+      {
+        title: '动态排序折线图',
+        url: `${prefix}line/lineRace`
+      },
+      {
+        title: '自定义折线图样式',
+        url: `${prefix}line/lineStyle`
+      },
+      {
+        title: '双数值轴折线图',
+        url: `${prefix}line/lineInCoordinateSystem`
+      },
+      {
+        title: '对数轴示例',
+        url: `${prefix}line/lineLog`
+      },
+      {
+        title: '阶梯折线图',
+        url: `${prefix}line/lineStep`
+      },
+      {
+        title: '缓动函数可视化',
+        url: `${prefix}line/lineEasing`
+      },
+      {
+        title: '垂直折线图（Y轴为类目轴）',
+        url: `${prefix}line/lineYCategory`
       }
     ]
   },

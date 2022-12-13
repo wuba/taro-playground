@@ -1,10 +1,16 @@
-import { View } from '@tarojs/components';
+import { setNavigationBarTitle } from '@tarojs/taro';
+import { useEffect } from 'react';
 import Chart from '../../echarts';
 import '../style.scss';
 /**
  * https://echarts.apache.org/examples/zh/editor.html?c=line-markline
  */
-export default function barPolarRealEstate() {
+export default function LineMarkline() {
+  useEffect(() => {
+    setNavigationBarTitle({
+      title: '折线图的标记线'
+    });
+  }, []);
   const markLine: any = [];
   const positions = [
     'start',
@@ -88,12 +94,5 @@ export default function barPolarRealEstate() {
     }
   };
 
-  return (
-    <View>
-      <View className="header">折线图的标记线</View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
-  );
+  return <Chart option={option} />;
 }
