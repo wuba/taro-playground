@@ -110,7 +110,7 @@ echarts.registerMap('Beef_cuts_France', { svg: beef });
 const E_HEIGHT = 320;
 const E_WIDTH = Dimensions.get('screen').width;
 
-export default function EchartsPage({ option }) {
+export default function EchartsPage({ option, width = E_WIDTH, height = E_HEIGHT }) {
   const svgRef = useRef<any>(null);
   const skiaRef = useRef<any>(null);
   useEffect(() => {
@@ -119,8 +119,8 @@ export default function EchartsPage({ option }) {
       // @ts-ignore
       chart = echarts.init(svgRef.current, 'light', {
         renderer: 'svg',
-        width: E_WIDTH,
-        height: E_HEIGHT
+        width,
+        height
       });
       chart.setOption(option);
     }
@@ -133,8 +133,8 @@ export default function EchartsPage({ option }) {
       // @ts-ignore
       chart = echarts.init(skiaRef.current, 'light', {
         renderer: 'svg',
-        width: E_WIDTH,
-        height: E_HEIGHT
+        width,
+        height
       });
       chart.setOption(option);
     }

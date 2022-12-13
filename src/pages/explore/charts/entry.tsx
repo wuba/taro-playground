@@ -160,7 +160,7 @@ const routes = [
       {
         title: '日历饼图',
         url: `${prefix}pie/calendarPie`,
-        state: true
+        state: false
       },
       {
         title: '联动和共享数据集',
