@@ -1,9 +1,6 @@
-import { View } from '@tarojs/components';
-// import * as echarts from 'echarts/core';
 import Chart from '../../echarts';
-import '../style.scss';
 
-export default function barPolarRealEstate() {
+export default function Radar() {
   const option = {
     title: {
       text: 'Basic Radar Chart'
