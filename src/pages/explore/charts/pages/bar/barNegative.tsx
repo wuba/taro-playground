@@ -1,4 +1,5 @@
-import { View } from '@tarojs/components';
+import { setNavigationBarTitle } from '@tarojs/taro';
+import { useEffect } from 'react';
 // import * as echarts from 'echarts/core';
 import Chart from '../../echarts';
 import '../style.scss';
@@ -8,11 +9,15 @@ import '../style.scss';
  * https://echarts.apache.org/examples/zh/editor.html?c=bar-negative2
  */
 
-export default function barPolarRealEstate() {
+export default function Index() {
+  useEffect(() => {
+    setNavigationBarTitle({
+      title: '交错正负轴标签'
+    });
+  }, []);
   const labelRight = {
     position: 'right'
   } as const;
-
   const option = {
     title: {
       text: 'Bar Chart with Negative Value'
@@ -80,12 +85,5 @@ export default function barPolarRealEstate() {
     ]
   };
 
-  return (
-    <View>
-      <View className="header">这个case字体颜色和web的上不同</View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
-  );
+  return <Chart option={option} />;
 }

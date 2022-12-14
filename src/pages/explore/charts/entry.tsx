@@ -153,6 +153,38 @@ const routes = [
       {
         title: '垂直折线图（Y轴为类目轴）',
         url: `${prefix}line/lineYCategory`
+      },
+      {
+        title: '点击添加折线图拐点',
+        url: `${prefix}line/linePen`
+      },
+      {
+        title: '极坐标双数值轴',
+        url: `${prefix}line/linePolar`
+      },
+      {
+        title: '极坐标双数值轴（二）',
+        url: `${prefix}line/linePolar2`
+      },
+      {
+        title: '带背景色的柱状图',
+        url: `${prefix}line/barBackground`
+      },
+      {
+        title: '基础柱状图',
+        url: `${prefix}line/barSimple`
+      },
+      {
+        title: '坐标轴刻度与标签对齐',
+        url: `${prefix}line/barTickAlign`
+      },
+      {
+        title: '自定义单个柱子颜色',
+        url: `${prefix}line/barDataColor`
+      },
+      {
+        title: '瀑布图（柱状图模拟）',
+        url: `${prefix}line/barWaterfall`
       }
     ]
   },
