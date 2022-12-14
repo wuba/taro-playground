@@ -202,6 +202,26 @@ const routes = [
         state: false
       },
       {
+        title: '极坐标柱状图标签',
+        url: `${prefix}bar/barPolarLabelRadial`
+      },
+      {
+        title: '极坐标柱状图标签（二）',
+        url: `${prefix}bar/barPolarLabelTangential`
+      },
+      {
+        title: '世界人口总量 - 条形图',
+        url: `${prefix}bar/barYCategory`
+      },
+      {
+        title: '特性示例-渐变色,阴影,点击缩放',
+        url: `${prefix}bar/barGradient`
+      },
+      {
+        title: '柱状图标签旋转',
+        url: `${prefix}bar/barLabelRotation`
+      },
+      {
         title: '某地区蒸发量和降水量',
         url: `${prefix}bar/Bar1`
       },
