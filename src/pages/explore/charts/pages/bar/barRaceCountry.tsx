@@ -1,5 +1,5 @@
 import { setNavigationBarTitle, request } from '@tarojs/taro';
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { ROOT_PATH } from '../../constant';
 import Chart from '../../echarts';
 import '../style.scss';
@@ -47,12 +47,15 @@ const requestData = async url => {
   return res;
 };
 export default function Index() {
+  const timer: any = useRef([])
   useEffect(() => {
     setNavigationBarTitle({
       title: '动态排序柱状图-人均收入'
     });
+    return () => {
+      timer.current.forEach(clearTimeout);
+    }
   }, []);
-
   const onInit = useCallback(myChart => {
     Promise.all([
       requestData(reqEmojiFlagsUrl),
@@ -164,9 +167,9 @@ export default function Index() {
       };
       for (let i = startIndex; i < years.length - 1; ++i) {
         (function(j) {
-          setTimeout(function() {
+          timer.current.push(setTimeout(function() {
             updateYear(years[j + 1]);
-          }, (i - startIndex) * updateFrequency);
+          }, (i - startIndex) * updateFrequency));
         })(i);
       }
       function updateYear(year) {
