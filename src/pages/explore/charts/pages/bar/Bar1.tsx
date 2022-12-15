@@ -1,12 +1,16 @@
-import { View } from '@tarojs/components';
 // import * as echarts from 'echarts/core';
+import { setNavigationBarTitle } from '@tarojs/taro';
+import { useEffect } from 'react';
 import Chart from '../../echarts';
 import '../style.scss';
 /**
  * 这个case上的小水滴没出来
  * https://echarts.apache.org/examples/zh/editor.html?c=bar1
  */
-export default function barPolarRealEstate() {
+export default function BarPolarRealEstate() {
+  useEffect(() => {
+    setNavigationBarTitle({ title: '某地区蒸发量和降水量' });
+  }, []);
   const option = {
     title: {
       text: 'Rainfall vs Evaporation',
@@ -98,12 +102,5 @@ export default function barPolarRealEstate() {
     ]
   };
 
-  return (
-    <View>
-      <View className="header">某地区蒸发量和降水量</View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
-  );
+  return <Chart option={option} />;
 }

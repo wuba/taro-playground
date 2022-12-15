@@ -222,8 +222,62 @@ const routes = [
         url: `${prefix}bar/barLabelRotation`
       },
       {
+        title: '堆叠柱状图',
+        url: `${prefix}bar/barStack`
+      },
+      {
+        title: '阶梯瀑布图（柱状图模拟）',
+        url: `${prefix}bar/barWaterfall2`
+      },
+      {
+        title: '堆叠条形图',
+        url: `${prefix}bar/barYCategoryStack`
+      },
+      {
+        title: '柱状图框选',
+        url: `${prefix}bar/barBrush`,
+        state: true
+      },
+      {
+        title: '正负条形图',
+        url: `${prefix}bar/barNegative2`
+      },
+      {
         title: '某地区蒸发量和降水量',
         url: `${prefix}bar/Bar1`
+      },
+      {
+        title: '折柱混合',
+        url: `${prefix}bar/mixLineBar`
+      },
+      {
+        title: '多数值轴轴缩放',
+        url: `${prefix}bar/mixZoomOnValue`
+      },
+      {
+        title: '多 Y 轴示例',
+        url: `${prefix}bar/multipleYAxis`
+      },
+      {
+        title: '柱状图动画延迟',
+        url: `${prefix}bar/barAnimationDelay`
+      },
+      {
+        title: '柱状图下钻动画',
+        url: `${prefix}bar/barDrilldown`
+      },
+      {
+        title: '大数据量柱图',
+        url: `${prefix}bar/barLarge`
+      },
+      {
+        title: '动态排序柱状图',
+        url: `${prefix}bar/barRace`
+      },
+      {
+        title: '动态排序柱状图 - 人均收入',
+        url: `${prefix}bar/barRaceCountry`,
+        state: true
       },
       {
         title: '指定数据到坐标轴的映射',
