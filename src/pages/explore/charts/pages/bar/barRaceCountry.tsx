@@ -107,16 +107,17 @@ export default function Index() {
           max: 10,
           axisLabel: {
             show: true,
-            fontSize: 14,
+            fontSize: 16,
             formatter: function(value) {
-              return value + '{flag|' + getFlag(value) + '}';
+              // return value + '{flag|' + getFlag(value) + '}';
+              return value + ' ' + getFlag(value);
             },
-            rich: {
-              flag: {
-                fontSize: 25,
-                padding: 5
-              }
-            }
+            // rich: {
+            //   flag: {
+            //     fontSize: 25,
+            //     padding: 5,
+            //   },
+            // }
           },
           animationDuration: 300,
           animationDurationUpdate: 300
@@ -153,11 +154,14 @@ export default function Index() {
           elements: [
             {
               type: 'text',
-              right: 160,
+              right: 60,
               bottom: 60,
               style: {
+                textAlign: 'center',
                 text: startYear,
-                font: 'bolder 80px monospace',
+                fontSize: '80px',
+                fontFamily: 'monospace',
+                fontWeight: 'bolder',
                 fill: 'rgba(100, 100, 100, 0.25)'
               },
               z: 100
