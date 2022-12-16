@@ -1,11 +1,15 @@
-import { View } from '@tarojs/components';
+import { setNavigationBarTitle } from '@tarojs/taro';
+import { useEffect } from 'react';
 // import * as echarts from 'echarts';
 import Chart from '../../echarts';
 import '../style.scss';
 /**
 https://echarts.apache.org/examples/zh/editor.html?c=pie-rich-text
  */
-export default function pieRichText() {
+export default function Index() {
+  useEffect(() => {
+    setNavigationBarTitle({ title: '富文本标签' });
+  }, []);
   const ROOT_PATH = 'https://echarts.apache.org/examples';
   const weatherIcons = {
     Sunny: ROOT_PATH + '/data/asset/img/weather/sunny_128.png',
@@ -134,12 +138,5 @@ export default function pieRichText() {
       }
     ]
   };
-  return (
-    <View>
-      <View className="header">富文本标签，里面的小图飞出去了</View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
-  );
+  return <Chart option={option} />;
 }

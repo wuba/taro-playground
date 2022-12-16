@@ -1,6 +1,6 @@
 import { setNavigationBarTitle } from '@tarojs/taro';
 // import * as echarts from 'echarts/core';
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import Chart from '../../echarts';
 import '../style.scss';
 /**
@@ -8,10 +8,12 @@ import '../style.scss';
  */
 
 export default function Index() {
+  const timer = useRef<any>([]);
   useEffect(() => {
     setNavigationBarTitle({
       title: '动态排序柱状图'
     });
+    return () => timer.current.forEach(clearInterval);
   }, []);
 
   const data: number[] = [];
@@ -74,10 +76,11 @@ export default function Index() {
     setTimeout(function() {
       run();
     }, 0);
-    const inter = setInterval(function() {
-      run();
-    }, 3000);
-    return () => clearInterval(inter);
+    timer.current.push(
+      setInterval(function() {
+        run();
+      }, 3000)
+    );
   }, []);
   return <Chart option={option} onSVGInit={onInit} onSkiaInit={onInit} />;
 }

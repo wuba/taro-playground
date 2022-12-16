@@ -1,11 +1,15 @@
-import { View } from '@tarojs/components';
+import { setNavigationBarTitle } from '@tarojs/taro';
+import { useEffect } from 'react';
 // import * as echarts from 'echarts';
 import Chart from '../../echarts';
 import '../style.scss';
 /**
 https://echarts.apache.org/examples/zh/editor.html?c=dataset-encode0
  */
-export default function datasetEncode0() {
+export default function Index() {
+  useEffect(() => {
+    setNavigationBarTitle({ title: '指定数据到坐标轴的映射' });
+  }, []);
   const option = {
     dataset: {
       source: [
@@ -49,14 +53,5 @@ export default function datasetEncode0() {
     ]
   };
 
-  return (
-    <View>
-      <View className="header">
-        指定数据到坐标轴的映射，安卓svg底部那条会消失
-      </View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
-  );
+  return <Chart option={option} />;
 }

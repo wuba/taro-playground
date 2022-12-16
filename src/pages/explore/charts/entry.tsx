@@ -192,11 +192,6 @@ const routes = [
     title: '柱状图',
     routes: [
       {
-        title: '饼形柱状图',
-        url: `${prefix}bar/barPolarRealEstate`,
-        state: false
-      },
-      {
         title: '交错正负轴标签',
         url: `${prefix}bar/barNegative`,
         state: false
@@ -276,8 +271,40 @@ const routes = [
       },
       {
         title: '动态排序柱状图 - 人均收入',
-        url: `${prefix}bar/barRaceCountry`,
+        url: `${prefix}bar/barRaceCountry`
+      },
+      {
+        title: '天气统计（富文本）',
+        url: `${prefix}rich/barRichText`
+      },
+      {
+        title: '动态数据',
+        url: `${prefix}bar/dynamicData`
+      },
+      {
+        title: '2002全国宏观经济指标',
+        url: `${prefix}bar/mixTimelineFinance`
+      },
+      {
+        title: '水印 - ECharts 下载统计',
+        url: `${prefix}bar/watermark`,
         state: true
+      },
+      {
+        title: 'Bar Chart on Polar',
+        url: `${prefix}bar/barPolarRealEstate`
+      },
+      {
+        title: '极坐标系下的堆叠柱状图',
+        url: `${prefix}bar/barPolarStack`
+      },
+      {
+        title: '极坐标系下的堆叠柱状图（二）',
+        url: `${prefix}bar/barPolarStackRadial`
+      },
+      {
+        title: '圆角环形图',
+        url: `${prefix}bar/polarRoundCap`
       },
       {
         title: '指定数据到坐标轴的映射',
@@ -312,14 +339,62 @@ const routes = [
     title: '饼图',
     routes: [
       {
+        title: '某站点用户Access From',
+        url: `${prefix}pie/pieSimple`
+      },
+      {
+        title: '圆角环形图',
+        url: `${prefix}pie/pieBorderRadius`
+      },
+      {
+        title: '环形图',
+        url: `${prefix}pie/pieDoughnut`
+      },
+      {
+        title: '饼图自定义样式',
+        url: `${prefix}pie/pieCustom`
+      },
+      {
+        title: '饼图纹理',
+        url: `${prefix}pie/piePattern`,
+        state: true
+      },
+      {
+        title: '南丁格尔玫瑰图',
+        url: `${prefix}pie/pieRoseType`
+      },
+      {
+        title: '基础南丁格尔玫瑰图',
+        url: `${prefix}pie/pieRoseTypeSimple`
+      },
+      {
+        title: '饼图标签对齐',
+        url: `${prefix}pie/pieAlignTo`
+      },
+      {
+        title: '饼图引导线调整',
+        url: `${prefix}pie/pieLabelLineAdjust`
+      },
+      {
+        title: '可滚动的图例',
+        url: `${prefix}pie/pieLegend`
+      },
+      {
         title: '嵌套环形图',
         url: `${prefix}pie/pieNest`,
         state: true
       },
       {
+        title: '分割数据到数个饼图',
+        url: `${prefix}dataset/dataTransformMultiplePie`
+      },
+      {
+        title: '默认 encode 设置',
+        url: `${prefix}dataset/datasetDefault`
+      },
+      {
         title: '日历饼图',
-        url: `${prefix}pie/calendarPie`,
-        state: false
+        url: `${prefix}pie/calendarPie`
       },
       {
         title: '联动和共享数据集',
@@ -662,6 +737,10 @@ const routes = [
     title: '日历坐标系',
     routes: [
       {
+        title: '日历饼图',
+        url: `${prefix}pie/calendarPie`
+      },
+      {
         title: '基础日历图',
         url: `${prefix}calendar/calendarSimple`
       },
@@ -709,6 +788,22 @@ const routes = [
       {
         title: '指定数据到坐标轴的映射',
         url: `${prefix}dataset/datasetEncode0`
+      },
+      {
+        title: '系列按行和按列排布',
+        url: `${prefix}dataset/datasetSeriesLayoutBy`
+      },
+      {
+        title: '最简单的数据集（dataset）',
+        url: `${prefix}dataset/datasetSimple0`
+      },
+      {
+        title: '对象数组的输入格式',
+        url: `${prefix}dataset/datasetSimple1`
+      },
+      {
+        title: '默认 encode 设置',
+        url: `${prefix}dataset/datasetDefault`
       },
       {
         title: '分割数据到数个饼图',
@@ -769,8 +864,7 @@ const routes = [
       },
       {
         title: '天气统计（富文本）',
-        url: `${prefix}rich/barRichText`,
-        state: true
+        url: `${prefix}rich/barRichText`
       },
       {
         title: '嵌套环形图',

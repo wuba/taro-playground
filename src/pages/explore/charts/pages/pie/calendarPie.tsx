@@ -1,11 +1,17 @@
 import * as echarts from 'echarts/core';
-import { View } from '@tarojs/components';
+import { setNavigationBarTitle } from '@tarojs/taro';
+import { useEffect } from 'react';
 import Chart from '../../echarts';
 import '../style.scss';
 /**
  * https://echarts.apache.org/examples/zh/editor.html?c=calendar-pie
  */
 export default function ClendarPie() {
+  useEffect(() => {
+    setNavigationBarTitle({
+      title: '日历饼图'
+    });
+  }, []);
   const cellSize = [80, 80];
   const pieRadius = 30;
 
@@ -25,7 +31,7 @@ export default function ClendarPie() {
     return data;
   }
   const scatterData = getVirtulData();
-  const pieSeries = scatterData.map(function (item, index) {
+  const pieSeries = scatterData.map(function(item, index) {
     return {
       type: 'pie',
       id: 'pie-' + index,
@@ -76,7 +82,7 @@ export default function ClendarPie() {
         symbolSize: 0,
         label: {
           show: true,
-          formatter: function (params) {
+          formatter: function(params) {
             return echarts.time.format(params.value[0], '{dd}', false);
           },
           offset: [-cellSize[0] / 2 + 10, -cellSize[1] / 2 + 10],
@@ -88,12 +94,5 @@ export default function ClendarPie() {
     ]
   };
 
-  return (
-    <View>
-      <View className="header">日历饼图</View>
-      <View className="body">
-        <Chart option={option} height={500} />
-      </View>
-    </View>
-  );
+  return <Chart option={option} height={500} />;
 }

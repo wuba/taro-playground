@@ -47,16 +47,17 @@ const requestData = async url => {
   return res;
 };
 export default function Index() {
-  const timer: any = useRef([])
+  const timer: any = useRef([]);
   useEffect(() => {
     setNavigationBarTitle({
       title: '动态排序柱状图-人均收入'
     });
     return () => {
       timer.current.forEach(clearTimeout);
-    }
+    };
   }, []);
   const onInit = useCallback(myChart => {
+    myChart.showLoading();
     Promise.all([
       requestData(reqEmojiFlagsUrl),
       requestData(reqLifeExpectancyUrl)
@@ -111,7 +112,7 @@ export default function Index() {
             formatter: function(value) {
               // return value + '{flag|' + getFlag(value) + '}';
               return value + ' ' + getFlag(value);
-            },
+            }
             // rich: {
             //   flag: {
             //     fontSize: 25,
@@ -171,9 +172,11 @@ export default function Index() {
       };
       for (let i = startIndex; i < years.length - 1; ++i) {
         (function(j) {
-          timer.current.push(setTimeout(function() {
-            updateYear(years[j + 1]);
-          }, (i - startIndex) * updateFrequency));
+          timer.current.push(
+            setTimeout(function() {
+              updateYear(years[j + 1]);
+            }, (i - startIndex) * updateFrequency)
+          );
         })(i);
       }
       function updateYear(year) {
@@ -182,6 +185,7 @@ export default function Index() {
         });
         option.series[0].data = source;
         option.graphic.elements[0].style.text = year;
+        myChart.hideLoading();
         myChart.setOption(option);
       }
     });

@@ -145,12 +145,5 @@ export default function barRichText() {
     ]
   };
 
-  return (
-    <View>
-      <View className="header">天气统计（富文本），图片没有出来</View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
-  );
+  return <Chart option={option} />;
 }

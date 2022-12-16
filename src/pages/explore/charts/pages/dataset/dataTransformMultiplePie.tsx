@@ -1,11 +1,15 @@
-import { View } from '@tarojs/components';
 // import * as echarts from 'echarts';
+import { setNavigationBarTitle } from '@tarojs/taro';
+import { useEffect } from 'react';
 import Chart from '../../echarts';
 import '../style.scss';
 /**
 https://echarts.apache.org/examples/zh/editor.html?c=data-transform-multiple-pie
  */
-export default function dataTransformMultiplePie() {
+export default function Index() {
+  useEffect(() => {
+    setNavigationBarTitle({ title: '分割数据到数个饼图' });
+  }, []);
   const option = {
     dataset: [
       {
@@ -96,12 +100,5 @@ export default function dataTransformMultiplePie() {
     ]
   };
 
-  return (
-    <View>
-      <View className="header">分割数据到数个饼图</View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
-  );
+  return <Chart option={option} />;
 }
