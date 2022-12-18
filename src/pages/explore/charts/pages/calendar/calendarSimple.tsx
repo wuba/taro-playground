@@ -1,4 +1,4 @@
-import { View } from '@tarojs/components';
+import { View, ScrollView } from '@tarojs/components';
 import * as echarts from 'echarts';
 import Chart from '../../echarts';
 import '../style.scss';
