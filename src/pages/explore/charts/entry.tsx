@@ -568,6 +568,16 @@ const routes = [
         title: '交通（SVG）',
         url: `${prefix}map/geoSvgTraffic`,
         state: true
+      },
+      {
+        title: '杭州热门步行路线 - 百度地图',
+        url: `${prefix}scatter/effectScatterBmap`,
+        state: true
+      },
+      {
+        title: '全国主要城市空气质量 - 百度地图',
+        url: `${prefix}scatter/effectScatterBmap`,
+        state: true
       }
     ]
   },

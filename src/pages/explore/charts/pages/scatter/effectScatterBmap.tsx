@@ -12,7 +12,7 @@ import '../style.scss';
 export default function Index() {
   useEffect(() => {
     setNavigationBarTitle({
-      title: '全国主要城市空气质量 - 百度地图'
+      title: '地图暂不支持'
     });
   }, []);
   const data = [
