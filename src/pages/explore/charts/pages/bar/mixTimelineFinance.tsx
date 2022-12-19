@@ -166,9 +166,16 @@ export default function Index() {
         }
       },
       title: {
-        subtext: '数据来自国家统计局'
+        subtext: '数据来自国家统计局',
+        subtextStyle: {
+          fontFamily: 'PingFang SC' // skia 不生效，使用的是默认的 fontFamily
+        }
       },
-      tooltip: {},
+      tooltip: {
+        textStyle: {
+          fontFamily: 'PingFang SC' // skia 不生效，使用的是默认的 fontFamily
+        }
+      },
       legend: {
         left: 'right',
         data: ['第一产业', '第二产业', '第三产业', 'GDP', '金融', '房地产'],
@@ -176,6 +183,9 @@ export default function Index() {
           GDP: false,
           金融: false,
           房地产: false
+        },
+        textStyle: {
+          fontFamily: 'PingFang SC' // skia 不生效，使用的是默认的 fontFamily
         }
       },
       calculable: true,
@@ -259,7 +269,12 @@ export default function Index() {
     },
     options: [
       {
-        title: { text: '2002全国宏观经济指标' },
+        title: {
+          text: '2002全国宏观经济指标',
+          textStyle: {
+            fontFamily: 'PingFang SC' // skia 不生效，使用的是默认的 fontFamily
+          }
+        },
         series: [
           { data: dataMap.dataGDP['2002'] },
           { data: dataMap.dataFinancial['2002'] },

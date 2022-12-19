@@ -25,10 +25,16 @@ export default function Index() {
   const option = {
     title: {
       text: '特性示例：渐变色 阴影 点击缩放',
-      subtext: 'Feature Sample: Gradient Color, Shadow, Click Zoom'
+      subtext: 'Feature Sample: Gradient Color, Shadow, Click Zoom',
+      textStyle: {
+        fontFamily: 'PingFang SC' // skia 不生效，使用的是默认的 fontFamily
+      }
     },
     xAxis: {
-      data: dataAxis,
+      data: dataAxis.map(it => ({
+        value: it,
+        textStyle: { fontFamily: 'PingFang SC' }
+      })),
       axisLabel: {
         inside: true,
         color: '#fff'

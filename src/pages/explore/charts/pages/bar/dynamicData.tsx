@@ -71,8 +71,8 @@ export default function Index() {
         show: true,
         feature: {
           dataView: { readOnly: false },
-          restore: {},
-          saveAsImage: {}
+          restore: {}
+          // saveAsImage: {}
         }
       },
       dataZoom: {
