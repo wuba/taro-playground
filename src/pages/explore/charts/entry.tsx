@@ -329,6 +329,26 @@ const routes = [
         url: `${prefix}scatter/scatterClustering`
       },
       {
+        title: '聚合过程可视化',
+        url: `${prefix}scatter/scatterClusteringProcess`
+      },
+      {
+        title: '指数回归（使用统计插件）',
+        url: `${prefix}scatter/scatterExponentialRegression`
+      },
+      {
+        title: '线性回归（使用统计插件）',
+        url: `${prefix}scatter/scatterLinearRegression`
+      },
+      {
+        title: '多项式回归（使用统计插件）',
+        url: `${prefix}scatter/scatterPolynomialRegression`
+      },
+      {
+        title: '对数回归（使用统计插件）',
+        url: `${prefix}scatter/scatterLogarithmicRegression`
+      },
+      {
         title: '涟漪特效散点图',
         url: `${prefix}scatter/scatterEffect`
       },
