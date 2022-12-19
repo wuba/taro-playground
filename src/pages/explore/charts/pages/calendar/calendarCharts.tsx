@@ -1,10 +1,10 @@
 import { setNavigationBarTitle } from '@tarojs/taro';
+import * as echarts from 'echarts';
 import { useEffect } from 'react';
-import * as echarts from 'echarts/core';
 import Chart from '../../echarts';
 import '../style.scss';
 /**
- * https://echarts.apache.org/examples/zh/editor.html?c=scatter-painter-choice
+https://echarts.apache.org/examples/zh/editor.html?c=calendar-charts
  */
 export default function Index() {
   useEffect(() => {
@@ -12,11 +12,11 @@ export default function Index() {
       title: '日历图'
     });
   }, []);
-  function getVirtualData(year: string) {
+  function getVirtualData(year) {
     const date = +echarts.time.parse(year + '-01-01');
     const end = +echarts.time.parse(+year + 1 + '-01-01');
     const dayTime = 3600 * 24 * 1000;
-    const data: [string, number][] = [];
+    const data = [] as any;
     for (let time = date; time < end; time += dayTime) {
       data.push([
         echarts.time.format(time, '{yyyy}-{MM}-{dd}', false),
@@ -25,7 +25,6 @@ export default function Index() {
     }
     return data;
   }
-
   const graphData = [
     ['2017-02-01', 260],
     ['2017-02-04', 200],
@@ -35,7 +34,6 @@ export default function Index() {
     ['2017-02-23', 411],
     ['2017-02-27', 985]
   ];
-
   const links = graphData.map(function(_, idx) {
     return {
       source: idx,
@@ -43,12 +41,10 @@ export default function Index() {
     };
   });
   links.pop();
-
   const option = {
     tooltip: {
       position: 'top'
     },
-
     visualMap: [
       {
         min: 0,
@@ -80,7 +76,6 @@ export default function Index() {
         bottom: 20
       }
     ],
-
     calendar: [
       {
         orient: 'vertical',
@@ -141,7 +136,6 @@ export default function Index() {
         range: '2017-04'
       }
     ],
-
     series: [
       {
         type: 'graph',

@@ -809,8 +809,20 @@ const routes = [
     title: '漏斗图',
     routes: [
       {
+        title: '漏斗图1',
+        url: `${prefix}funnel/funnelChart`
+      },
+      {
+        title: '漏斗图(对比)',
+        url: `${prefix}funnel/funnelCompare`
+      },
+      {
         title: '漏斗图3',
         url: `${prefix}funnel/funnelCustomize`
+      },
+      {
+        title: 'Funnel',
+        url: `${prefix}funnel/funnel`
       }
     ]
   },
@@ -818,8 +830,53 @@ const routes = [
     title: '仪表盘',
     routes: [
       {
+        title: '基础仪表盘',
+        url: `${prefix}gauge/gaugeBasic`
+      },
+      {
         title: '带标签数字动画的基础仪',
         url: `${prefix}gauge/gaugeSimple`
+      },
+      {
+        title: '速度仪表盘',
+        url: `${prefix}gauge/speedGauge`
+      },
+      {
+        title: '进度仪表盘',
+        url: `${prefix}gauge/progressGauge`
+      },
+      {
+        title: '阶段速度仪表盘',
+        url: `${prefix}gauge/stageSpeedGauge`
+      },
+      {
+        title: '等级仪表盘',
+        url: `${prefix}gauge/gradeGauge`
+      },
+      {
+        title: '多标题仪表盘',
+        url: `${prefix}gauge/multiTitleGauge`
+      },
+      {
+        title: '气温仪表盘',
+        url: `${prefix}gauge/temperatureGauge`
+      },
+      {
+        title: '得分环',
+        url: `${prefix}gauge/ringGauge`
+      },
+      {
+        title: '气压表',
+        url: `${prefix}gauge/gaugeBarometer`
+      },
+      {
+        title: '时钟仪表盘',
+        url: `${prefix}gauge/clock`,
+        state: true
+      },
+      {
+        title: 'Gauge Car',
+        url: `${prefix}gauge/gaugeCar`
       }
     ]
   },
@@ -827,8 +884,39 @@ const routes = [
     title: '象形柱图',
     routes: [
       {
+        title: '象形主图变形为柱状图',
+        url: `${prefix}pictorialBar/transition`
+      },
+      {
         title: '人体含水量',
         url: `${prefix}pictorialBar/pictorialBarBodyFill`
+      },
+      {
+        title: '虚线柱状图效果',
+        url: `${prefix}pictorialBar/dottedBar`
+      },
+      {
+        title: '森林的增长',
+        url: `${prefix}pictorialBar/expansionForest`,
+        state: true
+      },
+      {
+        title: '圣诞愿望清单和山峰高度',
+        url: `${prefix}pictorialBar/wishAndMountain`,
+        state: true
+      },
+      {
+        title: '精灵',
+        url: `${prefix}pictorialBar/spirits`,
+        state: true
+      },
+      {
+        title: '交通工具',
+        url: `${prefix}pictorialBar/vehicles`
+      },
+      {
+        title: '驯鹿的速度',
+        url: `${prefix}pictorialBar/velocityOfReindeers`
       }
     ]
   },
@@ -838,6 +926,10 @@ const routes = [
       {
         title: '主题河流图',
         url: `${prefix}themeRiver/themeRiverBasic`
+      },
+      {
+        title: 'ThemeRiver Lastfm',
+        url: `${prefix}themeRiver/themeRiverLastfm`
       }
     ]
   },
@@ -853,21 +945,94 @@ const routes = [
         url: `${prefix}calendar/calendarSimple`
       },
       {
+        title: '日历热力图',
+        url: `${prefix}calendar/heatmap`
+      },
+      {
+        title: '纵向日历图',
+        url: `${prefix}calendar/heatmapVertical`
+      },
+      {
+        title: '横向日历图',
+        url: `${prefix}calendar/heatmapHorizontal`
+      },
+      {
         title: '日历关系图',
         url: `${prefix}calendar/calendarGraph`
       },
       {
+        title: '农历日历图',
+        url: `${prefix}calendar/calendarLunar`,
+        state: true
+      },
+      {
+        title: '日历饼图',
+        url: `${prefix}calendar/calendarPie`
+      },
+      {
         title: '日历图',
-        url: `${prefix}calendar/calendarCharts`
+        url: `${prefix}calendar/calendarCharts`,
+        state: true
+      },
+      {
+        title: '日历图自定义图标',
+        url: `${prefix}calendar/customCalendarIcon`
       }
     ]
   },
   {
     title: '自定义系列',
     routes: [
+      // {
+      //   title: '直方图（自定义系列）',
+      //   url: `${prefix}custom/histogram`
+      // },
       {
         title: '利润分布直方图',
         url: `${prefix}custom/customProfit`
+      },
+      {
+        title: '使用自定系列给散点图添加误差范围',
+        url: `${prefix}custom/errorScatter`
+      },
+      {
+        title: '使用自定义系列添加柱状图趋势',
+        url: `${prefix}custom/customBarTrend`
+      },
+      {
+        title: '自定义多边形图',
+        url: `${prefix}custom/cartesianPolygon`
+      },
+      {
+        title: '使用自定系列给柱状图添加误差范围',
+        url: `${prefix}custom/errorBar`
+      },
+      {
+        title: '性能分析图',
+        url: `${prefix}custom/customProfile`
+        // state: true
+      },
+      {
+        title: 'Cycle Plot',
+        url: `${prefix}custom/cyclePlot`
+      },
+      {
+        title: '机场航班甘特图',
+        url: `${prefix}custom/ganttChart`,
+        state: true
+      },
+      {
+        title: '极坐标热力图（自定义系列）',
+        url: `${prefix}custom/polarHeatmap`
+      },
+      {
+        title: '风向图',
+        url: `${prefix}custom/windBarb`
+      },
+      {
+        title: '六边形分箱图（自定义系列）',
+        url: `${prefix}custom/hexagonalBinning`,
+        state: true
       },
       {
         title: '自定义议会图与饼图过渡动画（卡顿）',
@@ -878,11 +1043,6 @@ const routes = [
         title: '自定义仪表',
         url: `${prefix}custom/CustomGauge`,
         state: true
-      },
-      {
-        title: '性能分析图',
-        url: `${prefix}custom/customProfile`
-        // state: true
       }
     ]
   },

@@ -132,7 +132,7 @@ export default function EchartsPage({ option, width = E_WIDTH, height = E_HEIGHT
       onSVGInit?.(chart);
     }
     return () => chart?.dispose();
-  }, []);
+  }, [option]);
 
   useEffect(() => {
     let chart;
@@ -147,7 +147,7 @@ export default function EchartsPage({ option, width = E_WIDTH, height = E_HEIGHT
       onSkiaInit?.(chart);
     }
     return () => chart?.dispose();
-  }, []);
+  }, [option]);
 
   return (
     <View>
