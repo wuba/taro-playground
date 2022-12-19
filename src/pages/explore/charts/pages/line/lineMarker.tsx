@@ -1,10 +1,14 @@
-import { View } from '@tarojs/components';
+import { setNavigationBarTitle } from '@tarojs/taro';
+import { useEffect } from 'react';
 import Chart from '../../echarts';
 import '../style.scss';
 /**
  * https://echarts.apache.org/examples/zh/editor.html?c=line-marker
  */
-export default function lineMarker() {
+export default function Index() {
+  useEffect(() => {
+    setNavigationBarTitle({ title: '未来一周气温变化' });
+  }, []);
   const option = {
     title: {
       text: 'Temperature Change in the Coming Week'
@@ -83,12 +87,5 @@ export default function lineMarker() {
     ]
   };
 
-  return (
-    <View>
-      <View className="header">未来一周气温变化</View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
-  );
+  return <Chart option={option} />;
 }

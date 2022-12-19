@@ -1,15 +1,16 @@
-import { View } from '@tarojs/components';
-// import * as echarts from 'echarts/core';
+import { setNavigationBarTitle } from '@tarojs/taro';
+import { useEffect } from 'react';
 import Chart from '../../echarts';
 import '../style.scss';
 
 /**
- * 这个case的柱状背景没有出来
  * https://echarts.apache.org/examples/zh/editor.html?c=line-sections
- * https://echarts.apache.org/examples/zh/editor.html?c=area-rainfall
  */
 
-export default function barPolarRealEstate() {
+export default function Index() {
+  useEffect(() => {
+    setNavigationBarTitle({ title: '一天用电量分布' });
+  }, []);
   const option = {
     title: {
       text: 'Distribution of Electricity',
@@ -101,12 +102,5 @@ export default function barPolarRealEstate() {
     ]
   };
 
-  return (
-    <View>
-      <View className="header">一天用电量分布</View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
-  );
+  return <Chart option={option} />;
 }

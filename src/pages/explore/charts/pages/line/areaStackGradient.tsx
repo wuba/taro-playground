@@ -1,11 +1,15 @@
-import { View } from '@tarojs/components';
+import { setNavigationBarTitle } from '@tarojs/taro';
+import { useEffect } from 'react';
 import * as echarts from 'echarts/core';
 import Chart from '../../echarts';
 import '../style.scss';
 /**
  * https://echarts.apache.org/examples/zh/editor.html?c=area-stack-gradient
  */
-export default function areaStackGradient() {
+export default function Index() {
+  useEffect(() => {
+    setNavigationBarTitle({ title: '渐变堆叠面积图' });
+  }, []);
   const option = {
     color: ['#80FFA5', '#00DDFF', '#37A2FF', '#FF0087', '#FFBF00'],
     title: {
@@ -189,12 +193,5 @@ export default function areaStackGradient() {
     ]
   };
 
-  return (
-    <View>
-      <View className="header">渐变堆叠面积图</View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
-  );
+  return <Chart option={option} />;
 }

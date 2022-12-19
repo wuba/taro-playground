@@ -1,14 +1,17 @@
-import { View } from '@tarojs/components';
-// import * as echarts from 'echarts';
+import { setNavigationBarTitle } from '@tarojs/taro';
+import { useEffect } from 'react';
 import Chart from '../../echarts';
 import '../style.scss';
 /**
 https://echarts.apache.org/examples/zh/editor.html?c=line-graphic
  */
-export default function lineGraphic() {
+export default function Index() {
+  useEffect(() => {
+    setNavigationBarTitle({ title: '自定义图形组件' });
+  }, []);
   const option = {
     legend: {
-      data: ['Altitude (km) vs Temperature (°C)'],
+      data: ['Altitude (km) vs Temperature (°C)']
     },
     tooltip: {
       z: 200,
@@ -138,14 +141,5 @@ export default function lineGraphic() {
     ]
   };
 
-  return (
-    <View>
-      <View className="header">
-        自定义图形组件，skia的文本展示区域width超出了边界，跟另外两个不太一样
-      </View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
-  );
+  return <Chart option={option} />;
 }

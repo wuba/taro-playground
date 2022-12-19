@@ -1,10 +1,12 @@
-import { View } from '@tarojs/components';
-import { useCallback } from "react";
+import { setNavigationBarTitle } from '@tarojs/taro';
+import { useCallback, useEffect } from 'react';
 import Chart from '../../echarts';
 import '../style.scss';
 
 export default function LineDraggable() {
-
+  useEffect(() => {
+    setNavigationBarTitle({ title: '可拖拽点' });
+  }, []);
   const symbolSize = 20;
   const data = [
     [40, -10],
@@ -71,10 +73,10 @@ export default function LineDraggable() {
     ]
   };
 
-  const onInit = useCallback((chart) => {
+  const onInit = useCallback(chart => {
     function updatePosition() {
       chart.setOption({
-        graphic: data.map(function (item, dataIndex) {
+        graphic: data.map(function(item, dataIndex) {
           return {
             position: chart.convertToPixel('grid', item)
           };
@@ -106,7 +108,7 @@ export default function LineDraggable() {
       });
     }
     chart.setOption({
-      graphic: data.map(function (item, dataIndex) {
+      graphic: data.map(function(item, dataIndex) {
         return {
           type: 'circle',
           position: chart.convertToPixel('grid', item),
@@ -117,13 +119,13 @@ export default function LineDraggable() {
           },
           invisible: true,
           draggable: true,
-          ondrag: function (dx, dy) {
+          ondrag: function(dx, dy) {
             onPointDragging(dataIndex, [this.x, this.y]);
           },
-          onmousemove: function () {
+          onmousemove: function() {
             showTooltip(dataIndex);
           },
-          onmouseout: function () {
+          onmouseout: function() {
             hideTooltip(dataIndex);
           },
           z: 100
@@ -133,15 +135,5 @@ export default function LineDraggable() {
     chart.on('dataZoom', updatePosition);
   }, []);
 
-  return (
-    <View>
-      <View className="header">
-        可拖拽点，安卓
-        svg初始渲染时肉眼可见的闪动，渲染完成后，坐标轴可能还渲染不对；
-      </View>
-      <View className="body">
-        <Chart option={option} onSVGInit={onInit} onSkiaInit={onInit} />
-      </View>
-    </View>
-  );
+  return <Chart option={option} onSVGInit={onInit} onSkiaInit={onInit} />;
 }

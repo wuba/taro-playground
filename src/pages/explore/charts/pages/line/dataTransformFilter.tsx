@@ -1,6 +1,5 @@
-import { View } from '@tarojs/components';
-import Taro from '@tarojs/taro';
-import { useEffect, useState } from 'react';
+import { setNavigationBarTitle, showToast, request } from '@tarojs/taro';
+import { useCallback, useEffect } from 'react';
 import { ROOT_PATH } from '../../constant';
 import Chart from '../../echarts';
 import '../style.scss';
@@ -8,7 +7,6 @@ import '../style.scss';
  * https://echarts.apache.org/examples/zh/editor.html?c=data-transform-filter
  */
 export default function DataTransformFilter() {
-  const [option, setOption] = useState<any>();
   const getOption = _rawData => ({
     dataset: [
       {
@@ -81,7 +79,11 @@ export default function DataTransformFilter() {
     ]
   });
   useEffect(() => {
-    Taro.request({
+    setNavigationBarTitle({ title: '数据过滤' });
+  }, []);
+  const onInit = useCallback(myChart => {
+    myChart.showLoading();
+    request({
       url: `${ROOT_PATH}/data/asset/data/life-expectancy-table.json`,
       data: {},
       dataType: 'json',
@@ -90,21 +92,17 @@ export default function DataTransformFilter() {
       },
       fail: err => {
         console.log(err);
-        Taro.showToast({
+        showToast({
           icon: 'none',
           title: '数据请求失败'
         });
+        myChart.hideLoading();
       },
       success: res => {
-        setOption(getOption(res?.data));
+        myChart.setOption(getOption(res?.data));
+        myChart.hideLoading();
       }
     });
   }, []);
-
-  return (
-    <View>
-      <View className="header">数据过滤</View>
-      <View className="body">{option && <Chart option={option} />}</View>
-    </View>
-  );
+  return <Chart option={{}} onSVGInit={onInit} onSkiaInit={onInit} />;
 }

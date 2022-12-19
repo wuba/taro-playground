@@ -1,10 +1,14 @@
-import { View } from '@tarojs/components';
+import { setNavigationBarTitle } from '@tarojs/taro';
+import { useEffect } from 'react';
 import Chart from '../../echarts';
 import '../style.scss';
 /**
  * https://echarts.apache.org/examples/zh/editor.html?c=area-stack
  */
-export default function areaStack() {
+export default function Index() {
+  useEffect(() => {
+    setNavigationBarTitle({ title: '堆叠面积图' });
+  }, []);
   const option = {
     title: {
       text: 'Stacked Area Chart'
@@ -102,12 +106,5 @@ export default function areaStack() {
     ]
   };
 
-  return (
-    <View>
-      <View className="header">堆叠面积图</View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
-  );
+  return <Chart option={option} />;
 }

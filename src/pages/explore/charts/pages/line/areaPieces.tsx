@@ -1,5 +1,5 @@
-import { View } from '@tarojs/components';
-// import * as echarts from 'echarts/core';
+import { setNavigationBarTitle } from '@tarojs/taro';
+import { useEffect } from 'react';
 import Chart from '../../echarts';
 import '../style.scss';
 
@@ -7,7 +7,10 @@ import '../style.scss';
  * https://echarts.apache.org/examples/zh/editor.html?c=area-pieces
  */
 
-export default function areaPieces() {
+export default function Index() {
+  useEffect(() => {
+    setNavigationBarTitle({ title: '折线图区域高亮' });
+  }, []);
   const option = {
     xAxis: {
       type: 'category',
@@ -65,12 +68,5 @@ export default function areaPieces() {
     ]
   };
 
-  return (
-    <View>
-      <View className="header">折线图区域高亮</View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
-  );
+  return <Chart option={option} />;
 }

@@ -1,5 +1,6 @@
-import { Text, View } from '@tarojs/components';
+import { setNavigationBarTitle } from '@tarojs/taro';
 import * as echarts from 'echarts/core';
+import { useEffect } from 'react';
 import Chart from '../../echarts';
 import '../style.scss';
 
@@ -7,7 +8,10 @@ import '../style.scss';
  * https://echarts.apache.org/examples/zh/editor.html?c=line-tooltip-touch
  */
 
-export default function lineTooltipTouch() {
+export default function Index() {
+  useEffect(() => {
+    setNavigationBarTitle({ title: '移动端上的dataZoom' });
+  }, []);
   let base = +new Date(2016, 9, 3);
   let oneDay = 24 * 3600 * 1000;
   let valueBase = Math.random() * 300;
@@ -157,20 +161,5 @@ export default function lineTooltipTouch() {
     ]
   };
 
-  return (
-    <View>
-      <View className="header">
-        <Text>移动端上的 dataZoom</Text>
-        <Text>
-          iOS skia拖动底部不灵敏，要慢慢拖动才行；ios
-          skia区域选中卡顿明显(可能是冲突)；
-        </Text>
-        <Text>安卓上拖动都卡顿明显，echarts官方的也是卡顿；</Text>
-        <Text>有warning</Text>
-      </View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
-  );
+  return <Chart option={option} />;
 }

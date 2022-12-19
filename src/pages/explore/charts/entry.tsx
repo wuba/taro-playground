@@ -80,8 +80,7 @@ const routes = [
       },
       {
         title: '移动端上的dataZoom',
-        url: `${prefix}line/lineTooltipTouch`,
-        state: true
+        url: `${prefix}line/lineTooltipTouch`
       },
       {
         title: '联动和共享数据集',
@@ -89,8 +88,7 @@ const routes = [
       },
       {
         title: '自定义图形组件',
-        url: `${prefix}graphic/lineGraphic`,
-        state: true
+        url: `${prefix}graphic/lineGraphic`
       },
       {
         title: '可拖拽点',
@@ -118,7 +116,7 @@ const routes = [
         url: `${prefix}line/areaTimeAxis`
       },
       {
-        title: '动态数据 + 时间坐标轴（代码待补充）',
+        title: '动态数据 + 时间坐标轴',
         url: `${prefix}line/dynamicData2`,
         state: true
       },
@@ -308,8 +306,7 @@ const routes = [
       },
       {
         title: '指定数据到坐标轴的映射',
-        url: `${prefix}dataset/datasetEncode0`,
-        state: true
+        url: `${prefix}dataset/datasetEncode0`
       }
     ]
   },
@@ -398,13 +395,11 @@ const routes = [
       },
       {
         title: '营养分布散点图',
-        url: `${prefix}scatter/scatterNutrients`,
-        state: true
+        url: `${prefix}scatter/scatterNutrients`
       },
       {
         title: '营养分布散点矩阵',
-        url: `${prefix}scatter/scatterNutrientsMatrix`,
-        state: true
+        url: `${prefix}scatter/scatterNutrientsMatrix`
       },
       {
         title: 'GitHub 打卡气泡图（极坐标）',

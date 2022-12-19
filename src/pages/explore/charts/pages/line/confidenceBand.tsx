@@ -1,5 +1,4 @@
-import { View } from '@tarojs/components';
-import Taro from '@tarojs/taro';
+import { setNavigationBarTitle, showToast, request } from '@tarojs/taro';
 import { useEffect, useState } from 'react';
 import { ROOT_PATH } from '../../constant';
 import Chart from '../../echarts';
@@ -122,7 +121,8 @@ export default function DataTransformFilter() {
     };
   };
   useEffect(() => {
-    Taro.request({
+    setNavigationBarTitle({ title: 'Confidence Band' });
+    request({
       url: `${ROOT_PATH}/data/asset/data/confidence-band.json`,
       data: {},
       dataType: 'json',
@@ -131,7 +131,7 @@ export default function DataTransformFilter() {
       },
       fail: err => {
         console.log(err);
-        Taro.showToast({
+        showToast({
           icon: 'none',
           title: '数据请求失败'
         });
@@ -143,10 +143,5 @@ export default function DataTransformFilter() {
     });
   }, []);
 
-  return (
-    <View>
-      <View className="header">Confidence Band</View>
-      <View className="body">{option && <Chart option={option} />}</View>
-    </View>
-  );
+  return option && <Chart option={option} />;
 }

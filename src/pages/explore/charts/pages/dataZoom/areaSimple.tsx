@@ -1,11 +1,15 @@
-import { View } from '@tarojs/components';
+import { setNavigationBarTitle } from '@tarojs/taro';
+import { useEffect } from 'react';
 import * as echarts from 'echarts';
 import Chart from '../../echarts';
 import '../style.scss';
 /**
 https://echarts.apache.org/examples/zh/editor.html?c=area-simple
  */
-export default function areaSimple() {
+export default function Index() {
+  useEffect(() => {
+    setNavigationBarTitle({ title: '大数据量面积图' });
+  }, []);
   let base = +new Date(1968, 9, 3);
   let oneDay = 24 * 3600 * 1000;
   let date = [] as any;
@@ -80,12 +84,5 @@ export default function areaSimple() {
     ]
   };
 
-  return (
-    <View>
-      <View className="header">大数据量面积图</View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
-  );
+  return <Chart option={option} />;
 }

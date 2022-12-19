@@ -1,7 +1,11 @@
-import { useCallback } from 'react';
+import { setNavigationBarTitle } from '@tarojs/taro';
+import { useCallback, useEffect } from 'react';
 import Chart from '../../echarts';
 
 export default function DatasetLink() {
+  useEffect(() => {
+    setNavigationBarTitle({ title: '联动和共享数据集' });
+  }, []);
   const option = {
     legend: {},
     tooltip: {
@@ -64,7 +68,7 @@ export default function DatasetLink() {
       }
     ]
   };
-  const onInit = useCallback((chart) => {
+  const onInit = useCallback(chart => {
     chart.on('updateAxisPointer', function(event) {
       const xAxisInfo = event.axesInfo[0];
       if (xAxisInfo) {
@@ -84,7 +88,5 @@ export default function DatasetLink() {
       }
     });
   }, []);
-  return (
-    <Chart option={option} onSVGInit={onInit} onSkiaInit={onInit} />
-  );
+  return <Chart option={option} onSVGInit={onInit} onSkiaInit={onInit} />;
 }

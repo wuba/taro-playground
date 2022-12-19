@@ -1,10 +1,14 @@
-import { View } from '@tarojs/components';
+import { setNavigationBarTitle } from '@tarojs/taro';
+import { useEffect } from 'react';
 import Chart from '../../echarts';
 import '../style.scss';
 /**
  * https://echarts.apache.org/examples/zh/editor.html?c=grid-multiple
  */
-export default function lineStack() {
+export default function Index() {
+  useEffect(() => {
+    setNavigationBarTitle({ title: '雨量Evaporation关系图' });
+  }, []);
   // prettier-ignore
   let timeData = [
   '2009/6/12 2:00', '2009/6/12 3:00', '2009/6/12 4:00', '2009/6/12 5:00', '2009/6/12 6:00', '2009/6/12 7:00', '2009/6/12 8:00', '2009/6/12 9:00', '2009/6/12 10:00', '2009/6/12 11:00', '2009/6/12 12:00', '2009/6/12 13:00', '2009/6/12 14:00', '2009/6/12 15:00', '2009/6/12 16:00', '2009/6/12 17:00', '2009/6/12 18:00', '2009/6/12 19:00', '2009/6/12 20:00', '2009/6/12 21:00', '2009/6/12 22:00', '2009/6/12 23:00',
@@ -177,12 +181,5 @@ export default function lineStack() {
     ]
   };
 
-  return (
-    <View>
-      <View className="header">雨量Evaporation关系图</View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
-  );
+  return <Chart option={option} />;
 }

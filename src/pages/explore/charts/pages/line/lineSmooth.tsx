@@ -1,10 +1,14 @@
-import { View } from '@tarojs/components';
+import { setNavigationBarTitle } from '@tarojs/taro';
+import { useEffect } from 'react';
 import Chart from '../../echarts';
 import '../style.scss';
 /**
  * https://echarts.apache.org/examples/zh/editor.html?c=line-smooth
  */
 export default function LineSmooth() {
+  useEffect(() => {
+    setNavigationBarTitle({ title: '基础平滑折线图' });
+  }, []);
   const option = {
     xAxis: {
       type: 'category',
@@ -22,12 +26,5 @@ export default function LineSmooth() {
     ]
   };
 
-  return (
-    <View>
-      <View className="header">基础平滑折线图</View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
-  );
+  return <Chart option={option} />;
 }

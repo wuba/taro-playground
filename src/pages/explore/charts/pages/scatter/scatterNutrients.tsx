@@ -190,6 +190,7 @@ export default function Index() {
           icon: 'none',
           title: '数据请求偶尔会超时，多试几次就好了'
         });
+        myChart.hideLoading();
       },
       success: res => {
         console.log(res);
