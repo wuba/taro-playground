@@ -39,7 +39,7 @@ export default function DynamicData2() {
     }
     const option = {
       title: {
-        text: 'Dynamic Data Time Axis'
+        text: 'Dynamic Data and Time Axis'
       },
       tooltip: {
         trigger: 'axis',
