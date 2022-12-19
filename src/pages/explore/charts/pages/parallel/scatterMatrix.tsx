@@ -1,18 +1,24 @@
-import { View } from '@tarojs/components';
+import { setNavigationBarTitle } from '@tarojs/taro';
+import { useEffect } from 'react';
 import Chart from '../../echarts';
 import '../style.scss';
 
-export default function scatterMatrix() {
+export default function Index() {
+  useEffect(() => {
+    setNavigationBarTitle({
+      title: '散点矩阵和平行坐标'
+    });
+  }, []);
   // Schema:
-// date,AQIindex,PM2.5,PM10,CO,NO2,SO2
+  // date,AQIindex,PM2.5,PM10,CO,NO2,SO2
   const schema = [
-  { name: 'AQIindex', index: 1, text: 'AQI' },
-  { name: 'PM25', index: 2, text: 'PM 2.5' },
-  { name: 'PM10', index: 3, text: 'PM 10' },
-  { name: 'CO', index: 4, text: 'CO' },
-  { name: 'NO2', index: 5, text: 'NO₂' },
-  { name: 'SO2', index: 6, text: 'SO₂' },
-  { name: '等级', index: 7, text: '等级' }
+    { name: 'AQIindex', index: 1, text: 'AQI' },
+    { name: 'PM25', index: 2, text: 'PM 2.5' },
+    { name: 'PM10', index: 3, text: 'PM 10' },
+    { name: 'CO', index: 4, text: 'CO' },
+    { name: 'NO2', index: 5, text: 'NO₂' },
+    { name: 'SO2', index: 6, text: 'SO₂' },
+    { name: '等级', index: 7, text: '等级' }
   ];
   const rawData = [
     [55, 9, 56, 0.46, 18, 6, '良', '北京'],
@@ -120,7 +126,7 @@ export default function scatterMatrix() {
   const CATEGORY_DIM = 7;
   const SYMBOL_SIZE = 4;
   function retrieveScatterData(data, dimX, dimY) {
-    let result = [] as any;
+    let result: any = [];
     for (let i = 0; i < data.length; i++) {
       let item = [data[i][dimX], data[i][dimY]];
       item[CATEGORY_DIM] = data[i][CATEGORY_DIM];
@@ -130,10 +136,10 @@ export default function scatterMatrix() {
   }
   function generateGrids() {
     let index = 0;
-    const grid = [] as any;
-    const xAxis = [] as any;
-    const yAxis = [] as any;
-    const series = [] as any;
+    const grid: any = [];
+    const xAxis: any = [];
+    const yAxis: any = [];
+    const series: any = [];
     for (let i = 0; i < CATEGORY_DIM_COUNT; i++) {
       for (let j = 0; j < CATEGORY_DIM_COUNT; j++) {
         if (CATEGORY_DIM_COUNT - i + j >= CATEGORY_DIM_COUNT) {
@@ -203,10 +209,10 @@ export default function scatterMatrix() {
     animation: false,
     brush: {
       brushLink: 'all',
-      xAxisIndex: gridOption.xAxis.map(function (_, idx) {
+      xAxisIndex: gridOption.xAxis.map(function(_, idx) {
         return idx;
       }),
-      yAxisIndex: gridOption.yAxis.map(function (_, idx) {
+      yAxisIndex: gridOption.yAxis.map(function(_, idx) {
         return idx;
       }),
       inBrush: {
@@ -226,7 +232,7 @@ export default function scatterMatrix() {
       outOfRange: {
         color: '#ddd'
       },
-      seriesIndex: gridOption.series.map(function (_, idx) {
+      seriesIndex: gridOption.series.map(function(_, idx) {
         return idx;
       })
     },
@@ -296,12 +302,5 @@ export default function scatterMatrix() {
       ...gridOption.series
     ]
   };
-  return (
-    <View>
-      <View className="header">散点矩阵和平行坐标</View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
-  );
+  return <Chart option={option} />;
 }

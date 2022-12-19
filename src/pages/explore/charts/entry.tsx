@@ -317,15 +317,90 @@ const routes = [
     title: '散点图',
     routes: [
       {
+        title: '基础散点图',
+        url: `${prefix}scatter/scatterSimple`
+      },
+      {
+        title: "Anscomb's quartet",
+        url: `${prefix}scatter/scatterAnscombeAuartet`
+      },
+      {
+        title: '数据聚合',
+        url: `${prefix}scatter/scatterClustering`
+      },
+      {
+        title: '涟漪特效散点图',
+        url: `${prefix}scatter/scatterEffect`
+      },
+      {
+        title: 'GitHub 打卡气泡图',
+        url: `${prefix}scatter/scatterPunchCard`
+      },
+      {
+        title: '男性女性身高体重分布',
+        url: `${prefix}scatter/scatterWeight`
+      },
+      {
+        title: '散点图聚合为柱状图动画',
+        url: `${prefix}scatter/scatterAggregateBar`
+      },
+      {
+        title: '散点图标签右侧对齐',
+        url: `${prefix}scatter/scatterLabelAlignRight`
+      },
+      {
+        title: '散点图标签顶部对齐',
+        url: `${prefix}scatter/scatterLabelAlignTop`
+      },
+      {
+        title: '散点图变形动画',
+        url: `${prefix}scatter/scatterSymbolMorph`
+      },
+      {
+        title: '大规模散点图',
+        url: `${prefix}scatter/scatterLarge`
+      },
+      {
+        title: '大规模星云散点图',
+        url: `${prefix}scatter/scatterNebula`
+      },
+      {
+        title: '流式渲染和视觉映射操作',
+        url: `${prefix}scatter/scatterStreamVisual`
+      },
+      {
         title: '气泡图',
         url: `${prefix}scatter/bubbleGradient`
       },
-      // {
-      //   title: '大规模散点图',
-      //   url: `${prefix}scatter/scatterLarge`,
-      // },
       {
-        title: '全国主要城市空气质量',
+        title: 'AQI 气泡图',
+        url: `${prefix}scatter/scatterAqiColor`
+      },
+      {
+        title: '营养分布散点图',
+        url: `${prefix}scatter/scatterNutrients`,
+        state: true
+      },
+      {
+        title: '营养分布散点矩阵',
+        url: `${prefix}scatter/scatterNutrientsMatrix`,
+        state: true
+      },
+      {
+        title: 'GitHub 打卡气泡图（极坐标）',
+        url: `${prefix}scatter/scatterPolarPunchCard`
+      },
+      {
+        title: '各国人均寿命与GDP关系演变',
+        url: `${prefix}scatter/scatterLifeExpectancyTimeline`,
+        state: true
+      },
+      {
+        title: 'Master Painter Color Choices Throughout History',
+        url: `${prefix}scatter/scatterPainterChoice`
+      },
+      {
+        title: '全国主要城市空气质量 - 百度地图',
         url: `${prefix}scatter/effectScatterBmap`
       },
       {
@@ -458,7 +533,40 @@ const routes = [
     routes: [
       {
         title: '庖丁解牛',
-        url: `${prefix}map/geoBeefCuts`,
+        url: `${prefix}map/geoBeefCuts`
+      },
+      {
+        title: '在地图上显示饼图',
+        url: `${prefix}map/mapUsaPie`
+      },
+      {
+        title: '内脏数据（SVG）',
+        url: `${prefix}map/geoOrgan`,
+        state: true
+      },
+      {
+        title: '航班选座（SVG）',
+        url: `${prefix}map/geoSeatmapFlight`,
+        state: true
+      },
+      {
+        title: 'GEO 路径图（SVG）',
+        url: `${prefix}map/geoSvgLines`,
+        state: true
+      },
+      {
+        title: '地图（SVG）',
+        url: `${prefix}map/geoSvgMap`,
+        state: true
+      },
+      {
+        title: '散点图（SVG）',
+        url: `${prefix}map/geoSvgScatterSimple`,
+        state: true
+      },
+      {
+        title: '交通（SVG）',
+        url: `${prefix}map/geoSvgTraffic`,
         state: true
       }
     ]
@@ -747,6 +855,10 @@ const routes = [
       {
         title: '日历关系图',
         url: `${prefix}calendar/calendarGraph`
+      },
+      {
+        title: '日历图',
+        url: `${prefix}calendar/calendarCharts`
       }
     ]
   },

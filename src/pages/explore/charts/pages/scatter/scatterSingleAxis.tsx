@@ -1,15 +1,17 @@
-import { View } from '@tarojs/components';
+import { setNavigationBarTitle } from '@tarojs/taro';
+import { useEffect } from 'react';
 // import * as echarts from 'echarts/core';
 import Chart from '../../echarts';
 import '../style.scss';
 
 /**
- * 这个试用失败
  * https://echarts.apache.org/examples/zh/editor.html?c=scatter-single-axis&lang=ts
- * https://echarts.apache.org/examples/zh/editor.html?c=calendar-charts
  */
 
-export default function barPolarRealEstate() {
+export default function Index() {
+  useEffect(() => {
+    setNavigationBarTitle({ title: '单轴散点图' });
+  }, []);
   // prettier-ignore
   const hours = [
   '12a', '1a', '2a', '3a', '4a', '5a', '6a',
@@ -72,12 +74,5 @@ export default function barPolarRealEstate() {
     series: series
   };
 
-  return (
-    <View>
-      <View className="header">单轴散点图</View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
-  );
+  return <Chart option={option} />;
 }

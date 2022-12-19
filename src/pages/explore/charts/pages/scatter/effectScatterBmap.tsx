@@ -1,13 +1,20 @@
 import { View } from '@tarojs/components';
+import { setNavigationBarTitle } from '@tarojs/taro';
+// import 'echarts/extension/bmap/bmap';
+import { useEffect } from 'react';
 import Chart from '../../echarts';
 import '../style.scss';
 
 /**
- * 这个case出不来，可能地图只能用于web页面？
  * https://echarts.apache.org/examples/zh/editor.html?c=effectScatter-bmap
  */
 
-export default function barPolarRealEstate() {
+export default function Index() {
+  useEffect(() => {
+    setNavigationBarTitle({
+      title: '全国主要城市空气质量 - 百度地图'
+    });
+  }, []);
   const data = [
     { name: '海门', value: 9 },
     { name: '鄂尔多斯', value: 12 },
@@ -600,9 +607,9 @@ export default function barPolarRealEstate() {
   return (
     <View>
       <View className="header">地图暂时无法支持。</View>
-      <View className="body">
+      {/* <View className="body">
         <Chart option={option} />
-      </View>
+      </View> */}
     </View>
   );
 }
