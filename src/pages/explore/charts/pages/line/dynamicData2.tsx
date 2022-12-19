@@ -1,4 +1,4 @@
-import Taro from '@tarojs/taro';
+import { setNavigationBarTitle } from '@tarojs/taro';
 import { useCallback, useEffect, useRef } from 'react';
 import Chart from '../../echarts';
 import '../style.scss';
@@ -13,7 +13,7 @@ interface DataItem {
 export default function DynamicData2() {
   const timer = useRef<any>([]);
   useEffect(() => {
-    Taro.setNavigationBarTitle({
+    setNavigationBarTitle({
       title: '动态数据 + 时间坐标轴'
     });
     return () => timer.current.forEach(clearInterval);
@@ -39,7 +39,7 @@ export default function DynamicData2() {
     }
     const option = {
       title: {
-        text: 'Dynamic Data & Time Axis'
+        text: 'Dynamic Data Time Axis'
       },
       tooltip: {
         trigger: 'axis',

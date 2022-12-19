@@ -1,5 +1,4 @@
 import { setNavigationBarTitle } from '@tarojs/taro';
-// import * as echarts from 'echarts/core';
 import { useCallback, useEffect, useRef } from 'react';
 import Chart from '../../echarts';
 import '../style.scss';
