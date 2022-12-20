@@ -1,13 +1,21 @@
+import { setNavigationBarTitle } from '@tarojs/taro';
 import { View } from '@tarojs/components';
 import { SkiaChart as SkiaComponent } from 'wrn-echarts';
+import { useCallback, useEffect } from 'react';
+import * as echarts from 'echarts/core';
 import Chart from '../../echarts';
-import beef from '../../beef';
+import svg from '../assets/beef';
 import '../style.scss';
 /**
- * 这个case上的小虚线等没出来
- * https://echarts.apache.org/examples/zh/editor.html?c=line-markline
+ * https://echarts.apache.org/examples/zh/editor.html?c=geo-beef-cuts
  */
-export default function barPolarRealEstate() {
+
+export default function Index() {
+  useEffect(() => {
+    setNavigationBarTitle({
+      title: '庖丁解牛'
+    });
+  }, []);
   const option = {
     tooltip: {},
     visualMap: {
@@ -69,14 +77,19 @@ export default function barPolarRealEstate() {
       }
     ]
   };
+  const onInit = useCallback(myChart => {
+    myChart.showLoading();
+    echarts.registerMap('Beef_cuts_France', { svg });
+    myChart.setOption(option);
+    myChart.hideLoading();
+  }, []);
 
   return (
     <View>
-      <View className="header">这个case，svg上的字出不来（图放大点看）</View>
       <View className="body">
-        <Chart option={option} />
+        <Chart option={{}} onSVGInit={onInit} onSkiaInit={onInit} />
       </View>
-      <SkiaComponent svg={beef} width={600} height={600} />
+      <SkiaComponent svg={svg} width={600} height={600} />
     </View>
   );
 }

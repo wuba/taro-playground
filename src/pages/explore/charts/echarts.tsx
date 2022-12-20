@@ -51,7 +51,6 @@ import { Dimensions } from 'react-native';
 import { SVGRenderer, SkiaChart as SkiaComponent, SvgChart as SvgComponent } from 'wrn-echarts';
 import { View } from '@tarojs/components';
 
-import beef from './beef';
 import './echarts.scss';
 
 // 注册必须的组件
@@ -104,8 +103,6 @@ echarts.use([
   SingleAxisComponent,
   GeoComponent,
 ]);
-
-echarts.registerMap('Beef_cuts_France', { svg: beef });
 
 const E_HEIGHT = 320;
 const E_WIDTH = Dimensions.get('screen').width;
