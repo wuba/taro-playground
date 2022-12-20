@@ -1,15 +1,10 @@
-import { setNavigationBarTitle } from '@tarojs/taro';
-// import * as echarts from 'echarts';
-import { useEffect } from 'react';
+import { View } from '@tarojs/components';
 import Chart from '../../echarts';
 import '../style.scss';
 /**
 https://echarts.apache.org/examples/zh/editor.html?c=data-transform-sort-bar
  */
 export default function Index() {
-  useEffect(() => {
-    setNavigationBarTitle({ title: '柱状图排序' });
-  }, []);
   const option = {
     dataset: [
       {
@@ -45,5 +40,12 @@ export default function Index() {
     }
   };
 
-  return <Chart option={option} />;
+  return (
+    <View>
+      <View className="header">柱状图排序</View>
+      <View className="body">
+        <Chart option={option} />
+      </View>
+    </View>
+  );
 }

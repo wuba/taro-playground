@@ -1052,7 +1052,16 @@ const routes = [
       },
       {
         title: '风向图',
-        url: `${prefix}custom/windBarb`
+        url: `${prefix}custom/windBarb`,
+        state: true,
+      },
+      {
+        title: '日历图自定义图标',
+        url: `${prefix}custom/customCalendarIcon`,
+      },
+      {
+        title: '使用自定义系列绘制风场',
+        url: `${prefix}custom/windVectors`,
       },
       {
         title: '六边形分箱图（自定义系列）',
@@ -1060,13 +1069,26 @@ const routes = [
         state: true
       },
       {
-        title: '自定义议会图与饼图过渡动画（卡顿）',
-        url: `${prefix}custom/PieParliamentTransition`,
+        title: '自定义仪表',
+        url: `${prefix}custom/CustomGauge`,
         state: true
       },
       {
-        title: '自定义仪表',
-        url: `${prefix}custom/CustomGauge`,
+        title: '自定义特效',
+        url: `${prefix}custom/customizedEffect`,
+        state: true
+      },
+      {
+        title: '自定义议会图与饼图过渡动画',
+        url: `${prefix}custom/PieParliamentTransition`,
+      },
+      {
+        title: 'Circle Packing with d3',
+        url: `${prefix}custom/circlePacking`,
+      },
+      {
+        title: '自定义螺旋线竞速',
+        url: `${prefix}custom/customSpiralRace`,
         state: true
       }
     ]
@@ -1079,12 +1101,24 @@ const routes = [
         url: `${prefix}dataset/dataTransformSortBar`
       },
       {
-        title: '联动和共享数据集',
-        url: `${prefix}dataset/DatasetLink`
-      },
-      {
         title: '指定数据到坐标轴的映射',
         url: `${prefix}dataset/datasetEncode0`
+      },
+      {
+        title: '分割数据到数个饼图',
+        url: `${prefix}dataset/dataTransformMultiplePie`
+      },
+      {
+        title: '默认 encode 设置',
+        url: `${prefix}dataset/datasetDefault`
+      },
+      {
+        title: '指定数据到坐标轴的映射1',
+        url: `${prefix}dataset/encodeAndMatrix`
+      },
+      {
+        title: '联动和共享数据集',
+        url: `${prefix}dataset/DatasetLink`
       },
       {
         title: '系列按行和按列排布',
@@ -1098,14 +1132,6 @@ const routes = [
         title: '对象数组的输入格式',
         url: `${prefix}dataset/datasetSimple1`
       },
-      {
-        title: '默认 encode 设置',
-        url: `${prefix}dataset/datasetDefault`
-      },
-      {
-        title: '分割数据到数个饼图',
-        url: `${prefix}dataset/dataTransformMultiplePie`
-      }
     ]
   },
   {
@@ -1119,7 +1145,22 @@ const routes = [
         title: '大数据量面积图',
         url: `${prefix}dataZoom/areaSimple`
         // state: true
-      }
+      },
+      {
+        title: '机场航班甘特图(重复)',
+        url: `${prefix}custom/ganttChart`,
+        state: true,
+      },
+      {
+        title: '风向图(重复)',
+        url: `${prefix}custom/windBarb`,
+        state: true,
+      },
+      {
+        title: '移动端上的dataZoom(重复)',
+        url: `${prefix}line/lineTooltipTouch`,
+        state: true
+      },
     ]
   },
   {

@@ -4,7 +4,7 @@ import '../style.scss';
 /**
  * https://echarts.apache.org/examples/zh/editor.html?c=dataset-default
  */
-export default function Index() {
+export default function shareDataset() {
   const option = {
     legend: {},
     tooltip: {},

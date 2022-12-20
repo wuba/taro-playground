@@ -1,14 +1,10 @@
-import { setNavigationBarTitle } from '@tarojs/taro';
-import { useEffect } from 'react';
+import { View } from '@tarojs/components';
 import Chart from '../../echarts';
 import '../style.scss';
 /*
  * https://echarts.apache.org/examples/zh/editor.html?c=dataset-series-layout-by
  */
 export default function Index() {
-  useEffect(() => {
-    setNavigationBarTitle({ title: '系列按行和按列排布' });
-  }, []);
   const option = {
     legend: {},
     tooltip: {},
@@ -39,5 +35,12 @@ export default function Index() {
     ]
   };
 
-  return <Chart option={option} />;
+  return (
+    <View>
+      <View className="header">系列按行和按列排布</View>
+      <View className="body">
+        <Chart option={option} />
+      </View>
+    </View>
+  );
 }

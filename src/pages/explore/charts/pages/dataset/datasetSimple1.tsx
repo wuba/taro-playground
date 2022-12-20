@@ -1,4 +1,5 @@
 import { setNavigationBarTitle } from '@tarojs/taro';
+import { View } from '@tarojs/components';
 import { useEffect } from 'react';
 import Chart from '../../echarts';
 import '../style.scss';
@@ -28,5 +29,12 @@ export default function Index() {
     series: [{ type: 'bar' }, { type: 'bar' }, { type: 'bar' }]
   };
 
-  return <Chart option={option} />;
+  return (
+    <View>
+      <View className="header">对象数组的输入格式</View>
+      <View className="body">
+        <Chart option={option} />
+      </View>
+    </View>
+  )
 }

@@ -1,5 +1,5 @@
 import { View } from '@tarojs/components';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import Chart from '../../echarts';
 import '../style.scss';
 /**

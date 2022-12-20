@@ -1,5 +1,4 @@
-import { setNavigationBarTitle } from '@tarojs/taro';
-import { useEffect } from 'react';
+import { View } from '@tarojs/components';
 // import * as echarts from 'echarts';
 import Chart from '../../echarts';
 import '../style.scss';
@@ -7,9 +6,6 @@ import '../style.scss';
 https://echarts.apache.org/examples/zh/editor.html?c=dataset-encode0
  */
 export default function Index() {
-  useEffect(() => {
-    setNavigationBarTitle({ title: '指定数据到坐标轴的映射' });
-  }, []);
   const option = {
     dataset: {
       source: [
@@ -53,5 +49,12 @@ export default function Index() {
     ]
   };
 
-  return <Chart option={option} />;
+  return (
+    <View>
+      <View className="header">指定数据到坐标轴的映射</View>
+      <View className="body">
+        <Chart option={option} />
+      </View>
+    </View>
+  );
 }

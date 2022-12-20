@@ -1,6 +1,5 @@
 import { View } from '@tarojs/components';
 import Chart from '../../echarts';
-import * as echarts from 'echarts';
 import '../style.scss';
 /**
 https://echarts.apache.org/examples/zh/editor.html?c=custom-polar-heatmap
