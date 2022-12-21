@@ -1,15 +1,15 @@
 import { View } from '@tarojs/components';
-import { useEffect, useState } from 'react';
+import { useCallback } from 'react';
 import Taro from '@tarojs/taro';
+import * as d3 from 'd3-hierarchy';
 import Chart from '../../echarts';
 import '../style.scss';
-require('./d3HierarchyMin.js');
+
 /**
 https://echarts.apache.org/examples/zh/editor.html?c=circle-packing-with-d3
  */
-export default function circlePacking() {
-  let [option, setOption] = useState<any>();
-  useEffect(() => {
+export default function CirclePacking() {
+  const onInit = useCallback(myChart => {
     Taro.request({
       url: 'https://echarts.apache.org/examples/data/asset/data/option-view.json',
       data: {},
@@ -150,7 +150,7 @@ export default function circlePacking() {
               }
             };
           }
-          option = {
+          let option = {
             dataset: {
               source: seriesData
             },
@@ -178,11 +178,11 @@ export default function circlePacking() {
               }
             }
           };
-          setOption(option);
-          // myChart.on('click', { seriesIndex: 0 }, function (params) {
-          //   drillDown(params.data.id);
-          // });
-          function drillDown(targetNodeId) {
+          myChart.setOption(option);
+          myChart.on('click', { seriesIndex: 0 }, function (params) {
+            drillDown(params.data.id);
+          });
+          function drillDown(targetNodeId=null) {
             displayRoot = stratify();
             if (targetNodeId != null) {
               displayRoot = displayRoot.descendants().find(function (node) {
@@ -192,14 +192,14 @@ export default function circlePacking() {
             // A trick to prevent d3-hierarchy from visiting parents in this algorithm.
             displayRoot.parent = null;
             option.dataset.source = seriesData
-            setOption({...option});
+            myChart.setOption({...option});
           }
           // // Reset: click on the blank area.
-          // myChart.getZr().on('click', function (event) {
-          //   if (!event.target) {
-          //     drillDown();
-          //   }
-          // });
+          myChart.getZr().on('click', function (event) {
+            if (!event.target) {
+              drillDown();
+            }
+          });
         }
 
       },
@@ -211,18 +211,14 @@ export default function circlePacking() {
         });
       }
     });
-  }, [option])
+  }, []);
   
   return (
-    option ? (
-      <View>
-        <View className="header">Circle Packing with d3（资源引入TODO:）</View>
-        <View className="body">
-          <Chart option={option} />
-        </View>
+    <View>
+      <View className="header">Circle Packing with d3</View>
+      <View className="body">
+        <Chart option={{}} onSVGInit={onInit} onSkiaInit={onInit} />
       </View>
-    ) : (
-      <View>Loading...</View>
-    )
+    </View>
   );
 }

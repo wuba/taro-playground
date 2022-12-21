@@ -71,6 +71,7 @@
     "@tarojs/taro": "3.5.7",
     "@tarojs/taro-h5": "3.5.7",
     "@tarojs/taro-rn": "3.5.7",
+    "d3-hierarchy": "^3.1.2",
     "echarts": "^5.4.1",
     "echarts-stat": "^1.2.0",
     "expo": "~46.0.1",
