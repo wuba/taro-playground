@@ -15,7 +15,7 @@ env:
   # 应用的application_id
   APP_ID: ${{secrets.APP_ID}}
   APP_NAME: Taro
-  VERSION_NUMBER: 1.7.1
+  VERSION_NUMBER: 1.7.2
   BUILD_TYPE: debug
   TEAM_ID: ${{secrets.TEAM_ID}}
   PROVISIONING_PROFILE_SPECIFIER: ${{secrets.DEBUG_PROVISIONING_PROFILE_SPECIFIER}}
