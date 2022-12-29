@@ -17671,10 +17671,10 @@ taro-css-to-react-native@3.5.7:
     css-mediaquery "^0.1.2"
     postcss-value-parser "^3.3.0"
 
-taro-lottie@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/taro-lottie/-/taro-lottie-1.0.0.tgz#8e6c63d6dcd47ecfb19853aad944c7f94c654e8c"
-  integrity sha512-0vJKqrPhFQMI5oADzWfbz5oB3kgDRgtzohukN+l80IFpUcVOa4ZcDtDSIPvp3vikaB2enANzDhxDdR3CkEd6xg==
+taro-lottie@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/taro-lottie/-/taro-lottie-1.0.2.tgz#919f00445c45afbe3026232f80f85d4d8a4eb7d4"
+  integrity sha512-6xAmUX27hAJ6RevBHlWUeoiGADZATYg2OTHPStyEQHoseE1Wr59M/bNBzthns5CFJ2tQF4HCkJp7uGQNnTW26w==
   dependencies:
     lottie-miniprogram "^1.0.12"
     lottie-react-native "^5.1.3"
