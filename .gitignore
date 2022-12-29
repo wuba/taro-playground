@@ -71,3 +71,7 @@ buck-out/
 
 ## taro-react-native-release
 !release/**
+
+# taro
+#
+.swc
