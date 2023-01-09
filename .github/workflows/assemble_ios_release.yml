@@ -123,6 +123,7 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           prerelease: ${{ contains(github.ref, 'beta') }}
+          body: ${{ env.VERSION_NUMBER }}.${{steps.date.outputs.timestamp}}
           files: |
             ios/app-${{ env.BUILD_TYPE }}.ipa
             ios/app-${{ env.BUILD_TYPE }}.app.dSYM.zip

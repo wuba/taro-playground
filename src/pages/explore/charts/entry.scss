@@ -1,0 +1,28 @@
+.contain {
+  display: flex;
+  flex-direction: row;
+  &-left{
+    width: 40vw;
+    &__text {
+      width: 100%;
+      padding: 24px;
+      font-size: 32px;
+    }
+    &__active{
+      background-color: white;
+    }
+  }
+  &-right{
+    width: 60vw;
+    min-height: 100%;
+    background-color: white;
+    &__text {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      padding: 24px;
+      font-size: 32px;
+      border-bottom: 1px solid #efefef;
+    }
+  }
+}
