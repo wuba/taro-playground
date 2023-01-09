@@ -19104,10 +19104,10 @@ write@^0.2.1:
   dependencies:
     mkdirp "^0.5.1"
 
-wrn-echarts@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/wrn-echarts/-/wrn-echarts-0.1.2.tgz#8d5dc6313038899b8712135facd85f840fd6ccbc"
-  integrity sha512-f70oPT+w5n6u/EiVpiuzwi/yhhXE8f1wnz8vm/mr6NbTmR77AkDRXHoaHdVTn0ny3RAWEqKYwuraZs7LZqiHrg==
+wrn-echarts@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/wrn-echarts/-/wrn-echarts-0.1.3.tgz#7e40a5778d4feab7a5b67bf1d8c17014ade39458"
+  integrity sha512-ma/ahwODBVcg3uy3qgUnl7OcTW3OaW7rVPcH4vtyO2cZr89XbMAL4U42mdDwvmU78v25rXwyfJ18o7zxMLj+vw==
   dependencies:
     "@xmldom/xmldom" "^0.8.6"
 
