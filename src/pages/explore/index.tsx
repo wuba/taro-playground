@@ -72,15 +72,18 @@ const playList = [
     },
     title: 'Linear Gradient',
     showRightArrow: true
-  },
-  {
+  }
+];
+
+if(isRN) {
+  playList.push({
     data: {
       page: '/pages/explore/charts/entry'
     },
     title: 'Echarts',
     showRightArrow: true
-  }
-];
+  })
+}
 
 function loadDemo({ web, title, bundle, mp }) {
   if (isWeb) {
