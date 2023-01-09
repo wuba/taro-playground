@@ -15,8 +15,8 @@ env:
   # 应用的application_id
   APP_ID: ${{secrets.APP_ID}}
   APP_NAME: Taro
-  VERSION_NUMBER: 1.7.2
-  BUILD_NUMBER: 1.7.2.1
+  VERSION_NUMBER: 1.7.3
+  BUILD_NUMBER: 1.7.3.1
   BUILD_TYPE: release
   TEAM_ID: ${{secrets.TEAM_ID}}
   PROVISIONING_PROFILE_SPECIFIER: ${{secrets.RELEASE_PROVISIONING_PROFILE_SPECIFIER}}
@@ -123,6 +123,7 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           prerelease: ${{ contains(github.ref, 'beta') }}
+          body: ${{ env.VERSION_NUMBER }}.${{steps.date.outputs.timestamp}}
           files: |
             ios/app-${{ env.BUILD_TYPE }}.ipa
             ios/app-${{ env.BUILD_TYPE }}.app.dSYM.zip

@@ -1,0 +1,13 @@
+@import "../../../styles/variables.scss";
+.charts {
+    &-container {
+        background-color: #fff;
+    }
+    &-render {
+        text-align: center;
+        font-size: 32px;
+        color: $color-text-title;
+        border-bottom: 1px solid #efefef;
+        padding: 10px 0;
+    }
+}

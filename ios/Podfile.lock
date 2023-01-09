@@ -39,7 +39,7 @@ PODS:
     - ExpoModulesCore
   - Expo (46.0.19):
     - ExpoModulesCore
-  - ExpoImagePicker (13.1.1):
+  - ExpoImagePicker (13.3.1):
     - ExpoModulesCore
   - ExpoKeepAwake (10.2.1):
     - ExpoModulesCore
@@ -350,32 +350,32 @@ PODS:
     - RCTTypeSafety
     - React-Core
     - ReactCommon/turbomodule/core
-  - react-native-skia (0.1.169):
+  - react-native-skia (0.1.170):
     - React
     - React-callinvoker
     - React-Core
-    - react-native-skia/Api (= 0.1.169)
-    - react-native-skia/Jsi (= 0.1.169)
-    - react-native-skia/RNSkia (= 0.1.169)
-    - react-native-skia/SkiaHeaders (= 0.1.169)
-    - react-native-skia/Utils (= 0.1.169)
-  - react-native-skia/Api (0.1.169):
+    - react-native-skia/Api (= 0.1.170)
+    - react-native-skia/Jsi (= 0.1.170)
+    - react-native-skia/RNSkia (= 0.1.170)
+    - react-native-skia/SkiaHeaders (= 0.1.170)
+    - react-native-skia/Utils (= 0.1.170)
+  - react-native-skia/Api (0.1.170):
     - React
     - React-callinvoker
     - React-Core
-  - react-native-skia/Jsi (0.1.169):
+  - react-native-skia/Jsi (0.1.170):
     - React
     - React-callinvoker
     - React-Core
-  - react-native-skia/RNSkia (0.1.169):
+  - react-native-skia/RNSkia (0.1.170):
     - React
     - React-callinvoker
     - React-Core
-  - react-native-skia/SkiaHeaders (0.1.169):
+  - react-native-skia/SkiaHeaders (0.1.170):
     - React
     - React-callinvoker
     - React-Core
-  - react-native-skia/Utils (0.1.169):
+  - react-native-skia/Utils (0.1.170):
     - React
     - React-callinvoker
     - React-Core
@@ -526,7 +526,7 @@ PODS:
   - RNScreens (3.18.2):
     - React-Core
     - React-RCTImage
-  - RNSVG (12.4.4):
+  - RNSVG (13.6.0):
     - React-Core
   - RNSyanImagePicker (0.5.3):
     - React
@@ -835,7 +835,7 @@ SPEC CHECKSUMS:
   EXImageLoader: b88e053d760f85a82405b1db2de4abf11978fc9f
   EXLocation: b8cba3cb354bee6abb181c1dd245abe5aef22955
   Expo: 2aa7370e08c458536b7089120e84ed8bd204357b
-  ExpoImagePicker: d9d6b4f29db437fc7796f13cee5f133f5b4b5f7c
+  ExpoImagePicker: ca4207f2952a78e6dac2d7852d7e170dd2eaf1d0
   ExpoKeepAwake: 8b47e5358d54ea4922b630a74f2acb026ab7a28b
   ExpoModulesCore: 1b2f5f91eff132671f6d0642aad2ba7915c6ff41
   EXSensors: a34fb0d416eae3ecaaab43ec64dca0854227d3bf
@@ -876,7 +876,7 @@ SPEC CHECKSUMS:
   react-native-netinfo: 2517ad504b3d303e90d7a431b0fcaef76d207983
   react-native-pager-view: da490aa1f902c9a5aeecf0909cc975ad0e92e53e
   react-native-safe-area-context: dfe5aa13bee37a0c7e8059d14f72ffc076d120e9
-  react-native-skia: b79d204cd7d51a97928d9d7faa65f076666f727a
+  react-native-skia: d8d3d07b31c1a488999619eead40fd9cf7eaf83a
   react-native-slider: cecabb58ecffad671d2ad3ccc58c7f4d2d029e95
   react-native-splash-screen: 4312f786b13a81b5169ef346d76d33bc0c6dc457
   react-native-webview: d33e2db8925d090871ffeb232dfa50cb3a727581
@@ -901,7 +901,7 @@ SPEC CHECKSUMS:
   RNGestureHandler: bad495418bcbd3ab47017a38d93d290ebd406f50
   RNReanimated: f0d66bda3d074c43c72a18f4fd4f4c26687bc1fd
   RNScreens: 34cc502acf1b916c582c60003dc3089fa01dc66d
-  RNSVG: ecd661f380a07ba690c9c5929c475a44f432d674
+  RNSVG: 3a79c0c4992213e4f06c08e62730c5e7b9e4dc17
   RNSyanImagePicker: 5c650d33f16f7cd59c47d9269f6c4856b30d7616
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
   TZImagePickerController: e9909edbadf7381140efc5b5c9f5bdbfd630f7d4
@@ -909,6 +909,6 @@ SPEC CHECKSUMS:
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
-PODFILE CHECKSUM: 5336d8ce90d2c20f6387365ca376fde59d492250
+PODFILE CHECKSUM: 328497bd1c563fb8fd47d04a3af5c90da3222ceb
 
 COCOAPODS: 1.11.3
