@@ -1,5 +1,5 @@
 import { View } from '@tarojs/components';
-import Taro from '@tarojs/taro';
+import { showToast, request, setNavigationBarTitle } from '@tarojs/taro';
 import { useEffect, useState } from 'react';
 import Chart from '../../echarts';
 import '../style.scss';
@@ -7,12 +7,15 @@ import '../style.scss';
 export default function BarPolarRealEstate() {
   const [option, setOption] = useState<any>();
   useEffect(() => {
-    Taro.request({
+    setNavigationBarTitle({ title: '从左到右树状图' });
+
+    request({
       url: 'https://echarts.apache.org/examples/data/asset/data/flare.json',
       data: {},
       header: {
         'content-type': 'application/json'
       },
+      timeout: 10000,
       success: res => {
         const { data } = res;
         data.children.forEach(function(datum, index) {
@@ -57,20 +60,15 @@ export default function BarPolarRealEstate() {
       },
       fail: err => {
         console.log(err);
-        Taro.showToast({
+        showToast({
           title: '数据请求失败'
         });
       }
     });
   }, []);
   return option ? (
-    <View>
-      <View className="header">从左到右树状图</View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
+    <Chart option={option} />
   ) : (
-    <View>这是一个Loading图标</View>
+    <View>Loading...</View>
   );
 }

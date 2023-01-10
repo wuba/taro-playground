@@ -1,6 +1,6 @@
 import { View } from '@tarojs/components';
-import Taro from '@tarojs/taro';
 import { useEffect, useState } from 'react';
+import { setNavigationBarTitle } from '@tarojs/taro';
 import Chart from '../../echarts';
 import '../style.scss';
 
@@ -123,10 +123,11 @@ const data = {
   ]
 };
 
-export default function polylineTree() {
+export default function PolylineTree() {
   const [option, setOption] = useState<any>();
   
   useEffect(() => {
+    setNavigationBarTitle({ title: '折线树图' });
     setOption({
       tooltip: {
         trigger: 'item',
@@ -174,12 +175,7 @@ export default function polylineTree() {
   }, []);
 
   return option ? (
-    <View>
-      <View className="header">折线树图</View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
+    <Chart option={option} />
   ) : (
     <View>Loading...</View>
   );

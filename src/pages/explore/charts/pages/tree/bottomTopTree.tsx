@@ -1,19 +1,21 @@
 import { View } from '@tarojs/components';
-import Taro from '@tarojs/taro';
+import { showToast, request, setNavigationBarTitle } from '@tarojs/taro';
 import { useEffect, useState } from 'react';
 import Chart from '../../echarts';
 import '../style.scss';
 
-export default function bottomTopTree() {
+export default function BottomTopTree() {
   const [option, setOption] = useState<any>();
   
   useEffect(() => {
-    Taro.request({
+    setNavigationBarTitle({ title: '从下到上树状图' });
+    request({
       url: 'https://echarts.apache.org/examples/data/asset/data/flare.json',
       data: {},
       header: {
         'content-type': 'application/json'
       },
+      timeout: 10000,
       success: res => {
         const { data } = res;
         data.children.forEach(function(datum, index) {
@@ -59,7 +61,7 @@ export default function bottomTopTree() {
       },
       fail: err => {
         console.log(err);
-        Taro.showToast({
+        showToast({
           icon: 'none',
           title: '数据请求失败'
         });
@@ -68,12 +70,7 @@ export default function bottomTopTree() {
   }, []);
 
   return option ? (
-    <View>
-      <View className="header">从下到上树状图</View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
+    <Chart option={option} />
   ) : (
     <View>Loading...</View>
   );

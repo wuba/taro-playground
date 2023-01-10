@@ -184,6 +184,6 @@ export default function CustomOhlc() {
       </View>
     </View>
   ) : (
-    <View>假装这是一个loading图标</View>
+    <View>Loading...</View>
   );
 }

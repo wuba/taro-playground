@@ -1,19 +1,22 @@
 import { View } from '@tarojs/components';
-import Taro from '@tarojs/taro';
+import { showToast, request, setNavigationBarTitle } from '@tarojs/taro';
 import { useEffect, useState } from 'react';
 import Chart from '../../echarts';
 import '../style.scss';
 
-export default function radialTree() {
+export default function RadialTree() {
   const [option, setOption] = useState<any>();
   
   useEffect(() => {
-    Taro.request({
+    setNavigationBarTitle({ title: '径向树状图' });
+
+    request({
       url: 'https://echarts.apache.org/examples/data/asset/data/flare.json',
       data: {},
       header: {
         'content-type': 'application/json'
       },
+      timeout: 10000,
       success: res => {
         const { data } = res;
         setOption({
@@ -41,7 +44,7 @@ export default function radialTree() {
       },
       fail: err => {
         console.log(err);
-        Taro.showToast({
+        showToast({
           icon: 'none',
           title: '数据请求失败'
         });
@@ -50,12 +53,7 @@ export default function radialTree() {
   }, []);
 
   return option ? (
-    <View>
-      <View className="header">径向树状图</View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
+    <Chart option={option} />
   ) : (
     <View>Loading...</View>
   );

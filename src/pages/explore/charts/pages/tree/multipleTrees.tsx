@@ -1,5 +1,6 @@
 import { View } from '@tarojs/components';
 import { useEffect, useState } from 'react';
+import { setNavigationBarTitle } from '@tarojs/taro';
 import Chart from '../../echarts';
 import '../style.scss';
 
@@ -150,9 +151,10 @@ var data2 = {
   ]
 };
 
-export default function multipleTrees() {
+export default function MultipleTrees() {
   const [option, setOption] = useState<any>();
   useEffect(() => {
+    setNavigationBarTitle({ title: '多棵树' });
     setOption({
       tooltip: {
         trigger: 'item',
@@ -235,12 +237,7 @@ export default function multipleTrees() {
     })
   }, []);
   return option ? (
-    <View>
-      <View className="header">多棵树</View>
-      <View className="body">
-       <Chart option={option} />
-      </View>
-    </View>
+    <Chart option={option} />
   ) : (
     <View>Loading...</View>
   );
