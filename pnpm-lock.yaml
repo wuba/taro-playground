@@ -19,6 +19,7 @@ specifiers:
   '@shopify/react-native-skia': ^0.1.156
   '@tarojs/cli': 3.6.0-alpha.3
   '@tarojs/components': 3.6.0-alpha.3
+  '@tarojs/components-advanced': 3.6.0-alpha.3
   '@tarojs/components-rn': 3.6.0-alpha.3
   '@tarojs/helper': 3.6.0-alpha.3
   '@tarojs/plugin-framework-react': 3.6.0-alpha.3
@@ -62,6 +63,7 @@ specifiers:
   expo-image-picker: ~14.0.0
   expo-keep-awake: ~11.0.1
   expo-location: ~15.0.1
+  expo-modules-autolinking: 1.0.2
   expo-modules-core: ~1.0.2
   expo-sensors: ~12.0.1
   install-peerdeps: ^3.0.3
@@ -110,6 +112,7 @@ dependencies:
   '@shopify/flash-list': 1.4.0_cjfi6xzpmn4xrfjc2iaddt6dny
   '@shopify/react-native-skia': 0.1.171_imr7apjwk2oxoicmgaltv7skmu
   '@tarojs/components': 3.6.0-alpha.3_hcx2ylsye2ogwlvkj4iya74pui
+  '@tarojs/components-advanced': 3.6.0-alpha.3_bci5kkt32lkhg6h7awvytqsoei
   '@tarojs/components-rn': 3.6.0-alpha.3_4fesfmuwxkooghjoans4n2spse
   '@tarojs/helper': 3.6.0-alpha.3
   '@tarojs/plugin-framework-react': 3.6.0-alpha.3_zongguiltasypyvbawimidgr2q
@@ -139,6 +142,7 @@ dependencies:
   expo-image-picker: 14.0.2_expo@47.0.13
   expo-keep-awake: 11.0.1_expo@47.0.13
   expo-location: 15.0.1_expo@47.0.13
+  expo-modules-autolinking: 1.0.2
   expo-modules-core: 1.0.4
   expo-sensors: 12.0.1_expo@47.0.13
   jsc-android: 250230.2.1
@@ -7179,8 +7183,6 @@ packages:
       babel-register: 6.26.0
       babylon: 6.18.0
       require-from-string: 2.0.2
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /babel-plugin-react-native-web/0.18.10:
