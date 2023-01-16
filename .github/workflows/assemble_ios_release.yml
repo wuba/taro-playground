@@ -42,15 +42,23 @@ jobs:
           path: ${{ github.workspace }}/node_modules
           key: ${{ runner.os }}-node_modules
           restore-keys: ${{ runner.os }}-node_modules
-      - name: Cache .pnpm-store
-        uses: actions/cache@v2
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
         with:
-          path: |
-            ~/.pnpm-store
-            **/node_modules
-          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          version: 7
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}
+            ${{ runner.os }}-pnpm-store-
       - name: Cache Pods
         uses: actions/cache@v2
         with:
