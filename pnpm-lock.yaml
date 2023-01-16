@@ -54,12 +54,17 @@ specifiers:
   eslint-plugin-react: ^7.8.2
   eslint-plugin-react-hooks: ^4.2.0
   expo: ~47.0.3
+  expo-application: 5.0.1
   expo-av: ~13.0.0
   expo-barcode-scanner: ~12.0.0
   expo-brightness: ~11.0.0
   expo-camera: ~13.0.0
+  expo-constants: 14.0.2
+  expo-error-recovery: 4.0.1
   expo-file-system: ~15.1.1
+  expo-font: 11.0.1
   expo-gl: ~12.0.0
+  expo-image-loader: 4.0.0
   expo-image-picker: ~14.0.0
   expo-keep-awake: ~11.0.1
   expo-location: ~15.0.1
@@ -133,12 +138,17 @@ dependencies:
   '@tarojs/taro-h5': 3.6.0-alpha.3_@types+react@18.0.26
   '@tarojs/taro-rn': 3.6.0-alpha.3_4np6e3taw66gsa7vxvlgnpes6m
   expo: 47.0.13_@babel+core@7.20.12
+  expo-application: 5.0.1_expo@47.0.13
   expo-av: 13.0.2_expo@47.0.13
   expo-barcode-scanner: 12.0.0_expo@47.0.13
   expo-brightness: 11.0.1_expo@47.0.13
   expo-camera: 13.0.0_expo@47.0.13+react@18.2.0
+  expo-constants: 14.0.2_expo@47.0.13
+  expo-error-recovery: 4.0.1_expo@47.0.13
   expo-file-system: 15.1.1_expo@47.0.13
+  expo-font: 11.0.1_expo@47.0.13
   expo-gl: 12.0.1_expo@47.0.13
+  expo-image-loader: 4.0.0_expo@47.0.13
   expo-image-picker: 14.0.2_expo@47.0.13
   expo-keep-awake: 11.0.1_expo@47.0.13
   expo-location: 15.0.1_expo@47.0.13
@@ -10850,7 +10860,6 @@ packages:
     dependencies:
       expo: 47.0.13_@babel+core@7.20.12
     dev: false
-    optional: true
 
   /expo-file-system/15.1.1_expo@47.0.13:
     resolution: {integrity: sha512-MYYDKxjLo9VOkvGHqym5EOAUS+ero9O66X5zI+EXJzqNznKvnfScdXeeAaQzShmWtmLkdVDCoYFGOaTvTA1wTQ==}
