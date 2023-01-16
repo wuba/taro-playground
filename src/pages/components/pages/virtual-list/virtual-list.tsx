@@ -21,7 +21,7 @@ interface RowProps {
 }
 const Row = ({ index, style, data }: RowProps) => {
   return (
-    <View className={`list-item ${index % 2 ? "ListItemOdd" : "ListItemEven"}`} style={style}>
+    <View className={`vlist-item ${index % 2 ? "ListItemOdd" : "ListItemEven"}`} style={style}>
       Row {index}: {data[index]}
     </View>
   );
