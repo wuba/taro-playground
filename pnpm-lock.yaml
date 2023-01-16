@@ -76,6 +76,7 @@ specifiers:
   linear-gradient-taro: ^1.0.1
   lottie-ios: 3.4.0
   lottie-react-native: ^5.1.3
+  metro-config: 0.72.3
   pod-install: ^0.1.23
   query-string: ^7.1.1
   react: ^18.1.0
@@ -159,6 +160,7 @@ dependencies:
   linear-gradient-taro: 1.0.1_tlgbwibd2e4zwhzxhrtfh3upe4
   lottie-ios: 3.4.0
   lottie-react-native: 5.1.4_i6tqcfjjx3bnwdoq7lgu7j7iym
+  metro-config: 0.72.3
   query-string: 7.1.3
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -7193,6 +7195,8 @@ packages:
       babel-register: 6.26.0
       babylon: 6.18.0
       require-from-string: 2.0.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /babel-plugin-react-native-web/0.18.10:

@@ -99,6 +99,7 @@
     "linear-gradient-taro": "^1.0.1",
     "lottie-ios": "3.4.0",
     "lottie-react-native": "^5.1.3",
+    "metro-config": "0.72.3",
     "query-string": "^7.1.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
