@@ -36,18 +36,15 @@ jobs:
           path: ${{ github.workspace }}/node_modules
           key: ${{ runner.os }}-node_modules
           restore-keys: ${{ runner.os }}-node_modules
-      - name: Get Yarn Cache Directory Path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - name: Cache Yarn
+      - name: Cache .pnpm-store
         uses: actions/cache@v2
-        env:
-          cache-name: yarn-cache
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/package.json') }}
+          path: |
+            ~/.pnpm-store
+            **/node_modules
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-
+            ${{ runner.os }}
       - name: Cache Pods
         uses: actions/cache@v2
         with:
@@ -57,10 +54,10 @@ jobs:
             ${{ runner.os }}-pods-
       - name: Install Dependencies
         run: |
-          yarn
+          pnpm i
       - name: Build Taro React Native Bundle
         run: |
-          yarn build:rn --platform ios
+          pnpm build:rn --platform ios
       - name: Install pods
         run: cd ios && pod update --no-repo-update
       - name: Import signing certificate

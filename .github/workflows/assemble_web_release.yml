@@ -21,24 +21,21 @@ jobs:
           path: ${{ github.workspace }}/node_modules
           key: ${{ runner.os }}-node_modules
           restore-keys: ${{ runner.os }}-node_modules
-      - name: Get Yarn Cache Directory Path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - name: Cache Yarn
+      - name: Cache .pnpm-store
         uses: actions/cache@v2
-        env:
-          cache-name: yarn-cache
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/package.json') }}
+          path: |
+            ~/.pnpm-store
+            **/node_modules
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-
+            ${{ runner.os }}
       - name: Install Dependencies
         run: |
-          yarn
+          pnpm i
       - name: Build Taro Playground Web
         run: |
-          yarn build:h5
+          pnpm build:h5
       - name: Deploy github pages
         uses: peaceiris/actions-gh-pages@v3
         with:
