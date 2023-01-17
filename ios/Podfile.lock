@@ -34,7 +34,7 @@ PODS:
     - React-Core
   - EXLocation (15.0.1):
     - ExpoModulesCore
-  - Expo (47.0.9):
+  - Expo (47.0.13):
     - ExpoModulesCore
   - ExpoImagePicker (14.0.2):
     - ExpoModulesCore
@@ -335,7 +335,7 @@ PODS:
     - React-Core
   - react-native-geolocation (3.0.4):
     - React-Core
-  - react-native-image-resizer (1.4.5):
+  - react-native-image-resizer (3.0.4):
     - React-Core
   - react-native-netinfo (9.3.7):
     - React-Core
@@ -347,32 +347,32 @@ PODS:
     - RCTTypeSafety
     - React-Core
     - ReactCommon/turbomodule/core
-  - react-native-skia (0.1.166):
+  - react-native-skia (0.1.171):
     - React
     - React-callinvoker
     - React-Core
-    - react-native-skia/Api (= 0.1.166)
-    - react-native-skia/Jsi (= 0.1.166)
-    - react-native-skia/RNSkia (= 0.1.166)
-    - react-native-skia/SkiaHeaders (= 0.1.166)
-    - react-native-skia/Utils (= 0.1.166)
-  - react-native-skia/Api (0.1.166):
+    - react-native-skia/Api (= 0.1.171)
+    - react-native-skia/Jsi (= 0.1.171)
+    - react-native-skia/RNSkia (= 0.1.171)
+    - react-native-skia/SkiaHeaders (= 0.1.171)
+    - react-native-skia/Utils (= 0.1.171)
+  - react-native-skia/Api (0.1.171):
     - React
     - React-callinvoker
     - React-Core
-  - react-native-skia/Jsi (0.1.166):
+  - react-native-skia/Jsi (0.1.171):
     - React
     - React-callinvoker
     - React-Core
-  - react-native-skia/RNSkia (0.1.166):
+  - react-native-skia/RNSkia (0.1.171):
     - React
     - React-callinvoker
     - React-Core
-  - react-native-skia/SkiaHeaders (0.1.166):
+  - react-native-skia/SkiaHeaders (0.1.171):
     - React
     - React-callinvoker
     - React-Core
-  - react-native-skia/Utils (0.1.166):
+  - react-native-skia/Utils (0.1.171):
     - React
     - React-callinvoker
     - React-Core
@@ -460,9 +460,9 @@ PODS:
     - React-Core
   - RNFlashList (1.4.0):
     - React-Core
-  - RNGestureHandler (2.8.0):
+  - RNGestureHandler (2.9.0):
     - React-Core
-  - RNReanimated (2.13.0):
+  - RNReanimated (2.14.1):
     - DoubleConversion
     - FBLazyVector
     - FBReactNativeSpec
@@ -492,7 +492,7 @@ PODS:
   - RNScreens (3.18.2):
     - React-Core
     - React-RCTImage
-  - RNSVG (13.4.0):
+  - RNSVG (13.7.0):
     - React-Core
   - RNSyanImagePicker (0.5.3):
     - React
@@ -516,23 +516,23 @@ DEPENDENCIES:
   - boost (from `../node_modules/react-native/third-party-podspecs/boost.podspec`)
   - BVLinearGradient (from `../node_modules/react-native-linear-gradient`)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
-  - EXApplication (from `../node_modules/expo-application/ios`)
-  - EXAV (from `../node_modules/expo-av/ios`)
-  - EXBarCodeScanner (from `../node_modules/expo-barcode-scanner/ios`)
-  - EXBrightness (from `../node_modules/expo-brightness/ios`)
-  - EXCamera (from `../node_modules/expo-camera/ios`)
-  - EXConstants (from `../node_modules/expo-constants/ios`)
-  - EXErrorRecovery (from `../node_modules/expo-error-recovery/ios`)
-  - EXFileSystem (from `../node_modules/expo-file-system/ios`)
-  - EXFont (from `../node_modules/expo-font/ios`)
-  - EXGL (from `../node_modules/expo-gl`)
-  - EXImageLoader (from `../node_modules/expo-image-loader/ios`)
-  - EXLocation (from `../node_modules/expo-location/ios`)
-  - Expo (from `../node_modules/expo`)
-  - ExpoImagePicker (from `../node_modules/expo-image-picker/ios`)
-  - ExpoKeepAwake (from `../node_modules/expo-keep-awake/ios`)
-  - ExpoModulesCore (from `../node_modules/expo-modules-core`)
-  - EXSensors (from `../node_modules/expo-sensors/ios`)
+  - "EXApplication (from `../node_modules/.pnpm/expo-application@5.0.1_expo@47.0.13/node_modules/expo-application/ios`)"
+  - "EXAV (from `../node_modules/.pnpm/expo-av@13.0.2_expo@47.0.13/node_modules/expo-av/ios`)"
+  - "EXBarCodeScanner (from `../node_modules/.pnpm/expo-barcode-scanner@12.0.0_expo@47.0.13/node_modules/expo-barcode-scanner/ios`)"
+  - "EXBrightness (from `../node_modules/.pnpm/expo-brightness@11.0.1_expo@47.0.13/node_modules/expo-brightness/ios`)"
+  - "EXCamera (from `../node_modules/.pnpm/expo-camera@13.0.0_expo@47.0.13+react@18.2.0/node_modules/expo-camera/ios`)"
+  - "EXConstants (from `../node_modules/.pnpm/expo-constants@14.0.2_expo@47.0.13/node_modules/expo-constants/ios`)"
+  - "EXErrorRecovery (from `../node_modules/.pnpm/expo-error-recovery@4.0.1_expo@47.0.13/node_modules/expo-error-recovery/ios`)"
+  - "EXFileSystem (from `../node_modules/.pnpm/expo-file-system@15.1.1_expo@47.0.13/node_modules/expo-file-system/ios`)"
+  - "EXFont (from `../node_modules/.pnpm/expo-font@11.0.1_expo@47.0.13/node_modules/expo-font/ios`)"
+  - "EXGL (from `../node_modules/.pnpm/expo-gl@12.0.1_expo@47.0.13/node_modules/expo-gl`)"
+  - "EXImageLoader (from `../node_modules/.pnpm/expo-image-loader@4.0.0_expo@47.0.13/node_modules/expo-image-loader/ios`)"
+  - "EXLocation (from `../node_modules/.pnpm/expo-location@15.0.1_expo@47.0.13/node_modules/expo-location/ios`)"
+  - "Expo (from `../node_modules/.pnpm/expo@47.0.13_@babel+core@7.20.12/node_modules/expo`)"
+  - "ExpoImagePicker (from `../node_modules/.pnpm/expo-image-picker@14.0.2_expo@47.0.13/node_modules/expo-image-picker/ios`)"
+  - "ExpoKeepAwake (from `../node_modules/.pnpm/expo-keep-awake@11.0.1_expo@47.0.13/node_modules/expo-keep-awake/ios`)"
+  - "ExpoModulesCore (from `../node_modules/.pnpm/expo-modules-core@1.0.4/node_modules/expo-modules-core`)"
+  - "EXSensors (from `../node_modules/.pnpm/expo-sensors@12.0.1_expo@47.0.13/node_modules/expo-sensors/ios`)"
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - FBReactNativeSpec (from `../node_modules/react-native/React/FBReactNativeSpec`)
   - Flipper (= 0.125.0)
@@ -578,7 +578,7 @@ DEPENDENCIES:
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - "react-native-cameraroll (from `../node_modules/@react-native-camera-roll/camera-roll`)"
   - "react-native-geolocation (from `../node_modules/@react-native-community/geolocation`)"
-  - react-native-image-resizer (from `../node_modules/react-native-image-resizer`)
+  - "react-native-image-resizer (from `../node_modules/@bam.tech/react-native-image-resizer`)"
   - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
   - react-native-pager-view (from `../node_modules/react-native-pager-view`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
@@ -639,39 +639,39 @@ EXTERNAL SOURCES:
   DoubleConversion:
     :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
   EXApplication:
-    :path: "../node_modules/expo-application/ios"
+    :path: "../node_modules/.pnpm/expo-application@5.0.1_expo@47.0.13/node_modules/expo-application/ios"
   EXAV:
-    :path: "../node_modules/expo-av/ios"
+    :path: "../node_modules/.pnpm/expo-av@13.0.2_expo@47.0.13/node_modules/expo-av/ios"
   EXBarCodeScanner:
-    :path: "../node_modules/expo-barcode-scanner/ios"
+    :path: "../node_modules/.pnpm/expo-barcode-scanner@12.0.0_expo@47.0.13/node_modules/expo-barcode-scanner/ios"
   EXBrightness:
-    :path: "../node_modules/expo-brightness/ios"
+    :path: "../node_modules/.pnpm/expo-brightness@11.0.1_expo@47.0.13/node_modules/expo-brightness/ios"
   EXCamera:
-    :path: "../node_modules/expo-camera/ios"
+    :path: "../node_modules/.pnpm/expo-camera@13.0.0_expo@47.0.13+react@18.2.0/node_modules/expo-camera/ios"
   EXConstants:
-    :path: "../node_modules/expo-constants/ios"
+    :path: "../node_modules/.pnpm/expo-constants@14.0.2_expo@47.0.13/node_modules/expo-constants/ios"
   EXErrorRecovery:
-    :path: "../node_modules/expo-error-recovery/ios"
+    :path: "../node_modules/.pnpm/expo-error-recovery@4.0.1_expo@47.0.13/node_modules/expo-error-recovery/ios"
   EXFileSystem:
-    :path: "../node_modules/expo-file-system/ios"
+    :path: "../node_modules/.pnpm/expo-file-system@15.1.1_expo@47.0.13/node_modules/expo-file-system/ios"
   EXFont:
-    :path: "../node_modules/expo-font/ios"
+    :path: "../node_modules/.pnpm/expo-font@11.0.1_expo@47.0.13/node_modules/expo-font/ios"
   EXGL:
-    :path: "../node_modules/expo-gl"
+    :path: "../node_modules/.pnpm/expo-gl@12.0.1_expo@47.0.13/node_modules/expo-gl"
   EXImageLoader:
-    :path: "../node_modules/expo-image-loader/ios"
+    :path: "../node_modules/.pnpm/expo-image-loader@4.0.0_expo@47.0.13/node_modules/expo-image-loader/ios"
   EXLocation:
-    :path: "../node_modules/expo-location/ios"
+    :path: "../node_modules/.pnpm/expo-location@15.0.1_expo@47.0.13/node_modules/expo-location/ios"
   Expo:
-    :path: "../node_modules/expo"
+    :path: "../node_modules/.pnpm/expo@47.0.13_@babel+core@7.20.12/node_modules/expo"
   ExpoImagePicker:
-    :path: "../node_modules/expo-image-picker/ios"
+    :path: "../node_modules/.pnpm/expo-image-picker@14.0.2_expo@47.0.13/node_modules/expo-image-picker/ios"
   ExpoKeepAwake:
-    :path: "../node_modules/expo-keep-awake/ios"
+    :path: "../node_modules/.pnpm/expo-keep-awake@11.0.1_expo@47.0.13/node_modules/expo-keep-awake/ios"
   ExpoModulesCore:
-    :path: "../node_modules/expo-modules-core"
+    :path: "../node_modules/.pnpm/expo-modules-core@1.0.4/node_modules/expo-modules-core"
   EXSensors:
-    :path: "../node_modules/expo-sensors/ios"
+    :path: "../node_modules/.pnpm/expo-sensors@12.0.1_expo@47.0.13/node_modules/expo-sensors/ios"
   FBLazyVector:
     :path: "../node_modules/react-native/Libraries/FBLazyVector"
   FBReactNativeSpec:
@@ -715,7 +715,7 @@ EXTERNAL SOURCES:
   react-native-geolocation:
     :path: "../node_modules/@react-native-community/geolocation"
   react-native-image-resizer:
-    :path: "../node_modules/react-native-image-resizer"
+    :path: "../node_modules/@bam.tech/react-native-image-resizer"
   react-native-netinfo:
     :path: "../node_modules/@react-native-community/netinfo"
   react-native-pager-view:
@@ -796,13 +796,13 @@ SPEC CHECKSUMS:
   EXGL: 5f24aaf2552f784d5d59e960823faf53d120893c
   EXImageLoader: 84b65e6bd9d3345d6fbb3ab936a546c54496a64d
   EXLocation: 7d08926d931f4fb619bfa25e73669f1e19b102c6
-  Expo: 5523a4835730104a301caeac1e68dad095a9dfff
+  Expo: b9fa98bf260992312ee3c424400819fb9beadafe
   ExpoImagePicker: d2a1cea4023008ae2fb0d95f33422b80772cc76e
   ExpoKeepAwake: 69b59d0a8d2b24de9f82759c39b3821fec030318
   ExpoModulesCore: 8211c89bcc3ba86e2d02c54b1d31f1fa81acb6de
   EXSensors: c4d17812887f3b8bec1da3c1e501a1d7b02bf19d
   FBLazyVector: 48289402952f4f7a4e235de70a9a590aa0b79ef4
-  FBReactNativeSpec: dd1186fd05255e3457baa2f4ca65e94c2cd1e3ac
+  FBReactNativeSpec: 2aa86faecf44fc729a5977d9e0f7b8f9ead9e52f
   Flipper: 26fc4b7382499f1281eb8cb921e5c3ad6de91fe0
   Flipper-Boost-iOSX: fd1e2b8cbef7e662a122412d7ac5f5bea715403c
   Flipper-DoubleConversion: 2dc99b02f658daf147069aad9dbd29d8feb06d30
@@ -813,7 +813,7 @@ SPEC CHECKSUMS:
   Flipper-RSocket: d9d9ade67cbecf6ac10730304bf5607266dd2541
   FlipperKit: cbdee19bdd4e7f05472a66ce290f1b729ba3cb86
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
-  glog: 3d02b25ca00c2d456734d0bcff864cbc62f6ae1a
+  glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   lottie-ios: 69495122151a378fdc7d1bb4c5930347e37baf1f
   lottie-react-native: b702fab740cdb952a8e2354713d3beda63ff97b0
@@ -834,11 +834,11 @@ SPEC CHECKSUMS:
   React-logger: 1623c216abaa88974afce404dc8f479406bbc3a0
   react-native-cameraroll: 38b40d9033e4077b6c603f92f95c6d05fa7907df
   react-native-geolocation: 3ed60c3d7f613c36b777b9fd0bc3453214e1b0d5
-  react-native-image-resizer: d9fb629a867335bdc13230ac2a58702bb8c8828f
+  react-native-image-resizer: 794abf75ec13ed1f0dbb1f134e27504ea65e9e66
   react-native-netinfo: 2517ad504b3d303e90d7a431b0fcaef76d207983
   react-native-pager-view: 592421df0259bf7a7a4fe85b74c24f3f39905605
   react-native-safe-area-context: 99b24a0c5acd0d5dcac2b1a7f18c49ea317be99a
-  react-native-skia: 6362ec5306b5d3d69b8babb7a6439589e1a00ab8
+  react-native-skia: 8fdae2025034c817aea3a89d02b807ff444817be
   react-native-slider: 7d19220da2f2ae7cbb9aa80127cb73c597fa221f
   react-native-splash-screen: 4312f786b13a81b5169ef346d76d33bc0c6dc457
   react-native-webview: d33e2db8925d090871ffeb232dfa50cb3a727581
@@ -860,10 +860,10 @@ SPEC CHECKSUMS:
   RNCPicker: 0bf8ef8f7800524f32d2bb2a8bcadd53eda0ecd1
   RNDeviceInfo: 4701f0bf2a06b34654745053db0ce4cb0c53ada7
   RNFlashList: 399bf6a0db68f594ad2c86aaff3ea39564f39f8a
-  RNGestureHandler: 62232ba8f562f7dea5ba1b3383494eb5bf97a4d3
-  RNReanimated: ce445c233a6ff5600223484a88ad5704945d972a
+  RNGestureHandler: 071d7a9ad81e8b83fe7663b303d132406a7d8f39
+  RNReanimated: 4c8eb19f5f8b99d367466c877c9bb1d3494fba18
   RNScreens: 34cc502acf1b916c582c60003dc3089fa01dc66d
-  RNSVG: 07dbd870b0dcdecc99b3a202fa37c8ca163caec2
+  RNSVG: d787d64ca06b9158e763ad2638a8c4edce00782a
   RNSyanImagePicker: 5c650d33f16f7cd59c47d9269f6c4856b30d7616
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
   TZImagePickerController: e9909edbadf7381140efc5b5c9f5bdbfd630f7d4
