@@ -121,7 +121,7 @@
     "taro-lottie": "^1.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9",
+    "@babel/core": "^7.20.12",
     "@pmmmwh/react-refresh-webpack-plugin": "0.5.5",
     "@tarojs/cli": "3.6.0-alpha.3",
     "@tarojs/plugin-mini-ci": "3.6.0-alpha.3",

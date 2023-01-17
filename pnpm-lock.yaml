@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@babel/core': ^7.12.9
+  '@babel/core': ^7.20.12
   '@babel/runtime': ^7.7.7
   '@bam.tech/react-native-image-resizer': ~3.0.4
   '@pmmmwh/react-refresh-webpack-plugin': 0.5.5
@@ -7195,8 +7195,6 @@ packages:
       babel-register: 6.26.0
       babylon: 6.18.0
       require-from-string: 2.0.2
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /babel-plugin-react-native-web/0.18.10:
