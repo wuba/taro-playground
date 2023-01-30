@@ -19,9 +19,9 @@ env:
   # 打包类型
   BUILD_TYPE: release
   # 版本名称
-  VERSION_NAME: 1.7.4
+  VERSION_NAME: 1.7.5
   # 版本号
-  VERSION_CODE: 17400
+  VERSION_CODE: 17500
   # 密钥库文件
   KEYSTORE_FILE: release.keystore
   # 密钥库口令
