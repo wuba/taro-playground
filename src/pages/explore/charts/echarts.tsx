@@ -71,7 +71,6 @@ echarts.use([
   CalendarComponent,
   DatasetComponent,
   CustomChart,
-  DataZoomComponent,
   ThemeRiverChart,
   PictorialBarChart,
   GaugeChart,
