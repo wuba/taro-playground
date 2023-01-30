@@ -896,8 +896,7 @@ const routes = [
       },
       {
         title: '时钟仪表盘',
-        url: `${prefix}gauge/clock`,
-        state: true
+        url: `${prefix}gauge/clock`
       },
       {
         title: 'Gauge Car',
