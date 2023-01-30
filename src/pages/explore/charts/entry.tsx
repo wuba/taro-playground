@@ -962,10 +962,6 @@ const routes = [
     title: '日历坐标系',
     routes: [
       {
-        title: '日历饼图',
-        url: `${prefix}pie/calendarPie`
-      },
-      {
         title: '基础日历图',
         url: `${prefix}calendar/calendarSimple`
       },
