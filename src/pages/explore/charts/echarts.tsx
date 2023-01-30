@@ -106,7 +106,7 @@ echarts.use([
 const E_HEIGHT = 320;
 const E_WIDTH = Dimensions.get('screen').width;
 interface EchartsPageProps {
-  option: any;
+  option?: any;
   width?: number;
   height?: number;
   onSVGInit?: (chart: any) => void;
@@ -124,7 +124,7 @@ export default function EchartsPage({ option, width = E_WIDTH, height = E_HEIGHT
         width,
         height
       });
-      chart.setOption(option);
+      option && chart.setOption(option);
       onSVGInit?.(chart);
     }
     return () => chart?.dispose();
@@ -139,7 +139,7 @@ export default function EchartsPage({ option, width = E_WIDTH, height = E_HEIGHT
         width,
         height
       });
-      chart.setOption(option);
+      option && chart.setOption(option);
       onSkiaInit?.(chart);
     }
     return () => chart?.dispose();

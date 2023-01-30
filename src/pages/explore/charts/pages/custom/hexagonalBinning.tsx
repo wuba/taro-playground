@@ -1,6 +1,5 @@
-import { View } from '@tarojs/components';
 import Taro from '@tarojs/taro';
-import { useEffect, useState } from 'react';
+import { useCallback } from 'react';
 import * as echarts from 'echarts/core';
 import Chart from '../../echarts';
 import '../style.scss';
@@ -8,8 +7,7 @@ import '../style.scss';
 https://echarts.apache.org/examples/zh/editor.html?c=custom-hexbin
  */
 const ROOT_PATH = 'https://echarts.apache.org/examples'
-export default function hexagonalBinning() {
-  const [option, setOption] = useState<any>();
+export default function HexagonalBinning() {
   function hexBinStatistics(points, r) {
     var dx = r * 2 * Math.sin(Math.PI / 3);
     var dy = r * 1.5;
@@ -55,23 +53,26 @@ export default function hexagonalBinning() {
       bins: bins
     };
   }
-  useEffect(() => {
+  const onInit = useCallback(chart => {
+    chart.showLoading();
     Taro.request({
-      url: 'https://echarts.apache.org/examples/data/asset/data/kawhi-leonard-16-17-regular.json',
+      url: `${ROOT_PATH}/data/asset/data/kawhi-leonard-16-17-regular.json`,
       data: {},
       header: {
         'content-type': 'application/json'
       },
+      timeout: 10000,
       success: outeRes => {
         Taro.request({
-          url: 'https://echarts.apache.org/examples/data/asset/data/nba-court.json',
+          url: `${ROOT_PATH}/data/asset/data/nba-court.json`,
           data: {},
           header: {
             'content-type': 'application/json'
           },
+          timeout: 10000,
           success: innerRes => {
-            const shotData = outeRes.data[0];
-            const nbaCourt = innerRes.data[0];
+            const shotData = outeRes.data;
+            const nbaCourt = innerRes.data;
             echarts.registerMap('nbaCourt', nbaCourt.borderGeoJSON);
             var backgroundColor = '#333';
             var hexagonRadiusInGeo = 1;
@@ -251,8 +252,8 @@ export default function hexagonalBinning() {
                 }
               ]
             };
-            setOption(option)
-    
+            chart.hideLoading()
+            chart.setOption(option)
           },
           fail: err => {
             console.log(err);
@@ -273,14 +274,5 @@ export default function hexagonalBinning() {
       }
     });
   }, []);
-  return option ? (
-    <View>
-      <View className="header">六边形分箱图（自定义系列）</View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
-  ) : (
-    <View>Loading...</View>
-  );
+  return <Chart onSVGInit={onInit} onSkiaInit={onInit} />;
 }
