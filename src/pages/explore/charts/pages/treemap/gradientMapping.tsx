@@ -1,10 +1,11 @@
-import { View } from '@tarojs/components';
-import Taro from '@tarojs/taro';
-import { useEffect, useState } from 'react';
+import { setNavigationBarTitle, request, showToast } from '@tarojs/taro';
+import { useEffect, useCallback } from 'react';
 import * as echarts from 'echarts/core';
 import Chart from '../../echarts';
 import '../style.scss';
-
+/**
+ * https://echarts.apache.org/examples/zh/editor.html?c=treemap-visual
+ */
 interface TreeNode {
   name: string;
   id: string;
@@ -12,15 +13,21 @@ interface TreeNode {
 
   children?: TreeNode[];
 }
-export default function gradientMapping() {
-  const [option, setOption] = useState<any>();
+export default function GradientMapping() {
   useEffect(() => {
-    Taro.request({
+    setNavigationBarTitle({
+      title: '映射为渐变色'
+    });
+  }, []);
+  const onInit = useCallback((myChart) => {
+    myChart.showLoading();
+    request({
       url: 'https://echarts.apache.org/examples/data/asset/data/obama_budget_proposal_2012.json',
       data: {},
       header: {
         'content-type': 'application/json'
       },
+      timeout: 10000,
       success: res => {
         const { data } = res;
         const visualMin = -100;
@@ -81,7 +88,8 @@ export default function gradientMapping() {
         function isValidNumber(num: number) {
           return num != null && isFinite(num);
         }
-        setOption({
+        myChart.hideLoading();
+        myChart.setOption({
           title: {
             left: 'center',
             text: 'Gradient Mapping',
@@ -152,20 +160,11 @@ export default function gradientMapping() {
       },
       fail: err => {
         console.log(err);
-        Taro.showToast({
+        showToast({
           title: '数据请求失败'
         });
       }
     });
   }, []);
-  return option ? (
-    <View>
-      <View className="header">映射为渐变色（skia渲染报错）</View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
-  ) : (
-    <View>Loading...</View>
-  );
+  return <Chart onSVGInit={onInit} onSkiaInit={onInit} />;
 }
