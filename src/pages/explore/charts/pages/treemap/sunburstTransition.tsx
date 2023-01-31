@@ -1,14 +1,16 @@
-import { View } from '@tarojs/components';
-import Taro from '@tarojs/taro';
-import { useEffect, useState } from 'react';
+import { setNavigationBarTitle, request, showToast } from '@tarojs/taro';
+import { useEffect, useCallback, useRef } from 'react';
 import Chart from '../../echarts';
 import '../style.scss';
 
-let timer;
-export default function BarPolarRealEstate() {
-  const [option, setOption] = useState<any>();
+export default function SunburstTransition() {
+  const myChart = useRef<any>([]);
   useEffect(() => {
-    Taro.request({
+    let timer;
+    setNavigationBarTitle({
+      title: '矩形树图和旭日图的动画过渡'
+    });
+    request({
       url: 'https://echarts.apache.org/examples/data/asset/data/echarts-package-size.json',
       data: {},
       header: {
@@ -55,36 +57,30 @@ export default function BarPolarRealEstate() {
           ]
         };
         let currentOption = treemapOption as any;
-        setOption(currentOption)
+        myChart.current.map(chart => {
+          chart.setOption(currentOption)
+        });
         timer = setInterval(function () {
-          console.log('------定时器执行')
-          currentOption =
-            currentOption === treemapOption ? sunburstOption : treemapOption;
-            setOption(currentOption);
+          currentOption = currentOption === treemapOption ? sunburstOption : treemapOption;
+          myChart.current.map(chart => {
+            chart.setOption(currentOption)
+          });
         }, 3000);
       },
       fail: err => {
         console.log(err);
-        Taro.showToast({
+        showToast({
           icon: 'none',
           title: '数据请求失败'
         });
       }
     });
     return () => {
-      console.log('clear timer!!!') 
       clearInterval(timer)
     }
   }, []);
-
-  return option ? (
-    <View>
-      <View className="header">矩形树图和旭日图的动画过渡（动画未执行）</View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
-  ) : (
-    <View>Loading...</View>
-  );
+  const onInit = useCallback(chart => {
+    myChart.current.push(chart);
+  }, []);
+  return <Chart onSVGInit={onInit} onSkiaInit={onInit} />;
 }
