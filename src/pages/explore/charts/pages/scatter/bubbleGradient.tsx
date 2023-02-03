@@ -1,9 +1,13 @@
-import { View } from '@tarojs/components';
+import { setNavigationBarTitle } from '@tarojs/taro';
+import { useEffect } from 'react';
 import * as echarts from 'echarts/core';
 import Chart from '../../echarts';
 import '../style.scss';
 
-export default function barPolarRealEstate() {
+export default function BubbleGradient() {
+  useEffect(() => {
+    setNavigationBarTitle({ title: '气泡图' })
+  }, []);
   const data = [
     [
       [28604, 77, 17096869, 'Australia', 1990],
@@ -158,12 +162,5 @@ export default function barPolarRealEstate() {
     ]
   };
 
-  return (
-    <View>
-      <View className="header">气泡图</View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
-  );
+  return <Chart option={option} />;
 }

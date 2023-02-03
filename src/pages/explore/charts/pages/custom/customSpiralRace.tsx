@@ -1,5 +1,5 @@
-import { View } from '@tarojs/components';
-import { useEffect, useState } from 'react';
+import { setNavigationBarTitle } from '@tarojs/taro';
+import { useEffect, useCallback, useRef } from 'react';
 import Chart from '../../echarts';
 import '../style.scss';
 /**
@@ -22,7 +22,6 @@ var _colors = [
     { fill: '#91cc75', text: '#447f27' },
     { fill: '#fac858', text: '#a0761c' }
 ];
-var _currentDataIndex = 0;
 // prettier-ignore
 var _datasourceList = [
     [[1, 3], [2, 6], [3, 9]],
@@ -36,7 +35,7 @@ var _datasourceList = [
     [[1, 60], [2, 63], [3, 69]],
 ];
 var _barNamesByOrdinal = { 1: 'A', 2: 'B', 3: 'C' };
-function getMaxRadius() {
+function getMaxRadius(_currentDataIndex) {
   var radius = 0;
   var datasource = _datasourceList[_currentDataIndex];
   for (var j = 0; j < datasource.length; j++) {
@@ -191,19 +190,19 @@ function addLabel(
     },
     z2: 50,
     during: function (apiDuring) {
-      var endRadian = apiDuring.getExtra('endRadian');
-      var point = makeLabelPosition(
+      var endR = apiDuring.getExtra('endRadian');
+      var p = makeLabelPosition(
         params,
         apiDuring.getExtra('widthRadius'),
         apiDuring.getExtra('startRadius'),
-        endRadian
+        endR
       );
-      apiDuring.setTransform('x', point[0]).setTransform('y', point[1]);
-      apiDuring.setStyle('text', makeText(endRadian));
+      apiDuring.setTransform('x', p[0]).setTransform('y', p[1]);
+      apiDuring.setStyle('text', makeText(endR));
     }
   });
-  function makeText(endRadian) {
-    var radian = _startRadian - endRadian;
+  function makeText(endR) {
+    var radian = _startRadian - endR;
     var PI2 = Math.PI * 2;
     var round = Math.floor(radian / PI2);
     var percent = (((radian / PI2) % 1) * 100).toFixed(1) + '%';
@@ -221,75 +220,80 @@ function convertToPolarPoint(renderItemParams, radius, radian) {
     -Math.sin(radian) * radius + renderItemParams.coordSys.cy
   ];
 }
-const initialData = {
-  animationDuration: _animationDuration,
-  animationDurationUpdate: _animationDurationUpdate,
-  animationEasingUpdate: _animationEasingUpdate,
-  dataset: {
-    source: _datasourceList[_currentDataIndex]
-  },
-  tooltip: {},
-  angleAxis: {
-    type: 'value',
-    splitArea: { show: true },
-    axisLabel: {
-      formatter: function (val) {
-        return _radianLabels[val];
+export default function CustomSpiralRace() {
+  const myChart = useRef<any>([]);
+  const option = {
+    animationDuration: _animationDuration,
+    animationDurationUpdate: _animationDurationUpdate,
+    animationEasingUpdate: _animationEasingUpdate,
+    dataset: {
+      source: _datasourceList[0]
+    },
+    tooltip: {},
+    angleAxis: {
+      type: 'value',
+      splitArea: { show: true },
+      axisLabel: {
+        formatter: function (val) {
+          return _radianLabels[val];
+        },
+        color: 'rgba(0,0,0,0.2)'
       },
-      color: 'rgba(0,0,0,0.2)'
+      axisLine: { lineStyle: { color: 'rgba(0,0,0,0.2)' } },
+      min: 0,
+      max: _valOnRoundRadian
     },
-    axisLine: { lineStyle: { color: 'rgba(0,0,0,0.2)' } },
-    min: 0,
-    max: _valOnRoundRadian
-  },
-  radiusAxis: {
-    type: 'value',
-    interval: 1,
-    splitLine: { show: false },
-    axisLabel: {
-      color: 'rgba(0,0,0,0.6)',
-      formatter: function (value) {
-        return _barNamesByOrdinal[value] || '';
+    radiusAxis: {
+      type: 'value',
+      interval: 1,
+      splitLine: { show: false },
+      axisLabel: {
+        color: 'rgba(0,0,0,0.6)',
+        formatter: function (value) {
+          return _barNamesByOrdinal[value] || '';
+        }
+      },
+      axisTick: { show: false },
+      axisLine: { lineStyle: { color: 'rgba(0,0,0,0.2)' } },
+      min: 0,
+      max: getMaxRadius(0)
+    },
+    polar: {},
+    series: [
+      {
+        type: 'custom',
+        coordinateSystem: 'polar',
+        renderItem: renderItem
       }
-    },
-    axisTick: { show: false },
-    axisLine: { lineStyle: { color: 'rgba(0,0,0,0.2)' } },
-    min: 0,
-    max: getMaxRadius()
-  },
-  polar: {},
-  series: [
-    {
-      type: 'custom',
-      coordinateSystem: 'polar',
-      renderItem: renderItem
-    }
-  ]
-};
-export default function customSpiralRace() {
-  const [option, setOption] = useState<any>(initialData);
-  let timeOut
+    ]
+  };
   useEffect(() => {
+    setNavigationBarTitle({ title: '自定义螺旋线竞速' })
+    let timeOut
+    let _currentDataIndex = 0;
     function next() {
       ++_currentDataIndex;
-      option.dataset.source = _datasourceList[_currentDataIndex]
-      option.radiusAxis.max = getMaxRadius()
-      setOption({...option});
+      myChart.current.map(chart => {
+        chart.setOption({
+          dataset: {
+            source: _datasourceList[_currentDataIndex]
+          },
+          radiusAxis: {
+            max: getMaxRadius(_currentDataIndex)
+          }
+        });
+      });
       if (_currentDataIndex < _datasourceList.length - 1) {
         timeOut = setTimeout(next, _animationDurationUpdate);
       }
     }
+    next();
     return () => {
-      clearInterval(timeOut);
+      clearTimeout(timeOut);
     };
-  }, [option])
-  
-  return (
-    <View>
-      <View className="header">自定义螺旋线竞速（动画没生效）</View>
-      <View className="body">
-        { <Chart option={option} /> }
-      </View>
-    </View>
-  );
+  }, [])
+  const onInit = useCallback(chart => {
+    myChart.current.push(chart);
+  }, []);
+  return <Chart option={option} onSVGInit={onInit} onSkiaInit={onInit} />;
 }

@@ -142,7 +142,6 @@ if (process.env.TARO_ENV === 'rn') {
       'pages/bar/barPolarRealEstate',
       'pages/scatter/bubbleGradient',
       'pages/pie/pieNest',
-      'pages/pie/calendarPie',
       'pages/pie/pieSimple',
       'pages/pie/pieBorderRadius',
       'pages/pie/pieDoughnut',

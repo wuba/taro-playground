@@ -1,4 +1,5 @@
-import { View } from '@tarojs/components';
+import { setNavigationBarTitle } from '@tarojs/taro';
+import { useEffect } from 'react';
 import * as echarts from 'echarts/core';
 import Chart from '../../echarts';
 import '../style.scss';
@@ -7,7 +8,10 @@ import '../style.scss';
 https://echarts.apache.org/examples/zh/editor.html?c=radar-custom
  */
 
-export default function radarCustom() {
+export default function RadarCustom() {
+  useEffect(() => {
+    setNavigationBarTitle({ title: '自定义雷达图' })
+  }, []);
   const option = {
     color: ['#67F9D8', '#FFE434', '#56A3F1', '#FF917C'],
     title: {
@@ -114,7 +118,8 @@ export default function radarCustom() {
             value: [100, 93, 50, 90, 70, 60],
             name: 'Data D',
             areaStyle: {
-              color: new echarts.graphic.RadialGradient(0.1, 0.6, 1, [
+              // fixme: can not use RadialGradient
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
                 {
                   color: 'rgba(255, 145, 124, 0.1)',
                   offset: 0
@@ -130,12 +135,5 @@ export default function radarCustom() {
       }
     ]
   };
-  return (
-    <View>
-      <View className="header">自定义雷达图</View>
-      <View className="body">
-        <Chart option={option} />
-      </View>
-    </View>
-  );
+  return <Chart option={option} />;
 }
