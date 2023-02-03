@@ -5,6 +5,8 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 platform :ios, '13.0'
 install! 'cocoapods', :deterministic_uuids => false
 
+production = ENV["PRODUCTION"] == "1"
+
 target 'taroDemo' do
   use_expo_modules!
   post_integrate do |installer|
