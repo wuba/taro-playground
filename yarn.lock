@@ -3360,6 +3360,19 @@
     memoize-one "^6.0.0"
     postcss "^8.4.18"
 
+"@tarojs/components-react@3.6.0":
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/@tarojs/components-react/-/components-react-3.6.0.tgz#37fcf15dfd86f9aa6646a8a59704ee6eedb7fe96"
+  integrity sha512-jgE8W3VvFSKYxxbtcO4qG0VAlLALn/Qssu6elaLVCNj4TiTlLB/UG9595yKxzmjHJIrgLyHFVwImTtH7TWkwrQ==
+  dependencies:
+    "@babel/runtime" "^7.14.5"
+    "@tarojs/components" "3.6.0"
+    classnames "^2.2.5"
+    intersection-observer "^0.7.0"
+    resolve-pathname "^3.0.0"
+    swiper "6.8.0"
+    weui "^1.1.2"
+
 "@tarojs/components-rn@3.6.0":
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/@tarojs/components-rn/-/components-rn-3.6.0.tgz#f195809718952d96594e41741d711cb1f9277376"
@@ -3482,6 +3495,20 @@
     "@tarojs/components" "3.6.0"
     "@tarojs/service" "3.6.0"
     "@tarojs/shared" "3.6.0"
+
+"@tarojs/plugin-platform-h5@3.6.0":
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/@tarojs/plugin-platform-h5/-/plugin-platform-h5-3.6.0.tgz#1b3fa788d1d12a8b491ce7fca0f122f671fad5e7"
+  integrity sha512-jcOYu+t36KycMISDUdxPpcgOnXS4E+t3kPPJfBWvt0fqrqE7bugjuPZqRzU3tVga0Qd6C6yM8gzZNHH0B1bt3g==
+  dependencies:
+    "@tarojs/components" "3.6.0"
+    "@tarojs/components-react" "3.6.0"
+    "@tarojs/router" "3.6.0"
+    "@tarojs/service" "3.6.0"
+    "@tarojs/shared" "3.6.0"
+    "@tarojs/taro-h5" "3.6.0"
+    babel-plugin-transform-taroapi "3.6.0"
+    resolve "^1.22.0"
 
 "@tarojs/plugin-platform-jd@3.6.0":
   version "3.6.0"

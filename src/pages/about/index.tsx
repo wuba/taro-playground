@@ -8,7 +8,7 @@
 import { Component } from 'react'
 import Taro from '@tarojs/taro';
 import { View, Image, Text } from '@tarojs/components';
-import taroVersion from '@tarojs/taro/package.json';
+import taroVersion from '@tarojs/taro-rn/package.json';
 import rnVersion from 'react-native/package.json';
 import { isWeb, isRN, loadWeb, loadMini, loadRn } from "@/utils/index";
 import List from '@/components/list/list';
