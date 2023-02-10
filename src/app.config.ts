@@ -82,7 +82,7 @@ const pages = [
   'pages/components/pages/textarea/textarea',
   // 'pages/components/pages/canvas/canvas',
   // 'pages/components/pages/map/map',
-  // 'pages/components/pages/navigator/navigator',
+  'pages/components/pages/navigator/navigator',
   'pages/components/pages/virtual-list/virtual-list',
   'pages/components/pages/movable-view/movable-view',
   // 组件相关 end
@@ -142,7 +142,6 @@ if (process.env.TARO_ENV === 'rn') {
       'pages/bar/barPolarRealEstate',
       'pages/scatter/bubbleGradient',
       'pages/pie/pieNest',
-      'pages/pie/calendarPie',
       'pages/pie/pieSimple',
       'pages/pie/pieBorderRadius',
       'pages/pie/pieDoughnut',

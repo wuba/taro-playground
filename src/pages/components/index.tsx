@@ -5,6 +5,7 @@ import viewPng from "@/assets/iconpark/waterfalls-h.png";
 import contentPng from "@/assets/iconpark/add-text-two.png";
 import formPng from "@/assets/iconpark/list-view.png";
 import mediaPng from "@/assets/iconpark/play-two.png";
+import navPng from "@/assets/iconpark/navigation.png";
 
 import "./index.scss";
 
@@ -13,6 +14,7 @@ const PNGS = {
   contentPng,
   formPng,
   mediaPng,
+  navPng,
 };
 
 export default class Index extends Component<never, any> {
@@ -57,13 +59,12 @@ export default class Index extends Component<never, any> {
             "textarea"
           ]
         },
-        // NOTE: RN 暂不支持 Navigator 组件
-        // {
-        //   id: "nav",
-        //   name: "导航",
-        //   open: false,
-        //   pages: ["navigator"]
-        // },
+        {
+          id: "nav",
+          name: "导航",
+          open: false,
+          pages: ["navigator"]
+        },
         {
           id: "media",
           name: "媒体组件",

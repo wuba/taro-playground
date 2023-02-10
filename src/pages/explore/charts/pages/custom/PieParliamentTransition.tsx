@@ -1,5 +1,5 @@
-import { View } from '@tarojs/components';
-import { useEffect, useState } from 'react';
+import { setNavigationBarTitle } from '@tarojs/taro';
+import { useEffect, useRef, useCallback } from 'react';
 import Chart from '../../echarts';
 import '../style.scss';
 /**
@@ -42,8 +42,8 @@ const pieOption = {
   ]
 };
 const parliamentOption = (function () {
-  let sum = data.reduce(function (sum, cur) {
-    return sum + cur.value;
+  let sum = data.reduce(function (s, cur) {
+    return s + cur.value;
   }, 0);
   let angles = [] as any;
   let startAngle = -Math.PI / 2;
@@ -53,7 +53,7 @@ const parliamentOption = (function () {
     curAngle += (item.value / sum) * Math.PI * 2;
   });
   angles.push(startAngle + Math.PI * 2);
-  function parliamentLayout(startAngle, endAngle, totalAngle, r0, r1, size) {
+  function parliamentLayout(startA, endA, totalAngle, r0, r1, size) {
     let rowsCount = Math.ceil((r1 - r0) / size);
     let points = [] as any;
     let r = r0;
@@ -62,8 +62,8 @@ const parliamentOption = (function () {
       let totalRingSeatsNumber = Math.round((totalAngle * r) / size);
       let newSize = (totalAngle * r) / totalRingSeatsNumber;
       for (
-        let k = Math.floor((startAngle * r) / newSize) * newSize;
-        k < Math.floor((endAngle * r) / newSize) * newSize - 1e-6;
+        let k = Math.floor((startA * r) / newSize) * newSize;
+        k < Math.floor((endA * r) / newSize) * newSize - 1e-6;
         k += newSize
       ) {
         let angle = k / r;
@@ -121,24 +121,22 @@ const parliamentOption = (function () {
   };
 })();
 export default function PieParliamentTransition() {
-  let [option, setOption] = useState<any>(pieOption);
-  let interval
+  const myChart = useRef<any>([]);
   useEffect(() => {
-    interval = setInterval(function () {
-      let currentOption = option === pieOption ? parliamentOption : pieOption;
-      setOption({...currentOption});
+    setNavigationBarTitle({ title: '自定义议会图与饼图过渡动画' })
+    let currentOption:any = (pieOption);
+    const interval = setInterval(function () {
+      currentOption = currentOption === pieOption ? parliamentOption : pieOption;
+      myChart.current.map(chart => {
+        chart.setOption(currentOption);
+      });
     }, 2000);
     return () => {
       clearInterval(interval);
     };
-  }, [option])
-  
-  return (
-    <View>
-      <View className="header">自定义议会图与饼图过渡动画</View>
-      <View className="body">
-        { <Chart option={option} /> }
-      </View>
-    </View>
-  );
+  }, [])
+  const onInit = useCallback(chart => {
+    myChart.current.push(chart);
+  }, []);
+  return <Chart option={pieOption} onSVGInit={onInit} onSkiaInit={onInit} />;
 }

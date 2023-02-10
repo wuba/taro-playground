@@ -1,12 +1,13 @@
-import { View } from '@tarojs/components';
-import { useEffect, useState, useRef } from 'react';
+import { setNavigationBarTitle } from '@tarojs/taro';
+import { useEffect, useRef, useCallback } from 'react';
 import Chart from '../../echarts';
 import '../style.scss';
 /**
 https://echarts.apache.org/examples/zh/editor.html?c=gauge-clock
  */
-export default function clock() {
-  const initialData  = {
+export default function Clock() {
+  const option  = {
+    animationDurationUpdate: 300,
     series: [
       {
         name: 'hour',
@@ -197,41 +198,43 @@ export default function clock() {
       }
     ]
   };
-  const [option, setOption] = useState<any>(initialData);
-  let interval
+  const myChart = useRef<any>([]);
   useEffect(() => {
-    interval = setInterval(function () {
-      var date = new Date();
-      var second = date.getSeconds();
-      var minute = date.getMinutes() + second / 60;
-      var hour = (date.getHours() % 12) + minute / 60;
-      option.animationDurationUpdate = 300;
-
-      option.series[0].name = 'hour'
-      option.series[0].animation = hour !== 0
-      option.series[0].data = [{ value: hour.toFixed(2) }]
-
-      option.series[1].name = 'minute'
-      option.series[1].animation = minute !== 0
-      option.series[1].data = [{ value: minute.toFixed(2) }]
-
-      option.series[2].name = 'second'
-      option.series[2].animation = second !== 0
-      option.series[2].data = [{ value: second.toFixed(2) }]
-
-      setOption({...option});
+    setNavigationBarTitle({ title: '时钟仪表盘' });
+    const interval = setInterval(function () {
+      const date = new Date();
+      const second = date.getSeconds();
+      const minute = date.getMinutes() + second / 60;
+      const hour = (date.getHours() % 12) + minute / 60;
+      myChart.current.map(chart => {
+        chart.setOption({
+          series: [
+            {
+              name: 'hour',
+              animation: hour !== 0,
+              data: [{ value: hour }]
+            },
+            {
+              name: 'minute',
+              animation: minute !== 0,
+              data: [{ value: minute }]
+            },
+            {
+              animation: second !== 0,
+              name: 'second',
+              data: [{ value: second }]
+            }
+          ]
+        });
+      })
     }, 1000);
     return () => {
       clearInterval(interval);
     };
   }, [])
+  const onInit = useCallback(chart => {
+    myChart.current.push(chart);
+  }, []);
   
-  return (
-    <View>
-      <View className="header">时钟仪表盘</View>
-      <View className="body">
-        { <Chart option={option} /> }
-      </View>
-    </View>
-  );
+  return <Chart option={option} onSVGInit={onInit} onSkiaInit={onInit} />;
 }

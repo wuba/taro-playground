@@ -12,8 +12,14 @@ function buildData(offset = 0) {
     .fill(0)
     .map((_, i) => i + offset);
 }
-
-const Row = ({ index, style, data }) => {
+interface RowProps {
+  id: string;
+  style?: React.CSSProperties | undefined;
+  data: any;
+  index: number;
+  isScrolling?: boolean | undefined;
+}
+const Row = ({ index, style, data }: RowProps) => {
   return (
     <View className={`list-item ${index % 2 ? "ListItemOdd" : "ListItemEven"}`} style={style}>
       Row {index}: {data[index]}
@@ -47,16 +53,16 @@ export default class PageView extends React.Component {
         <VirtualList
           height={500}
           width="100%"
+          item={Row}
           itemData={data}
           itemCount={dataLen}
           itemSize={100}
           // onScrollNative={this.onScrollNative}
           // onScroll={this.onScroll}
           overscanCount={5}
+          //@ts-ignore
           scrollWithAnimation
-        >
-          {Row}
-        </VirtualList>
+        />
       </View>
     );
   }

@@ -15,7 +15,7 @@ env:
   # 应用的application_id
   APP_ID: ${{secrets.APP_ID}}
   APP_NAME: Taro
-  VERSION_NUMBER: 1.7.4
+  VERSION_NUMBER: 1.8.0
   BUILD_TYPE: debug
   TEAM_ID: ${{secrets.TEAM_ID}}
   PROVISIONING_PROFILE_SPECIFIER: ${{secrets.DEBUG_PROVISIONING_PROFILE_SPECIFIER}}
@@ -76,7 +76,6 @@ jobs:
           exec .github/scripts/import-profile.sh
       - name: Build app
         env:
-          SKIP_BUNDLING: 1
           FL_APP_IDENTIFIER: ${{ env.APP_ID }}
           FL_UPDATE_PLIST_DISPLAY_NAME: ${{ env.APP_NAME }}
           FL_UPDATE_PLIST_PATH: taroDemo/Info.plist

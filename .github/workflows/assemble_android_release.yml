@@ -19,9 +19,9 @@ env:
   # 打包类型
   BUILD_TYPE: release
   # 版本名称
-  VERSION_NAME: 1.7.4
+  VERSION_NAME: 1.8.0
   # 版本号
-  VERSION_CODE: 17400
+  VERSION_CODE: 18000
   # 密钥库文件
   KEYSTORE_FILE: release.keystore
   # 密钥库口令
@@ -59,14 +59,6 @@ jobs:
       - name: Install Dependencies
         run: |
           yarn
-      - name: Build Taro React Native Bundle
-        run: |
-          yarn build:rn --platform android
-      - name: Upload Taro React Native Bundle
-        uses: actions/upload-artifact@v2
-        with:
-          name: taro-android-bundle
-          path: ${{ github.workspace }}/android/app/src/main/assets/index.android.bundle
       - name: Cache Gradle
         uses: actions/cache@v2
         env:

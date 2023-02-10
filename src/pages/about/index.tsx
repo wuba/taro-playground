@@ -8,7 +8,7 @@
 import { Component } from 'react'
 import Taro from '@tarojs/taro';
 import { View, Image, Text } from '@tarojs/components';
-import taroVersion from '@tarojs/taro/package.json';
+import taroVersion from '@tarojs/taro-rn/package.json';
 import rnVersion from 'react-native/package.json';
 import { isWeb, isRN, loadWeb, loadMini, loadRn } from "@/utils/index";
 import List from '@/components/list/list';
@@ -16,6 +16,8 @@ import logoPng from "@/assets/common/taro_logo.jpg";
 import './index.scss';
 
 const { version: playgroundVersion, platform } = Taro.getSystemInfoSync()
+// @ts-ignore
+const isHermes = !!global.HermesInternal;
 
 const linkPrivacy = {
   name: '隐私政策',
@@ -143,6 +145,7 @@ export default class Index extends Component<any, any> {
         }}
         >
           <Text className='page-footer-text'>Taro: {taroVersion.version}, React Native: {rnVersion.version}, Taro Playground: {playgroundVersion}</Text>
+          {isHermes && <Text className='page-footer-text'>Engine: Hermes</Text>}
         </View> : <View className='page-footer'>
           <Text className='page-footer-text'>Taro: {taroVersion.version}</Text>
         </View>}

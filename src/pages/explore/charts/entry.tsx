@@ -896,8 +896,7 @@ const routes = [
       },
       {
         title: '时钟仪表盘',
-        url: `${prefix}gauge/clock`,
-        state: true
+        url: `${prefix}gauge/clock`
       },
       {
         title: 'Gauge Car',
@@ -961,10 +960,6 @@ const routes = [
   {
     title: '日历坐标系',
     routes: [
-      {
-        title: '日历饼图',
-        url: `${prefix}pie/calendarPie`
-      },
       {
         title: '基础日历图',
         url: `${prefix}calendar/calendarSimple`
