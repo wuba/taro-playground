@@ -48,7 +48,7 @@ import {
 import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { useEffect, useRef } from 'react';
 import { Dimensions } from 'react-native';
-import { SVGRenderer, SkiaChart as SkiaComponent, SvgChart as SvgComponent } from 'wrn-echarts';
+import { SVGRenderer, SkiaChart as SkiaComponent, SvgChart as SvgComponent } from '@wuba/react-native-echarts';
 import { View } from '@tarojs/components';
 
 import './echarts.scss';
