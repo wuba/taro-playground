@@ -19,9 +19,9 @@ env:
   # 打包类型
   BUILD_TYPE: debug
   # 版本名称
-  VERSION_NAME: 1.8.2
+  VERSION_NAME: 1.9.0
   # 版本号
-  VERSION_CODE: 18200
+  VERSION_CODE: 19000
   # 密钥库文件
   KEYSTORE_FILE: debug.keystore
   # 密钥库口令
