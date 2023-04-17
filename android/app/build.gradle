@@ -146,8 +146,8 @@ android {
         applicationId app_id
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 18000
-        versionName "1.8.0"
+        versionCode 19000
+        versionName "1.9.0"
         buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
 
         if (isNewArchitectureEnabled()) {
