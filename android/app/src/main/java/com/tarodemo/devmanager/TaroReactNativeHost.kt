@@ -13,6 +13,10 @@ open class TaroReactNativeHost(application: Application) : ReactNativeHost(appli
 
     override fun getJSMainModuleName() = jsMainModulePath
 
+    override fun isNewArchEnabled() = BuildConfig.IS_NEW_ARCHITECTURE_ENABLED
+
+    override fun isHermesEnabled() = BuildConfig.IS_HERMES_ENABLED
+
     override fun getPackages(): List<ReactPackage>? {
         return PackageList(this).packages.apply {
             add(DevManagerPackage())
