@@ -70,7 +70,7 @@ RCT_EXPORT_METHOD(load:(NSURL*) url) {
 - (void)loadBundle:(NSURL *)url
 {
   [_bridge setValue:url forKey:@"bundleURL"];
-  [_bridge reload];
+  RCTTriggerReloadCommandListeners(@"reload");
 }
 
 /**
