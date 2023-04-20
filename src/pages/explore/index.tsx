@@ -26,7 +26,7 @@ const caseList = [
   },
   {
     data: {
-      bundle: `${JSDELIVR}/zhiqingchen/rick-and-morty-wiki@v2.0.0-beta.1/release/${platform}/main.js`,
+      bundle: `${JSDELIVR}/zhiqingchen/rick-and-morty-wiki@v3.0.0-beta.0/release/${platform}/main.js`,
       repository: `${GITHUB}/rick-and-morty-wiki/rick-and-morty-wiki`,
       web: 'https://rnwiki.cavano.vip',
       mp:
