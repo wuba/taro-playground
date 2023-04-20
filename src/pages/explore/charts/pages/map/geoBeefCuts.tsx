@@ -1,6 +1,6 @@
 import { setNavigationBarTitle } from '@tarojs/taro';
 import { View } from '@tarojs/components';
-import { SkiaChart as SkiaComponent } from 'wrn-echarts';
+import { SkiaChart as SkiaComponent } from '@wuba/react-native-echarts';
 import { useCallback, useEffect } from 'react';
 import * as echarts from 'echarts/core';
 import Chart from '../../echarts';

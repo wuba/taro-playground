@@ -4579,6 +4579,14 @@
     "@webassemblyjs/ast" "1.11.1"
     "@xtuc/long" "4.2.2"
 
+"@wuba/react-native-echarts@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@wuba/react-native-echarts/-/react-native-echarts-1.0.0.tgz#91da0b7e51c0b37e39d2903e0a25b7ddf2be7670"
+  integrity sha512-TBf/NrMYvy6vlyQHiCwaAIeYpC5ZKDCJjH+8Vl45ylBZeSVy7NO7c8TrrKmaUn/iL8QJbZlRGK0QAFfa/ELeEw==
+  dependencies:
+    "@xmldom/xmldom" "^0.8.6"
+    entities "^4.4.0"
+
 "@xmldom/xmldom@^0.8.6":
   version "0.8.7"
   resolved "https://registry.yarnpkg.com/@xmldom/xmldom/-/xmldom-0.8.7.tgz#8b1e39c547013941974d83ad5e9cf5042071a9a0"
@@ -18871,14 +18879,6 @@ write@^0.2.1:
   integrity sha512-CJ17OoULEKXpA5pef3qLj5AxTJ6mSt7g84he2WIskKwqFO4T97d5V7Tadl0DYDk7qyUOQD5WlUlOMChaYrhxeA==
   dependencies:
     mkdirp "^0.5.1"
-
-wrn-echarts@^0.1.4:
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/wrn-echarts/-/wrn-echarts-0.1.6.tgz#4bac674561682d4762f4902564008a19151c570f"
-  integrity sha512-a5U7n4LsAiDkR5dLSokR25fIf56wpHKvjIME39NUz2n88C/yLUkhmyUztDrvhLDW2UIWiAH5ssMWJvyiCntY8Q==
-  dependencies:
-    "@xmldom/xmldom" "^0.8.6"
-    entities "^4.4.0"
 
 ws@^6.2.2:
   version "6.2.2"

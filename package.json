@@ -71,6 +71,7 @@
     "@tarojs/shared": "3.6.5-canary.1",
     "@tarojs/taro": "3.6.5-canary.1",
     "@tarojs/taro-rn": "3.6.5-canary.1",
+    "@wuba/react-native-echarts": "^1.0.0",
     "d3-hierarchy": "^3.1.2",
     "echarts": "^5.4.1",
     "echarts-stat": "^1.2.0",
@@ -104,8 +105,7 @@
     "react-native-svg": "~13.8.0",
     "react-native-syan-image-picker": "0.5.3",
     "react-native-webview": "~11.26.1",
-    "taro-lottie": "^1.0.2",
-    "wrn-echarts": "^0.1.4"
+    "taro-lottie": "^1.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
@@ -133,5 +133,8 @@
     "stylelint": "9.3.0",
     "typescript": "^4.1.0",
     "webpack": "5.69.0"
+  },
+  "resolutions": {
+    "react-native-svg": "~13.9.0"
   }
 }
