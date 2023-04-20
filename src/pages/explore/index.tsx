@@ -43,7 +43,7 @@ const caseList = [
 const uiList = [
   {
     data: {
-      bundle: `${JSDELIVR}/NervJS/taro-ui@v3.6.0-beta.3-rn/packages/taro-ui-demo-rn/release/${platform}/main.js`,
+      bundle: `${JSDELIVR}/NervJS/taro-ui@v3.7.0-beta.0-rn/packages/taro-ui-demo-rn/release/${platform}/main.js`,
       repository: `${GITHUB}/NervJS/taro-ui`,
       title: 'Taro UI Demo',
       web: 'https://taro-ui.jd.com/h5/index.html',
