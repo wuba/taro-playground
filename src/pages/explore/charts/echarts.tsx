@@ -116,7 +116,7 @@ export default function EchartsPage({ option, width = E_WIDTH, height = E_HEIGHT
   const svgRef = useRef<any>(null);
   const skiaRef = useRef<any>(null);
   useEffect(() => {
-    let chart;
+    let chart: echarts.ECharts;
     if (svgRef.current) {
       // @ts-ignore
       chart = echarts.init(svgRef.current, 'light', {
@@ -131,7 +131,7 @@ export default function EchartsPage({ option, width = E_WIDTH, height = E_HEIGHT
   }, [option]);
 
   useEffect(() => {
-    let chart;
+    let chart: echarts.ECharts;
     if (skiaRef.current) {
       // @ts-ignore
       chart = echarts.init(skiaRef.current, 'light', {
@@ -153,7 +153,7 @@ export default function EchartsPage({ option, width = E_WIDTH, height = E_HEIGHT
       </View>
       <View className='charts-container'>
         <View className='charts-render'>React Native Skia</View>
-        <SkiaComponent ref={skiaRef} />
+        <SkiaComponent useRNGH ref={skiaRef} />
       </View>
     </View>
   );
