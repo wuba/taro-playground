@@ -9621,10 +9621,10 @@ expo-font@~11.4.0:
   dependencies:
     fontfaceobserver "^2.1.0"
 
-expo-gl@~12.4.0:
-  version "12.4.0"
-  resolved "https://registry.yarnpkg.com/expo-gl/-/expo-gl-12.4.0.tgz#bbda31694bdc70fa7b1ca86fa549341a09742212"
-  integrity sha512-Wp4qjtktRWzcv7Lz50inHFZTaukqbmN2Hy3AW6fEiMgVaCwedhOLjrfS2IKsLeS97lk9sgoPBo1i4x221lyIBw==
+expo-gl@~13.0.1:
+  version "13.0.1"
+  resolved "https://registry.yarnpkg.com/expo-gl/-/expo-gl-13.0.1.tgz#6d26acba832a3c5bc0aed511afa07a4ecf49ec71"
+  integrity sha512-ESmDgUvyv7tDLhcjyOetXP8G/pgvuOAkSjumSBqej9XLXC+yhv0no25HdCJEu9H635hwcaow0ICkKwSsgxBzGg==
   dependencies:
     invariant "^2.2.4"
 
