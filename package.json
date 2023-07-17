@@ -89,7 +89,7 @@
     "expo-sensors": "~12.3.0",
     "linear-gradient-taro": "^1.0.1",
     "lottie-ios": "3.4.0",
-    "lottie-react-native": "^5.1.3",
+    "lottie-react-native": "^5.1.6",
     "patch-package": "^6.5.1",
     "postinstall-postinstall": "^2.1.0",
     "react": "^18.2.0",
