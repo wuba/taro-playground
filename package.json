@@ -114,6 +114,7 @@
     "@babel/core": "^7.20.0",
     "@babel/preset-env": "^7.20.0",
     "@pmmmwh/react-refresh-webpack-plugin": "0.5.5",
+    "@react-native/metro-config": "^0.72.7",
     "@tarojs/cli": "3.7.0-canary.1",
     "@tarojs/plugin-mini-ci": "3.7.0-canary.1",
     "@tarojs/rn-runner": "3.7.0-canary.1",
