@@ -12,7 +12,7 @@ const GITHUB_RAW = 'https://raw.githubusercontent.com';
 const caseList = [
   {
     data: {
-      bundle: `${JSDELIVR}/wuba/Taro-Mortgage-Calculator@v2.0.0-beta.2/release/${platform}/main.js`,
+      bundle: `${JSDELIVR}/wuba/Taro-Mortgage-Calculator@v3.0.0-beta.0/release/${platform}/main.js`,
       repository: `${GITHUB}/wuba/Taro-Mortgage-Calculator`,
       web: 'https://wuba.github.io/Taro-Mortgage-Calculator',
       mp: `${GITHUB_RAW}/wuba/Taro-Mortgage-Calculator/master/mini-qrcode.jpg`,
@@ -26,7 +26,7 @@ const caseList = [
   },
   {
     data: {
-      bundle: `${JSDELIVR}/zhiqingchen/rick-and-morty-wiki@v3.0.0-beta.0/release/${platform}/main.js`,
+      bundle: `${JSDELIVR}/zhiqingchen/rick-and-morty-wiki@v4.0.0-beta.0/release/${platform}/main.js`,
       repository: `${GITHUB}/rick-and-morty-wiki/rick-and-morty-wiki`,
       web: 'https://rnwiki.cavano.vip',
       mp:
