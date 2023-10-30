@@ -134,6 +134,7 @@
   },
   "resolutions": {
     "react-native-screens": "~3.19.0",
-    "react-native-svg": "~13.10.0"
+    "react-native-svg": "~13.10.0",
+    "metro-react-native-babel-preset": "0.72.4"
   }
 }
