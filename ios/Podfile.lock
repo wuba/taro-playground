@@ -433,7 +433,7 @@ PODS:
     - React-Core
   - RNDeviceInfo (10.3.1):
     - React-Core
-  - RNFlashList (1.6.2):
+  - RNFlashList (1.4.3):
     - React-Core
   - RNGestureHandler (2.9.0):
     - React-Core
@@ -464,7 +464,7 @@ PODS:
     - React-RCTText
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNScreens (3.27.0):
+  - RNScreens (3.19.0):
     - React-Core
     - React-RCTImage
   - RNSVG (13.10.0):
@@ -834,10 +834,10 @@ SPEC CHECKSUMS:
   RNCMaskedView: 949696f25ec596bfc697fc88e6f95cf0c79669b6
   RNCPicker: 0bc2f0a29abcca7b7ed44a2d036aac9ab6d25700
   RNDeviceInfo: 468a7cd19ad2b6697bab25c8baebf22c0603cb7c
-  RNFlashList: 1983f915ae34e9253e413f31387959590d102f5e
+  RNFlashList: ade81b4e928ebd585dd492014d40fb8d0e848aab
   RNGestureHandler: 071d7a9ad81e8b83fe7663b303d132406a7d8f39
   RNReanimated: bec7736122a268883bdede07f1bf9cf4b40158db
-  RNScreens: 2b19e2471db8a581c83f381f4ea5d43071c9a3bf
+  RNScreens: ea4cd3a853063cda19a4e3c28d2e52180c80f4eb
   RNSVG: 80584470ff1ffc7994923ea135a3e5ad825546b9
   RNSyanImagePicker: 5c650d33f16f7cd59c47d9269f6c4856b30d7616
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
@@ -848,4 +848,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 33c6b5e10c0d29609f5a0d4e9eed3341df22dc9b
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.14.2
