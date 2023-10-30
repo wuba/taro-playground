@@ -30,6 +30,7 @@ env:
 jobs:
   assemble:
     runs-on: macos-13
+    environment: stage
     steps:
       - name: Get current date
         id: date

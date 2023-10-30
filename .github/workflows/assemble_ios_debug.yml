@@ -27,6 +27,7 @@ env:
 jobs:
   assemble:
     runs-on: macos-13
+    environment: stage
     steps:
       - name: Checkout Project
         uses: actions/checkout@v2
