@@ -7,7 +7,8 @@ security list-keychains -s build.keychain
 security default-keychain -s build.keychain
 security unlock-keychain -p "" build.keychain
 security set-keychain-settings
-security import <(echo $SIGNING_CERTIFICATE_P12_DATA | base64 --decode) \
+echo $SIGNING_CERTIFICATE_P12_DATA | base64 --decode > signingCertificate.p12
+security import signingCertificate.p12 \
                 -f pkcs12 \
                 -k build.keychain \
                 -P $SIGNING_CERTIFICATE_PASSWORD \
