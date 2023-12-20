@@ -5,12 +5,14 @@ import './index.scss'
 
 /**
  * 界面-滚动
- * @returns 
+ * @returns
  */
 const Index = () => {
   const _pageScrollTo = (top) => () => {
+    top = Taro.pxTransform(top * 2)
+    top = top.replace(/[a-z]+$/, '')
     Taro.pageScrollTo({
-      scrollTop: Number(Taro.pxTransform(top * 2)),
+      scrollTop: top,
     })
   }
   return (
