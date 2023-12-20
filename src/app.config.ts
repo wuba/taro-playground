@@ -125,6 +125,16 @@ if (process.env.TARO_ENV !== 'harmony') {
   pages.push(
     'pages/components/pages/virtual-list/virtual-list',
   );
+} else {
+  pages.push(
+    'pages/global/pages/styles/background/index',
+    'pages/global/pages/styles/border/index',
+    'pages/global/pages/styles/flex/index',
+    'pages/global/pages/styles/other/index',
+    'pages/global/pages/styles/position/index',
+    'pages/global/pages/styles/box/index',
+    'pages/global/pages/styles/text/index',
+  )
 }
 
 const subpackages = [
@@ -140,6 +150,7 @@ if (process.env.TARO_ENV !== 'harmony') {
     pages: ['lottie/index']
   })
 }
+
 
 if (process.env.TARO_ENV === 'rn') {
   subpackages.push({
@@ -393,11 +404,11 @@ export default {
     navigationBarTitleText: 'WeChat',
     navigationBarTextStyle: 'black'
   },
-  tabBar: {
-    color: '#333333',
-    selectedColor: '#6190E8', // 主题色
-    list: process.env.TARO_ENV === 'rn' ? tabs : tabs.splice(1)
-  },
+  // tabBar: {
+  //   color: '#333333',
+  //   selectedColor: '#6190E8', // 主题色
+  //   list: process.env.TARO_ENV === 'rn' ? tabs : tabs.splice(1)
+  // },
   rn: {
     useNativeStack: true // 使用 @react-navigation/native-stack
   }
