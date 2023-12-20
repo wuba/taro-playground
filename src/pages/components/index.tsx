@@ -30,9 +30,9 @@ export default class Index extends Component<never, any> {
             "view",
             "scroll-view",
             "swiper",
-            "virtual-list",
-            "movable-view",
-            "page-container"
+            // "virtual-list",
+            // "movable-view",
+            // "page-container"
           ]
         },
         {
@@ -64,12 +64,12 @@ export default class Index extends Component<never, any> {
             "textarea"
           ]
         },
-        {
-          id: "nav",
-          name: "导航",
-          open: false,
-          pages: ["navigator"]
-        },
+        // {
+        //   id: "nav",
+        //   name: "导航",
+        //   open: false,
+        //   pages: ["navigator"]
+        // },
         {
           id: "media",
           name: "媒体组件",
