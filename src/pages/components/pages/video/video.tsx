@@ -9,6 +9,7 @@ export default class PageView extends React.Component {
 
   onLoadedMetaData = e => {
     console.log(e);
+    this.videoContext = Taro.createVideoContext("video");
   };
 
   fullScreen = () => {
