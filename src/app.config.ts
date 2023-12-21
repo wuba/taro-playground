@@ -404,11 +404,11 @@ export default {
     navigationBarTitleText: 'WeChat',
     navigationBarTextStyle: 'black'
   },
-  // tabBar: {
-  //   color: '#333333',
-  //   selectedColor: '#6190E8', // 主题色
-  //   list: process.env.TARO_ENV === 'rn' ? tabs : tabs.splice(1)
-  // },
+  tabBar: {
+    color: '#333333',
+    selectedColor: '#6190E8', // 主题色
+    list: process.env.TARO_ENV === 'rn' ? tabs : tabs.splice(1)
+  },
   rn: {
     useNativeStack: true // 使用 @react-navigation/native-stack
   }
