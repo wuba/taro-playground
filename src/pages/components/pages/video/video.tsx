@@ -42,9 +42,9 @@ export default class PageView extends React.Component {
                 }}
               />
 
-              <Button type="primary" onClick={this.fullScreen}>
+              {/* <Button type="primary" onClick={this.fullScreen}>
                 进入全屏
-              </Button>
+              </Button> */}
             </View>
           </View>
         </View>
