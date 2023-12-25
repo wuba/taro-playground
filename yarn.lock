@@ -10030,6 +10030,13 @@ expo-sensors@~12.9.0:
   dependencies:
     invariant "^2.2.4"
 
+expo-task-manager@~11.7.0:
+  version "11.7.0"
+  resolved "https://registry.yarnpkg.com/expo-task-manager/-/expo-task-manager-11.7.0.tgz#3e87a3c3d941a60d3c4447d837b3ae95be7dcb4b"
+  integrity sha512-P5pmN3rQgDaIeLyEFMXixuimeRR4IDDU6nDo1kv/Y2JQrgpNKeOHjTbRdzd6iPOeqIa+/3k3tAooU8VYp534tA==
+  dependencies:
+    unimodules-app-loader "~4.5.0"
+
 expo@~50.0.0-preview.7:
   version "50.0.0-preview.7"
   resolved "https://registry.yarnpkg.com/expo/-/expo-50.0.0-preview.7.tgz#d4ac7a9aad0a5e9f03a31b8794e186a1af741edc"
@@ -19526,6 +19533,11 @@ unified@^6.0.0:
     trough "^1.0.0"
     vfile "^2.0.0"
     x-is-string "^0.1.0"
+
+unimodules-app-loader@~4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/unimodules-app-loader/-/unimodules-app-loader-4.5.0.tgz#5ec66088d740bd17dc5c94b88c91f21249d9f0ba"
+  integrity sha512-q/Xug4K6/20876Xac+tjOLOOAeHEu2zF66LNN/5c8EV4WPEe/+RYZEljN/woQt17KPIB2eyel9dc+d6qUMjUOg==
 
 union-value@^1.0.0:
   version "1.0.1"

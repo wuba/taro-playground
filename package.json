@@ -87,6 +87,7 @@
     "expo-keep-awake": "~12.8.0",
     "expo-location": "~16.5.1",
     "expo-sensors": "~12.9.0",
+    "expo-task-manager": "~11.7.0",
     "linear-gradient-taro": "^1.0.1",
     "lottie-ios": "3.4.0",
     "lottie-react-native": "^5.1.6",
