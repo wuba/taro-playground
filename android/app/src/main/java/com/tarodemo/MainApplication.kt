@@ -28,7 +28,7 @@ class MainApplication : Application(), ReactApplication {
   private val mTaroReactNativeHost: TaroReactNativeHost = TaroReactNativeHost(this)
   private val mReactNativeHost: ReactNativeHost = ReactNativeHostWrapper(this, mTaroReactNativeHost)
 
-  override fun getReactNativeHost(): ReactNativeHost = mReactNativeHost
+  override val reactNativeHost: ReactNativeHost get() = mReactNativeHost
 
   fun getTaroReactNativeHost(): TaroReactNativeHost = mTaroReactNativeHost
 
