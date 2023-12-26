@@ -83,7 +83,6 @@ const pages = [
   // 'pages/components/pages/canvas/canvas',
   // 'pages/components/pages/map/map',
   'pages/components/pages/navigator/navigator',
-  'pages/components/pages/virtual-list/virtual-list',
   'pages/components/pages/movable-view/movable-view',
   // 组件相关 end
   // api 相关 start
@@ -122,16 +121,36 @@ const pages = [
   'pages/explore/index'
 ];
 
+if (process.env.TARO_ENV !== 'harmony') {
+  pages.push(
+    'pages/components/pages/virtual-list/virtual-list',
+  );
+} else {
+  pages.push(
+    'pages/global/pages/styles/background/index',
+    'pages/global/pages/styles/border/index',
+    'pages/global/pages/styles/flex/index',
+    'pages/global/pages/styles/other/index',
+    'pages/global/pages/styles/position/index',
+    'pages/global/pages/styles/box/index',
+    'pages/global/pages/styles/text/index',
+  )
+}
+
 const subpackages = [
-  {
-    root: 'pages/explore/animate',
-    pages: ['lottie/index']
-  },
   {
     root: 'pages/explore/others',
     pages: ['linear-gradient/index']
   }
 ];
+
+if (process.env.TARO_ENV !== 'harmony') {
+  subpackages.push({
+    root: 'pages/explore/animate',
+    pages: ['lottie/index']
+  })
+}
+
 
 if (process.env.TARO_ENV === 'rn') {
   subpackages.push({
@@ -379,6 +398,7 @@ export default {
   pages: process.env.TARO_ENV === 'rn' ? pages : pages.splice(1),
   subpackages,
   window: {
+    backgroundColor: '#efefef',
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
     navigationBarTitleText: 'WeChat',

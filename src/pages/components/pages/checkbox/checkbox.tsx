@@ -69,7 +69,7 @@ const Index = () => {
             <Checkbox value='选中' checked>
               选中
             </Checkbox>
-            <Checkbox style='margin-left: 20px' value='未选中'>
+            <Checkbox style={{ marginLeft: '20px' }} value='未选中'>
               未选中
             </Checkbox>
           </View>

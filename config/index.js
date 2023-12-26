@@ -25,7 +25,9 @@ const CIPluginOpt = {
 const plugins = process.env.TARO_ENV === 'weapp' ? [
   [ "@tarojs/plugin-mini-ci", CIPluginOpt ],
   [ "@tarojs/plugin-html"]
-] : []
+] : [
+  '@tarojs/plugin-platform-harmony-ets',
+]
 
 const config = {
   projectName: 'taro-demo',
@@ -90,6 +92,7 @@ const config = {
       }
     }
   },
+  harmony: require('./harmony.json'),
   rn: {
     appName: 'taroDemo',
     output: {
@@ -113,6 +116,12 @@ const config = {
     '@/utils': path.resolve(__dirname, '..', 'src/pages/utils'),
     '@/assets': path.resolve(__dirname, '..', 'src/assets'),
     '@/platform': path.resolve(__dirname, '..', 'src/platform'),
+  }
+}
+
+if (process.env.TARO_ENV === 'harmony') {
+  config.defineConstants = {
+    'global.HermesInternal': 'false'
   }
 }
 

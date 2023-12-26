@@ -1,5 +1,9 @@
 @import "../../../../styles/mixins.scss";
 
+.components-page {
+  height: 100%;
+}
+
 .page__con__wrap {
   display: flex;
   flex-direction: row;

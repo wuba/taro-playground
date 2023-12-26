@@ -4,6 +4,7 @@ key/
 # OSX
 #
 .DS_Store
+config/harmony.json
 
 # Xcode
 #

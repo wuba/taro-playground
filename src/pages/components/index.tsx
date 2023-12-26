@@ -30,16 +30,21 @@ export default class Index extends Component<never, any> {
             "view",
             "scroll-view",
             "swiper",
-            "virtual-list",
-            "movable-view",
-            "page-container"
+            // "virtual-list",
+            // "movable-view",
+            // "page-container"
           ]
         },
         {
           id: "content",
           name: "基础内容",
           open: false,
-          pages: ["text", "icon", "progress", "rich-text"]
+          pages: [
+            "text",
+            "icon",
+            // "progress",
+            "rich-text"
+          ]
         },
         {
           id: "form",
@@ -52,19 +57,19 @@ export default class Index extends Component<never, any> {
             "input",
             "label",
             "picker",
-            "picker-view",
+            // "picker-view",
             "radio",
             "slider",
             "switch",
             "textarea"
           ]
         },
-        {
-          id: "nav",
-          name: "导航",
-          open: false,
-          pages: ["navigator"]
-        },
+        // {
+        //   id: "nav",
+        //   name: "导航",
+        //   open: false,
+        //   pages: ["navigator"]
+        // },
         {
           id: "media",
           name: "媒体组件",

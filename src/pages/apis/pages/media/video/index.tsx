@@ -9,14 +9,16 @@ const path = "https://wos2.58cdn.com.cn/DeFazYxWvDti/frsupload/6820cfd5e0346eac0
 
 /**
  * 媒体-视频
- * @returns 
+ * @returns
  */
 const Index = () => {
   const videoContext = useRef<any>({});
 
   const [filePath, setFilePage] = useState(path);
 
-  const _onLoadedMetaData = () => {}
+  const _onLoadedMetaData = () => {
+    videoContext.current = Taro.createVideoContext("video");
+  }
 
   const _chooseVideo = () => {
     Taro.chooseVideo({
