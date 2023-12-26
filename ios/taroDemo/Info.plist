@@ -56,6 +56,8 @@
 	<string>Taro Playground 使用您的地理位置信息，用于展示获取位置信息 API。</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Taro Playground 使用您的麦克风，用于展示相机组件的录像功能。</string>
+	<key>NSMotionUsageDescription</key>
+	<string>Taro Playground 使用您的运动与健康数据，用于展示运动传感器相关 API。</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Taro Playground 使用您的照片，用于展示照片相关 API。</string>
 	<key>NSPhotoLibraryUsageDescription</key>
