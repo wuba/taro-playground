@@ -113,6 +113,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@pmmmwh/react-refresh-webpack-plugin": "0.5.5",
+    "@vitejs/plugin-react": "^4.1.0",
     "@tarojs/cli": "4.0.0-beta.0",
     "@tarojs/plugin-mini-ci": "4.0.0-beta.0",
     "@tarojs/rn-runner": "4.0.0-beta.0",
@@ -132,6 +133,7 @@
     "install-peerdeps": "^3.0.3",
     "pod-install": "^0.1.23",
     "react-refresh": "0.11.0",
+    "postcss": "^8.4.18",
     "stylelint": "9.3.0",
     "typescript": "^4.1.0",
     "vite": "^4.4.9",
