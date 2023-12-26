@@ -297,7 +297,7 @@ export default class Index extends Component<any, any> {
           }}
         />
         {isRN && <View className="statement">
-          <Text className="statement-text">Supportted Taro Versions：3.5.0 ~ {taroVersion}</Text>
+          <Text className="statement-text">Supportted Taro Versions：4.0.0 ~ {taroVersion}</Text>
           <Text className="statement-text">React Native Version：{rnVersion}</Text>
         </View>}
       </View>
