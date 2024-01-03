@@ -92,7 +92,12 @@ const config = {
       }
     }
   },
-  harmony: require('./harmony.json'),
+  harmony: {
+    compiler: "vite",
+    projectPath: process.env.HARMONY_PROJECT_PATH || 'dist',
+    hapName: "entry",
+    name: "default"
+  },
   rn: {
     appName: 'taroDemo',
     output: {
