@@ -35,7 +35,7 @@
     "link": "react-native link",
     "update-version": "sh ./bin/update_version.sh",
     "podInstall": "pod-install",
-    "upgradePeerdeps": "install-peerdeps @tarojs/taro-rn@4.0.0-beta.0 -o -Y && install-peerdeps @tarojs/components-rn@4.0.0-beta.0 -o -Y && install-peerdeps @tarojs/router-rn@4.0.0-beta.0 -o -Y && pod-install"
+    "upgradePeerdeps": "install-peerdeps @tarojs/taro-rn@4.0.0-beta.1 -o -Y && install-peerdeps @tarojs/components-rn@4.0.0-beta.1 -o -Y && install-peerdeps @tarojs/router-rn@4.0.0-beta.1 -o -Y && pod-install"
   },
   "browserslist": [
     "last 3 versions",
@@ -56,24 +56,24 @@
     "@react-native-picker/picker": "~2.4.2",
     "@shopify/flash-list": "~1.4.1",
     "@shopify/react-native-skia": "^0.1.197",
-    "@tarojs/components": "4.0.0-beta.0",
-    "@tarojs/components-rn": "4.0.0-beta.0",
-    "@tarojs/helper": "4.0.0-beta.0",
-    "@tarojs/plugin-framework-react": "4.0.0-beta.0",
-    "@tarojs/plugin-html": "4.0.0-beta.0",
-    "@tarojs/plugin-platform-alipay": "4.0.0-beta.0",
-    "@tarojs/plugin-platform-h5": "4.0.0-beta.0",
-    "@tarojs/plugin-platform-harmony-ets": "4.0.0-beta.0",
-    "@tarojs/plugin-platform-jd": "4.0.0-beta.0",
-    "@tarojs/plugin-platform-qq": "4.0.0-beta.0",
-    "@tarojs/plugin-platform-swan": "4.0.0-beta.0",
-    "@tarojs/plugin-platform-tt": "4.0.0-beta.0",
-    "@tarojs/plugin-platform-weapp": "4.0.0-beta.0",
-    "@tarojs/react": "4.0.0-beta.0",
-    "@tarojs/runtime": "4.0.0-beta.0",
-    "@tarojs/shared": "4.0.0-beta.0",
-    "@tarojs/taro": "4.0.0-beta.0",
-    "@tarojs/taro-rn": "4.0.0-beta.0",
+    "@tarojs/components": "4.0.0-beta.1",
+    "@tarojs/components-rn": "4.0.0-beta.1",
+    "@tarojs/helper": "4.0.0-beta.1",
+    "@tarojs/plugin-framework-react": "4.0.0-beta.1",
+    "@tarojs/plugin-html": "4.0.0-beta.1",
+    "@tarojs/plugin-platform-alipay": "4.0.0-beta.1",
+    "@tarojs/plugin-platform-h5": "4.0.0-beta.1",
+    "@tarojs/plugin-platform-harmony-ets": "4.0.0-beta.1",
+    "@tarojs/plugin-platform-jd": "4.0.0-beta.1",
+    "@tarojs/plugin-platform-qq": "4.0.0-beta.1",
+    "@tarojs/plugin-platform-swan": "4.0.0-beta.1",
+    "@tarojs/plugin-platform-tt": "4.0.0-beta.1",
+    "@tarojs/plugin-platform-weapp": "4.0.0-beta.1",
+    "@tarojs/react": "4.0.0-beta.1",
+    "@tarojs/runtime": "4.0.0-beta.1",
+    "@tarojs/shared": "4.0.0-beta.1",
+    "@tarojs/taro": "4.0.0-beta.1",
+    "@tarojs/taro-rn": "4.0.0-beta.1",
     "@wuba/react-native-echarts": "^1.2.0",
     "d3-hierarchy": "^3.1.2",
     "echarts": "^5.4.1",
@@ -114,19 +114,19 @@
     "@babel/core": "^7.12.9",
     "@pmmmwh/react-refresh-webpack-plugin": "0.5.5",
     "@vitejs/plugin-react": "^4.1.0",
-    "@tarojs/cli": "4.0.0-beta.0",
-    "@tarojs/plugin-mini-ci": "4.0.0-beta.0",
-    "@tarojs/rn-runner": "4.0.0-beta.0",
-    "@tarojs/vite-runner": "4.0.0-beta.0",
-    "@tarojs/webpack5-runner": "4.0.0-beta.0",
+    "@tarojs/cli": "4.0.0-beta.1",
+    "@tarojs/plugin-mini-ci": "4.0.0-beta.1",
+    "@tarojs/rn-runner": "4.0.0-beta.1",
+    "@tarojs/vite-runner": "4.0.0-beta.1",
+    "@tarojs/webpack5-runner": "4.0.0-beta.1",
     "@types/react": "^18.0.0",
     "@types/react-native": "^0.69.8",
     "@types/webpack-env": "^1.13.6",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
-    "babel-preset-taro": "4.0.0-beta.0",
+    "babel-preset-taro": "4.0.0-beta.1",
     "eslint": "^8.12.0",
-    "eslint-config-taro": "4.0.0-beta.0",
+    "eslint-config-taro": "4.0.0-beta.1",
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-react": "^7.8.2",
     "eslint-plugin-react-hooks": "^4.2.0",
@@ -143,5 +143,14 @@
     "react-native-screens": "~3.19.0",
     "react-native-svg": "~13.10.0",
     "metro-react-native-babel-preset": "0.72.4"
+  },
+  "pnpm": {
+    "packageExtensions": {
+      "@tarojs/rn-supporter": {
+        "peerDependencies": {
+          "react-native-gesture-handler": "*"
+        }
+      }
+    }
   }
 }
