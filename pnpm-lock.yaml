@@ -25,6 +25,9 @@ dependencies:
   '@react-native-clipboard/clipboard':
     specifier: ~1.13.2
     version: 1.13.2(react-native@0.73.1)(react@18.2.0)
+  '@react-native-community/cli-platform-android':
+    specifier: ^12.3.0
+    version: 12.3.0
   '@react-native-community/geolocation':
     specifier: ~3.1.0
     version: 3.1.0(react-native@0.73.1)(react@18.2.0)
@@ -69,25 +72,25 @@ dependencies:
     version: 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@2.75.6)
   '@tarojs/plugin-platform-h5':
     specifier: 4.0.0-canary.6
-    version: 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@2.75.6)
+    version: 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(rollup@2.75.6)
   '@tarojs/plugin-platform-harmony-ets':
     specifier: 4.0.0-canary.6
-    version: 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@2.75.6)
+    version: 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(rollup@2.75.6)
   '@tarojs/plugin-platform-jd':
     specifier: 4.0.0-canary.6
     version: 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(rollup@2.75.6)
   '@tarojs/plugin-platform-qq':
     specifier: 4.0.0-canary.6
-    version: 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@2.75.6)
+    version: 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(rollup@2.75.6)
   '@tarojs/plugin-platform-swan':
     specifier: 4.0.0-canary.6
-    version: 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@2.75.6)
+    version: 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(rollup@2.75.6)
   '@tarojs/plugin-platform-tt':
     specifier: 4.0.0-canary.6
-    version: 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@2.75.6)
+    version: 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(rollup@2.75.6)
   '@tarojs/plugin-platform-weapp':
     specifier: 4.0.0-canary.6
-    version: 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@2.75.6)
+    version: 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(rollup@2.75.6)
   '@tarojs/react':
     specifier: 4.0.0-canary.6
     version: 4.0.0-canary.6(react@18.2.0)
@@ -6004,7 +6007,7 @@ packages:
       - '@types/webpack-dev-server'
       - rollup
 
-  /@tarojs/components-react@4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@2.75.6):
+  /@tarojs/components-react@4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(rollup@2.75.6):
     resolution: {integrity: sha512-Z8rYSNpgEmH2jSSi8rXTSdROaTW4lpU//N7SHUt2WG/AY0VtaAWZKSt5ryzyZqzmCYQnnKGXhcO5II1xj0OfKw==}
     dependencies:
       '@babel/runtime': 7.23.7
@@ -6021,7 +6024,6 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
-      - react
       - rollup
       - vue
     dev: false
@@ -6517,17 +6519,17 @@ packages:
       - supports-color
       - vue
 
-  /@tarojs/plugin-platform-h5@4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@2.75.6):
+  /@tarojs/plugin-platform-h5@4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(rollup@2.75.6):
     resolution: {integrity: sha512-e54GvJYGXvuGUfUDDWQ0A+qz4PaPACpNBa2sQyME+SYzjEwGybbPFPcPv4PA012Y6/6JYxliU/FxHVWxqGJk2g==}
     dependencies:
       '@babel/core': 7.23.7
       '@tarojs/components': 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@2.75.6)
-      '@tarojs/components-react': 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@2.75.6)
+      '@tarojs/components-react': 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(rollup@2.75.6)
       '@tarojs/helper': 4.0.0-canary.6
       '@tarojs/router': 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(rollup@2.75.6)
       '@tarojs/service': 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(rollup@2.75.6)
       '@tarojs/shared': 4.0.0-canary.6
-      '@tarojs/taro-h5': 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@2.75.6)
+      '@tarojs/taro-h5': 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(rollup@2.75.6)
       babel-plugin-transform-taroapi: 4.0.0-canary.6
       change-case: 4.1.2
       lodash-es: 4.17.21
@@ -6538,13 +6540,12 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
-      - react
       - rollup
       - supports-color
       - vue
     dev: false
 
-  /@tarojs/plugin-platform-harmony-ets@4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@2.75.6):
+  /@tarojs/plugin-platform-harmony-ets@4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(rollup@2.75.6):
     resolution: {integrity: sha512-KbhF7R0fa6+uRGoJ4znB82jLNtKBvUwPt+oypun27Q7it2RNeB150j3pZHG33ICVbnQOGifhcbBMeVGTaKGc+w==}
     dependencies:
       '@tarojs/components': 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@2.75.6)
@@ -6562,7 +6563,6 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
-      - react
       - rollup
       - supports-color
       - vue
@@ -6584,10 +6584,10 @@ packages:
       - supports-color
       - vue
 
-  /@tarojs/plugin-platform-qq@4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@2.75.6):
+  /@tarojs/plugin-platform-qq@4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(rollup@2.75.6):
     resolution: {integrity: sha512-IcdkvbDbF/Qw2vgn7OQGzwGuyBT1IotPL5w+UJNz8ozJaHS8zgILC1zVk1i9BNBvI+OfmeYQ8N0NXnylUSBmGw==}
     dependencies:
-      '@tarojs/plugin-platform-weapp': 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@2.75.6)
+      '@tarojs/plugin-platform-weapp': 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(rollup@2.75.6)
       '@tarojs/service': 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(rollup@2.75.6)
       '@tarojs/shared': 4.0.0-canary.6
     transitivePeerDependencies:
@@ -6597,12 +6597,11 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
-      - react
       - rollup
       - supports-color
       - vue
 
-  /@tarojs/plugin-platform-swan@4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@2.75.6):
+  /@tarojs/plugin-platform-swan@4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(rollup@2.75.6):
     resolution: {integrity: sha512-x7vRt0SsP2aLAARfWoICppYxXghBLOwiz9pslh+gEysXo+I9rQzf7md5+0F0dUPhYv1TQOkMEw4P6z39nAOwBQ==}
     dependencies:
       '@tarojs/components': 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@2.75.6)
@@ -6615,12 +6614,11 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
-      - react
       - rollup
       - supports-color
       - vue
 
-  /@tarojs/plugin-platform-tt@4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@2.75.6):
+  /@tarojs/plugin-platform-tt@4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(rollup@2.75.6):
     resolution: {integrity: sha512-U4ZmjFj5fcuAgeKA17avu25HCdkp5vzgcitsNgnzI6VYlLEHtjxbc3R7OwO+LMR2KFTVwFkvXfHDSc39YEszDw==}
     dependencies:
       '@tarojs/components': 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@2.75.6)
@@ -6633,12 +6631,11 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
-      - react
       - rollup
       - supports-color
       - vue
 
-  /@tarojs/plugin-platform-weapp@4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@2.75.6):
+  /@tarojs/plugin-platform-weapp@4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(rollup@2.75.6):
     resolution: {integrity: sha512-hm87eWvjAME8idczEF3B+Dp9yrOVZvrkvzyT2Y1lUuF49c4ljp9lcuImSPlvC1Q5vA5/oY6J4Hyfv2Au9Lm+jQ==}
     dependencies:
       '@tarojs/components': 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@2.75.6)
@@ -6651,7 +6648,6 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
-      - react
       - rollup
       - supports-color
       - vue
@@ -6937,7 +6933,7 @@ packages:
   /@tarojs/shared@4.0.0-canary.6:
     resolution: {integrity: sha512-WPK7mc4g94PFHpUOWLQ8tS1l8EdcwPpv/uV/gWYJxtDSKsx2CMsGOlO3RlkvsaXEIcw2AM5eKGBUnzeF6w7tNQ==}
 
-  /@tarojs/taro-h5@4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@2.75.6):
+  /@tarojs/taro-h5@4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(rollup@2.75.6):
     resolution: {integrity: sha512-hV1xwEVM2MEMWKE0Oqs8gbjy4Ixs4H9OeynOkdoLmVOvfxXq2DmNHb77fK1Rqip7NWK0XpwJf0h/KTZu81P80w==}
     dependencies:
       '@tarojs/api': 4.0.0-canary.6
@@ -6960,7 +6956,6 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
-      - react
       - rollup
       - vue
     dev: false
@@ -7208,10 +7203,10 @@ packages:
       '@tarojs/helper': 4.0.0-canary.6
       '@tarojs/plugin-platform-alipay': 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@2.75.6)
       '@tarojs/plugin-platform-jd': 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(rollup@2.75.6)
-      '@tarojs/plugin-platform-qq': 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@2.75.6)
-      '@tarojs/plugin-platform-swan': 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@2.75.6)
-      '@tarojs/plugin-platform-tt': 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@2.75.6)
-      '@tarojs/plugin-platform-weapp': 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(react@18.2.0)(rollup@2.75.6)
+      '@tarojs/plugin-platform-qq': 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(rollup@2.75.6)
+      '@tarojs/plugin-platform-swan': 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(rollup@2.75.6)
+      '@tarojs/plugin-platform-tt': 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(rollup@2.75.6)
+      '@tarojs/plugin-platform-weapp': 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(rollup@2.75.6)
       '@tarojs/runner-utils': 4.0.0-canary.6(@types/react@18.2.46)(postcss@8.4.32)(rollup@2.75.6)
       '@tarojs/runtime': 4.0.0-canary.6
       '@tarojs/shared': 4.0.0-canary.6
@@ -19361,7 +19356,7 @@ packages:
   /read-package-json@2.1.2:
     resolution: {integrity: sha512-D1KmuLQr6ZSJS0tW8hf3WGpRlwszJOXZ3E8Yd/DNRaM5d+1wVRZdHlpGBLAuovjr28LbWvjpWkBHMxpRGGjzNA==}
     dependencies:
-      glob: 7.1.2
+      glob: 7.2.3
       json-parse-even-better-errors: 2.3.1
       normalize-package-data: 2.5.0
       npm-normalize-package-bin: 1.0.1

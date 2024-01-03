@@ -49,6 +49,7 @@
     "@react-native-async-storage/async-storage": "~1.21.0",
     "@react-native-camera-roll/camera-roll": "~7.2.2",
     "@react-native-clipboard/clipboard": "~1.13.2",
+    "@react-native-community/cli-platform-android": "^12.3.0",
     "@react-native-community/geolocation": "~3.1.0",
     "@react-native-community/netinfo": "~11.2.1",
     "@react-native-community/slider": "~4.4.4",
