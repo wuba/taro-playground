@@ -1,7 +1,7 @@
-diff --git a/node_modules/@tarojs/rn-transformer/dist/app.js b/node_modules/@tarojs/rn-transformer/dist/app.js
-index 937b81f..a953627 100644
---- a/node_modules/@tarojs/rn-transformer/dist/app.js
-+++ b/node_modules/@tarojs/rn-transformer/dist/app.js
+diff --git a/dist/app.js b/dist/app.js
+index 937b81f6502d5c54e71b3ec4070c0a01990e0619..a8ac852011f2bfa245201e9cef0044db4d83a5a5 100644
+--- a/dist/app.js
++++ b/dist/app.js
 @@ -113,7 +113,7 @@ function generateEntry({ filename, projectRoot, sourceDir, appName, entryName, d
      const appComponentPath = `./${sourceDir}/${entryName}`;
      const appTabBar = getFormatTabBar(appPath, basePath);
@@ -16,7 +16,7 @@ index 937b81f..a953627 100644
    global.__taroAppConfig = config
    config['pageList'] = [${routeList.map(pageItem => getPageScreen(pageItem))}]
 -  AppRegistry.registerComponent('${appName}',() => createReactNativeApp(Component,config,${firstPage}))
-+  AppRegistry.registerComponent('${appName}',() => gestureHandlerRootHOC(createReactNativeApp(Component,config)))
++  AppRegistry.registerComponent('${appName}',() => gestureHandlerRootHOC(createReactNativeApp(Component,config,${firstPage})))
    `;
      return code;
  }

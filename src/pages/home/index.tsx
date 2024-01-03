@@ -100,7 +100,7 @@ export default class Index extends Component<any, any> {
             showCancel: false,
           });
         });
-    } catch (err) {
+    } catch (err: any) {
       console.log("加载 bundle 错误：", err);
       Taro.showModal({
         title: "加载失败",
@@ -114,7 +114,7 @@ export default class Index extends Component<any, any> {
     NativeModules.RNDevManager.load(url);
   };
 
-  _saveUrlToStorage = (url, key) => {
+  _saveUrlToStorage = (url:string, key:string) => {
     const { localList = [], remoteList } = this.state;
     const list = key === BUNDLES_KEY ? localList : remoteList;
     const idx = list.indexOf(url);
@@ -135,7 +135,7 @@ export default class Index extends Component<any, any> {
     });
   };
 
-  _handleUrl = u => {
+  _handleUrl = (u: any) => {
     const url:string = typeof u === 'string' ? u : (u?.url);
     if(!url) return;
     if (regTaroServer.test(url)) {
@@ -151,14 +151,14 @@ export default class Index extends Component<any, any> {
     }
   };
 
-  _handleReleaseUrl = url => {
+  _handleReleaseUrl = (url:string) => {
     const params = queryString.parseUrl(url).query;
     if (params.url && typeof params.url === "string") {
       this._loadBundelFromRemoteUrl(params.url);
     }
   };
 
-  _onInputConfirm = ({ detail: { value } }) => {
+  _onInputConfirm = ({ detail: { value } }:any) => {
     const url = value;
     if (regMetroServer.test(url)) {
       this._loadBundleFromLocalServer(url);
@@ -214,7 +214,7 @@ export default class Index extends Component<any, any> {
       });
   };
 
-  _clearBundles = async key => {
+  _clearBundles = async (key: string) => {
     try {
       const res = await Taro.showModal({
         title: "确定清空吗？",
@@ -263,7 +263,7 @@ export default class Index extends Component<any, any> {
           </View>
         </View>}
         <List
-          data={localList.map(item => ({
+          data={localList.map((item:any) => ({
             image: serverPng,
             title: item,
             data: item
@@ -278,7 +278,7 @@ export default class Index extends Component<any, any> {
           }}
         />
         <List
-          data={remoteList.map(item => {
+          data={remoteList.map((item:any) => {
               const { name=null, url, logo=appStorePng } = regRemoteRelease.test(item) ? queryString.parseUrl(item).query : { url: item };
               return {
                 image: logo || appStorePng,
