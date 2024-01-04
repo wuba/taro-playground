@@ -1241,7 +1241,7 @@ DEPENDENCIES:
   - "EXFont (from `../node_modules/.pnpm/expo-font@11.10.0_expo@50.0.0-preview.7/node_modules/expo-font/ios`)"
   - "EXImageLoader (from `../node_modules/.pnpm/expo-image-loader@4.6.0_expo@50.0.0-preview.7/node_modules/expo-image-loader/ios`)"
   - "EXLocation (from `../node_modules/.pnpm/expo-location@16.5.1_expo@50.0.0-preview.7/node_modules/expo-location/ios`)"
-  - "Expo (from `../node_modules/.pnpm/expo@50.0.0-preview.7_@babel+core@7.23.7/node_modules/expo`)"
+  - "Expo (from `../node_modules/.pnpm/expo@50.0.0-preview.7_@babel+core@7.23.7_@react-native+babel-preset@0.74.0/node_modules/expo`)"
   - "ExpoBrightness (from `../node_modules/.pnpm/expo-brightness@11.8.0_expo@50.0.0-preview.7/node_modules/expo-brightness/ios`)"
   - "ExpoCamera (from `../node_modules/.pnpm/expo-camera@14.0.1_expo@50.0.0-preview.7/node_modules/expo-camera/ios`)"
   - "ExpoFileSystem (from `../node_modules/.pnpm/expo-file-system@16.0.2_expo@50.0.0-preview.7/node_modules/expo-file-system/ios`)"
@@ -1383,7 +1383,7 @@ EXTERNAL SOURCES:
   EXLocation:
     :path: "../node_modules/.pnpm/expo-location@16.5.1_expo@50.0.0-preview.7/node_modules/expo-location/ios"
   Expo:
-    :path: "../node_modules/.pnpm/expo@50.0.0-preview.7_@babel+core@7.23.7/node_modules/expo"
+    :path: "../node_modules/.pnpm/expo@50.0.0-preview.7_@babel+core@7.23.7_@react-native+babel-preset@0.74.0/node_modules/expo"
   ExpoBrightness:
     :path: "../node_modules/.pnpm/expo-brightness@11.8.0_expo@50.0.0-preview.7/node_modules/expo-brightness/ios"
   ExpoCamera:
@@ -1638,7 +1638,7 @@ SPEC CHECKSUMS:
   RNDeviceInfo: db5c64a060e66e5db3102d041ebe3ef307a85120
   RNFlashList: 4b4b6b093afc0df60ae08f9cbf6ccd4c836c667a
   RNGestureHandler: 61bfdfc05db9b79dd61f894dcd29d3dcc6db3c02
-  RNReanimated: 7486a1f346bfb4c6b171e1e2673d281abec31ae3
+  RNReanimated: 189d2bcd1e8c0bfc306eacac83455edccf67c5da
   RNScreens: b582cb834dc4133307562e930e8fa914b8c04ef2
   RNSVG: ba3e7232f45e34b7b47e74472386cf4e1a676d0a
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17

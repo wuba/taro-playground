@@ -36,7 +36,7 @@ https://testflight.apple.com/join/RDFCp2yy
 > **run this script after the project is initialized.**
 
 ```
-yarn upgradePeerdeps
+pnpm upgradePeerdeps
 ```
 
 ### pod install
@@ -45,31 +45,31 @@ yarn upgradePeerdeps
 > see [pod-install](https://www.npmjs.com/package/pod-install) for more information.
 
 ```
-yarn podInstall
+pnpm podInstall
 ```
 
 ### start ios app
 
 ```
-yarn ios
+pnpm ios
 ```
 
 ### start android app
 
 ```
-yarn android
+pnpm android
 ```
 
 ### start bundler
 
 ```
-yarn start
+pnpm start
 ```
 
 ### reset cache and start bundler
 
 ```
-yarn start --reset-cache
+pnpm start --reset-cache
 ```
 
 ### more information
@@ -83,13 +83,13 @@ yarn start --reset-cache
 ### build ios bundle
 
 ```
-yarn build:rn --platform ios
+pnpm build:rn --platform ios
 ```
 
 ### build Android bundle
 
 ```
-yarn build:rn --platform android
+pnpm build:rn --platform android
 ```
 
 ### release ios APP
@@ -197,7 +197,7 @@ This project supports web and mini program, but it has not been fully tested.
 ### start web server
 
 ```shell
-yarn dev:h5
+pnpm dev:h5
 ```
 
 ### Github workflows of Web
@@ -207,7 +207,7 @@ see [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) 
 ### start wechat mini program
 
 ```shell
-yarn dev:weapp
+pnpm dev:weapp
 ```
 
 ### Github workflows of Wechat Mini Program
@@ -230,6 +230,14 @@ values like ${{secrets.xxxxx}} are manually generated and store in your github e
 
 ```
 cat private.$WEAPP_ID.key | base64 | pbcopy
+```
+
+## Harmony support
+
+### start harmony
+
+```shell
+pnpm dev:harmony
 ```
 
 ## Attention
