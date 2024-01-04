@@ -32,7 +32,7 @@ jobs:
     runs-on: macos-13
     strategy:
       matrix:
-        node-version: [20]
+        node-version: [18]
     steps:
       - name: Get current date
         id: date
