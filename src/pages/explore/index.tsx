@@ -111,13 +111,13 @@ function showInfo({ repository, title, web, mp }) {
         loadWeb({
           url: repository,
           title,
-          certified: isRN
+          certified: isRN || isHARMONY
         });
       } else if (tapIndex === 1) {
         loadWeb({
           url: web,
           title,
-          certified: isRN
+          certified: isRN || isHARMONY
         });
       } else if (tapIndex === 2) {
         loadMini({
