@@ -19,7 +19,7 @@ PODS:
   - EXImageLoader (4.6.0):
     - ExpoModulesCore
     - React-Core
-  - EXLocation (16.5.1):
+  - EXLocation (16.5.2):
     - ExpoModulesCore
   - Expo (50.0.0-preview.7):
     - ExpoModulesCore
@@ -47,9 +47,6 @@ PODS:
     - ReactCommon/turbomodule/core
   - ExpoSensors (12.9.0):
     - ExpoModulesCore
-  - EXTaskManager (11.7.0):
-    - ExpoModulesCore
-    - UMAppLoader
   - FBLazyVector (0.73.1)
   - FBReactNativeSpec (0.73.1):
     - RCT-Folly (= 2022.05.16.00)
@@ -1223,7 +1220,6 @@ PODS:
   - RNSVG (14.1.0):
     - React-Core
   - SocketRocket (0.6.1)
-  - UMAppLoader (4.5.0)
   - Yoga (1.14.0)
   - ZXingObjC/Core (3.6.9)
   - ZXingObjC/OneD (3.6.9):
@@ -1240,7 +1236,7 @@ DEPENDENCIES:
   - "EXConstants (from `../node_modules/.pnpm/expo-constants@15.4.2_expo@50.0.0-preview.7/node_modules/expo-constants/ios`)"
   - "EXFont (from `../node_modules/.pnpm/expo-font@11.10.0_expo@50.0.0-preview.7/node_modules/expo-font/ios`)"
   - "EXImageLoader (from `../node_modules/.pnpm/expo-image-loader@4.6.0_expo@50.0.0-preview.7/node_modules/expo-image-loader/ios`)"
-  - "EXLocation (from `../node_modules/.pnpm/expo-location@16.5.1_expo@50.0.0-preview.7/node_modules/expo-location/ios`)"
+  - "EXLocation (from `../node_modules/.pnpm/expo-location@16.5.2_expo@50.0.0-preview.7/node_modules/expo-location/ios`)"
   - "Expo (from `../node_modules/.pnpm/expo@50.0.0-preview.7_@babel+core@7.23.7_@react-native+babel-preset@0.74.0/node_modules/expo`)"
   - "ExpoBrightness (from `../node_modules/.pnpm/expo-brightness@11.8.0_expo@50.0.0-preview.7/node_modules/expo-brightness/ios`)"
   - "ExpoCamera (from `../node_modules/.pnpm/expo-camera@14.0.1_expo@50.0.0-preview.7/node_modules/expo-camera/ios`)"
@@ -1250,7 +1246,6 @@ DEPENDENCIES:
   - "ExpoKeepAwake (from `../node_modules/.pnpm/expo-keep-awake@12.8.0_expo@50.0.0-preview.7/node_modules/expo-keep-awake/ios`)"
   - "ExpoModulesCore (from `../node_modules/.pnpm/expo-modules-core@1.11.4/node_modules/expo-modules-core`)"
   - "ExpoSensors (from `../node_modules/.pnpm/expo-sensors@12.9.0_expo@50.0.0-preview.7/node_modules/expo-sensors/ios`)"
-  - "EXTaskManager (from `../node_modules/.pnpm/expo-task-manager@11.7.0_expo@50.0.0-preview.7/node_modules/expo-task-manager/ios`)"
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - FBReactNativeSpec (from `../node_modules/react-native/React/FBReactNativeSpec`)
   - Flipper (= 0.201.0)
@@ -1343,7 +1338,6 @@ DEPENDENCIES:
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNSVG (from `../node_modules/react-native-svg`)
-  - "UMAppLoader (from `../node_modules/.pnpm/unimodules-app-loader@4.5.0/node_modules/unimodules-app-loader/ios`)"
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -1381,7 +1375,7 @@ EXTERNAL SOURCES:
   EXImageLoader:
     :path: "../node_modules/.pnpm/expo-image-loader@4.6.0_expo@50.0.0-preview.7/node_modules/expo-image-loader/ios"
   EXLocation:
-    :path: "../node_modules/.pnpm/expo-location@16.5.1_expo@50.0.0-preview.7/node_modules/expo-location/ios"
+    :path: "../node_modules/.pnpm/expo-location@16.5.2_expo@50.0.0-preview.7/node_modules/expo-location/ios"
   Expo:
     :path: "../node_modules/.pnpm/expo@50.0.0-preview.7_@babel+core@7.23.7_@react-native+babel-preset@0.74.0/node_modules/expo"
   ExpoBrightness:
@@ -1400,8 +1394,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/.pnpm/expo-modules-core@1.11.4/node_modules/expo-modules-core"
   ExpoSensors:
     :path: "../node_modules/.pnpm/expo-sensors@12.9.0_expo@50.0.0-preview.7/node_modules/expo-sensors/ios"
-  EXTaskManager:
-    :path: "../node_modules/.pnpm/expo-task-manager@11.7.0_expo@50.0.0-preview.7/node_modules/expo-task-manager/ios"
   FBLazyVector:
     :path: "../node_modules/react-native/Libraries/FBLazyVector"
   FBReactNativeSpec:
@@ -1537,8 +1529,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-screens"
   RNSVG:
     :path: "../node_modules/react-native-svg"
-  UMAppLoader:
-    :path: "../node_modules/.pnpm/unimodules-app-loader@4.5.0/node_modules/unimodules-app-loader/ios"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -1552,7 +1542,7 @@ SPEC CHECKSUMS:
   EXConstants: e77cccf9afb245a6fb2ea917fe5f45f0e1d8b841
   EXFont: 9ae7e8e2e4825cef04a45dca74512a3f711e2fe9
   EXImageLoader: 55080616b2fe9da19ef8c7f706afd9814e279b6b
-  EXLocation: d85e362b70c7545629905d487aafb9503b076555
+  EXLocation: 6ec9c861af497b548f9617a5d4301884c4d43339
   Expo: cd2dc043dd1cc3d9e8e4e035fb9a41b421e8f13f
   ExpoBrightness: 6d160de5877289d11674aea61aacdb37422774cf
   ExpoCamera: 64f16dee3c712c41046dc6a3c22518461c0ceae7
@@ -1562,7 +1552,6 @@ SPEC CHECKSUMS:
   ExpoKeepAwake: ed71bfe0e6ecd38e337586ba6e1ba27a56eb373b
   ExpoModulesCore: 01c0abfa6cd9c41c4bd76d8a1a079e6b591db10f
   ExpoSensors: 773adb32167d5d3c28280697ceee342b88f606ab
-  EXTaskManager: 81b2dfaaba6d9f9a4bc3e3e2a786a98004eb9e98
   FBLazyVector: 2296bacb2fa157a43991048b0a9d71c1c8b65083
   FBReactNativeSpec: 00c9b95ce75c53d6dfc543d9ba8f69572cd2054e
   Flipper: c7a0093234c4bdd456e363f2f19b2e4b27652d44
@@ -1642,7 +1631,6 @@ SPEC CHECKSUMS:
   RNScreens: b582cb834dc4133307562e930e8fa914b8c04ef2
   RNSVG: ba3e7232f45e34b7b47e74472386cf4e1a676d0a
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
-  UMAppLoader: 5df85360d65cabaef544be5424ac64672e648482
   Yoga: 4f53dc50008d626fa679c7a1cb4bed898f8c0bde
   ZXingObjC: 8898711ab495761b2dbbdec76d90164a6d7e14c5
 

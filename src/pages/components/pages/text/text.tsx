@@ -36,12 +36,12 @@ const PageView = () => {
             <View className='example-body__text'>
               <Text space='nbsp'>多          空格文字(nbsp)</Text>
             </View>
-            <View className='example-body__text'>
+            {/* <View className='example-body__text'>
               <Text>不解码文字&gt;</Text>
             </View>
             <View className='example-body__text'>
               <Text decode>解码文字&gt;</Text>
-            </View>
+            </View> */}
           </View>
         </View>
       </View>
