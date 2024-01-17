@@ -11,20 +11,20 @@ export default function Size() {
     {/* 测试 定位 */}
     <View className='global-page__body'>
       <View className='global-page__body-example example'>
-        <Text className='example-title'>position</Text>
+        <View className='example-header'>position</View>
         <View className='example-body'>
           <View className='column'>
             <View className='column'>
               <Text className='example-sub-title'>relative</Text>
               <View className='row bg'>
-                <View className='box' style={{ position: 'relative', top: '30px', left: '30px'}}>relative 30px</View>
+                <View className='box box-relative'>relative 30px</View>
               </View>
             </View>
             <View className='column'>
               <Text className='example-sub-title'>absolute</Text>
               <View className='row'>
-                <View className='bg' style={{ position: 'relative', height: '200px', width: '200px'}}>
-                  <View className='box' style={{ position: 'absolute', top: '30px', left: '30px'}}>
+                <View className='bg bg-relative'>
+                  <View className='box box-absolute'>
                     absolute 30px
                   </View>
                 </View>
@@ -33,12 +33,12 @@ export default function Size() {
             <View className='column'>
               <Text className='example-sub-title'>zIndex</Text>
               <View className='row'>
-                <View className='bg' style={{ position: 'relative', height: '200px', width: '200px'}}>
-                  <View className='box' style={{ opacity: 0.5, position: 'absolute', top: '30px', left: '30px', zIndex: 1}}>1</View>
-                  <View className='box' style={{ opacity: 0.5, position: 'absolute', top: '35px', left: '35px', zIndex: 2 }}>2</View>
-                  <View className='box' style={{ opacity: 0.5, position: 'absolute', top: '40px', left: '40px', zIndex: 3}}>3</View>
-                  <View className='box' style={{ opacity: 0.5, position: 'absolute', top: '45px', left: '45px', zIndex: 4}}>4</View>
-                  <View className='box' style={{ opacity: 0.5, position: 'absolute', top: '50px', left: '50px', zIndex: 5}}>5</View>
+                <View className='bg bg-relative'>
+                  <View className='box box-z-1'>1</View>
+                  <View className='box box-z-2'>2</View>
+                  <View className='box box-z-3'>3</View>
+                  <View className='box box-z-4'>4</View>
+                  <View className='box box-z-5'>5</View>
                 </View>
               </View>
             </View>

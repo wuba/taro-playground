@@ -10,7 +10,7 @@ export default function Size() {
     {/* 测试 透明度 */}
     <View className='global-page__body'>
       <View className='global-page__body-example example'>
-        <Text className='example-title'>其他</Text>
+        <View className='example-header'>其他</View>
         <View className='example-body'>
           <View className='column'>
             <View className='column'>
@@ -24,11 +24,11 @@ export default function Size() {
             <View className='column'>
               <Text className='example-sub-title'>overflow</Text>
               <View className='column'>
-                <View className='bg' style={{ overflow: 'hidden', height: '300px', width: '300px', margin: '10px'}}>
-                  <View className='box m10' style={{ height: '400px', width: '400px', opacity: 0.5 }}>hidden</View>
+                <View className='bg box300' style={{ overflow: 'hidden'}}>
+                  <View className='box m10 box400'>hidden</View>
                 </View>
-                <View className='bg' style={{ overflow: 'visibile', height: '300px', width: '300px', margin: '10px'}}>
-                  <View className='box m10' style={{ height: '400px', width: '400px', opacity: 0.5 }}>visibile</View>
+                <View className='bg box300' style={{ overflow: 'visibile'}}>
+                  <View className='box m10 box400'>visibile</View>
                 </View>
               </View>
             </View>

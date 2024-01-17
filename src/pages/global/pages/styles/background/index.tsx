@@ -10,7 +10,7 @@ export default function Size() {
     {/* 测试 background-color */}
     <View className='global-page__body'>
       <View className='global-page__body-example example'>
-        <Text className='example-title'>background-color</Text>
+        <View className='example-header'>background-color</View>
         <View className='example-body'>
           <View className='column'>
             <View className='column'>
@@ -32,10 +32,10 @@ export default function Size() {
               </View>
             </View>
             <View className='column'>
-              <Text className='example-sub-title'>rgba(255, 0, 0)</Text>
+              <Text className='example-sub-title'>rgb(255, 0, 0)</Text>
               <View className='row'>
                 <View className='box' style={{
-                  backgroundColor: 'rgba(255, 0, 0)'
+                  backgroundColor: 'rgb(255, 0, 0)'
                 }}
                 ></View>
               </View>
@@ -56,7 +56,7 @@ export default function Size() {
     {/* 测试 background-image */}
     <View className='global-page__body'>
       <View className='global-page__body-example example'>
-        <Text className='example-title'>background-image</Text>
+        <View className='example-header'>background-image</View>
         <View className='example-body'>
           <View className='column'>
             <View className='column'>
@@ -84,7 +84,7 @@ export default function Size() {
     {/* 测试background-size */}
     <View className='global-page__body'>
       <View className='global-page__body-example example'>
-        <Text className='example-title'>background-size</Text>
+        <View className='example-header'>background-size</View>
         <View className='example-body'>
           <View className='column'>
           <View className='column'>
@@ -130,7 +130,7 @@ export default function Size() {
     {/* 测试background-position */}
     <View className='global-page__body'>
       <View className='global-page__body-example example'>
-        <Text className='example-title'>background-position</Text>
+        <View className='example-header'>background-position</View>
         <View className='example-body'>
           <View className='column'>
             <View className='column'>
@@ -260,7 +260,7 @@ export default function Size() {
     {/* 测试background-repeat */}
     <View className='global-page__body'>
       <View className='global-page__body-example example'>
-        <Text className='example-title'>background-repeat</Text>
+        <View className='example-header'>background-repeat</View>
         <View className='example-body'>
           <View className='column'>
             <View className='column'>
@@ -288,7 +288,7 @@ export default function Size() {
               </View>
             </View>
             <View className='column'>
-              <Text className='example-sub-title'>repeat-y</Text>
+              <Text className='example-sub-title'>repeat-x</Text>
               <View className='row'>
                 <View className='bg'>
                   <View className='big-box' style={{

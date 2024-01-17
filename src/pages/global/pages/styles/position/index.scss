@@ -14,11 +14,71 @@
 .bg {
   background: #eee;
 }
-
+.bg-relative {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: #ddd;
+}
+.box-absolute {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
 .flex {
   display: flex;
 }
 
+.box-relative {
+  position: relative;
+  top: 30px;
+  left: 30px;
+}
+
+.box-z-1 {
+  opacity: 0.5;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 1;
+  color: red;
+}
+
+.box-z-2 {
+  opacity: 0.5;
+  position: absolute;
+  top: 35px;
+  left: 35px;
+  z-index: 2;
+  color: orange;
+}
+
+.box-z-3 {
+  opacity: 0.5;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  z-index: 3;
+  color: yellow;
+}
+
+.box-z-4 {
+  opacity: 0.5;
+  position: absolute;
+  top: 45px;
+  left: 45px;
+  z-index: 4;
+  color: green;
+}
+
+.box-z-5 {
+  opacity: 0.5;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  z-index: 5;
+  color: blue;
+}
 
 .row {
   display: flex;

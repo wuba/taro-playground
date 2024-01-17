@@ -10,7 +10,7 @@ export default function Size() {
     {/* 测试 flex-direcion */}
     <View className='global-page__body'>
       <View className='global-page__body-example example'>
-        <Text className='example-title'>flex-direction</Text>
+        <View className='example-header'>flex-direction</View>
         <View className='example-body'>
           <Text className='example-sub-title'>row</Text>
           <View className='row bg'>

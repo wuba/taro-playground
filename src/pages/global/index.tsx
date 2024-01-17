@@ -65,8 +65,7 @@ export default class Index extends Component<never, any> {
             {
               id: 'platform',
               name: '跨平台'
-            }
-          ].concat(process.env.TARO_ENV === 'harmony' ? [
+            },
             {
               id: 'flex/index',
               name: 'flex'
@@ -89,7 +88,7 @@ export default class Index extends Component<never, any> {
               id: 'other/index',
               name: '其他'
             }
-          ] : [])
+          ]
         }
       ]
     };

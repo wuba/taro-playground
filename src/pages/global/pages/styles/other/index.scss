@@ -28,3 +28,21 @@
 .m10 {
   margin: 0 10px;
 }
+
+.box300 {
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+}
+
+.box400 {
+  font-size: 40px;
+  display: flex;
+  width: 400px;
+  height: 400px;
+  opacity: 0.5;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}

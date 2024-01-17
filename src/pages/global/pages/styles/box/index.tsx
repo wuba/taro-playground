@@ -5,37 +5,37 @@ import './index.scss'
 export default function Size() {
   return <View className='global-page'>
     <View className='global-page__header'>
-      <Header title='尺寸'></Header>
+      <Header title='Box'></Header>
     </View>
  
     {/* 测试 单位 */}
     <View className='global-page__body'>
       <View className='global-page__body-example example'>
-        <Text className='example-title'>width height 单位</Text>
+        <View className='example-header'>width height 单位</View>
         <View className='example-body'>
           <View className='column'>
             <View className='column'>
               <Text className='example-sub-title'>height & width 单位:px</Text>
               <View className='row bg'>
-                <View className='box' style={{ height: '100px', width: '100px'}}>100px</View>
+                <View className='box box100'>100px</View>
               </View>
             </View>
             <View className='column'>
               <Text className='example-sub-title'>height & width 单位:%</Text>
-              <View className='row bg' style={{height: '400px', width: '400px'}}>
-                <View className='box' style={{ height: '50%', width: '50%'}}>50%</View>
+              <View className='row bg box400'>
+                <View className='box box-half'>50%</View>
               </View>
             </View>
             <View className='column'>
               <Text className='example-sub-title'>width 单位:vw</Text>
               <View className='row bg'>
-                <View className='box' style={{ width: '50vw'}}>50vw</View>
+                <View className='box box-50vw'>50vw</View>
               </View>
             </View>
             <View className='column'>
               <Text className='example-sub-title'>heigh 单位:vh</Text>
               <View className='row bg'>
-                <View className='box' style={{ height: '50vh'}}>50vh</View>
+                <View className='box box-50vh'>50vh</View>
               </View>
             </View>
           </View>
@@ -46,31 +46,31 @@ export default function Size() {
     {/* 测试 最小/大 */}
     <View className='global-page__body'>
       <View className='global-page__body-example example'>
-        <Text className='example-title'>最大/小尺寸</Text>
+        <View className='example-header'>最大/小尺寸</View>
         <View className='example-body'>
           <View className='column'>
             <View className='column'>
               <Text className='example-sub-title'>min-width: 200px</Text>
               <View className='row bg'>
-                <View className='box' style={{ minWidth: '200px'}}>200px</View>
+                <View className='box box-minw200'>200px</View>
               </View>
             </View>
             <View className='column'>
               <Text className='example-sub-title'>max-width: 50px</Text>
               <View className='row bg'>
-                <View className='box' style={{ maxWidth: '50px'}}>50px</View>
+                <View className='box box-minw50'>50px</View>
               </View>
             </View>
             <View className='column'>
               <Text className='example-sub-title'>min-height: 200px</Text>
               <View className='row bg'>
-                <View className='box' style={{ minHeight: '200px'}}>200px</View>
+                <View className='box box-minh200'>200px</View>
               </View>
             </View>
             <View className='column'>
               <Text className='example-sub-title'>max-height: 50px</Text>
               <View className='row bg'>
-                <View className='box' style={{ maxHeight: '50px'}}>50px</View>
+                <View className='box box-minh50'>50px</View>
               </View>
             </View>
           </View>
@@ -87,17 +87,17 @@ export default function Size() {
             <View className='column'>
               <Text className='example-sub-title'>margin: 10px</Text>
               <View className='row bg'>
-                <View className='mbox' style={{ margin: '10px'}}>
-                  <View className='mmbox' style={{ marginLeft: '10px'}}></View>
+                <View className='mbox box-m10'>
+                  <View className='mmbox box-ml10'></View>
                 </View>
-                <View className='mbox' style={{ margin: '10px 10px'}}>
-                  <View className='mmbox' style={{ marginTop: '10px'}}></View>
+                <View className='mbox box-m10-2'>
+                  <View className='mmbox box-mt10'></View>
                 </View>
-                <View className='mbox' style={{ margin: '10px 10px 10px', justifyContent: 'flex-end'}}>
-                  <View className='mmbox' style={{ marginRight: '10px'}}></View>
+                <View className='mbox box-m10-3' style={{ justifyContent: 'flex-end'}}>
+                  <View className='mmbox box-mr10'></View>
                 </View>
-                <View className='mbox' style={{ margin: '10px 10px 10px 10px', alignItems: 'flex-end'}}>
-                  <View className='mmbox' style={{ marginBottom: '10px'}}></View>
+                <View className='mbox box-m10-4' style={{ alignItems: 'flex-end'}}>
+                  <View className='mmbox box-mb10'></View>
                 </View>
               </View>
             </View>
@@ -115,16 +115,16 @@ export default function Size() {
             <View className='column'>
               <Text className='example-sub-title'>padding: 10px</Text>
               <View className='row bg'>
-                <View className='pbox' style={{ paddingLeft: '10px'}}>
+                <View className='pbox box-pl10'>
                   <View className='mmbox'></View>
                 </View>
-                <View className='pbox' style={{ paddingTop: '10px'}}>
+                <View className='pbox box-pt10'>
                   <View className='mmbox'></View>
                 </View>
-                <View className='pbox' style={{ paddingRight: '10px', justifyContent: 'flex-end'}}>
+                <View className='pbox box-pr10' style={{ justifyContent: 'flex-end'}}>
                   <View className='mmbox'></View>
                 </View>
-                <View className='pbox' style={{ paddingBottom: '10px', alignItems: 'flex-end'}}>
+                <View className='pbox box-pb10' style={{ alignItems: 'flex-end'}}>
                   <View className='mmbox'></View>
                 </View>
               </View>

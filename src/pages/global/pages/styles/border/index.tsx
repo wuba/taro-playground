@@ -11,22 +11,22 @@ export default function Size() {
     {/* 测试 border-width */}
     <View className='global-page__body'>
       <View className='global-page__body-example example'>
-        <Text className='example-title'>border</Text>
+        <View className='example-header'>border</View>
         <View className='example-body'>
           <View className='column'>
             <View className='column'>
               <Text className='example-sub-title'>border</Text>
               <View className='row bg'>
-                <View className='box' style={{ border: '1px solid #000'}}>1px</View>
+                <View className='box border-1'>1px</View>
               </View>
             </View>
             <View className='column'>
               <Text className='example-sub-title'>border 四边</Text>
               <View className='row bg'>
-                <View className='box' style={{ borderLeft: '1px solid #000'}}>border-left</View>
-                <View className='box' style={{ borderRight: '1px solid #000'}}>border-right</View>
-                <View className='box' style={{ borderBottom: '1px solid #000'}}>border-bottom</View>
-                <View className='box' style={{ borderLeft: '1px solid #000'}}>border-left</View>
+                <View className='box border-l1'>border-left</View>
+                <View className='box border-t1'>border-top</View>
+                <View className='box border-r1'>border-right</View>
+                <View className='box border-b1'>border-bottom</View>
               </View>
             </View>
           </View>
@@ -37,24 +37,24 @@ export default function Size() {
     {/* 测试 border-width */}
     <View className='global-page__body'>
       <View className='global-page__body-example example'>
-        <Text className='example-title'>border-width</Text>
+        <View className='example-header'>border-width</View>
         <View className='example-body'>
           <View className='column'>
             <View className='column'>
               <Text className='example-sub-title'>border-width</Text>
               <View className='row bg'>
-                <View className='box border' style={{ borderWidth: '1px'}}>1px</View>
-                <View className='box border' style={{ borderWidth: '5px'}}>5px</View>
-                <View className='box border' style={{ borderWidth: '10px'}}>10px</View>
+                <View className='box border border-w1'>1px</View>
+                <View className='box border border-w5'>5px</View>
+                <View className='box border border-w10'>10px</View>
               </View>
             </View>
             <View className='column'>
               <Text className='example-sub-title'>border-width 四边</Text>
               <View className='row bg'>
-                <View className='box border' style={{ borderTopWidth: '5px'}}>top</View>
-                <View className='box border' style={{ borderRightWidth: '5px'}}>right</View>
-                <View className='box border' style={{ borderBottomWidth: '5px'}}>bottom</View>
-                <View className='box border' style={{ borderLeftWidth: '5px'}}>left</View>
+                <View className='box border border-lw5'>left</View>
+                <View className='box border border-tw5'>top</View>
+                <View className='box border border-rw5'>right</View>
+                <View className='box border border-bw5'>bottom</View>
               </View>
             </View>
           </View>
@@ -65,7 +65,7 @@ export default function Size() {
     {/* 测试 border-color */}
     <View className='global-page__body'>
       <View className='global-page__body-example example'>
-        <Text className='example-title'>border-color</Text>
+        <View className='example-header'>border-color</View>
         <View className='example-body'>
           <View className='column'>
             <View className='column'>
@@ -93,7 +93,7 @@ export default function Size() {
     {/* 测试 border-style */}
     <View className='global-page__body'>
       <View className='global-page__body-example example'>
-        <Text className='example-title'>border-style</Text>
+        <View className='example-header'>border-style</View>
         <View className='example-body'>
           <View className='column'>
             <View className='column'>
@@ -105,7 +105,7 @@ export default function Size() {
               </View>
             </View>
             <View className='column'>
-              <Text className='example-sub-title'>border-color 四边</Text>
+              <Text className='example-sub-title'>border-style 四边</Text>
               <View className='row bg'>
                 <View className='box border' style={{ borderTopStyle: 'dashed'}}>top</View>
                 <View className='box border' style={{ borderRightStyle: 'dashed'}}>right</View>
@@ -121,7 +121,7 @@ export default function Size() {
     {/* 测试 border-radius */}
     <View className='global-page__body'>
       <View className='global-page__body-example example'>
-        <Text className='example-title'>border-radius</Text>
+        <View className='example-header'>border-radius</View>
         <View className='example-body'>
           <View className='column'>
             <View className='column'>

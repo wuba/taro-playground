@@ -54,6 +54,13 @@ const pages = [
   'pages/global/pages/router/index',
   'pages/global/pages/styles/size',
   'pages/global/pages/styles/platform',
+  'pages/global/pages/styles/background/index',
+  'pages/global/pages/styles/border/index',
+  'pages/global/pages/styles/flex/index',
+  'pages/global/pages/styles/other/index',
+  'pages/global/pages/styles/position/index',
+  'pages/global/pages/styles/box/index',
+  'pages/global/pages/styles/text/index',
   // 全局相关 end
   // 组件相关 start
   'pages/components/index',
@@ -118,23 +125,13 @@ const pages = [
   'pages/about/rn',
   'pages/webview/index',
   // 探索
-  'pages/explore/index'
+  'pages/explore/index',
 ];
 
 if (process.env.TARO_ENV !== 'harmony') {
   pages.push(
     'pages/components/pages/virtual-list/virtual-list',
   );
-} else {
-  pages.push(
-    'pages/global/pages/styles/background/index',
-    'pages/global/pages/styles/border/index',
-    'pages/global/pages/styles/flex/index',
-    'pages/global/pages/styles/other/index',
-    'pages/global/pages/styles/position/index',
-    'pages/global/pages/styles/box/index',
-    'pages/global/pages/styles/text/index',
-  )
 }
 
 const subpackages = [

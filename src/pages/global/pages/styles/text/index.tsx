@@ -10,7 +10,7 @@ export default function Size() {
     {/* 测试 文本 */}
     <View className='global-page__body'>
       <View className='global-page__body-example example'>
-        <Text className='example-title'>font</Text>
+        <View className='example-header'>font</View>
         <View className='example-body'>
           <View className='column'>
           <View className='column'>
