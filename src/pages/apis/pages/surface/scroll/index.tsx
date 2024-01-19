@@ -8,11 +8,10 @@ import './index.scss'
  * @returns
  */
 const Index = () => {
-  const _pageScrollTo = (top) => () => {
-    top = Taro.pxTransform(top * 2)
-    top = top.replace(/[a-z]+$/, '')
+  const _pageScrollTo = (top: number) => () => {
+    const _top = Taro.pxTransform(top * 2)
     Taro.pageScrollTo({
-      scrollTop: top,
+      scrollTop: _top,
     })
   }
   return (
