@@ -65,6 +65,28 @@ export default class Index extends Component<never, any> {
             {
               id: 'platform',
               name: '跨平台'
+            },
+            {
+              id: 'flex/index',
+              name: 'flex'
+            },{
+              id: 'box/index',
+              name: '盒子'
+            },{
+              id: 'border/index',
+              name: '边框'
+            },{
+              id: 'background/index',
+              name: '背景'
+            },{
+              id: 'text/index',
+              name: '文本'
+            },{
+              id: 'position/index',
+              name: '定位'
+            },{
+              id: 'other/index',
+              name: '其他'
             }
           ]
         }
@@ -94,7 +116,7 @@ export default class Index extends Component<never, any> {
 
   render() {
     return (
-      <ScrollView className='index' enableBackToTop style={{ paddingBottom: 80 }}>
+      <ScrollView className='index' scrollY enableBackToTop style={{ paddingBottom: 80 }}>
         <View className='index-hd'>
           <View className='index-desc'>
             <Text className='index-desc_text'>

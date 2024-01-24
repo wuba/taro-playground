@@ -15,7 +15,7 @@ env:
   # 应用的application_id
   APP_ID: ${{secrets.APP_ID}}
   APP_NAME: Taro
-  VERSION_NUMBER: 1.8.2
+  VERSION_NUMBER: 1.11.0
   BUILD_TYPE: debug
   TEAM_ID: ${{secrets.TEAM_ID}}
   PROVISIONING_PROFILE_SPECIFIER: ${{secrets.DEBUG_PROVISIONING_PROFILE_SPECIFIER}}
@@ -30,24 +30,14 @@ jobs:
     steps:
       - name: Checkout Project
         uses: actions/checkout@v2
-      - name: Cache node_modules Folder
-        uses: actions/cache@v2
+      - uses: pnpm/action-setup@v2
         with:
-          path: ${{ github.workspace }}/node_modules
-          key: ${{ runner.os }}-node_modules
-          restore-keys: ${{ runner.os }}-node_modules
-      - name: Get Yarn Cache Directory Path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - name: Cache Yarn
-        uses: actions/cache@v2
-        env:
-          cache-name: yarn-cache
+          version: 8
+      - uses: actions/setup-node@v3
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/package.json') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          node-version: 20
+          cache: 'pnpm'
+      - run: pnpm install
       - name: Cache Pods
         uses: actions/cache@v2
         with:
@@ -55,12 +45,6 @@ jobs:
           key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-pods-
-      - name: Install Dependencies
-        run: |
-          yarn
-      - name: Build Taro React Native Bundle
-        run: |
-          yarn build:rn --platform ios
       - name: Install pods
         run: cd ios && pod update --no-repo-update
       - name: Import signing certificate
@@ -84,6 +68,7 @@ jobs:
           FL_CODE_SIGN_IDENTITY: ${{ env.CODE_SIGN_IDENTITY }}
           FL_PROVISIONING_PROFILE_SPECIFIER: ${{ env.PROVISIONING_PROFILE_SPECIFIER }}
           FASTLANE_TEAM_ID: ${{ env.TEAM_ID }}
+          NODE_PATH: ${{ github.workspace }}/node_modules/.pnpm/node_modules:$NODE_PATH
         run: |
           cd ios
           bundle update

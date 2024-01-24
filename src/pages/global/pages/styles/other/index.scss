@@ -1,0 +1,48 @@
+.box {
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+  font-size: 16px;
+  background: #555;
+}
+
+.bg {
+  background: #eee;
+}
+
+.flex {
+  display: flex;
+}
+
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.m10 {
+  margin: 0 10px;
+}
+
+.box300 {
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+}
+
+.box400 {
+  font-size: 40px;
+  display: flex;
+  width: 400px;
+  height: 400px;
+  opacity: 0.5;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
