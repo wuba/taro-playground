@@ -2,10 +2,11 @@ package com.tarodemo.devmanager
 
 import android.app.Application
 import com.facebook.react.PackageList
-import com.facebook.react.ReactNativeHost
 import com.facebook.react.ReactPackage
+import com.facebook.react.defaults.DefaultReactNativeHost
+import com.tarodemo.BuildConfig
 
-open class TaroReactNativeHost(application: Application) : ReactNativeHost(application) {
+open class TaroReactNativeHost(application: Application) : DefaultReactNativeHost(application) {
 
     var jsMainModulePath: String? = "index"
 
@@ -18,5 +19,9 @@ open class TaroReactNativeHost(application: Application) : ReactNativeHost(appli
             add(DevManagerPackage())
         }
     }
+
+    override var isNewArchEnabled: Boolean = BuildConfig.IS_NEW_ARCHITECTURE_ENABLED
+
+    override var isHermesEnabled: Boolean = BuildConfig.IS_NEW_ARCHITECTURE_ENABLED
 
 }

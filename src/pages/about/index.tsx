@@ -10,7 +10,7 @@ import Taro from '@tarojs/taro';
 import { View, Image, Text } from '@tarojs/components';
 import taroVersion from '@tarojs/taro-rn/package.json';
 import rnVersion from 'react-native/package.json';
-import { isWeb, isRN, loadWeb, loadMini, loadRn } from "@/utils/index";
+import { isWeb, isRN, isHARMONY, loadWeb, loadMini, loadRn } from "@/utils/index";
 import List from '@/components/list/list';
 import logoPng from "@/assets/common/taro_logo.jpg";
 import './index.scss';
@@ -43,7 +43,7 @@ const linkUpdate = {
       loadWeb({
         url: 'https://github.com/wuba/taro-playground/releases',
         title: '版本变更',
-        certified: isRN
+        certified: isRN || isHARMONY
       })
     }
   },
@@ -55,7 +55,7 @@ const linkSource = {
     loadWeb({
       url: 'https://github.com/wuba/taro-playground',
       title: '项目源码',
-      certified: isRN
+      certified: isRN || isHARMONY
     })
   }
 }
@@ -66,7 +66,7 @@ const linkSite = {
     loadWeb({
       url: 'https://docs.taro.zone',
       title: '官方网站',
-      certified: isRN
+      certified: isRN || isHARMONY
     })
   }
 }
@@ -77,7 +77,7 @@ const linkWeb = {
     loadWeb({
       url: 'https://wuba.github.io/taro-playground/',
       title: 'Web 版本',
-      certified: isRN
+      certified: isRN || isHARMONY
     })
   }
 }
@@ -101,8 +101,8 @@ const linkRn = {
   }
 }
 
-const versionList = isRN ? [linkRn, linkWeb, linkMini, linkUpdate] : isWeb ? [linkRn, linkMini, linkUpdate] : [linkRn, linkWeb, linkUpdate]
-const linksList = isRN ? [linkSource, linkSite, linkPrivacy] : [linkSource, linkSite]
+const versionList = (isRN || isHARMONY) ? [linkRn, linkWeb, linkMini, linkUpdate] : isWeb ? [linkRn, linkMini, linkUpdate] : [linkRn, linkWeb, linkUpdate]
+const linksList = (isRN || isHARMONY) ? [linkSource, linkSite, linkPrivacy] : [linkSource, linkSite]
 export default class Index extends Component<any, any> {
   render() {
     return (

@@ -1,0 +1,150 @@
+
+.bg {
+  background: #eee;
+}
+
+.box {
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  background: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box100 {
+  width: 100px;
+  height: 100px;
+}
+
+.box400 {
+  width: 400px;
+  height: 400px;
+  background-color: white;
+}
+
+.box-half {
+  width: 50%;
+  height: 50%;
+}
+
+.box-50vw {
+  width: 50vw;
+}
+
+.box-50vh {
+  height: 50vh;
+}
+
+.box-minw200 {
+  min-width: 200px;
+}
+
+.box-minw50 {
+  min-width: 50px;
+}
+
+.box-minh200 {
+  min-height: 200px;
+}
+
+.box-minh50 {
+  min-height: 50px;
+}
+
+.box-m10 {
+  margin: 10px;
+}
+
+.box-m10-2 {
+  margin: 10px 10px;
+}
+
+.box-m10-3 {
+  margin: 10px 10px 10px;
+}
+
+.box-m10-4 {
+  margin: 10px 10px 10px 10px;
+}
+
+.box-ml10 {
+  margin-left: 10px;
+}
+
+.box-mr10 {
+  margin-right: 10px;
+}
+
+.box-mt10 {
+  margin-top: 10px;
+}
+
+.box-mb10 {
+  margin-bottom: 10px;
+}
+
+.box-pl10 {
+  padding-left: 10px;
+}
+
+.box-pr10 {
+  padding-right: 10px;
+}
+
+.box-pt10 {
+  padding-top: 10px;
+}
+
+.box-pb10 {
+  padding-bottom: 10px;
+}
+
+.mbox {
+  width: 130px;
+  height: 130px;
+  font-size: 16px;
+  color: #fff;
+  background: #999;
+  display: flex;
+  flex-direction: row;
+}
+.mmbox {
+  width: 80px;
+  height: 80px;
+  font-size: 16px;
+  color: #fff;
+  background: #555;
+}
+
+.pbox {
+  width: 130px;
+  height: 130px;
+  font-size: 16px;
+  color: #fff;
+  background: #999;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.flex {
+  display: flex;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.border {
+  border: 1px solid #000;
+}

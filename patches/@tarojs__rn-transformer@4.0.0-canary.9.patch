@@ -1,0 +1,22 @@
+diff --git a/dist/app.js b/dist/app.js
+index 937b81f6502d5c54e71b3ec4070c0a01990e0619..a8ac852011f2bfa245201e9cef0044db4d83a5a5 100644
+--- a/dist/app.js
++++ b/dist/app.js
+@@ -113,7 +113,7 @@ function generateEntry({ filename, projectRoot, sourceDir, appName, entryName, d
+     const appComponentPath = `./${sourceDir}/${entryName}`;
+     const appTabBar = getFormatTabBar(appPath, basePath);
+     const firstPage = getPageComponent(routeList[0]);
+-    const code = `import 'react-native-gesture-handler'
++    const code = `import { gestureHandlerRootHOC } from 'react-native-gesture-handler'
+   import { AppRegistry } from 'react-native'
+   import { createReactNativeApp, createPageConfig } from '@tarojs/runtime-rn'
+   import Component from '${appComponentPath}'
+@@ -127,7 +127,7 @@ function generateEntry({ filename, projectRoot, sourceDir, appName, entryName, d
+   const config = { appConfig: { ...buildConfig, ...AppComponentConfig } }
+   global.__taroAppConfig = config
+   config['pageList'] = [${routeList.map(pageItem => getPageScreen(pageItem))}]
+-  AppRegistry.registerComponent('${appName}',() => createReactNativeApp(Component,config,${firstPage}))
++  AppRegistry.registerComponent('${appName}',() => gestureHandlerRootHOC(createReactNativeApp(Component,config,${firstPage})))
+   `;
+     return code;
+ }

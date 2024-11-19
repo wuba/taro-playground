@@ -16,13 +16,13 @@
   color: white;
   font-size: 30px;
   background-color: black;
-  /*  #ifndef  weapp rn  */
+  /*  #ifndef  weapp rn harmony */
   background-color: red;
   /*  #endif  */
-  /*  #ifndef  h5 rn  */
+  /*  #ifndef  h5 rn harmony */
   background-color: green;
   /*  #endif  */
-  /*  #ifndef  h5 weapp  */
+  /*  #ifndef  h5 weapp harmony */
   background-color: blue;
   /*  #endif  */
 }
@@ -45,17 +45,17 @@
 }
 /*  #endif  */
 
-/*  #ifndef  weapp rn  */
+/*  #ifndef  weapp rn harmony */
 .ifndef-color {
   color: red;
 }
 /*  #endif  */
-/*  #ifndef  h5 rn  */
+/*  #ifndef  h5 rn harmony */
 .ifndef-color {
   color: green;
 }
 /*  #endif  */
-/*  #ifndef  h5 weapp  */
+/*  #ifndef  h5 weapp harmony */
 .ifndef-color {
   color: blue;
 }

@@ -32,14 +32,14 @@ export default function Size() {
         </View>
       </View>
     </View>
-    <View className="global-page__body">
+    {process.env.TARO_ENV !== 'harmony' && <View className="global-page__body">
       <View className="global-page__body-example example">
         <View className='example-body'>
           <View className="fs1rem">font-size: 1rem</View>
           <View className="fs2rem">font-size: 2rem</View>
         </View>
       </View>
-    </View>
+    </View>}
     <View className="global-page__body">
       <View className="global-page__body-example example">
         <View className='example-body'>

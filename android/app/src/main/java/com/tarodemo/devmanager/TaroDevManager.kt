@@ -22,7 +22,7 @@ object TaroDevManager {
         }
     }
 
-    private val application = MainApplication.getInstance()
+    private val application = MainApplication.instance
     private val packagerConnectionSettings = PackagerConnectionSettings(application)
 
     private val reactNativeHost = application.reactNativeHost
@@ -63,7 +63,7 @@ object TaroDevManager {
     }
 
     private fun setJsMainModuleName(jsMainModulePath: String) {
-        application.taroReactNativeHost.jsMainModulePath = jsMainModulePath
+        application.getTaroReactNativeHost().jsMainModulePath = jsMainModulePath
     }
 
     private fun reset() {

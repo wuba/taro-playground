@@ -1,0 +1,179 @@
+.box {
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+  background: #555;
+}
+
+.bg {
+  background: #eee;
+}
+
+.h150 {
+  height: 150px;
+}
+
+.h300 {
+  height: 300px;
+}
+
+.w150 {
+  width: 150px;
+}
+
+.list-col-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.list-col-item {
+  height: 100vw;
+  width: 20%;
+  justify-content: space-between;
+}
+
+.list-row-wrapper {
+  height: 100vw;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-row-item {
+  height: 150px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+  background: #eee;
+}
+
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify {
+  &-flex-start {
+    justify-content: flex-start;
+  }
+  &-flex-end {
+    justify-content: flex-end;
+  }
+  &-center {
+    justify-content: center;
+  }
+  &-space-between {
+    justify-content: space-between;
+  }
+  &-space-around {
+    justify-content: space-around;
+  }
+  &-space-evenly {
+    justify-content: space-evenly;
+  }
+}
+
+.align {
+  &-flex-start {
+    align-items: flex-start;
+  }
+  &-flex-end {
+    align-items: flex-end;
+  }
+  &-center {
+    align-items: center;
+  }
+  &-baseline {
+    align-items: baseline;
+  }
+  &-stretch {
+    align-items: stretch;
+  }
+}
+
+.align-content {
+  &-flex-start {
+    align-content: flex-start;
+  }
+  &-flex-end {
+    align-content: flex-end;
+  }
+  &-center {
+    align-content: center;
+  }
+  &-space-between {
+    align-content: space-between;
+  }
+  &-space-around {
+    align-content: space-around;
+  }
+  &-space-evenly {
+    align-content: space-evenly;
+  }
+}
+
+.align-self {
+  &-flex-start {
+    align-self: flex-start;
+  }
+  &-flex-end {
+    align-self: flex-end;
+  }
+  &-center {
+    align-self: center;
+  }
+  &-baseline {
+    align-self: baseline;
+  }
+  &-stretch {
+    align-self: stretch;
+  }
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.nowrap {
+  flex-wrap: nowrap;
+}
+.wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.flex-grow {
+  &-1 {
+    flex-grow: 1;
+  }
+  &-2 {
+    flex-grow: 2;
+  }
+}
+
+.flex-shrink {
+  &-0 {
+    flex-shrink: 0;
+  }
+  &-1 {
+    flex-shrink: 1;
+  }
+}
+
+.flex-basis {
+  &-auto {
+    flex-basis: auto;
+  }
+  &-120 {
+    flex-basis: 120px;
+  }
+}

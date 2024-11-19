@@ -1,0 +1,31 @@
+.box {
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+  font-size: 16px;
+  color: #fff;
+  background: #555;
+}
+
+.bg {
+  background: #eee;
+}
+
+.flex {
+  display: flex;
+}
+
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.m10 {
+  margin: 0 10px;
+}

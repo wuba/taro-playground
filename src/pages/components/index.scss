@@ -1,5 +1,6 @@
 .index {
   flex: 1;
+  height: 100%;
 }
 .index-hd {
   padding: 80px;
@@ -23,6 +24,8 @@
 
 .index-desc_text {
   color: #888888;
+  width: 100%;
+  text-align: center;
 }
 
 .navigator-box {

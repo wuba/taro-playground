@@ -1,10 +1,14 @@
 import Taro, { ENV_TYPE, getEnv } from '@tarojs/taro'
 
-export const isWeb = getEnv() === ENV_TYPE.WEB
+export const env = getEnv()
 
-export const isRN = getEnv() === ENV_TYPE.RN
+export const isWeb = env === ENV_TYPE.WEB
 
-export const notMini = isWeb || isRN
+export const isRN = env === ENV_TYPE.RN
+
+export const isHARMONY = env !== ENV_TYPE.WEB && env !== ENV_TYPE.RN && env !== ENV_TYPE.WEAPP
+
+export const notMini = isWeb || isRN || isHARMONY
 
 interface pageType {
   url: string

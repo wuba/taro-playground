@@ -21,7 +21,7 @@ export default function Insignia({github, title='Github', rn=true, h5=true, weap
         loadWeb({
           url: github,
           title,
-          certified: isRN,
+          certified: isRN || isHARMONY,
         })
       }}
     />

@@ -119,7 +119,6 @@ export default class PageView extends React.Component<IProps, IState> {
                 indicatorColor="#999"
                 indicatorActiveColor="#333"
                 current={current}
-                duration={1}
                 interval={interval}
                 circular={isCircular}
                 autoplay={isAutoplay}

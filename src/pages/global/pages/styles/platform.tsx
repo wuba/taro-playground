@@ -8,6 +8,7 @@ const exEnvMap = {
   'rn': 'h5 weapp',
   'h5': 'rn weapp',
   'weapp': 'h5 rn',
+  'harmony': 'rn h5 weapp',
 }
 
 export default function Size() {

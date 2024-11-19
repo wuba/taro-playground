@@ -6,7 +6,7 @@ import './index.scss'
 
 /**
  * 数据缓存
- * @returns 
+ * @returns
  */
 const Index = () => {
 
@@ -67,7 +67,7 @@ const Index = () => {
               data: data
             }).then(() => {
               Taro.showToast({ title: '设置成功：' + key, icon: 'none' })
-              _getStorageInfo();
+              // _getStorageInfo();
             });
           }}
         >Taro.setStorage</Button>

@@ -9,6 +9,8 @@
   margin: 0 30px;
   border-radius: 10px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
   &-img {
     height: 180px;
     width: 180px;
